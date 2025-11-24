@@ -1,0 +1,91 @@
+#King{
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background:linear-gradient(45deg,#131313, #080D6B);
+}
+
+#King h3{
+    font-size: 16px;
+    
+}
+
+#peopleCard{
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    padding: 0px;
+}
+
+#peopleCard img{
+    padding: 20px 10px;
+}
+
+#Card{
+    align-items: center;
+}
+
+#sign{
+    width: 238px;
+    height: 56px;
+    background: linear-gradient(135deg,#080D6B, #FF5774);
+    border-radius: 50px;
+    
+}
+
+#info{
+    padding-bottom: 20px;
+    display: flex;
+    align-items: end;
+    align-content: flex-end;
+    flex-wrap: wrap;
+}
+
+#KingAll #peopleCard{
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    padding: 0px;
+}
+
+#KingAll #peopleCard img{
+    height: 300px;
+    padding: 20px 10px;
+}
+
+#KingAll #info{
+    font-size: 0.8rem;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: end;
+    align-content: flex-end;
+    flex-wrap: wrap;
+}
+
+#KingAll h3{
+   font-size: 12px;
+    
+}
+
+#KingDop #peopleCard{
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    padding: 0px;
+}
+
+#KingDop #peopleCard img{
+    height: 300px;
+    padding: 20px 10px;
+}
+
+#KingDop #info{
+    font-size: 0.8rem;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: end;
+    align-content: flex-end;
+    flex-wrap: wrap;
+}
+
+#KingDop h3{
+   font-size: 12px;
+    
+}

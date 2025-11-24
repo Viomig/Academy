@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/owl.theme.green.css">
+    <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/directsiaCSS.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar academy-navbar navbar-expand-lg">
+  <div class="container">
+    <button class="d-lg-none">
+      <img src="images/Logo.png"  alt="Company Logo">
+    </button>
+    <button class="navbar-toggler" type="button" data-coreui-toggle="collapse" data-coreui-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+   
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <!-- Основное меню с CoreUI Tab компонентом -->
+    <div class="navbar-menu">
+       
+      <div class="nav nav-tabs" id="academy-tab" role="tablist">
+        <button class="d-none d-lg-block">
+      <img src="images/Logo.png"  alt="Company Logo">
+    </button>
+        <!-- Пункт 1 -->
+        <button class="nav-link" id="about-tab" data-coreui-toggle="tab" data-coreui-target="#about" type="button" role="tab" aria-controls="about" aria-selected="true">
+          <a>ОБ АКАДЕМИИ</a>
+        </button>
+
+        <!-- Пункт 2 -->
+        <button class="nav-link" id="documents-tab" data-coreui-toggle="tab" data-coreui-target="#documents" type="button" role="tab" aria-controls="documents" aria-selected="false">
+          <a>АБИТУРИЕНТУ</a>
+        </button>
+
+        <!-- Пункт 3 -->
+        <button class="nav-link" id="listeners-tab" data-coreui-toggle="tab" data-coreui-target="#listeners" type="button" role="tab" aria-controls="listeners" aria-selected="false">
+          <a>СТУДЕНТУ</a>
+        </button>
+
+        <!-- Пункт 4 -->
+        <button class="nav-link" id="updates-tab" data-coreui-toggle="tab" data-coreui-target="#updates" type="button" role="tab" aria-controls="updates" aria-selected="false">
+          <a>ОБРАЗОВАНИЕ</a>
+        </button>
+
+        <!-- Пункт 5 -->
+        <button class="nav-link" id="start-tab" data-coreui-toggle="tab" data-coreui-target="#start" type="button" role="tab" aria-controls="start" aria-selected="false">
+          <a>НАУКА</a>
+        </button>
+
+        <!-- Пункт 6 -->
+        <button class="nav-link" id="organization-tab" data-coreui-toggle="tab" data-coreui-target="#organization" type="button" role="tab" aria-controls="organization" aria-selected="false">
+          <a>ОЛИМПИАДА</a>
+        </button>
+
+        <!-- Пункт 7 -->
+        <button class="nav-link" id="preparation-tab" data-coreui-toggle="tab" data-coreui-target="#preparation" type="button" role="tab" aria-controls="preparation" aria-selected="false">
+          <a>ДОВУЗОВСКАЯ ПОДГОТОВКА</a>
+        </button>
+
+        <!-- Пункт 8 -->
+        <button class="nav-link" id="constant-tab" data-coreui-toggle="tab" data-coreui-target="#constant" type="button" role="tab" aria-controls="constant" aria-selected="false">
+          <a>ПОРТФОЛИО</a>
+        </button>
+
+        <button></button>
+      </div>
+
+      <!-- Контент табов -->
+      <div class="tab-content" id="academy-tab-content">
+        <!-- Таб 1 -->
+        <div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="about-tab" tabindex="0">
+          <div class="tab-content-inner row">
+            <div class="col-3">
+              <h2>ОБ АКАДЕМИИ</h2>
+              <h4>Академия архитектуры и искусств отмечает 110-летний юбилей</h4>
+              <button>Подробнее</button>
+            </div>
+            <div class="tab-column offset-1 col-2">
+              <ul>
+                <li>Информация</li>
+                <li>Дирекция</li>
+                <li>Кафедры</li>
+                <li>Центры</li>
+              </ul>
+            </div>
+            <div class="tab-column col-2">
+              <ul>
+                <li>Ученый Совет</li>
+                <li>Профсоюз</li>
+                <li>Студенческий совет</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Таб 2 -->
+        <div class="tab-pane fade" id="documents" role="tabpanel" aria-labelledby="documents-tab" tabindex="0">
+          <div class="tab-content-inner row">
+            
+            <div class="col-3">
+              <h2>Абитуриенту</h2>
+              <ul>
+                <li>Информация о центре</li>
+                <li>Дни открытых дверей</li>
+                <li>Профориентационные мероприятия</li>
+              </ul>
+            </div>
+
+            <div class="tab-column offset-1 col-2">
+              <h4>Бакалавриат</h4>
+              <ul>
+                <li>Правила приема</li>
+                <li>Цифры набора</li>
+                <li>Вступительные испытания</li>
+                <li>Платное обучения</li>
+                <li>Целевой прием</li>
+                <li>Приемы работ</li>
+              </ul>
+            </div>
+
+            <div class="tab-column col-2">
+              <h4>Магистратура</h4>
+              <ul>
+                <li>Правила приема</li>
+                <li>Цифры набора</li>
+                <li>Вступительные испытания</li>
+                <li>Платное обучения</li>
+                <li>Целевой прием</li>
+              </ul>
+            </div>
+
+            <div class="tab-column col-3">
+              <h4>Аспирантура/Ассистенту-стажировка</h4>
+              <ul>
+                <li>Правила приема</li>
+                <li>Цифры набора</li>
+                <li>Научные руководители</li>
+                <li>Грант на поступление</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Таб 3 -->
+        <div class="tab-pane fade" id="listeners" role="tabpanel" aria-labelledby="listeners-tab" tabindex="0">
+          <div class="tab-content-inner row">
+            <div class="col-3">
+              <h2>Студенту</h2>
+            <h4>Студенческий совет организует образовательные и развлекательные мероприятия, помогает выстраивать учебный процесс, воплощать 
+              в жизнь полезные инициативы при поддержке департамента молодёжной политики.</h4>
+            </div>
+            
+            <div class="tab-column offset-1 col-2">
+              <h4>Учебный процесс</h4>
+              <ul>
+                <li>Учебный центр</li>
+                <li>Расписание занятий</li>
+                <li>Расписание сессии</li>
+                <li>ГИА / ВКР</li>
+                <li>Практика</li>
+                <li>Стипендии</li>
+                <li>Платное обучение</li>
+                <li>Международная деятельность</li>
+                <li>Документы</li>
+              </ul>
+            </div>
+
+            <div class="tab-column col-2">
+              <h4>Социальные вопросы</h4>
+              <ul>
+                <li>Материальная поддержка обучающегося</li>
+                <li>ПГАС</li>
+                <li>Социальная стипендия</li>
+                <li>Именные стипендии</li>
+                <li>Инклюзивное образование</li>
+                <li>Общежития</li>
+              </ul>
+            </div>
+
+            <div class="tab-column col-2">
+              <h4>Внеурочная работа</h4>
+              <ul>
+                <li>План воспитательной работы</li>
+                <li>Студенческое самоуправление</li>
+                <li>Творческие коллективы</li>
+              </ul>
+            </div>
+
+            <div class="tab-column col-2">
+              <h4>Молодежная наука / творчество</h4>
+              <ul>
+                <li>Научные конференции</li>
+                <li>СНО</li>
+                <li>Выставки</li>
+                <li>Конкурсы</li>
+                <li>Проектная деятельность</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Таб 4 -->
+        <div class="tab-pane fade" id="updates" role="tabpanel" aria-labelledby="updates-tab" tabindex="0">
+          <div class="tab-content-inner row">
+            <div class="col-3">
+              <h2>Образование</h2>
+            <h4>Мы гордимся тем, что наши выпускники становятся успешными художниками и архитекторами, дизайнерами и творческими лидерами.</h4>
+            </div>
+            <div class="tab-column offset-1 col-2">
+              <ul>
+                <li>Бакалавриат</li>
+                <li>Специалитет</li>
+                <li>Магистратура</li>
+                <li>Аспирантура</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Таб 5 -->
+        <div class="tab-pane fade" id="start" role="tabpanel" aria-labelledby="start-tab" tabindex="0">
+          <div class="tab-content-inner row">
+            <div class="col-3">
+              <h2>Наука</h2>
+            <h4>Научно-исследовательская деятельность является составляющей частью процесса подготовки молодых специалистов</h4>
+            </div>
+
+            <div class="tab-column offset-1 col-2">
+              <ul>
+                <li>Оснавные научные направления</li>
+                <li>Публикационная активность</li>
+                <li>Научная деятельность</li>
+                <li>Документы</li>
+              </ul>
+            </div>
+
+            <div class="tab-column col-2">
+              <ul>
+                <li>Молодежная наука</li>
+                <li>Действующие СНО в ААИ</li>
+                <li>Новости науки</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Таб 6 -->
+        <div class="tab-pane fade" id="organization" role="tabpanel" aria-labelledby="organization-tab" tabindex="0">
+          <div class="tab-content-inner row">
+            
+            <div class="col-3">
+              <h2>Олимпиада</h2>
+            <h4>XVII Южно-Российская межрегиональная олимпиада школьников «Архитектура и искусство» по комплексу предметов</h4>
+            </div>
+
+            <div class="tab-column offset-1 col-2">
+              <ul>
+                <li>ЮРМОШ</li>
+                <li>Новости</li>
+                <li>Этапы</li>
+                <li>Календарь олимпиады</li>
+                <li>Документы</li>
+                <li>Информация</li>
+              </ul>
+            </div>
+
+            <div class="tab-column col-2">
+              <ul>
+                <li>Задания</li>
+                <li>Списки победителей и призеров</li>
+                <li>Лучшие работы</li>
+                <li>Соорганизаторы олимпиады</li>
+                <li>Организаторы</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Таб 7 -->
+        <div class="tab-pane fade" id="preparation" role="tabpanel" aria-labelledby="preparation-tab" tabindex="0">
+          <div class="tab-content-inner row">
+
+            <div class="col-3">
+              <h2>Довузовская подготовка</h2>
+            <h4>Занятия на Подготовительных курсах ведутся по двум направлениям: Архитектура  и Искусство</h4>
+            </div>
+
+            <div class="tab-column offset-1 col-2">
+              <ul>
+                <li>Подкурсы</li>
+                <li>Содержание программы</li>
+                <li>Важные документы</li>
+                <li>Курсы</li>
+              </ul>
+            </div>
+
+            <div class="tab-column col-2">
+              <ul>
+                <li>Этапы оформления договора</li>
+                <li>Преподавательский состав</li>
+                <li>Контакты</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Таб 8 -->
+        <div class="tab-pane fade" id="constant" role="tabpanel" aria-labelledby="constant-tab" tabindex="0">
+          <div class="tab-content-inner row">
+
+            <div class="col-3">
+              <h2>Портфолио</h2>
+            <h4>Здесь вы сможете ознакомиться с выдающимися проектами и работами студентов и преподавателей Академии</h4>
+            </div>
+
+            <div class="tab-column offset-1 col-2">
+              <ul>
+                <li>Выпускные квалификационные работы студентов</li>
+                <li>Конкурсные работы студентов</li>
+              </ul>
+            </div>
+
+            <div class="tab-column col-2">
+              <ul>
+                <li>Творческие работы преподавателей</li>
+                <li>Работы призеров ЮРМОШ</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</nav>
+    </header>
+
+     <section id="start">
+        <div class="row justify-content-end">
+            <div class="col-5 offset-md-1 ">
+                <div><h1>Дирекция</h1></div>
+                <div class="">
+                    <div class=" col-md-12"><h2>Здесь вы сможете узнать о команде профессионалов, которая стоит за развитием и продвижением нашей Академии. 
+                        Наша дирекция включает в себя выдающихся специалистов в области архитектуры, дизайна и искусств, чья цель — создание образовательной 
+                        среды, вдохновляющей на творчество и инновации.</h2></div>
+                </div>
+                
+            </div>
+            <div class="col-6">
+                <img src="images/about/1.png" alt="Image2">
+            </div>
+
+        </div>
+    </section>
+
+    <section id="King">
+        <div class="row offset-md-2 container" id="Card">
+            <div class="col-md-8 offset-md-2" id="peopleCard">
+                <div class="row">
+                    <div class="col-md-6"><img src="images/about/Direct/image.png" alt="Image2"></div>
+                <div class="col-md-6 row justify-content-start">
+                    <div class="col-md-12 row" id="info">
+                      <h6>Директор ААИ ЮФУ</h6>
+                      <h6>Чемерисова Наталья Васильевна
+                      </h6>
+                      <br class="col-12"><h3>тел.: +7(863)218-40-00 доб. 20023</h3></br>
+                      <br class="col-12"><h3>e-mail: nvchemerisova@sfedu.ru</h3></br>
+                      <h3>Адрес: пр. Буденновский 39, 4 этаж, кабинет № 40</h3>
+                    <br><button class="btn" id="sign"><li>Записаться на прием</li></button>
+                    </div>
+                </div>
+            </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="KingAll">
+        <div class="row offset-md-2 container" id="Card">
+            <div class="col-md-8 offset-md-2" id="peopleCard">
+                <div class="row">
+                    <div class="col-md-5"><img src="images/about/Direct/image.png" alt="Image2"></div>
+                <div class="col-md-7 row justify-content-start">
+                    <div class="col-md-12 row" id="info">
+                      <h6>Директор ААИ ЮФУ</h6>
+                      <h6>Чемерисова Наталья Васильевна
+                      </h6>
+                      <br class="col-12"><h3>тел.: +7(863)218-40-00 доб. 20023</h3></br>
+                      <br class="col-12"><h3>e-mail: nvchemerisova@sfedu.ru</h3></br>
+                      <h3>Адрес: пр. Буденновский 39, 4 этаж, кабинет № 40</h3>
+                    </div>
+                </div>
+            </div>
+                
+            </div>
+        </div>
+
+         <div class="row offset-md-2 container" id="Card">
+            <div class="col-md-8 offset-md-2" id="peopleCard">
+                <div class="row">
+                    <div class="col-md-5"><img src="images/about/Direct/image.png" alt="Image2"></div>
+                <div class="col-md-7 row justify-content-start">
+                    <div class="col-md-12 row" id="info">
+                      <h6>Директор ААИ ЮФУ</h6>
+                      <h6>Чемерисова Наталья Васильевна
+                      </h6>
+                      <br class="col-12"><h3>тел.: +7(863)218-40-00 доб. 20023</h3></br>
+                      <br class="col-12"><h3>e-mail: nvchemerisova@sfedu.ru</h3></br>
+                      <h3>Адрес: пр. Буденновский 39, 4 этаж, кабинет № 40</h3>
+                    </div>
+                </div>
+            </div>
+                
+            </div>
+        </div>
+
+         <div class="row offset-md-2 container" id="Card">
+            <div class="col-md-8 offset-md-2" id="peopleCard">
+                <div class="row">
+                    <div class="col-md-5"><img src="images/about/Direct/image.png" alt="Image2"></div>
+                <div class="col-md-7 row justify-content-start">
+                    <div class="col-md-12 row" id="info">
+                      <h6>Директор ААИ ЮФУ</h6>
+                      <h6>Чемерисова Наталья Васильевна
+                      </h6>
+                      <br class="col-12"><h3>тел.: +7(863)218-40-00 доб. 20023</h3></br>
+                      <br class="col-12"><h3>e-mail: nvchemerisova@sfedu.ru</h3></br>
+                      <h3>Адрес: пр. Буденновский 39, 4 этаж, кабинет № 40</h3>
+                    </div>
+                </div>
+            </div>
+                
+            </div>
+        </div>
+
+         <div class="row offset-md-2 container" id="Card">
+            <div class="col-md-8 offset-md-2" id="peopleCard">
+                <div class="row">
+                    <div class="col-md-5"><img src="images/about/Direct/image.png" alt="Image2"></div>
+                <div class="col-md-7 row justify-content-start">
+                    <div class="col-md-12 row" id="info">
+                      <h6>Директор ААИ ЮФУ</h6>
+                      <h6>Чемерисова Наталья Васильевна
+                      </h6>
+                      <br class="col-12"><h3>тел.: +7(863)218-40-00 доб. 20023</h3></br>
+                      <br class="col-12"><h3>e-mail: nvchemerisova@sfedu.ru</h3></br>
+                      <h3>Адрес: пр. Буденновский 39, 4 этаж, кабинет № 40</h3>
+                    </div>
+                </div>
+            </div>
+                
+            </div>
+        </div>
+
+         <div class="row offset-md-2 container" id="Card">
+            <div class="col-md-8 offset-md-2" id="peopleCard">
+                <div class="row">
+                    <div class="col-md-5"><img src="images/about/Direct/image.png" alt="Image2"></div>
+                <div class="col-md-7 row justify-content-start">
+                    <div class="col-md-12 row" id="info">
+                      <h6>Директор ААИ ЮФУ</h6>
+                      <h6>Чемерисова Наталья Васильевна
+                      </h6>
+                      <br class="col-12"><h3>тел.: +7(863)218-40-00 доб. 20023</h3></br>
+                      <br class="col-12"><h3>e-mail: nvchemerisova@sfedu.ru</h3></br>
+                      <h3>Адрес: пр. Буденновский 39, 4 этаж, кабинет № 40</h3>
+                    </div>
+                </div>
+            </div>
+                
+            </div>
+        </div>
+
+         <div class="row offset-md-2 container" id="Card">
+            <div class="col-md-8 offset-md-2" id="peopleCard">
+                <div class="row">
+                    <div class="col-md-5"><img src="images/about/Direct/image.png" alt="Image2"></div>
+                <div class="col-md-7 row justify-content-start">
+                    <div class="col-md-12 row" id="info">
+                      <h6>Директор ААИ ЮФУ</h6>
+                      <h6>Чемерисова Наталья Васильевна
+                      </h6>
+                      <br class="col-12"><h3>тел.: +7(863)218-40-00 доб. 20023</h3></br>
+                      <br class="col-12"><h3>e-mail: nvchemerisova@sfedu.ru</h3></br>
+                      <h3>Адрес: пр. Буденновский 39, 4 этаж, кабинет № 40</h3>
+                    </div>
+                </div>
+            </div>
+                
+            </div>
+        </div>
+
+         <div class="row offset-md-2 container" id="Card">
+            <div class="col-md-8 offset-md-2" id="peopleCard">
+                <div class="row">
+                    <div class="col-md-5"><img src="images/about/Direct/image.png" alt="Image2"></div>
+                <div class="col-md-7 row justify-content-start">
+                    <div class="col-md-12 row" id="info">
+                      <h6>Директор ААИ ЮФУ</h6>
+                      <h6>Чемерисова Наталья Васильевна
+                      </h6>
+                      <br class="col-12"><h3>тел.: +7(863)218-40-00 доб. 20023</h3></br>
+                      <br class="col-12"><h3>e-mail: nvchemerisova@sfedu.ru</h3></br>
+                      <h3>Адрес: пр. Буденновский 39, 4 этаж, кабинет № 40</h3>
+                    </div>
+                </div>
+            </div>
+                
+            </div>
+        </div>
+
+         <div class="row offset-md-2 container" id="Card">
+            <div class="col-md-8 offset-md-2" id="peopleCard">
+                <div class="row">
+                    <div class="col-md-5"><img src="images/about/Direct/image.png" alt="Image2"></div>
+                <div class="col-md-7 row justify-content-start">
+                    <div class="col-md-12 row" id="info">
+                      <h6>Директор ААИ ЮФУ</h6>
+                      <h6>Чемерисова Наталья Васильевна
+                      </h6>
+                      <br class="col-12"><h3>тел.: +7(863)218-40-00 доб. 20023</h3></br>
+                      <br class="col-12"><h3>e-mail: nvchemerisova@sfedu.ru</h3></br>
+                      <h3>Адрес: пр. Буденновский 39, 4 этаж, кабинет № 40</h3>
+                    </div>
+                </div>
+            </div>
+                
+            </div>
+        </div>
+
+         <div class="row offset-md-2 container" id="Card">
+            <div class="col-md-8 offset-md-2" id="peopleCard">
+                <div class="row">
+                    <div class="col-md-5"><img src="images/about/Direct/image.png" alt="Image2"></div>
+                <div class="col-md-7 row justify-content-start">
+                    <div class="col-md-12 row" id="info">
+                      <h6>Директор ААИ ЮФУ</h6>
+                      <h6>Чемерисова Наталья Васильевна
+                      </h6>
+                      <br class="col-12"><h3>тел.: +7(863)218-40-00 доб. 20023</h3></br>
+                      <br class="col-12"><h3>e-mail: nvchemerisova@sfedu.ru</h3></br>
+                      <h3>Адрес: пр. Буденновский 39, 4 этаж, кабинет № 40</h3>
+                    </div>
+                </div>
+            </div>
+                
+            </div>
+        </div>
+
+         <div class="row offset-md-2 container" id="Card">
+            <div class="col-md-8 offset-md-2" id="peopleCard">
+                <div class="row">
+                    <div class="col-md-5"><img src="images/about/Direct/image.png" alt="Image2"></div>
+                <div class="col-md-7 row justify-content-start">
+                    <div class="col-md-12 row" id="info">
+                      <h6>Директор ААИ ЮФУ</h6>
+                      <h6>Чемерисова Наталья Васильевна
+                      </h6>
+                      <br class="col-12"><h3>тел.: +7(863)218-40-00 доб. 20023</h3></br>
+                      <br class="col-12"><h3>e-mail: nvchemerisova@sfedu.ru</h3></br>
+                      <h3>Адрес: пр. Буденновский 39, 4 этаж, кабинет № 40</h3>
+                    </div>
+                </div>
+            </div>
+                
+            </div>
+        </div>
+
+         <div class="row offset-md-2 container" id="Card">
+            <div class="col-md-8 offset-md-2" id="peopleCard">
+                <div class="row">
+                    <div class="col-md-5"><img src="images/about/Direct/image.png" alt="Image2"></div>
+                <div class="col-md-7 row justify-content-start">
+                    <div class="col-md-12 row" id="info">
+                      <h6>Директор ААИ ЮФУ</h6>
+                      <h6>Чемерисова Наталья Васильевна
+                      </h6>
+                      <br class="col-12"><h3>тел.: +7(863)218-40-00 доб. 20023</h3></br>
+                      <br class="col-12"><h3>e-mail: nvchemerisova@sfedu.ru</h3></br>
+                      <h3>Адрес: пр. Буденновский 39, 4 этаж, кабинет № 40</h3>
+                    </div>
+                </div>
+            </div>
+                
+            </div>
+        </div>
+
+         <div class="row offset-md-2 container" id="Card">
+            <div class="col-md-8 offset-md-2" id="peopleCard">
+                <div class="row">
+                    <div class="col-md-5"><img src="images/about/Direct/image.png" alt="Image2"></div>
+                <div class="col-md-7 row justify-content-start">
+                    <div class="col-md-12 row" id="info">
+                      <h6>Директор ААИ ЮФУ</h6>
+                      <h6>Чемерисова Наталья Васильевна
+                      </h6>
+                      <br class="col-12"><h3>тел.: +7(863)218-40-00 доб. 20023</h3></br>
+                      <br class="col-12"><h3>e-mail: nvchemerisova@sfedu.ru</h3></br>
+                      <h3>Адрес: пр. Буденновский 39, 4 этаж, кабинет № 40</h3>
+                    </div>
+                </div>
+            </div>
+                
+            </div>
+        </div>
+
+         <div class="row offset-md-2 container" id="Card">
+            <div class="col-md-8 offset-md-2" id="peopleCard">
+                <div class="row">
+                    <div class="col-md-5"><img src="images/about/Direct/image.png" alt="Image2"></div>
+                <div class="col-md-7 row justify-content-start">
+                    <div class="col-md-12 row" id="info">
+                      <h6>Директор ААИ ЮФУ</h6>
+                      <h6>Чемерисова Наталья Васильевна
+                      </h6>
+                      <br class="col-12"><h3>тел.: +7(863)218-40-00 доб. 20023</h3></br>
+                      <br class="col-12"><h3>e-mail: nvchemerisova@sfedu.ru</h3></br>
+                      <h3>Адрес: пр. Буденновский 39, 4 этаж, кабинет № 40</h3>
+                    </div>
+                </div>
+            </div>
+                
+            </div>
+        </div>
+
+         <div class="row offset-md-2 container" id="Card">
+            <div class="col-md-8 offset-md-2" id="peopleCard">
+                <div class="row">
+                    <div class="col-md-5"><img src="images/about/Direct/image.png" alt="Image2"></div>
+                <div class="col-md-7 row justify-content-start">
+                    <div class="col-md-12 row" id="info">
+                      <h6>Директор ААИ ЮФУ</h6>
+                      <h6>Чемерисова Наталья Васильевна
+                      </h6>
+                      <br class="col-12"><h3>тел.: +7(863)218-40-00 доб. 20023</h3></br>
+                      <br class="col-12"><h3>e-mail: nvchemerisova@sfedu.ru</h3></br>
+                      <h3>Адрес: пр. Буденновский 39, 4 этаж, кабинет № 40</h3>
+                    </div>
+                </div>
+            </div>
+                
+            </div>
+        </div>
+
+         <div class="row offset-md-2 container" id="Card">
+            <div class="col-md-8 offset-md-2" id="peopleCard">
+                <div class="row">
+                    <div class="col-md-5"><img src="images/about/Direct/image.png" alt="Image2"></div>
+                <div class="col-md-7 row justify-content-start">
+                    <div class="col-md-12 row" id="info">
+                      <h6>Директор ААИ ЮФУ</h6>
+                      <h6>Чемерисова Наталья Васильевна
+                      </h6>
+                      <br class="col-12"><h3>тел.: +7(863)218-40-00 доб. 20023</h3></br>
+                      <br class="col-12"><h3>e-mail: nvchemerisova@sfedu.ru</h3></br>
+                      <h3>Адрес: пр. Буденновский 39, 4 этаж, кабинет № 40</h3>
+                    </div>
+                </div>
+            </div>
+                
+            </div>
+        </div>
+
+
+    </section>
+
+    <section id="KingDop">
+        <div class="row">
+            <div class="col-md-8 offset-md-1">
+                <h5>Приемная директора</h5>
+            </div>
+            <div class="row offset-md-2 container" id="Card">
+            <div class="col-md-8 offset-md-2" id="peopleCard">
+                <div class="row">
+                    <div class="col-md-5"><img src="images/about/Direct/image.png" alt="Image2"></div>
+                <div class="col-md-7 row justify-content-start">
+                    <div class="col-md-12 row" id="info">
+                      <h6>Директор ААИ ЮФУ</h6>
+                      <h6>Чемерисова Наталья Васильевна
+                      </h6>
+                      <br class="col-12"><h3>тел.: +7(863)218-40-00 доб. 20023</h3></br>
+                      <br class="col-12"><h3>e-mail: nvchemerisova@sfedu.ru</h3></br>
+                      <h3>Адрес: пр. Буденновский 39, 4 этаж, кабинет № 40</h3>
+                    </div>
+                </div>
+            </div>
+                
+            </div>
+        </div>
+
+        <div class="row offset-md-2 container" id="Card">
+            <div class="col-md-8 offset-md-2" id="peopleCard">
+                <div class="row">
+                    <div class="col-md-5"><img src="images/about/Direct/image.png" alt="Image2"></div>
+                <div class="col-md-7 row justify-content-start">
+                    <div class="col-md-12 row" id="info">
+                      <h6>Директор ААИ ЮФУ</h6>
+                      <h6>Чемерисова Наталья Васильевна
+                      </h6>
+                      <br class="col-12"><h3>тел.: +7(863)218-40-00 доб. 20023</h3></br>
+                      <br class="col-12"><h3>e-mail: nvchemerisova@sfedu.ru</h3></br>
+                      <h3>Адрес: пр. Буденновский 39, 4 этаж, кабинет № 40</h3>
+                    </div>
+                </div>
+            </div>
+                
+            </div>
+        </div>
+
+
+        </div>
+    </section>
+
+
+     <section id="end">
+       <!-- Футер -->
+    <footer class="footer">
+      <div class="row">
+        <div class="col-md-6 offset-md-1"><img src="images/Logo.png" ></div>
+        <div class="col-md-2"><p><h2>aai@sfedu.ru
+<p>+7 (863) 240-21-78</p></h2></p></div>
+        <div class="col-md-2"><p><h2>344080, г. Ростов-на-Дону,     пр. Буденновский, 39</h2></p></div>
+      </div>
+        <div class="offset-md-1" id="endNav">
+            <div class="row offset-md-1">
+
+                <!-- ОБ АКАДЕМИИ -->
+                <div class="col-md-2">
+                    <h4 class="underlined-title">ОБ АКАДЕМИИ</h4>
+                    <ul>
+                        <li><a href="#">Информация</a></li>
+                        <li><a href="#">Дирекция</a></li>
+                        <li><a href="#">Кафедры</a></li>
+                        <li><a href="#">Центры</a></li>
+                        <li><a href="#">Ученый Совет</a></li>
+                        <li><a href="#">Профессия</a></li>
+                        <li><a href="#">Студенческий Совет</a></li>
+                    </ul>
+                </div>
+                
+                <!-- АБИТУРИЕНТУ -->
+                <div class="col-md-2">
+                    <h4 class="underlined-title">АБИТУРИЕНТУ</h4>
+                    <ul>
+                        <li><a href="#">Дни открытых дверей</a></li>
+                        <li><a href="#">Профориентационные мероприятия</a></li>
+                        <li><a href="#">Платное обучение</a></li>
+                        <li><a href="#">Целевое обучение</a></li>
+                        <li><a href="#">Бакалавриат / Специалитет</a></li>
+                        <li><a href="#">Магистратура</a></li>
+                        <li><a href="#">Аспирантура / Ассистентура-стажировка</a></li>
+                    </ul>
+                </div>
+                
+                <!-- СТУДЕНТУ -->
+                <div class="col-md-2">
+                    <h4 class="underlined-title">СТУДЕНТУ</h4>
+                    <ul>
+                        <li><a href="#">Учебный процесс</a></li>
+                        <li><a href="#">Социальные вопросы</a></li>
+                        <li><a href="#">Внеурочная работа</a></li>
+                        <li><a href="#">Международная деятельность</a></li>
+                    </ul>
+                </div>
+                
+                <!-- НАУКА -->
+                <div class="col-md-2">
+                    <h4 class="underlined-title">НАУКА</h4>
+                    <ul>
+                        <li><a href="#">Основные научные направления</a></li>
+                        <li><a href="#">Публикационная активность</a></li>
+                        <li><a href="#">Научная деятельность</a></li>
+                        <li><a href="#">Документы</a></li>
+                        <li><a href="#">Молодежная наука</a></li>
+                        <li><a href="#">Действующие СНО в ААИ</a></li>
+                        <li><a href="#">Новости науки</a></li>
+                    </ul>
+                </div>
+
+            </div>  
+
+            <div class="row offset-md-1">
+                <!-- ОБРАЗОВАНИЕ -->
+                <div class="col-md-2">
+                    <h4 class="underlined-title">ОБРАЗОВАНИЕ</h4>
+                    <ul>
+                        <li><a href="#">Бакалавриат</a></li>
+                        <li><a href="#">Специалитет</a></li>
+                        <li><a href="#">Магистратура</a></li>
+                        <li><a href="#">Аспирантура</a></li>
+                        <li><a href="#">Ассистентура-стажировка</a></li>
+                        <li><a href="#">Руководители образовательных программ</a></li>
+                    </ul>
+                </div>
+                
+                <!-- ОЛИМПИАДА -->
+                <div class="col-md-2">
+                    <h4 class="underlined-title">ОЛИМПИАДА</h4>
+                    <ul>
+                        <li><a href="#">Общая информация</a></li>
+                        <li><a href="#">Победители / Призеры</a></li>
+                        <li><a href="#">Участникам</a></li>
+                        <li><a href="#">Организаторам</a></li>
+                        <li><a href="#">Задания</a></li>
+                        <li><a href="#">Лучшие работы</a></li>
+                        <li><a href="#">Документы</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <!-- ДОБУЗОВСКАЯ ПОДГОТОВКА -->
+                <div class="col-md-2">
+                    <h4 class="underlined-title">ДОВУЗОВСКАЯ ПОДГОТОВКА</h4>
+                    <ul>
+                        <li><a href="#">Общая информация</a></li>
+                        <li><a href="#">Подготовительные курсы</a></li>
+                        <li><a href="#">ДАХШ</a></li>
+                        <li><a href="#">Профильные классы</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </div>
+                
+                <!-- ПОРТФОЛИО -->
+                <div class="col-md-2">
+                    <h4 class="underlined-title">ПОРТФОЛИО</h4>
+                    <ul>
+                        <li><a href="#">Творческие работы преподавателей</a></li>
+                        <li><a href="#">Конкурсные работы студентов</a></li>
+                        <li><a href="#">Выпускные квалификационные работы</a></li>
+                        <li><a href="#">Работы школьников ЮРМОШ</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </footer>
+    </section>
+
+    
+    <!-- Подключаем Bootstrap JS и Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/@coreui/coreui/dist/js/coreui.bundle.min.js"></script>
+
+    <script>
+    // Упрощенная версия без использования CoreUI API
+document.addEventListener('DOMContentLoaded', function() {
+  const navbarMenu = document.querySelector('.navbar-menu');
+  const tabTriggers = document.querySelectorAll('#academy-tab .nav-link');
+  const tabPanes = document.querySelectorAll('.tab-pane');
+  
+  let activeTab = null;
+
+  tabTriggers.forEach(trigger => {
+    trigger.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const targetId = this.getAttribute('data-coreui-target');
+      const targetPane = document.querySelector(targetId);
+      
+      // Если кликаем на активный таб - закрываем все
+      if (this === activeTab) {
+        closeAllTabs();
+      } else {
+        // Активируем выбранный таб
+        activateTab(this, targetPane);
+      }
+    });
+  });
+
+  function activateTab(trigger, pane) {
+    // Деактивируем все табы
+    closeAllTabs();
+    
+    // Активируем выбранный
+    trigger.classList.add('active');
+    trigger.setAttribute('aria-selected', 'true');
+    pane.classList.add('show', 'active');
+    
+    activeTab = trigger;
+    navbarMenu.classList.add('tab-open');
+  }
+
+  function closeAllTabs() {
+    tabTriggers.forEach(trigger => {
+      trigger.classList.remove('active');
+      trigger.setAttribute('aria-selected', 'false');
+    });
+    
+    tabPanes.forEach(pane => {
+      pane.classList.remove('show', 'active');
+    });
+    
+    activeTab = null;
+    navbarMenu.classList.remove('tab-open');
+  }
+
+  // Закрытие по клику вне области
+  document.addEventListener('click', function(e) {
+    if (!navbarMenu.contains(e.target)) {
+      closeAllTabs();
+    }
+  });
+
+  // Закрытие по Escape
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeAllTabs();
+    }
+  });
+});
+</script>
+</body>
+</html>
