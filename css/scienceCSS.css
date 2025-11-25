@@ -32,9 +32,9 @@
         }
         
         .collapse-toggle {
-            background: none;
+            background-color: #080D6B;
             border: 2px solid white;
-            color: white;
+            color: rgb(255, 255, 255);
             cursor: pointer;
             padding: 10px 25px;
             border-radius: 8px;
@@ -406,6 +406,7 @@
 }
 .game-section3 .item.active {
   width: 380px;
+  height: 180px;
   box-shadow: 12px 40px 40px rgba(255, 255, 255, 0.25);
   -webkit-box-shadow: 12px 40px 40px rgba(255, 255, 255, 0.25);
 }
@@ -458,6 +459,7 @@
 
 @media (min-width: 992px) and (max-width: 1199px) {
   h2 {
+    font-size: 16px;
     margin-bottom: 32px;
   }
   h3 {
@@ -503,8 +505,8 @@
   }
   .game-section3 .item {
     margin: 0 12px 60px;
-    width: 240px;
-    height: 330px;
+    width: 380px;
+    height: 180px;
   }
   .game-section3 .item.active {
     width: 360px;
@@ -537,8 +539,8 @@
   }
   .game-section3 .item {
     margin: 0 10px 40px;
-    width: 200px;
-    height: 280px;
+    width: 380px;
+    height: 180px;
   }
   .game-section3 .item.active {
     width: 270px;
@@ -550,4 +552,16 @@
     transform: translateY(calc(100% - 42px));
     -webkit-transform: translateY(calc(100% - 42px));
   }
+}
+
+ul{
+  list-style-type: disc;
+}
+
+li{
+  margin-bottom: 5px;
+}
+
+h2{
+  font-size: 16px !important;
 }

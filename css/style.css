@@ -6,6 +6,27 @@
     padding: 0;
 }
 
+@media (min-width: 1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 1920px !important; 
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}
+
+@media (min-width: 560px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 1920px !important; 
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}
+
+@font-face {
+    font-family: 'Montserrat-Light';
+    src: url('../font/Montserrat-Light.woff2') format('woff2')
+}
+
 @font-face {
     font-family: 'Montserrat-Regular';
     src: url('../font/Montserrat-Regular.woff2') format('woff2');
@@ -86,14 +107,15 @@ h6{
   margin: 0 0 4px;
 }
 
+
 div{
     margin: 0;
     padding: 0;
 }
 
 .container{
-    width: 100%;
-    max-width: 1920px;
+  margin: 0px;
+  width: 100%;
     
 }
 
@@ -108,9 +130,8 @@ z-index: 100;
 }
 
 .row{
-  --bs-gutter-x: 0rem;
-  margin-right: 0px; 
-  margin-left: 0px;
+  margin-right: 0px !important; 
+  margin-left: 0px !important;
 }
 
 header img{
@@ -128,6 +149,10 @@ header img{
 
 #start img{
   padding: 0px;
+}
+
+#slider{
+  padding: 20px 0;
 }
 
 
@@ -293,12 +318,16 @@ table {
 
 @media (min-width: 992px) and (max-width: 1199px) {
   h2 {
+    font-size: 16px;
     margin-bottom: 32px;
   }
   h3 {
     margin: 0 0 8px;
     font-size: 24px;
     line-height: 32px;
+  }
+  h1{
+    font-size: 48px;
   }
 
   /* -------- Landing page ------- */
@@ -331,6 +360,9 @@ table {
   .line-title {
     width: 330px;
   }
+  h1{
+    font-size: 48px;
+  }
 
   /* -------- Landing page ------- */
   .game-section {
@@ -355,15 +387,21 @@ table {
     font-size: 14px;
   }
   h2 {
+    font-size: 16px !important;
     margin-bottom: 20px;
   }
   h3 {
+    font-size: 16px !important;
     margin: 0 0 8px;
     font-size: 19px;
     line-height: 24px;
   }
   .line-title {
     width: 250px;
+  }
+  h1{
+    font-family: "Montserrat-regular";
+    font-size: 48px !important;
   }
 
   /* -------- Landing page ------- */
