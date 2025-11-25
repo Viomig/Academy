@@ -1,16 +1,95 @@
 #Image2{
-    overflow-x: hidden;
+  
  
 }
 
-.fon{
-    background-color: #080D6B;
-    padding: 20px;
-    border-radius: 10px;
-}
-.fon h3{
-    color: white;
-}
+        .fon {
+          padding: 20px;
+            background-color: #080D6B;
+            border-radius: 10px;
+            
+        }
+        
+        .fon h3 {
+            color: white;
+            font-size: 18px;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+        
+        .text-content {
+            position: relative;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        
+        .text-content.collapsed {
+            max-height: 300px; /* Высота для текста из первой колонки */
+        }
+        
+        .text-content:not(.collapsed) {
+            max-height: none;
+        }
+        
+        .collapse-toggle {
+            background: none;
+            border: 2px solid white;
+            color: white;
+            cursor: pointer;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            display: none;
+            font-weight: 500;
+        }
+        
+        .collapse-toggle:hover {
+            background: white;
+            color: #080D6B;
+        }
+        
+        .fade-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: linear-gradient(transparent, #080D6b);
+            pointer-events: none;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+        
+        .text-content:not(.collapsed) .fade-overlay {
+            opacity: 0;
+        }
+        
+        .button-container {
+            text-align: center;
+        }
+        
+        /* Показываем кнопку только на мобильных */
+        @media (max-width: 767.98px) {
+            .collapse-toggle {
+                display: inline-block;
+            }
+            
+            .fon h3 {
+                font-size: 16px;
+            }
+        }
+        
+        /* На десктопе всегда показываем полный текст */
+        @media (min-width: 768px) {
+            .text-content {
+                max-height: none !important;
+            }
+            .fade-overlay {
+                display: none;
+            }
+        }
 
 
 /* Стили для фильтра годов */
