@@ -3,12 +3,12 @@
  
 }
 @media (min-width: 768px) {
-    .col-md-12 {
+    #direction.col-md-12 {
         padding-right: 0 !important;
         padding-left: 0 !important;
         margin: 0 0 0 0 !important;
     }
-    .row {
+    #direction.row {
         padding-right: 0 !important;
         padding-left: 0 !important;
         margin: 0 0 0 0 !important;
