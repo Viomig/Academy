@@ -503,10 +503,10 @@ table {
 }
 
 .footer-menu.active {
-    max-height: 500px; /* Достаточно для показа всех пунктов */
+    max-height: 500px; 
 }
 
-/* На десктопе всегда показываем меню */
+
 @media (min-width: 768px) {
     .footer-menu {
         max-height: none !important;
@@ -523,7 +523,7 @@ table {
     }
 }
 
-/* На мобильных скрываем меню по умолчанию */
+
 @media (max-width: 767.98px) {
     .footer-menu:not(.active) {
         display: none;
