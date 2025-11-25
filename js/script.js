@@ -71,3 +71,35 @@ $(document).ready(function () {
   });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const footerToggles = document.querySelectorAll('.footer-toggle');
+    
+    footerToggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+            const section = this.closest('.footer-section');
+            const menu = section.querySelector('.footer-menu');
+            const icon = this.querySelector('.toggle-icon');
+            
+            // Закрываем другие открытые меню (опционально)
+            if (!menu.classList.contains('active')) {
+                document.querySelectorAll('.footer-menu.active').forEach(activeMenu => {
+                    if (activeMenu !== menu) {
+                        activeMenu.classList.remove('active');
+                        activeMenu.previousElementSibling.querySelector('.footer-toggle').classList.remove('active');
+                    }
+                });
+            }
+            
+            // Переключаем текущее меню
+            menu.classList.toggle('active');
+            this.classList.toggle('active');
+            
+            // Меняем иконку
+            if (menu.classList.contains('active')) {
+                icon.textContent = '−';
+            } else {
+                icon.textContent = '+';
+            }
+        });
+    });
+});
