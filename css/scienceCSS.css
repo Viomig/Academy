@@ -566,16 +566,17 @@
   }
 }
 
-ul{
+#direction ul{
   list-style-type: disc;
 }
 
-li{
+#direction li{
   margin-bottom: 5px;
 }
 
 h2{
   font-size: 16px !important;
 }
+
 
 

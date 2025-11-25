@@ -129,6 +129,10 @@ width: 100%;
 z-index: 100;
 }
 
+header li{
+  color: #ffffff;
+}
+
 .row{
   margin-right: 0px !important; 
   margin-left: 0px !important;
