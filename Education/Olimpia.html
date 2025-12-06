@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixso HTML</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- Custom CSS -->
+    <style>
+        /* Font imports */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+        
+        /* Color Variables */
+        :root {
+            --color-dark-grey: #232328;
+            --color-blue: #080D6B;
+            --color-black: #000000;
+            --color-white: #ffffff;
+            --color-grey-dark: #8C8C8C;
+            --color-grey: #D2D2D2;
+            --color-grey-light: #F3F3F3;
+            --color-grey-1: #454545;
+        }
+        
+        /* General Styles */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--color-black);
+            overflow-x: hidden;
+        }
+        
+        /* Text Colors */
+        .text-dark-grey { color: var(--color-dark-grey); }
+        .text-blue { color: var(--color-blue); }
+        .text-black { color: var(--color-black); }
+        .text-white { color: var(--color-white); }
+        .text-grey-dark { color: var(--color-grey-dark); }
+        .text-grey-light { color: var(--color-grey-light); }
+        .text-grey-1 { color: var(--color-grey-1); }
+        
+        /* Background Colors */
+        .bg-dark-grey { background-color: var(--color-dark-grey); }
+        .bg-blue { background-color: var(--color-blue); }
+        .bg-white { background-color: var(--color-white); }
+        .bg-grey { background-color: var(--color-grey); }
+        .bg-grey-light { background-color: var(--color-grey-light); }
+        
+        /* Typography */
+        .text-uppercase { text-transform: uppercase; }
+        .font-weight-500 { font-weight: 500; }
+        .font-weight-600 { font-weight: 600; }
+        .font-weight-700 { font-weight: 700; }
+        
+        /* Header Navigation */
+        .navbar-custom {
+            background-color: var(--color-dark-grey) !important;
+            padding: 10px 0;
+        }
+        
+        .nav-link-custom {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--color-white) !important;
+            padding: 8px 16px !important;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link-custom:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .navbar-toggler {
+            border: none;
+            color: var(--color-white);
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            padding: 80px 0 40px;
+        }
+        
+        .hero-title {
+            font-size: 80px;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            line-height: 1;
+            margin-bottom: 30px;
+        }
+        
+        /* Section Titles */
+        .section-title {
+            font-size: 40px;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+        
+        /* Stats */
+        .stat-number {
+            font-size: 40px;
+            font-weight: 600;
+            color: var(--color-blue);
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            line-height: 1.3;
+        }
+        
+        /* News Cards */
+        .card-news {
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid var(--color-grey);
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-news:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-news-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        /* Stage Cards */
+        .card-stage {
+            height: 100%;
+            border-radius: 15px;
+            border: 1px solid var(--color-white);
+            background: var(--color-white);
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .card-stage:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Buttons */
+        .btn-custom {
+            border-radius: 50px;
+            padding: 16px 32px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-blue {
+            background-color: var(--color-blue);
+            color: var(--color-white);
+            border: none;
+        }
+        
+        .btn-blue:hover {
+            background-color: #060a52;
+            color: var(--color-white);
+            transform: translateY(-2px);
+        }
+        
+        /* Tabs */
+        .tab-item {
+            font-size: 16px;
+            padding: 12px 24px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            background: none;
+        }
+        
+        .tab-item.active {
+            background-color: var(--color-white);
+            color: var(--color-blue);
+            border: 1px solid var(--color-blue);
+        }
+        
+        .tab-item.inactive {
+            color: var(--color-grey-1);
+        }
+        
+        .tab-item:hover:not(.active) {
+            background-color: rgba(8, 13, 107, 0.1);
+        }
+        
+        /* Document Cards */
+        .document-card {
+            background-color: var(--color-white);
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            border: 1px solid var(--color-grey);
+        }
+        
+        .document-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Accordion Cards */
+        .accordion-card {
+            border: 1px solid var(--color-grey);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .accordion-card:hover {
+            border-color: var(--color-blue);
+        }
+        
+        .accordion-header {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* Map Section */
+        .map-section {
+            position: relative;
+            background-color: var(--color-white);
+        }
+        
+        .map-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        
+        /* Progress Dots */
+        .progress-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--color-grey);
+            margin: 0 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .progress-dot.active {
+            width: 40px;
+            border-radius: 4px;
+            background-color: var(--color-white);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--color-dark-grey);
+            color: var(--color-white);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-link {
+            color: var(--color-white);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: var(--color-grey);
+        }
+        
+        .footer-section-title {
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--color-white);
+            margin-bottom: 18px;
+        }
+        
+        .footer-divider {
+            height: 1px;
+            background-color: var(--color-grey-dark);
+            margin: 30px 0;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 991.98px) {
+            .hero-title {
+                font-size: 50px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+                margin-bottom: 30px;
+            }
+            
+            .stat-number {
+                font-size: 32px;
+            }
+            
+            .nav-link-custom {
+                padding: 10px !important;
+                text-align: center;
+                margin: 5px 0;
+            }
+        }
+        
+        @media (max-width: 767.98px) {
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+                margin-bottom: 25px;
+            }
+            
+            .stat-number {
+                font-size: 28px;
+            }
+            
+            .stat-label {
+                font-size: 12px;
+            }
+            
+            .btn-custom {
+                padding: 12px 24px;
+                font-size: 13px;
+            }
+            
+            .card-stage {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 575.98px) {
+            .hero-title {
+                font-size: 28px;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+            
+            .stat-number {
+                font-size: 24px;
+            }
+            
+            .hero-section {
+                padding: 60px 0 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand" href="#">
+                    <img src="./image/logo.png" alt="Logo" height="30">
+                </a>
+                
+                <!-- Mobile Toggle -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <i class="fas fa-bars text-white"></i>
+                </button>
+                
+                <!-- Navigation Menu -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom" href="#">об Академии</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom" href="#">абитуриенту</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom" href="#">студенту</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom" href="#">образование</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom" href="#">наука</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom" href="#">олимпиада</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom" href="#">довузовская подготовка</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom" href="#">портфолио</a>
+                        </li>
+                    </ul>
+                    
+                    <!-- Search -->
+                    <div class="d-flex mt-3 mt-lg-0">
+                        <div class="input-group" style="width: 200px;">
+                            <input type="text" class="form-control form-control-sm" placeholder="что вы ищите">
+                            <button class="btn btn-outline-light btn-sm" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                    <h1 class="hero-title text-dark-grey">ЮРмош</h1>
+                    <p class="mb-4">
+                        XVII Южно-Российская межрегиональная олимпиада школьников «Архитектура и искусство» по комплексу предметов <strong>(рисунок, живопись, композиция, черчение).</strong>
+                        <br><br>
+                        Олимпиада проводится для учащихся общеобразовательных учебных заведений <strong>6-11 классов</strong> по комплексу предметов: рисунок, живопись, композиция, черчение и включает два отборочных этапа и заключительный этап.
+                        <br><br>
+                        Входит в <strong>Перечень олимпиад</strong> Министерства науки и высшего образования РФ. Входит в <strong>Перечень мероприятий</strong> Министерства просвещения РФ.
+                        <br><br>
+                        Результаты олимпиады вносятся в <strong>государственный информационный ресурс о лицах, проявивших выдающиеся способности (ГИР).</strong>
+                        <br><br>
+                        В олимпиаде могут принимать участие школьники стран СНГ.
+                    </p>
+                    
+                    <!-- Stats -->
+                    <div class="row mt-5">
+                        <div class="col-6 col-md-4 col-lg-2 mb-4">
+                            <div class="stat-number">10 000+</div>
+                            <div class="stat-label text-black">участников</div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2 mb-4">
+                            <div class="stat-number">73</div>
+                            <div class="stat-label text-black">площадки проведения</div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2 mb-4">
+                            <div class="stat-number">9,2/10</div>
+                            <div class="stat-label text-black">средний балл</div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2 mb-4">
+                            <div class="stat-number">№1</div>
+                            <div class="stat-label text-black">в рейтинге олимпиад по искусству</div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2 mb-4">
+                            <div class="stat-number">№5</div>
+                            <div class="stat-label text-black">в рейтинге олимпиад РСОШ (из 755)</div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2 mb-4">
+                            <div class="stat-number">1</div>
+                            <div class="stat-label text-black">уровень олимпиады</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <!-- Geometric Graphic -->
+                    <div class="text-center">
+                        <img src="./image/geometric-graphic.png" alt="Geometric Graphic" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map/Statistics Section -->
+    <section class="py-5 map-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8 mb-5 mb-md-0">
+                    <!-- Map would go here -->
+                    <div class="map-container">
+                        <img src="./image/map.png" alt="Map" class="img-fluid w-100">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h2 class="text-blue mb-4">ЮРмош ⅩⅦ<br>2024-2025</h2>
+                    <div class="mb-4">
+                        <h3 class="text-blue">23</h3>
+                        <p class="text-black">региона России участвуют в проведении</p>
+                    </div>
+                    <div class="mb-4">
+                        <h3 class="text-blue">73</h3>
+                        <p class="text-black">площадки</p>
+                    </div>
+                    <div>
+                        <h3 class="text-blue">9595</h3>
+                        <p class="text-black">участников из 61 региона РФ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-black">новости</h2>
+            
+            <div class="row g-4">
+                <!-- News 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-news">
+                        <img src="./image/news1.jpg" class="card-news-img" alt="News 1">
+                        <div class="p-4">
+                            <p class="text-grey-dark mb-2">25.03.2025</p>
+                            <h5 class="font-weight-600 mb-3">Итоги заключительного этапа олимпиады</h5>
+                            <p class="text-black mb-4">Мы подвели итоги заключительного этапа XVII Южно-Российской межрегиональной олимпиады школьников «Архитектура и искусство» и спешим их Вам представить.</p>
+                            <a href="#" class="text-black font-weight-600 text-decoration-none">Подробнее →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- News 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-news">
+                        <img src="./image/news2.jpg" class="card-news-img" alt="News 2">
+                        <div class="p-4">
+                            <p class="text-grey-dark mb-2">07.02.2025</p>
+                            <h5 class="font-weight-600 mb-3">Итоги отборочного регионального этапа</h5>
+                            <p class="text-black mb-4">Результаты отборочного регионального этапа XVII ЮРМОШ-2025. Победители и призеры допускаются к участию в заключительном этапе XVII ЮРМОШ-2025.</p>
+                            <a href="#" class="text-black font-weight-600 text-decoration-none">Подробнее →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- News 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-news">
+                        <img src="./image/news3.jpg" class="card-news-img" alt="News 3">
+                        <div class="p-4">
+                            <p class="text-grey-dark mb-2">25.12.2024</p>
+                            <h5 class="font-weight-600 mb-3">Расписание отборочного регионального этапа</h5>
+                            <p class="text-black mb-4">Уважаемые участники XVII ЮРМОШ – 2025! Ознакомьтесь с расписанием отборочного РЕГИОНАЛЬНОГО этапа</p>
+                            <a href="#" class="text-black font-weight-600 text-decoration-none">Подробнее →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <button class="btn btn-custom btn-blue">Больше новостей</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stages Section -->
+    <section class="py-5 bg-dark-grey">
+        <div class="container">
+            <h2 class="section-title text-white">этапы</h2>
+            
+            <div class="row g-4">
+                <!-- Stage 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-stage">
+                        <h3 class="text-black font-weight-700 mb-3">Этап 1<br>отборочный муниципальный</h3>
+                        <p class="text-black">Проводится на более чем 75 площадках олимпиады в очной и заочной форме в соответствии с графиком проведения, размещаемом на сайте Олимпиады.</p>
+                    </div>
+                </div>
+                
+                <!-- Stage 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-stage">
+                        <h3 class="text-grey font-weight-700 mb-3">Этап 2<br>отборочный региональный</h3>
+                        <p class="text-grey">Проводится на более чем 75 площадках олимпиады в очной и заочной форме в соответствии с графиком проведения, размещаемом на сайте Олимпиады.</p>
+                    </div>
+                </div>
+                
+                <!-- Stage 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-stage">
+                        <h3 class="text-grey font-weight-700 mb-3">Этап 3<br>заключительный межрегиональный</h3>
+                        <p class="text-grey">Проводится на более чем 70 в очной форме на площадках олимпиады заключительного этапа в соответствии с графиком проведения</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Progress Dots -->
+            <div class="d-flex justify-content-center mt-5">
+                <div class="progress-dot active"></div>
+                <div class="progress-dot"></div>
+                <div class="progress-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendar Section -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <h2 class="section-title text-black">календарь олимпиады</h2>
+            
+            <!-- Tabs -->
+            <div class="mb-5">
+                <div class="d-flex flex-wrap gap-3 mb-3">
+                    <button class="tab-item active">Муниципальный этап</button>
+                    <button class="tab-item inactive">Региональный этап</button>
+                    <button class="tab-item inactive">Заключительный этап</button>
+                </div>
+                <div class="border-bottom"></div>
+                <div class="bg-blue" style="width: 171px; height: 4px;"></div>
+            </div>
+            
+            <!-- Calendar Events -->
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <h3 class="text-blue font-weight-600">15 октября 2024</h3>
+                    <p class="text-black">Начало отборочного муниципального этапа и открытие подачи заявок в электронной форме на участие в Олимпиаде и подписания согласия на персональную обработку данных.</p>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="text-blue font-weight-600">8 декабря 2024</h3>
+                    <p class="text-black">Закрытие подачи заявок в электронной форме на участие в Олимпиаде.</p>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="text-blue font-weight-600">15 декабря 2024</h3>
+                    <p class="text-black">Окончание отборочного муниципального этапа.</p>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="text-blue font-weight-600">21 декабря 2024</h3>
+                    <p class="text-black">Публикация результатов отборочного муниципального этапа.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documents Section -->
+    <section class="py-5 bg-grey-light">
+        <div class="container">
+            <h2 class="section-title text-black">Документы</h2>
+            
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="document-card">
+                        <div class="d-flex align-items-start">
+                            <div class="me-4">
+                                <i class="fas fa-file-pdf text-blue" style="font-size: 40px;"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-weight-500 text-black mb-0">ПОЛОЖЕНИЕ и РЕГЛАМЕНТ XVII Южно-Российской межрегиональной олимпиады школьников «Архитектура и искусство»</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="document-card">
+                        <div class="d-flex align-items-start">
+                            <div class="me-4">
+                                <i class="fas fa-file-pdf text-blue" style="font-size: 40px;"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-weight-500 text-black mb-0">Согласие на обработку персональных данных и публикацию работ</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Information Section -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <h2 class="section-title text-black">информация</h2>
+            
+            <!-- Tabs -->
+            <div class="mb-5">
+                <div class="d-flex flex-wrap gap-3 mb-3">
+                    <button class="tab-item active">Участникам</button>
+                    <button class="tab-item inactive">Организаторам</button>
+                    <button class="tab-item inactive">Контакты</button>
+                </div>
+                <div class="border-bottom"></div>
+                <div class="bg-blue" style="width: 100px; height: 4px;"></div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <h3 class="text-blue font-weight-700 mb-4">Для участия в отборочном этапе Олимпиады участнику необходимо</h3>
+                    
+                    <!-- Step 1 -->
+                    <div class="accordion-card">
+                        <div class="accordion-header">
+                            <div class="d-flex align-items-start">
+                                <h4 class="text-blue font-weight-600 me-3 mb-0">01</h4>
+                                <div>
+                                    <h5 class="font-weight-600 text-black mb-1">Зарегистрироваться на отборочный этап с 15 октября по 15 декабря 2024 г.</h5>
+                                    <p class="text-black mt-2 mb-0 d-none">Проходя регистрацию на отборочный этап, считается, что Вы сразу регистрируетесь на отборочный муниципальный и отборочный региональный этапы.</p>
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <button class="btn btn-custom btn-blue btn-sm mb-2">Зарегистрироваться</button>
+                                <div>
+                                    <i class="fas fa-chevron-down text-blue"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="accordion-card">
+                        <div class="accordion-header">
+                            <div class="d-flex align-items-start">
+                                <h4 class="text-blue font-weight-600 me-3 mb-0">02</h4>
+                                <div>
+                                    <h5 class="font-weight-600 text-black mb-0">Предоставить на площадку пакет документов</h5>
+                                </div>
+                            </div>
+                            <div>
+                                <i class="fas fa-chevron-down text-blue"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Attention Box -->
+                <div class="col-lg-6">
+                    <div class="bg-blue rounded-3 p-4 text-white h-100">
+                        <h3 class="font-weight-700 mb-3">Внимание!</h3>
+                        <p class="mb-4">Победители и призёры заключительного этапа Олимпиады 2023-2024 г. и Олимпиады 2022-2023 г., участвуют в заключительном этапе Олимпиады 2024-2025 г. без прохождения отборочного муниципального и регионального этапов</p>
+                        <a href="#" class="text-white font-weight-600 text-decoration-none">Подробнее →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Stage Details -->
+            <div class="row g-4 mt-4">
+                <!-- Stage 1 Details -->
+                <div class="col-lg-6">
+                    <h3 class="text-blue font-weight-700 mb-3">Этап 1<br>отборочный муниципальный<br>15.10.2024 — 15.12.2024</h3>
+                    <p class="text-black mb-4">Участники отборочного муниципального этапа представляют или выполняют на формате А3 или А2 на площадке олимпиады две творческие работы на выбор из трех номинаций: «Рисунок», «Живопись», «Композиция».</p>
+                    
+                    <div class="accordion-card">
+                        <div class="accordion-header">
+                            <h5 class="text-blue font-weight-600 mb-0">Задания</h5>
+                            <i class="fas fa-chevron-down text-blue"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-card">
+                        <div class="accordion-header">
+                            <h5 class="text-blue font-weight-600 mb-0">Куда сдавать работы?</h5>
+                            <i class="fas fa-chevron-down text-blue"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-card mb-4">
+                        <div class="accordion-header">
+                            <h5 class="text-blue font-weight-600 mb-0">Где будут результаты?</h5>
+                            <i class="fas fa-chevron-down text-blue"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="alert alert-light border">
+                        <h5 class="text-blue font-weight-600">Внимание!</h5>
+                        <p class="text-black mb-0">Участник предоставляет на площадку пакет документов и две творческие работы ДО даты, указанной в графике проведения отборочного муниципального этапа олимпиады. В день проверки творческие работы не принимаются. Регистрацию на олимпиаду необходимо пройти до 8 декабря 2024 г.</p>
+                    </div>
+                </div>
+                
+                <!-- Stage 2 Details -->
+                <div class="col-lg-6">
+                    <h3 class="text-blue font-weight-700 mb-3">Этап 2<br>отборочный региональный<br>25.12.2024 — 29.01.2025</h3>
+                    <p class="text-black mb-4">К участию в отборочном региональном этапе Олимпиады допускаются победители и призеры отборочного муниципального этапа Олимпиады 2024-2025 г.</p>
+                    
+                    <div class="accordion-card">
+                        <div class="accordion-header">
+                            <h5 class="text-blue font-weight-600 mb-0">В день олимпиады</h5>
+                            <i class="fas fa-chevron-down text-blue"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-card">
+                        <div class="accordion-header">
+                            <h5 class="text-blue font-weight-600 mb-0">Продолжительность выполнения заданий</h5>
+                            <i class="fas fa-chevron-down text-blue"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-card">
+                        <div class="accordion-header">
+                            <h5 class="text-blue font-weight-600 mb-0">Где будут результаты?</h5>
+                            <i class="fas fa-chevron-down text-blue"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+<footer class="footer">
+    <div class="row">
+        <div class="col-md-6 offset-md-1"><img src="images/Logo.png"></div>
+        <div class="col-md-2"><p><h2>aai@sfedu.ru
+<p>+7 (863) 240-21-78</p></h2></p></div>
+        <div class="col-md-2"><p><h2>344080, г. Ростов-на-Дону,     пр. Буденновский, 39</h2></p></div>
+    </div>
+    <div class="offset-md-1" id="endNav">
+        <div class="row offset-md-1">
+
+            <!-- ОБ АКАДЕМИИ -->
+            <div class="col-md-2 footer-section">
+                <div class="footer-header">
+                    <a class="underlined-title" href="abouAcademy.html"><h4>Об Академии</h4></a>
+                    <button class="footer-toggle d-md-none" type="button">
+                        <span class="toggle-icon">+</span>
+                    </button>
+                </div>
+                <ul class="footer-menu">
+                    <li><a href="abouAcademy.html">Информация</a></li>
+                    <li><a href="directsia.html">Дирекция</a></li>
+                    <li><a href="#">Кафедры</a></li>
+                    <li><a href="#">Центры</a></li>
+                    <li><a href="#">Ученый Совет</a></li>
+                    <li><a href="#">Профессия</a></li>
+                    <li><a href="#">Студенческий Совет</a></li>
+                </ul>
+            </div>
+            
+            <!-- АБИТУРИЕНТУ -->
+            <div class="col-md-2 footer-section">
+                <div class="footer-header">
+                    <a class="underlined-title" href="#"><h4>АБИТУРИЕНТУ</h4></a>
+                    <button class="footer-toggle d-md-none" type="button">
+                        <span class="toggle-icon">+</span>
+                    </button>
+                </div>
+                <ul class="footer-menu">
+                    <li><a href="#">Дни открытых дверей</a></li>
+                    <li><a href="#">Профориентационные мероприятия</a></li>
+                    <li><a href="#">Платное обучение</a></li>
+                    <li><a href="#">Целевое обучение</a></li>
+                    <li><a href="#">Бакалавриат / Специалитет</a></li>
+                    <li><a href="#">Магистратура</a></li>
+                    <li><a href="#">Аспирантура / Ассистентура-стажировка</a></li>
+                </ul>
+            </div>
+            
+            <!-- СТУДЕНТУ -->
+            <div class="col-md-2 footer-section">
+                <div class="footer-header">
+                    <a class="underlined-title" href="#"><h4>СТУДЕНТУ</h4></a>
+                    <button class="footer-toggle d-md-none" type="button">
+                        <span class="toggle-icon">+</span>
+                    </button>
+                </div>
+                <ul class="footer-menu">
+                    <li><a href="#">Учебный процесс</a></li>
+                    <li><a href="#">Социальные вопросы</a></li>
+                    <li><a href="#">Внеурочная работа</a></li>
+                    <li><a href="#">Международная деятельность</a></li>
+                </ul>
+            </div>
+            
+            <!-- НАУКА -->
+            <div class="col-md-2 footer-section">
+                <div class="footer-header">
+                    <a class="underlined-title" href="science.html"><h4>НАУКА</h4></a>
+                    <button class="footer-toggle d-md-none" type="button">
+                        <span class="toggle-icon">+</span>
+                    </button>
+                </div>
+                <ul class="footer-menu">
+                    <li><a href="#">Основные научные направления</a></li>
+                    <li><a href="#">Публикационная активность</a></li>
+                    <li><a href="#">Научная деятельность</a></li>
+                    <li><a href="#">Документы</a></li>
+                    <li><a href="#">Молодежная наука</a></li>
+                    <li><a href="#">Действующие СНО в ААИ</a></li>
+                    <li><a href="#">Новости науки</a></li>
+                </ul>
+            </div>
+
+        </div>  
+
+        <div class="row offset-md-1">
+            <!-- ОБРАЗОВАНИЕ -->
+            <div class="col-md-2 footer-section">
+                <div class="footer-header">
+                    <a class="underlined-title" href="#"><h4>ОБРАЗОВАНИЕ</h4></a>
+                    <button class="footer-toggle d-md-none" type="button">
+                        <span class="toggle-icon">+</span>
+                    </button>
+                </div>
+                <ul class="footer-menu">
+                    <li><a href="#">Бакалавриат</a></li>
+                    <li><a href="#">Специалитет</a></li>
+                    <li><a href="#">Магистратура</a></li>
+                    <li><a href="#">Аспирантура</a></li>
+                    <li><a href="#">Ассистентура-стажировка</a></li>
+                    <li><a href="#">Руководители образовательных программ</a></li>
+                </ul>
+            </div>
+            
+            <!-- ОЛИМПИАДА -->
+            <div class="col-md-2 footer-section">
+                <div class="footer-header">
+                    <a class="underlined-title" href="#"><h4>ОЛИМПИАДА</h4></a>
+                    <button class="footer-toggle d-md-none" type="button">
+                        <span class="toggle-icon">+</span>
+                    </button>
+                </div>
+                <ul class="footer-menu">
+                    <li><a href="#">Общая информация</a></li>
+                    <li><a href="#">Победители / Призеры</a></li>
+                    <li><a href="#">Участникам</a></li>
+                    <li><a href="#">Организаторам</a></li>
+                    <li><a href="#">Задания</a></li>
+                    <li><a href="#">Лучшие работы</a></li>
+                    <li><a href="#">Документы</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </div>
+            
+            <!-- ДОВУЗОВСКАЯ ПОДГОТОВКА -->
+            <div class="col-md-2 footer-section">
+                <div class="footer-header">
+                    <a class="underlined-title" href="#"><h4>ДОВУЗОВСКАЯ ПОДГОТОВКА</h4></a>
+                    <button class="footer-toggle d-md-none" type="button">
+                        <span class="toggle-icon">+</span>
+                    </button>
+                </div>
+                <ul class="footer-menu">
+                    <li><a href="#">Общая информация</a></li>
+                    <li><a href="#">Подготовительные курсы</a></li>
+                    <li><a href="#">ДАХШ</a></li>
+                    <li><a href="#">Профильные классы</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </div>
+            
+            <!-- ПОРТФОЛИО -->
+            <div class="col-md-2 footer-section">
+                <div class="footer-header">
+                    <a class="underlined-title" href="#"><h4>ПОРТФОЛИО</h4></a>
+                    <button class="footer-toggle d-md-none" type="button">
+                        <span class="toggle-icon">+</span>
+                    </button>
+                </div>
+                <ul class="footer-menu">
+                    <li><a href="#">Творческие работы преподавателей</a></li>
+                    <li><a href="#">Конкурсные работы студентов</a></li>
+                    <li><a href="#">Выпускные квалификационные работы</a></li>
+                    <li><a href="#">Работы школьников ЮРМОШ</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+.footer {
+    display: block;
+    background-color: #232328;
+    padding: 40px 0;
+}
+
+.footer h5 {
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.footer ul {
+    margin: 10px 0 0;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.footer li a {
+    font-family: "Montserrat-Regular";
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #fdfdfd;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #0056b3;
+}
+
+/* Новые стили для мобильного меню */
+.footer-section {
+    margin-bottom: 15px;
+}
+
+.footer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+}
+
+.footer-toggle {
+    background: none;
+    border: none;
+    color: #fdfdfd;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: transform 0.3s ease;
+}
+
+.footer-toggle:hover {
+    color: #0056b3;
+}
+
+.footer-toggle.active .toggle-icon {
+    transform: rotate(45deg);
+}
+
+.footer-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding-left: 15px;
+}
+
+.footer-menu.active {
+    max-height: 500px; /* Достаточно для показа всех пунктов */
+}
+
+/* На десктопе всегда показываем меню */
+@media (min-width: 768px) {
+    .footer-menu {
+        max-height: none !important;
+        display: block !important;
+    }
+    
+    .footer-header {
+        border-bottom: none;
+        padding: 0;
+    }
+    
+    .footer-section {
+        margin-bottom: 0;
+    }
+}
+
+/* На мобильных скрываем меню по умолчанию */
+@media (max-width: 767.98px) {
+    .footer-menu:not(.active) {
+        display: none;
+    }
+    
+    .footer-section {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .row.offset-md-1 {
+        margin-left: 0;
+    }
+    
+    #endNav .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .col-md-2 {
+        width: 100%;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const footerToggles = document.querySelectorAll('.footer-toggle');
+    
+    footerToggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+            const section = this.closest('.footer-section');
+            const menu = section.querySelector('.footer-menu');
+            const icon = this.querySelector('.toggle-icon');
+            
+            // Закрываем другие открытые меню (опционально)
+            if (!menu.classList.contains('active')) {
+                document.querySelectorAll('.footer-menu.active').forEach(activeMenu => {
+                    if (activeMenu !== menu) {
+                        activeMenu.classList.remove('active');
+                        activeMenu.previousElementSibling.querySelector('.footer-toggle').classList.remove('active');
+                    }
+                });
+            }
+            
+            // Переключаем текущее меню
+            menu.classList.toggle('active');
+            this.classList.toggle('active');
+            
+            // Меняем иконку
+            if (menu.classList.contains('active')) {
+                icon.textContent = '−';
+            } else {
+                icon.textContent = '+';
+            }
+        });
+    });
+});
+</script>
