@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Образовательная программа 54.03.01 Дизайн | ААИ ЮФУ</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Стили из оригинала */
+        :root {
+            --primary-blue: #080D6B;
+            --secondary-pink: #ED1160;
+            --dark-grey: #232328;
+            --medium-grey: #777777;
+            --light-grey: #f3f3f3;
+            --white: #ffffff;
+            --black: #000000;
+            --grey-border: #D2D2D2;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--black);
+            background-color: var(--white);
+            margin: 0;
+            width: 100%;
+        }
+        
+        /* Секции как в оригинале */
+        section {
+            padding: 100px 0;
+        }
+        
+        .hero-section {
+            padding-top: 80px;
+            background-color: var(--white);
+        }
+        
+        .info-section {
+            background-color: var(--white);
+        }
+        
+        .benefits-section {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+        
+        .partners-section,
+        .practice-section {
+            background-color: var(--white);
+        }
+        
+        .contacts-section {
+            background-color: var(--light-grey);
+        }
+        
+        .footer-section {
+            background-color: var(--dark-grey);
+            color: var(--white);
+        }
+        
+        /* Карточки как в оригинале */
+        .info-card {
+            border: 1px solid var(--grey-border);
+            border-radius: 15px;
+            padding: 28px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: var(--white);
+        }
+        
+        .info-card:hover {
+            border-color: var(--primary-blue);
+        }
+        
+        .partner-card,
+        .practice-card {
+            border: 1px solid var(--grey-border);
+            border-radius: 15px;
+            height: 131px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: var(--white);
+        }
+        
+        /* Текст как в оригинале */
+        .program-title {
+            font-size: 80px;
+            font-weight: 500;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            color: var(--black);
+        }
+        
+        .section-title {
+            font-size: 40px;
+            font-weight: 500;
+            text-transform: uppercase;
+            line-height: 1.3;
+            margin-bottom: 60px;
+            color: var(--black);
+        }
+        
+        .text-content {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--black);
+        }
+        
+        .benefits-text {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--white);
+        }
+        
+        /* Навигация "хлебные крошки" */
+        .breadcrumb-item {
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: var(--primary-blue);
+        }
+        
+        .breadcrumb-item.active {
+            color: var(--black);
+        }
+        
+        /* Контакты */
+        .contact-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .contact-photo {
+            background-color: var(--primary-blue);
+            min-height: 300px;
+        }
+        
+        /* Другие программы */
+        .program-filter-btn {
+            border: 1px solid var(--grey-border);
+            border-radius: 50px;
+            padding: 10px 16px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--black);
+            background-color: var(--white);
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .program-filter-btn.active {
+            background-color: var(--dark-grey);
+            color: var(--white);
+            border-color: var(--dark-grey);
+        }
+        
+        .other-program-card {
+            border-radius: 15px;
+            overflow: hidden;
+            height: 187px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        .other-program-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%);
+            opacity: 0.7;
+            mix-blend-mode: multiply;
+            border-radius: 15px;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 992px) {
+            .program-title {
+                font-size: 60px;
+            }
+            
+            .section-title {
+                font-size: 36px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .program-title {
+                font-size: 48px;
+                text-align: center;
+            }
+            
+            .section-title {
+                font-size: 32px;
+                text-align: center;
+            }
+            
+            .text-content {
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .program-title {
+                font-size: 36px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            section {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигация (общий header) -->
+    <header class="header" id="header-placeholder">
+        <!-- Общая навигация будет здесь -->
+    </header>
+
+    <main class="main-content">
+        <!-- ===== СЕКЦИЯ 1: ГЕРОЙ ПРОГРАММЫ ===== -->
+        <section class="hero-section">
+            <div class="container">
+                <!-- Навигация "хлебные крошки" -->
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="me-3">
+                                <!-- Иконка как в оригинале -->
+                                <div style="width: 26px; height: 20px; background-color: var(--primary-blue);"></div>
+                            </div>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb mb-0">
+                                    <li class="breadcrumb-item">образование</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Основная информация -->
+                <div class="row">
+                    <div class="col-lg-8 mb-5 mb-lg-0">
+                        <h1 class="program-title mb-4">54.03.01</h1>
+                        <h1 class="program-title mb-5">Дизайн</h1>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="text-content">
+                                    <strong>Уровень образования:</strong><br>
+                                    <span class="fw-bold">Бакалавриат</span><br><br>
+                                    
+                                    <strong>Направление подготовки:</strong><br>
+                                    Дизайн<br><br>
+                                    
+                                    <strong>Место реализации:</strong><br>
+                                    г.Ростов-на-Дону<br><br>
+                                    
+                                    <strong>Структурное подразделение:</strong><br>
+                                    Академия архитектуры и искусств
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="text-content">
+                                    <strong>Бюджетные места:</strong><br>
+                                    <span class="fw-bold">37</span><br><br>
+                                    
+                                    <strong>Коммерческие места:</strong><br>
+                                    40<br><br>
+                                    
+                                    <strong>Язык обучения:</strong><br>
+                                    Русский
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Графика как в оригинале -->
+                    <div class="col-lg-4">
+                        <div style="height: 456px; position: relative;">
+                            <!-- Геометрические фигуры как в оригинале -->
+                            <div class="position-absolute top-50 start-0 translate-middle-y" style="width: 144px; height: 166px;">
+                                <div class="position-absolute" style="width: 83px; height: 83px; background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%); border-radius: 10px; transform: rotate(30deg);"></div>
+                                <div class="position-absolute top-50 start-0" style="width: 83px; height: 83px; background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%); border-radius: 10px; transform: rotate(30deg); opacity: 0.7;"></div>
+                                <div class="position-absolute top-50 end-0" style="width: 83px; height: 83px; background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%); border-radius: 10px; transform: rotate(30deg); opacity: 0.5;"></div>
+                            </div>
+                            
+                            <div class="position-absolute top-50 start-50 translate-middle" style="width: 144px; height: 166px;">
+                                <div class="position-absolute" style="width: 83px; height: 83px; background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%); border-radius: 10px; transform: rotate(30deg); opacity: 0.8;"></div>
+                                <div class="position-absolute top-50 start-0" style="width: 83px; height: 83px; background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%); border-radius: 10px; transform: rotate(30deg); opacity: 0.6;"></div>
+                                <div class="position-absolute top-50 end-0" style="width: 83px; height: 83px; background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%); border-radius: 10px; transform: rotate(30deg); opacity: 0.4;"></div>
+                            </div>
+                            
+                            <div class="position-absolute top-50 end-0 translate-middle-y" style="width: 144px; height: 166px;">
+                                <div class="position-absolute" style="width: 83px; height: 83px; background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%); border-radius: 10px; transform: rotate(30deg); opacity: 0.9;"></div>
+                                <div class="position-absolute top-50 start-0" style="width: 83px; height: 83px; background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%); border-radius: 10px; transform: rotate(30deg); opacity: 0.7;"></div>
+                                <div class="position-absolute top-50 end-0" style="width: 83px; height: 83px; background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%); border-radius: 10px; transform: rotate(30deg); opacity: 0.5;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 2: О ПРОГРАММЕ ===== -->
+        <section class="info-section">
+            <div class="container">
+                <h2 class="section-title">о программе</h2>
+                
+                <!-- Что будет во время обучения -->
+                <div class="row mb-5">
+                    <div class="col-lg-8 offset-lg-2">
+                        <h3 class="mb-4" style="font-size: 20px; font-weight: 700;">Что будет во время обучения?</h3>
+                        <p class="text-content mb-0">
+                            На первом курсе студенты осваивают азы дизайна – основы композиции, колористику, проектную графику, учатся думать, как дизайнер. Три года подготовки по рисунку и живописи помогают переносить идеи на бумагу, учат работать с цветом. Студенты изучают специализированные компьютерные программы Illustrator, Indesign, Autocad, Autodesk и др. За время обучения студенты создают 10 проектов, которые становятся основой их портфолио. Дизайнеры интерьера изучают специфику общественных и частных интерьеров. Графические дизайнеры учатся выполнять полный комплекс задач по созданию айдентики современного бренда, проектируют печатные издания. Студенты участвуют в региональных и международных конкурсах, приобретая опыт выставочной деятельности и имея возможность показать свой талант.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Кого и зачем учат -->
+                <div class="row mb-5">
+                    <div class="col-lg-8 offset-lg-2">
+                        <h3 class="mb-4" style="font-size: 20px; font-weight: 700;">Кого и зачем учат по данной программе?</h3>
+                        <p class="text-content mb-0">
+                            Программа 54.03.01 Дизайн для выпускников 11 классов.<br>
+                            «Найдите свое место в дизайне — осваивайте его осторожно и вместе с тем интенсивно, и в меру своих возможностей. Таким образом вы сможете изменить мир» - Чарльз Имз.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Где смогут работать -->
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <h3 class="mb-4" style="font-size: 20px; font-weight: 700;">Где смогут работать выпускники программы?</h3>
+                        <p class="text-content mb-0">
+                            Выпускники программы 54.03.01 Дизайн востребованы в проектных бюро и дизайн-студиях, рекламных агентствах и учреждениях культуры и образования. Обладая знаниями компьютерных технологий и английского языка, имеют возможность работать с зарубежными агентствами. Графический дизайнер занимается проектированием визуальной информации и коммуникации, создает элементы фирменного стиля для бизнеса. Дизайнер интерьера проектирует отдельные объекты архитектурной среды.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 3: ПРЕИМУЩЕСТВА ПРОГРАММЫ ===== -->
+        <section class="benefits-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1">
+                        <div class="bg-white rounded-3 p-4 p-lg-5">
+                            <h3 class="mb-4" style="font-size: 22px; font-weight: 700; color: var(--white);">Преимущества программы</h3>
+                            <p class="benefits-text mb-0">
+                                Современная программа подготовки по направлению 54.03.01 Дизайн позволяет студентам получить фундаментальные знания и профессиональные навыки, востребованные на рынке труда. Выпускники программы способны решать широкий круг проектных задач, разбираются в современном искусстве и тенденциях визуальной культуры.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 4: ДИСЦИПЛИНЫ ===== -->
+        <section class="info-section">
+            <div class="container">
+                <h2 class="section-title">дисциплины</h2>
+                
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <!-- Набор базовых дисциплин -->
+                        <div class="info-card mb-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div style="font-size: 22px; font-weight: 600; text-transform: uppercase;">
+                                    набор базовых дисциплин
+                                </div>
+                                <div style="width: 13px; height: 6.5px; background-color: var(--black);"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Набор профильных дисциплин -->
+                        <div class="info-card">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div style="font-size: 22px; font-weight: 600; text-transform: uppercase;">
+                                    набор профильных дисциплин
+                                </div>
+                                <div style="width: 13px; height: 6.5px; background-color: var(--black);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 5: ПАРТНЕРЫ ПРОГРАММЫ ===== -->
+        <section class="partners-section">
+            <div class="container">
+                <h2 class="section-title">партнеры программы</h2>
+                
+                <div class="row">
+                    <!-- Партнер 1 -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="partner-card" style="background-color: #26B05F;">
+                            <!-- Зеленый логотип -->
+                        </div>
+                    </div>
+                    
+                    <!-- Партнер 2 -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="partner-card">
+                            <!-- Логотип 1 -->
+                        </div>
+                    </div>
+                    
+                    <!-- Партнер 3 -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="partner-card">
+                            <!-- Логотип 2 -->
+                        </div>
+                    </div>
+                    
+                    <!-- Партнер 4 -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="partner-card">
+                            <!-- Логотип 3 -->
+                        </div>
+                    </div>
+                    
+                    <!-- Партнер 5 -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="partner-card">
+                            <div class="text-center" style="font-size: 14px; font-weight: 500;">
+                                ООО «АРТ-Отель»
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Партнер 6 -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="partner-card">
+                            <!-- Логотип 4 -->
+                        </div>
+                    </div>
+                    
+                    <!-- Партнер 7 -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="partner-card">
+                            <div class="text-start ps-3" style="font-size: 14px; font-weight: 500;">
+                                ООО «Арх-Деко»
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 6: МЕСТА ПРОВЕДЕНИЯ ПРАКТИК ===== -->
+        <section class="practice-section">
+            <div class="container">
+                <h2 class="section-title">места проведения практик</h2>
+                
+                <div class="row">
+                    <!-- Место практики 1 -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="practice-card">
+                            <!-- Логотип 1 -->
+                        </div>
+                    </div>
+                    
+                    <!-- Место практики 2 -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="practice-card">
+                            <!-- Логотип 2 -->
+                        </div>
+                    </div>
+                    
+                    <!-- Место практики 3 -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="practice-card">
+                            <div class="text-center" style="font-size: 14px; font-weight: 500;">
+                                ООО «ЭКТ»
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Место практики 4 -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="practice-card">
+                            <!-- Логотип 3 -->
+                        </div>
+                    </div>
+                    
+                    <!-- Место практики 5 -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="practice-card">
+                            <!-- Логотип 4 -->
+                        </div>
+                    </div>
+                    
+                    <!-- Место практики 6 -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="practice-card">
+                            <!-- Логотип 5 -->
+                        </div>
+                    </div>
+                    
+                    <!-- Место практики 7 -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="practice-card">
+                            <div class="text-center" style="font-size: 14px; font-weight: 500;">
+                                ООО «Фирма апикс»
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Место практики 8 -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="practice-card">
+                            <!-- Логотип 6 -->
+                        </div>
+                    </div>
+                    
+                    <!-- Место практики 9 -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="practice-card">
+                            <!-- Логотип 7 -->
+                        </div>
+                    </div>
+                    
+                    <!-- Место практики 10 -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="practice-card">
+                            <div class="text-start ps-3" style="font-size: 14px; font-weight: 500;">
+                                ООО «Арх-Деко»
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 7: КОНТАКТЫ РУКОВОДИТЕЛЯ ===== -->
+        <section class="contacts-section">
+            <div class="container">
+                <h2 class="section-title">Контакты</h2>
+                
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="contact-card">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <div class="contact-photo d-flex align-items-center justify-content-center">
+                                        <!-- Фото или иконка -->
+                                        <div class="text-white text-center">
+                                            <div style="width: 149px; height: 215px; background-color: var(--white);"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="p-4">
+                                        <h3 class="mb-3" style="font-size: 18px; font-weight: 500;">
+                                            Руководитель программы:<br>
+                                            <span style="font-size: 18px; font-weight: 700;">Абаимова Евгения Леонидовна</span>
+                                        </h3>
+                                        
+                                        <div class="text-content">
+                                            <strong>тел.:</strong> +7 (906) 418-17-90<br>
+                                            <strong>e-mail:</strong> abaimova@sfedu.ru<br>
+                                            <strong>Группа</strong> ВКонтакте
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 8: ДРУГИЕ ПРОГРАММЫ ===== -->
+        <section class="info-section">
+            <div class="container">
+                <h2 class="section-title">другие программы</h2>
+                
+                <!-- Фильтр -->
+                <div class="mb-5">
+                    <button class="program-filter-btn active">бакалавриат</button>
+                    <button class="program-filter-btn">Специалитет</button>
+                    <button class="program-filter-btn">магистратура</button>
+                    <button class="program-filter-btn">аспирантура</button>
+                </div>
+                
+                <!-- Карточки программ -->
+                <div class="row">
+                    <!-- Программа 1 -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="other-program-card p-3 d-flex flex-column justify-content-end">
+                            <div style="font-size: 14px; font-weight: 700; color: var(--white); position: relative; z-index: 2;">
+                                07.03.01
+                            </div>
+                            <div style="font-size: 14px; font-weight: 500; color: var(--white); position: relative; z-index: 2;">
+                                Архитектура
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Программа 2 -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="other-program-card p-3 d-flex flex-column justify-content-end">
+                            <div style="font-size: 14px; font-weight: 700; color: var(--white); position: relative; z-index: 2;">
+                                07.03.02
+                            </div>
+                            <div style="font-size: 14px; font-weight: 500; color: var(--white); position: relative; z-index: 2;">
+                                Реконструкция и реставрация архитектурного наследия
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Программа 3 -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="other-program-card p-3 d-flex flex-column justify-content-end">
+                            <div style="font-size: 14px; font-weight: 700; color: var(--white); position: relative; z-index: 2;">
+                                07.03.04
+                            </div>
+                            <div style="font-size: 14px; font-weight: 500; color: var(--white); position: relative; z-index: 2;">
+                                Градостроительство
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Программа 4 -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="other-program-card p-3 d-flex flex-column justify-content-end">
+                            <div style="font-size: 14px; font-weight: 700; color: var(--white); position: relative; z-index: 2;">
+                                09.03.01
+                            </div>
+                            <div style="font-size: 14px; font-weight: 500; color: var(--white); position: relative; z-index: 2;">
+                                Информатика и вычислительная техника
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Программа 5 -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="other-program-card p-3 d-flex flex-column justify-content-end">
+                            <div style="font-size: 14px; font-weight: 700; color: var(--white); position: relative; z-index: 2;">
+                                44.03.05
+                            </div>
+                            <div style="font-size: 14px; font-weight: 500; color: var(--white); position: relative; z-index: 2;">
+                                Педагогическое образование с двумя профилями подготовки
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Программа 6 -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="other-program-card p-3 d-flex flex-column justify-content-end">
+                            <div style="font-size: 14px; font-weight: 700; color: var(--white); position: relative; z-index: 2;">
+                                54.03.01
+                            </div>
+                            <div style="font-size: 14px; font-weight: 500; color: var(--white); position: relative; z-index: 2;">
+                                Дизайн
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Программа 7 -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="other-program-card p-3 d-flex flex-column justify-content-end">
+                            <div style="font-size: 14px; font-weight: 700; color: var(--white); position: relative; z-index: 2;">
+                                54.03.01
+                            </div>
+                            <div style="font-size: 14px; font-weight: 500; color: var(--white); position: relative; z-index: 2;">
+                                Дизайн костюма
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Программа 8 -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="other-program-card p-3 d-flex flex-column justify-content-end">
+                            <div style="font-size: 14px; font-weight: 700; color: var(--white); position: relative; z-index: 2;">
+                                54.03.02
+                            </div>
+                            <div style="font-size: 14px; font-weight: 500; color: var(--white); position: relative; z-index: 2;">
+                                Декоративно-прикладное искусство и народные промыслы
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Программа 9 -->
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="other-program-card p-3 d-flex flex-column justify-content-end">
+                            <div style="font-size: 14px; font-weight: 700; color: var(--white); position: relative; z-index: 2;">
+                                54.03.03
+                            </div>
+                            <div style="font-size: 14px; font-weight: 500; color: var(--white); position: relative; z-index: 2;">
+                                Искусство костюма и текстиля
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер (общий) -->
+    <section class="footer-section">
+        <div class="container">
+            <!-- Футер как в оригинале -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="py-5">
+                        <!-- Контент футера из оригинала -->
+                        <p style="font-size: 14px; font-weight: 400; color: #8C8C8C;">
+                            1988 — 2024  Академия архитектуры и искусств<br>
+                            Южного Федерального Университета
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

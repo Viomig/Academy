@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Академия архитектуры и искусств - 07.03.01 Архитектура</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- Montserrat Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<style>
+    /* ===== БАЗОВЫЕ СТИЛИ И ПЕРЕМЕННЫЕ ===== */
+    :root {
+        --primary-blue: #080D6B;
+        --secondary-pink: #ED1160;
+        --dark-grey: #232328;
+        --medium-grey: #777777;
+        --light-grey: #f3f3f3;
+        --white: #ffffff;
+        --black: #000000;
+        --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%);
+        --gradient-dark: linear-gradient(45deg, #131313, var(--primary-blue));
+    }
+
+    /* ===== ОБЩИЕ СТИЛИ ===== */
+    body {
+        font-family: 'Montserrat', sans-serif;
+        color: var(--black);
+        line-height: 1.6;
+    }
+
+    /* ===== ТИПОГРАФИКА ===== */
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 500;
+        margin-bottom: 1rem;
+    }
+
+    .section-title {
+        font-size: 40px;
+        font-weight: 500;
+        text-transform: uppercase;
+        line-height: 1.3;
+        margin-bottom: 40px;
+        position: relative;
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background-color: var(--primary-blue);
+    }
+
+    /* ===== СЕКЦИИ ===== */
+    section {
+        padding: 80px 0;
+    }
+
+    @media (max-width: 768px) {
+        section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            font-size: 32px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        section {
+            padding: 40px 0;
+        }
+        
+        .section-title {
+            font-size: 28px;
+        }
+    }
+
+    /* ===== НАВИГАЦИЯ ===== */
+    .navbar {
+        padding: 1rem 0;
+        transition: all 0.3s ease;
+        background: var(--gradient-dark) !important;
+    }
+
+    .navbar-brand {
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: var(--white) !important;
+    }
+
+    .nav-link {
+        font-weight: 600;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        margin: 0 0.5rem;
+        transition: color 0.3s ease;
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        color: var(--secondary-pink) !important;
+    }
+
+    .navbar-toggler {
+        border: none;
+        padding: 0;
+        color: var(--white);
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: none;
+    }
+
+    .search-container .form-control {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: var(--white);
+    }
+
+    .search-container .form-control::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    .search-container .btn-outline-light {
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* ===== ГЕРОЙ СЕКЦИЯ ===== */
+    .hero-section {
+        margin-top: 73px;
+    }
+
+    .hero-banner {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                    url('image/hero-bg.jpg') center/cover no-repeat;
+        min-height: 60vh;
+        position: relative;
+    }
+
+    .hero-content h1 {
+        font-size: 60px;
+        font-weight: 500;
+        line-height: 1.1;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+    }
+
+    .program-info p {
+        margin-bottom: 0.75rem;
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .program-info strong {
+        color: var(--secondary-pink);
+        font-weight: 600;
+    }
+
+    @media (max-width: 992px) {
+        .hero-content h1 {
+            font-size: 48px;
+        }
+        
+        .program-info p {
+            font-size: 1rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero-content h1 {
+            font-size: 36px;
+        }
+        
+        .hero-banner {
+            min-height: 50vh;
+        }
+    }
+
+    /* ===== КАРТОЧКИ ===== */
+    .partner-card {
+        transition: all 0.3s ease;
+        border: none;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        height: 100%;
+    }
+
+    .partner-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .partner-card img {
+        max-height: 80px;
+        width: auto;
+        object-fit: contain;
+        padding: 1rem;
+    }
+
+    .program-card {
+        border-radius: 15px;
+        overflow: hidden;
+        min-height: 250px;
+        background-size: cover;
+        background-position: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+    .program-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
+        z-index: 1;
+    }
+
+    /* ===== АККОРДЕОН ===== */
+    .accordion-button {
+        font-size: 1.25rem;
+        font-weight: 500;
+        padding: 1.5rem;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 12px !important;
+        margin-bottom: 0.5rem;
+        background: var(--white);
+        transition: all 0.3s ease;
+    }
+
+    .accordion-button:not(.collapsed) {
+        background-color: var(--white);
+        color: var(--primary-blue);
+        border-color: var(--primary-blue);
+        box-shadow: 0 5px 15px rgba(8, 13, 107, 0.1);
+    }
+
+    .accordion-button:focus {
+        border-color: var(--primary-blue);
+        box-shadow: 0 0 0 0.25rem rgba(8, 13, 107, 0.25);
+    }
+
+    .accordion-button::after {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23080D6B'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    }
+
+    .accordion-button:not(.collapsed)::after {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ED1160'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    }
+
+    .accordion-body {
+        padding: 1.5rem;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-top: none;
+        border-radius: 0 0 12px 12px;
+        background: var(--white);
+    }
+
+    /* ===== ПРАКТИКИ ===== */
+    .practice-map {
+        min-height: 300px;
+        background: var(--light-grey);
+        border-radius: 15px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .practice-location {
+        padding: 2rem;
+        background: var(--white);
+        border-radius: 15px;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        text-align: center;
+        height: 100%;
+    }
+
+    .practice-location:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .practice-location .icon {
+        font-size: 48px;
+        margin-bottom: 1rem;
+    }
+
+    /* ===== ПРЕИМУЩЕСТВА ===== */
+    .advantages-card {
+        background: var(--gradient-dark);
+        border: none;
+        border-radius: 15px;
+        color: var(--white);
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    }
+
+    .advantages-card .card-body {
+        padding: 3rem;
+    }
+
+    /* ===== КОНТАКТЫ ===== */
+    .contact-section {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+
+    .contact-image {
+        width: 100%;
+        height: 300px;
+        background: var(--gradient-primary);
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--white);
+    }
+
+    .contact-image i {
+        font-size: 100px;
+    }
+
+    .contact-info p {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    .contact-info a {
+        color: var(--primary-blue);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .contact-info a:hover {
+        color: var(--secondary-pink);
+    }
+
+    /* ===== КНОПКИ ===== */
+    .btn {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        padding: 0.75rem 1.5rem;
+    }
+
+    .btn-dark-grey {
+        background: var(--dark-grey);
+        border: none;
+        color: var(--white);
+    }
+
+    .btn-dark-grey:hover,
+    .btn-dark-grey.active {
+        background: var(--gradient-primary);
+        color: var(--white);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(8, 13, 107, 0.3);
+    }
+
+    .btn-outline-dark-grey {
+        border: 2px solid var(--dark-grey);
+        color: var(--dark-grey);
+        background: transparent;
+    }
+
+    .btn-outline-dark-grey:hover {
+        background: var(--gradient-dark);
+        border-color: transparent;
+        color: var(--white);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-blue {
+        background: var(--primary-blue);
+        color: var(--white);
+        border: none;
+    }
+
+    .btn-blue:hover {
+        background: var(--gradient-primary);
+        color: var(--white);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(8, 13, 107, 0.3);
+    }
+
+    /* ===== ФУТЕР ===== */
+    footer {
+        background: var(--gradient-dark);
+        color: var(--white);
+        position: relative;
+    }
+
+    .footer-title {
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        position: relative;
+    }
+
+    .footer-title::after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background: var(--secondary-pink);
+    }
+
+    .footer-menu {
+        margin-top: 0.5rem;
+    }
+
+    .footer-link {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        font-size: 0.9rem;
+        display: block;
+        margin-bottom: 0.75rem;
+        transition: all 0.3s ease;
+        padding: 0.25rem 0;
+    }
+
+    .footer-link:hover {
+        color: var(--secondary-pink);
+        transform: translateX(5px);
+    }
+
+    .footer-contact p {
+        font-size: 0.9rem;
+        margin-bottom: 0.75rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    .social-link {
+        display: inline-block;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 1.25rem;
+        margin-right: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+        color: var(--secondary-pink);
+        transform: translateY(-3px);
+    }
+
+    .footer-logo {
+        width: 150px;
+        height: 150px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+    }
+
+    /* ===== КНОПКА "НАВЕРХ" ===== */
+    .scroll-top-btn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 1000;
+    }
+
+    .scroll-top-btn .btn {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+        background: var(--gradient-primary);
+        border: none;
+        box-shadow: 0 5px 15px rgba(8, 13, 107, 0.3);
+    }
+
+    .scroll-top-btn .btn.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .scroll-top-btn .btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(8, 13, 107, 0.4);
+    }
+
+    /* ===== АНИМАЦИИ ===== */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .fade-in-up {
+        animation: fadeInUp 0.6s ease forwards;
+    }
+
+    /* ===== УТИЛИТЫ ===== */
+    .min-vh-50 {
+        min-height: 50vh;
+    }
+
+    .z-2 {
+        z-index: 2;
+    }
+
+    .bg-gradient-dark {
+        background: var(--gradient-dark);
+    }
+
+    .text-gradient {
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    /* ===== АДАПТИВНОСТЬ ===== */
+    @media (max-width: 992px) {
+        .navbar-collapse {
+            background: var(--gradient-dark);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-top: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-link {
+            margin: 0.5rem 0;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .search-container {
+            margin-top: 1rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .btn-group {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .btn-group .btn {
+            margin-bottom: 0.5rem;
+            margin-right: 0.5rem;
+        }
+        
+        .program-card {
+            min-height: 200px;
+        }
+        
+        .advantages-card .card-body {
+            padding: 2rem;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .hero-content h1 {
+            font-size: 32px;
+        }
+        
+        .practice-location {
+            padding: 1.5rem;
+        }
+        
+        .footer-logo {
+            width: 100px;
+            height: 100px;
+        }
+    }
+</style>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <div class="brand-logo">
+                    <!-- Логотип будет здесь -->
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Об Академии</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Абитуриенту</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Студенту</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Образование</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Наука</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Олимпиада</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Довузовская подготовка</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Портфолио</a></li>
+                </ul>
+                
+                <div class="search-container d-none d-lg-block">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Что вы ищете?">
+                        <button class="btn btn-outline-light" type="button">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Герой секция -->
+    <section class="hero-section">
+        <div class="container-fluid p-0">
+            <div class="hero-banner position-relative">
+                <div class="container position-relative z-2 py-5">
+                    <div class="row align-items-center min-vh-50">
+                        <div class="col-lg-8">
+                            <div class="hero-content text-white">
+                                <h1 class="hero-title">07.03.01 <br>Архитектура</h1>
+                                <div class="program-info">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p><strong>Уровень образования:</strong> Бакалавриат</p>
+                                            <p><strong>Направление подготовки:</strong> Архитектура</p>
+                                            <p><strong>Место реализации:</strong> г. Ростов-на-Дону</p>
+                                            <p><strong>Структурное подразделение:</strong> Академия архитектуры и искусств</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p><strong>Бюджетные места:</strong> 90</p>
+                                            <p><strong>Коммерческие места:</strong> 25</p>
+                                            <p><strong>Язык обучения:</strong> Русский</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- О программе -->
+    <section>
+        <div class="container">
+            <h2 class="section-title mb-5">О программе</h2>
+            
+            <div class="row mb-5">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h3 class="h4 fw-bold mb-4">Что будет во время обучения?</h3>
+                    <p class="lead">Образовательный каркас программы подготовки 07.03.01 «Архитектура» — это взаимосвязанная система дисциплин, развивающая общекультурные и формирующая профессиональные компетенции.</p>
+                    <p>Данная программа бакалавриата будет реализована высококвалифицированным профессорско-преподавательским составом Академии архитектуры и искусств ЮФУ с привлечением соответствующих организаций-партнеров.</p>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="h4 fw-bold mb-4">Кого и зачем учат по данной программе?</h3>
+                    <p class="lead">Главная цель программы 07.03.01 «Архитектура» — выпуск специалистов, востребованных в сфере архитектурно-строительной деятельности.</p>
+                    <p>Достичь поставленную цель предполагается в том числе за счет вовлечения представителей реального сектора экономики (работодателей, экспертов, чиновников) в процессы формирования концепции подготовки, образовательного процесса, контроля полученных знаний и итоговой аттестации.</p>
+                </div>
+            </div>
+            
+            <!-- Преимущества -->
+            <div class="advantages-card card mb-5 fade-in-up">
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8">
+                            <h3 class="h3 fw-bold mb-4">Преимущества программы</h3>
+                            <p class="mb-0 fs-5">Основная общая концепция программы — синхронизация всех дисциплин и практик, позволяющая получить полноценное профессиональное образование направления подготовки 07.03.01 «Архитектура», бакалавриат. Конкурентным преимуществом программы являются студентоориентированность, актуальность преподаваемых дисциплин, плотное взаимодействие с заявленными организациями-партнерами на всех этапах обучения, а также прогнозируемая широкая востребованность и трудоустроенность выпускников программы.</p>
+                        </div>
+                        <div class="col-lg-4 text-center">
+                            <i class="bi bi-award-fill display-1 text-pink"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="h4 fw-bold mb-4">Где смогут работать выпускники программы?</h3>
+                    <p class="lead">Высокий уровень подготовки обеспечит будущих бакалавров возможностью эффективно заниматься архитектурной деятельностью в различных профильных организациях.</p>
+                    <p>Накопленный опыт и традиции, поддержка нескольких научных направлений, научный потенциал, высококвалифицированный профессорско-преподавательский состав, налаженное взаимодействие с потенциальными работодателями позволят выпускникам программы не только успешно решить задачу гарантированного трудоустройства по специальности или продолжить обучение в магистратуре, но и активно заниматься научно-исследовательской работой.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Места проведения практик -->
+    <section class="bg-light">
+        <div class="container">
+            <h2 class="section-title mb-5">Места проведения практик</h2>
+            
+            <div class="practice-map position-relative mb-5 fade-in-up">
+                <div class="text-center py-5 px-3">
+                    <h3 class="h4 fw-bold mb-4">География практик</h3>
+                    <p class="lead mb-0">Санкт-Петербург и пригороды, Казань, Москва и пригороды, Вологодская область, Псков, Ростов-на-Дону и города Ростовской области и др.</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="practice-location fade-in-up">
+                        <div class="icon text-blue">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+                        <h4 class="h5 fw-bold">Санкт-Петербург</h4>
+                        <p class="text-muted mb-0">Культурная столица России с богатым архитектурным наследием</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="practice-location fade-in-up">
+                        <div class="icon text-blue">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+                        <h4 class="h5 fw-bold">Москва</h4>
+                        <p class="text-muted mb-0">Современная архитектура и исторические памятники</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="practice-location fade-in-up">
+                        <div class="icon text-blue">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+                        <h4 class="h5 fw-bold">Ростов-на-Дону</h4>
+                        <p class="text-muted mb-0">Крупнейший культурный и деловой центр Юга России</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Партнеры программы -->
+    <section>
+        <div class="container">
+            <h2 class="section-title mb-5">Партнеры программы</h2>
+            
+            <div class="row g-4">
+                <!-- Партнер 1 -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="partner-card card h-100 fade-in-up">
+                        <div class="card-body d-flex align-items-center justify-content-center p-3">
+                            <img src="image/partner1.png" alt="Партнер 1" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Партнер 2 -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="partner-card card h-100 fade-in-up">
+                        <div class="card-body d-flex align-items-center justify-content-center p-3">
+                            <img src="image/partner2.png" alt="Партнер 2" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Партнер 3 -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="partner-card card h-100 fade-in-up">
+                        <div class="card-body d-flex align-items-center justify-content-center p-3">
+                            <img src="image/partner3.png" alt="Партнер 3" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Партнер 4 -->
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="partner-card card h-100 fade-in-up">
+                        <div class="card-body d-flex align-items-center justify-content-center p-3">
+                            <span class="fw-bold fs-5 text-dark">ООО «АМТ»</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Дисциплины -->
+    <section class="bg-light">
+        <div class="container">
+            <h2 class="section-title mb-5">Дисциплины</h2>
+            
+            <div class="accordion" id="disciplinesAccordion">
+                <!-- Базовые дисциплины -->
+                <div class="accordion-item mb-3 fade-in-up">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#basicDisciplines">
+                            <i class="bi bi-book me-2"></i>
+                            Набор базовых дисциплин
+                        </button>
+                    </h3>
+                    <div id="basicDisciplines" class="accordion-collapse collapse show" data-bs-parent="#disciplinesAccordion">
+                        <div class="accordion-body">
+                            <p class="lead">Фундаментальные дисциплины, формирующие базовые компетенции архитектора.</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2 d-flex">
+                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                    <span>История архитектуры и градостроительства</span>
+                                </li>
+                                <li class="mb-2 d-flex">
+                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                    <span>Начертательная геометрия</span>
+                                </li>
+                                <li class="mb-2 d-flex">
+                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                    <span>Архитектурное проектирование</span>
+                                </li>
+                                <li class="mb-2 d-flex">
+                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                    <span>Строительные конструкции</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Профессиональные дисциплины -->
+                <div class="accordion-item mb-3 fade-in-up">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#professionalDisciplines">
+                            <i class="bi bi-briefcase me-2"></i>
+                            Набор профессиональных дисциплин
+                        </button>
+                    </h3>
+                    <div id="professionalDisciplines" class="accordion-collapse collapse" data-bs-parent="#disciplinesAccordion">
+                        <div class="accordion-body">
+                            <p class="lead">Специализированные дисциплины для глубокого погружения в профессию.</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2 d-flex">
+                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                    <span>Архитектурная физика</span>
+                                </li>
+                                <li class="mb-2 d-flex">
+                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                    <span>Ландшафтная архитектура</span>
+                                </li>
+                                <li class="mb-2 d-flex">
+                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                    <span>Дизайн архитектурной среды</span>
+                                </li>
+                                <li class="mb-2 d-flex">
+                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                    <span>Реставрация памятников архитектуры</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Элективные дисциплины -->
+                <div class="accordion-item fade-in-up">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#electiveDisciplines">
+                            <i class="bi bi-list-check me-2"></i>
+                            Элективные дисциплины
+                        </button>
+                    </h3>
+                    <div id="electiveDisciplines" class="accordion-collapse collapse" data-bs-parent="#disciplinesAccordion">
+                        <div class="accordion-body">
+                            <p class="lead">Дисциплины по выбору для индивидуальной траектории развития.</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2 d-flex">
+                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                    <span>Цифровые технологии в архитектуре</span>
+                                </li>
+                                <li class="mb-2 d-flex">
+                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                    <span>Урбанистика и городское планирование</span>
+                                </li>
+                                <li class="mb-2 d-flex">
+                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                    <span>Экологическая архитектура</span>
+                                </li>
+                                <li class="mb-2 d-flex">
+                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
+                                    <span>Менеджмент в архитектуре</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title mb-5">Контакты</h2>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-3 mb-4 mb-lg-0">
+                    <div class="contact-image fade-in-up">
+                        <i class="bi bi-person-badge"></i>
+                    </div>
+                </div>
+                <div class="col-lg-9 fade-in-up">
+                    <h3 class="h2 fw-bold mb-3">Руководитель программы</h3>
+                    <h4 class="h3 text-gradient mb-4">Шеремет Анастасия Анатольевна</h4>
+                    
+                    <div class="contact-info">
+                        <p class="fs-5 mb-3">
+                            <i class="bi bi-telephone me-2 text-primary"></i>
+                            тел.: <a href="tel:+79064181790">+7 (906) 418-17-90</a>
+                        </p>
+                        <p class="fs-5 mb-3">
+                            <i class="bi bi-envelope me-2 text-primary"></i>
+                            e-mail: <a href="mailto:aasheremet@sfedu.ru">aasheremet@sfedu.ru</a>
+                        </p>
+                        <p class="fs-5 mb-0">
+                            <i class="bi bi-people me-2 text-primary"></i>
+                            Группа <a href="#" class="fw-bold">ВКонтакте</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Другие программы -->
+    <section>
+        <div class="container">
+            <h2 class="section-title mb-5">Другие программы</h2>
+            
+            <div class="mb-5">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-dark-grey active">Бакалавриат</button>
+                    <button type="button" class="btn btn-outline-dark-grey">Специалитет</button>
+                    <button type="button" class="btn btn-outline-dark-grey">Магистратура</button>
+                    <button type="button" class="btn btn-outline-dark-grey">Аспирантура</button>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Программа 1 -->
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="program-card card h-100 border-0 text-white fade-in-up" style="background-image: url('image/program1-bg.jpg');">
+                        <div class="card-overlay"></div>
+                        <div class="card-body position-relative z-2 d-flex flex-column">
+                            <h5 class="card-title fw-bold fs-4">07.03.01</h5>
+                            <p class="card-text flex-grow-1 fs-5">Архитектура</p>
+                            <small class="text-white-50">Бакалавриат</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Программа 2 -->
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="program-card card h-100 border-0 text-white fade-in-up" style="background-image: url('image/program2-bg.jpg');">
+                        <div class="card-overlay"></div>
+                        <div class="card-body position-relative z-2 d-flex flex-column">
+                            <h5 class="card-title fw-bold fs-4">07.03.02</h5>
+                            <p class="card-text flex-grow-1 fs-5">Реконструкция и реставрация архитектурного наследия</p>
+                            <small class="text-white-50">Бакалавриат</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Программа 3 -->
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="program-card card h-100 border-0 text-white fade-in-up" style="background-image: url('image/program3-bg.jpg');">
+                        <div class="card-overlay"></div>
+                        <div class="card-body position-relative z-2 d-flex flex-column">
+                            <h5 class="card-title fw-bold fs-4">07.03.04</h5>
+                            <p class="card-text flex-grow-1 fs-5">Градостроительство</p>
+                            <small class="text-white-50">Бакалавриат</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Программа 4 -->
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="program-card card h-100 border-0 text-white fade-in-up" style="background-image: url('image/program4-bg.jpg');">
+                        <div class="card-overlay"></div>
+                        <div class="card-body position-relative z-2 d-flex flex-column">
+                            <h5 class="card-title fw-bold fs-4">09.03.01</h5>
+                            <p class="card-text flex-grow-1 fs-5">Информатика и вычислительная техника</p>
+                            <small class="text-white-50">Бакалавриат</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container py-5">
+            <div class="row">
+                <!-- Колонка 1 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <h5 class="footer-title">Абитуриенту</h5>
+                    <ul class="footer-menu list-unstyled">
+                        <li><a href="#" class="footer-link">Дни открытых дверей</a></li>
+                        <li><a href="#" class="footer-link">Профориентационные мероприятия</a></li>
+                        <li><a href="#" class="footer-link">Платное обучение</a></li>
+                        <li><a href="#" class="footer-link">Целевое обучение</a></li>
+                        <li><a href="#" class="footer-link">Бакалавриат / Специалитет</a></li>
+                        <li><a href="#" class="footer-link">Магистратура</a></li>
+                        <li><a href="#" class="footer-link">Аспирантура</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Колонка 2 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <h5 class="footer-title">Об Академии</h5>
+                    <ul class="footer-menu list-unstyled">
+                        <li><a href="#" class="footer-link">Информация</a></li>
+                        <li><a href="#" class="footer-link">Дирекция</a></li>
+                        <li><a href="#" class="footer-link">Кафедры</a></li>
+                        <li><a href="#" class="footer-link">Центры</a></li>
+                        <li><a href="#" class="footer-link">Ученый Совет</a></li>
+                        <li><a href="#" class="footer-link">Профсоюз</a></li>
+                        <li><a href="#" class="footer-link">Студенческий Совет</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Колонка 3 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <h5 class="footer-title">Контакты</h5>
+                    <div class="footer-contact">
+                        <p class="mb-2">aai@sfedu.ru</p>
+                        <p class="mb-2">+7 (863) 240-21-78</p>
+                        <p class="mb-0">344080, г. Ростов-на-Дону, пр. Буденновский, 39</p>
+                    </div>
+                    
+                    <div class="social-links mt-4">
+                        <a href="#" class="social-link"><i class="bi bi-vk"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Колонка 4 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="footer-logo mx-auto">
+                        <i class="bi bi-building display-4"></i>
+                    </div>
+                    <p class="text-center mt-3">1988 — 2024 Академия архитектуры и искусств<br>Южного Федерального Университета</p>
+                </div>
+            </div>
+            
+            <hr class="my-4" style="border-color: rgba(255, 255, 255, 0.1);">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">© 2024 Академия архитектуры и искусств ЮФУ</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-white text-decoration-none me-3">Политика конфиденциальности</a>
+                    <a href="#" class="text-white text-decoration-none">Карта сайта</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Кнопка "Наверх" -->
+        <div class="scroll-top-btn">
+            <button class="btn" id="scrollTopBtn">
+                <i class="bi bi-chevron-up"></i>
+            </button>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+
+    <script>
+        // Плавный скролл для навигации
+        document.addEventListener('DOMContentLoaded', function() {
+            // Кнопка "Наверх"
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.classList.add('visible');
+                } else {
+                    scrollTopBtn.classList.remove('visible');
+                }
+                
+                // Эффект навигации при скролле
+                const navbar = document.querySelector('.navbar');
+                if (window.pageYOffset > 100) {
+                    navbar.style.padding = '0.5rem 0';
+                    navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                } else {
+                    navbar.style.padding = '1rem 0';
+                    navbar.style.boxShadow = 'none';
+                }
+            });
+            
+            scrollTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Закрытие мобильного меню при клике на ссылку
+            const navLinks = document.querySelectorAll('.nav-link');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (navbarCollapse.classList.contains('show')) {
+                        const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                        bsCollapse.hide();
+                    }
+                });
+            });
+            
+            // Плавная прокрутка для якорей
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    
+                    if (href === '#' || href === '#!') return;
+                    
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        
+                        if (target) {
+                            window.scrollTo({
+                                top: target.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+            
+            // Анимация появления элементов при скролле
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.fade-in-up');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.2;
+                    
+                    if (elementPosition < screenPosition && !element.classList.contains('animated')) {
+                        element.style.animation = 'fadeInUp 0.6s ease forwards';
+                        element.classList.add('animated');
+                    }
+                });
+            };
+            
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Инициализация
+            
+            // Активные кнопки фильтра программ
+            const filterButtons = document.querySelectorAll('.btn-group .btn');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
