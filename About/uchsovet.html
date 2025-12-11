@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ученый совет | ААИ ЮФУ</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/council-bootstrap.css">
+    
+    <style>
+        /* ===== БАЗОВЫЕ СТИЛИ И ПЕРЕМЕННЫЕ ===== */
+        :root {
+            --primary-blue: #080D6B;
+            --secondary-pink: #ED1160;
+            --dark-grey: #232328;
+            --medium-grey: #777777;
+            --light-grey: #f3f3f3;
+            --white: #ffffff;
+            --black: #000000;
+            --light-blue-bg: rgba(230, 231, 240, 1);
+            --grey-bg: rgba(243.04339599609375, 243.04339599609375, 243.04339599609375, 1);
+        }
+
+        /* ===== ОБЩИЕ СТИЛИ ===== */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        /* Типографика */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .hero-title {
+            font-size: 80px;
+            font-weight: 500;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.6;
+            max-width: 480px;
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 500;
+            text-transform: uppercase;
+            line-height: 1.3;
+            margin-bottom: 40px;
+        }
+
+        /* ===== СЕКЦИИ ===== */
+        section {
+            padding: 80px 0;
+        }
+
+        /* ===== КАРТОЧКИ ЧЛЕНОВ СОВЕТА ===== */
+        .member-card {
+            background: var(--white);
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .member-photo {
+            width: 100%;
+            height: 306px;
+            object-fit: cover;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .member-info {
+            padding: 20px;
+        }
+
+        .member-name {
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--black);
+            margin-bottom: 10px;
+        }
+
+        .member-position {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--black);
+            margin-bottom: 15px;
+        }
+
+        .member-contact {
+            font-size: 18px;
+            color: var(--black);
+        }
+
+        .member-contact span {
+            font-weight: 500;
+            color: var(--primary-blue);
+        }
+
+        .member-contact a {
+            text-decoration: underline;
+            color: var(--primary-blue);
+        }
+
+        /* ===== КАРТОЧКИ ЧЛЕНОВ В СПИСКЕ ===== */
+        .member-list-card {
+            background: var(--grey-bg);
+            border: none;
+            border-radius: 15px;
+            padding: 16px 17px;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .member-list-card:hover {
+            background: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .list-member-photo {
+            width: 146px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .list-member-name {
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--black);
+            margin-bottom: 10px;
+        }
+
+        .list-member-desc {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--black);
+            line-height: 1.5;
+        }
+
+        /* ===== ТАБЛИЦА РАБОЧЕГО ПЛАНА ===== */
+        .work-plan-table {
+            border: 1px solid #e0e0e0;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .plan-header {
+            background: var(--white);
+            padding: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .plan-row {
+            display: flex;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .plan-row:last-child {
+            border-bottom: none;
+        }
+
+        .plan-question, .plan-responsible {
+            padding: 20px;
+            flex: 1;
+        }
+
+        .plan-question {
+            border-right: 1px solid #e0e0e0;
+        }
+
+        .plan-title {
+            font-size: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--black);
+            margin-bottom: 20px;
+        }
+
+        .plan-item {
+            font-size: 20px;
+            color: var(--black);
+            margin-bottom: 20px;
+        }
+
+        .plan-responsible .plan-item {
+            font-weight: 600;
+        }
+
+        /* ===== КНОПКИ И ВКЛАДКИ ===== */
+        .semester-tabs {
+            margin-bottom: 40px;
+        }
+
+        .semester-tab {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--primary-blue);
+            cursor: pointer;
+            padding-bottom: 5px;
+            position: relative;
+        }
+
+        .semester-tab.active {
+            color: var(--black);
+        }
+
+        .semester-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary-blue);
+        }
+
+        .month-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .month-btn {
+            padding: 10px 16px;
+            background: var(--light-blue-bg);
+            border: none;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--dark-grey);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .month-btn.active {
+            background: var(--dark-grey);
+            color: var(--white);
+        }
+
+        .month-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* ===== ФУТЕР ===== */
+        .footer-section {
+            background: var(--dark-grey);
+            color: var(--white);
+            padding: 60px 0;
+        }
+
+        .footer-column {
+            margin-bottom: 40px;
+        }
+
+        .footer-title {
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--medium-grey);
+        }
+
+        .footer-link {
+            display: block;
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--white);
+            text-decoration: none;
+            margin-bottom: 12px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--secondary-pink);
+        }
+
+        .footer-contact {
+            font-size: 14px;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .footer-copyright {
+            font-size: 14px;
+            color: var(--medium-grey);
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--medium-grey);
+        }
+
+        /* ===== АДАПТИВНОСТЬ ===== */
+        @media (max-width: 1400px) {
+            .hero-title {
+                font-size: 70px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 60px;
+            }
+            
+            .section-title {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 50px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .member-photo {
+                height: 250px;
+            }
+            
+            .member-name,
+            .member-position,
+            .member-contact {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 40px;
+                text-align: center;
+            }
+            
+            .hero-subtitle {
+                text-align: center;
+                margin: 0 auto 40px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+                text-align: center;
+            }
+            
+            .plan-item {
+                font-size: 16px;
+            }
+            
+            .plan-title {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 32px;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+            
+            .member-photo {
+                height: 200px;
+            }
+            
+            .member-name,
+            .member-position,
+            .member-contact {
+                font-size: 14px;
+            }
+            
+            .list-member-photo {
+                width: 120px;
+                height: 160px;
+            }
+            
+            .list-member-name {
+                font-size: 14px;
+            }
+            
+            .list-member-desc {
+                font-size: 12px;
+            }
+        }
+
+        /* ===== УТИЛИТЫ ===== */
+        .bg-grey {
+            background-color: var(--grey-bg) !important;
+        }
+
+        .bg-light-blue {
+            background-color: var(--light-blue-bg) !important;
+        }
+
+        .text-blue {
+            color: var(--primary-blue) !important;
+        }
+
+        .scroll-container {
+            overflow-x: auto;
+            padding-bottom: 20px;
+        }
+
+        .scroll-container::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .scroll-container::-webkit-scrollbar-track {
+            background: var(--light-blue-bg);
+            border-radius: 3px;
+        }
+
+        .scroll-container::-webkit-scrollbar-thumb {
+            background: var(--primary-blue);
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигация (общий header) -->
+    <header class="header" id="header-placeholder">
+        <!-- Навигация будет подключена отдельно -->
+    </header>
+
+    <main class="main-content">
+        <!-- ===== СЕКЦИЯ 1: ГЕРОЙ ===== -->
+        <section class="hero-section py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 mb-5 mb-lg-0">
+                        <h1 class="hero-title mb-4">ученый совет</h1>
+                        <p class="hero-subtitle lead">
+                            Научно-исследовательская деятельность является составляющей частью процесса подготовки молодых специалистов, 
+                            повышения квалификации преподавателей, воспроизводства новых знаний в сфере архитектуры, градостроительства, 
+                            дизайна и художественной культуры.
+                        </p>
+                        
+                        <!-- Кнопка "об академии" -->
+                        <a href="#" class="d-flex align-items-center text-decoration-none text-blue">
+                            <div class="me-2" style="width: 26px; height: 20px;">
+                                <svg width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- SVG стрелка -->
+                                    <path d="M25.0607 10.5607C25.6464 9.97487 25.6464 9.02513 25.0607 8.43934L16.5147 0.893398C15.9289 0.307611 14.9792 0.307611 14.3934 0.893398C13.8076 1.47919 13.8076 2.42893 14.3934 3.01472L21.8787 10.5L14.3934 17.9853C13.8076 18.5711 13.8076 19.5208 14.3934 20.1066C14.9792 20.6924 15.9289 20.6924 16.5147 20.1066L25.0607 11.5607C25.6464 10.9749 25.6464 10.0251 25.0607 9.43934V10.5607ZM0 11H24V10H0V11Z" fill="#080D6B"/>
+                                </svg>
+                            </div>
+                            <span class="fw-medium text-uppercase">об академии</span>
+                        </a>
+                    </div>
+                    
+                    <div class="col-lg-5">
+                        <!-- Декоративная графика с кругами -->
+                        <div class="position-relative" style="height: 400px;">
+                            <div class="position-absolute" style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%; height: 100%;">
+                                <!-- Круги (заменим на CSS градиенты) -->
+                                <div class="position-absolute rounded-circle" style="width: 223px; height: 223px; background: radial-gradient(circle, var(--primary-blue) 0%, var(--secondary-pink) 100%); opacity: 0.3; top: 0; left: 100px;"></div>
+                                <div class="position-absolute rounded-circle" style="width: 223px; height: 223px; background: radial-gradient(circle, var(--primary-blue) 0%, var(--secondary-pink) 100%); opacity: 0.5; top: 100px; left: 250px;"></div>
+                                <div class="position-absolute rounded-circle" style="width: 223px; height: 223px; background: radial-gradient(circle, var(--primary-blue) 0%, var(--secondary-pink) 100%); opacity: 0.4; top: 200px; left: 50px;"></div>
+                                <div class="position-absolute rounded-circle" style="width: 223px; height: 223px; background: radial-gradient(circle, var(--primary-blue) 0%, var(--secondary-pink) 100%); opacity: 0.6; top: 50px; left: 300px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 2: ПРЕДСЕДАТЕЛЬ ===== -->
+        <section class="py-5 bg-grey">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">председатель</h2>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="member-card">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <div class="member-photo bg-primary" style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%);">
+                                        <!-- Можно добавить реальное фото -->
+                                        <div class="h-100 d-flex align-items-center justify-content-center text-white">
+                                            <i class="bi bi-person-circle display-1"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="member-info h-100 d-flex flex-column justify-content-center">
+                                        <h3 class="member-name">Чемерисова Наталья Васильевна</h3>
+                                        <p class="member-position">Директор ААИ ЮФУ</p>
+                                        <div class="member-contact">
+                                            <p class="mb-2">тел.: <span>+7(863)218-40-00 доб. 20023</span></p>
+                                            <p class="mb-2">e-mail: <a href="mailto:nvchemerisova@sfedu.ru">nvchemerisova@sfedu.ru</a></p>
+                                            <p class="mb-0">Адрес: пр. Буденновский 39, 4 этаж, кабинет № 40</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 3: ЗАМЕСТИТЕЛЬ ПРЕДСЕДАТЕЛЯ ===== -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">заместитель председателя</h2>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="member-card">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <div class="member-photo bg-primary" style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%);">
+                                        <div class="h-100 d-flex align-items-center justify-content-center text-white">
+                                            <i class="bi bi-person-circle display-1"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="member-info h-100 d-flex flex-column justify-content-center">
+                                        <h3 class="member-name">Иевлева Ольга Тихоновна</h3>
+                                        <p class="member-position">
+                                            Заведующий кафедрой графики и информационных технологий архитектурного проектирования, 
+                                            доктор технических наук, профессор
+                                        </p>
+                                        <div class="member-contact">
+                                            <p class="mb-2">тел.: <span>+7(863)218-40-00 доб. 20024</span></p>
+                                            <p class="mb-2">e-mail: <a href="mailto:ijevleva@sfedu.ru">ijevleva@sfedu.ru</a></p>
+                                            <p class="mb-0">Адрес: пр. Будённовский 39, 1 этаж, кабинет № 14</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 4: УЧЕНЫЙ СЕКРЕТАРЬ ===== -->
+        <section class="py-5 bg-grey">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">ученый секретарь</h2>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="member-card">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <div class="member-photo bg-primary" style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%);">
+                                        <div class="h-100 d-flex align-items-center justify-content-center text-white">
+                                            <i class="bi bi-person-circle display-1"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="member-info h-100 d-flex flex-column justify-content-center">
+                                        <h3 class="member-name">Верещагина Эвелина Ивановна</h3>
+                                        <p class="member-position">Доцент кафедры архитектуры жилых и общественных зданий</p>
+                                        <div class="member-contact">
+                                            <p class="mb-2">тел.: <span>+7(863)218-40-00 доб. 20024</span></p>
+                                            <p class="mb-2">e-mail: <a href="mailto:avereshagina@sfedu.ru">avereshagina@sfedu.ru</a></p>
+                                            <p class="mb-0">Адрес: пр. Будённовский 39, 1 этаж, кабинет № 14</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 5: ЧЛЕНЫ СОВЕТА ===== -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">члены</h2>
+                
+                <!-- Карусель/сетка для членов совета -->
+                <div class="scroll-container mb-4">
+                    <div class="d-flex gap-4" style="min-width: 2000px;">
+                        <!-- Карточка 1 -->
+                        <div class="member-list-card" style="width: 497px; flex-shrink: 0;">
+                            <div class="row g-0">
+                                <div class="col-4">
+                                    <div class="list-member-photo bg-primary" style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%);">
+                                        <div class="h-100 d-flex align-items-center justify-content-center text-white">
+                                            <i class="bi bi-person-circle fs-1"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <div class="ps-3">
+                                        <h4 class="list-member-name">Андреев Александр Александрович</h4>
+                                        <p class="list-member-desc">
+                                            Руководитель центра организации работы с абитуриентами, профориентации и продвижения образовательных программ.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Карточка 2 -->
+                        <div class="member-list-card" style="width: 497px; flex-shrink: 0;">
+                            <div class="row g-0">
+                                <div class="col-4">
+                                    <div class="list-member-photo bg-primary" style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%);">
+                                        <div class="h-100 d-flex align-items-center justify-content-center text-white">
+                                            <i class="bi bi-person-circle fs-1"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <div class="ps-3">
+                                        <h4 class="list-member-name">Евтушенко-Мулукаева Наталья Михайловна</h4>
+                                        <p class="list-member-desc">
+                                            Доцент кафедры архитектурного и средового проектирования, председатель профбюро Академии архитектуры и искусств, кандидат архитектуры.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Карточка 3 -->
+                        <div class="member-list-card" style="width: 497px; flex-shrink: 0;">
+                            <div class="row g-0">
+                                <div class="col-4">
+                                    <div class="list-member-photo bg-primary" style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%);">
+                                        <div class="h-100 d-flex align-items-center justify-content-center text-white">
+                                            <i class="bi bi-person-circle fs-1"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <div class="ps-3">
+                                        <h4 class="list-member-name">Водяной Андрей Михайлович</h4>
+                                        <p class="list-member-desc">
+                                            Профессор кафедры архитектурного и средового проектирования, кандидат архитектуры, доцент.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Добавьте остальные карточки аналогичным образом -->
+                    </div>
+                </div>
+                
+                <!-- Индикатор прокрутки -->
+                <div class="text-center">
+                    <div class="d-inline-flex gap-2">
+                        <div class="rounded-circle" style="width: 10px; height: 10px; background: var(--primary-blue);"></div>
+                        <div class="rounded-circle" style="width: 10px; height: 10px; background: var(--light-blue-bg);"></div>
+                        <div class="rounded-circle" style="width: 10px; height: 10px; background: var(--light-blue-bg);"></div>
+                        <div class="rounded-circle" style="width: 10px; height: 10px; background: var(--light-blue-bg);"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 6: ПЛАН РАБОТЫ ===== -->
+        <section class="py-5 bg-grey">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">План работы Ученого Совета Академии архитектуры и искусств ЮФУ</h2>
+                
+                <!-- Вкладки семестров -->
+                <div class="semester-tabs mb-4">
+                    <div class="d-flex gap-4">
+                        <div class="semester-tab active">1 семестр</div>
+                        <div class="semester-tab">2 семестр</div>
+                    </div>
+                </div>
+                
+                <!-- Кнопки месяцев -->
+                <div class="month-buttons">
+                    <button class="month-btn active">Сентябрь</button>
+                    <button class="month-btn">Октябрь</button>
+                    <button class="month-btn">Ноябрь</button>
+                    <button class="month-btn">Декабрь</button>
+                    <button class="month-btn">Январь</button>
+                </div>
+                
+                <!-- Таблица плана -->
+                <div class="work-plan-table">
+                    <div class="plan-header">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3 class="plan-title">Рассматриваемые вопросы</h3>
+                            </div>
+                            <div class="col-md-6">
+                                <h3 class="plan-title">Ответственные за подготовку</h3>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="plan-row">
+                        <div class="plan-question">
+                            <p class="plan-item">Конкурс на замещение должности ассистента и преподавателя НОЦ «Перспективные решения в образовании»</p>
+                        </div>
+                        <div class="plan-responsible">
+                            <p class="plan-item">Н.В. Чемерисова,<br>Э.И. Верещагина</p>
+                        </div>
+                    </div>
+                    
+                    <div class="plan-row">
+                        <div class="plan-question">
+                            <p class="plan-item">Утверждение плана работы Ученого совета Академии с сентября 2024 г. по январь 2025 г.</p>
+                        </div>
+                        <div class="plan-responsible">
+                            <p class="plan-item">Н.В. Чемерисова,<br>Э.И. Верещагина</p>
+                        </div>
+                    </div>
+                    
+                    <div class="plan-row">
+                        <div class="plan-question">
+                            <p class="plan-item">Утверждение отчетов по результатам самооценки основных профессиональных образовательных программ в рамках прохождения профессионально-общественной аккредитации</p>
+                        </div>
+                        <div class="plan-responsible">
+                            <p class="plan-item">О.Т. Иевлева</p>
+                        </div>
+                    </div>
+                    
+                    <div class="plan-row">
+                        <div class="plan-question">
+                            <p class="plan-item">Утверждение отчетов ассистентов-стажеров 2 года обучения</p>
+                        </div>
+                        <div class="plan-responsible">
+                            <p class="plan-item">Заведующие профильных кафедр</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Примечание -->
+                <div class="alert alert-info border-0 bg-light-blue mb-0">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-info-circle-fill fs-4 text-blue me-3"></i>
+                        <div>
+                            <p class="mb-0 fw-medium">
+                                День заседания Ученого совета – второй четверг месяца, в 14.00.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 7: КОНТАКТЫ ===== -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">Контакты</h2>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="member-card">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <div class="member-photo bg-primary" style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%);">
+                                        <div class="h-100 d-flex align-items-center justify-content-center text-white">
+                                            <i class="bi bi-person-circle display-1"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="member-info h-100 d-flex flex-column justify-content-center">
+                                        <h3 class="member-name">Верещагина Эвелина Ивановна</h3>
+                                        <p class="member-position">
+                                            Ученый секретарь Ученого совета Академии.<br>
+                                            Кафедра архитектуры жилых и общественных зданий – доцент.
+                                        </p>
+                                        <div class="member-contact">
+                                            <p class="mb-2">тел.: <span>+7 (863) 218-40-00 доб. 20043</span></p>
+                                            <p class="mb-2">e-mail: <a href="mailto:eivereshagina@sfedu.ru">eivereshagina@sfedu.ru</a></p>
+                                            <p class="mb-0">Адрес: г. Ростов-на-Дону, пр. Будённовский 39, каб. № 48</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ФУТЕР ===== -->
+        <footer class="footer-section">
+            <div class="container">
+                <div class="row">
+                    <!-- Колонка 1: Абитуриенту -->
+                    <div class="col-md-3 col-sm-6 footer-column">
+                        <h4 class="footer-title">Абитуриенту</h4>
+                        <a href="#" class="footer-link">Дни открытых дверей</a>
+                        <a href="#" class="footer-link">Профориентационные мероприятия</a>
+                        <a href="#" class="footer-link">Платное обучение</a>
+                        <a href="#" class="footer-link">Целевое обучение</a>
+                        <a href="#" class="footer-link">Бакалавриат / Специалитет</a>
+                        <a href="#" class="footer-link">Магистратура</a>
+                        <a href="#" class="footer-link">Аспирантура / Ассистентура-стажировка</a>
+                    </div>
+                    
+                    <!-- Колонка 2: Об Академии -->
+                    <div class="col-md-3 col-sm-6 footer-column">
+                        <h4 class="footer-title">Об Академии</h4>
+                        <a href="#" class="footer-link">Информация</a>
+                        <a href="#" class="footer-link">Дирекция</a>
+                        <a href="#" class="footer-link">Кафедры</a>
+                        <a href="#" class="footer-link">Центры</a>
+                        <a href="#" class="footer-link">Ученый Совет</a>
+                        <a href="#" class="footer-link">Профсоюз</a>
+                        <a href="#" class="footer-link">Студенческий Совет</a>
+                    </div>
+                    
+                    <!-- Колонка 3: Образование -->
+                    <div class="col-md-3 col-sm-6 footer-column">
+                        <h4 class="footer-title">Образование</h4>
+                        <a href="#" class="footer-link">Бакалавриат</a>
+                        <a href="#" class="footer-link">Специалитет</a>
+                        <a href="#" class="footer-link">Магистратура</a>
+                        <a href="#" class="footer-link">Аспирантура</a>
+                        <a href="#" class="footer-link">Ассистентура-стажировка</a>
+                        <a href="#" class="footer-link">Руководители образовательных программ</a>
+                    </div>
+                    
+                    <!-- Колонка 4: Контакты -->
+                    <div class="col-md-3 col-sm-6 footer-column">
+                        <h4 class="footer-title">Контакты</h4>
+                        <div class="footer-contact">
+                            <p>aai@sfedu.ru</p>
+                            <p>+7 (863) 240-21-78</p>
+                            <p>344080, г. Ростов-на-Дону,<br>пр. Буденновский, 39</p>
+                        </div>
+                        
+                        <!-- Социальные иконки -->
+                        <div class="d-flex gap-3 mt-3">
+                            <div class="rounded-circle bg-white d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                <i class="bi bi-telegram text-dark"></i>
+                            </div>
+                            <div class="rounded-circle bg-white d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                <i class="bi bi-vk text-dark"></i>
+                            </div>
+                            <div class="rounded-circle bg-white d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                <i class="bi bi-youtube text-dark"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Копирайт -->
+                <div class="footer-copyright text-center">
+                    <p class="mb-0">© 1988 — 2024 Академия архитектуры и искусств Южного Федерального Университета</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Кнопка "Наверх" -->
+    <a href="#" class="scroll-top" id="scrollTop">
+        <i class="bi bi-chevron-up"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/council-bootstrap.js"></script>
+
+    <script>
+        // Активация кнопки "Наверх"
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollTopBtn = document.getElementById('scrollTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.classList.add('visible');
+                } else {
+                    scrollTopBtn.classList.remove('visible');
+                }
+            });
+            
+            scrollTopBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Активация вкладок месяцев
+            const monthBtns = document.querySelectorAll('.month-btn');
+            monthBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    monthBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Активация вкладок семестров
+            const semesterTabs = document.querySelectorAll('.semester-tab');
+            semesterTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    semesterTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Инициализация анимации при скролле
+            function animateOnScroll() {
+                const elements = document.querySelectorAll('.member-card, .member-list-card');
+                
+                elements.forEach(function(element) {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+            
+            // Установка начальных стилей для анимации
+            document.querySelectorAll('.member-card, .member-list-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+            
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Инициализация при загрузке
+        });
+    </script>
+</body>
+</html>

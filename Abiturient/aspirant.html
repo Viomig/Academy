@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аспирантура | ААИ ЮФУ</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        /* ===== БАЗОВЫЕ СТИЛИ И ПЕРЕМЕННЫЕ ===== */
+        :root {
+            --primary-blue: #080D6B;
+            --secondary-pink: #ED1160;
+            --dark-grey: #232328;
+            --medium-grey: #777777;
+            --light-grey: #f3f3f3;
+            --white: #ffffff;
+            --black: #000000;
+            --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%);
+            --gradient-dark: linear-gradient(45deg, #131313, var(--primary-blue));
+        }
+
+        /* ===== ОБЩИЕ СТИЛИ ===== */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        /* Типографика */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .hero-title {
+            font-size: 80px;
+            font-weight: 500;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 500;
+            text-transform: uppercase;
+            line-height: 1.3;
+            margin-bottom: 40px;
+        }
+
+        .section-subtitle {
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1.4;
+            text-transform: uppercase;
+        }
+
+        /* ===== СЕКЦИИ ===== */
+        section {
+            padding: 80px 0;
+        }
+
+        .program-section {
+            background: var(--gradient-dark);
+            color: var(--white);
+        }
+
+        .directors-section {
+            background: var(--gradient-dark);
+            color: var(--white);
+        }
+
+        /* ===== КАРТОЧКИ ===== */
+        .program-card {
+            background: var(--primary-blue);
+            border: none;
+            border-radius: 15px;
+            color: var(--white);
+            height: 100%;
+        }
+
+        .director-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .director-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .director-photo {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .director-link {
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .director-link:hover {
+            color: var(--primary-blue);
+        }
+
+        /* ===== КНОПКИ И ССЫЛКИ ===== */
+        .btn {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-lg {
+            padding: 15px 30px;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(8, 13, 107, 0.3);
+        }
+
+        .btn-outline-light {
+            border-width: 2px;
+        }
+
+        .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .document-link {
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--black);
+        }
+
+        .document-link:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(8, 13, 107, 0.1);
+        }
+
+        /* ===== ТАБЛИЦЫ ===== */
+        .admission-table {
+            background: var(--primary-blue);
+            border-radius: 15px;
+            color: var(--white);
+            padding: 30px;
+        }
+
+        .table-title {
+            font-size: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .table-divider {
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            margin: 20px 0;
+        }
+
+        /* ===== АККОРДЕОНЫ ===== */
+        .accordion-button {
+            font-size: 22px;
+            font-weight: 600;
+            padding: 28px;
+            border: 1px solid #D2D2D2;
+            border-radius: 15px !important;
+            background: var(--white);
+            color: var(--black);
+        }
+
+        .accordion-button:not(.collapsed) {
+            background: var(--white);
+            color: var(--black);
+            box-shadow: none;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: #D2D2D2;
+        }
+
+        .accordion-button::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
+
+        .accordion-item {
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        .accordion-body {
+            padding: 28px;
+            border: 1px solid #D2D2D2;
+            border-top: none;
+            border-radius: 0 0 15px 15px;
+        }
+
+        /* ===== ГРАФИКА ===== */
+        .hero-graphic {
+            position: relative;
+            height: 456px;
+        }
+
+        .graphic-container {
+            height: 100%;
+        }
+
+        /* ===== АДАПТИВНОСТЬ ===== */
+
+        /* Большие десктопы (≥1400px) */
+        @media (min-width: 1400px) {
+            .hero-title {
+                font-size: 100px;
+            }
+            
+            .section-title {
+                font-size: 48px;
+            }
+        }
+
+        /* Планшеты (≤992px) */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 60px;
+            }
+            
+            .section-title {
+                font-size: 36px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .director-card {
+                margin-bottom: 30px;
+            }
+        }
+
+        /* Планшеты (≤768px) */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 48px;
+                text-align: center;
+            }
+            
+            .hero-subtitle {
+                text-align: center;
+                margin: 0 auto 40px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+                text-align: center;
+            }
+            
+            .btn-lg {
+                padding: 12px 24px;
+                font-size: 15px;
+            }
+        }
+
+        /* Мобильные (≤576px) */
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .hero-subtitle {
+                font-size: 14px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .section-subtitle {
+                font-size: 18px;
+            }
+            
+            section {
+                padding: 40px 0;
+            }
+            
+            .director-photo {
+                height: 150px;
+            }
+            
+            .accordion-button {
+                font-size: 18px;
+                padding: 20px;
+            }
+        }
+
+        /* Очень маленькие мобильные (≤375px) */
+        @media (max-width: 375px) {
+            .hero-title {
+                font-size: 32px;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+            
+            .btn-lg {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+
+        /* ===== УТИЛИТЫ ===== */
+        .text-pink {
+            color: var(--secondary-pink) !important;
+        }
+
+        .bg-primary {
+            background: var(--primary-blue) !important;
+        }
+
+        .bg-light-info {
+            background-color: rgba(8, 13, 107, 0.05) !important;
+        }
+
+        .hover-lift {
+            transition: transform 0.2s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-4px);
+        }
+
+        /* ===== АНИМАЦИИ ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигация (можно подключить общий header) -->
+    <header class="header" id="header-placeholder">
+        <!-- Общая навигация будет здесь -->
+    </header>
+
+    <main class="main-content">
+        <!-- ===== СЕКЦИЯ 1: ГЕРОЙ ===== -->
+        <section class="hero-section py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 mb-5 mb-lg-0">
+                        <h1 class="hero-title mb-4">Аспирантура</h1>
+                        <p class="hero-subtitle lead">
+                            Аспирантура ААИ ЮФУ — это шаг к карьере в науке, образовании и профессиональной творческой деятельности.<br>
+                            Это работа в творческой и научной среде с современным оборудованием.<br>
+                            Участие в выставках, конференциях и грантовых проектах.<br>
+                            Возможность преподавания и стажировок в России и за рубежом.
+                        </p>
+                        <div class="d-flex align-items-center mt-4">
+                            <div class="me-3">
+                                <i class="bi bi-arrow-left" style="font-size: 20px; color: var(--primary-blue);"></i>
+                            </div>
+                            <span class="text-uppercase fw-bold" style="color: var(--primary-blue); font-size: 16px;">
+                                абитуриенту
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <!-- Декоративная графика -->
+                        <div class="hero-graphic">
+                            <div class="graphic-container position-relative" style="height: 456px;">
+                                <!-- Геометрические фигуры -->
+                                <div class="position-absolute top-50 start-0 translate-middle-y" style="width: 144px; height: 166px;">
+                                    <div class="position-absolute" style="width: 83px; height: 83px; background: var(--gradient-primary); border-radius: 10px; transform: rotate(30deg);"></div>
+                                    <div class="position-absolute top-50 start-0" style="width: 83px; height: 83px; background: var(--gradient-primary); border-radius: 10px; transform: rotate(30deg); opacity: 0.7;"></div>
+                                    <div class="position-absolute top-50 end-0" style="width: 83px; height: 83px; background: var(--gradient-primary); border-radius: 10px; transform: rotate(30deg); opacity: 0.5;"></div>
+                                </div>
+                                
+                                <div class="position-absolute top-50 start-50 translate-middle" style="width: 144px; height: 166px;">
+                                    <div class="position-absolute" style="width: 83px; height: 83px; background: var(--gradient-primary); border-radius: 10px; transform: rotate(30deg); opacity: 0.8;"></div>
+                                    <div class="position-absolute top-50 start-0" style="width: 83px; height: 83px; background: var(--gradient-primary); border-radius: 10px; transform: rotate(30deg); opacity: 0.6;"></div>
+                                    <div class="position-absolute top-50 end-0" style="width: 83px; height: 83px; background: var(--gradient-primary); border-radius: 10px; transform: rotate(30deg); opacity: 0.4;"></div>
+                                </div>
+                                
+                                <div class="position-absolute top-50 end-0 translate-middle-y" style="width: 144px; height: 166px;">
+                                    <div class="position-absolute" style="width: 83px; height: 83px; background: var(--gradient-primary); border-radius: 10px; transform: rotate(30deg); opacity: 0.9;"></div>
+                                    <div class="position-absolute top-50 start-0" style="width: 83px; height: 83px; background: var(--gradient-primary); border-radius: 10px; transform: rotate(30deg); opacity: 0.7;"></div>
+                                    <div class="position-absolute top-50 end-0" style="width: 83px; height: 83px; background: var(--gradient-primary); border-radius: 10px; transform: rotate(30deg); opacity: 0.5;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 2: НАБОР 2025 ГОДА ===== -->
+        <section class="program-section py-5">
+            <div class="container">
+                <h2 class="section-title text-center text-white mb-5">набор 2025 года</h2>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="row">
+                            <div class="col-lg-7 mb-5 mb-lg-0">
+                                <div class="program-card p-4 rounded-3">
+                                    <h3 class="section-subtitle text-white mb-4">Аспирантура</h3>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mb-4">
+                                                <div class="d-flex align-items-center mb-2">
+                                                    <span class="fw-bold me-2">2.1</span>
+                                                    <span class="fw-bold">Строительство и архитектура</span>
+                                                </div>
+                                                <div class="d-flex align-items-center mb-2">
+                                                    <span class="fw-bold me-2">2.1.11</span>
+                                                    <span>Теория и история архитектуры, реставрация и реконструкция историко-архитектурного наследия</span>
+                                                </div>
+                                                <div class="d-flex align-items-center">
+                                                    <span class="fw-bold me-2">2.1.12</span>
+                                                    <span>Архитектура зданий и сооружений. Творческие концепции архитектурной деятельности</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p class="text-white">
+                                                Подготовка научно-педагогических и научных кадров в аспирантуре ААИ ЮФУ осуществляется по направлению подготовки 2.1. «Строительство и архитектура», а также в порядке соискательства. Аспирантура начала функционировать с 1993 года.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-5 d-flex flex-column justify-content-between">
+                                <div class="text-center text-lg-end mb-4 mb-lg-0">
+                                    <a href="#" class="btn btn-primary btn-lg">
+                                        Подать заявление
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 3: О ПРОГРАММАХ ===== -->
+        <section class="programs-section py-5">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">о программах</h2>
+                
+                <div class="accordion" id="programsAccordion">
+                    <!-- Программа 2.1.11 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#programOne">
+                                2.1.11 Теория и история архитектуры, реставрация и реконструкция историко-архитектурного наследия
+                            </button>
+                        </h2>
+                        <div id="programOne" class="accordion-collapse collapse" data-bs-parent="#programsAccordion">
+                            <div class="accordion-body">
+                                <!-- Контент программы будет добавлен при раскрытии -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Программа 2.1.12 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#programTwo">
+                                2.1.12 Архитектура зданий и сооружений. Творческие концепции архитектурной деятельности
+                            </button>
+                        </h2>
+                        <div id="programTwo" class="accordion-collapse collapse show" data-bs-parent="#programsAccordion">
+                            <div class="accordion-body">
+                                <div class="row mb-4">
+                                    <div class="col-lg-3">
+                                        <p class="fw-bold">Особенностями профиля являются исследования, направленные на разработку:</p>
+                                    </div>
+                                    <div class="col-lg-9">
+                                        <p>
+                                            Научных основ создания здоровой среды обитания, обеспечивающей оптимальные условия для труда, быта и отдыха всех слоев населения;<br>
+                                            Разработку и теоретическое обоснование принципиально новой системы взглядов на процесс и методы архитектурного проектирования зданий и сооружений на основе комплексных подходов, охватывающих социальные, функциональные и экономические аспекты осуществленных проектных решений;<br>
+                                            Замыслы и реализации творческих концепций.
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <p class="fw-bold">Областями исследования профиля являются:</p>
+                                    </div>
+                                    <div class="col-lg-9">
+                                        <p>
+                                            Методологии проектирования зданий и сооружений включая составление архитектурно-планировочного задания, предпроектный анализ, формализацию, типизацию проектных процессов проектирования, вопросы выбора методов и средств архитектурного проектирования;<br>
+                                            Научные основы, а также традиции и новаторство в творческой деятельности;<br>
+                                            Научные основы, разработка и исследование моделей, алгоритмов и методов для анализа проектных решений зданий и сооружений;<br>
+                                            Новые методы и средства архитектурного проектирования зданий и сооружений;<br>
+                                            Научные основы обучения архитектурному проектированию;<br>
+                                            Информационные технологии в архитектурном проектировании;<br>
+                                            Дизайн интерьеров и экстерьеров гражданских и промышленных зданий.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 4: НАУЧНЫЕ РУКОВОДИТЕЛИ ===== -->
+        <section class="directors-section py-5">
+            <div class="container">
+                <h2 class="section-title text-center text-white mb-5">научные руководители</h2>
+                
+                <p class="text-center text-white mb-5 fs-5">
+                    Научное руководство работой аспирантов осуществляют опытные преподаватели-архитекторы, воспитавшие не одно поколение высококвалифицированных кадров, в их числе:
+                </p>
+                
+                <div class="row g-4">
+                    <!-- Руководитель 1 -->
+                    <div class="col-lg-6">
+                        <div class="director-card p-4">
+                            <div class="row g-4">
+                                <div class="col-md-4">
+                                    <div class="director-photo" style="background: var(--gradient-primary);">
+                                        <div class="h-100 d-flex align-items-center justify-content-center text-white">
+                                            <i class="bi bi-person-circle display-4"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h4 class="mb-3">Иевлева Ольга Тиховна</h4>
+                                    <p class="text-muted mb-2">
+                                        <strong>Должность:</strong> Заведующий кафедрой графики и информационных технологий архитектурного проектирования, доктор технических наук, профессор. Руководитель программы 2.1, ответственная за аспирантуру в ААИ ЮФУ.
+                                    </p>
+                                    <p class="text-muted mb-2">
+                                        <strong>Направления:</strong> Исследование, формализация и моделирование объектов архитектуры и дизайна; информационное обеспечение архитектурной и дизайнерской деятельности.
+                                    </p>
+                                    <p class="text-primary mb-3">
+                                        <strong>Email:</strong> ijevleva@sfedu.ru<br>
+                                        ijevleva@yandex.ru
+                                    </p>
+                                    <a href="#" class="director-link">
+                                        научное руководство аспирантами
+                                        <i class="bi bi-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Руководитель 2 -->
+                    <div class="col-lg-6">
+                        <div class="director-card p-4">
+                            <div class="row g-4">
+                                <div class="col-md-4">
+                                    <div class="director-photo" style="background: var(--gradient-primary);">
+                                        <div class="h-100 d-flex align-items-center justify-content-center text-white">
+                                            <i class="bi bi-person-circle display-4"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h4 class="mb-3">Иванова-Ильичева Анна Михайловна</h4>
+                                    <p class="text-muted mb-2">
+                                        <strong>Должность:</strong> Заведующий кафедрой истории архитектуры, искусства и архитектурной реставрации, доцент, доктор архитектуры.
+                                    </p>
+                                    <p class="text-muted mb-2">
+                                        <strong>Направления:</strong> Теория и история архитектуры.
+                                    </p>
+                                    <p class="text-primary mb-3">
+                                        <strong>Email:</strong> amivanova-ilicheva@sfedu.ru<br>
+                                        AMI0202@yandex.ru
+                                    </p>
+                                    <a href="#" class="director-link">
+                                        научное руководство аспирантами
+                                        <i class="bi bi-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Руководитель 3 -->
+                    <div class="col-lg-6">
+                        <div class="director-card p-4">
+                            <div class="row g-4">
+                                <div class="col-md-4">
+                                    <div class="director-photo" style="background: var(--gradient-primary);">
+                                        <div class="h-100 d-flex align-items-center justify-content-center text-white">
+                                            <i class="bi bi-person-circle display-4"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h4 class="mb-3">Моргун Николай Анатольевич</h4>
+                                    <p class="text-muted mb-2">
+                                        <strong>Должность:</strong> Заведующий кафедрой Архитектурного и средового проектирования, профессор, кандидат архитектуры.
+                                    </p>
+                                    <p class="text-muted mb-2">
+                                        <strong>Направления:</strong> Архитектура общественных зданий (образовательные, спортивные, общественные центры).
+                                    </p>
+                                    <p class="text-primary mb-3">
+                                        <strong>Email:</strong> namorgun@sfedu.ru<br>
+                                        nik-morgun@yandex.ru
+                                    </p>
+                                    <a href="#" class="director-link">
+                                        научное руководство аспирантами
+                                        <i class="bi bi-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Руководитель 4 -->
+                    <div class="col-lg-6">
+                        <div class="director-card p-4">
+                            <div class="row g-4">
+                                <div class="col-md-4">
+                                    <div class="director-photo" style="background: var(--gradient-primary);">
+                                        <div class="h-100 d-flex align-items-center justify-content-center text-white">
+                                            <i class="bi bi-person-circle display-4"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h4 class="mb-3">Молчанов Виктор Михайлович</h4>
+                                    <p class="text-muted mb-2">
+                                        <strong>Должность:</strong> Заведующий кафедрой архитектуры жилых и общественных зданий, кандидат архитектуры, профессор.
+                                    </p>
+                                    <p class="text-muted mb-2">
+                                        <strong>Направления:</strong> Социально-функциональные основы архитектуры жилища.
+                                    </p>
+                                    <p class="text-primary mb-3">
+                                        <strong>Email:</strong> vmmolchanov@sfedu.ru<br>
+                                        vimolchanov@yandex.ru
+                                    </p>
+                                    <a href="#" class="director-link">
+                                        научное руководство аспирантами
+                                        <i class="bi bi-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Руководитель 5 -->
+                    <div class="col-lg-6">
+                        <div class="director-card p-4">
+                            <div class="row g-4">
+                                <div class="col-md-4">
+                                    <div class="director-photo" style="background: var(--gradient-primary);">
+                                        <div class="h-100 d-flex align-items-center justify-content-center text-white">
+                                            <i class="bi bi-person-circle display-4"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h4 class="mb-3">Скопинцев Анатолий Вениаминович</h4>
+                                    <p class="text-muted mb-2">
+                                        <strong>Должность:</strong> Профессор кафедры архитектурного и средового проектирования, кандидат архитектуры, профессор.
+                                    </p>
+                                    <p class="text-muted mb-2">
+                                        <strong>Направления:</strong> Архитектура, дизайн архитектурной среды, экологическое направление в средовом и архитектурно-дизайнерском проектировании.
+                                    </p>
+                                    <p class="text-primary mb-3">
+                                        <strong>Email:</strong> avskopincev@sfedu.ru
+                                    </p>
+                                    <a href="#" class="director-link">
+                                        научное руководство аспирантами
+                                        <i class="bi bi-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Руководитель 6 -->
+                    <div class="col-lg-6">
+                        <div class="director-card p-4">
+                            <div class="row g-4">
+                                <div class="col-md-4">
+                                    <div class="director-photo" style="background: var(--gradient-primary);">
+                                        <div class="h-100 d-flex align-items-center justify-content-center text-white">
+                                            <i class="bi bi-person-circle display-4"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h4 class="mb-3">Горгорова Юлия Владимировна</h4>
+                                    <p class="text-muted mb-2">
+                                        <strong>Должность:</strong> Профессор кафедры архитектурного и средового проектирования, кандидат архитектуры, доцент.
+                                    </p>
+                                    <p class="text-muted mb-2">
+                                        <strong>Направления:</strong> Архитектурное проектирование общественных зданий в условиях реконструкции; экспериментальное проектирование.
+                                    </p>
+                                    <p class="text-primary mb-3">
+                                        <strong>Email:</strong> ygorgorova@sfedu.ru
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 5: ПОСТУПЛЕНИЕ ===== -->
+        <section class="admission-section py-5">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">поступление</h2>
+                
+                <div class="row mb-5">
+                    <div class="col-lg-8">
+                        <p class="fs-5">
+                            Правила приёма в Южный федеральный университет на обучение по программам подготовки научно-педагогических кадров в аспирантуре в 2025 году.<br>
+                            Прием документов на обучение по программам аспирантуры осуществляется Приемной комиссией Университета <strong>с 20 июня по 2 августа 2025 года</strong> включительно.
+                        </p>
+                    </div>
+                    <div class="col-lg-4">
+                        <a href="#" class="document-link card h-100 text-decoration-none hover-lift p-4">
+                            <div class="d-flex align-items-center">
+                                <div class="document-icon bg-primary bg-opacity-10 rounded-3 p-3 me-4">
+                                    <i class="bi bi-file-earmark-text fs-1 text-primary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="card-title mb-1">Правила приема</h5>
+                                    <p class="card-text text-muted mb-0">Правила приема в аспирантуру 2025 году</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="row mb-5">
+                    <div class="col-lg-8">
+                        <h3 class="mb-4" style="color: var(--primary-blue);">Зачисление в аспирантуру производится приказом ректора по Южному федеральному университету:</h3>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-4">
+                                    <p class="fw-bold mb-2">на места по квоте приема на целевое обучение</p>
+                                    <p class="fw-bold text-primary">21 августа 2025 года</p>
+                                </div>
+                                <div class="mb-4">
+                                    <p class="fw-bold mb-2">на места за счет средств федерального бюджета</p>
+                                    <p class="fw-bold text-primary">25 августа 2025 года</p>
+                                </div>
+                                <div>
+                                    <p class="fw-bold mb-2">на места по договорам об оказании платных образовательных услуг</p>
+                                    <p class="fw-bold text-primary">не позднее 29 августа 2025 года</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Таблица мест -->
+                <div class="admission-table mb-5">
+                    <div class="row mb-4">
+                        <div class="col-md-4">
+                            <h4 class="table-title">код и наименование направления подготовки</h4>
+                        </div>
+                        <div class="col-md-2">
+                            <h4 class="table-title">количество мест</h4>
+                        </div>
+                        <div class="col-md-3">
+                            <h4 class="table-title text-center">из них ЦП</h4>
+                        </div>
+                        <div class="col-md-3">
+                            <h4 class="table-title text-center">стоимость обучения в 2025 году, руб.</h4>
+                        </div>
+                    </div>
+                    
+                    <div class="table-divider"></div>
+                    
+                    <div class="row mb-3 align-items-center">
+                        <div class="col-md-4">
+                            <p class="mb-0">2.1.11 Теория и история архитектуры, реставрация и реконструкция историко-архитектурного наследия</p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="mb-0 fs-4 fw-bold">1</p>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <p class="mb-0 fs-4 fw-bold">1</p>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <p class="mb-0 fs-4 fw-bold text-pink">202 000</p>
+                        </div>
+                    </div>
+                    
+                    <div class="table-divider"></div>
+                    
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <p class="mb-0">2.1.12 Архитектура зданий и сооружений. Творческие концепции архитектурной деятельности</p>
+                        </div>
+                        <div class="col-md-2">
+                            <p class="mb-0 fs-4 fw-bold">7</p>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <p class="mb-0">-</p>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <p class="mb-0 fs-4 fw-bold text-pink">202 000</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <a href="#" class="document-link card text-decoration-none hover-lift d-inline-block p-4">
+                        <div class="d-flex align-items-center">
+                            <div class="document-icon bg-primary bg-opacity-10 rounded-3 p-3 me-4">
+                                <i class="bi bi-file-text fs-1 text-primary"></i>
+                            </div>
+                            <div>
+                                <h5 class="card-title mb-1">Программа вступительных испытаний</h5>
+                                <p class="card-text text-muted mb-0">Программа вступительных испытаний в аспирантуру</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 6: ГРАНТ НА ПОСТУПЛЕНИЕ ===== -->
+        <section class="grant-section py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 mb-5 mb-lg-0">
+                        <h2 class="section-title mb-4">грант на поступление</h2>
+                        <h3 class="mb-4" style="color: var(--primary-blue); font-size: 28px; font-weight: 500; text-transform: uppercase;">
+                            конкурс на предоставление гранта для поступающих в аспирантуру ЮФУ
+                        </h3>
+                        
+                        <div class="grant-content">
+                            <p class="mb-4">
+                                ЮФУ проводит конкурсный отбор на предоставление гранта на обучение по программам подготовки научных и научно-педагогических кадров в аспирантуре.
+                                Конкурсный отбор на предоставление гранта на обучение по программам подготовки научных и научно-педагогических кадров в аспирантуре Южного федерального университета проводится в соответствии с <a href="#" class="text-decoration-underline fw-bold" style="color: var(--primary-blue);">приказом</a>.
+                            </p>
+                            
+                            <p class="fw-bold mb-3">Для участия в Конкурсе необходимо предоставить:</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">• Портфолио;</li>
+                                <li class="mb-2">• Сведения о научном руководителе, условиях и возможностях для выполнения научных исследований по заданной тематике;</li>
+                                <li class="mb-2">• Структура Плана реализации научного исследования;</li>
+                                <li class="mb-2">• Согласие на обработку персональных данных;</li>
+                                <li>• Согласие на обработку персональных данных, разрешенных субъектом персональных данных для распространения.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-5">
+                        <div class="sticky-top" style="top: 100px;">
+                            <div class="mb-4">
+                                <a href="#" class="document-link card text-decoration-none hover-lift p-4 mb-3">
+                                    <div class="d-flex align-items-center">
+                                        <div class="document-icon bg-primary bg-opacity-10 rounded-3 p-3 me-4">
+                                            <i class="bi bi-file-earmark-text fs-1 text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="card-title mb-1">Инструкция</h5>
+                                            <p class="card-text text-muted mb-0">Инструкция для заполнения заявки</p>
+                                        </div>
+                                    </div>
+                                </a>
+                                
+                                <a href="#" class="document-link card text-decoration-none hover-lift p-4">
+                                    <div class="d-flex align-items-center">
+                                        <div class="document-icon bg-primary bg-opacity-10 rounded-3 p-3 me-4">
+                                            <i class="bi bi-pencil-square fs-1 text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="card-title mb-1">Заполнить заявку</h5>
+                                            <p class="card-text text-muted mb-0">Заполнить заявку на участие в конкурсе для получения гранта на обучение в аспирантуре</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <div class="accordion" id="grantAccordion">
+                                <!-- Сроки проведения конкурса -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#grantDeadlines">
+                                            сроки проведения конкурса на грант в 2025 году
+                                        </button>
+                                    </h2>
+                                    <div id="grantDeadlines" class="accordion-collapse collapse" data-bs-parent="#grantAccordion">
+                                        <div class="accordion-body">
+                                            <!-- Контент сроков будет добавлен -->
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Полный перечень документов -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#grantDocuments">
+                                            полный перечень документов в соответствии с приказом
+                                        </button>
+                                    </h2>
+                                    <div id="grantDocuments" class="accordion-collapse collapse" data-bs-parent="#grantAccordion">
+                                        <div class="accordion-body">
+                                            <div class="grant-documents">
+                                                <p class="mb-3"><a href="#" class="fw-bold text-decoration-underline" style="color: var(--primary-blue);">Портфолио</a> (отсканированная копия с подписью), к которому прилагаются:</p>
+                                                <ul class="small">
+                                                    <li class="mb-1">копия документа, удостоверяющего личность;</li>
+                                                    <li class="mb-1">копия документа об образовании образца, установленного федеральным органом исполнительной власти, или справка об обучении (для выпускных курсов специалитета или магистратуры);</li>
+                                                    <li class="mb-1">копии совместно опубликованных с предполагаемым научным руководителем научных работ, получивших индекс DOI на момент подачи конкурсных материалов, соответствующие выбранной программе аспирантуры (для соискателей, претендующих на получение статуса «Победитель»);</li>
+                                                    <li class="mb-1">документы, подтверждающие апробацию результатов научного исследования (копии научных публикаций, копии дипломов победителей и призеров в научных мероприятиях, сведения об именных стипендиях, подтверждение участия в научных конференциях и др.);</li>
+                                                    <li>документы, подтверждающие иные научные достижения (на усмотрение соискателя).</li>
+                                                </ul>
+                                                
+                                                <p class="mb-3 mt-4"><a href="#" class="fw-bold text-decoration-underline" style="color: var(--primary-blue);">Сведения о научном руководителе</a>, условиях и возможностях для выполнения научных исследований по заданной тематике (отсканированная копия с подписью).</p>
+                                                
+                                                <p class="mb-3"><a href="#" class="fw-bold text-decoration-underline" style="color: var(--primary-blue);">План реализации научного исследования</a>.</p>
+                                                
+                                                <p class="mb-3"><a href="#" class="fw-bold text-decoration-underline" style="color: var(--primary-blue);">Согласие на обработку персональных данных</a> (отсканированная копия с подписью).</p>
+                                                
+                                                <p class="mb-0"><a href="#" class="fw-bold text-decoration-underline" style="color: var(--primary-blue);">Согласие на обработку персональных данных, разрешенных субъектом персональных данных для распространения</a> (отсканированная копия с подписью).</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Состав научных руководителей -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#grantDirectors">
+                                            состав научных руководителей
+                                        </button>
+                                    </h2>
+                                    <div id="grantDirectors" class="accordion-collapse collapse" data-bs-parent="#grantAccordion">
+                                        <div class="accordion-body">
+                                            <!-- Контент руководителей будет добавлен -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 7: КОНТАКТЫ ===== -->
+        <section class="contacts-section py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h2 class="section-title mb-4">Контакты</h2>
+                        
+                        <div class="contact-info">
+                            <p class="fs-5 fw-bold mb-3">Руководитель программы:</p>
+                            <p class="fs-5 mb-4">
+                                <span class="fw-bold">Иевлева Ольга Тихоновна</span> — доктор технических наук, профессор, зав. кафедрой графики и информационных технологий архитектурного проектирования – руководитель образовательной программы 2.1. Строительство и архитектура.
+                            </p>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p class="mb-2">
+                                        <strong>Адрес:</strong><br>
+                                        Ростов-на-Дону, пр. Буденновский, 39, к. 33
+                                    </p>
+                                    <p class="mb-2">
+                                        <strong>Телефон:</strong><br>
+                                        (863) 218-40-00 доб. 200-24
+                                    </p>
+                                    <p class="mb-0">
+                                        <strong>E-mail:</strong><br>
+                                        <a href="mailto:ijevleva@sfedu.ru" class="text-decoration-underline" style="color: var(--primary-blue);">ijevleva@sfedu.ru</a>
+                                    </p>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="contact-photo rounded-3" style="background: var(--gradient-primary); height: 215px; width: 160px;">
+                                        <div class="h-100 d-flex align-items-center justify-content-center text-white">
+                                            <i class="bi bi-person-circle display-1"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер (можно подключить общий) -->
+    <footer class="footer" id="footer-placeholder">
+        <!-- Общий футер будет здесь -->
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Активация всплывающих подсказок
+        document.addEventListener('DOMContentLoaded', function() {
+            // Инициализация Bootstrap компонентов
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+            
+            // Анимация при скролле
+            function animateOnScroll() {
+                var elements = document.querySelectorAll('.director-card, .document-link');
+                
+                elements.forEach(function(element) {
+                    var elementTop = element.getBoundingClientRect().top;
+                    var elementVisible = 150;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.classList.add('fade-in-up');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Инициализация при загрузке
+        });
+    </script>
+</body>
+</html>

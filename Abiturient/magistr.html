@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магистратура | ААИ ЮФУ</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <style>
+        /* ===== БАЗОВЫЕ СТИЛИ И ПЕРЕМЕННЫЕ ===== */
+        :root {
+            --primary-blue: #080D6B;
+            --secondary-pink: #ED1160;
+            --dark-grey: #232328;
+            --medium-grey: #777777;
+            --light-grey: #f3f3f3;
+            --white: #ffffff;
+            --black: #000000;
+            --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%);
+            --gradient-dark: linear-gradient(45deg, #131313, var(--primary-blue));
+            --light-blue: rgba(230, 231, 240, 1);
+        }
+
+        /* ===== ОБЩИЕ СТИЛИ ===== */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        /* Типографика */
+        .hero-title {
+            font-size: 80px;
+            font-weight: 500;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 500;
+            text-transform: uppercase;
+            line-height: 1.3;
+            margin-bottom: 40px;
+        }
+
+        .section-subtitle {
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1.4;
+            text-transform: uppercase;
+        }
+
+        /* ===== СЕКЦИИ ===== */
+        section {
+            padding: 80px 0;
+        }
+
+        /* ===== КАРТОЧКИ ===== */
+        .info-card {
+            background: var(--white);
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* ===== КНОПКИ И ССЫЛКИ ===== */
+        .btn {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-lg {
+            padding: 15px 30px;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(8, 13, 107, 0.3);
+        }
+
+        .btn-outline-light {
+            border-width: 2px;
+        }
+
+        .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* ===== КАЛЕНДАРЬ ===== */
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+            max-width: 560px;
+        }
+
+        .calendar-day {
+            width: 80px;
+            height: 46px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #D2D2D2;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .calendar-day.current {
+            background: var(--light-blue);
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+        }
+
+        .calendar-day.highlight {
+            background: var(--secondary-pink);
+            border-color: var(--secondary-pink);
+            color: var(--white);
+        }
+
+        /* ===== ТАБЛИЦЫ ===== */
+        .table-container {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .table-header {
+            display: grid;
+            grid-template-columns: 90px 510px 466px;
+            gap: 36px;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--primary-blue);
+        }
+
+        .table-row {
+            display: grid;
+            grid-template-columns: 90px 510px 466px;
+            gap: 36px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        /* ===== АДАПТИВНОСТЬ ===== */
+        /* Большие десктопы (≥1400px) */
+        @media (min-width: 1400px) {
+            .hero-title {
+                font-size: 100px;
+            }
+            
+            .section-title {
+                font-size: 48px;
+            }
+        }
+
+        /* Планшеты (≤992px) */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 60px;
+            }
+            
+            .section-title {
+                font-size: 36px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+
+            .table-header,
+            .table-row {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .table-row {
+                padding: 30px 0;
+            }
+        }
+
+        /* Планшеты (≤768px) */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 48px;
+                text-align: center;
+            }
+            
+            .section-title {
+                font-size: 32px;
+                text-align: center;
+            }
+            
+            .btn-lg {
+                padding: 12px 24px;
+                font-size: 15px;
+            }
+
+            .calendar-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* Мобильные (≤576px) */
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .section-subtitle {
+                font-size: 18px;
+            }
+            
+            section {
+                padding: 40px 0;
+            }
+
+            .calendar-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Очень маленькие мобильные (≤375px) */
+        @media (max-width: 375px) {
+            .hero-title {
+                font-size: 32px;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+            
+            .btn-lg {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+
+        /* ===== УТИЛИТЫ ===== */
+        .text-pink {
+            color: var(--secondary-pink) !important;
+        }
+
+        .text-blue {
+            color: var(--primary-blue) !important;
+        }
+
+        .bg-gradient-dark {
+            background: var(--gradient-dark) !important;
+        }
+
+        .bg-light-blue {
+            background-color: var(--light-blue) !important;
+        }
+
+        .border-light-grey {
+            border-color: #D2D2D2 !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигация -->
+    <header>
+        <!-- Навигация будет здесь -->
+    </header>
+
+    <main class="main-content">
+        <!-- ===== СЕКЦИЯ 1: ГЕРОЙ ===== -->
+        <section class="hero-section py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 mb-5 mb-lg-0">
+                        <div class="d-flex align-items-center mb-4">
+                            <i class="bi bi-arrow-left fs-4 text-primary me-3"></i>
+                            <h2 class="h4 mb-0 text-primary text-uppercase fw-medium">абитуриенту</h2>
+                        </div>
+                        <h1 class="hero-title text-black mb-4">магистратура</h1>
+                        <p class="lead fs-5 text-dark mb-5">
+                            Продолжите своё профессиональное и творческое развитие в магистратуре Академии. 
+                            Мы объединяем традиции художественного образования и современные исследовательские 
+                            практики в области архитектуры, дизайна, изобразительного искусства и культурологии.
+                        </p>
+                        <p class="fs-5 text-blue fw-medium mb-5">
+                            Выбирайте магистерскую программу в соответствии со своими профессиональными 
+                            навыками и творческими целями. Наши направления охватывают ключевые области 
+                            архитектурного, художественного и дизайнерского образования и ориентированы 
+                            на развитие практических навыков и исследовательской компетенции.
+                        </p>
+                        
+                        <div class="stats-container mb-5">
+                            <div class="row g-4">
+                                <div class="col-md-4">
+                                    <div class="text-center">
+                                        <div class="display-4 fw-bold text-blue mb-2">9</div>
+                                        <div class="text-uppercase fw-medium text-dark">магистерских программ</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="text-center">
+                                        <div class="display-4 fw-bold text-blue mb-2">124</div>
+                                        <div class="text-uppercase fw-medium text-dark">бюджетных места</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="text-center">
+                                        <div class="display-4 fw-bold text-blue mb-2">онлайн</div>
+                                        <div class="text-uppercase fw-medium text-dark">преимущественный формат обучения</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-primary btn-lg px-5">
+                            Подать заявление
+                        </button>
+                    </div>
+                    
+                    <div class="col-lg-5">
+                        <!-- Графический элемент -->
+                        <div class="position-relative" style="height: 500px;">
+                            <div class="position-absolute top-0 start-0" style="width: 200px; height: 200px;">
+                                <div class="position-absolute" style="width: 100px; height: 100px; background: var(--gradient-primary); border-radius: 10px; transform: rotate(30deg); opacity: 0.7;"></div>
+                                <div class="position-absolute top-50 start-0 translate-middle-y" style="width: 100px; height: 100px; background: var(--gradient-primary); border-radius: 10px; transform: rotate(30deg); opacity: 0.5;"></div>
+                            </div>
+                            
+                            <div class="position-absolute top-50 start-50 translate-middle" style="width: 200px; height: 200px;">
+                                <div class="position-absolute" style="width: 100px; height: 100px; background: var(--gradient-primary); border-radius: 10px; transform: rotate(30deg); opacity: 0.8;"></div>
+                                <div class="position-absolute top-50 start-0 translate-middle-y" style="width: 100px; height: 100px; background: var(--gradient-primary); border-radius: 10px; transform: rotate(30deg); opacity: 0.6;"></div>
+                            </div>
+                            
+                            <div class="position-absolute bottom-0 end-0" style="width: 200px; height: 200px;">
+                                <div class="position-absolute" style="width: 100px; height: 100px; background: var(--gradient-primary); border-radius: 10px; transform: rotate(30deg); opacity: 0.9;"></div>
+                                <div class="position-absolute top-50 end-0 translate-middle-y" style="width: 100px; height: 100px; background: var(--gradient-primary); border-radius: 10px; transform: rotate(30deg); opacity: 0.5;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 2: НАПРАВЛЕНИЯ ПОДГОТОВКИ ===== -->
+        <section class="programs-section py-5 bg-gradient-dark text-white">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">Направления подготовки</h2>
+                
+                <div class="row g-4 justify-content-center">
+                    <!-- Левая колонка -->
+                    <div class="col-lg-6">
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <div class="info-card p-4 h-100">
+                                    <div class="d-flex align-items-start mb-3">
+                                        <span class="badge bg-primary fs-6 fw-normal me-3">07.04.01</span>
+                                        <p class="mb-0 fs-6">Архитектура: программа «Архитектура зданий и сооружений» (по кафедре АЖОЗ)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <div class="info-card p-4 h-100">
+                                    <div class="d-flex align-items-start mb-3">
+                                        <span class="badge bg-primary fs-6 fw-normal me-3">07.04.01</span>
+                                        <p class="mb-0 fs-6">Архитектура: программа «Экологическая архитектура» (по кафедре АЖОЗ)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <div class="info-card p-4 h-100">
+                                    <div class="d-flex align-items-start mb-3">
+                                        <span class="badge bg-primary fs-6 fw-normal me-3">07.04.01</span>
+                                        <p class="mb-0 fs-6">Архитектура: программа «Архитектура общественных зданий и сооружений» (по кафедре АСП)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <div class="info-card p-4 h-100">
+                                    <div class="d-flex align-items-start mb-3">
+                                        <span class="badge bg-primary fs-6 fw-normal me-3">07.04.01</span>
+                                        <p class="mb-0 fs-6">Архитектура: программа «Urban Design (Городской дизайн)»</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <div class="info-card p-4 h-100">
+                                    <div class="d-flex align-items-start mb-3">
+                                        <span class="badge bg-primary fs-6 fw-normal me-3">07.04.02</span>
+                                        <p class="mb-0 fs-6">Реконструкция и реставрация архитектурного наследия: программа «Визуальная реконструкция историко-архитектурного наследия и анимация»</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Правая колонка -->
+                    <div class="col-lg-6">
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <div class="info-card p-4 h-100">
+                                    <div class="d-flex align-items-start mb-3">
+                                        <span class="badge bg-primary fs-6 fw-normal me-3">07.04.03</span>
+                                        <p class="mb-0 fs-6">Дизайн архитектурной среды: программа «Городской интерьер и мастер-планирование»</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <div class="info-card p-4 h-100">
+                                    <div class="d-flex align-items-start mb-3">
+                                        <span class="badge bg-primary fs-6 fw-normal me-3">44.04.01</span>
+                                        <p class="mb-0 fs-6">Педагогическое образование: программа «Изобразительное искусство в системе непрерывного художественного образования»</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <div class="info-card p-4 h-100">
+                                    <div class="d-flex align-items-start mb-3">
+                                        <span class="badge bg-primary fs-6 fw-normal me-3">54.04.01</span>
+                                        <p class="mb-0 fs-6">Дизайн: программа «Дизайн»</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <div class="info-card p-4 h-100">
+                                    <div class="d-flex align-items-start mb-3">
+                                        <span class="badge bg-primary fs-6 fw-normal me-3">54.04.02</span>
+                                        <p class="mb-0 fs-6">Декоративно-прикладное искусство и народные промыслы: программа «Арт-практики в декоративном искусстве»</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 3: КАЛЕНДАРЬ ПРИЕМА ===== -->
+        <section class="calendar-section py-5 bg-light">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">Календарь приема</h2>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body p-5">
+                                <h3 class="section-subtitle text-blue mb-4">
+                                    Сроки приема документов на очное отделение у лиц, поступающих для обучения 
+                                    по программам подготовки в магистратуру в 2025 году
+                                </h3>
+                                
+                                <div class="calendar-navigation mb-5">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <button class="btn btn-outline-primary">
+                                            <i class="bi bi-chevron-left me-2"></i> Июнь
+                                        </button>
+                                        <button class="btn btn-light">
+                                            Август <i class="bi bi-chevron-right ms-2"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Календарь -->
+                                <div class="calendar-grid mx-auto mb-5">
+                                    <!-- Дни недели -->
+                                    <div class="calendar-day border-0 fw-bold text-muted">26</div>
+                                    <div class="calendar-day border-0 fw-bold text-muted">27</div>
+                                    <div class="calendar-day border-0 fw-bold text-muted">28</div>
+                                    <div class="calendar-day border-0 fw-bold text-muted">29</div>
+                                    <div class="calendar-day border-0 fw-bold text-muted">30</div>
+                                    <div class="calendar-day border-0 fw-bold text-muted">31</div>
+                                    <div class="calendar-day highlight fw-bold">1</div>
+                                    
+                                    <!-- Июль -->
+                                    <div class="calendar-day">2</div>
+                                    <div class="calendar-day">3</div>
+                                    <div class="calendar-day">4</div>
+                                    <div class="calendar-day">5</div>
+                                    <div class="calendar-day">6</div>
+                                    <div class="calendar-day">7</div>
+                                    <div class="calendar-day">8</div>
+                                    <div class="calendar-day">9</div>
+                                    <div class="calendar-day">10</div>
+                                    <div class="calendar-day">11</div>
+                                    <div class="calendar-day">12</div>
+                                    <div class="calendar-day">13</div>
+                                    <div class="calendar-day">14</div>
+                                    <div class="calendar-day">15</div>
+                                    <div class="calendar-day">16</div>
+                                    <div class="calendar-day">17</div>
+                                    <div class="calendar-day">18</div>
+                                    <div class="calendar-day">19</div>
+                                    <div class="calendar-day current fw-bold">20</div>
+                                    <div class="calendar-day">21</div>
+                                    <div class="calendar-day">22</div>
+                                    <div class="calendar-day">23</div>
+                                    <div class="calendar-day">24</div>
+                                    <div class="calendar-day">25</div>
+                                    <div class="calendar-day">26</div>
+                                    <div class="calendar-day">27</div>
+                                    <div class="calendar-day">28</div>
+                                    <div class="calendar-day">29</div>
+                                    <div class="calendar-day">30</div>
+                                    
+                                    <!-- Август -->
+                                    <div class="calendar-day border-0 fw-bold text-muted">1</div>
+                                    <div class="calendar-day border-0 fw-bold text-muted">2</div>
+                                    <div class="calendar-day border-0 fw-bold text-muted">3</div>
+                                    <div class="calendar-day border-0 fw-bold text-muted">4</div>
+                                    <div class="calendar-day border-0 fw-bold text-muted">5</div>
+                                    <div class="calendar-day border-0 fw-bold text-muted">6</div>
+                                </div>
+                                
+                                <div class="alert alert-info border-0 bg-light-blue mt-5">
+                                    <div class="d-flex">
+                                        <i class="bi bi-info-circle-fill fs-4 text-primary me-3"></i>
+                                        <div>
+                                            <p class="mb-2 fs-5 fw-bold">
+                                                Публикация расписания вступительных испытаний ЮФУ на сайте
+                                            </p>
+                                            <p class="mb-0">
+                                                20 июля — ключевая дата для публикации расписания
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 4: ЦИФРЫ НАБОРА ===== -->
+        <section class="numbers-section py-5 bg-gradient-dark text-white">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">Цифры набора 2025 года</h2>
+                
+                <div class="table-container">
+                    <!-- Заголовок таблицы -->
+                    <div class="table-header d-none d-lg-grid">
+                        <div class="fw-bold text-blue">Код НП</div>
+                        <div class="fw-bold text-blue">Наименование направления подготовки / образовательной программы</div>
+                        <div class="d-grid grid-template-columns-4 text-center">
+                            <div class="fw-bold text-blue">Бюджет</div>
+                            <div class="fw-bold text-blue">Из них целевой прием</div>
+                            <div class="fw-bold text-blue">Коммерция</div>
+                            <div class="fw-bold text-blue">Всего</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Мобильный заголовок -->
+                    <div class="d-block d-lg-none mb-4">
+                        <h5 class="text-blue mb-3">Очная форма обучения</h5>
+                    </div>
+                    
+                    <!-- Строки таблицы -->
+                    <div class="table-rows">
+                        <!-- Строка 1 -->
+                        <div class="table-row d-grid d-lg-grid mb-4">
+                            <div class="fw-bold text-blue">07.04.01</div>
+                            <div>
+                                <div class="fw-bold text-dark mb-2">Архитектура</div>
+                                <a href="#" class="text-decoration-underline text-dark">Архитектура зданий и сооружений</a>
+                            </div>
+                            <div class="d-grid grid-template-columns-4 text-center">
+                                <div class="fw-bold text-dark">20</div>
+                                <div class="fw-bold text-dark">1</div>
+                                <div class="fw-bold text-dark">5</div>
+                                <div class="fw-bold text-dark">25</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Строка 2 -->
+                        <div class="table-row d-grid d-lg-grid mb-4">
+                            <div class="fw-bold text-blue">07.04.01</div>
+                            <div>
+                                <div class="fw-bold text-dark mb-2">Архитектура</div>
+                                <a href="#" class="text-decoration-underline text-dark">Архитектура общественных зданий и сооружений</a>
+                            </div>
+                            <div class="d-grid grid-template-columns-4 text-center">
+                                <div class="fw-bold text-dark">20</div>
+                                <div class="fw-bold text-dark">1</div>
+                                <div class="fw-bold text-dark">5</div>
+                                <div class="fw-bold text-dark">25</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Строка 3 -->
+                        <div class="table-row d-grid d-lg-grid mb-4">
+                            <div class="fw-bold text-blue">07.04.01</div>
+                            <div>
+                                <div class="fw-bold text-dark mb-2">Архитектура</div>
+                                <a href="#" class="text-decoration-underline text-dark">Экологическая архитектура</a>
+                            </div>
+                            <div class="d-grid grid-template-columns-4 text-center">
+                                <div class="fw-bold text-dark">15</div>
+                                <div class="fw-bold text-dark">1</div>
+                                <div class="fw-bold text-dark">5</div>
+                                <div class="fw-bold text-dark">20</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Строка 4 -->
+                        <div class="table-row d-grid d-lg-grid mb-4">
+                            <div class="fw-bold text-blue">07.04.01</div>
+                            <div>
+                                <div class="fw-bold text-dark mb-2">Архитектура</div>
+                                <a href="#" class="text-decoration-underline text-dark">Urban Design (Городской дизайн)</a>
+                            </div>
+                            <div class="d-grid grid-template-columns-4 text-center">
+                                <div class="fw-bold text-dark">0</div>
+                                <div class="fw-bold text-dark">0</div>
+                                <div class="fw-bold text-dark">20</div>
+                                <div class="fw-bold text-dark">20</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Строка 5 -->
+                        <div class="table-row d-grid d-lg-grid mb-4">
+                            <div class="fw-bold text-blue">07.04.02</div>
+                            <div>
+                                <div class="fw-bold text-dark mb-2">Реконструкция и реставрация архитектурного наследия</div>
+                                <a href="#" class="text-decoration-underline text-dark">Визуальная реконструкция историко-архитектурного наследия</a>
+                            </div>
+                            <div class="d-grid grid-template-columns-4 text-center">
+                                <div class="fw-bold text-dark">15</div>
+                                <div class="fw-bold text-dark">1</div>
+                                <div class="fw-bold text-dark">5</div>
+                                <div class="fw-bold text-dark">20</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Строка 6 -->
+                        <div class="table-row d-grid d-lg-grid mb-4">
+                            <div class="fw-bold text-blue">07.04.03</div>
+                            <div>
+                                <div class="fw-bold text-dark mb-2">Дизайн архитектурной среды</div>
+                                <a href="#" class="text-decoration-underline text-dark">Городской интерьер и мастер-планирование</a>
+                            </div>
+                            <div class="d-grid grid-template-columns-4 text-center">
+                                <div class="fw-bold text-dark">15</div>
+                                <div class="fw-bold text-dark">1</div>
+                                <div class="fw-bold text-dark">5</div>
+                                <div class="fw-bold text-dark">20</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Строка 7 -->
+                        <div class="table-row d-grid d-lg-grid mb-4">
+                            <div class="fw-bold text-blue">44.04.01</div>
+                            <div>
+                                <div class="fw-bold text-dark mb-2">Педагогическое образование</div>
+                                <a href="#" class="text-decoration-underline text-dark">Изобразительное искусство в системе непрерывного художественного образования</a>
+                            </div>
+                            <div class="d-grid grid-template-columns-4 text-center">
+                                <div class="fw-bold text-dark">15</div>
+                                <div class="fw-bold text-dark">3</div>
+                                <div class="fw-bold text-dark">10</div>
+                                <div class="fw-bold text-dark">25</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Строка 8 -->
+                        <div class="table-row d-grid d-lg-grid mb-4">
+                            <div class="fw-bold text-blue">54.04.01</div>
+                            <div>
+                                <div class="fw-bold text-dark mb-2">Дизайн</div>
+                                <a href="#" class="text-decoration-underline text-dark">Дизайн</a>
+                            </div>
+                            <div class="d-grid grid-template-columns-4 text-center">
+                                <div class="fw-bold text-dark">16</div>
+                                <div class="fw-bold text-dark">0</div>
+                                <div class="fw-bold text-dark">14</div>
+                                <div class="fw-bold text-dark">30</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Строка 9 -->
+                        <div class="table-row d-grid d-lg-grid mb-4">
+                            <div class="fw-bold text-blue">54.04.02</div>
+                            <div>
+                                <div class="fw-bold text-dark mb-2">Декоративно-прикладное искусство и народные промыслы</div>
+                                <a href="#" class="text-decoration-underline text-dark">Арт-практика в декоративном искусстве</a>
+                            </div>
+                            <div class="d-grid grid-template-columns-4 text-center">
+                                <div class="fw-bold text-dark">8</div>
+                                <div class="fw-bold text-dark">0</div>
+                                <div class="fw-bold text-dark">5</div>
+                                <div class="fw-bold text-dark">13</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Итоговая строка -->
+                        <div class="table-row d-grid d-lg-grid pt-4 border-top-2 border-primary">
+                            <div class="fw-bold text-blue"></div>
+                            <div class="fw-bold text-blue text-uppercase">Итого</div>
+                            <div class="d-grid grid-template-columns-4 text-center">
+                                <div class="fw-bold text-blue">124</div>
+                                <div class="fw-bold text-blue">8</div>
+                                <div class="fw-bold text-blue">74</div>
+                                <div class="fw-bold text-blue">198</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 5: ВСТУПИТЕЛЬНЫЕ ИСПЫТАНИЯ ===== -->
+        <section class="exams-section py-5">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">Вступительные испытания</h2>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="card border-0 shadow-sm mb-5">
+                            <div class="card-body p-5">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-8">
+                                        <h3 class="section-subtitle text-blue mb-4">Баллы для поступления</h3>
+                                        <div class="row g-4">
+                                            <div class="col-md-6">
+                                                <div class="bg-primary text-white p-4 rounded-3 h-100">
+                                                    <h4 class="display-4 fw-bold mb-3">50+</h4>
+                                                    <p class="mb-0">
+                                                        Минимальное количество баллов, подтверждающее успешное 
+                                                        прохождение вступительных испытаний на места в рамках 
+                                                        контрольных цифр приема граждан на обучение за счет средств 
+                                                        бюджетных ассигнований федерального бюджета
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="bg-primary text-white p-4 rounded-3 h-100">
+                                                    <h4 class="display-4 fw-bold mb-3">40+</h4>
+                                                    <p class="mb-0">
+                                                        Минимальное количество баллов, подтверждающее успешное 
+                                                        прохождение вступительных испытаний на места по договорам 
+                                                        об оказании платных образовательных услуг
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="text-center mt-4 mt-lg-0">
+                                            <i class="bi bi-clipboard-check display-1 text-primary"></i>
+                                            <h4 class="mt-3 mb-3">Требования</h4>
+                                            <p class="text-muted">
+                                                Подробные требования к вступительным испытаниям для каждого направления
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <h3 class="section-subtitle text-blue mb-4">Поступи в магистратуру без экзаменов</h3>
+                            <div class="row g-4 justify-content-center">
+                                <div class="col-md-6">
+                                    <a href="#" class="card border-0 shadow-sm text-decoration-none hover-lift h-100">
+                                        <div class="card-body p-4">
+                                            <div class="d-flex align-items-center">
+                                                <i class="bi bi-trophy fs-1 text-primary me-4"></i>
+                                                <div>
+                                                    <h5 class="card-title mb-2">Олимпиада федеральных университетов для поступающих в магистратуру</h5>
+                                                    <p class="card-text text-muted mb-0">Участвуйте и поступайте без вступительных испытаний</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-6">
+                                    <a href="#" class="card border-0 shadow-sm text-decoration-none hover-lift h-100">
+                                        <div class="card-body p-4">
+                                            <div class="d-flex align-items-center">
+                                                <i class="bi bi-briefcase fs-1 text-primary me-4"></i>
+                                                <div>
+                                                    <h5 class="card-title mb-2">Конкурс портфолио «Магистратура ЮФУ»</h5>
+                                                    <p class="card-text text-muted mb-0">Представьте свои достижения и проекты</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 6: ПЛАТНОЕ ОБУЧЕНИЕ ===== -->
+        <section class="tuition-section py-5 bg-gradient-dark text-white">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">Платное обучение</h2>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="card border-0 bg-white text-dark mb-4">
+                            <div class="card-body p-5">
+                                <h3 class="section-subtitle text-blue mb-4">
+                                    Стоимость платных образовательных услуг по программам магистратуры
+                                </h3>
+                                
+                                <div class="row g-4">
+                                    <!-- Карточка 1 -->
+                                    <div class="col-md-6">
+                                        <div class="card border-0 shadow-sm h-100">
+                                            <div class="card-body p-4">
+                                                <div class="d-flex align-items-start mb-3">
+                                                    <h3 class="display-4 fw-bold text-pink me-3">170 000</h3>
+                                                    <span class="text-muted">₽/год</span>
+                                                </div>
+                                                <ul class="list-unstyled mb-0">
+                                                    <li class="mb-2">Архитектура</li>
+                                                    <li class="mb-2">Реконструкция и реставрация архитектурного наследия</li>
+                                                    <li>Дизайн архитектурной среды</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Карточка 2 -->
+                                    <div class="col-md-6">
+                                        <div class="card border-0 shadow-sm h-100">
+                                            <div class="card-body p-4">
+                                                <div class="d-flex align-items-start mb-3">
+                                                    <h3 class="display-4 fw-bold text-pink me-3">150 000</h3>
+                                                    <span class="text-muted">₽/год</span>
+                                                </div>
+                                                <ul class="list-unstyled mb-0">
+                                                    <li>Педагогическое образование: Изобразительное искусство в системе непрерывного художественного образования</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Карточка 3 -->
+                                    <div class="col-md-6">
+                                        <div class="card border-0 shadow-sm h-100">
+                                            <div class="card-body p-4">
+                                                <div class="d-flex align-items-start mb-3">
+                                                    <h3 class="display-4 fw-bold text-pink me-3">220 000</h3>
+                                                    <span class="text-muted">₽/год</span>
+                                                </div>
+                                                <ul class="list-unstyled mb-0">
+                                                    <li>Urban Design (Городской дизайн)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Карточка 4 -->
+                                    <div class="col-md-6">
+                                        <div class="card border-0 shadow-sm h-100">
+                                            <div class="card-body p-4">
+                                                <div class="d-flex align-items-start mb-3">
+                                                    <h3 class="display-4 fw-bold text-pink me-3">300 000</h3>
+                                                    <span class="text-muted">₽/год</span>
+                                                </div>
+                                                <ul class="list-unstyled mb-0">
+                                                    <li class="mb-2">Дизайн</li>
+                                                    <li>Декоративно-прикладное искусство и народные промыслы</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <p class="lead mb-4">
+                                Подробную информацию о стоимости обучения и условиях оплаты 
+                                вы можете узнать в приемной комиссии
+                            </p>
+                            <button class="btn btn-light btn-lg px-5">
+                                <i class="bi bi-telephone me-2"></i>
+                                Контакты приемной комиссии
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 7: ДОКУМЕНТЫ ===== -->
+        <section class="documents-section py-5">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">Документы для поступления</h2>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <a href="#" class="card border-0 shadow-sm text-decoration-none hover-lift h-100">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex align-items-center">
+                                            <div class="bg-light-blue p-3 rounded-3 me-4">
+                                                <i class="bi bi-file-text fs-1 text-primary"></i>
+                                            </div>
+                                            <div>
+                                                <h5 class="card-title mb-2">Правила приема</h5>
+                                                <p class="card-text text-muted mb-0">Официальные правила приема на 2025 год</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <a href="#" class="card border-0 shadow-sm text-decoration-none hover-lift h-100">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex align-items-center">
+                                            <div class="bg-light-blue p-3 rounded-3 me-4">
+                                                <i class="bi bi-calendar-check fs-1 text-primary"></i>
+                                            </div>
+                                            <div>
+                                                <h5 class="card-title mb-2">Расписание вступительных испытаний</h5>
+                                                <p class="card-text text-muted mb-0">Даты и время экзаменов</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <a href="#" class="card border-0 shadow-sm text-decoration-none hover-lift h-100">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex align-items-center">
+                                            <div class="bg-light-blue p-3 rounded-3 me-4">
+                                                <i class="bi bi-list-task fs-1 text-primary"></i>
+                                            </div>
+                                            <div>
+                                                <h5 class="card-title mb-2">Перечень вступительных испытаний</h5>
+                                                <p class="card-text text-muted mb-0">Требования для каждого направления</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <a href="#" class="card border-0 shadow-sm text-decoration-none hover-lift h-100">
+                                    <div class="card-body p-4">
+                                        <div class="d-flex align-items-center">
+                                            <div class="bg-light-blue p-3 rounded-3 me-4">
+                                                <i class="bi bi-bar-chart fs-1 text-primary"></i>
+                                            </div>
+                                            <div>
+                                                <h5 class="card-title mb-2">Цифры набора</h5>
+                                                <p class="card-text text-muted mb-0">Количество мест по направлениям</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 8: КОНТАКТЫ ===== -->
+        <section class="contacts-section py-5 bg-light">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">Есть вопросы?</h2>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body p-5">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-8">
+                                        <h3 class="mb-4">Приемная комиссия</h3>
+                                        <div class="row g-4">
+                                            <div class="col-md-6">
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <i class="bi bi-telephone text-primary fs-4 me-3"></i>
+                                                    <div>
+                                                        <div class="fw-bold">Телефон:</div>
+                                                        <a href="tel:+78632184000" class="text-decoration-none">8 (863) 218-40-00</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <i class="bi bi-envelope text-primary fs-4 me-3"></i>
+                                                    <div>
+                                                        <div class="fw-bold">Email:</div>
+                                                        <a href="mailto:abit@sfedu.ru" class="text-decoration-none">abit@sfedu.ru</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <i class="bi bi-geo-alt text-primary fs-4 me-3"></i>
+                                                    <div>
+                                                        <div class="fw-bold">Адрес:</div>
+                                                        <span>г. Ростов-на-Дону, ул. Горького, 88</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="d-flex align-items-center mb-3">
+                                                    <i class="bi bi-clock text-primary fs-4 me-3"></i>
+                                                    <div>
+                                                        <div class="fw-bold">Часы работы:</div>
+                                                        <span>Пн-Пт: 9:00-18:00</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 text-center">
+                                        <i class="bi bi-headset display-1 text-primary"></i>
+                                        <p class="mt-3">Мы всегда рады помочь вам с поступлением!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer>
+        <!-- Футер будет здесь -->
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Инициализация Bootstrap компонентов
+        document.addEventListener('DOMContentLoaded', function() {
+            // Кнопка "Наверх"
+            var scrollTopBtn = document.createElement('a');
+            scrollTopBtn.href = '#';
+            scrollTopBtn.className = 'scroll-top';
+            scrollTopBtn.innerHTML = '<i class="bi bi-chevron-up"></i>';
+            document.body.appendChild(scrollTopBtn);
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.classList.add('visible');
+                } else {
+                    scrollTopBtn.classList.remove('visible');
+                }
+            });
+            
+            scrollTopBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Анимация при скролле
+            function animateOnScroll() {
+                var elements = document.querySelectorAll('.info-card, .calendar-day, .table-row');
+                
+                elements.forEach(function(element) {
+                    var elementTop = element.getBoundingClientRect().top;
+                    var elementVisible = 150;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.classList.add('fade-in-up');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll();
+        });
+    </script>
+</body>
+</html>
