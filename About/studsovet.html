@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/owl.theme.green.css">
+    <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css">
+    <link href="css/style.css" rel="stylesheet">
     <title>Студенческое самоуправление | ААИ ЮФУ</title>
     
     <!-- Bootstrap 5 CSS -->
@@ -13,10 +19,20 @@
     
     <!-- Custom CSS -->
     <style>
+        .row{
+            margin-right: 0px !important;
+        }
+        .container{
+            --bs-gutter-x: 0rem !important; 
+            max-width: 1280px;
+        }
         body {
             font-family: 'Montserrat', sans-serif;
             color: #000000;
             line-height: 1.6;
+        }
+        section{
+            padding: 100px 0px;
         }
 
         .hero-title {
@@ -135,11 +151,13 @@
 
         .member-photo {
             height: 306px;
+            width: 270px;
             background-size: cover;
             background-position: center;
         }
 
         .info-card {
+            height: 125px;
             background: #232328;
             border-radius: 20px 0px 0px 20px;
             padding: 0 30px 0 60px;
@@ -231,23 +249,32 @@
         }
     </style>
 </head>
+
+<header id="header-placeholder">
+
+    </header>
+
 <body>
     <main class="main-content">
         <!-- ===== СЕКЦИЯ 1: ГЕРОЙ ===== -->
         <section class="py-5">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-7 mb-5 mb-lg-0">
-                        <h1 class="hero-title mb-4">студенческое<br>самоуправление</h1>
-                        <p class="hero-subtitle">
+                    <div class="col-md-8 mb-5 mb-lg-0 offset-1">
+                        <h1 class="hero-title">студенческое<br>самоуправление</h1>
+                        </div>
+                        <div class="col-md-5 offset-1">
+                            <p class="hero-subtitle ">
                             В Академии существуют два главных органа студенческого самоуправления:<br>
-                            студенческий совет<br>
-                            первичная профсоюзная организация (профсоюз).<br>
-                            Студенческий совет помогает студентам развиваться по различным направлениям подготовки.
+                            <li class="offset-1">студенческий совет<br></li>
+                            <li class="offset-1">первичная профсоюзная организация (профсоюз).<br></li><br>
+                            <p>Студенческий совет помогает студентам развиваться по различным направлениям подготовки.<p>
                         </p>
-                    </div>
-                    <div class="col-lg-5">
-                        <!-- Декоративная графика -->
+                        </div>
+                        
+                    
+                    <!--<div class="col-lg-5">
+                         Декоративная графика
                         <div class="position-relative" style="height: 456px;">
                             <div class="position-absolute top-50 start-0 translate-middle-y" style="width: 144px; height: 166px;">
                                 <div class="position-absolute" style="width: 83px; height: 83px; background: linear-gradient(135deg, #080D6B 0%, #ED1160 100%); border-radius: 10px; transform: rotate(30deg);"></div>
@@ -267,7 +294,7 @@
                                 <div class="position-absolute top-50 end-0" style="width: 83px; height: 83px; background: linear-gradient(135deg, #080D6B 0%, #ED1160 100%); border-radius: 10px; transform: rotate(30deg); opacity: 0.5;"></div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
@@ -275,11 +302,11 @@
         <!-- ===== СЕКЦИЯ 2: СТУДЕНЧЕСКИЙ СОВЕТ ААИ ===== -->
         <section class="py-5">
             <div class="container">
-                <h2 class="section-title">Студенческий совет ААИ</h2>
+                <h2 class="section-title offset-1">Студенческий совет ААИ</h2>
                 
                 <!-- Председатель студсовета -->
                 <div class="row mb-5">
-                    <div class="col-lg-8">
+                    <div class="col-lg-8 offset-2">
                         <div class="row align-items-end">
                             <div class="col-md-4 mb-4 mb-md-0">
                                 <div class="member-card">
@@ -304,14 +331,85 @@
                         </div>
                     </div>
                 </div>
+                <!-- ===== СЕКЦИЯ 3: СОВЕТ ПО ПОВЫШЕНИЮ КАЧЕСТВА ОБРАЗОВАНИЯ ===== -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row justify-content-start">
+                    <div class="col-lg-7 offset-2">
+                        <h3 class="section-subtitle mb-4">Совет по повышению качества образования</h3>
+                        
+                        <p class="info-text">
+                            Совет по качеству образования расскажет о правилах ВУЗа, о своих правах и обязанностях, как студента, поможет в выборе старосты и будет их курировать.<br><br>
+                            Совет реализует оценку профессорско-преподавательского состава, разрабатывает и сопровождает проекты по оценке и улучшению качества образования.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <!-- Руководитель СИЦ -->
+        <!-- ===== СЕКЦИЯ 4: СТУДЕНЧЕСКИЙ ИНФОРМАЦИОННЫЙ ЦЕНТР ===== -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="section-title mb-5 offset-1">СИЦ ААИ —</h2>
+                
+                <div class="row mb-5">
+                    <div class="col-lg-12">
+                        <p class="info-text text-center mb-5 offset-2">
+                            Это открытое студенческое медиа, имеющее авторитет у студентов не только Академии, но и всего ЮФУ. В рамках нашей работы, мы занимаемся информационным сопровождением мероприятий (публикация постов с анонсами, предоставление фотографов и видеографов). К нам можно обращаться с любым информационным запросом, мы реализуем любую идею!
+                        </p>
+                        
+                        <div class="row mb-5 offset-1">
+                            <div class="col-md-5">
+                                <p class="info-bold">Что мы можем дать студенту?</p>
+                                <p class="info-text">
+                                    «Новые знания и опыт, заряженную команду, и что самое главное — первую работу! Мероприятия, репортажи, фотосъемки — то, чем мы живем!»
+                                </p>
+                            </div>
+                            <div class="col-md-5 offset-1">
+                                <p class="info-bold">Направления деятельности в СИЦ</p>
+                                <p class="info-text">
+                                    фотография;<br>
+                                    видеография;<br>
+                                    журналистика;<br>
+                                    дизайн
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+            </div>
+        </section>
+
+        <!-- Кнопка перехода в группу -->
+         <section>
+            <div class="container row">
+                <div class="col-md-6 row info-card align-items-center offset-6">
+                            <div class="col-md-6">
+                                <p class="text-white mb-0" style="font-size: 18px; font-weight: 600;">Группа СИЦ ААИ ВК</p>
+                            </div>
+                            <div class="col-md-6 text-end" style="height: 56px;">
+                                <a href="https://vk.com/sic_aai" target="_blank" class="btn btn-custom">
+                                    перейти в сиц ааи вк
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+            
+                    </section>
+            </div>
+        </section>
+
+        <section>
+            <!-- Руководитель СИЦ -->
                 <div class="row">
-                    <div class="col-lg-8">
+                    <div class="col-md-8 offset-2">
                         <div class="row align-items-end">
                             <div class="col-md-4 mb-4 mb-md-0">
-                                <div class="member-card">
-                                    <div class="member-photo" style="background: linear-gradient(135deg, #080D6B 0%, #ED1160 100%);"></div>
+                                <div class="member-card row offset-4">
+                                    <div class="member-photo col-md-3" style="background: linear-gradient(135deg, #080D6B 0%, #ED1160 100%);"></div>
                                 </div>
                             </div>
                             <div class="col-md-8">
@@ -333,94 +431,27 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
 
-        <!-- ===== СЕКЦИЯ 3: СОВЕТ ПО ПОВЫШЕНИЮ КАЧЕСТВА ОБРАЗОВАНИЯ ===== -->
-        <section class="py-5 bg-light">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <h3 class="section-subtitle mb-4">Совет по повышению качества образования</h3>
-                        
-                        <p class="info-text">
-                            Совет по качеству образования расскажет о правилах ВУЗа, о своих правах и обязанностях, как студента, поможет в выборе старосты и будет их курировать.<br><br>
-                            Совет реализует оценку профессорско-преподавательского состава, разрабатывает и сопровождает проекты по оценке и улучшению качества образования.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
 
-        <!-- ===== СЕКЦИЯ 4: СТУДЕНЧЕСКИЙ ИНФОРМАЦИОННЫЙ ЦЕНТР ===== -->
-        <section class="py-5">
-            <div class="container">
-                <h2 class="section-title text-center mb-5">СИЦ ААИ —</h2>
-                
-                <div class="row justify-content-center mb-5">
-                    <div class="col-lg-9">
-                        <p class="info-text text-center mb-5">
-                            Это открытое студенческое медиа, имеющее авторитет у студентов не только Академии, но и всего ЮФУ. В рамках нашей работы, мы занимаемся информационным сопровождением мероприятий (публикация постов с анонсами, предоставление фотографов и видеографов). К нам можно обращаться с любым информационным запросом, мы реализуем любую идею!
-                        </p>
-                        
-                        <div class="row mb-5">
-                            <div class="col-md-6">
-                                <p class="info-bold">Что мы можем дать студенту?</p>
-                                <p class="info-text">
-                                    «Новые знания и опыт, заряженную команду, и что самое главное — первую работу! Мероприятия, репортажи, фотосъемки — то, чем мы живем!»
-                                </p>
-                            </div>
-                            <div class="col-md-6">
-                                <p class="info-bold">Направления деятельности в СИЦ</p>
-                                <p class="info-text">
-                                    фотография;<br>
-                                    видеография;<br>
-                                    журналистика;<br>
-                                    дизайн
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Кнопка перехода в группу -->
-                        <div class="row info-card align-items-center">
-                            <div class="col-md-7">
-                                <p class="text-white mb-0" style="font-size: 18px; font-weight: 600;">Группа СИЦ ААИ ВК</p>
-                            </div>
-                            <div class="col-md-5 text-end">
-                                <a href="https://vk.com/sic_aai" target="_blank" class="btn btn-custom">
-                                    перейти в сиц ааи вк
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
 
         <!-- ===== СЕКЦИЯ 5: САМОДЕЛКА ===== -->
-        <section class="py-5 bg-dark text-white">
+        <section class="py-5">
             <div class="container">
-                <h2 class="section-title text-center mb-5">самоделка</h2>
+                <h2 class="section-title mb-5 offset-1">самоделка</h2>
                 
                 <div class="row justify-content-center mb-5">
                     <div class="col-lg-9">
-                        <h3 class="section-subtitle text-center mb-4" style="color: #080D6B;">Культурно-творческое направление.<br>Художественный совет</h3>
+                        <h3 class="section-subtitle mb-4 offaset-1" style="color: #080D6B;">Культурно-творческое направление.<br>Художественный совет</h3>
                         
-                        <p class="info-text mb-5 text-center" style="color: white;">
-                            <span class="info-bold">самоделка —</span>
-                            <span class="info-text" style="color: white;">
-                                это самостоятельная творческая деятельность студентов. Мы занимаемся организацией и участием в мероприятиях от Отдела культуры и творчества ЮФУ, направленных на раскрытие талантов студентов в различных направлениях. Каждый участник находит что-то для себя у нас есть музыканты, танцоры, театралы и еще много-много талантливых людей. Атмосферные посиделки, приятные встречи, творческая суета, репетиции — это все про самоделку!<br><br>
-                                Ежегодно студенты Академии принимают участие в одном из крупных студенческих мероприятий ЮФУ — Студенческой весне, где представляют номера в различных жанрах. Занимаются режиссурой, постановкой, создают реквизит, декорации и костюмы. Наши студенты не раз занимали призовые места в различных номинациях Студвесны.<br><br>
-                                <span class="info-bold">Театральное направление</span> — сильная сторона нашего подразделения.<br>
-                                Театр ААИ имеет долгую историю и любим студентами.<br>
-                                Творческое направление совместно со спортивным центром ежегодно готовят тренинги на командообразование «Верёвочный курс», а также общеуниверситетский «Марафон в стиле Креатив», которые помогают первокурсникам быстрее влиться в студенческую семью Академии и проявить свои таланты.
-                            </span>
-                        </p>
 
-                        <!-- Руководители самоделки -->
-                        <div class="row g-4 mb-5">
+                    <!-- Руководители самоделки -->
+                     <section class="py-5">
+                        <div class="row g-4 mb-5 offset-1">
                             <!-- Художественный руководитель -->
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="member-card">
                                     <div class="member-photo" style="background: linear-gradient(135deg, #080D6B 0%, #ED1160 100%);"></div>
                                     <div class="p-3 bg-white">
@@ -440,7 +471,7 @@
                             </div>
                             
                             <!-- Культурный организатор -->
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="member-card">
                                     <div class="member-photo" style="background: linear-gradient(135deg, #080D6B 0%, #ED1160 100%);"></div>
                                     <div class="p-3 bg-white">
@@ -460,7 +491,7 @@
                             </div>
                             
                             <!-- Режиссер -->
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="member-card">
                                     <div class="member-photo" style="background: linear-gradient(135deg, #080D6B 0%, #ED1160 100%);"></div>
                                     <div class="p-3 bg-white">
@@ -478,10 +509,37 @@
                                 </div>
                             </div>
                         </div>
+                     </section>
+                        
+                </div>
+            </div>
+        </section>
 
-                        <!-- Кнопка перехода в группу -->
-                        <div class="row info-card align-items-center">
-                            <div class="col-md-7">
+        <section>
+         <div class="container">   
+        <div class="row col-md-10">
+            <div class="offset-2">
+                    <p class="info-text mb-5" style="color: rgb(0, 0, 0);">
+                            <h3 class="section-subtitle mb-4 " style="color: #080D6B;">самоделка<br></h3>
+                        <div class="col-md-10 offset-1">
+                            <span class="info-text " style="color: rgb(0, 0, 0);">
+                                это самостоятельная творческая деятельность студентов. Мы занимаемся организацией и участием в мероприятиях от Отдела культуры и творчества ЮФУ, направленных на раскрытие талантов студентов в различных направлениях. Каждый участник находит что-то для себя у нас есть музыканты, танцоры, театралы и еще много-много талантливых людей. Атмосферные посиделки, приятные встречи, творческая суета, репетиции — это все про самоделку!<br><br>
+                                Ежегодно студенты Академии принимают участие в одном из крупных студенческих мероприятий ЮФУ — Студенческой весне, где представляют номера в различных жанрах. Занимаются режиссурой, постановкой, создают реквизит, декорации и костюмы. Наши студенты не раз занимали призовые места в различных номинациях Студвесны.<br><br>
+                                <span class="info-bold">Театральное направление</span> — сильная сторона нашего подразделения.<br>
+                                Театр ААИ имеет долгую историю и любим студентами.<br>
+                                Творческое направление совместно со спортивным центром ежегодно готовят тренинги на командообразование «Верёвочный курс», а также общеуниверситетский «Марафон в стиле Креатив», которые помогают первокурсникам быстрее влиться в студенческую семью Академии и проявить свои таланты.
+                            </span>
+                        </div>
+                        </p>
+                </div>
+            </div>
+        </div>
+        </section>
+
+        <section>
+            <div class="container row">
+                <div class="col-md-6 row info-card align-items-center offset-6">
+                           <div class="col-md-7">
                                 <p class="text-white mb-0" style="font-size: 18px; font-weight: 600;">Группа Самоделка</p>
                             </div>
                             <div class="col-md-5 text-end">
@@ -490,37 +548,24 @@
                                 </a>
                             </div>
                         </div>
+                        </div>
                     </div>
-                </div>
+            
+                    </section>
             </div>
         </section>
 
         <!-- ===== СЕКЦИЯ 6: КОРПУС НАСТАВНИЧЕСТВА ===== -->
         <section class="py-5">
             <div class="container">
-                <h2 class="section-title text-center mb-5">Корпус наставничества</h2>
+                <h2 class="section-title mb-5 offset-1">Корпус наставничества</h2>
                 
-                <div class="row justify-content-center mb-5">
+                <div class="row mb-5 offset-2">
                     <div class="col-lg-9">
                         <div class="row align-items-center">
                             <div class="col-md-4 mb-4 mb-md-0">
-                                <div class="member-card">
-                                    <div class="member-photo" style="background: linear-gradient(135deg, #080D6B 0%, #ED1160 100%);"></div>
-                                    <div class="p-3 bg-white">
-                                        <p class="member-name mb-1">Агаджанян Сюзи</p>
-                                        <p class="member-position mb-2">студентка 3 курса | Архитектура</p>
-                                        <p class="member-role mb-3">Старший наставник корпуса студенческого наставничества ААИ</p>
-                                        <div>
-                                            <span class="contact-text">e-mail: </span>
-                                            <a href="mailto:agadzhanian@sfedu.ru" class="contact-link">agadzhanian@sfedu.ru</a>
-                                            <br>
-                                            <span class="contact-text">ВКонтакте: </span>
-                                            <a href="https://vk.com/suzaaan" target="_blank" class="contact-link">https://vk.com/suzaaan</a>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-10">
                                 <p class="info-text">
                                     Студенческое объединение, основной задачей которого является помощь в адаптации студентам всех направлений обучения в Академии. В наши обязанности входит:<br><br>
                                     информирование студентов;<br>
@@ -532,79 +577,140 @@
                         </div>
                     </div>
                 </div>
+
+        <div class="row">
+            <div class="col-lg-8 offset-2">
+                        <div class="row align-items-end">
+                            <div class="col-md-4 mb-4 mb-md-0">
+                                <div class="member-card">
+                                    <div class="member-photo" style="background: linear-gradient(135deg, #080D6B 0%, #ED1160 100%);"></div>
+                                </div>
+                            </div>        
+            <div class="col-md-8">
+                <div class="ps-md-4">
+                                        <p class="member-name mb-2">Агаджанян Сюзи</p>
+                                        <p class="member-position mb-2">студентка 3 курса | Архитектура</p>
+                                        <p class="member-role mb-3">Старший наставник корпуса студенческого наставничества ААИ</p>
+                                        <div  class="contact-text">
+                                            <span>e-mail: </span>
+                                            <a href="mailto:agadzhanian@sfedu.ru" class="contact-link">agadzhanian@sfedu.ru</a>
+                                            <br>
+                                            <span>ВКонтакте: </span>
+                                            <span></span>
+                                            <a href="https://vk.com/suzaaan" target="_blank" class="contact-link">https://vk.com/suzaaan</a>
+                                        </div>
+                                </div>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
+
+    </div>
+    </section>
 
         <!-- ===== СЕКЦИЯ 7: СПОРТ В ААИ ===== -->
-        <section class="py-5 bg-light">
+        <section class="py-5">
             <div class="container">
-                <h2 class="section-title text-center mb-5">спорт в ааи</h2>
+                <h2 class="section-title mb-5 offset-1">спорт в ааи</h2>
                 
-                <div class="row justify-content-center mb-5">
-                    <div class="col-lg-9">
+                <div class="row mb-5">
+                    <div class="col-md-12">
                         <div class="row align-items-center">
-                            <div class="col-md-8 mb-4 mb-md-0">
+                            <div class="col-md-7 mb-4 mb-md-0 offset-2">
                                 <p class="info-text">
                                     <span class="info-bold">Студенческий спортивный клуб</span><br><br>
                                     Наш спортивный центр активно принимает участие и побеждает в различных соревнованиях по баскетболу, пейнтболу, волейболу, шахматах, как на университетском уровне, так и на городским и всероссийском. Ежегодно юноши и девушки академии, совместно с преподавателями сдают нормативы ГТО.
                                 </p>
                             </div>
-                            <div class="col-md-4">
-                                <div class="member-card">
-                                    <div class="member-photo" style="background: linear-gradient(135deg, #080D6B 0%, #ED1160 100%);"></div>
-                                    <div class="p-3 bg-white">
-                                        <p class="member-name mb-1">Дадян григорий</p>
-                                        <p class="member-position mb-2">студент 1 курса | Архитектура</p>
-                                        <p class="member-role mb-3">Куратор спорта ААИ</p>
-                                        <div>
-                                            <span class="contact-text">e-mail: </span>
-                                            <a href="mailto:gdadian@sfedu.ru" class="contact-link">gdadian@sfedu.ru</a>
-                                            <br>
-                                            <span class="contact-text">ВКонтакте: </span>
-                                            <a href="https://vk.com/llmmwwww" target="_blank" class="contact-link">https://vk.com/llmmwwww</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
+
+               <div class="row">
+            <div class="col-lg-8 offset-2">
+                        <div class="row align-items-end">
+                            <div class="col-md-4 mb-4 mb-md-0">
+                                <div class="member-card">
+                                    <div class="member-photo" style="background: linear-gradient(135deg, #080D6B 0%, #ED1160 100%);"></div>
+                                </div>
+                            </div>        
+            <div class="col-md-8">
+                <div class="ps-md-4">
+                                        <p class="member-name mb-2">Дадян григорий</p>
+                                        <p class="member-position mb-2">студент 1 курса | Архитектура</p>
+                                        <p class="member-role mb-3">Куратор спорта ААИ</p>
+                                        <div  class="contact-text">
+                                            <span>e-mail: </span>
+                                            <a href="mailto:agadzhanian@sfedu.ru" class="contact-link">gdadian@sfedu.ru</a>
+                                            <br>
+                                            <span>ВКонтакте: </span>
+                                            <span></span>
+                                            <a href="https://vk.com/llmmwwww" target="_blank" class="contact-link">https://vk.com/llmmwwww</a>
+                                        </div>
+                                </div>
+                    </div>
+                </div>
             </div>
+        </div>   
+
+            </div>
+
+                         
+
         </section>
 
         <!-- ===== СЕКЦИЯ 8: АНИМАЦИОННЫЙ КЛУБ ===== -->
         <section class="py-5">
             <div class="container">
-                <h2 class="section-title text-center mb-5">Анимационный клуб</h2>
+                <h2 class="section-title mb-5 offset-1">Анимационный клуб</h2>
                 
-                <div class="row justify-content-center mb-5">
-                    <div class="col-lg-9">
+                <div class="row mb-5">
+                    <div class="col-md-12">
                         <div class="row align-items-center">
-                            <div class="col-md-4 mb-4 mb-md-0">
-                                <div class="member-card">
-                                    <div class="member-photo" style="background: linear-gradient(135deg, #080D6B 0%, #ED1160 100%);"></div>
-                                    <div class="p-3 bg-white">
-                                        <p class="member-name mb-1">шекеров мейрамбек</p>
-                                        <p class="member-position mb-2">студент 5 курса | Графика</p>
-                                        <p class="member-role mb-3">Руководитель Анимационного клуба ЮФУ</p>
-                                        <div>
-                                            <span class="contact-text">e-mail:</span>
-                                            <span> </span>
-                                            <a href="mailto:shekerov@sfedu.ru" class="contact-link">shekerov@sfedu.ru</a>
-                                            <br>
-                                            <span class="contact-text">ВКонтакте: </span>
-                                            <a href="https://vk.com/idshekerpromit" target="_blank" class="contact-link">https://vk.com/idshekerpromit</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-8">
+                            <div class="col-md-8 offset-2">
                                 <p class="info-text mb-4">
                                     В нашем клубе вы сможете освоить различные техники стоп-моушн анимации, такие как кукольная анимация, пластилиновая анимация и другие. Наши опытные наставники помогут вам разобраться в основах этого искусства и научат создавать захватывающие анимационные истории.
                                 </p>
 
-                                <!-- Кнопка перехода в группу -->
-                                <div class="row info-card align-items-center">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               <div class="row">
+            <div class="col-lg-8 offset-2">
+                        <div class="row align-items-end">
+                            <div class="col-md-4 mb-4 mb-md-0">
+                                <div class="member-card">
+                                    <div class="member-photo" style="background: linear-gradient(135deg, #080D6B 0%, #ED1160 100%);"></div>
+                                </div>
+                            </div>        
+            <div class="col-md-8">
+                <div class="ps-md-4">
+                                        <p class="member-name mb-2">шекеров мейрамбек</p>
+                                        <p class="member-position mb-2">студент 5 курса | Графика</p>
+                                        <p class="member-role mb-3">Руководитель Анимационного клуба ЮФУ</p>
+                                        <div  class="contact-text">
+                                            <span>e-mail: </span>
+                                            <a href="mailto:shekerov@sfedu.ru" class="contact-link">shekerov@sfedu.ru</a>
+                                            <br>
+                                            <span>ВКонтакте: </span>
+                                            <span></span>
+                                            <a href="https://vk.com/idshekerpromit" target="_blank" class="contact-link">https://vk.com/idshekerpromit</a>
+                                        </div>
+                                </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+            </div>
+
+                
+        </section>
+
+        <div class="row info-card align-items-center">
                                     <div class="col-md-7">
                                         <p class="text-white mb-0" style="font-size: 18px; font-weight: 600; line-height: 23px;">Группа Анимационного клуба ЮФУ ВКонтакте</p>
                                     </div>
@@ -614,12 +720,6 @@
                                         </a>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- ===== СЕКЦИЯ 9: ГАЛЕРЕЯ ===== -->
         <section class="py-5">
@@ -671,7 +771,20 @@
         </section>
     </main>
 
-    <!-- Bootstrap JS -->
+    <section id="end">
+ <div id="footer-placeholder"></div>
+    </section>
+
+     <!-- Подключаем Bootstrap JS и Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/@coreui/coreui/dist/js/coreui.bundle.min.js"></script>
+    <script src="common.js"></script>
+    <script src="tabs.js"></script>
+    <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
