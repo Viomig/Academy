@@ -1,7 +1,10 @@
 // Функция для загрузки компонентов
 async function loadComponent(componentName, targetElement) {
   try {
-    const response = await fetch(`components/${componentName}.html`);
+    // Определяем базовый путь
+    const basePath = window.location.pathname.includes('/About/') ? '../' : './';
+    
+    const response = await fetch(`${basePath}components/${componentName}.html`);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
