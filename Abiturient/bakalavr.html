@@ -33,6 +33,315 @@
             --light-grey-bg: #F3F3F3;
             --dark-grey-text: #8C8C8C;
         }
+        
+        .paid-education-section {
+            background: rgba(217, 217, 217, 0.9);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+            min-height: 895px;
+        }
+        
+        .section-title {
+            color: #000000 !important;
+            font-size: 40px;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 40px;
+        }
+        
+        .section-subtitle {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 26px;
+            color: var(--white);
+            margin-bottom: 50px;
+            max-width: 500px;
+        }
+        
+        /* Контейнер для карточек с горизонтальным скроллом */
+        .cards-container {
+            width: 100%;
+            overflow-x: auto;
+            padding: 20px 0;
+            margin: 40px 0;
+        }
+        
+        .cards-scroll {
+            display: inline-flex;
+            gap: 30px;
+            padding: 0 134px 0 237px;
+            min-width: min-content;
+        }
+        
+        /* Стили для столбца с двумя карточками */
+        .card-column {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            min-width: 497px;
+        }
+        
+        /* Точные стили карточки */
+        .price-card {
+            width: 497px;
+            height: 241px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 8px;
+            padding: 24px;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        /* Стили для цены */
+        .price-amount {
+            font-family: Montserrat;
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 49px;
+            letter-spacing: 0%;
+            text-align: left;
+            margin-bottom: 8px;
+        }
+        
+        .price-blue {
+            color: var(--blue-dark);
+        }
+        
+        .price-pink {
+            color: var(--pink);
+        }
+        
+        /* Стили для названия программы */
+        .program-name {
+            font-family: Montserrat;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.4;
+            color: #000;
+            margin: 0;
+            flex: 1;
+        }
+        
+        /* Стили для типа студента */
+        .student-type {
+            font-family: Montserrat;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--blue-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: absolute;
+            right: 24px;
+            bottom: 24px;
+            text-align: right;
+        }
+        
+        /* Контейнер для программы */
+        .program-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 15px;
+            flex: 1;
+            width: 100%;
+        }
+        
+        .program-text-container {
+            flex: 1;
+        }
+        
+        .program-icon {
+            width: 82px;
+            height: 65px;
+            flex-shrink: 0;
+            background-color: var(--blue-light);
+            border-radius: 8px;
+        }
+        
+        /* Навигация */
+        .carousel-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 50px;
+            padding: 0 20px;
+        }
+        
+        .nav-arrow {
+            width: 26px;
+            height: 8px;
+            background-color: var(--blue-dark);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-arrow:hover {
+            background-color: var(--pink);
+        }
+        
+        .nav-arrow.left {
+            transform: rotate(180deg);
+        }
+        
+        .nav-dots {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .nav-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--grey-light);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-dot.active {
+            background-color: var(--blue-dark);
+        }
+        
+        /* Заголовочная секция */
+        .title-section {
+            background-color: var(--blue-dark);
+            padding: 100px 0 0 0;
+        }
+        
+        /* Скрыть стандартный скроллбар */
+        .cards-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .cards-container::-webkit-scrollbar-track {
+            background: var(--grey-light);
+            border-radius: 4px;
+        }
+        
+        .cards-container::-webkit-scrollbar-thumb {
+            background: var(--grey-dark);
+            border-radius: 4px;
+        }
+        
+        .cards-container::-webkit-scrollbar-thumb:hover {
+            background: var(--blue-dark);
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 1400px) {
+            .cards-scroll {
+                padding: 0 50px;
+            }
+            
+            .card-column {
+                min-width: 450px;
+            }
+            
+            .price-card {
+                width: 450px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .paid-education-section {
+                padding: 60px 0;
+                min-height: auto;
+            }
+            
+            .title-section {
+                padding: 60px 0 0 0;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .section-subtitle {
+                font-size: 18px;
+            }
+            
+            .cards-scroll {
+                padding: 0 30px;
+            }
+            
+            .card-column {
+                min-width: 400px;
+            }
+            
+            .price-card {
+                width: 400px;
+                height: auto;
+                min-height: 241px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .price-amount {
+                font-size: 32px;
+                line-height: 40px;
+            }
+            
+            .program-name {
+                font-size: 14px;
+            }
+            
+            .card-column {
+                min-width: 350px;
+            }
+            
+            .price-card {
+                width: 350px;
+                padding: 20px;
+            }
+            
+            .program-icon {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .student-type {
+                position: relative;
+                right: auto;
+                bottom: auto;
+                margin-top: 10px;
+                text-align: right;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .cards-scroll {
+                padding: 0 20px;
+            }
+            
+            .card-column {
+                min-width: 300px;
+            }
+            
+            .price-card {
+                width: 300px;
+            }
+            
+            .program-container {
+                flex-direction: column;
+            }
+            
+            .program-icon {
+                width: 50px;
+                height: 50px;
+            }
+        }
 
         /* ===== ОБЩИЕ СТИЛИ ===== */
         body {
@@ -66,15 +375,15 @@
         }
 
         .program-code {
-            font-size: 20px;
+            font-size: 16px;
             font-weight: 700;
-            color: var(--primary-blue);
+            color: var(--primary-white);
         }
 
         .program-name {
             font-size: 14px;
             font-weight: 700;
-            color: var(--black);
+            color: var(--white);
         }
 
         .exam-title {
@@ -120,7 +429,6 @@
             border: none;
             border-radius: 15px;
             color: var(--white);
-            height: 100%;
             transition: transform 0.3s ease;
         }
 
@@ -523,33 +831,7 @@
     </style>
 </head>
 <body>
-    <!-- Навигация -->
-    <header class="header py-3 bg-white">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
-                        <!-- Логотип ААИ -->
-                        <div style="width: 103px; height: 27px;">
-                            <!-- SVG логотипа -->
-                        </div>
-                    </a>
-                    
-                    <div class="d-none d-lg-flex ms-auto">
-                        <div class="search-box d-flex align-items-center me-4">
-                            <span class="text-dark-grey me-2">что вы ищите</span>
-                            <i class="bi bi-search text-dark-grey"></i>
-                        </div>
-                        
-                        <div class="d-flex gap-4">
-                            <a href="mailto:aai@sfedu.ru" class="text-decoration-none text-dark">aai@sfedu.ru</a>
-                            <a href="tel:+78632402178" class="text-decoration-none text-dark">+7 (863) 240-21-78</a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </header>
+   
 
     <main class="main-content">
         <!-- ===== СЕКЦИЯ 1: ГЕРОЙ ===== -->
@@ -564,37 +846,6 @@
                         
                         <h1 class="hero-title mb-4">бакалавриат /<br>специалитет</h1>
                         
-                        <div class="d-flex flex-wrap gap-4 mb-5">
-                            <a href="#" class="document-link">
-                                <div class="icon-wrapper">
-                                    <!-- SVG иконка документа -->
-                                </div>
-                                <span class="text">правила приема</span>
-                            </a>
-                            
-                            <a href="#" class="document-link">
-                                <div class="icon-wrapper">
-                                    <!-- SVG иконка документа -->
-                                </div>
-                                <span class="text">цифры набора</span>
-                            </a>
-                            
-                            <a href="#" class="document-link">
-                                <div class="icon-wrapper">
-                                    <!-- SVG иконка документа -->
-                                </div>
-                                <span class="text">расписание<br>вступительных испытаний</span>
-                            </a>
-                            
-                            <a href="#" class="document-link">
-                                <div class="icon-wrapper">
-                                    <!-- SVG иконка документа -->
-                                </div>
-                                <span class="text">перечень <br>вступительных испытаний</span>
-                            </a>
-                        </div>
-                        
-                        <h2 class="section-title">набор 2025 года</h2>
                     </div>
                     
                     <div class="col-lg-5">
@@ -608,65 +859,91 @@
                 </div>
             </div>
         </section>
-
-        <!-- ===== СЕКЦИЯ 2: ДОКУМЕНТЫ ===== -->
-        <section class="documents-section py-5">
+        <!-- ===== СЕКЦИЯ 2: СТАТИСТИКА ===== -->
+        <section class="stats-section py-5">
             <div class="container">
-                <h2 class="section-title">документы</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="row g-5">
+                            <div class="col-md-4 text-center">
+                                <div class="stat-number">12</div>
+                                <div class="stat-label">направлений<br>и специальностей</div>
+                            </div>
+                            
+                            <div class="col-md-4 text-center">
+                                <div class="stat-number">469</div>
+                                <div class="stat-label">новых студентов<br>в 2024 году</div>
+                            </div>
+                            
+                            <div class="col-md-4 text-center">
+                                <div class="stat-number">82/100</div>
+                                <div class="stat-label">средний балл<br>по вступительным</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
+            </div>
+        </section>
+
+        <section>
+             <h2 class="section-title offset-1">набор 2025 года</h2>
+
+            <div class="container">
+
                 <div class="row g-4">
                     <!-- Бакалавриат -->
-                    <div class="col-lg-8">
+                    <div class="col-lg-8 col-md-8">
                         <div class="program-card p-4 p-lg-5">
                             <h3 class="section-subtitle mb-4">Бакалавриат</h3>
                             
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <div class="program-code">07.03.01</div>
-                                        <div class="program-name">Архитектура</div>
+                                    <div class="mb-3 row">
+                                        <div class="program-code col-3">07.03.01</div>
+                                        <div class="program-name col-9">Архитектура</div>
                                     </div>
                                     
-                                    <div class="mb-3">
-                                        <div class="program-code">07.03.02</div>
-                                        <div class="program-name">Реконструкция и реставрация архитектурного наследия</div>
+                                    <div class="mb-3 row">
+                                        <div class="program-code col-3">07.03.02</div>
+                                        <div class="program-name col-9">Реконструкция и реставрация архитектурного наследия</div>
                                     </div>
                                     
-                                    <div class="mb-3">
-                                        <div class="program-code">07.03.04</div>
-                                        <div class="program-name">Градостроительство</div>
+                                    <div class="mb-3 row">
+                                        <div class="program-code col-3">07.03.04</div>
+                                        <div class="program-name col-9">Градостроительство</div>
                                     </div>
                                     
-                                    <div class="mb-3">
-                                        <div class="program-code">09.03.01</div>
-                                        <div class="program-name">Информатика и вычислительная техника BIM-технологии в архитектуре и градостроительстве (совместно с ИКТИБ ЮФУ)</div>
+                                    <div class="mb-3 row">
+                                        <div class="program-code col-3">09.03.01</div>
+                                        <div class="program-name col-9">Информатика и вычислительная техника BIM-технологии в архитектуре и градостроительстве (совместно с ИКТИБ ЮФУ)</div>
                                     </div>
                                     
-                                    <div class="mb-3">
-                                        <div class="program-code">44.03.05</div>
-                                        <div class="program-name">Педагогическое образование с двумя профилями подготовки «Изобразительное искусство. Черчение, компьютерная графика и анимация»</div>
+                                    <div class="mb-3 row">
+                                        <div class="program-code col-3">44.03.05</div>
+                                        <div class="program-name col-9">Педагогическое образование с двумя профилями подготовки «Изобразительное искусство. Черчение, компьютерная графика и анимация»</div>
                                     </div>
                                 </div>
                                 
                                 <div class="col-md-6">
-                                    <div class="mb-3">
-                                        <div class="program-code">54.03.01</div>
-                                        <div class="program-name">Дизайн</div>
+                                    <div class="mb-3 row">
+                                        <div class="program-code col-3">54.03.01</div>
+                                        <div class="program-name col-9">Дизайн</div>
                                     </div>
                                     
-                                    <div class="mb-3">
-                                        <div class="program-code">54.03.01</div>
-                                        <div class="program-name">Дизайн костюма</div>
+                                    <div class="mb-3 row">
+                                        <div class="program-code col-3">54.03.01</div>
+                                        <div class="program-name col-9">Дизайн костюма</div>
                                     </div>
                                     
-                                    <div class="mb-3">
-                                        <div class="program-code">54.03.02</div>
-                                        <div class="program-name">Декоративно-прикладное искусство и народные промыслы</div>
+                                    <div class="mb-3 row">
+                                        <div class="program-code col-3">54.03.02</div>
+                                        <div class="program-name col-9">Декоративно-прикладное искусство и народные промыслы</div>
                                     </div>
                                     
-                                    <div class="mb-3">
-                                        <div class="program-code">54.03.03</div>
-                                        <div class="program-name">Искусство костюма и текстиля</div>
+                                    <div class="mb-3 row">
+                                        <div class="program-code col-3">54.03.03</div>
+                                        <div class="program-name col-9">Искусство костюма и текстиля</div>
                                     </div>
                                 </div>
                             </div>
@@ -674,8 +951,8 @@
                     </div>
                     
                     <!-- Специалитет -->
-                    <div class="col-lg-4">
-                        <div class="program-card p-4 p-lg-5 h-100">
+                    <div class="col-lg-4 col-md-4">
+                        <div class="program-card p-4 p-lg-5 ">
                             <h3 class="section-subtitle mb-4">Специалитет</h3>
                             
                             <div class="mb-3">
@@ -693,15 +970,59 @@
                                 <div class="program-name">Скульптура</div>
                             </div>
                         </div>
-                    </div>
+                        <div class="text-end mt-5">
+                    <a href="#" class="btn btn-primary btn-lg">Подать заявление</a>
                 </div>
+                    </div>
+            </div>
+
+        </div>       
+
+        </section>
+
+        <!-- ===== СЕКЦИЯ 2: ДОКУМЕНТЫ ===== -->
+        <section class="documents-section py-5">
+            <div class="container">
+                <h2 class="section-title">документы</h2>
+
+                 <div class="d-flex flex-wrap mb-3 row ">
+                            <a href="#" class="document-link col-md-6 mb-5">
+                                <div class="icon-wrapper">
+                                    <!-- SVG иконка документа -->
+                                </div>
+                                <span class="text">правила приема</span>
+                            </a>
+                            
+                            <a href="#" class="document-link col-md-6 mb-5">
+                                <div class="icon-wrapper">
+                                    <!-- SVG иконка документа -->
+                                </div>
+                                <span class="text">цифры набора</span>
+                            </a>
+                            
+                            <a href="#" class="document-link col-md-6 mb-5">
+                                <div class="icon-wrapper">
+                                    <!-- SVG иконка документа -->
+                                </div>
+                                <span class="text">расписание<br>вступительных испытаний</span>
+                            </a>
+                            
+                            <a href="#" class="document-link col-md-6 mb-5">
+                                <div class="icon-wrapper">
+                                    <!-- SVG иконка документа -->
+                                </div>
+                                <span class="text">перечень <br>вступительных испытаний</span>
+                            </a>
+                        </div>
+                
+                
             </div>
         </section>
 
         <!-- ===== СЕКЦИЯ 3: ВСТУПИТЕЛЬНЫЕ ИСПЫТАНИЯ ===== -->
         <section class="exams-section py-5">
             <div class="container">
-                <h2 class="section-title text-center mb-5">вступительные испытания</h2>
+                <h2 class="section-title mb-5">вступительные испытания</h2>
                 
                 <!-- Бакалавриат -->
                 <div class="mb-5">
@@ -791,7 +1112,7 @@
                 </div>
                 
                 <!-- Кнопка -->
-                <div class="text-center mt-5">
+                <div class="text-end mt-5">
                     <a href="#" class="btn btn-primary btn-lg">
                         Расписание вступительных испытаний
                     </a>
@@ -891,45 +1212,215 @@
                     Стоимость платных образовательных услуг по программам бакалавриата и специалитета
                 </p>
                 
-                <!-- Карусель цен -->
-                <div class="row g-4">
-                    <!-- Карточка 1 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="price-card p-4">
-                            <div class="d-flex justify-content-between align-items-start mb-3">
-                                <h3 class="program-code text-primary mb-0">236 000 ₽</h3>
-                                <span class="badge bg-primary">для иностранных граждан</span>
+                   <!-- Основная секция с карточками -->
+    <section class="paid-education-section">
+        <div class="container-fluid p-0">
+            <!-- Контейнер с горизонтальным скроллом -->
+            <div class="cards-container">
+                <div class="cards-scroll">
+                    <!-- Колонка 1 -->
+                    <div class="card-column">
+                        <!-- Карточка 1.1 - Граждане РФ -->
+                        <div class="price-card">
+                            <div class="price-amount price-pink">136 000 ₽</div>
+                            <div class="program-container">
+                                <div class="program-icon"></div>
+                                <div class="program-text-container">
+                                    <p class="program-name">
+                                        Педагогическое образование с двумя профилями подготовки «Изобразительное искусство. Черчение и компьютерная графика»
+                                    </p>
+                                </div>
                             </div>
-                            <p class="program-name">
-                                Педагогическое образование с двумя профилями подготовки «Изобразительное искусство. Черчение и компьютерная графика»
-                            </p>
+                            <div class="student-type">для граждан РФ</div>
+                        </div>
+                        
+                        <!-- Карточка 1.2 - Иностранные граждане -->
+                        <div class="price-card">
+                            <div class="price-amount price-blue">236 000 ₽</div>
+                            <div class="program-container">
+                                <div class="program-icon"></div>
+                                <div class="program-text-container">
+                                    <p class="program-name">
+                                        Педагогическое образование с двумя профилями подготовки «Изобразительное искусство. Черчение и компьютерная графика»
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="student-type">для иностранных граждан</div>
                         </div>
                     </div>
                     
-                    <!-- Добавьте остальные карточки цен аналогичным образом -->
+                    <!-- Колонка 2 -->
+                    <div class="card-column">
+                        <!-- Карточка 2.1 - Граждане РФ -->
+                        <div class="price-card">
+                            <div class="price-amount price-pink">200 000 ₽</div>
+                            <div class="program-container">
+                                <div class="program-icon"></div>
+                                <div class="program-text-container">
+                                    <p class="program-name">
+                                        Информатика и вычислительная техника. BIM-технологии в архитектуре и градостроительстве (совместно с ИКТИБ ЮФУ)
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="student-type">для граждан РФ</div>
+                        </div>
+                        
+                        <!-- Карточка 2.2 - Иностранные граждане -->
+                        <div class="price-card">
+                            <div class="price-amount price-blue">250 000 ₽</div>
+                            <div class="program-container">
+                                <div class="program-icon"></div>
+                                <div class="program-text-container">
+                                    <p class="program-name">
+                                        Информатика и вычислительная техника. BIM-технологии в архитектуре и градостроительстве (совместно с ИКТИБ ЮФУ)
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="student-type">для иностранных граждан</div>
+                        </div>
+                    </div>
                     
+                    <!-- Колонка 3 -->
+                    <div class="card-column">
+                        <!-- Карточка 3.1 - Граждане РФ -->
+                        <div class="price-card">
+                            <div class="price-amount price-pink">180 000 ₽</div>
+                            <div class="program-container">
+                                <div class="program-icon"></div>
+                                <div class="program-text-container">
+                                    <p class="program-name">
+                                        Архитектура<br>Реконструкция и реставрация архитектурного наследия<br>Градостроительство
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="student-type">для граждан РФ</div>
+                        </div>
+                        
+                        <!-- Карточка 3.2 - Иностранные граждане -->
+                        <div class="price-card">
+                            <div class="price-amount price-blue">236 000 ₽</div>
+                            <div class="program-container">
+                                <div class="program-icon"></div>
+                                <div class="program-text-container">
+                                    <p class="program-name">
+                                        Архитектура<br>Реконструкция и реставрация архитектурного наследия<br>Градостроительство
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="student-type">для иностранных граждан</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Колонка 4 -->
+                    <div class="card-column">
+                        <!-- Карточка 4.1 - Граждане РФ -->
+                        <div class="price-card">
+                            <div class="price-amount price-pink">300 000 ₽</div>
+                            <div class="program-container">
+                                <div class="program-icon"></div>
+                                <div class="program-text-container">
+                                    <p class="program-name">
+                                        Живопись<br>Графика<br>Монументально-декоративное искусство (интерьеры)
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="student-type">для граждан РФ</div>
+                        </div>
+                        
+                        <!-- Карточка 4.2 - Иностранные граждане -->
+                        <div class="price-card">
+                            <div class="price-amount price-blue">390 000 ₽</div>
+                            <div class="program-container">
+                                <div class="program-icon"></div>
+                                <div class="program-text-container">
+                                    <p class="program-name">
+                                        Живопись<br>Графика<br>Монументально-декоративное искусство (интерьеры)
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="student-type">для иностранных граждан</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Колонка 5 -->
+                    <div class="card-column">
+                        <!-- Карточка 5.1 - Граждане РФ -->
+                        <div class="price-card">
+                            <div class="price-amount price-pink">300 000 ₽</div>
+                            <div class="program-container">
+                                <div class="program-icon"></div>
+                                <div class="program-text-container">
+                                    <p class="program-name">
+                                        Дизайн<br>Дизайн костюма<br>Декоративно-прикладное искусство и народные промыслы<br>Искусство костюма и текстиля
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="student-type">для граждан РФ</div>
+                        </div>
+                        
+                        <!-- Карточка 5.2 - Иностранные граждане -->
+                        <div class="price-card">
+                            <div class="price-amount price-blue">390 000 ₽</div>
+                            <div class="program-container">
+                                <div class="program-icon"></div>
+                                <div class="program-text-container">
+                                    <p class="program-name">
+                                        Дизайн<br>Дизайн костюма<br>Декоративно-прикладное искусство и народные промыслы<br>Искусство костюма и текстиля
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="student-type">для иностранных граждан</div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            
+            <!-- Навигация -->
+            <div class="carousel-controls">
+                <div class="nav-arrow left" id="prevBtn">
+                    <svg width="26" height="8" viewBox="0 0 26 8" fill="none">
+                        <path d="M25.3536 4.35355C25.5488 4.15829 25.5488 3.84171 25.3536 3.64645L22.1716 0.464466C21.9763 0.269204 21.6597 0.269204 21.4645 0.464466C21.2692 0.659728 21.2692 0.976311 21.4645 1.17157L24.2929 4L21.4645 6.82843C21.2692 7.02369 21.2692 7.34027 21.4645 7.53553C21.6597 7.7308 21.9763 7.7308 22.1716 7.53553L25.3536 4.35355ZM0 4.5H25V3.5H0V4.5Z" fill="currentColor"/>
+                    </svg>
+                </div>
+                
+                <div class="nav-dots">
+                    <div class="nav-dot active" data-index="0"></div>
+                    <div class="nav-dot" data-index="1"></div>
+                    <div class="nav-dot" data-index="2"></div>
+                    <div class="nav-dot" data-index="3"></div>
+                    <div class="nav-dot" data-index="4"></div>
+                </div>
+                
+                <div class="nav-arrow" id="nextBtn">
+                    <svg width="26" height="8" viewBox="0 0 26 8" fill="none">
+                        <path d="M25.3536 4.35355C25.5488 4.15829 25.5488 3.84171 25.3536 3.64645L22.1716 0.464466C21.9763 0.269204 21.6597 0.269204 21.4645 0.464466C21.2692 0.659728 21.2692 0.976311 21.4645 1.17157L24.2929 4L21.4645 6.82843C21.2692 7.02369 21.2692 7.34027 21.4645 7.53553C21.6597 7.7308 21.9763 7.7308 22.1716 7.53553L25.3536 4.35355ZM0 4.5H25V3.5H0V4.5Z" fill="currentColor"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
             </div>
         </section>
 
         <!-- ===== СЕКЦИЯ 6: ЦЕЛЕВОЕ ОБУЧЕНИЕ ===== -->
         <section class="target-section py-5">
             <div class="container">
-                <h2 class="section-title mb-5">целевое обучение</h2>
+                <h2 class="section-title mb-5 offset-1">целевое обучение</h2>
                 
                 <div class="row">
-                    <div class="col-lg-8">
-                        <p class="fs-5 mb-4">
+                    <div class="col-lg-7 offset-2">
+                        <p class=" mb-4">
                             Прием на целевое обучение осуществляется в пределах целевой квоты по специальностям, направлениям подготовки, входящим в перечень, определяемый Правительством Российской Федерации (федеральный закон «Об образовании в Российской Федерации» ФЗ-273.
                         </p>
                         
-                        <p class="fs-5 mb-4">
+                        <p class=" mb-4">
                             С 1 мая 2024 года в этот закон вступили в силу изменения, касающиеся вопроса целевого обучения. Заключение договоров о целевом обучении теперь регламентируется Постановлением Правительства Российской Федерации от 27.04.2024 года №555 «О целевом обучении по образовательным программам среднего профессионального и высшего образования».
                         </p>
-                        
+                    </div>
+                <div class="offset-1 row">    
                         <h4 class="fw-bold mb-3">Среди основных нововведений:</h4>
                         
-                        <p class="fs-5 mb-5">
+                        <p class=" mb-5 col-md-7 offset-1">
                             Договоры о целевом обучении с поступающими могут быть заключены, только если заказчик оформит предложение на портале «Работа России» в срок до 10 июня 2024 года<br>
                             Обязательным остаётся трудоустройство и отработка на предприятии-заказчике сроком от 3 лет до 5 лет<br>
                             Для поступающих на бакалавриат и специалитет меры материальной поддержки от организации обязательны.<br>
@@ -937,7 +1428,18 @@
                             Стороны, нарушившие условия, прописанные в Постановлении, несут соответствующую ответственность.
                         </p>
                         
-                        <!-- Документы -->
+                    </div>
+                    
+                    <div class="col-md-10 offset-1 mb-5">
+                        <!-- Важная информация -->
+                        <div class="program-card p-4 p-lg-5">
+                            <h3 class="section-subtitle mb-4">Важно!</h3>
+                            <p class="text-white">
+                                Для начала абитуриенту необходимо ознакомиться с бразовательными направлениями Академии и квотами для приема на целевое обучение, а также с субъектами РФ, на территориях которых можете быть трудоустроены в соответствии с договором о целевом обучении.<br><br>
+                                Затем родители могут сами обратиться в организацию, чтобы она до этого срока разместила информацию на указанном цифровом сервисе. Иначе прием в рамках квоты целевого обучения будет невозможен.
+                            </p>
+
+                            <!-- Документы -->
                         <div class="d-flex flex-wrap gap-4 mb-5">
                             <a href="#" class="document-link">
                                 <div class="icon-wrapper">
@@ -953,51 +1455,15 @@
                                 <span class="text">Инструкция по работе в личном кабинете работодателя в части организации целевого обучения</span>
                             </a>
                         </div>
-                    </div>
-                    
-                    <div class="col-lg-4">
-                        <!-- Важная информация -->
-                        <div class="program-card p-4 p-lg-5">
-                            <h3 class="section-subtitle mb-4">Важно!</h3>
-                            <p class="text-white">
-                                Для начала абитуриенту необходимо ознакомиться с бразовательными направлениями Академии и квотами для приема на целевое обучение, а также с субъектами РФ, на территориях которых можете быть трудоустроены в соответствии с договором о целевом обучении.<br><br>
-                                Затем родители могут сами обратиться в организацию, чтобы она до этого срока разместила информацию на указанном цифровом сервисе. Иначе прием в рамках квоты целевого обучения будет невозможен.
-                            </p>
+
                         </div>
                     </div>
+
+
                 </div>
             </div>
         </section>
 
-        <!-- ===== СЕКЦИЯ 7: СТАТИСТИКА ===== -->
-        <section class="stats-section py-5">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <div class="row g-5">
-                            <div class="col-md-4 text-center">
-                                <div class="stat-number">12</div>
-                                <div class="stat-label">направлений<br>и специальностей</div>
-                            </div>
-                            
-                            <div class="col-md-4 text-center">
-                                <div class="stat-number">469</div>
-                                <div class="stat-label">новых студентов<br>в 2024 году</div>
-                            </div>
-                            
-                            <div class="col-md-4 text-center">
-                                <div class="stat-number">82/100</div>
-                                <div class="stat-label">средний балл<br>по вступительным</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="text-center mt-5">
-                    <a href="#" class="btn btn-primary btn-lg">Подать заявление</a>
-                </div>
-            </div>
-        </section>
     </main>
 
   <section id="end">
@@ -1083,6 +1549,88 @@
                     event.preventDefault();
                     tabTrigger.show();
                 });
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cardsContainer = document.querySelector('.cards-container');
+            const cardsScroll = document.querySelector('.cards-scroll');
+            const navDots = document.querySelectorAll('.nav-dot');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const columns = document.querySelectorAll('.card-column');
+            
+            let currentColumn = 0;
+            const totalColumns = columns.length;
+            const columnWidth = columns[0].offsetWidth + 30; // ширина колонки + gap
+            
+            // Функция для обновления активной точки
+            function updateNavDots() {
+                navDots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentColumn);
+                });
+            }
+            
+            // Функция для прокрутки к определенной колонке
+            function scrollToColumn(index) {
+                currentColumn = Math.max(0, Math.min(index, totalColumns - 1));
+                cardsContainer.scrollTo({
+                    left: currentColumn * columnWidth,
+                    behavior: 'smooth'
+                });
+                updateNavDots();
+            }
+            
+            // Навигация стрелками
+            prevBtn.addEventListener('click', () => {
+                scrollToColumn(currentColumn - 1);
+            });
+            
+            nextBtn.addEventListener('click', () => {
+                scrollToColumn(currentColumn + 1);
+            });
+            
+            // Навигация точками
+            navDots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    const index = parseInt(dot.getAttribute('data-index'));
+                    scrollToColumn(index);
+                });
+            });
+            
+            // Обработка события прокрутки
+            cardsContainer.addEventListener('scroll', () => {
+                const scrollLeft = cardsContainer.scrollLeft;
+                const newColumn = Math.round(scrollLeft / columnWidth);
+                
+                if (newColumn !== currentColumn) {
+                    currentColumn = newColumn;
+                    updateNavDots();
+                }
+            });
+            
+            // Адаптация к изменению размера окна
+            window.addEventListener('resize', () => {
+                // Пересчитываем ширину колонки
+                const newColumnWidth = columns[0].offsetWidth + 30;
+                if (newColumnWidth !== columnWidth) {
+                    // Прокручиваем к текущей колонке с новой шириной
+                    cardsContainer.scrollTo({
+                        left: currentColumn * newColumnWidth,
+                        behavior: 'auto'
+                    });
+                }
+            });
+            
+            // Инициализация
+            updateNavDots();
+            
+            // Добавляем возможность прокрутки колесом мыши
+            cardsContainer.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                cardsContainer.scrollLeft += e.deltaY;
             });
         });
     </script>
