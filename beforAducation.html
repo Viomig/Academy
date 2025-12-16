@@ -24,6 +24,9 @@
             --color-pink: #ED1160;
             --color-gradient-blue: #e6e7f0;
             --color-gradient-grey: #f3f3f3;
+            --color-gradient-grey: linear-gradient(45deg, #000000ea, var(--color-grey-1));
+            --color-gradient-primary: linear-gradient(135deg, var(--color-blue) 0%, var(--color-pink) 100%);
+
         }
         
         /* General Styles */
@@ -73,7 +76,6 @@
         }
         
         .section-title {
-            color: #000000;
             font-size: 40px;
             font-weight: 500;
             text-transform: uppercase;
@@ -349,17 +351,24 @@
         
         /* Steps Section */
         .steps-section {
+            overflow: hidden;
             padding: 60px 0;
-            background: linear-gradient(135deg, #000000, #232328);
+            background: linear-gradient(135deg, #09008a, #232328);
             color: var(--color-white);
         }
         
         .step-card {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            width: 807px;
+            height: 499px;
             background-color: var(--color-white);
             border-radius: 15px;
             padding: 40px;
             height: 100%;
             color: var(--color-black);
+            margin: 10px;
         }
         
         .step-number {
@@ -406,12 +415,68 @@
             border-radius: 50%;
             background-color: var(--color-grey);
             transition: all 0.3s ease;
+            cursor: pointer;
         }
         
         .dot.active {
             width: 40px;
             border-radius: 4px;
             background-color: var(--color-white);
+        }
+        
+        .text-blue {
+            color: var(--color-blue) !important;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+        
+        /* Owl Carousel Custom Styles */
+        .steps-carousel .owl-stage {
+            display: flex;
+            padding: 20px 0;
+        }
+        
+        .steps-carousel .owl-item {
+            display: flex;
+            height: 100%;
+        }
+        
+        .steps-carousel .owl-nav {
+            display: none;
+        }
+        
+        .steps-carousel .owl-dots {
+            display: none;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .step-card {
+                padding: 30px 20px;
+            }
+            
+            .step-number {
+                font-size: 24px;
+            }
+            
+            .step-dates {
+                font-size: 18px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .steps-section {
+                padding: 40px 0;
+            }
+            
+            .step-btn {
+                padding: 12px 24px;
+                font-size: 13px;
+            }
         }
         
         /* Teachers Section */
@@ -618,62 +683,6 @@
     </style>
 </head>
 <body>
-    <!-- Header Navigation -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
-            <div class="container">
-                <!-- Logo -->
-                <a class="navbar-brand" href="#">
-                    <img src="./image/logo.png" alt="Logo" height="30">
-                </a>
-                
-                <!-- Mobile Toggle -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <i class="fas fa-bars text-white"></i>
-                </button>
-                
-                <!-- Navigation Menu -->
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item">
-                            <a class="nav-link nav-link-custom" href="#">об Академии</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-link-custom" href="#">абитуриенту</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-link-custom" href="#">студенту</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-link-custom" href="#">образование</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-link-custom" href="#">наука</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-link-custom" href="#">олимпиада</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-link-custom" href="#">довузовская подготовка</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-link-custom" href="#">портфолио</a>
-                        </li>
-                    </ul>
-                    
-                    <!-- Search -->
-                    <div class="d-flex mt-3 mt-lg-0">
-                        <div class="input-group" style="width: 200px;">
-                            <input type="text" class="form-control form-control-sm" placeholder="что вы ищите">
-                            <button class="btn btn-outline-light btn-sm" type="button">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
 
     <!-- Hero Section -->
     <section class="hero-section">
@@ -706,67 +715,7 @@
         </div>
     </section>
 
-    <!-- Documents Section -->
-    <section class="py-5 bg-gradient-grey">
-        <div class="container">
-            <h2 class="section-title text-black">важные документы</h2>
-            
-            <!-- Tabs -->
-            <div class="tabs-nav mb-4">
-                <button class="tab-btn active">Организационные документы</button>
-                <button class="tab-btn">Расписание занятий</button>
-                <button class="tab-btn">Списки по группам</button>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
-                    <div class="document-card">
-                        <div class="d-flex align-items-start">
-                            <img src="./image/pdf-icon.png" alt="PDF" class="document-icon">
-                            <div>
-                                <h5 class="font-weight-600 mb-2">Лицензия на осуществление образовательной деятельности</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-3">
-                    <div class="document-card">
-                        <div class="d-flex align-items-start">
-                            <img src="./image/pdf-icon.png" alt="PDF" class="document-icon">
-                            <div>
-                                <h5 class="font-weight-600 mb-2">Образец сертификата дополнительного образования</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-3">
-                    <div class="document-card">
-                        <div class="d-flex align-items-start">
-                            <img src="./image/pdf-icon.png" alt="PDF" class="document-icon">
-                            <div>
-                                <h5 class="font-weight-600 mb-2">Свидетельство о государственной аккредитации основных общеобразовательных программ</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-3">
-                    <div class="document-card">
-                        <div class="d-flex align-items-start">
-                            <img src="./image/pdf-icon.png" alt="PDF" class="document-icon">
-                            <div>
-                                <h5 class="font-weight-600 mb-2">Памятка</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Levels Section -->
+     <!-- Levels Section -->
     <section class="py-5 bg-white">
         <div class="container">
             <h2 class="section-title text-blue text-center">Группы на Подготовительных курсах разделяются на два уровня:</h2>
@@ -1004,74 +953,84 @@
     </section>
 
     <!-- Steps Section -->
-    <section class="steps-section">
-        <div class="container">
-            <h2 class="section-title text-white">Этапы оформления договора</h2>
-            
-            <div class="row g-4">
-                <!-- Step 1 -->
-                <div class="col-lg-4">
-                    <div class="step-card">
-                        <div class="step-number">1 этап</div>
-                        <h4 class="step-dates">подать заявление онлайн в установленные сроки</h4>
-                        
-                        <div class="mb-4">
-                            <h5 class="text-blue mb-2">Годичные</h5>
-                            <p class="mb-3">с 5 августа 2024 г. по 25 сентября 2024 г.</p>
-                            <button class="step-btn">подать заявление</button>
-                        </div>
-                        
-                        <div class="mb-4">
-                            <h5 class="text-blue mb-2">Сокращенные</h5>
-                            <p class="mb-3">с 25 декабря 2024 г. по 25 января 2025 г.</p>
-                            <button class="step-btn">подать заявление</button>
-                        </div>
-                        
-                        <div>
-                            <h5 class="text-blue mb-2">Краткосрочные</h5>
-                            <p class="mb-3">
-                                Осенние: с 5 сентября 2024 г. по 20 октября 2024 г.<br>
-                                Зимние: с 5 ноября 2024 г. по 20 декабря 2024 г.<br>
-                                Весенние: с 5 февраля 2025 г. по 16 марта 2025 г.<br>
-                                Летние: с 01 апреля 2025 г. по 01 июня 2025 г.
-                            </p>
-                            <button class="step-btn">подать заявление</button>
-                        </div>
+<section class="steps-section">
+    <div class="container">
+        <h2 class="section-title text-white">Этапы оформления договора</h2>
+        
+        <!-- Owl Carousel Container -->
+        <div class="steps-carousel owl-carousel owl-theme">
+            <!-- Step 1 -->
+            <div class="item">
+                <div class="step-card row">
+                    <div class="step-number col-12">1 этап <br>
+                        <h4 class="step-dates">Подать заявление онлайн в установленные сроки</h4></div>
+            <div class="row">
+
+                <div class="row col-6">
+
+                     <div class="mb-4 col-12">
+                        <h5 class="text-blue mb-2">Годичные</h5>
+                        <p class="mb-3">с 5 августа 2024 г. по 25 сентября 2024 г.</p>
+                        <button class="step-btn">подать заявление</button>
                     </div>
-                </div>
-                
-                <!-- Step 2 -->
-                <div class="col-lg-4">
-                    <div class="step-card">
-                        <div class="step-number">2 этап</div>
+                    
+                    <div class="mb-4 col-12">
+                        <h5 class="text-blue mb-2">Сокращенные</h5>
+                        <p class="mb-3">с 25 декабря 2024 г. по 25 января 2025 г.</p>
+                        <button class="step-btn">подать заявление</button>
+                    </div>
+
+                </div>    
+                   
+                    
+                    <div class="col-6">
+                        <h5 class="text-blue mb-2">Краткосрочные</h5>
                         <p class="mb-3">
-                            На основе поданного заявления, в течении 10 рабочих дней будут подготовлены и высланы на электронную почту (указанную в заявлении) договор, заявление, согласие на Обработку персональных данных и квитанция на оплату.
+                            Осенние: с 5 сентября 2024 г. по 20 октября 2024 г.<br>
+                            Зимние: с 5 ноября 2024 г. по 20 декабря 2024 г.<br>
+                            Весенние: с 5 февраля 2025 г. по 16 марта 2025 г.<br>
+                            Летние: с 01 апреля 2025 г. по 01 июня 2025 г.
                         </p>
-                        <p class="mb-0">
-                            Квитанцию нужно оплатить и прислать чек на электронную почту вместе с фотографией учащегося размером 3х4 см для пропуска.
-                        </p>
+                        <button class="step-btn">подать заявление</button>
                     </div>
-                </div>
+
+            </div>        
                 
-                <!-- Step 3 -->
-                <div class="col-lg-4">
-                    <div class="step-card">
-                        <div class="step-number">3 этап</div>
-                        <p class="mb-0">
-                            Договор, заявление и согласие на ОПД необходимо распечатать, подписать и принести до начала занятий в Учебную часть, чтобы получить пропуск.
-                        </p>
-                    </div>
                 </div>
             </div>
             
-            <!-- Progress Dots -->
-            <div class="dots-container">
-                <div class="dot active"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
+            <!-- Step 2 -->
+            <div class="item">
+                <div class="step-card">
+                    <div class="step-number">2 этап</div>
+                    <p class="mb-3">
+                        На основе поданного заявления, в течении 10 рабочих дней будут подготовлены и высланы на электронную почту (указанную в заявлении) договор, заявление, согласие на Обработку персональных данных и квитанция на оплату.
+                    </p>
+                    <p class="mb-0">
+                        Квитанцию нужно оплатить и прислать чек на электронную почту вместе с фотографией учащегося размером 3х4 см для пропуска.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="item">
+                <div class="step-card">
+                    <div class="step-number">3 этап</div>
+                    <p class="mb-0">
+                        Договор, заявление и согласие на ОПД необходимо распечатать, подписать и принести до начала занятий в Учебную часть, чтобы получить пропуск.
+                    </p>
+                </div>
             </div>
         </div>
-    </section>
+        
+        <!-- Custom Progress Dots -->
+        <div class="dots-container" id="customDots">
+            <div class="dot active" data-index="0"></div>
+            <div class="dot" data-index="1"></div>
+            <div class="dot" data-index="2"></div>
+        </div>
+    </div>
+</section>
 
     <!-- Teachers Section -->
     <section class="teachers-section bg-white">
@@ -1240,5 +1199,65 @@
             });
         });
     </script>
+
+    <script>
+    $(document).ready(function(){
+        // Initialize Owl Carousel
+        var owl = $('.steps-carousel').owlCarousel({
+            loop: true,
+            center: true, // Центрирование активной карточки
+            nav: true,
+            navText: ['<span>‹</span>', '<span>›</span>'],
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1,
+                    center: true
+                },
+                768: {
+                    items: 1,
+                    center: true
+                },
+                992: {
+                    items: 1, // Показываем по 1 карточке, но с центрированием
+                    center: true
+                }
+            },
+            onInitialized: updateDots,
+            onChanged: updateDots
+        });
+        
+        // Update custom dots based on carousel state
+        function updateDots(event) {
+            if (!event || !event.item) return;
+            
+            var current = event.item.index;
+            var items = event.item.count;
+            
+            // Найти индекс активной карточки (с учетом loop)
+            var activeIndex = current % 3;
+            
+            // Update active dot
+            $('#customDots .dot').removeClass('active');
+            $('#customDots .dot[data-index="' + activeIndex + '"]').addClass('active');
+        }
+        
+        // Click handler for custom dots
+        $('#customDots .dot').click(function(){
+            var index = $(this).data('index');
+            owl.trigger('to.owl.carousel', [index, 300]);
+        });
+        
+        // Optional: Auto slide every 8 seconds
+        setInterval(function() {
+            owl.trigger('next.owl.carousel');
+        }, 8000);
+        
+        // Обработка ресайза окна
+        $(window).on('resize', function() {
+            owl.trigger('refresh.owl.carousel');
+        });
+    });
+</script>
 </body>
 </html>
