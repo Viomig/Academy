@@ -3,644 +3,810 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="Academy/css/owl.carousel.css">
-    <link rel="stylesheet" href="Academy/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="Academy/css/owl.theme.green.css">
-    <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css">
-    <link href="../css/style.css" rel="stylesheet">
-    <title>Академия архитектуры и искусств ЮФУ - Международная деятельность</title>
+    <title>Международная деятельность | ААИ ЮФУ</title>
     
     <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Font Awesome для иконок -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts - Montserrat -->
+    <!-- Montserrat Font -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    
+    <!-- Custom CSS -->
     <style>
+        /* ===== БАЗОВЫЕ СТИЛИ И ПЕРЕМЕННЫЕ ===== */
         :root {
-            --primary-color: #080d6b;
-            --secondary-color: #232328;
-            --accent-color: #8c8c8d;
-            --light-gray: #f3f3f3;
-            --dark-gray: #464649;
+            --primary-blue: #080D6B;
+            --secondary-pink: #ED1160;
+            --dark-grey: #232328;
+            --medium-grey: #777777;
+            --light-grey: #f3f3f3;
+            --white: #ffffff;
+            --black: #000000;
+            --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%);
+            --gradient-dark: linear-gradient(45deg, #131313, var(--primary-blue));
         }
-        
+
+        /* ===== ОБЩИЕ СТИЛИ ===== */
         body {
             font-family: 'Montserrat', sans-serif;
+            color: var(--black);
             line-height: 1.6;
-            color: var(--secondary-color);
+            background-color: var(--white);
         }
-        
-        .bg-primary-custom {
-            background-color: var(--primary-color) !important;
-        }
-        
-        .text-primary-custom {
-            color: var(--primary-color) !important;
-        }
-        
-        .bg-light-custom {
-            background-color: var(--light-gray) !important;
-        }
-        
-        .bg-dark-custom {
-            background-color: var(--secondary-color) !important;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
+
+        /* Типографика */
+        .hero-title {
+            font-size: 80px;
             font-weight: 500;
             text-transform: uppercase;
-            margin-bottom: 2rem;
+            line-height: 1.1;
+            margin-bottom: 30px;
         }
-        
-        @media (max-width: 768px) {
-            .section-title {
-                font-size: 1.8rem;
-            }
-        }
-        
-        .nav-link-custom {
-            color: white !important;
-            font-weight: 600;
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 500;
             text-transform: uppercase;
-            font-size: 0.9rem;
-            padding: 0.5rem 1rem !important;
-            transition: all 0.3s;
+            line-height: 1.3;
+            margin-bottom: 40px;
         }
-        
-        .nav-link-custom:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
+
+        /* ===== СЕКЦИИ ===== */
+        section {
+            padding: 80px 0;
         }
-        
-        .nav-link-custom.active {
-            background-color: rgba(255, 255, 255, 0.15);
-            border-radius: 20px;
-        }
-        
+
         .hero-section {
-            padding: 4rem 0;
-            position: relative;
-            overflow: hidden;
+            padding-top: 40px;
+            padding-bottom: 80px;
         }
-        
-        .hero-pattern {
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%) rotate(-149deg);
-            opacity: 0.1;
-            width: 400px;
-            height: 400px;
-            pointer-events: none;
+
+        .programs-section {
+            background-color: var(--white);
         }
-        
-        @media (max-width: 992px) {
-            .hero-pattern {
-                display: none;
-            }
+
+        .universities-section {
+            background-color: var(--light-grey);
         }
-        
-        .logo-container {
-            height: 40px;
-            display: flex;
-            align-items: center;
+
+        .reviews-section {
+            background: var(--gradient-dark);
+            color: var(--white);
         }
-        
-        .card-hover {
-            transition: transform 0.3s, box-shadow 0.3s;
-            height: 100%;
+
+        .coordinator-section {
+            background-color: var(--white);
         }
-        
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
-        }
-        
-        .review-card {
-            min-height: 350px;
-        }
-        
-        .review-img {
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-        
+
+        /* ===== КАРТОЧКИ ===== */
         .university-card {
+            background: var(--white);
+            border: none;
             border-radius: 15px;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
             height: 100%;
         }
-        
-        .university-logo {
-            height: 80px;
-            margin-bottom: 1.5rem;
-            object-fit: contain;
-        }
-        
-        .coordinator-img {
-            width: 100%;
-            max-width: 290px;
-            border-radius: 15px;
-            box-shadow: 0 0 100px 2px rgba(0, 0, 0, 0.1) inset;
-        }
-        
-        .footer-link {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-link:hover {
-            color: white;
-        }
-        
-        .search-container {
-            position: relative;
-        }
-        
-        .search-input {
-            background-color: white;
-            border-radius: 50px;
-            padding: 0.5rem 2.5rem 0.5rem 1rem;
+
+        .review-card {
+            background: rgba(255, 255, 255, 0.9);
             border: none;
-            width: 100%;
-            max-width: 250px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
         }
-        
-        .search-icon {
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* ===== КАРУСЕЛЬ ОТЗЫВОВ ===== */
+        .reviews-carousel .owl-nav {
             position: absolute;
-            right: 15px;
             top: 50%;
+            width: 100%;
             transform: translateY(-50%);
-            color: var(--accent-color);
         }
-        
-        .scroll-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background-color: var(--primary-color);
-            border-radius: 50%;
+
+        .reviews-carousel .owl-prev,
+        .reviews-carousel .owl-next {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-blue) !important;
+            border-radius: 50% !important;
+            color: white !important;
+            font-size: 24px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .reviews-carousel .owl-prev:hover,
+        .reviews-carousel .owl-next:hover {
+            opacity: 1;
+            background: var(--secondary-pink) !important;
+        }
+
+        .reviews-carousel .owl-prev {
+            left: -25px;
+        }
+
+        .reviews-carousel .owl-next {
+            right: -25px;
+        }
+
+        .reviews-carousel .owl-dots {
+            margin-top: 30px;
             display: flex;
-            align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-            z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            transition: all 0.3s;
+            gap: 10px;
         }
-        
-        .scroll-to-top:hover {
-            background-color: #060a54;
-            transform: translateY(-3px);
-        }
-        
-        .carousel-indicators-custom {
-            justify-content: center;
-            margin-top: 2rem;
-        }
-        
-        .carousel-indicators-custom button {
+
+        .reviews-carousel .owl-dot {
             width: 8px;
             height: 8px;
             border-radius: 50%;
-            background-color: #d2d2d2;
-            margin: 0 5px;
-            border: none;
+            background: var(--medium-grey) !important;
+            transition: all 0.3s ease;
         }
-        
-        .carousel-indicators-custom button.active {
-            background-color: #8c8c8c;
+
+        .reviews-carousel .owl-dot.active {
             width: 40px;
             border-radius: 20px;
+            background: var(--dark-grey) !important;
         }
-        
-        .guide-btn {
+
+        /* ===== ГЕОМЕТРИЧЕСКИЕ ФИГУРЫ ===== */
+        .hero-graphic {
+            position: relative;
+            height: 456px;
+            width: 288px;
+        }
+
+        .graphic-group {
+            position: absolute;
+            width: 49.84%;
+            height: 36.35%;
+        }
+
+        .graphic-square {
+            position: absolute;
+            width: 57.73%;
+            height: 50%;
+            background: var(--gradient-primary);
+            border-radius: 10px;
+            transform: rotate(30deg);
+        }
+
+        /* ===== КНОПКИ И ССЫЛКИ ===== */
+        .guide-link {
             display: flex;
             align-items: center;
-            gap: 15px;
-            padding: 10px 20px;
-            background-color: transparent;
-            border: 1px solid var(--primary-color);
-            border-radius: 5px;
-            color: var(--primary-color);
+            gap: 20px;
+            padding: 6px 4px;
             text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .guide-link:hover {
+            transform: translateY(-2px);
+        }
+
+        .read-more {
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: underline;
+            color: var(--black);
+            transition: all 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: var(--primary-blue);
+        }
+
+        /* ===== НАВИГАЦИЯ ===== */
+        .page-nav {
+            width: 649px;
+            height: 53px;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            align-items: center;
+            text-decoration: none;
+            color: var(--medium-grey);
+            transition: all 0.3s ease;
+        }
+
+        .nav-item.active {
+            color: var(--primary-blue);
             font-weight: 500;
-            text-transform: uppercase;
-            transition: all 0.3s;
         }
-        
-        .guide-btn:hover {
-            background-color: var(--primary-color);
-            color: white;
+
+        .nav-item:hover {
+            color: var(--primary-blue);
         }
-        
-        .guide-icon {
-            width: 35px;
+
+        .nav-divider {
+            width: 100%;
+            height: 1px;
+            background: #e0e0e0;
+            margin-top: 14px;
         }
-        
-        .mobile-menu-btn {
-            display: none;
+
+        .nav-divider.active {
+            width: 256px;
+            background: var(--primary-blue);
         }
-        
-        @media (max-width: 991px) {
-            .navbar-collapse {
-                background-color: var(--secondary-color);
-                padding: 1rem;
-                border-radius: 10px;
-                margin-top: 1rem;
+
+        /* ===== АДАПТИВНОСТЬ ===== */
+        @media (max-width: 1400px) {
+            .hero-title {
+                font-size: 70px;
             }
             
-            .mobile-menu-btn {
-                display: block;
+            .section-title {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 60px;
             }
             
-            .search-input {
-                max-width: 100%;
-                margin-top: 1rem;
+            .hero-graphic {
+                height: 400px;
+                width: 250px;
             }
+        }
+
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 48px;
+                text-align: center;
+            }
+            
+            .section-title {
+                font-size: 32px;
+                text-align: center;
+            }
+            
+            .hero-graphic {
+                margin: 0 auto;
+            }
+            
+            .page-nav {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 40px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .reviews-carousel .owl-prev {
+                left: -15px;
+            }
+            
+            .reviews-carousel .owl-next {
+                right: -15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 32px;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+            
+            .hero-graphic {
+                height: 300px;
+                width: 200px;
+            }
+            
+            section {
+                padding: 40px 0;
+            }
+        }
+
+        /* ===== КОНТАКТНАЯ ИНФОРМАЦИЯ ===== */
+        .coordinator-photo {
+            width: 290px;
+            height: 327px;
+            border-radius: 15px;
+            box-shadow: inset 0px 0px 100px 2px rgba(0, 0, 0, 0.1);
+            background: var(--gradient-primary);
+        }
+
+        .contact-info span {
+            font-size: 18px;
+        }
+
+        .contact-info a {
+            color: var(--primary-blue);
+            text-decoration: underline;
+        }
+
+        .contact-info a:hover {
+            color: var(--secondary-pink);
+        }
+
+        /* ===== ПЛАВАЮЩАЯ КНОПКА ===== */
+        .floating-button {
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            width: 113px;
+            height: 49px;
+            z-index: 1000;
+        }
+
+        .floating-circle {
+            position: absolute;
+            width: 49px;
+            height: 49px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+        }
+
+        .floating-circle:nth-child(1) {
+            right: 0;
+        }
+
+        .floating-circle:nth-child(2) {
+            left: 0;
+            opacity: 0.8;
+        }
+
+        .floating-arrow {
+            position: absolute;
+            width: 19.47%;
+            height: 40.82%;
+            background: white;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+
+        .floating-arrow:nth-child(3) {
+            right: 12.39%;
+            top: 30.61%;
+        }
+
+        .floating-arrow:nth-child(4) {
+            left: 12.39%;
+            top: 30.61%;
+            transform: rotate(180deg);
         }
     </style>
 </head>
+
 <body>
-    
-    <header id="header-placeholder">
+    <!-- Навигация (можно подключить общий header) -->
+    <header class="header" id="header-placeholder">
+        <!-- Общая навигация будет здесь -->
     </header>
 
-    <!-- Основной контент -->
-    <main class="pt-5 mt-5">
-        <!-- Герой-секция -->
+    <main class="main-content">
+        <!-- ===== СЕКЦИЯ 1: ГЕРОЙ ===== -->
         <section class="hero-section">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-8">
-                        <h1 class="section-title mb-4">студенту</h1>
-                        <p class="lead mb-4">
-                            Южный федеральный университет в рамках договоров сотрудничества работает 
-                            с широким кругом зарубежных образовательных и исследовательских учреждений и организаций. 
-                            Они предусматривают широкий спектр направлений взаимодействия: студенческие и академические 
-                            обмены, стажировки, совместная научная работа, организация и проведение конференций, семинаров, школ.
-                        </p>
-                        <a href="#" class="text-primary-custom fw-bold text-decoration-underline">
-                            Информация о международной деятельности ЮФУ
-                        </a>
-                    </div>
-                    <div class="col-lg-4 position-relative">
-                        <!-- Декоративный элемент -->
-                        <div class="hero-pattern">
-                            <!-- Геометрический узор -->
-                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <polygon points="100,50 150,100 100,150 50,100" fill="var(--primary-color)" opacity="0.3"/>
-                                <polygon points="80,60 120,60 140,100 120,140 80,140 60,100" fill="var(--primary-color)" opacity="0.2"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Навигация подразделов -->
-                <div class="row mt-5 pt-4 border-top">
-                    <div class="col-12">
-                        <div class="d-flex flex-wrap justify-content-start gap-4">
-                            <a href="#" class="text-decoration-none text-dark">Учебный процесс</a>
-                            <a href="#" class="text-decoration-none text-dark">Социальные вопросы</a>
-                            <a href="#" class="text-decoration-none text-primary-custom fw-bold">Международная деятельность</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Программы обмена -->
-        <section class="py-5">
-            <div class="container">
-                <h2 class="section-title">Программы обмена</h2>
-                
-                <div class="row">
-                    <div class="col-lg-8 mb-4 mb-lg-0">
-                        <p class="mb-4">
-                            Программы обмена реализуются на основании международных соглашений между ЮФУ и зарубежными вузами-партнерами. 
-                            Программа обмена предусматривает прохождение студентом части его образовательной программы в зарубежном 
-                            вузе в течение одного семестра или года. Результаты обучения студента за рубежом переводятся в российскую 
-                            систему оценок и засчитываются в ЮФУ. Процедура организации программ обмена в ЮФУ осуществляется в соответствии с
-                            <a href="#" class="fw-bold text-decoration-underline">Положением о порядке реализации программ включенного обучения и признании периодов обучения за рубежом</a>.
-                        </p>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="#" class="guide-btn">
-                            <div class="guide-icon">
-                                <svg viewBox="0 0 35 40" fill="currentColor">
-                                    <path d="M30,0H5C2.2,0,0,2.2,0,5v30c0,2.8,2.2,5,5,5h25c2.8,0,5-2.2,5-5V5C35,2.2,32.8,0,30,0z M25,30H10v-5h15V30z M25,20H10v-5h15V20z"/>
-                                </svg>
+                    <div class="col-lg-7 mb-5 mb-lg-0">
+                        <!-- Навигация по странице -->
+                        <div class="page-nav mb-5">
+                            <div class="d-flex position-relative">
+                                <a href="#" class="nav-item me-5">
+                                    <span>Учебный процесс</span>
+                                </a>
+                                <a href="#" class="nav-item me-5">
+                                    <span>Социальные вопросы</span>
+                                </a>
+                                <a href="#" class="nav-item active">
+                                    <span>Международная деятельность</span>
+                                </a>
                             </div>
-                            <span>ГАЙД. КАК ПОЕХАТЬ ПО ОБМЕНУ В 2025 ГОДУ?</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ВУЗЫ-партнеры -->
-        <section class="py-5 bg-light-custom">
-            <div class="container">
-                <h2 class="section-title">ВУЗЫ-ПАРТНЕРЫ АКАДЕМИИ</h2>
-                
-                <div class="row g-4">
-                    <div class="col-md-6">
-                        <div class="university-card bg-white card-hover">
-                            <div class="university-logo">
-                                <!-- Логотип НУАСА -->
-                                <div style="width: 100%; height: 100%; background-color: #f0f0f0; border-radius: 5px;"></div>
-                            </div>
-                            <h3 class="h4 mb-3">Национальный университет архитектуры и строительства Армении</h3>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="university-card bg-white card-hover">
-                            <div class="university-logo">
-                                <!-- Логотип METU -->
-                                <div style="width: 100%; height: 100%; background-color: #f0f0f0; border-radius: 5px;"></div>
-                            </div>
-                            <h3 class="h4 mb-3">Ближневосточный технический университет (Турция)</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Отзывы студентов -->
-        <section class="py-5 bg-primary-custom text-white">
-            <div class="container">
-                <h2 class="section-title">ОТЗЫВЫ СТУДЕНТОВ ОБ ОБУЧЕНИИ ЗАРУБЕЖОМ</h2>
-                
-                <!-- Карусель отзывов -->
-                <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <!-- Отзыв 1 -->
-                        <div class="carousel-item active">
-                            <div class="row g-4">
-                                <div class="col-lg-4">
-                                    <div class="review-img bg-secondary"></div>
-                                    <div class="text-center mt-3">
-                                        <h4 class="fw-bold">Агаджанян Сюзи</h4>
-                                        <p class="mb-0">3 курс, Архитектура<br>Весна 2025</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-8">
-                                    <h5 class="mb-3">НУАСА, Армения</h5>
-                                    <p>
-                                        «Весной 2023 года по программе обмена я проходила обучение в Анкаре, в Ближневосточном 
-                                        Техническом Университете. И несмотря на то, что культура карачаевского народа достаточно 
-                                        близка с турецкой я открыла для себя много нового и необычного в этой поездке.
-                                    </p>
-                                    <p>
-                                        Меня очень впечатлил кампус, на территории которого расположены здания всех факультетов, 
-                                        общежития, столовая, магазины, кафе и огромный лес с озером, куда мы ходили, если хотелось 
-                                        провести время на природе. Кампус очень большой, но для удобства студентов и преподавателей 
-                                        по территории каждые полчаса ходят бесплатные автобусы, что очень выручает...»
-                                    </p>
-                                    <a href="#" class="text-white fw-bold text-decoration-underline">Читать дальше</a>
-                                </div>
-                            </div>
+                            <div class="nav-divider"></div>
+                            <div class="nav-divider active position-absolute top-100 start-0 mt-2" style="width: 256px;"></div>
                         </div>
                         
-                        <!-- Отзыв 2 -->
-                        <div class="carousel-item">
-                            <div class="row g-4">
-                                <div class="col-lg-4">
-                                    <div class="review-img bg-secondary"></div>
-                                    <div class="text-center mt-3">
-                                        <h4 class="fw-bold">Попова Агата</h4>
-                                        <p class="mb-0">3 курс, Архитектура<br>Весна 2025</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-8">
-                                    <h5 class="mb-3">METU, Турция</h5>
-                                    <p>
-                                        «Весной 2023 года по программе обмена я проходила обучение в Анкаре, в Ближневосточном 
-                                        Техническом Университете. И несмотря на то, что культура карачаевского народа достаточно 
-                                        близка с турецкой я открыла для себя много нового и необычного в этой поездке.
-                                    </p>
-                                    <p>
-                                        Меня очень впечатлил кампус, на территории которого расположены здания всех факультетов, 
-                                        общежития, столовая, магазины, кафе и огромный лес с озером, куда мы ходили, если хотелось 
-                                        провести время на природе. Кампус очень большой, но для удобства студентов и преподавателей 
-                                        по территории каждые полчаса ходят бесплатные автобусы, что очень выручает...»
-                                    </p>
-                                    <a href="#" class="text-white fw-bold text-decoration-underline">Читать дальше</a>
-                                </div>
+                        <h1 class="hero-title mb-4">студенту</h1>
+                        <p class="lead fs-5">
+                            Южный федеральный университет в рамках договоров сотрудничества с широким кругом зарубежных образовательных и исследовательских учреждений и организаций. Они предусматривают широкий спектр направлений взаимодействия: студенческие и академические обмены, стажировки, совместная научная работа, организация и проведение конференций, семинаров, школ.
+                            <br><br>
+                            <a href="#" class="text-decoration-none fw-semibold text-primary">
+                                Информация о международной деятельности ЮФУ
+                            </a>
+                        </p>
+                    </div>
+                    <div class="col-lg-5">
+                        <!-- Геометрическая графика -->
+                        <div class="hero-graphic mx-auto">
+                            <!-- Группа 1 -->
+                            <div class="graphic-group" style="left: 0%; top: 27.41%;">
+                                <div class="graphic-square" style="left: 20.25%; top: 6.88%; opacity: 0.9;"></div>
+                                <div class="graphic-square" style="left: -6.7%; top: 33.95%; opacity: 0.7;"></div>
+                                <div class="graphic-square" style="left: 63.17%; top: 35.05%; opacity: 0.5;"></div>
+                            </div>
+                            
+                            <!-- Группа 2 -->
+                            <div class="graphic-group" style="left: 50.16%; top: 27.31%;">
+                                <div class="graphic-square" style="left: 20.25%; top: 6.88%; opacity: 0.8;"></div>
+                                <div class="graphic-square" style="left: -6.7%; top: 33.95%; opacity: 0.6;"></div>
+                                <div class="graphic-square" style="left: 63.17%; top: 35.05%; opacity: 0.4;"></div>
+                            </div>
+                            
+                            <!-- Группа 3 -->
+                            <div class="graphic-group" style="left: 25.08%; top: 36.42%;">
+                                <div class="graphic-square" style="left: 20.25%; top: 6.88%; opacity: 0.9;"></div>
+                                <div class="graphic-square" style="left: -6.7%; top: 33.95%; opacity: 0.7;"></div>
+                                <div class="graphic-square" style="left: 63.17%; top: 35.05%; opacity: 0.5;"></div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- Индикаторы карусели -->
-                    <div class="carousel-indicators-custom mt-4">
-                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="0" class="active"></button>
-                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="1"></button>
-                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="2"></button>
-                        <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="3"></button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Координатор -->
-        <section class="py-5">
+        <!-- ===== СЕКЦИЯ 2: ПРОГРАММЫ ОБМЕНА ===== -->
+        <section class="programs-section">
             <div class="container">
-                <h2 class="section-title">Координатор академической мобильности в ААИ</h2>
-                
-                <div class="row g-5">
-                    <div class="col-lg-4">
-                        <div class="coordinator-img bg-light mx-auto"></div>
-                        <div class="mt-4">
-                            <h4 class="fw-bold mb-3">Ответственная за международную деятельность в ААИ</h4>
-                            <h3 class="h2 fw-bold text-primary-custom mb-4">Федорова Оксана Олеговна</h3>
-                            <p class="mb-2">
-                                <strong>тел.:</strong> 8 (863) 218-40-00 доб. 200-34
-                            </p>
-                            <p class="mb-2">
-                                <strong>e-mail:</strong> <a href="mailto:okfedorova@sfedu.ru" class="text-decoration-underline">okfedorova@sfedu.ru</a>
-                            </p>
-                            <p class="mb-0">
-                                <strong>Адрес:</strong> пр. Будённовский 39, каб. № 13
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-8">
-                        <h3 class="h4 mb-4">Основные функциональные обязанности</h3>
-                        <ul class="list-unstyled">
-                            <li class="mb-3">
-                                <i class="fas fa-check text-primary-custom me-2"></i>
-                                Координация международной академической мобильности
-                            </li>
-                            <li class="mb-3">
-                                <i class="fas fa-check text-primary-custom me-2"></i>
-                                Координация международного сотрудничества
-                            </li>
-                            <li class="mb-3">
-                                <i class="fas fa-check text-primary-custom me-2"></i>
-                                Сопровождение иностранных обучающихся: согласование заявлений на выезд из РФ, вопросы миграционного учета
-                            </li>
-                        </ul>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <h2 class="section-title text-center mb-5">Программы обмена</h2>
                         
-                        <div class="mt-5 pt-4 border-top">
-                            <h4 class="mb-4">Международные программы и возможности</h4>
-                            <p>
-                                ЮФУ активно развивает международное сотрудничество с вузами Европы, Азии и Америки. 
-                                Студенты Академии архитектуры и искусств имеют возможность участвовать в программах 
-                                академической мобильности, летних школах, международных конкурсах и конференциях.
-                            </p>
-                            <p>
-                                Для участия в программах обмена необходимо соответствовать академическим требованиям, 
-                                иметь хорошую успеваемость и владеть иностранным языком на уровне, достаточном для обучения.
-                            </p>
+                        <div class="row align-items-start">
+                            <div class="col-lg-7 mb-5 mb-lg-0">
+                                <p class="fs-5 text-dark">
+                                    Программы обмена реализуются на основании международных соглашений между ЮФУ и зарубежными вузами-партнерами. Программа обмена предусматривает прохождение студентом части его образовательной программы в зарубежном вузе в течение одного семестра или года. Результаты обучения студента за рубежом переводятся в российскую систему оценок и засчитываются в ЮФУ. Процедура организации программ обмена в ЮФУ осуществляется в соответствии с 
+                                    <a href="#" class="fw-semibold text-decoration-underline text-dark">Положением о порядке реализации программ включенного обучения и признании периодов обучения за рубежом</a>.
+                                </p>
+                            </div>
+                            <div class="col-lg-5">
+                                <a href="#" class="guide-link">
+                                    <div class="d-flex align-items-center justify-content-center" style="width: 32px; height: 38px;">
+                                        <!-- Иконка гида -->
+                                        <svg width="32" height="38" viewBox="0 0 32 38" fill="none">
+                                            <path d="M31.5 38H0.5V0.5H31.5V38Z" fill="black"/>
+                                            <path d="M7 15H25V17H7V15Z" fill="white"/>
+                                        </svg>
+                                    </div>
+                                    <span class="fs-5 fw-medium text-uppercase">
+                                        ГАЙД. КАК ПОЕХАТЬ ПО ОБМЕНУ<br>В 2025 ГОДУ?
+                                    </span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- ===== СЕКЦИЯ 3: ВУЗЫ-ПАРТНЕРЫ ===== -->
+        <section class="universities-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <h2 class="section-title text-center mb-5">ВУЗЫ-ПАРТНЕРЫ АКАДЕМИИ</h2>
+                        
+                        <div class="row justify-content-center g-4">
+                            <!-- Университет 1 -->
+                            <div class="col-lg-6">
+                                <div class="university-card p-5 text-center h-100">
+                                    <div class="mb-4">
+                                        <img src="https://via.placeholder.com/171x44" alt="Национальный университет архитектуры и строительства Армении" class="img-fluid">
+                                    </div>
+                                    <h3 class="fs-4 fw-medium text-dark mb-0">
+                                        Национальный университет архитектуры и строительства Армении
+                                    </h3>
+                                </div>
+                            </div>
+                            
+                            <!-- Университет 2 -->
+                            <div class="col-lg-6">
+                                <div class="university-card p-5 text-center h-100">
+                                    <div class="mb-4">
+                                        <img src="https://via.placeholder.com/240x29" alt="Ближневосточный технический университет" class="img-fluid">
+                                    </div>
+                                    <h3 class="fs-4 fw-medium text-dark mb-0">
+                                        Ближневосточный технический университет (Турция)
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 4: ОТЗЫВЫ СТУДЕНТОВ ===== -->
+        <section class="reviews-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <h2 class="section-title text-center text-white mb-5">ОТЗЫВЫ СТУДЕНТОВ<br>ОБ ОБУЧЕНИИ ЗАРУБЕЖОМ</h2>
+                        
+                        <!-- Owl Carousel -->
+                        <div class="reviews-carousel owl-carousel owl-theme">
+                            <!-- Отзыв 1 -->
+                            <div class="item">
+                                <div class="review-card p-4">
+                                    <div class="row g-4">
+                                        <div class="col-md-5">
+                                            <div class="mb-3">
+                                                <img src="https://via.placeholder.com/275x270" alt="Агаджанян Сюзи" class="img-fluid rounded">
+                                            </div>
+                                            <div class="text-center">
+                                                <h4 class="fs-5 fw-bold text-uppercase mb-2">Агаджанян Сюзи</h4>
+                                                <p class="text-muted small mb-0">3 курс, Архитектура<br>Весна 2025</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <div class="mb-3">
+                                                <p class="mb-1"><strong>НУАСА, Армения</strong></p>
+                                                <p class="mb-3">
+                                                    «Весной 2023 года по программе обмена я проходила обучение в Анкаре, в Ближневосточном Техническом Университете. И несмотря на то, что культура карачаевского народа достаточно близка с турецкой я открыла для себя много нового и необычного в этой поездке.
+                                                    <br><br>
+                                                    Меня очень впечатлил кампус, на территории которого расположены здания всех факультетов, общежития, столовая, магазины, кафе и огромный лес с озером, куда мы ходили, если хотелось провести время на природе. Кампус очень большой, но для удобства студентов и преподавателей по территории каждые полчаса ходят бесплатные автобусы, что очень выручает...»
+                                                </p>
+                                            </div>
+                                            <a href="#" class="read-more">Читать дальше</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Отзыв 2 -->
+                            <div class="item">
+                                <div class="review-card p-4">
+                                    <div class="row g-4">
+                                        <div class="col-md-5">
+                                            <div class="mb-3">
+                                                <img src="https://via.placeholder.com/275x270" alt="Попова Агата" class="img-fluid rounded">
+                                            </div>
+                                            <div class="text-center">
+                                                <h4 class="fs-5 fw-bold text-uppercase mb-2">Попова Агата</h4>
+                                                <p class="text-muted small mb-0">3 курс, Архитектура<br>Весна 2025</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <div class="mb-3">
+                                                <p class="mb-1"><strong>METU, Турция</strong></p>
+                                                <p class="mb-3">
+                                                    «Весной 2023 года по программе обмена я проходила обучение в Анкаре, в Ближневосточном Техническом Университете. И несмотря на то, что культура карачаевского народа достаточно близка с турецкой я открыла для себя много нового и необычного в этой поездке.
+                                                    <br><br>
+                                                    Меня очень впечатлил кампус, на территории которого расположены здания всех факультетов, общежития, столовая, магазины, кафе и огромный лес с озером, куда мы ходили, если хотелось провести время на природе. Кампус очень большой, но для удобства студентов и преподавателей по территории каждые полчаса ходят бесплатные автобусы, что очень выручает...»
+                                                </p>
+                                            </div>
+                                            <a href="#" class="read-more">Читать дальше</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Отзыв 3 -->
+                            <div class="item">
+                                <div class="review-card p-4">
+                                    <div class="row g-4">
+                                        <div class="col-md-5">
+                                            <div class="mb-3">
+                                                <img src="https://via.placeholder.com/275x270" alt="Травин Кирилл" class="img-fluid rounded">
+                                            </div>
+                                            <div class="text-center">
+                                                <h4 class="fs-5 fw-bold text-uppercase mb-2">Травин Кирилл</h4>
+                                                <p class="text-muted small mb-0">4 курс, Архитектура<br>Осень 2024</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <div class="mb-3">
+                                                <p class="mb-1"><strong>METU, Турция</strong></p>
+                                                <p class="mb-3">
+                                                    «Весной 2023 года по программе обмена я проходила обучение в Анкаре, в Ближневосточном Техническом Университете. И несмотря на то, что культура карачаевского народа достаточно близка с турецкой я открыла для себя много нового и необычного в этой поездке.
+                                                    <br><br>
+                                                    Меня очень впечатлил кампус, на территории которого расположены здания всех факультетов, общежития, столовая, магазины, кафе и огромный лес с озером, куда мы ходили, если хотелось провести время на природе. Кампус очень большой, но для удобства студентов и преподавателей по территории каждые полчаса ходят бесплатные автобусы, что очень выручает...»
+                                                </p>
+                                            </div>
+                                            <a href="#" class="read-more">Читать дальше</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Отзыв 4 -->
+                            <div class="item">
+                                <div class="review-card p-4">
+                                    <div class="row g-4">
+                                        <div class="col-md-5">
+                                            <div class="mb-3">
+                                                <img src="https://via.placeholder.com/275x270" alt="Головашова Дарья" class="img-fluid rounded">
+                                            </div>
+                                            <div class="text-center">
+                                                <h4 class="fs-5 fw-bold text-uppercase mb-2">Головашова Дарья</h4>
+                                                <p class="text-muted small mb-0">4 курс, Архитектура<br>Осень 2023</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <div class="mb-3">
+                                                <p class="mb-1"><strong>METU, Турция</strong></p>
+                                                <p class="mb-3">
+                                                    «Весной 2023 года по программе обмена я проходила обучение в Анкаре, в Ближневосточном Техническом Университете. И несмотря на то, что культура карачаевского народа достаточно близка с турецкой я открыла для себя много нового и необычного в этой поездке.
+                                                    <br><br>
+                                                    Меня очень впечатлил кампус, на территории которого расположены здания всех факультетов, общежития, столовая, магазины, кафе и огромный лес с озером, куда мы ходили, если хотелось провести время на природе. Кампус очень большой, но для удобства студентов и преподавателей по территории каждые полчаса ходят бесплатные автобусы, что очень выручает...»
+                                                </p>
+                                            </div>
+                                            <a href="#" class="read-more">Читать дальше</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Отзыв 5 -->
+                            <div class="item">
+                                <div class="review-card p-4">
+                                    <div class="row g-4">
+                                        <div class="col-md-5">
+                                            <div class="mb-3">
+                                                <img src="https://via.placeholder.com/275x270" alt="Хасанова Танзиля" class="img-fluid rounded">
+                                            </div>
+                                            <div class="text-center">
+                                                <h4 class="fs-5 fw-bold text-uppercase mb-2">Хасанова Танзиля</h4>
+                                                <p class="text-muted small mb-0">3 курс, Архитектура<br>Весна 2023</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <div class="mb-3">
+                                                <p class="mb-1"><strong>METU, Турция</strong></p>
+                                                <p class="mb-3">
+                                                    «Весной 2023 года по программе обмена я проходила обучение в Анкаре, в Ближневосточном Техническом Университете. И несмотря на то, что культура карачаевского народа достаточно близка с турецкой я открыла для себя много нового и необычного в этой поездке.
+                                                    <br><br>
+                                                    Меня очень впечатлил кампус, на территории которого расположены здания всех факультетов, общежития, столовая, магазины, кафе и огромный лес с озером, куда мы ходили, если хотелось провести время на природе. Кампус очень большой, но для удобства студентов и преподавателей по территории каждые полчаса ходят бесплатные автобусы, что очень выручает...»
+                                                </p>
+                                            </div>
+                                            <a href="#" class="read-more">Читать дальше</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 5: КООРДИНАТОР ===== -->
+        <section class="coordinator-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <h2 class="section-title text-center mb-5">Координатор академической<br>мобильности в ААИ</h2>
+                        
+                        <div class="row g-5">
+                            <div class="col-lg-5">
+                                <div class="coordinator-photo mb-4">
+                                    <!-- Фото будет как фон -->
+                                </div>
+                                <div class="contact-info">
+                                    <p class="fs-5 fw-medium mb-2">
+                                        Ответственная за международную деятельность в ААИ
+                                    </p>
+                                    <h3 class="fs-3 fw-bold mb-4">Федорова Оксана Олеговна</h3>
+                                    
+                                    <p class="mb-2">
+                                        <span>тел.:</span>
+                                        <span class="fw-medium">8 (863) 218-40-00 доб. 200-34</span>
+                                    </p>
+                                    <p class="mb-2">
+                                        <span>e-mail:</span>
+                                        <a href="mailto:okfedorova@sfedu.ru" class="fw-medium">okfedorova@sfedu.ru</a>
+                                    </p>
+                                    <p class="mb-0">
+                                        <span>Адрес:</span>
+                                        <span>пр. Будённовский 39, каб. № 13</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
+                                <h4 class="fs-4 fw-bold mb-4">Основные функциональные обязанности</h4>
+                                <p class="fs-5">
+                                    Координация международной академической мобильности;<br>
+                                    Координация международного сотрудничества;<br>
+                                    Сопровождение иностранных обучающихся: согласование заявлений на выезд из РФ, вопросы миграционного учета.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Плавающая кнопка -->
+        <div class="floating-button">
+            <div class="floating-circle"></div>
+            <div class="floating-circle"></div>
+            <div class="floating-arrow"></div>
+            <div class="floating-arrow"></div>
+        </div>
     </main>
 
-   <section id="end">
- <div id="footer-placeholder"></div>
-    </section>
+    <!-- Футер (можно подключить общий) -->
+    <footer class="footer" id="footer-placeholder">
+        <!-- Общий футер будет здесь -->
+    </footer>
 
-     <!-- Подключаем Bootstrap JS и Popper.js -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="../js/owl.carousel.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/@coreui/coreui/dist/js/coreui.bundle.min.js"></script>
-    <script src="../common.js"></script>
-    <script src="../tabs.js"></script>
-    <script src="../js/script.js"></script>
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Кнопка "Наверх" -->
-    <div class="scroll-to-top" id="scrollToTop">
-        <i class="fas fa-chevron-up"></i>
-    </div>
-
-    <!-- Bootstrap 5 JS + Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- jQuery -->
+    <!-- jQuery (необходим для Owl Carousel) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    
+    <!-- Custom JS -->
     <script>
         $(document).ready(function() {
-            // Плавная прокрутка к якорям
-            $('a[href^="#"]').on('click', function(e) {
+            // Инициализация Owl Carousel
+            $('.reviews-carousel').owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: true,
+                dots: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    768: {
+                        items: 1
+                    },
+                    992: {
+                        items: 1
+                    }
+                },
+                navText: ['<i class="bi bi-chevron-left"></i>', '<i class="bi bi-chevron-right"></i>']
+            });
+            
+            // Плавная прокрутка для плавающей кнопки
+            $('.floating-button').on('click', function(e) {
                 e.preventDefault();
-                var target = $(this.getAttribute('href'));
-                if(target.length) {
-                    $('html, body').stop().animate({
-                        scrollTop: target.offset().top - 80
-                    }, 800);
-                }
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 800);
             });
             
-            // Кнопка "Наверх"
-            $('#scrollToTop').click(function() {
-                $('html, body').animate({scrollTop: 0}, 800);
-            });
-            
-            // Показывать/скрывать кнопку "Наверх"
+            // Показ/скрытие плавающей кнопки
             $(window).scroll(function() {
                 if ($(this).scrollTop() > 300) {
-                    $('#scrollToTop').fadeIn();
+                    $('.floating-button').fadeIn();
                 } else {
-                    $('#scrollToTop').fadeOut();
+                    $('.floating-button').fadeOut();
                 }
             });
-            
-            // Инициализация карусели
-            $('#reviewsCarousel').carousel({
-                interval: 5000,
-                pause: 'hover'
-            });
-            
-            // Активация пунктов меню при прокрутке
-            $(window).scroll(function() {
-                var scrollDistance = $(window).scrollTop();
-                
-                // Показываем/скрываем кнопку "Наверх"
-                if (scrollDistance > 300) {
-                    $('#scrollToTop').fadeIn();
-                } else {
-                    $('#scrollToTop').fadeOut();
-                }
-                
-                // Подсветка активного пункта меню
-                $('section').each(function(i) {
-                    if ($(this).position().top <= scrollDistance + 100) {
-                        $('.nav-link-custom').removeClass('active');
-                        $('.nav-link-custom').eq(i).addClass('active');
-                    }
-                });
-            }).scroll();
-            
-            // Обработка поиска
-            $('.search-input').on('keyup', function(e) {
-                if (e.keyCode === 13) {
-                    var searchTerm = $(this).val().trim();
-                    if (searchTerm) {
-                        alert('Поиск: ' + searchTerm);
-                        // Здесь можно добавить реальную логику поиска
-                    }
-                }
-            });
-            
-            // Адаптивное меню для мобильных устройств
-            function handleMobileMenu() {
-                if ($(window).width() < 992) {
-                    $('.navbar-collapse').addClass('bg-dark-custom');
-                } else {
-                    $('.navbar-collapse').removeClass('bg-dark-custom');
-                }
-            }
-            
-            // Проверяем при загрузке и изменении размера окна
-            $(window).resize(handleMobileMenu);
-            handleMobileMenu();
-            
-            // Анимация карточек при прокрутке
-            function animateOnScroll() {
-                $('.card-hover').each(function() {
-                    var elementTop = $(this).offset().top;
-                    var elementBottom = elementTop + $(this).outerHeight();
-                    var viewportTop = $(window).scrollTop();
-                    var viewportBottom = viewportTop + $(window).height();
-                    
-                    if (elementBottom > viewportTop && elementTop < viewportBottom) {
-                        $(this).addClass('animate__animated animate__fadeInUp');
-                    }
-                });
-            }
-            
-            // Запускаем анимацию при загрузке и прокрутке
-            $(window).scroll(animateOnScroll);
-            animateOnScroll();
         });
     </script>
-    
-    <!-- Анимации -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </body>
 </html>

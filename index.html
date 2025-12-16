@@ -12,8 +12,528 @@
 </head>
 <body>
 
-   <header id="header-placeholder">
+  <style>
+        /* ===== БАЗОВЫЕ СТИЛИ И ПЕРЕМЕННЫЕ ===== */
+        :root {
+            --primary-blue: #080D6B;
+            --secondary-pink: #ED1160;
+            --dark-grey: #232328;
+            --medium-grey: #777777;
+            --light-grey: #f3f3f3;
+            --white: #ffffff;
+            --black: #000000;
+            --grey-dark: #8C8C8C;
+            --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%);
+            --gradient-dark: linear-gradient(45deg, #131313, var(--primary-blue));
+        }
 
+        /* ===== ОБЩИЕ СТИЛИ ===== */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        /* Типографика */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .hero-title {
+            font-size: 80px;
+            font-weight: 400;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.6;
+            max-width: 353px;
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 500;
+            text-transform: uppercase;
+            line-height: 1.3;
+            margin-bottom: 40px;
+        }
+
+        /* ===== СЕКЦИИ ===== */
+        section {
+            padding: 80px 0;
+        }
+
+        /* ===== КАРТОЧКИ ===== */
+        .event-card {
+            background: var(--white);
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .event-image {
+            height: 324px;
+            border-radius: 10px;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 20px;
+        }
+
+        .event-date {
+            position: absolute;
+            top: 308px;
+            left: 14px;
+            background: var(--white);
+            padding: 8px 10px;
+            border-radius: 0 10px 0 0;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .event-title {
+            font-size: 22px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .event-description {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.4;
+            max-height: 102px;
+            overflow: hidden;
+        }
+
+        /* Новостные карточки */
+        .news-card {
+            margin-bottom: 40px;
+        }
+
+        .news-image {
+            width: 353px;
+            height: 201px;
+            border-radius: 15px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .news-date {
+            font-size: 16px;
+            color: var(--grey-dark);
+            margin-bottom: 10px;
+        }
+
+        .news-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .news-description {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        .news-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--black);
+            margin-top: 15px;
+        }
+
+        .news-link-arrow {
+            width: 26px;
+            height: 8px;
+            background-image: url("data:image/svg+xml,%3Csvg width='26' height='8' viewBox='0 0 26 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25.3536 4.35355C25.5488 4.15829 25.5488 3.84171 25.3536 3.64645L22.1716 0.464466C21.9763 0.269204 21.6597 0.269204 21.4645 0.464466C21.2692 0.659728 21.2692 0.976311 21.4645 1.17157L24.2929 4L21.4645 6.82843C21.2692 7.02369 21.2692 7.34027 21.4645 7.53553C21.6597 7.7308 21.9763 7.7308 22.1716 7.53553L25.3536 4.35355ZM0 4.5H25V3.5H0V4.5Z' fill='black'/%3E%3C/svg%3E");
+        }
+
+        /* Выпускники карточки */
+        .graduate-card {
+            background: var(--white);
+            border: none;
+            border-radius: 15px;
+            box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.25);
+            min-width: 807px;
+            height: 471px;
+            margin-right: 20px;
+        }
+
+        .graduate-photo {
+            width: 275px;
+            height: 270px;
+            border-radius: 10px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .graduate-name {
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        .graduate-info {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--grey-dark);
+            margin-top: 5px;
+        }
+
+        .graduate-website {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--grey-dark);
+            margin-top: 5px;
+        }
+
+        .graduate-text {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        /* Галерея карточки */
+        .gallery-card {
+            border-radius: 15px;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-card:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-card-small {
+            width: 394px;
+            height: 263px;
+        }
+
+        .gallery-card-large {
+            width: 600px;
+            height: 400px;
+        }
+
+        /* ===== КНОПКИ И ССЫЛКИ ===== */
+        .btn {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-lg {
+            padding: 16px 24px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            border: none;
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(8, 13, 107, 0.3);
+        }
+
+        /* ===== ФИЛЬТРЫ ===== */
+        .filter-container {
+            margin-bottom: 40px;
+        }
+
+        .filter-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0;
+            background: none;
+            border: none;
+            font-size: 16px;
+            color: var(--black);
+            cursor: pointer;
+        }
+
+        .filter-item.active {
+            color: var(--primary-blue);
+        }
+
+        .filter-count {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+        }
+
+        .year-filter {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .year-item {
+            background: none;
+            border: none;
+            font-size: 16px;
+            color: var(--black);
+            cursor: pointer;
+        }
+
+        .year-item.active {
+            color: var(--primary-blue);
+            font-weight: 500;
+        }
+
+        /* ===== ГРАФИКА ===== */
+        .hero-graphic {
+            position: relative;
+            width: 341px;
+            height: 474px;
+        }
+
+        .graphic-element {
+            position: absolute;
+            width: 57px;
+            height: 57px;
+            background: var(--gradient-primary);
+            border-radius: 10px;
+            transform: rotate(30deg);
+        }
+
+        /* ===== АДАПТИВНОСТЬ ===== */
+        @media (max-width: 1400px) {
+            .hero-title {
+                font-size: 70px;
+            }
+            
+            .section-title {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 60px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .graduate-card {
+                min-width: 700px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 50px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .hero-subtitle {
+                font-size: 14px;
+            }
+            
+            .news-image {
+                width: 100%;
+                max-width: 353px;
+            }
+            
+            .graduate-card {
+                min-width: 600px;
+            }
+            
+            .gallery-card-small,
+            .gallery-card-large {
+                width: 100%;
+                max-width: 394px;
+                height: 263px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 40px;
+                text-align: center;
+            }
+            
+            .section-title {
+                font-size: 24px;
+                text-align: center;
+            }
+            
+            .hero-subtitle {
+                text-align: center;
+                margin: 0 auto 40px;
+            }
+            
+            .news-card {
+                text-align: center;
+            }
+            
+            .news-image {
+                margin: 0 auto 20px;
+            }
+            
+            .graduate-card {
+                min-width: 100%;
+                height: auto;
+                padding: 20px;
+            }
+            
+            .graduate-photo {
+                width: 100%;
+                max-width: 275px;
+                height: 200px;
+                margin: 0 auto 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 32px;
+            }
+            
+            .section-title {
+                font-size: 20px;
+            }
+            
+            .btn-lg {
+                padding: 12px 20px;
+                font-size: 12px;
+            }
+            
+            .filter-container {
+                overflow-x: auto;
+                white-space: nowrap;
+                padding-bottom: 10px;
+            }
+            
+            .year-filter {
+                overflow-x: auto;
+                white-space: nowrap;
+                padding-bottom: 10px;
+            }
+        }
+
+        /* ===== КАРУСЕЛЬ ===== */
+        .owl-carousel .owl-nav button.owl-prev,
+        .owl-carousel .owl-nav button.owl-next {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-blue) !important;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white !important;
+            font-size: 24px;
+        }
+
+        .owl-carousel .owl-nav button.owl-prev {
+            left: -25px;
+        }
+
+        .owl-carousel .owl-nav button.owl-next {
+            right: -25px;
+        }
+
+        .owl-carousel .owl-nav button.owl-prev:hover,
+        .owl-carousel .owl-nav button.owl-next:hover {
+            background: var(--secondary-pink) !important;
+        }
+
+        .owl-carousel .owl-dots {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .owl-carousel .owl-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--grey-dark) !important;
+            margin: 0 5px;
+        }
+
+        .owl-carousel .owl-dot.active {
+            width: 40px;
+            border-radius: 20px;
+            background: var(--primary-blue) !important;
+        }
+
+        /* ===== ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ ===== */
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 49px;
+            height: 49px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .scroll-top-btn.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(8, 13, 107, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигация (можно подключить общий header) -->
+    <header class="header" id="header-placeholder">
+        <!-- Общая навигация будет здесь -->
+    </header>
+
+    <main class="main-content">
+      <header id="header-placeholder">
     </header>
 
     <section id="start">
@@ -36,62 +556,431 @@
         </div>
     </section>
 
-    <section class="game-section">
-  <h2 class="line-title"></h2>
-  <div class="owl-carousel custom-carousel owl-theme">
-    <div class="item" style="background-image:;">
-      <div class="item-desc">
-        <h3></h3>
-        <p>
-          </p>
-      </div>
-    </div>
-    <div class="item" style="background-ima;">
-      <div class="item-desc">
-        <h3></h3>
-        <p></p>
-      </div>
-    </div>
-    <div class="item" style="background-im;">
-      <div class="item-desc">
-        <h3></h3>
-        <p></p>
-      </div>
-    </div>
-  </div>
-    </section>
+        <!-- ===== СЕКЦИЯ 2: БЛИЖАЙШИЕ СОБЫТИЯ ===== -->
+        <section class="events-section py-5" style="background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.9) 100%);">
+            <div class="container">
+                <h2 class="section-title text-center text-primary mb-5">ближайшие события</h2>
+                
+                <!-- Карусель событий -->
+                <div class="owl-carousel owl-theme events-carousel">
+                    <!-- Событие 1 -->
+                    <div class="item">
+                        <div class="event-card">
+                            <div class="event-image" style="background-image: url('./image/dc0cd7e003a32d89db20c424ab3b7480df425d01.png');"></div>
+                            <div class="event-date">19.06.2025</div>
+                            <div class="card-body p-4">
+                                <h3 class="event-title">Защита вкр</h3>
+                                <p class="event-description">
+                                    Студенты Кафедры дизайна представят свои дипломные проекты. Показ студенческих коллекций и не только!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Событие 2 -->
+                    <div class="item">
+                        <div class="event-card">
+                            <div class="event-image" style="background-image: url('./image/06759594f3217526b33a34da8545b55df436e0be.png');"></div>
+                            <div class="event-date">20.07.2025</div>
+                            <div class="card-body p-4">
+                                <h3 class="event-title">всероссийская конференция</h3>
+                                <p class="event-description">
+                                    Научно-практическая конференция «Архитектура и искусство: от теории к практике»
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Событие 3 -->
+                    <div class="item">
+                        <div class="event-card">
+                            <div class="event-image" style="background-image: url('./image/c2987600d20a6bcf3ff044d89e24e53fc1147624.png');"></div>
+                            <div class="event-date">21.07.2025</div>
+                            <div class="card-body p-4">
+                                <h3 class="event-title">выставка дипломных проектов</h3>
+                                <p class="event-description">
+                                    Событие приурочено к 40-летию основания архитектурного факультета и послучаю юбилея Дамасского университета.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Событие 4 -->
+                    <div class="item">
+                        <div class="event-card">
+                            <div class="event-image" style="background-image: url('./image/1cdca27d01a59b001b1c12906bf9952e93c89564.png');"></div>
+                            <div class="event-date">23.06.2025</div>
+                            <div class="card-body p-4">
+                                <h3 class="event-title">Защита ВКР</h3>
+                                <p class="event-description">
+                                    Защита студенческих выпускных квалификационных работ по направлению Графический дизайн. Фирменный стиль, оформление выставок и фестивалей, упаковка, веб-дизайн и не только!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      <section class="game-section">
-  <h2 class="line-title"></h2>
-  <div class="owl-carousel custom-carousel owl-theme">
-    <div class="item active" style="background-image: ;">
-      <div class="item-desc">
-        <h3></h3>
-        <p></p>
-      </div>
-    </div>
-    <div class="item" style="background-image: ;">
-      <div class="item-desc">
-        <h3></h3>
-        <p></p>
-      </div>
-    </div>
-    <div class="item" style="background-image: ;">
-      <div class="item-desc">
-        <h3></h3>
-        <p></p>
-      </div>
-    </div>
-    <div class="item" style="background-image:;">
-      <div class="item-desc">
-        <h3></h3>
-        <p></p>
-      </div>
-    </div>
-  </div>
-    </section>
+        <!-- ===== СЕКЦИЯ 3: НОВОСТИ ===== -->
+        <section class="news-section py-5" style="background: white;">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">новости</h2>
+                
+                <!-- Фильтры новостей -->
+                <div class="filter-container mb-5">
+                    <div class="d-flex flex-wrap gap-4">
+                        <button class="filter-item active">
+                            <span>все</span>
+                        </button>
+                        <button class="filter-item">
+                            <span>образование</span>
+                            <span class="filter-count">4</span>
+                        </button>
+                        <button class="filter-item">
+                            <span>наука</span>
+                            <span class="filter-count">2</span>
+                        </button>
+                        <button class="filter-item">
+                            <span>абитуриенту</span>
+                            <span class="filter-count">13</span>
+                        </button>
+                        <button class="filter-item">
+                            <span>выпускнику</span>
+                            <span class="filter-count">5</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Новости грид -->
+                <div class="row mb-5">
+                    <!-- Новость 1 -->
+                    <div class="col-lg-6 news-card">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="news-image" style="background-image: url('./image/736c500b1ce5368b8451743bfcc18e670f5bee46.png');"></div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="news-date">18.04.2025</div>
+                                <h3 class="news-title">Дни открытых дверей</h3>
+                                <p class="news-description">
+                                    В течение двух дней, 16 и 17 декабря, в Главном корпусе ЮФУ будущие абитуриенты знакомились с направлениями подготовки и специальностями, которые реализуются в Академии.
+                                </p>
+                                <a href="#" class="news-link">
+                                    Поброднее
+                                    <span class="news-link-arrow"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Новость 2 -->
+                    <div class="col-lg-6 news-card">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="news-image" style="background-image: url('./image/Rectangle_238_2871.png');"></div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="news-date">18.04.2025</div>
+                                <h3 class="news-title">Выставка в Сирии</h3>
+                                <p class="news-description">
+                                    В Сирии состоялась выставка дипломных проектов 2023 года выпускников-архитекторов Академии архитектуры и искусств ЮФУ и Дамасского университета
+                                </p>
+                                <a href="#" class="news-link">
+                                    Поброднее
+                                    <span class="news-link-arrow"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Новость 3 -->
+                    <div class="col-lg-6 news-card">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="news-image" style="background-image: url('./image/fbab5b55037ee0df900bfe078e19bcff37eb348c.png');"></div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="news-date">18.04.2025</div>
+                                <h3 class="news-title">Достижения выпускников</h3>
+                                <p class="news-description">
+                                    Выпускница ЮФУ победила в Международном конкурсе архитектурных школ СНГ
+                                </p>
+                                <a href="#" class="news-link">
+                                    Поброднее
+                                    <span class="news-link-arrow"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Новость 4 -->
+                    <div class="col-lg-6 news-card">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="news-image" style="background-image: url('./image/Rectangle_238_2873.png');"></div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="news-date">18.04.2025</div>
+                                <h3 class="news-title">Конференция «Архитектура и искусство: от теории к практике»</h3>
+                                <p class="news-description">
+                                    С 22 по 24 ноября в Академии архитектуры и искусств Южного федерального университета прошла всероссийская научно-практическая конференция «Архитектура и искусство: от теории к практике»
+                                </p>
+                                <a href="#" class="news-link">
+                                    Поброднее
+                                    <span class="news-link-arrow"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Кнопка "Больше новостей" -->
+                <div class="text-center">
+                    <a href="#" class="btn btn-primary btn-lg">
+                        Больше новостей
+                    </a>
+                </div>
+            </div>
+        </section>
 
-    <section id="end">
+        <!-- ===== СЕКЦИЯ 4: РАССЫЛКА ===== -->
+        <section class="newsletter-section py-5" style="background: var(--dark-grey);">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="bg-dark p-4 p-lg-5 rounded-3 position-relative">
+                            <div class="row align-items-center">
+                                <div class="col-lg-8">
+                                    <h3 class="text-white mb-3">Будьте в курсе наших новостей</h3>
+                                    <div class="position-relative">
+                                        <input type="email" class="form-control bg-transparent border-0 border-bottom border-white rounded-0 text-white py-3 px-0" placeholder="Ваш email" style="color: var(--grey-dark) !important;">
+                                        <div class="position-absolute bottom-0 start-0 w-100 border-top border-white"></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                                    <button class="btn btn-primary btn-lg">
+                                        Подписаться
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 5: ВЫПУСКНИКИ ===== -->
+        <section class="graduates-section py-5" style="background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.9) 100%);">
+            <div class="container">
+                <h2 class="section-title text-center text-white mb-5">выпускники об академии:</h2>
+                
+                <!-- Карусель выпускников -->
+                <div class="owl-carousel owl-theme graduates-carousel">
+                    <!-- Выпускник 1 -->
+                    <div class="item">
+                        <div class="graduate-card">
+                            <div class="row h-100">
+                                <div class="col-md-4">
+                                    <div class="graduate-photo" style="background-image: url('./image/Rectangle_413_7224.png');"></div>
+                                    <h4 class="graduate-name">дарья ярцева</h4>
+                                    <p class="graduate-info">
+                                        выпускница 2018 года <br>
+                                        направление «Скульптура»
+                                    </p>
+                                    <p class="graduate-website">
+                                        https://yartseva.es/
+                                    </p>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="p-4">
+                                        <p class="graduate-text">
+                                            «Я выбрала эту специальность из-за давней мечты работать с объемом, а также из-за талантливых педагогов, таких как Сергей Николаевич Олешня. Свои студенческие годы обучения и работы в мастерской Академии я вспоминаю с большой теплотой из-за выездных пленэрных практик, активной творческой и выставочной деятельности.<br><br>
+                                            Сразу после выпуска из Академии получила должность преподавателя скульптуры в Краснодарском государственном институте культуры.<br><br>
+                                            С 2022 года живу и работаю в Валенсии (Испания), где создаю уникальные произведения в стиле русской академической школы, органично соединяя традиции и современность»
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Выпускник 2 -->
+                    <div class="item">
+                        <div class="graduate-card">
+                            <div class="row h-100">
+                                <div class="col-md-4">
+                                    <div class="graduate-photo" style="background-image: url('./image/Rectangle_413_7242.png');"></div>
+                                    <h4 class="graduate-name">Юлия Калинина</h4>
+                                    <p class="graduate-info">
+                                        выпускница магистратуры 2017 года <br>
+                                        направление «Реконструкция и реставрация архитектурного наследия»
+                                    </p>
+                                    <p class="graduate-website">
+                                        https://krgp.ru/
+                                    </p>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="p-4">
+                                        <p class="graduate-text">
+                                            «Выбор профессии для меня был очевиден, потому что я с детства любила старинные дома, историю и архитектуру. Сразу после учёбы я переехала в Санкт-Петербург, где занималась историко-архивными исследованиями, будучи специалистом по государственной историко-культурной экспертизе. Мне удалось поработать со многими известными объектами, например, Усадьба в Рождествено, где провёл свое детство Набоков, и даже старинным надгробием на Александро-Невской лавре.<br><br>
+                                            Как вы понимаете, работа очень увлекательная и интересная. Именно за то, что у меня есть сейчас, я благодарна своей кафедре, потому что именно здесь вы получите те знания и навыки, которые помогут вам войти в профессию и заниматься любимым делом. Если в вас теплится дух исследователя, также, как и во мне, то эта кафедра точно для вас. Желаю всем успехов!»
+                                        </p>
+                                        <p class="graduate-info mt-3">
+                                            В настоящее время Юлия Калинина является начальником группы архитекторов АО ТИЖГП «Краснодаргражданпроект» (ГК KRGP).
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Выпускник 3 -->
+                    <div class="item">
+                        <div class="graduate-card">
+                            <div class="row h-100">
+                                <div class="col-md-4">
+                                    <div class="graduate-photo" style="background-image: url('./image/Rectangle_413_7230.png'); transform: scaleX(-1);"></div>
+                                    <h4 class="graduate-name">екатерина семенько</h4>
+                                    <p class="graduate-info">
+                                        выпускница 2010 года <br>
+                                        направление «Дизайн интерьера»
+                                    </p>
+                                    <p class="graduate-website">
+                                        https://www.semenkodesign.com/
+                                    </p>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="p-4">
+                                        <p class="graduate-text">
+                                            «Всем привет, я – Катя Семенько, живу и работаю в Чикаго (США). К настоящему времени завоевала более 30 международных наград, практически в каждом конкурсе это были первые места.<br><br>
+                                            Сейчас я работаю как фрилансер на себя, делаю концепты для креативных товаров массового потребления и запускаю много своих проектов. Среди моих одногруппников-друзей есть несколько безумно крутых с серьезными портфолио международного профессионального уровня.<br><br>
+                                            Поэтому я желаю вам быть крутыми одиночками и крутыми team players, «гореть своим делом», выполняя с первого курса творческие проекты, и больших вам горизонтов, ребята!»
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Выпускник 4 -->
+                    <div class="item">
+                        <div class="graduate-card">
+                            <div class="row h-100">
+                                <div class="col-md-4">
+                                    <div class="graduate-photo" style="background-image: url('./image/Rectangle_413_7236.png');"></div>
+                                    <h4 class="graduate-name">Анна Гагина</h4>
+                                    <p class="graduate-info">
+                                        выпускница 2001 года <br>
+                                        направление «Декоративно-прикладное искусство и народные промыслы (художественная керамика)»
+                                    </p>
+                                    <p class="graduate-website">
+                                        https://vk.com/agart
+                                    </p>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="p-4">
+                                        <p class="graduate-text">
+                                            «Я занимаюсь керамикой всю жизнь, все 24 года. Из них 18 лет я преподавала в вузе, сейчас я работаю на себя. И всё это время я нахожусь в профессии.<br><br>
+                                            Я очень благодарна своей кафедре и институту, что получила здесь образование, получила путёвку в жизнь, в свою замечательную, самую лучшую в мире профессию. Спасибо!»
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 6: ГАЛЕРЕЯ ===== -->
+        <section class="gallery-section py-5" style="background: white;">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">Галерея</h2>
+                
+                <!-- Фильтры галереи -->
+                <div class="d-flex flex-wrap align-items-center gap-4 mb-4">
+                    <button class="btn btn-secondary btn-sm" style="background: var(--grey-dark); color: white; border-radius: 50px;">
+                        Фото
+                    </button>
+                    <button class="btn btn-outline-secondary btn-sm" style="border-radius: 50px; color: var(--grey-dark);">
+                        Видео
+                    </button>
+                    
+                    <div class="filter-item active">
+                        <span style="color: var(--primary-blue); font-weight: 500;">мероприятия</span>
+                    </div>
+                    <button class="filter-item">
+                        <span>Образование</span>
+                    </button>
+                    <button class="filter-item">
+                        <span>наука</span>
+                    </button>
+                    <button class="filter-item">
+                        <span>ЮРМОШ</span>
+                    </button>
+                    <button class="filter-item">
+                        <span>конференции</span>
+                    </button>
+                    <button class="filter-item">
+                        <span>Выпускники</span>
+                    </button>
+                </div>
+                
+                <!-- Фильтры по годам -->
+                <div class="year-filter mb-5">
+                    <button class="year-item active">2025</button>
+                    <button class="year-item">2024</button>
+                    <button class="year-item">2023</button>
+                    <button class="year-item">2022</button>
+                    <button class="year-item">2021</button>
+                    <button class="year-item">2020</button>
+                    <button class="year-item">2019</button>
+                    <button class="year-item">2018</button>
+                    <button class="year-item">2017</button>
+                    <button class="year-item">2016</button>
+                    <button class="year-item">2015</button>
+                </div>
+                
+                <!-- Галерея грид -->
+                <div class="row g-4 mb-5">
+                    <div class="col-md-4">
+                        <div class="gallery-card gallery-card-small" style="background-image: url('./image/Rectangle_32_15963.png');"></div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="gallery-card gallery-card-large" style="background-image: url('./image/Rectangle_32_15965.png');"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="gallery-card gallery-card-small" style="background-image: url('./image/Rectangle_32_15967.png');"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="gallery-card gallery-card-small" style="background-image: url('./image/Rectangle_32_15969.png');"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="gallery-card gallery-card-small" style="background-image: url('./image/Rectangle_32_15971.png');"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="gallery-card gallery-card-small" style="background-image: url('./image/Rectangle_32_15973.png');"></div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="gallery-card gallery-card-large" style="background-image: url('./image/Rectangle_32_15975.png');"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="gallery-card gallery-card-small" style="background-image: url('./image/Rectangle_32_15977.png');"></div>
+                    </div>
+                </div>
+                
+                <!-- Кнопка "Больше фото" -->
+                <div class="text-center">
+                    <a href="#" class="btn btn-primary btn-lg">
+                        Больше фото
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+     <section id="end">
  <div id="footer-placeholder"></div>
     </section>
 
@@ -107,74 +996,94 @@
     <script src="tabs.js"></script>
     <script src="js/script.js"></script>
     
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+
     <script>
-    
-document.addEventListener('DOMContentLoaded', function() {
-  const navbarMenu = document.querySelector('.navbar-menu');
-  const tabTriggers = document.querySelectorAll('#academy-tab .nav-link');
-  const tabPanes = document.querySelectorAll('.tab-pane');
-  
-  let activeTab = null;
-
-  tabTriggers.forEach(trigger => {
-    trigger.addEventListener('click', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      
-      const targetId = this.getAttribute('data-coreui-target');
-      const targetPane = document.querySelector(targetId);
-      
-      // Если кликаем на активный таб - закрываем все
-      if (this === activeTab) {
-        closeAllTabs();
-      } else {
-        // Активируем выбранный таб
-        activateTab(this, targetPane);
-      }
-    });
-  });
-
-  function activateTab(trigger, pane) {
-    // Деактивируем все табы
-    closeAllTabs();
-    
-    // Активируем выбранный
-    trigger.classList.add('active');
-    trigger.setAttribute('aria-selected', 'true');
-    pane.classList.add('show', 'active');
-    
-    activeTab = trigger;
-    navbarMenu.classList.add('tab-open');
-  }
-
-  function closeAllTabs() {
-    tabTriggers.forEach(trigger => {
-      trigger.classList.remove('active');
-      trigger.setAttribute('aria-selected', 'false');
-    });
-    
-    tabPanes.forEach(pane => {
-      pane.classList.remove('show', 'active');
-    });
-    
-    activeTab = null;
-    navbarMenu.classList.remove('tab-open');
-  }
-
-  // Закрытие по клику вне области
-  document.addEventListener('click', function(e) {
-    if (!navbarMenu.contains(e.target)) {
-      closeAllTabs();
-    }
-  });
-
-  // Закрытие по Escape
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      closeAllTabs();
-    }
-  });
-});
-</script>
+        // Инициализация Owl Carousel для событий
+        $(document).ready(function(){
+            // Карусель событий
+            $('.events-carousel').owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: true,
+                dots: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    768: {
+                        items: 2
+                    },
+                    992: {
+                        items: 3
+                    },
+                    1200: {
+                        items: 4
+                    }
+                }
+            });
+            
+            // Карусель выпускников
+            $('.graduates-carousel').owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: true,
+                dots: true,
+                items: 1,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true
+            });
+            
+            // Фильтры новостей
+            $('.filter-item').click(function() {
+                $('.filter-item').removeClass('active');
+                $(this).addClass('active');
+            });
+            
+            // Фильтры по годам
+            $('.year-item').click(function() {
+                $('.year-item').removeClass('active');
+                $(this).addClass('active');
+            });
+            
+            // Кнопка "Наверх"
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 300) {
+                    $('.scroll-top-btn').addClass('visible');
+                } else {
+                    $('.scroll-top-btn').removeClass('visible');
+                }
+            });
+            
+            $('.scroll-top-btn').click(function(e) {
+                e.preventDefault();
+                $('html, body').animate({scrollTop: 0}, 300);
+            });
+            
+            // Анимация карточек при наведении
+            $('.event-card, .gallery-card').hover(
+                function() {
+                    $(this).css('transform', 'translateY(-10px)');
+                },
+                function() {
+                    $(this).css('transform', 'translateY(0)');
+                }
+            );
+        });
+    </script>
 </body>
 </html>
+
+   
+   

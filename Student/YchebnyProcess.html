@@ -3,1060 +3,1494 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="Academy/css/owl.carousel.css">
-    <link rel="stylesheet" href="Academy/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="Academy/css/owl.theme.green.css">
-    <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css">
-    <link href="../css/style.css" rel="stylesheet">
-  
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-  <!-- Owl Carousel CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-  
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- Montserrat Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <style>
-    /* Подключаем ваши кастомные стили */
-    :root {
-      --white: #FFFFFF;
-      --black: #000000;
-      --pink: #ED1160;
-      --blue: #080D6B;
-      --dark-grey: #232328;
-      --grey-dark: #8C8C8C;
-      --grey-light: #777777;
-      --grey: #454545;
-      --light-bg: #F3F3F3;
-    }
-    
-    /* Основные стили как в вашем примере */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    body {
-      width: 100%;
-      font-family: 'Montserrat', sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      color: var(--black);
-      overflow-x: hidden;
-    }
-    
-    /* Контейнеры как в вашем примере */
-    @media (min-width: 560px) {
-      .container, .container-lg, .container-md, .container-sm, .container-xl {
-        max-width: 1920px !important; 
-        margin: 0 !important;
-        padding: 0 !important;
-      }
-    }
-    
-    @media (min-width: 1200px) {
-      .container, .container-lg, .container-md, .container-sm, .container-xl {
-        max-width: 1920px !important; 
-        margin: 0 !important;
-        padding: 0 !important;
-      }
-    }
-    
-    .container {
-      margin: 0px;
-      width: 100%;
-    }
-    
-    .row {
-      margin-right: 0px !important; 
-      margin-left: 0px !important;
-    }
-    
-    /* Типография как в вашем примере */
-    h1 {
-      font-family: 'Montserrat-Medium', 'Montserrat', sans-serif;
-      font-size: 80px !important;
-      color: #000000;
-      margin: 0 0 4px;
-    }
-    
-    h2 {
-      font-family: 'Montserrat-Regular', 'Montserrat', sans-serif;
-      color: #000000;
-      margin: 0 0 4px;
-      font-size: 16px !important;
-    }
-    
-    h3 {
-      font-family: 'Montserrat-Medium', 'Montserrat', sans-serif;
-      color: #000000;
-      margin: 0 0 4px;
-    }
-    
-    h4 {
-      font-family: "Montserrat-Semi", 'Montserrat', sans-serif;
-      font-size: 16px;
-      text-decoration: none;
-      color: #ffffff;
-    }
-    
-    h5 {
-      font-family: 'Montserrat-Medium', 'Montserrat', sans-serif;
-      font-size: 40px;
-      color: #000000;
-      margin: 0 0 4px;
-    }
-    
-    h6 {
-      font-family: 'Montserrat-Bold', 'Montserrat', sans-serif;
-      color: #000000;
-      margin: 0 0 4px;
-    }
-    
-    a {
-      font-family: "Montserrat-Semi", 'Montserrat', sans-serif;
-      font-size: 12px;
-      text-decoration: none;
-      color: #000000;
-    }
-    
-    /* Секции */
-    section {
-      padding: 30px 0px;
-    }
-    
-    /* Кастомные цвета */
-    .text-pink {
-      color: var(--pink) !important;
-    }
-    
-    .text-blue {
-      color: var(--blue) !important;
-    }
-    
-    .text-dark-grey {
-      color: var(--dark-grey) !important;
-    }
-    
-    .bg-dark-grey {
-      background-color: var(--dark-grey) !important;
-    }
-    
-    .bg-light-grey {
-      background-color: var(--light-bg) !important;
-    }
-    
-    /* Компоненты */
-    .sticky-nav {
-      position: sticky;
-      top: 0;
-      z-index: 1030;
-      background-color: var(--dark-grey);
-    }
-    
-    .gradient-card {
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 15px;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      transition: transform 0.3s ease;
-      height: 100%;
-    }
-    
-    .gradient-card:hover {
-      transform: translateY(-5px);
-    }
-    
-    .amount-display {
-      font-family: 'Montserrat-Bold', 'Montserrat', sans-serif;
-      font-size: 40px;
-    }
-    
-    .period-text {
-      font-family: 'Montserrat-Bold', 'Montserrat', sans-serif;
-      font-size: 22px;
-    }
-    
-    .document-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      padding: 6px 4px;
-      transition: all 0.3s ease;
-    }
-    
-    .document-link:hover {
-      background-color: rgba(0, 0, 0, 0.05);
-      border-radius: 5px;
-    }
-    
-    .underline-link {
-      text-decoration: underline;
-      cursor: pointer;
-    }
-    
-    .underline-link:hover {
-      color: var(--pink);
-    }
-    
-    .contact-card {
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    
-    .contact-photo {
-      width: 100%;
-      height: 327px;
-      object-fit: cover;
-      border-radius: 15px;
-    }
-    
-    .employee-photo {
-      width: 149px;
-      height: 215px;
-      object-fit: cover;
-      border-radius: 15px;
-    }
-    
-    /* Горизонтальная навигация */
-    .horizontal-nav {
-      border-bottom: 1px solid #dee2e6;
-      margin-bottom: 40px;
-    }
-    
-    .horizontal-nav .nav-link {
-      color: var(--grey);
-      border: none;
-      padding: 15px 20px;
-      font-weight: 400;
-      position: relative;
-      white-space: nowrap;
-      font-family: 'Montserrat-Regular', 'Montserrat', sans-serif;
-    }
-    
-    .horizontal-nav .nav-link.active {
-      color: var(--blue);
-      font-weight: 500;
-      font-family: 'Montserrat-Medium', 'Montserrat', sans-serif;
-    }
-    
-    .horizontal-nav .nav-link.active::after {
-      content: '';
-      position: absolute;
-      bottom: -1px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background-color: var(--blue);
-    }
-    
-    /* Owl Carousel стили */
-    .owl-carousel .owl-item {
-      padding: 10px;
-    }
-    
-    .owl-carousel .owl-nav {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      transform: translateY(-50%);
-      display: flex;
-      justify-content: space-between;
-      pointer-events: none;
-    }
-    
-    .owl-carousel .owl-nav button {
-      pointer-events: all;
-      background: var(--pink) !important;
-      color: white !important;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      opacity: 0.8;
-      transition: opacity 0.3s ease;
-    }
-    
-    .owl-carousel .owl-nav button:hover {
-      opacity: 1;
-    }
-    
-    .owl-carousel .owl-nav button.owl-prev {
-      margin-left: -20px;
-    }
-    
-    .owl-carousel .owl-nav button.owl-next {
-      margin-right: -20px;
-    }
-    
-    .owl-carousel .owl-dots {
-      text-align: center;
-      margin-top: 20px;
-    }
-    
-    .owl-carousel .owl-dots button.owl-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: #ddd !important;
-      margin: 0 5px;
-    }
-    
-    .owl-carousel .owl-dots button.owl-dot.active {
-      background: var(--pink) !important;
-    }
-    
-    /* Стили для Owl Carousel внутри темной секции */
-    .bg-dark-grey .owl-carousel .owl-nav button {
-      background: var(--white) !important;
-      color: var(--dark-grey) !important;
-    }
-    
-    .bg-dark-grey .owl-carousel .owl-dots button.owl-dot {
-      background: rgba(255, 255, 255, 0.3) !important;
-    }
-    
-    .bg-dark-grey .owl-carousel .owl-dots button.owl-dot.active {
-      background: var(--white) !important;
-    }
-    
-    /* Основной контент */
-    .main-content {
-      padding-top: 40px;
-    }
-    
-    /* Отступы как в вашем примере */
-    #start {
-      padding-top: 170px;
-    }
-    
-    /* Кнопка как в вашем примере */
-    .btn {
-      width: 238px;
-      height: 56px;
-      background: linear-gradient(135deg, #080D6B, #FF5774);
-      border-radius: 50px;
-      border: none;
-      color: white;
-      font-family: 'Montserrat-Semi', 'Montserrat', sans-serif;
-      font-size: 14px;
-    }
-    
-    /* Футер стили как в вашем примере */
-    .footer-section {
-      display: block;
-      background-color: #232328;
-      padding: 40px 0;
-      margin-top: 132px;
-    }
-    
-    .footer-title {
-      color: #ffffff !important;
-      font-family: "Montserrat-Semi", 'Montserrat', sans-serif;
-      font-size: 16px;
-      font-weight: 600;
-      text-transform: uppercase;
-      margin-bottom: 15px;
-    }
-    
-    .footer-divider {
-      height: 1px;
-      background-color: var(--grey-dark);
-      margin: 18px 0;
-    }
-    
-    .footer-link {
-      color: #fdfdfd !important;
-      text-decoration: none;
-      transition: color 0.3s;
-      font-family: "Montserrat-Regular", 'Montserrat', sans-serif;
-      font-size: 14px;
-    }
-    
-    .footer-link:hover {
-      color: #0056b3 !important;
-    }
-    
-    .underlined-title {
-      border-bottom: 2px solid #ffffff;
-      display: inline-block;
-    }
-    
-    /* Навбар стили как в вашем примере */
-    .academy-navbar {
-      width: 100%;
-      position: fixed;
-      min-height: 70px;
-      background-color: #232328;
-      color: white;
-    }
-    
-    header li {
-      color: #ffffff;
-    }
-    
-    /* Иконки */
-    .icon-document {
-      width: 32px;
-      height: 38px;
-      background-color: var(--black);
-      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 38'%3E%3Cpath d='M0 0h32v38H0z'/%3E%3C/svg%3E") no-repeat center;
-      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 38'%3E%3Cpath d='M0 0h32v38H0z'/%3E%3C/svg%3E") no-repeat center;
-    }
-    
-    .icon-arrow {
-      width: 18px;
-      height: 18px;
-      background-color: var(--black);
-      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M9 0l9 18H0z'/%3E%3C/svg%3E") no-repeat center;
-      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M9 0l9 18H0z'/%3E%3C/svg%3E") no-repeat center;
-    }
-    
-    /* Адаптивные стили */
-    @media (max-width: 992px) {
-      h1 {
-        font-size: 50px !important;
-      }
-      
-      h5 {
-        font-size: 32px;
-      }
-      
-      .amount-display {
-        font-size: 32px;
-      }
-      
-      .period-text {
-        font-size: 18px;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 36px !important;
-      }
-      
-      h5 {
-        font-size: 24px;
-      }
-      
-      .amount-display {
-        font-size: 28px;
-      }
-      
-      .period-text {
-        font-size: 16px;
-      }
-      
-      .horizontal-nav .nav-link {
-        padding: 10px 15px;
-        font-size: 14px;
-      }
-      
-      /* Скрываем стрелки Owl Carousel на мобильных */
-      .owl-carousel .owl-nav {
-        display: none !important;
-      }
-    }
-    
-    /* Дополнительные стили для соответствия */
-    .cursor-pointer {
-      cursor: pointer;
-    }
-    
-    .bg-gradient-dark {
-      background: linear-gradient(45deg, #131313, #080D6B);
-    }
-    
-    .bg-gradient-pink {
-      background: linear-gradient(45deg, #232328, #ED1160);
-    }
-    
-    /* Стили для списков как в вашем примере */
-    ul {
-      list-style-type: disc;
-      padding-left: 20px;
-    }
-    
-    li {
-      margin-bottom: 5px;
-    }
-    
-    /* Отступы как в вашем примере */
-    .offset-1 {
-      margin-left: 8.33333333%;
-    }
-    
-    .offset-2 {
-      margin-left: 16.66666667%;
-    }
-  </style>
+    <title>Студенту - Учебный процесс | ААИ ЮФУ</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        /* ===== БАЗОВЫЕ СТИЛИ И ПЕРЕМЕННЫЕ ===== */
+        :root {
+            --primary-blue: #080D6B;
+            --secondary-pink: #ED1160;
+            --dark-grey: #232328;
+            --medium-grey: #777777;
+            --light-grey: #f3f3f3;
+            --white: #ffffff;
+            --black: #000000;
+            --grey-1132: #D2D2D2;
+            --grey-dark: #8C8C8C;
+            --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%);
+            --gradient-dark: linear-gradient(45deg, #131313, var(--primary-blue));
+        }
+
+        /* ===== ОБЩИЕ СТИЛИ ===== */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--black);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        /* Типографика */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .hero-title {
+            font-size: 80px;
+            font-weight: 500;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 500;
+            text-transform: uppercase;
+            line-height: 1.3;
+            margin-bottom: 40px;
+        }
+
+        .section-subtitle {
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1.4;
+            text-transform: uppercase;
+        }
+
+        /* ===== СЕКЦИИ ===== */
+        section {
+            padding: 80px 0;
+        }
+
+        /* ===== КАРТОЧКИ ===== */
+        .card-custom {
+            background: var(--white);
+            border: 1px solid var(--grey-1132);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .card-custom:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .scholarship-card {
+            background: var(--light-grey);
+            border: none;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        /* Стипендии */
+        .scholarship-amount .amount {
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--secondary-pink);
+            display: block;
+            line-height: 1;
+        }
+
+        .scholarship-amount .period {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--secondary-pink);
+            line-height: 1.2;
+        }
+
+        /* ===== КНОПКИ ===== */
+        .btn {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary-custom {
+            background-color: var(--grey-dark);
+            color: var(--white);
+            border: none;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: var(--primary-blue);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-custom {
+            background-color: #E6E7F0;
+            color: var(--grey-dark);
+            border: none;
+        }
+
+        .btn-outline-custom:hover {
+            background-color: var(--grey-1132);
+            color: var(--white);
+        }
+
+        /* ===== НАВИГАЦИОННЫЕ ВКЛАДКИ ===== */
+        .nav-tabs-custom {
+            border-bottom: 1px solid var(--grey-1132);
+        }
+
+        .nav-tabs-custom .nav-link {
+            color: var(--grey-dark);
+            border: none;
+            font-size: 16px;
+            font-weight: 400;
+            padding: 10px 0;
+            margin-right: 30px;
+            position: relative;
+        }
+
+        .nav-tabs-custom .nav-link.active {
+            color: var(--primary-blue);
+            font-weight: 500;
+            background: none;
+            border: none;
+        }
+
+        .nav-tabs-custom .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: var(--primary-blue);
+        }
+
+        /* ===== АККОРДЕОН ===== */
+        .accordion-custom {
+            border: 1px solid var(--grey-1132);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .accordion-custom .accordion-item {
+            border: none;
+            border-bottom: 1px solid var(--grey-1132);
+        }
+
+        .accordion-custom .accordion-item:last-child {
+            border-bottom: none;
+        }
+
+        .accordion-custom .accordion-button {
+            background-color: var(--white);
+            color: var(--black);
+            font-size: 22px;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 28px;
+            box-shadow: none;
+        }
+
+        .accordion-custom .accordion-button:not(.collapsed) {
+            color: var(--primary-blue);
+            background-color: var(--white);
+            box-shadow: none;
+        }
+
+        .accordion-custom .accordion-button::after {
+            background-image: url("data:image/svg+xml,%3Csvg width='13' height='7' viewBox='0 0 13 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6.5 6L12 1' stroke='%23000' stroke-width='2'/%3E%3C/svg%3E");
+            transform: rotate(0deg);
+            transition: transform 0.2s ease;
+        }
+
+        .accordion-custom .accordion-button:not(.collapsed)::after {
+            background-image: url("data:image/svg+xml,%3Csvg width='13' height='7' viewBox='0 0 13 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6.5 6L12 1' stroke='%23080D6B' stroke-width='2'/%3E%3C/svg%3E");
+            transform: rotate(180deg);
+        }
+
+        /* ===== СПИСКИ КАФЕДР ===== */
+        .department-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .department-item {
+            padding: 10px 0;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .department-item:hover {
+            color: var(--primary-blue);
+        }
+
+        /* ===== СЕКЦИЯ СТИПЕНДИЙ С КАРУСЕЛЬЮ ===== */
+        .scholarships-section {
+            background: var(--gradient-dark);
+            padding: 90px 0;
+        }
+
+        .scholarship-carousel-item {
+            padding: 20px;
+        }
+
+        /* ===== СЕКЦИЯ СОТРУДНИКОВ ===== */
+        .staff-section {
+            padding: 90px 0;
+            background-color: var(--light-grey);
+        }
+
+        .staff-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.05) inset;
+        }
+
+        .staff-photo {
+            height: 215px;
+            background-color: var(--grey-1132);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 48px;
+        }
+
+        /* ===== КНОПКА НАВЕРХ ===== */
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 49px;
+            height: 49px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .scroll-top-btn.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(8, 13, 107, 0.3);
+        }
+
+        /* ===== ГРАФИЧЕСКИЕ ЭЛЕМЕНТЫ ===== */
+        .graphic-element {
+            width: 83px;
+            height: 83px;
+            background: var(--gradient-primary);
+            border-radius: 10px;
+            transform: rotate(30deg);
+        }
+
+        /* ===== АДАПТИВНОСТЬ ===== */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 60px;
+            }
+            
+            .section-title {
+                font-size: 36px;
+            }
+            
+            .department-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 48px;
+                text-align: center;
+            }
+            
+            .hero-subtitle {
+                text-align: center;
+            }
+            
+            .section-title {
+                font-size: 32px;
+                text-align: center;
+            }
+            
+            .nav-tabs-custom {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 36px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .accordion-custom .accordion-button {
+                font-size: 18px;
+                padding: 20px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        /* Утилиты */
+        .text-primary-blue {
+            color: var(--primary-blue) !important;
+        }
+
+        .text-pink {
+            color: var(--secondary-pink) !important;
+        }
+
+        .bg-light-custom {
+            background-color: var(--light-grey) !important;
+        }
+
+        .bg-blue-custom {
+            background-color: var(--primary-blue) !important;
+        }
+
+        .border-grey {
+            border-color: var(--grey-1132) !important;
+        }
+
+        /* Owl Carousel кастомизация */
+        .owl-carousel .owl-nav button.owl-prev,
+        .owl-carousel .owl-nav button.owl-next {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-blue) !important;
+            color: white !important;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .owl-carousel .owl-nav button.owl-prev {
+            left: -50px;
+        }
+
+        .owl-carousel .owl-nav button.owl-next {
+            right: -50px;
+        }
+
+        .owl-carousel .owl-dots {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .owl-carousel .owl-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--grey-1132) !important;
+            border-radius: 50%;
+            margin: 0 5px;
+        }
+
+        .owl-carousel .owl-dot.active {
+            width: 40px;
+            background: var(--grey-dark) !important;
+            border-radius: 20px;
+        }
+    </style>
 </head>
 <body>
-
-<header id="header-placeholder">
+    <!-- Навигация (можно подключить общий header) -->
+    <header class="header" id="header-placeholder">
+        <!-- Общая навигация будет здесь -->
     </header>
 
-<main class="container-fluid px-0">
-  <!-- Горизонтальная навигация для подразделов -->
-  <div class="container" id="start">
-    <div class="row">
-      <div class="col-12">
-        <div class="horizontal-nav">
-          <ul class="nav">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Учебный процесс</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Социальные вопросы</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Международная деятельность</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+    <main class="main-content">
+        <!-- ===== СЕКЦИЯ 1: ГЕРОЙ ===== -->
+        <section class="hero-section py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 mb-5 mb-lg-0">
+                        <h1 class="hero-title mb-4">студенту</h1>
+                        <p class="hero-subtitle">
+                            В данном разделе представлена актуальная информация <br>
+                            для студентов Академии: расписание занятий, сессии и пересдач. <br>
+                            Программы государственной итоговой аттестации, темы выпускных <br>
+                            квалификационных работ и информация о государственных стипендиях. <br>
+                            А также образцы заявлений.
+                        </p>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="position-relative" style="height: 456px;">
+                            <!-- Графические элементы -->
+                            <div class="position-absolute top-50 start-0 translate-middle-y">
+                                <div class="graphic-element position-absolute" style="left: 20.25%; top: 6.88%; opacity: 1;"></div>
+                                <div class="graphic-element position-absolute" style="left: -6.7%; top: 33.95%; opacity: 0.7;"></div>
+                                <div class="graphic-element position-absolute" style="left: 63.17%; top: 35.05%; opacity: 0.5;"></div>
+                            </div>
+                            
+                            <div class="position-absolute top-50 start-50 translate-middle">
+                                <div class="graphic-element position-absolute" style="left: 20.25%; top: 6.88%; opacity: 0.8;"></div>
+                                <div class="graphic-element position-absolute" style="left: -6.7%; top: 33.95%; opacity: 0.6;"></div>
+                                <div class="graphic-element position-absolute" style="left: 63.17%; top: 35.05%; opacity: 0.4;"></div>
+                            </div>
+                            
+                            <div class="position-absolute top-50 end-0 translate-middle-y">
+                                <div class="graphic-element position-absolute" style="left: 31.7%; top: 9.15%; opacity: 0.9;"></div>
+                                <div class="graphic-element position-absolute" style="left: -18.3%; top: 34.15%; opacity: 0.7;"></div>
+                                <div class="graphic-element position-absolute" style="left: 63.17%; top: 35.05%; opacity: 0.5;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <!-- Основной контент -->
-  <div class="container main-content">
-    <!-- Заголовок раздела -->
-    <div class="row mb-5">
-      <div class="col-md-7 col-sm-12">
-        <div class="offset-1">
-          <h1>студенту</h1>
-        </div>
-        <div class="offset-1 mt-4">
-          <h2>
-            В данном разделе находится информация о стипендиях и льготах, а также нормативные документы и перечни документов, необходимых для подачи заявления на социальную стипендию
-          </h2>
-        </div>
-      </div>
-    </div>
-    
-    <!-- ГОСУДАРСТВЕННАЯ СОЦИАЛЬНАЯ СТИПЕНДИЯ -->
-    <section class="py-5 bg-gradient-dark text-white mb-5">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-12">
-            <h5 class="text-center">ГОСУДАРСТВЕННАЯ <br>социальная СТИПЕНДИЯ</h5>
-          </div>
-        </div>
-        
-        <!-- Owl Carousel для стипендий -->
-        <div class="owl-carousel owl-theme scholarship-carousel" id="scholarshipCarousel">
-          <!-- Карточка 1 -->
-          <div class="item">
-            <div class="gradient-card p-4 h-100">
-              <div class="d-flex align-items-baseline mb-3">
-                <span class="amount-display text-pink me-2">4 106</span>
-                <span class="period-text text-pink">в месяц</span>
-              </div>
-              <div class="d-flex">
-                <div class="me-3 flex-shrink-0" style="width: 82px; height: 65px; background-color: #f0f0f0; border-radius: 5px;"></div>
-                <p class="body-text text-black mb-0">
-                  Государственная социальная стипендия студентам
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Карточка 2 -->
-          <div class="item">
-            <div class="gradient-card p-4 h-100">
-              <div class="d-flex align-items-baseline mb-3">
-                <span class="amount-display text-pink me-2">7 800</span>
-                <span class="period-text text-pink">в месяц</span>
-              </div>
-              <div class="d-flex">
-                <div class="me-3 flex-shrink-0" style="width: 82px; height: 65px; background-color: #f0f0f0; border-radius: 5px;"></div>
-                <p class="body-text text-black mb-0">
-                  Государственная социальная стипендия для студентов 1-2 курсов (бакалавриат, специалитет), успевающих на "хорошо" и "отлично" (в дополнение к социальной и академической стипендии)
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Карточка 3 -->
-          <div class="item">
-            <div class="gradient-card p-4 h-100">
-              <div class="d-flex align-items-baseline mb-3">
-                <span class="amount-display text-pink me-2">5 000</span>
-                <span class="period-text text-pink">в месяц</span>
-              </div>
-              <div class="d-flex">
-                <div class="me-3 flex-shrink-0" style="width: 82px; height: 65px; background-color: #f0f0f0; border-radius: 5px;"></div>
-                <p class="body-text text-black mb-0">
-                  Стипендии Правительства Российской Федерации для студентов, обучающихся по специальностям, соответствующим приоритетным направлениям модернизации и технологического развития экономики.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Ссылки -->
-        <div class="row mt-5">
-          <div class="col-12">
-            <div class="d-flex align-items-center justify-content-center">
-              <div class="icon-arrow me-3" style="background-color: white;"></div>
-              <span class="underline-link body-text text-white cursor-pointer" data-bs-toggle="modal" data-bs-target="#documentsModal">
-                Категории студентов, имеющих право на получение Государственной социальной стипендии<br>Перечень необходимых документов
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- ГОСУДАРСТВЕННАЯ АКАДЕМИЧЕСКАЯ И (ИЛИ) ГОСУДАРСТВЕННАЯ СОЦИАЛЬНАЯ СТИПЕНДИЯ В ПОВЫШЕННОМ РАЗМЕРЕ -->
-    <section class="py-5 bg-light-grey mb-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-10 offset-lg-1">
-            <h3 class="text-blue mb-4">
-              ГОСУДАРСТВЕННАЯ АКАДЕМИЧЕСКАЯ <br>И (ИЛИ) ГОСУДАРСТВЕННАЯ СОЦИАЛЬНАЯ <br>СТИПЕНДИЯ В ПОВЫШЕННОМ РАЗМЕРЕ
-            </h3>
-            <p class="body-text text-blue">
-              <strong>Назначается студентам 1 и 2 курсов (бакалавриат, специалитет);<br></strong>
-              <strong>Оценки успеваемости – «отлично» или «хорошо» или «отлично» и «хорошо» (назначена ГАС);<br></strong>
-              <strong>Категории получателей – аналогичны имеющим право на получение ГСС или студенты в возрасте до 20 лет, имеющими только одного родителя - инвалида I группы (назначена ГСС);</strong>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- МАТЕРИАЛЬНАЯ ПОДДЕРЖКА ОБУЧАЮЩИМСЯ -->
-    <section class="py-5 mb-5">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-12">
-            <h5>МАТЕРИАЛЬНАЯ ПОДДЕРЖКА ОБУЧАЮЩИМСЯ</h5>
-          </div>
-        </div>
-        
-        <div class="row">
-          <div class="col-lg-6">
-            <a href="#" class="document-link text-black mb-4 d-inline-block">
-              <div class="icon-document"></div>
-              <span class="small-text text-uppercase">
-                Положение о порядке оказания <br>материальной поддержки <br>обучающимся ЮФУ от 14.05.19 N783
-              </span>
-            </a>
-            
-            <div class="d-flex align-items-center mt-4">
-              <div class="icon-arrow me-3"></div>
-              <span class="underline-link body-text text-black cursor-pointer" data-bs-toggle="modal" data-bs-target="#materialSupportModal">
-                Перечень подтверждающих документов<br>при обращении за материальной поддержкой
-              </span>
-            </div>
-          </div>
-          
-          <div class="col-lg-6">
-            <p class="lead-text text-dark-grey">
-              Материальная поддержка обучающимся назначается в соответствии с Положением о порядке оказания материальной поддержки обучающимся ЮФУ от 14.05.2019 г. N 783
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- ЛЬГОТЫ ДЛЯ СТУДЕНТОВ ИЗ ЧИСЛА ДЕТЕЙ-СИРОТ -->
-    <section class="py-5 bg-gradient-pink text-white mb-5">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-12">
-            <h5 class="text-center">ЛЬГОТЫ ДЛЯ СТУДЕНТОВ ИЗ ЧИСЛА <br>ДЕТЕЙ-СИРОТ И ДЕТЕЙ, ОСТАВШИХСЯ <br>БЕЗ ПОПЕЧЕНИЯ РОДИТЕЛЕЙ</h5>
-          </div>
-        </div>
-        
-        <!-- Owl Carousel для льгот -->
-        <div class="owl-carousel owl-theme benefits-carousel" id="benefitsCarousel">
-          <!-- Карточка 1 -->
-          <div class="item">
-            <div class="gradient-card p-4 h-100">
-              <div class="d-flex align-items-baseline mb-3">
-                <span class="amount-display text-pink me-2">13 707,56</span>
-                <span class="period-text text-pink">в месяц</span>
-              </div>
-              <div class="d-flex">
-                <div class="me-3 flex-shrink-0" style="width: 82px; height: 65px; background-color: #f0f0f0; border-radius: 5px;"></div>
-                <p class="body-text text-black mb-0">
-                  Обеспечение питанием
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Карточка 2 -->
-          <div class="item">
-            <div class="gradient-card p-4 h-100">
-              <div class="d-flex align-items-baseline mb-3">
-                <span class="amount-display text-pink me-2">9 312</span>
-                <span class="period-text text-pink">ежегодно (сентябрь)</span>
-              </div>
-              <div class="d-flex">
-                <div class="me-3 flex-shrink-0" style="width: 82px; height: 65px; background-color: #f0f0f0; border-radius: 5px;"></div>
-                <p class="body-text text-black mb-0">
-                  Обеспечение на выплату ежегодного пособия на приобретение учебной литературы и письменных принадлежностей
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Карточка 3 -->
-          <div class="item">
-            <div class="gradient-card p-4 h-100">
-              <div class="d-flex align-items-baseline mb-3">
-                <span class="amount-display text-pink me-2">108 251</span>
-                <span class="period-text text-pink">единоразово при выпуске</span>
-              </div>
-              <div class="d-flex">
-                <div class="me-3 flex-shrink-0" style="width: 82px; height: 65px; background-color: #f0f0f0; border-radius: 5px;"></div>
-                <p class="body-text text-black mb-0">
-                  Обеспечение одеждой, обувью, мягким инвентарем и оборудованием при выпуске
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Карточка 4 -->
-          <div class="item">
-            <div class="gradient-card p-4 h-100">
-              <div class="d-flex align-items-baseline mb-3">
-                <span class="amount-display text-pink me-2">22 554</span>
-                <span class="period-text text-pink">в квартал</span>
-              </div>
-              <div class="d-flex">
-                <div class="me-3 flex-shrink-0" style="width: 82px; height: 65px; background-color: #f0f0f0; border-radius: 5px;"></div>
-                <p class="body-text text-black mb-0">
-                  Обеспечение одеждой, обувью, мягким инвентарем и другими предметами вещевого довольствия
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Карточка 5 -->
-          <div class="item">
-            <div class="gradient-card p-4 h-100">
-              <div class="d-flex align-items-baseline mb-3">
-                <span class="amount-display text-pink me-2">1 184</span>
-                <span class="period-text text-pink">в месяц</span>
-              </div>
-              <div class="d-flex">
-                <div class="me-3 flex-shrink-0" style="width: 82px; height: 65px; background-color: #f0f0f0; border-radius: 5px;"></div>
-                <p class="body-text text-black mb-0">
-                  Обеспечение проездом
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Карточка 6 -->
-          <div class="item">
-            <div class="gradient-card p-4 h-100">
-              <div class="d-flex align-items-baseline mb-3">
-                <span class="amount-display text-pink me-2">500</span>
-                <span class="period-text text-pink">единоразово при выпуске</span>
-              </div>
-              <div class="d-flex">
-                <div class="me-3 flex-shrink-0" style="width: 82px; height: 65px; background-color: #f0f0f0; border-radius: 5px;"></div>
-                <p class="body-text text-black mb-0">
-                  Обеспечение на выплату единовременного денежного пособия при выпуске
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- НОРМАТИВНЫЕ ДОКУМЕНТЫ -->
-    <section class="py-5 mb-5">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-12">
-            <h5>НОРМАТИВНЫЕ ДОКУМЕНТЫ</h5>
-          </div>
-        </div>
-        
-        <div class="row">
-          <div class="col-lg-6">
-            <a href="#" class="document-link text-black mb-4 d-inline-block">
-              <div class="icon-document"></div>
-              <span class="small-text text-uppercase underline-link">
-                П201-ОД Положение <br>о стипендиальном обеспечении
-              </span>
-            </a>
-          </div>
-          
-          <div class="col-lg-6">
-            <p class="lead-text text-dark-grey">
-              Все о стипендиях Президента РФ, Правительства РФ, а также именных стипендиях вы можете узнать на сайте <a href="https://xn--d1abicxkmi7j.xn--p1ai/" target="_blank" class="underline-link text-dark-grey">стипендия.рф</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Контакты -->
-    <section class="py-5 bg-light-grey mb-5">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-12">
-            <h5>Контакты</h5>
-          </div>
-        </div>
-        
-        <div class="row">
-          <div class="col-lg-5">
-            <div class="contact-card p-4">
-              <div class="contact-photo mb-4" style="background-color: #e0e0e0;"></div>
-              <div>
-                <p class="body-text">
-                  <strong>Старший преподаватель кафедры Дизайна, ответственная по социально-воспитательной работе<br></strong>
-                  <strong class="d-block mt-2">Черкасова Мария Николаевна</strong>
-                </p>
-                <p class="body-text mt-4">
-                  <strong>тел.:</strong> 8 (863) 218-40-00 доб. 200-78<br>
-                  <strong>e-mail:</strong> <a href="mailto:mncherkasova@sfedu.ru" class="text-blue underline-link">mncherkasova@sfedu.ru</a><br>
-                  <strong>Адрес:</strong> пр. Будённовский 39, каб. № 10
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-lg-7 mt-5 mt-lg-0">
-            <h4 class="mb-4">Основные функциональные обязанности</h4>
-            <ul class="body-text">
-              <li class="mb-2">• Оформление социальных стипендий;</li>
-              <li class="mb-2">• Оформление документов на выплату материальной поддержки;</li>
-              <li class="mb-2">• Оформление стипендий Губернатора Ростовской области, стипендии Президента и Правительства и пр.;</li>
-              <li class="mb-2">• Работа с лицами с ограниченными возможностями здоровья и сиротами;</li>
-              <li class="mb-2">• Проведение дисциплинарных комиссий;</li>
-              <li class="mb-2">• Проведение мероприятий различного уровня, касающихся воспитательной и социальной работы;</li>
-              <li>• Оформление документов по проведению практик для всех направлений ААИ</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Сотрудники -->
-    <section class="py-5 mb-5">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-12">
-            <h5>Сотрудники</h5>
-          </div>
-        </div>
-        
-        <div class="bg-light-grey rounded-3 p-4">
-          <div class="row align-items-center">
-            <div class="col-md-3">
-              <div class="employee-photo" style="background-color: #e0e0e0;"></div>
-            </div>
-            <div class="col-md-9 mt-4 mt-md-0">
-              <p class="body-text">
-                <strong>Специалист по учебно-методической работе<br></strong>
-                <strong class="d-block mt-2">Филимонова Виктория Борисовна</strong>
-              </p>
-              <p class="body-text mt-3">
-                <strong>e-mail:</strong> <a href="mailto:fil@sfedu.ru" class="text-blue underline-link">fil@sfedu.ru</a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-</main>
+        <!-- ===== СЕКЦИЯ 2: РАСПИСАНИЕ ===== -->
+        <section class="schedule-section py-5">
+            <div class="container">
+                <!-- Верхняя навигация -->
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <ul class="nav nav-tabs-custom mb-4">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">
+                                    <span class="text-primary-blue fw-medium">Учебный процесс</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span class="text-muted">Социальные вопросы</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <span class="text-muted">Международная деятельность</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
-<!-- Модальные окна -->
-<div class="modal fade" id="documentsModal" tabindex="-1" aria-labelledby="documentsModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="documentsModalLabel">Категории студентов и документы для социальной стипендии</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p>Здесь будет информация о категориях студентов и перечень необходимых документов...</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn" data-bs-dismiss="modal">Закрыть</button>
-      </div>
-    </div>
-  </div>
-</div>
+                <!-- Заголовок и семестр -->
+                <div class="row mb-5">
+                    <div class="col-lg-6">
+                        <h2 class="section-title">расписание</h2>
+                        
+                        <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center gap-3 mb-4">
+                            <div class="d-flex align-items-center">
+                                <span class="text-primary-blue fw-medium me-3">Весенний семестр 2024-2025</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <span class="text-muted">Осенний семестр 2024-2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<div class="modal fade" id="materialSupportModal" tabindex="-1" aria-labelledby="materialSupportModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="materialSupportModalLabel">Документы для материальной поддержки</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p>Здесь будет перечень подтверждающих документов для материальной поддержки...</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn" data-bs-dismiss="modal">Закрыть</button>
-      </div>
-    </div>
-  </div>
-</div>
+                <!-- Кнопки расписания -->
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <div class="d-flex flex-wrap gap-3">
+                            <button class="btn btn-primary-custom px-4 py-3">
+                                расписание занятий
+                            </button>
+                            <button class="btn btn-outline-custom px-4 py-3">
+                                расписание сессии
+                            </button>
+                            <button class="btn btn-outline-custom px-4 py-3">
+                                расписание пересдач
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-<section id="end">
- <div id="footer-placeholder"></div>
-    </section>
+                <!-- Аккордеон уровней образования -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="accordion accordion-custom" id="educationLevelsAccordion">
+                            <!-- Бакалавриат / специалитет -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                        Бакалавриат / специалитет
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#educationLevelsAccordion">
+                                    <div class="accordion-body">
+                                        <!-- Контент для бакалавриата/специалитета -->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Магистратура -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                        магистратура
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#educationLevelsAccordion">
+                                    <div class="accordion-body">
+                                        <!-- Контент для магистратуры -->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Аспирантура -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                        аспирантура
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#educationLevelsAccordion">
+                                    <div class="accordion-body">
+                                        <!-- Контент для аспирантуры -->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Ассистентура-стажировка -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                                        ассистентура-стажировка
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#educationLevelsAccordion">
+                                    <div class="accordion-body">
+                                        <!-- Контент для ассистентуры-стажировки -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-     <!-- Подключаем Bootstrap JS и Popper.js -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="../js/owl.carousel.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/@coreui/coreui/dist/js/coreui.bundle.min.js"></script>
-    <script src="../common.js"></script>
-    <script src="../tabs.js"></script>
-    <script src="../js/script.js"></script>
+        <!-- ===== СЕКЦИЯ 3: ГРАФИК КОНСУЛЬТАЦИЙ ===== -->
+        <section class="consultations-section py-5 bg-light-custom">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <h3 class="section-subtitle text-primary-blue mb-4">
+                            график консультации <br>
+                            и добора баллов
+                        </h3>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-10">
+                        <div class="department-list">
+                            <!-- Колонка 1 -->
+                            <div>
+                                <div class="department-item text-primary-blue fw-medium">
+                                    Кафедра архитектурного <br>
+                                    и средового проектирования
+                                </div>
+                                <div class="department-item text-primary-blue fw-medium">
+                                    Кафедра архитектуры жилых <br>
+                                    и общественных зданий
+                                </div>
+                                <div class="department-item text-primary-blue fw-medium">
+                                    Кафедра градостроительства
+                                </div>
+                                <div class="department-item text-primary-blue fw-medium">
+                                    Кафедра теории и практики <br>
+                                    изобразительного искусства
+                                </div>
+                                <div class="department-item text-primary-blue fw-medium">
+                                    Кафедра дизайна
+                                </div>
+                                <div class="department-item text-primary-blue fw-medium">
+                                    Кафедра декоративно-<br>
+                                    прикладного искусства
+                                </div>
+                            </div>
+                            
+                            <!-- Колонка 2 -->
+                            <div>
+                                <div class="department-item text-primary-blue fw-medium">
+                                    Кафедра истории архитектуры, искусства <br>
+                                    и архитектурной реставрации
+                                </div>
+                                <div class="department-item text-primary-blue fw-medium">
+                                    Кафедра графики и информационных технологий <br>
+                                    архитектурного проектирования
+                                </div>
+                                <div class="department-item text-primary-blue fw-medium">
+                                    Кафедра основ архитектурно-<br>
+                                    художественного проектирования
+                                </div>
+                                <div class="department-item text-primary-blue fw-medium">
+                                    Кафедра рисунка
+                                </div>
+                                <div class="department-item text-primary-blue fw-medium">
+                                    Кафедра инженерно-строительных дисциплин
+                                </div>
+                                <div class="department-item text-primary-blue fw-medium">
+                                    Кафедра строительной механики и конструкций
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 4: ГОСУДАРСТВЕННАЯ ИТОГОВАЯ АТТЕСТАЦИЯ ===== -->
+        <section class="gia-section py-5">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <h2 class="section-title text-center">
+                            ГОСУДАРСТВЕННАЯ <br>
+                            ИТОГОВАЯ АТТЕСТАЦИЯ
+                        </h2>
+                    </div>
+                </div>
+
+                <!-- Программы ГИА -->
+                <div class="row mb-5">
+                    <div class="col-lg-4 mb-4 mb-lg-0">
+                        <h3 class="section-subtitle text-primary-blue">
+                            программы гиа <br>
+                            по направлениям
+                        </h3>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="accordion accordion-custom" id="giaProgramsAccordion">
+                            <!-- Бакалавриат -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#giaCollapseOne">
+                                        Бакалавриат
+                                    </button>
+                                </h2>
+                                <div id="giaCollapseOne" class="accordion-collapse collapse show" data-bs-parent="#giaProgramsAccordion">
+                                    <div class="accordion-body">
+                                        <!-- Контент для бакалавриата -->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Специалитет -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#giaCollapseTwo">
+                                        Специалитет
+                                    </button>
+                                </h2>
+                                <div id="giaCollapseTwo" class="accordion-collapse collapse" data-bs-parent="#giaProgramsAccordion">
+                                    <div class="accordion-body">
+                                        <!-- Контент для специалитета -->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Магистратура -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#giaCollapseThree">
+                                        Магистратура
+                                    </button>
+                                </h2>
+                                <div id="giaCollapseThree" class="accordion-collapse collapse" data-bs-parent="#giaProgramsAccordion">
+                                    <div class="accordion-body">
+                                        <!-- Контент для магистратуры -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Расписание ГИА -->
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <div class="card bg-blue-custom text-white p-4 p-lg-5 rounded-4">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <h3 class="section-subtitle mb-4">расписание гиа</h3>
+                                    <div class="fs-5">
+                                        Расписание ГИА бакалавриат 2025<br>
+                                        Расписание ГИА специалитет 2025<br>
+                                        Расписание ГИА магистратура 2025<br>
+                                        Расписание ГИА аспирантура 2025<br>
+                                        Расписание ГИА ассистентура-стажировка 2025
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Темы ВКР -->
+                <div class="row">
+                    <div class="col-lg-4 mb-4 mb-lg-0">
+                        <h3 class="section-subtitle text-primary-blue">
+                            ТЕМЫ ВЫПУСКНЫХ <br>
+                            КВАЛИФИКАЦИОННЫХ РАБОТ
+                        </h3>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="accordion accordion-custom" id="vkrThemesAccordion">
+                            <!-- Бакалавриат -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#vkrCollapseOne">
+                                        Бакалавриат
+                                    </button>
+                                </h2>
+                                <div id="vkrCollapseOne" class="accordion-collapse collapse show" data-bs-parent="#vkrThemesAccordion">
+                                    <div class="accordion-body">
+                                        <!-- Контент для тем ВКР бакалавриата -->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Специалитет -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#vkrCollapseTwo">
+                                        Специалитет
+                                    </button>
+                                </h2>
+                                <div id="vkrCollapseTwo" class="accordion-collapse collapse" data-bs-parent="#vkrThemesAccordion">
+                                    <div class="accordion-body">
+                                        <!-- Контент для тем ВКР специалитета -->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Магистратура -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#vkrCollapseThree">
+                                        Магистратура
+                                    </button>
+                                </h2>
+                                <div id="vkrCollapseThree" class="accordion-collapse collapse" data-bs-parent="#vkrThemesAccordion">
+                                    <div class="accordion-body">
+                                        <!-- Контент для тем ВКР магистратуры -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 5: ГОСУДАРСТВЕННАЯ АКАДЕМИЧЕСКАЯ СТИПЕНДИЯ (С КАРУСЕЛЬЮ) ===== -->
+        <section class="scholarships-section py-5">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <h2 class="section-title text-white text-center">
+                            ГОСУДАРСТВЕННАЯ <br>
+                            АКАДЕМИЧЕСКАЯ СТИПЕНДИЯ
+                        </h2>
+                    </div>
+                </div>
+
+                <!-- Owl Carousel для стипендий -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="owl-carousel owl-theme" id="scholarshipCarousel">
+                            <!-- Слайд 1 -->
+                            <div class="scholarship-carousel-item">
+                                <div class="card scholarship-card h-100">
+                                    <div class="card-body p-4">
+                                        <div class="scholarship-amount mb-3">
+                                            <span class="amount">2 500</span>
+                                            <span class="period d-block">в месяц</span>
+                                        </div>
+                                        <div class="d-flex">
+                                            <div class="me-4" style="width: 82px; height: 65px;"></div>
+                                            <div>
+                                                <p class="mb-2">
+                                                    <span class="fw-normal">Студенты</span>
+                                                    <span class="fw-bold"> 1 курса (1 семестр) </span>
+                                                    <span class="fw-normal">(в том числе иностранные граждане и лица без гражданства)</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Слайд 2 -->
+                            <div class="scholarship-carousel-item">
+                                <div class="card scholarship-card h-100">
+                                    <div class="card-body p-4">
+                                        <div class="scholarship-amount mb-3">
+                                            <span class="amount">4 106</span>
+                                            <span class="period d-block">в месяц</span>
+                                        </div>
+                                        <div class="d-flex">
+                                            <div class="me-4" style="width: 82px; height: 65px;"></div>
+                                            <div>
+                                                <p class="mb-2">
+                                                    <span class="fw-normal">Студенты, успевающие на </span>
+                                                    <span class="fw-bold">«отлично» </span>
+                                                    <span class="fw-normal"><br>(в том числе иностранные граждане <br>и лица без гражданства)</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Слайд 3 -->
+                            <div class="scholarship-carousel-item">
+                                <div class="card scholarship-card h-100">
+                                    <div class="card-body p-4">
+                                        <div class="scholarship-amount mb-3">
+                                            <span class="amount">3 506</span>
+                                            <span class="period d-block">в месяц</span>
+                                        </div>
+                                        <div class="d-flex">
+                                            <div class="me-4" style="width: 82px; height: 65px;"></div>
+                                            <div>
+                                                <p class="mb-0">
+                                                    Студенты, успевающие на «отлично <br>
+                                                    и хорошо» (при наличии оценок "отлично" 50% и более), <br>
+                                                    (в том числе иностранные граждане и лица без гражданства)
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Слайд 4 -->
+                            <div class="scholarship-carousel-item">
+                                <div class="card scholarship-card h-100">
+                                    <div class="card-body p-4">
+                                        <div class="scholarship-amount mb-3">
+                                            <span class="amount">3 107</span>
+                                            <span class="period d-block">в месяц</span>
+                                        </div>
+                                        <div class="d-flex">
+                                            <div class="me-4" style="width: 82px; height: 65px;"></div>
+                                            <div>
+                                                <p class="mb-2">
+                                                    <span class="fw-normal">Студенты, успевающие на </span>
+                                                    <span class="fw-bold">"отлично <br>и хорошо" (при наличии оценок "отлично" 50%) и на "хорошо"</span>
+                                                    <span class="fw-normal"> (в том числе иностранные граждане и лица без гражданства)</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Слайд 5 -->
+                            <div class="scholarship-carousel-item">
+                                <div class="card scholarship-card h-100">
+                                    <div class="card-body p-4">
+                                        <div class="scholarship-amount mb-3">
+                                            <span class="amount">2 500</span>
+                                            <span class="period d-block">в месяц</span>
+                                        </div>
+                                        <div class="d-flex">
+                                            <div class="me-4" style="width: 82px; height: 65px;"></div>
+                                            <div>
+                                                <p class="mb-2">
+                                                    <span class="fw-normal">Студенты-иностранные граждане и лица без гражданства <br>
+                                                    (обучение в рамках квоты), имеющие по итогам промежуточной <br>
+                                                    аттестации </span>
+                                                    <span class="fw-bold">"удовлетворительно", задолженность</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Слайд 6 -->
+                            <div class="scholarship-carousel-item">
+                                <div class="card scholarship-card h-100">
+                                    <div class="card-body p-4">
+                                        <div class="scholarship-amount mb-3">
+                                            <span class="amount">11 840</span>
+                                            <span class="period d-block">в месяц</span>
+                                        </div>
+                                        <div class="d-flex">
+                                            <div class="me-4" style="width: 82px; height: 65px;"></div>
+                                            <div>
+                                                <p class="mb-0">
+                                                    Аспиранты, обучающиеся по программам подготовки <br>
+                                                    научно-педагогических кадров по техническим и естественным <br>
+                                                    направлениям подготовки согласно перечню, который <br>
+                                                    устанавливается Министерством образования и науки РФ
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 6: ОБРАЗЦЫ ЗАЯВЛЕНИЙ ===== -->
+        <section class="applications-section py-5">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <h2 class="section-title">образцы заявлений</h2>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="accordion accordion-custom" id="applicationsAccordion1">
+                            <!-- Академический отпуск -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#appCollapseOne">
+                                        Академический отпуск
+                                    </button>
+                                </h2>
+                                <div id="appCollapseOne" class="accordion-collapse collapse show" data-bs-parent="#applicationsAccordion1">
+                                    <div class="accordion-body">
+                                        <!-- Контент для академического отпуска -->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Восстановление -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#appCollapseTwo">
+                                        Восстановление
+                                    </button>
+                                </h2>
+                                <div id="appCollapseTwo" class="accordion-collapse collapse" data-bs-parent="#applicationsAccordion1">
+                                    <div class="accordion-body">
+                                        <!-- Контент для восстановления -->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Выпуск. Преддипломный отпуск -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#appCollapseThree">
+                                        Выпуск. Преддипломный отпуск
+                                    </button>
+                                </h2>
+                                <div id="appCollapseThree" class="accordion-collapse collapse" data-bs-parent="#applicationsAccordion1">
+                                    <div class="accordion-body">
+                                        <!-- Контент для преддипломного отпуска -->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Дубликат -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#appCollapseFour">
+                                        Дубликат
+                                    </button>
+                                </h2>
+                                <div id="appCollapseFour" class="accordion-collapse collapse" data-bs-parent="#applicationsAccordion1">
+                                    <div class="accordion-body">
+                                        <!-- Контент для дубликата -->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Отчисление -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#appCollapseFive">
+                                        Отчисление
+                                    </button>
+                                </h2>
+                                <div id="appCollapseFive" class="accordion-collapse collapse" data-bs-parent="#applicationsAccordion1">
+                                    <div class="accordion-body">
+                                        <!-- Контент для отчисления -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6 mb-4">
+                        <div class="accordion accordion-custom" id="applicationsAccordion2">
+                            <!-- Перевод -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#appCollapseSix">
+                                        Перевод
+                                    </button>
+                                </h2>
+                                <div id="appCollapseSix" class="accordion-collapse collapse show" data-bs-parent="#applicationsAccordion2">
+                                    <div class="accordion-body">
+                                        <!-- Контент для перевода -->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Перенос -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#appCollapseSeven">
+                                        Перенос
+                                    </button>
+                                </h2>
+                                <div id="appCollapseSeven" class="accordion-collapse collapse" data-bs-parent="#applicationsAccordion2">
+                                    <div class="accordion-body">
+                                        <!-- Контент для переноса -->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Продление -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#appCollapseEight">
+                                        Продление
+                                    </button>
+                                </h2>
+                                <div id="appCollapseEight" class="accordion-collapse collapse" data-bs-parent="#applicationsAccordion2">
+                                    <div class="accordion-body">
+                                        <!-- Контент для продления -->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Смена ФИО -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#appCollapseNine">
+                                        Смена ФИО
+                                    </button>
+                                </h2>
+                                <div id="appCollapseNine" class="accordion-collapse collapse" data-bs-parent="#applicationsAccordion2">
+                                    <div class="accordion-body">
+                                        <!-- Контент для смены ФИО -->
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Справка -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#appCollapseTen">
+                                        Справка
+                                    </button>
+                                </h2>
+                                <div id="appCollapseTen" class="accordion-collapse collapse" data-bs-parent="#applicationsAccordion2">
+                                    <div class="accordion-body">
+                                        <!-- Контент для справки -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 7: О ЦЕНТРЕ ===== -->
+        <section class="about-center-section py-5 bg-light-custom">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <h2 class="section-title">о центре</h2>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <div class="staff-photo mb-4">
+                            <i class="bi bi-person-circle"></i>
+                        </div>
+                        <div>
+                            <h4 class="mb-3">
+                                <span class="fw-medium">Руководитель центра организации <br>
+                                учебной работы студентов</span><br>
+                                <span class="fw-bold">Ерохина Наталья Вячеславовна</span>
+                            </h4>
+                            <div class="contact-info">
+                                <div class="mb-2">
+                                    <span class="fw-normal">тел.: </span>
+                                    <span class="fw-medium text-primary-blue">8 (863) 218-40-00 доб. 20025</span>
+                                </div>
+                                <div class="mb-2">
+                                    <span class="fw-normal">e-mail: </span>
+                                    <a href="mailto:nerohina@sfedu.ru" class="text-primary-blue text-decoration-underline">
+                                        nerohina@sfedu.ru
+                                    </a>
+                                </div>
+                                <div>
+                                    <span class="fw-normal">Адрес: пр. Будённовский 39, <br>
+                                    1 этаж, кабинет № 14</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-8">
+                        <div class="ps-lg-5">
+                            <h4 class="mb-4 fw-bold">Основные функции деятельности центра</h4>
+                            <div class="fs-6">
+                                <p>Информационно-консультативное сопровождение обучающихся <br>
+                                по основным вопросам образовательной деятельности (переводы, академический отпуск, восстановление и т.п.);</p>
+                                
+                                <p>Обеспечение выдачи основных учебных документов обучающимся <br>
+                                (студенческие билеты, зачетные книжки);</p>
+                                
+                                <p>Сопровождение в получении студентами необходимых документов правого характера (копии лицензии, свидетельства об аккредитации);</p>
+                                
+                                <p>Формирование отчетных данных по составу контингента, по движению контингента;</p>
+                                
+                                <p>Мониторинг движения контингента - переводы, условные переводы, переводы из других вузов, переводы в рамках ЮФУ, в рамках ААИ;</p>
+                                
+                                <p>Заполнение и проверка данных в базе 1С (по итогам сессий, <br>
+                                по движению контингента);</p>
+                                
+                                <p>Сопровождение и обеспечение в получении студентами документов об образовании (справки о периоде обучения, дипломы о высшем образовании);</p>
+                                
+                                <p>Оформление приказов об окончании высшего образования;</p>
+                                
+                                <p>Обеспечение выдачи основных учебных документов обучающимся <br>
+                                (справки, справки-вызова);</p>
+                                
+                                <p>Сопровождение в получении студентами необходимых документов финансового характера (справки о доходах);</p>
+                                
+                                <p>Разработка расписаний учебных занятий, промежуточной аттестации студентов всех форм обучения бакалавриата, специалитета, магистратуры, аспирантуры</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 8: СОТРУДНИКИ (С КАРУСЕЛЬЮ) ===== -->
+        <section class="staff-section py-5">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <h2 class="section-title">Сотрудники</h2>
+                    </div>
+                </div>
+
+                <!-- Owl Carousel для сотрудников -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="owl-carousel owl-theme" id="staffCarousel">
+                            <!-- Сотрудник 1 -->
+                            <div class="staff-carousel-item">
+                                <div class="staff-card p-4">
+                                    <div class="row g-4">
+                                        <div class="col-md-5">
+                                            <div class="staff-photo">
+                                                <i class="bi bi-person-circle"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <h4 class="mb-3">
+                                                <span class="fw-medium">Специалист по УМР</span><br>
+                                                <span class="fw-bold">Федорова Оксана Олеговна</span>
+                                            </h4>
+                                            <div class="contact-info">
+                                                <div class="mb-2">
+                                                    <span class="fw-normal">тел.: </span>
+                                                    <span class="fw-medium text-primary-blue">8 (863) 218-40-00 доб. 200-34</span>
+                                                </div>
+                                                <div class="mb-2">
+                                                    <span class="fw-normal">e-mail: </span>
+                                                    <a href="mailto:okfedorova@sfedu.ru" class="text-primary-blue text-decoration-underline">
+                                                        okfedorova@sfedu.ru
+                                                    </a>
+                                                </div>
+                                                <div>
+                                                    <span class="fw-normal">Адрес: пр. Будённовский 39, <br>
+                                                    1 этаж, кабинет № 13</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Сотрудник 2 -->
+                            <div class="staff-carousel-item">
+                                <div class="staff-card p-4">
+                                    <div class="row g-4">
+                                        <div class="col-md-5">
+                                            <div class="staff-photo">
+                                                <i class="bi bi-person-circle"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <h4 class="mb-3">
+                                                <span class="fw-medium">Специалист по УМР</span><br>
+                                                <span class="fw-bold">Краюшкина Татьяна Александровна</span>
+                                            </h4>
+                                            <div class="contact-info">
+                                                <div class="mb-2">
+                                                    <span class="fw-normal">тел.: </span>
+                                                    <span class="fw-medium text-primary-blue">8 (863) 218-40-00 доб. 200-27</span>
+                                                </div>
+                                                <div class="mb-2">
+                                                    <span class="fw-normal">e-mail: </span>
+                                                    <a href="mailto:tkrayushkina@sfedu.ru" class="text-primary-blue text-decoration-underline">
+                                                        tkrayushkina@sfedu.ru
+                                                    </a>
+                                                </div>
+                                                <div>
+                                                    <span class="fw-normal">Адрес: пр. Будённовский 39, <br>
+                                                    1 этаж, кабинет № 13</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Сотрудник 3 -->
+                            <div class="staff-carousel-item">
+                                <div class="staff-card p-4">
+                                    <div class="row g-4">
+                                        <div class="col-md-5">
+                                            <div class="staff-photo">
+                                                <i class="bi bi-person-circle"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <h4 class="mb-3">
+                                                <span class="fw-medium">Специалист по учебно-методической работе</span><br>
+                                                <span class="fw-bold">Иванова Ангелина Юрьевна</span>
+                                            </h4>
+                                            <div class="contact-info">
+                                                <div class="mb-2">
+                                                    <span class="fw-normal">тел.: </span>
+                                                    <span class="fw-medium text-primary-blue">8 (863) 218-40-00 доб. 20028</span>
+                                                </div>
+                                                <div class="mb-2">
+                                                    <span class="fw-normal">e-mail: </span>
+                                                    <span class="text-primary-blue text-decoration-underline">
+                                                        ani@sfedu.ru
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <span class="fw-normal">Адрес: пр. Будённовский 39, <br>
+                                                    1 этаж, кабинет № 13</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Сотрудник 4 -->
+                            <div class="staff-carousel-item">
+                                <div class="staff-card p-4">
+                                    <div class="row g-4">
+                                        <div class="col-md-5">
+                                            <div class="staff-photo">
+                                                <i class="bi bi-person-circle"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <h4 class="mb-3">
+                                                <span class="fw-medium">Специалист по учебно-методической работе</span><br>
+                                                <span class="fw-bold">Савельева Виктория Романовна</span>
+                                            </h4>
+                                            <div class="contact-info">
+                                                <div class="mb-2">
+                                                    <span class="fw-normal">тел.:</span>
+                                                    <span class="fw-medium text-primary-blue"> 8 (863) 218-40-00 доб. 20067</span>
+                                                </div>
+                                                <div class="mb-2">
+                                                    <span class="fw-normal">e-mail: </span>
+                                                    <span class="text-primary-blue text-decoration-underline">
+                                                        visave@sfedu.ru
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <span class="fw-normal">Адрес: пр. Будённовский 39, <br>
+                                                    1 этаж, кабинет № 13</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Навигация для карусели сотрудников -->
+                        <div class="d-flex justify-content-center mt-4">
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="rounded-pill" style="width: 40px; height: 8px; background-color: var(--grey-dark);"></div>
+                                <div class="rounded-circle" style="width: 8px; height: 8px; background-color: var(--grey-1132);"></div>
+                                <div class="rounded-circle" style="width: 8px; height: 8px; background-color: var(--grey-1132);"></div>
+                                <div class="rounded-circle" style="width: 8px; height: 8px; background-color: var(--grey-1132);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 9: ГРАФИК РАБОТЫ ЦЕНТРА ===== -->
+        <section class="schedule-center-section py-5 bg-light-custom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h2 class="section-title mb-4">график работы центра</h2>
+                        <div class="fs-5">
+                            <p class="mb-2">Пн-пт: 8:30 – 17:00</p>
+                            <p class="mb-2">Перерыв 12:30 – 13:00</p>
+                            <p class="mb-2">Четверг: неприемный день</p>
+                            <p class="mb-2">&nbsp;</p>
+                            <p class="mb-2">По всем вопросам обращаться на почту:</p>
+                            <p>
+                                <a href="mailto:cours_aai@sfedu.onmicrosoft.com" class="text-primary-blue text-decoration-underline fw-medium">
+                                    cours_aai@sfedu.onmicrosoft.com
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер (можно подключить общий) -->
+    <footer class="footer" id="footer-placeholder">
+        <!-- Общий футер будет здесь -->
+    </footer>
+
+    <!-- Кнопка "Наверх" -->
+    <a href="#" class="scroll-top-btn">
+        <svg width="23" height="15" viewBox="0 0 23 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21.5 13L11.5 3L1.5 13" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- Bootstrap 5 JS Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<!-- Owl Carousel JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
-<script>
-$(document).ready(function() {
-  // Инициализация Owl Carousel для стипендий
-  $("#scholarshipCarousel").owlCarousel({
-    loop: true,
-    margin: 20,
-    nav: true,
-    dots: true,
-    responsive: {
-      0: {
-        items: 1
-      },
-      768: {
-        items: 2
-      },
-      992: {
-        items: 3
-      }
-    },
-    navText: [
-      '<i class="fas fa-chevron-left"></i>',
-      '<i class="fas fa-chevron-right"></i>'
-    ]
-  });
-  
-  // Инициализация Owl Carousel для льгот
-  $("#benefitsCarousel").owlCarousel({
-    loop: true,
-    margin: 20,
-    nav: true,
-    dots: true,
-    responsive: {
-      0: {
-        items: 1
-      },
-      576: {
-        items: 2
-      },
-      768: {
-        items: 3
-      },
-      1200: {
-        items: 3
-      }
-    },
-    navText: [
-      '<i class="fas fa-chevron-left"></i>',
-      '<i class="fas fa-chevron-right"></i>'
-    ]
-  });
-  
-  // Плавная прокрутка для ссылок
-  $('a[href^="#"]').on('click', function(e) {
-    e.preventDefault();
-    var target = $(this.getAttribute('href'));
-    if(target.length) {
-      $('html, body').stop().animate({
-        scrollTop: target.offset().top - 80
-      }, 1000);
-    }
-  });
-  
-  // Обработка кликов по ссылкам
-  $('.footer-link').on('click', function(e) {
-    e.preventDefault();
-    console.log('Переход на: ' + $(this).text());
-  });
-  
-  $('.document-link').on('click', function(e) {
-    e.preventDefault();
-    console.log('Открытие документа: ' + $(this).text());
-  });
-  
-  $('.underline-link.cursor-pointer').on('click', function(e) {
-    e.preventDefault();
-    console.log('Клик по: ' + $(this).text());
-  });
-  
-  // Активация текущей страницы в навигации
-  $('.navbar-nav .nav-link').each(function() {
-    if ($(this).text().trim() === 'студенту') {
-      $(this).addClass('active');
-    } else {
-      $(this).removeClass('active');
-    }
-  });
-  
-  // Активация вкладок в горизонтальной навигации
-  $('.horizontal-nav .nav-link').on('click', function(e) {
-    e.preventDefault();
-    $('.horizontal-nav .nav-link').removeClass('active');
-    $(this).addClass('active');
-  });
-  
-  // Скрытие стрелок Owl Carousel на мобильных
-  function initCarouselResponsive() {
-    if ($(window).width() < 768) {
-      $('.owl-carousel .owl-nav').hide();
-    } else {
-      $('.owl-carousel .owl-nav').show();
-    }
-  }
-  
-  initCarouselResponsive();
-  $(window).resize(initCarouselResponsive);
-});
-</script>
-
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        $(document).ready(function(){
+            // Инициализация Owl Carousel для стипендий
+            $("#scholarshipCarousel").owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: true,
+                dots: false,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    768: {
+                        items: 2
+                    },
+                    992: {
+                        items: 3
+                    }
+                }
+            });
+            
+            // Инициализация Owl Carousel для сотрудников
+            $("#staffCarousel").owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: false,
+                dots: false,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    768: {
+                        items: 2
+                    }
+                }
+            });
+            
+            // Кнопка "Наверх"
+            var scrollTopBtn = $('.scroll-top-btn');
+            
+            $(window).scroll(function() {
+                if ($(window).scrollTop() > 300) {
+                    scrollTopBtn.addClass('visible');
+                } else {
+                    scrollTopBtn.removeClass('visible');
+                }
+            });
+            
+            scrollTopBtn.click(function(e) {
+                e.preventDefault();
+                $('html, body').animate({scrollTop: 0}, 300);
+            });
+            
+            // Обработка кликов по кафедрам (можно добавить модальные окна или переходы)
+            $('.department-item').click(function() {
+                // Здесь можно добавить логику для открытия информации о кафедре
+                console.log('Кафедра выбрана:', $(this).text());
+            });
+            
+            // Обработка вкладок навигации
+            $('.nav-tabs-custom .nav-link').click(function(e) {
+                e.preventDefault();
+                $('.nav-tabs-custom .nav-link').removeClass('active');
+                $(this).addClass('active');
+                
+                // Здесь можно добавить логику для загрузки соответствующего контента
+                var tabText = $(this).text().trim();
+                console.log('Переключено на вкладку:', tabText);
+            });
+        });
+    </script>
 </body>
 </html>
