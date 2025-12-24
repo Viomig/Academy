@@ -1107,7 +1107,6 @@
         <!-- ===== СЕКЦИЯ 6: ГАЛЕРЕЯ ===== -->
         <section class="gallery-section py-5" style="background: white;">
             <div class="container">
-        <h1 class="mb-4">🎨 Медиа галерея</h1>
         
         <!-- Контейнер фильтров - можно редактировать отдельно -->
         <div id="filtersContainer">
@@ -1361,7 +1360,6 @@
             updateFilteredGallery();
         }
 
-        // Рендеринг галереи с использованием Bootstrap сетки
         function renderGallery() {
             const grid = document.getElementById('galleryGrid');
             const categories = {
@@ -1387,7 +1385,7 @@
                 div.setAttribute('data-category', item.category);
                 div.setAttribute('data-year', item.year);
                 
-                // Контент в зависимости от типа
+                
                 let mediaContent = '';
                 
                 if (item.type === 'photo') {
