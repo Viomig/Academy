@@ -125,6 +125,7 @@ section{
 
 header {
 --cui-header-padding-x: 0px !important;
+--cui-header-padding-y: 0px !important;
   position: relative;
 width: 100%;
 z-index: 100;
