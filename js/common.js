@@ -2,8 +2,8 @@
 async function loadComponent(componentName, targetElement) {
   try {
     // Определяем базовый путь
-   const pathDepth = window.location.pathname.split('/').filter(Boolean).length;
-const basePath = '../'.repeat(Math.max(0, pathDepth - 1)) || './';
+   const pathDepth = window.location.pathname.split('/').filter(p => p && !p.includes('.html')).length;
+const basePath = pathDepth === 0 ? './' : '../'.repeat(pathDepth);
     
     const response = await fetch(`${basePath}components/${componentName}.html`);
     if (!response.ok) {
