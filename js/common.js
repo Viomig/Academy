@@ -2,7 +2,11 @@
 async function loadComponent(componentName, targetElement) {
   try {
     // Всегда поднимаемся на один уровень вверх из любой папки со страницей
-    const basePath = window.location.pathname === '/' ? './' : '../';
+    const isRootPage = window.location.pathname === '/' || 
+                   window.location.pathname.endsWith('/index.html') || 
+                   window.location.pathname.endsWith('/') ||
+                   window.location.pathname.split('/').filter(p => p).length <= 1;
+const basePath = isRootPage ? './' : '../';
     
     const response = await fetch(`${basePath}components/${componentName}.html`);
     if (!response.ok) {
