@@ -56,7 +56,6 @@ html {
 }
 
 body {
-  max-width: 1280px;
   overflow-x: hidden;
   width: 100%;
     -webkit-font-smoothing: antialiased;
