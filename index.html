@@ -524,6 +524,222 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(8, 13, 107, 0.3);
         }
+
+        /* Контейнер для фильтров - отдельно для вашей кастомизации */
+        #filtersContainer {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        /* Основной контейнер с галереей */
+        .gallery-container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        
+        /* Стили для фильтров (остаются как были) */
+        .filter-line {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .filter-label {
+            min-width: 100px;
+            font-weight: bold;
+            color: #666;
+            display: flex;
+            align-items: center;
+        }
+        
+        .filter-option {
+            padding: 8px 16px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        
+        .type-option {
+            border-radius: 20px;
+            background: #f0f0f0;
+            color: #333;
+        }
+        
+        .type-option.active {
+            background: #3498db;
+            color: white;
+        }
+        
+        .cat-option, .year-option {
+            color: #333;
+            position: relative;
+        }
+        
+        .cat-option.active, .year-option.active {
+            color: #3498db;
+        }
+        
+        .cat-option.active::after, .year-option.active::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #3498db;
+        }
+        
+        /* Стили для карточек */
+        .gallery-item {
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Разные размеры для фото */
+        .gallery-item.photo.size-2 { grid-column: span 2; }
+        .gallery-item.photo.size-3 { grid-column: span 3; }
+        .gallery-item.photo.size-4 { grid-column: span 4; }
+        .gallery-item.photo.size-5 { grid-column: span 5; }
+        .gallery-item.photo.size-6 { grid-column: span 6; }
+        
+        /* Фиксированный размер для видео */
+        .gallery-item.video { grid-column: span 4; }
+        
+        /* Изображения и видео */
+        .gallery-item img,
+        .gallery-item .video-thumbnail {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+        }
+        
+        .video-thumbnail {
+            position: relative;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+        }
+        
+        /* Градиентный оверлей при наведении */
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 0;
+            background: linear-gradient(to top, rgba(52, 152, 219, 0.9) 0%, rgba(52, 152, 219, 0.7) 30%, rgba(255, 255, 255, 0) 100%);
+            transition: height 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            color: white;
+            border-radius: 10px;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            height: 100%;
+        }
+        
+        .overlay-content {
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.3s ease 0.1s;
+        }
+        
+        .gallery-item:hover .overlay-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .overlay-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .overlay-meta {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            display: flex;
+            gap: 15px;
+        }
+        
+        .badge {
+            font-size: 0.8rem;
+            padding: 4px 10px;
+        }
+        
+        .badge-photo {
+            background: #2ecc71;
+        }
+        
+        .badge-video {
+            background: #e74c3c;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+        
+        .no-results-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-item.photo.size-2,
+            .gallery-item.photo.size-3,
+            .gallery-item.photo.size-4,
+            .gallery-item.photo.size-5,
+            .gallery-item.photo.size-6,
+            .gallery-item.video {
+                grid-column: span 12 !important;
+            }
+            
+            .filter-line {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .filter-label {
+                min-width: auto;
+            }
+        }
     </style>
 </head>
 <body>
@@ -891,87 +1107,54 @@
         <!-- ===== СЕКЦИЯ 6: ГАЛЕРЕЯ ===== -->
         <section class="gallery-section py-5" style="background: white;">
             <div class="container">
-                <h2 class="section-title text-center mb-5">Галерея</h2>
-                
-                <!-- Фильтры галереи -->
-                <div class="d-flex flex-wrap align-items-center gap-4 mb-4">
-                    <button class="btn btn-secondary btn-sm" style="background: var(--grey-dark); color: white; border-radius: 50px;">
-                        Фото
-                    </button>
-                    <button class="btn btn-outline-secondary btn-sm" style="border-radius: 50px; color: var(--grey-dark);">
-                        Видео
-                    </button>
-                    
-                    <div class="filter-item active">
-                        <span style="color: var(--primary-blue); font-weight: 500;">мероприятия</span>
-                    </div>
-                    <button class="filter-item">
-                        <span>Образование</span>
-                    </button>
-                    <button class="filter-item">
-                        <span>наука</span>
-                    </button>
-                    <button class="filter-item">
-                        <span>ЮРМОШ</span>
-                    </button>
-                    <button class="filter-item">
-                        <span>конференции</span>
-                    </button>
-                    <button class="filter-item">
-                        <span>Выпускники</span>
-                    </button>
-                </div>
-                
-                <!-- Фильтры по годам -->
-                <div class="year-filter mb-5">
-                    <button class="year-item active">2025</button>
-                    <button class="year-item">2024</button>
-                    <button class="year-item">2023</button>
-                    <button class="year-item">2022</button>
-                    <button class="year-item">2021</button>
-                    <button class="year-item">2020</button>
-                    <button class="year-item">2019</button>
-                    <button class="year-item">2018</button>
-                    <button class="year-item">2017</button>
-                    <button class="year-item">2016</button>
-                    <button class="year-item">2015</button>
-                </div>
-                
-                <!-- Галерея грид -->
-                <div class="row g-4 mb-5">
-                    <div class="col-md-4">
-                        <div class="gallery-card gallery-card-small" style="background-image: url('./image/Rectangle_32_15963.png');"></div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="gallery-card gallery-card-large" style="background-image: url('./image/Rectangle_32_15965.png');"></div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="gallery-card gallery-card-small" style="background-image: url('./image/Rectangle_32_15967.png');"></div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="gallery-card gallery-card-small" style="background-image: url('./image/Rectangle_32_15969.png');"></div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="gallery-card gallery-card-small" style="background-image: url('./image/Rectangle_32_15971.png');"></div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="gallery-card gallery-card-small" style="background-image: url('./image/Rectangle_32_15973.png');"></div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="gallery-card gallery-card-large" style="background-image: url('./image/Rectangle_32_15975.png');"></div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="gallery-card gallery-card-small" style="background-image: url('./image/Rectangle_32_15977.png');"></div>
-                    </div>
-                </div>
-                
-                <!-- Кнопка "Больше фото" -->
-                <div class="text-center">
-                    <a href="#" class="btn btn-primary btn-lg">
-                        Больше фото
-                    </a>
+        <h1 class="mb-4">🎨 Медиа галерея</h1>
+        
+        <!-- Контейнер фильтров - можно редактировать отдельно -->
+        <div id="filtersContainer">
+            <div class="filter-line">
+                <div class="filter-label">Тип:</div>
+                <div class="filter-options">
+                    <button class="filter-option type-option active" data-filter="type" data-value="all">Все</button>
+                    <button class="filter-option type-option" data-filter="type" data-value="photo">Фото</button>
+                    <button class="filter-option type-option" data-filter="type" data-value="video">Видео</button>
                 </div>
             </div>
+            
+            <div class="filter-line">
+                <div class="filter-label">Категория:</div>
+                <div class="filter-options">
+                    <button class="filter-option cat-option active" data-filter="category" data-value="all">Все</button>
+                    <button class="filter-option cat-option" data-filter="category" data-value="event">Мероприятие</button>
+                    <button class="filter-option cat-option" data-filter="category" data-value="education">Образование</button>
+                    <button class="filter-option cat-option" data-filter="category" data-value="science">Наука</button>
+                    <button class="filter-option cat-option" data-filter="category" data-value="conference">Конференции</button>
+                </div>
+            </div>
+            
+            <div class="filter-line">
+                <div class="filter-label">Год:</div>
+                <div class="filter-options">
+                    <button class="filter-option year-option active" data-filter="year" data-value="all">Все</button>
+                    <button class="filter-option year-option" data-filter="year" data-value="2021">2021</button>
+                    <button class="filter-option year-option" data-filter="year" data-value="2022">2022</button>
+                    <button class="filter-option year-option" data-filter="year" data-value="2023">2023</button>
+                    <button class="filter-option year-option" data-filter="year" data-value="2024">2024</button>
+                    <button class="filter-option year-option" data-filter="year" data-value="2025">2025</button>
+                </div>
+            </div>
+            
+            <div class="text-center mt-3">
+                <span class="badge bg-info">Найдено: <span id="count">24</span> элементов</span>
+            </div>
+        </div>
+        
+        <!-- Основной контейнер галереи -->
+        <div class="gallery-container">
+            <div class="row" id="galleryGrid">
+                <!-- Контент будет загружен через JavaScript -->
+            </div>
+        </div>
+    </div>
         </section>
     </main>
 
@@ -1077,6 +1260,250 @@
             );
         });
     </script>
+
+    <script>
+        // Данные с разными размерами для фото
+        const itemsData = [
+            // Фото с разными размерами (2-6 колонок)
+            { id: 1, type: 'photo', category: 'event', year: '2021', title: 'Концерт на открытом воздухе', 
+              imageUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80',
+              size: 4 },
+            
+            { id: 2, type: 'photo', category: 'education', year: '2021', title: 'Учебная лаборатория', 
+              imageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h-400&q=80',
+              size: 3 },
+            
+            { id: 3, type: 'photo', category: 'science', year: '2022', title: 'Исследование микроорганизмов', 
+              imageUrl: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80',
+              size: 5 },
+            
+            { id: 4, type: 'photo', category: 'conference', year: '2022', title: 'IT конференция 2022', 
+              imageUrl: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80',
+              size: 6 },
+            
+            { id: 5, type: 'photo', category: 'event', year: '2023', title: 'Спортивные соревнования', 
+              imageUrl: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80',
+              size: 2 },
+            
+            { id: 6, type: 'photo', category: 'education', year: '2023', title: 'Мастер-класс по программированию', 
+              imageUrl: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80',
+              size: 4 },
+            
+            { id: 7, type: 'photo', category: 'science', year: '2024', title: 'Химический эксперимент', 
+              imageUrl: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80',
+              size: 3 },
+            
+            { id: 8, type: 'photo', category: 'conference', year: '2024', title: 'Научная выставка', 
+              imageUrl: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80',
+              size: 5 },
+            
+            { id: 9, type: 'photo', category: 'event', year: '2025', title: 'Музыкальный фестиваль', 
+              imageUrl: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80',
+              size: 4 },
+            
+            { id: 10, type: 'photo', category: 'education', year: '2025', title: 'Онлайн обучение', 
+              imageUrl: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80',
+              size: 6 },
+            
+            // Видео (всегда 4 колонки)
+            { id: 11, type: 'video', category: 'event', year: '2021', title: 'Запись городского мероприятия', 
+              videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+              thumbnailUrl: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80' },
+            
+            { id: 12, type: 'video', category: 'education', year: '2021', title: 'Обучающий курс по математике', 
+              videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+              thumbnailUrl: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80' },
+            
+            { id: 13, type: 'video', category: 'science', year: '2022', title: 'Научный доклад о космосе', 
+              videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+              thumbnailUrl: 'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80' },
+            
+            { id: 14, type: 'video', category: 'conference', year: '2022', title: 'Презентация новых технологий', 
+              videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+              thumbnailUrl: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80' },
+            
+            { id: 15, type: 'video', category: 'event', year: '2023', title: 'Прямая трансляция концерта', 
+              videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+              thumbnailUrl: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80' },
+            
+            { id: 16, type: 'video', category: 'education', year: '2023', title: 'Вебинар по веб-разработке', 
+              videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+              thumbnailUrl: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80' },
+            
+            { id: 17, type: 'video', category: 'science', year: '2024', title: 'Исследование климата', 
+              videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+              thumbnailUrl: 'https://images.unsplash.com/photo-1507413245164-6160d8298b31?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80' },
+            
+            { id: 18, type: 'video', category: 'conference', year: '2024', title: 'Круглый стол экспертов', 
+              videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+              thumbnailUrl: 'https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80' },
+            
+            { id: 19, type: 'video', category: 'event', year: '2025', title: 'Интервью с участниками', 
+              videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+              thumbnailUrl: 'https://images.unsplash.com/photo-1496337589254-7e19d01fa585?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80' },
+            
+            { id: 20, type: 'video', category: 'education', year: '2025', title: 'Онлайн лекция по истории', 
+              videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+              thumbnailUrl: 'https://images.unsplash.com/photo-1417733403748-83bbc7c05140?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80' },
+        ];
+
+        // Текущие фильтры
+        const filters = {
+            type: 'all',
+            category: 'all',
+            year: 'all'
+        };
+
+        // Инициализация
+        function init() {
+            renderGallery();
+            setupFilters();
+            updateFilteredGallery();
+        }
+
+        // Рендеринг галереи с использованием Bootstrap сетки
+        function renderGallery() {
+            const grid = document.getElementById('galleryGrid');
+            const categories = {
+                event: 'Мероприятие',
+                education: 'Образование', 
+                science: 'Наука',
+                conference: 'Конференции'
+            };
+            
+            itemsData.forEach(item => {
+                // Для фото: случайный размер от 2 до 6, если не указан
+                if (item.type === 'photo' && !item.size) {
+                    item.size = Math.floor(Math.random() * 5) + 2; // 2-6
+                }
+                
+                const colClass = item.type === 'photo' 
+                    ? `col-md-${item.size * 2}` // Bootstrap: 12 колонок, 1 размер = 2 колонки
+                    : 'col-md-8 col-lg-8'; // Видео: 4 колонки (8/12 = 4 колонки)
+                
+                const div = document.createElement('div');
+                div.className = `${colClass} gallery-item ${item.type} ${item.type === 'photo' ? `size-${item.size}` : ''}`;
+                div.setAttribute('data-type', item.type);
+                div.setAttribute('data-category', item.category);
+                div.setAttribute('data-year', item.year);
+                
+                // Контент в зависимости от типа
+                let mediaContent = '';
+                
+                if (item.type === 'photo') {
+                    mediaContent = `<img src="${item.imageUrl}" alt="${item.title}" class="img-fluid">`;
+                } else {
+                    mediaContent = `
+                        <div class="video-thumbnail">
+                            <div class="play-icon">▶</div>
+                            <img src="${item.thumbnailUrl}" alt="${item.title}" class="img-fluid">
+                        </div>
+                    `;
+                }
+                
+                div.innerHTML = `
+                    ${mediaContent}
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <div class="overlay-title">${item.title}</div>
+                            <div class="overlay-meta">
+                                <span class="badge ${item.type === 'photo' ? 'badge-photo' : 'badge-video'}">
+                                    ${item.type === 'photo' ? 'Фото' : 'Видео'}
+                                </span>
+                                <span>${categories[item.category]}</span>
+                                <span>${item.year} год</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                // Обработчик клика для видео
+                if (item.type === 'video' && item.videoUrl) {
+                    div.addEventListener('click', (e) => {
+                        if (!e.target.closest('.filter-option')) {
+                            window.open(item.videoUrl, '_blank');
+                        }
+                    });
+                }
+                
+                grid.appendChild(div);
+            });
+        }
+
+        // Настройка фильтров
+        function setupFilters() {
+            document.querySelectorAll('.filter-option').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const filterType = this.getAttribute('data-filter');
+                    const filterValue = this.getAttribute('data-value');
+                    
+                    // Сброс активного состояния в группе
+                    document.querySelectorAll(`[data-filter="${filterType}"]`)
+                        .forEach(b => b.classList.remove('active'));
+                    
+                    // Установка активного состояния
+                    this.classList.add('active');
+                    
+                    // Обновление фильтра
+                    filters[filterType] = filterValue;
+                    
+                    // Применение фильтрации
+                    updateFilteredGallery();
+                });
+            });
+        }
+
+        // Обновление отфильтрованной галереи
+        function updateFilteredGallery() {
+            const items = document.querySelectorAll('.gallery-item');
+            let visibleCount = 0;
+            
+            items.forEach(item => {
+                const matchesType = filters.type === 'all' || item.getAttribute('data-type') === filters.type;
+                const matchesCat = filters.category === 'all' || item.getAttribute('data-category') === filters.category;
+                const matchesYear = filters.year === 'all' || item.getAttribute('data-year') === filters.year;
+                
+                // Отображаем только если ВСЕ условия выполнены
+                if (matchesType && matchesCat && matchesYear) {
+                    item.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            // Обновление счетчика
+            document.getElementById('count').textContent = visibleCount;
+            
+            // Сообщение если нет результатов
+            showNoResults(visibleCount);
+        }
+
+        // Показать/скрыть сообщение об отсутствии результатов
+        function showNoResults(count) {
+            const grid = document.getElementById('galleryGrid');
+            let msg = document.querySelector('.no-results');
+            
+            if (count === 0) {
+                if (!msg) {
+                    msg = document.createElement('div');
+                    msg.className = 'col-12 no-results';
+                    msg.innerHTML = `
+                        <div class="no-results-icon">🔍</div>
+                        <h4>Ничего не найдено</h4>
+                        <p>Попробуйте изменить параметры фильтрации</p>
+                    `;
+                    grid.appendChild(msg);
+                }
+            } else if (msg) {
+                msg.remove();
+            }
+        }
+
+        // Запуск при загрузке
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+    
 </body>
 </html>
 
