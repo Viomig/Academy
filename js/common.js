@@ -1,9 +1,8 @@
 // Функция для загрузки компонентов
 async function loadComponent(componentName, targetElement) {
   try {
-    // Определяем базовый путь
-   const pathDepth = window.location.pathname.split('/').filter(p => p && !p.includes('.html')).length;
-const basePath = pathDepth === 0 ? './' : '../'.repeat(pathDepth);
+    // Всегда поднимаемся на один уровень вверх из любой папки со страницей
+    const basePath = '../';
     
     const response = await fetch(`${basePath}components/${componentName}.html`);
     if (!response.ok) {
