@@ -91,7 +91,6 @@ h4{
   font-family: "Montserrat-Semi";
   font-size: 16px !important;
   text-decoration: none;
-  color: #ffffff;
 }
 
 h3{
@@ -102,8 +101,7 @@ h3{
 
 h6{
   font-family: 'Montserrat-Bold';
-  color: #000000;
-  margin: 0 0 4px;
+  margin: 0 0 0px;
 }
 
 
