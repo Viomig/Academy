@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>История Академии архитектуры и искусств ЮФУ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== БАЗОВЫЕ СТИЛИ И ПЕРЕМЕННЫЕ ===== */
+        :root {
+            --primary-blue: #080D6B;
+            --secondary-pink: #ED1160;
+            --dark-grey: #232328;
+            --medium-grey: #777777;
+            --light-grey: #f3f3f3;
+            --white: #ffffff;
+            --black: #000000;
+            --grey-dark: #8C8C8C;
+            --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%);
+        }
+
+        /* ===== ОБЩИЕ СТИЛИ ===== */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--black);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        /* Типографика */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .page-title {
+            font-size: 36px;
+            font-weight: 400;
+            text-transform: uppercase;
+            line-height: 1.3;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .lead-text {
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--primary-blue);
+            line-height: 1.4;
+            margin-bottom: 30px;
+        }
+
+        .content-text {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            white-space: pre-line;
+        }
+
+        .highlight-text {
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--primary-blue);
+            line-height: 1.4;
+            margin: 30px 0;
+            padding-left: 20px;
+            border-left: 3px solid var(--primary-blue);
+        }
+
+        /* ===== СЕКЦИИ ===== */
+        section {
+            padding: 80px 0;
+        }
+
+        .hero-section {
+            padding: 100px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        /* ===== КАРТИНКИ ===== */
+        .content-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .content-image:hover {
+            transform: translateY(-5px);
+        }
+
+        .image-lg {
+            height: 456px;
+            object-fit: cover;
+        }
+
+        .image-md {
+            height: 262px;
+            object-fit: cover;
+        }
+
+        .image-sm {
+            height: 424px;
+            object-fit: cover;
+        }
+
+        /* ===== НАВИГАЦИЯ ===== */
+        .breadcrumb-nav {
+            margin-bottom: 40px;
+        }
+
+        .breadcrumb-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .breadcrumb-link:hover {
+            gap: 15px;
+            color: var(--secondary-pink);
+        }
+
+        .breadcrumb-arrow {
+            width: 27px;
+            height: 21px;
+            background-color: var(--primary-blue);
+            -webkit-mask: url("data:image/svg+xml,%3Csvg width='27' height='21' viewBox='0 0 27 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M26.2071 10.7071C26.5976 10.3166 26.5976 9.68342 26.2071 9.29289L19.8431 2.92893C19.4526 2.53841 18.8195 2.53841 18.4289 2.92893C18.0384 3.31946 18.0384 3.95262 18.4289 4.34315L24.0858 10L18.4289 15.6569C18.0384 16.0474 18.0384 16.6805 18.4289 17.0711C18.8195 17.4616 19.4526 17.4616 19.8431 17.0711L26.2071 10.7071ZM0 11H25.5V9H0V11Z' fill='black'/%3E%3C/svg%3E") no-repeat center;
+            mask: url("data:image/svg+xml,%3Csvg width='27' height='21' viewBox='0 0 27 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M26.2071 10.7071C26.5976 10.3166 26.5976 9.68342 26.2071 9.29289L19.8431 2.92893C19.4526 2.53841 18.8195 2.53841 18.4289 2.92893C18.0384 3.31946 18.0384 3.95262 18.4289 4.34315L24.0858 10L18.4289 15.6569C18.0384 16.0474 18.0384 16.6805 18.4289 17.0711C18.8195 17.4616 19.4526 17.4616 19.8431 17.0711L26.2071 10.7071ZM0 11H25.5V9H0V11Z' fill='black'/%3E%3C/svg%3E") no-repeat center;
+        }
+
+        /* ===== КНОПКА НАВЕРХ ===== */
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 49px;
+            height: 49px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            border: none;
+            cursor: pointer;
+        }
+
+        .scroll-top-btn.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(8, 13, 107, 0.3);
+        }
+
+        /* ===== АДАПТИВНОСТЬ ===== */
+        @media (max-width: 1400px) {
+            .page-title {
+                font-size: 32px;
+            }
+            
+            .lead-text, .highlight-text {
+                font-size: 22px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .page-title {
+                font-size: 30px;
+            }
+            
+            .lead-text, .highlight-text {
+                font-size: 20px;
+            }
+            
+            .content-text {
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            section {
+                padding: 60px 0;
+            }
+            
+            .hero-section {
+                padding: 80px 0 40px;
+            }
+            
+            .page-title {
+                font-size: 28px;
+                text-align: center;
+            }
+            
+            .lead-text, .highlight-text {
+                font-size: 18px;
+                text-align: center;
+                padding-left: 0;
+                border-left: none;
+                padding-top: 20px;
+                border-top: 3px solid var(--primary-blue);
+            }
+            
+            .content-text {
+                font-size: 15px;
+                text-align: justify;
+            }
+            
+            .image-lg {
+                height: 350px;
+            }
+            
+            .image-md {
+                height: 200px;
+            }
+            
+            .image-sm {
+                height: 320px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 24px;
+            }
+            
+            .lead-text, .highlight-text {
+                font-size: 16px;
+            }
+            
+            .content-text {
+                font-size: 14px;
+            }
+            
+            .image-lg {
+                height: 250px;
+            }
+            
+            .image-md {
+                height: 180px;
+            }
+            
+            .image-sm {
+                height: 240px;
+            }
+            
+            .breadcrumb-link {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-title {
+                font-size: 20px;
+            }
+            
+            .lead-text, .highlight-text {
+                font-size: 14px;
+            }
+            
+            .content-text {
+                font-size: 13px;
+            }
+            
+            section {
+                padding: 40px 0;
+            }
+            
+            .hero-section {
+                padding: 60px 0 30px;
+            }
+            
+            .scroll-top-btn {
+                width: 40px;
+                height: 40px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        /* ===== АНИМАЦИИ ПРИ ПОЯВЛЕНИИ ===== */
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .slide-up {
+            animation: slideUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Кнопка наверх -->
+    <button class="scroll-top-btn">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Главная секция -->
+    <section class="hero-section">
+        <div class="hero-background"></div>
+        <div class="container">
+            <!-- Навигация -->
+            <nav class="breadcrumb-nav">
+                <a href="#" class="breadcrumb-link">
+                    <span class="breadcrumb-arrow"></span>
+                    об академии
+                </a>
+            </nav>
+            
+            <!-- Заголовок -->
+            <h1 class="page-title fade-in">
+                История Академии архитектуры и искусств ЮФУ
+            </h1>
+            
+            <!-- Введение -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="lead-text slide-up">
+                        К середине 80-х гг. XX века в Ростове-на-Дону сложилась своя архитектурная школа, 
+                        ставшая результатом гармоничного слияния представителей двух направлений в развитии 
+                        отечественной архитектуры: московского и ленинградского.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Основной контент -->
+    <main class="content-section">
+        <div class="container">
+            <!-- Глава 1: Создание института -->
+            <section class="mb-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <div class="content-text slide-up">
+                            В 1988 г. на базе факультета был создан Ростовский государственный архитектурный институт, 
+                            ставший третьим высшим специализированным учебным заведением в стране и единственным вузом 
+                            на Юге России, осуществляющем подготовку архитекторов. Институт был организован Приказом 
+                            Министра высшего и среднего специального образования РСФСР от 4 августа 1988 г. № 388. 
+                            Основанием для такого приказа послужило Постановление ЦК КПСС и Совета Министров СССР 
+                            «О дальнейшем развитии архитектуры и градостроительства в стране», принятое в 1987 году.
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="./image/7518d1aefca56ccecc35464797a86245eb85cb4e.png" 
+                             alt="Историческое фото Ростовского архитектурного института" 
+                             class="content-image image-lg">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Глава 2: Система образования -->
+            <section class="mb-5">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 class="section-title slide-up">Система образования</h2>
+                        <div class="content-text slide-up">
+                            В институте было установлено шестилетнее образование, как в вузах союзного подчинения, 
+                            изначально введена трёхступенчатая система образования: два года – пропедевческий курс, 
+                            в рамках бакалавриата, два с половиной года – обучение в бакалавриате со специализацией 
+                            и полтора года – специалитет или магистратура. Этот опыт в дальнейшем был использован 
+                            в формировании двухуровневой системы архитектурного образования в России.
+                        </div>
+                        
+                        <div class="content-text slide-up">
+                            Создание Архитектурного института – в значительной мере результат его инициативной, 
+                            энергичной и напряженной работы и той команды единомышленников, которая была сформирована в тот период.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Глава 3: Первый руководитель -->
+            <section class="mb-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0 order-lg-2">
+                        <div class="highlight-text slide-up">
+                            Возглавил вуз проректор по научной работе Ростовского инженерно-строительного института 
+                            профессор, кандидат технических наук Виталий Антонович Колесник.
+                        </div>
+                        
+                        <div class="highlight-text slide-up">
+                            Институт начинался с 450 студентов, 60 преподавателей и только одной специальности – «Архитектура».
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <img src="./image/da1c32d06809230095500fad96b554cfbbb428d3.png" 
+                             alt="Виталий Антонович Колесник" 
+                             class="content-image image-md">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Глава 4: Развитие института -->
+            <section class="mb-5">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="content-text slide-up">
+                            Институт возглавил процесс информатизации в архитектурном образовании в стране. 
+                            Была организована целевая интенсивная подготовка в системе автоматизированного проектирования (ЦИПС), 
+                            открылась подготовка по новой специальности (второй после МАРХИ) «Дизайн архитектурной среды» 
+                            и создаётся соответствующая кафедра под руководством Бориса Михайловича Капустина.
+                        </div>
+                        
+                        <div class="content-text slide-up">
+                            С 1998 г. вуз начал готовить магистров архитектуры. Подготовка магистров направления 
+                            «Архитектура» велась по программам: «Архитектура жилых и общественных зданий», 
+                            «Дизайн архитектурной среды», «Градостроительство и районная планировка», 
+                            «Теория и история архитектуры», «Архитектурная реконструкция и реставрация». 
+                            Открыта аспирантура по специальностям: «Теория и история архитектуры, реставрация 
+                            и реконструкция историко-архитектурного наследия»; «Архитектура зданий и сооружений. 
+                            Творческие концепции архитектурной деятельности», «Системы автоматизированного проектирования (строительство, архитектура)».
+                        </div>
+                        
+                        <div class="content-text slide-up">
+                            Учебный процесс в РАИ обеспечивали более 250 высококвалифицированных научно-педагогических работников, 
+                            среди которых – профессора и доценты, доктора и кандидаты наук, имеющие российское и международное признание 
+                            в архитектурной науке, члены творческих союзов архитекторов, дизайнеров, художников, 
+                            члены Российской академии архитектуры и строительных наук.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Глава 5: Статус Академии -->
+            <section class="mb-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <div class="highlight-text slide-up">
+                            Высокий научный потенциал, успешное прохождение государственной аккредитации 
+                            и открытие новых специальностей послужили основанием для получения в 2000 г. 
+                            Институтом статуса Академии.
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="./image/cd642e7aabf8d8740a3a1c36ce268b7d8e498184.png" 
+                             alt="Здание Академии" 
+                             class="content-image image-sm">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Глава 6: Вхождение в ЮФУ -->
+            <section class="mb-5">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="content-text slide-up">
+                            В соответствии с распоряжением Правительства Российской Федерации от 23 февраля 2006 г. № 1616-р 
+                            в результате присоединения к Ростовскому государственному университету Ростовская государственная 
+                            академия архитектуры и искусств стала, наряду с Ростовским государственным педагогическим университетом 
+                            и Таганрогским государственным радиотехническим университетом, структурным подразделением ФГОУ ВПО 
+                            Южного федерального университета – Институтом архитектуры и искусств ЮФУ.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Глава 7: Реорганизация -->
+            <section class="mb-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0 order-lg-2">
+                        <div class="content-text slide-up">
+                            С сентября 2012 г. начата реорганизация структуры ЮФУ, и на базе института были образованы 
+                            два факультета: – архитектуры и градостроительства, дизайна и искусств. Начата разработка 
+                            концепции Академии архитектуры и искусств Южного федерального университета, и уже 1 июля 2013 г. 
+                            приказом по университету № 242 Академия была создана.
+                        </div>
+                        
+                        <div class="highlight-text slide-up">
+                            Директором Академии стал почетный архитектор России, почетный работник высшего профессионального 
+                            образования РФ Александр Меркурьевич Бояринов.
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <img src="./image/2fd2d4150a4b28830ea7122eb478dedd4cbb67c4.png" 
+                             alt="Реорганизация структуры" 
+                             class="content-image image-sm">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Глава 8: Новые изменения -->
+            <section class="mb-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <img src="./image/918760bc62c903ece379c80b45b1ed2a053449d4.png" 
+                             alt="Современная Академия" 
+                             class="content-image image-sm">
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="highlight-text slide-up">
+                            В 2016 году его на должности директора Академии сменила Чемерисова Наталья Васильевна.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Глава 9: Современное состояние -->
+            <section class="mb-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <img src="./image/052049eda4eaea3f4f61e976ee8e643392be2eba.png" 
+                             alt="Обучение в Академии" 
+                             class="content-image image-sm">
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="./image/97b686a5593226437cc94cc57808d88c27d89cc3.png" 
+                             alt="Научная работа" 
+                             class="content-image">
+                    </div>
+                </div>
+                
+                <div class="row mt-5">
+                    <div class="col-lg-12">
+                        <div class="content-text slide-up">
+                            В настоящее время обучение в Академии ведется последовательно по 18 направлениям и специальностям. 
+                            В Академии реализуются программы международного и российского обмена студентами. 
+                            Работают клубы по профессии, студии, спортивные секции. В Академии ведутся фундаментальные 
+                            и прикладные исследования в области архитектуры, градостроительства и искусства. 
+                            Качество учебного процесса обеспечивают около 230 высококвалифицированных специалистов.
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h3 class="h4 mb-4">Академия архитектуры и искусств ЮФУ</h3>
+                    <p class="mb-4">
+                        Сохраняя традиции, создаём будущее архитектурного образования в России
+                    </p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="#" class="text-white">
+                            <i class="fab fa-vk fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-white">
+                            <i class="fab fa-telegram fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-white">
+                            <i class="fab fa-youtube fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Подключаем скрипты -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+
+    <script>
+        // Инициализация GSAP анимаций
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Анимация появления элементов при скролле
+        gsap.utils.toArray('.slide-up').forEach(element => {
+            gsap.from(element, {
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    toggleActions: "play none none reverse"
+                },
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out"
+            });
+        });
+        
+        // Анимация кнопки "Наверх"
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 300) {
+                $('.scroll-top-btn').addClass('visible');
+            } else {
+                $('.scroll-top-btn').removeClass('visible');
+            }
+        });
+        
+        $('.scroll-top-btn').click(function(e) {
+            e.preventDefault();
+            $('html, body').animate({scrollTop: 0}, 300);
+        });
+        
+        // Анимация картинок при наведении
+        $('.content-image').hover(
+            function() {
+                $(this).css('transform', 'translateY(-5px)');
+            },
+            function() {
+                $(this).css('transform', 'translateY(0)');
+            }
+        );
+        
+        // Инициализация анимаций при загрузке
+        $(document).ready(function() {
+            // Анимация для заголовка
+            gsap.from('.fade-in', {
+                duration: 1,
+                opacity: 0,
+                delay: 0.3,
+                ease: "power2.out"
+            });
+            
+            // Анимация для навигации
+            gsap.from('.breadcrumb-nav', {
+                duration: 1,
+                y: -30,
+                opacity: 0,
+                delay: 0.2,
+                ease: "power2.out"
+            });
+        });
+    </script>
+</body>
+</html>
