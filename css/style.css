@@ -133,8 +133,15 @@ header li{
 }
 
 .row{
-  margin-right: 0px !important; 
-  margin-left: 0px !important;
+  --bs-gutter-x: 22px !important;
+  --bs-gutter-y: 22px !important;
+  --nested-gutter-x: 12px !important;
+  --nested-gutter-y: 12px !important;
+}
+
+.row * .row {
+  --bs-gutter-x: var(--nested-gutter-x);
+  --bs-gutter-y: var(--nested-gutter-y);
 }
 
 header img{

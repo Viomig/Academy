@@ -73,12 +73,15 @@
 
         /* ===== КАРТОЧКИ ===== */
         .info-card {
-            background: var(--white);
             border: none;
             border-radius: 15px;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             height: 100%;
+        }
+
+        .programs-blok {
+            border-radius: 15px;
         }
 
         .info-card:hover {
@@ -318,12 +321,6 @@
                             Мы объединяем традиции художественного образования и современные исследовательские 
                             практики в области архитектуры, дизайна, изобразительного искусства и культурологии.
                         </p>
-                        <p class="fs-5 text-blue fw-medium mb-5">
-                            Выбирайте магистерскую программу в соответствии со своими профессиональными 
-                            навыками и творческими целями. Наши направления охватывают ключевые области 
-                            архитектурного, художественного и дизайнерского образования и ориентированы 
-                            на развитие практических навыков и исследовательской компетенции.
-                        </p>
                         
                         <div class="stats-container mb-5">
                             <div class="row g-4">
@@ -377,16 +374,19 @@
         </section>
 
         <!-- ===== СЕКЦИЯ 2: НАПРАВЛЕНИЯ ПОДГОТОВКИ ===== -->
-        <section class="programs-section py-5 bg-gradient-dark text-white">
+        <section class="programs-section py-5">
             <div class="container">
-                <h2 class="section-title text-center mb-5">Направления подготовки</h2>
-                
-                <div class="row g-4 justify-content-center">
+            <div class="row">
+                <h2 class="section-title mb-5 offset-1">Набор 2025 года</h2>
+                <div class="col-md-8 d-flex row bg-gradient-dark text-white programs-blok ">
+                    <div class="col-md-12 g-4">
+                        <h2>Магистратура</h2>
+                    </div>
                     <!-- Левая колонка -->
-                    <div class="col-lg-6">
+                    <div class="col-md-6 p-2">
                         <div class="row g-4">
                             <div class="col-12">
-                                <div class="info-card p-4 h-100">
+                                <div class="info-card h-100">
                                     <div class="d-flex align-items-start mb-3">
                                         <span class="badge bg-primary fs-6 fw-normal me-3">07.04.01</span>
                                         <p class="mb-0 fs-6">Архитектура: программа «Архитектура зданий и сооружений» (по кафедре АЖОЗ)</p>
@@ -395,7 +395,7 @@
                             </div>
                             
                             <div class="col-12">
-                                <div class="info-card p-4 h-100">
+                                <div class="info-card h-100">
                                     <div class="d-flex align-items-start mb-3">
                                         <span class="badge bg-primary fs-6 fw-normal me-3">07.04.01</span>
                                         <p class="mb-0 fs-6">Архитектура: программа «Экологическая архитектура» (по кафедре АЖОЗ)</p>
@@ -404,7 +404,7 @@
                             </div>
                             
                             <div class="col-12">
-                                <div class="info-card p-4 h-100">
+                                <div class="info-card h-100">
                                     <div class="d-flex align-items-start mb-3">
                                         <span class="badge bg-primary fs-6 fw-normal me-3">07.04.01</span>
                                         <p class="mb-0 fs-6">Архитектура: программа «Архитектура общественных зданий и сооружений» (по кафедре АСП)</p>
@@ -413,7 +413,7 @@
                             </div>
                             
                             <div class="col-12">
-                                <div class="info-card p-4 h-100">
+                                <div class="info-card h-100">
                                     <div class="d-flex align-items-start mb-3">
                                         <span class="badge bg-primary fs-6 fw-normal me-3">07.04.01</span>
                                         <p class="mb-0 fs-6">Архитектура: программа «Urban Design (Городской дизайн)»</p>
@@ -422,7 +422,7 @@
                             </div>
                             
                             <div class="col-12">
-                                <div class="info-card p-4 h-100">
+                                <div class="info-card h-100">
                                     <div class="d-flex align-items-start mb-3">
                                         <span class="badge bg-primary fs-6 fw-normal me-3">07.04.02</span>
                                         <p class="mb-0 fs-6">Реконструкция и реставрация архитектурного наследия: программа «Визуальная реконструкция историко-архитектурного наследия и анимация»</p>
@@ -433,10 +433,10 @@
                     </div>
                     
                     <!-- Правая колонка -->
-                    <div class="col-lg-6">
+                    <div class="col-md-6 p-2">
                         <div class="row g-4">
                             <div class="col-12">
-                                <div class="info-card p-4 h-100">
+                                <div class="info-card h-100">
                                     <div class="d-flex align-items-start mb-3">
                                         <span class="badge bg-primary fs-6 fw-normal me-3">07.04.03</span>
                                         <p class="mb-0 fs-6">Дизайн архитектурной среды: программа «Городской интерьер и мастер-планирование»</p>
@@ -445,7 +445,7 @@
                             </div>
                             
                             <div class="col-12">
-                                <div class="info-card p-4 h-100">
+                                <div class="info-card h-100">
                                     <div class="d-flex align-items-start mb-3">
                                         <span class="badge bg-primary fs-6 fw-normal me-3">44.04.01</span>
                                         <p class="mb-0 fs-6">Педагогическое образование: программа «Изобразительное искусство в системе непрерывного художественного образования»</p>
@@ -454,7 +454,7 @@
                             </div>
                             
                             <div class="col-12">
-                                <div class="info-card p-4 h-100">
+                                <div class="info-card h-100">
                                     <div class="d-flex align-items-start mb-3">
                                         <span class="badge bg-primary fs-6 fw-normal me-3">54.04.01</span>
                                         <p class="mb-0 fs-6">Дизайн: программа «Дизайн»</p>
@@ -463,7 +463,7 @@
                             </div>
                             
                             <div class="col-12">
-                                <div class="info-card p-4 h-100">
+                                <div class="info-card h-100">
                                     <div class="d-flex align-items-start mb-3">
                                         <span class="badge bg-primary fs-6 fw-normal me-3">54.04.02</span>
                                         <p class="mb-0 fs-6">Декоративно-прикладное искусство и народные промыслы: программа «Арт-практики в декоративном искусстве»</p>
@@ -473,6 +473,16 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-4 d-flex justify-content-between row">
+                    <p class="fs-6 text-blue fw-medium mb-5">
+                            Выбирайте магистерскую программу в соответствии со своими профессиональными 
+                            навыками и творческими целями. Наши направления охватывают ключевые области 
+                            архитектурного, художественного и дизайнерского образования и ориентированы 
+                            на развитие практических навыков и исследовательской компетенции.
+                        </p>
+                    <div class="d-flex justify-content-end align-items-end"><a href="abiturient.html" class="btn btn-primary align-content-center">Подать заявление</a></div>
+                </div>
+            </div>
             </div>
         </section>
 
