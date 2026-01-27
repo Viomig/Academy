@@ -5,7 +5,7 @@
     padding: 0;
 }
 
-@media (min-width: 1200px) {
+/*@media (min-width: 1200px) {
     .container, .container-lg, .container-md, .container-sm, .container-xl {
         max-width: 1320px;
     }
@@ -15,7 +15,7 @@
     .container, .container-lg, .container-md, .container-sm, .container-xl {
         max-width: 1320px;
     }
-}
+} */
 
 @font-face {
     font-family: 'Montserrat-Light';
@@ -101,12 +101,14 @@ h6{
 }
 
 
-div{
-}
-
-.container{
-  width: 100%;
-    
+.container {
+    --bs-gutter-x: 0rem !important;
+    max-width: 1920px !important;
+    width: 100% !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 section{
