@@ -7,17 +7,13 @@
 
 @media (min-width: 1200px) {
     .container, .container-lg, .container-md, .container-sm, .container-xl {
-        max-width: 1920px !important; 
-        margin: 0 !important;
-        padding: 0 !important;
+        max-width: 1320px;
     }
 }
 
 @media (min-width: 560px) {
     .container, .container-lg, .container-md, .container-sm, .container-xl {
-        max-width: 1920px !important; 
-        margin: 0 !important;
-        padding: 0 !important;
+        max-width: 720px;
     }
 }
 
@@ -106,12 +102,9 @@ h6{
 
 
 div{
-    margin: 0;
-    padding: 0;
 }
 
 .container{
-  margin: 0px;
   width: 100%;
     
 }
