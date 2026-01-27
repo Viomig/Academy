@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Академия архитектуры и искусств ЮФУ</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/owl.theme.green.css">
+    <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <style>
         /* ===== БАЗОВЫЕ СТИЛИ И ПЕРЕМЕННЫЕ ===== */
         :root {
             --primary-blue: #080D6B;
@@ -29,7 +32,6 @@
             font-family: 'Montserrat', sans-serif;
             color: var(--black);
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
         /* Типографика */
@@ -50,7 +52,7 @@
             font-size: 16px;
             font-weight: 400;
             line-height: 1.6;
-            max-width: 551px;
+            max-width: 353px;
         }
 
         .section-title {
@@ -67,73 +69,172 @@
         }
 
         /* ===== КАРТОЧКИ ===== */
-        .info-card {
+        .event-card {
             background: var(--white);
             border: none;
             border-radius: 15px;
             box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.15);
             transition: all 0.3s ease;
             height: 100%;
-            padding: 30px;
-            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .info-card:hover {
+        .event-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
 
-        .stat-card {
-            background: var(--light-grey);
-            border-radius: 15px;
-            padding: 30px;
-            height: 100%;
-            text-align: center;
-            transition: all 0.3s ease;
+        .event-image {
+            height: 324px;
+            border-radius: 10px;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 20px;
         }
 
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .stat-number {
-            font-size: 80px;
-            font-weight: 600;
-            color: var(--primary-blue);
-            line-height: 1;
-            margin-bottom: 10px;
-        }
-
-        .stat-label {
-            font-size: 16px;
-            font-weight: 500;
-            color: var(--black);
-            text-transform: uppercase;
-        }
-
-        .building-card {
+        .event-date {
+            position: absolute;
+            top: 308px;
+            left: 14px;
             background: var(--white);
-            border-radius: 15px;
+            padding: 8px 10px;
+            border-radius: 0 10px 0 0;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .event-title {
+            font-size: 22px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .event-description {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.4;
+            max-height: 102px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            height: 100%;
         }
 
-        .building-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        /* Новостные карточки */
+        .news-card {
+            margin-bottom: 40px;
         }
 
-        .building-image {
-            height: 209px;
+        .news-image {
+            width: 353px;
+            height: 201px;
+            border-radius: 15px;
             background-size: cover;
             background-position: center;
         }
 
-        .building-info {
-            padding: 20px;
+        .news-date {
+            font-size: 16px;
+            color: var(--grey-dark);
+            margin-bottom: 10px;
+        }
+
+        .news-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .news-description {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        .news-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--black);
+            margin-top: 15px;
+        }
+
+        .news-link-arrow {
+            width: 26px;
+            height: 8px;
+            background-image: url("data:image/svg+xml,%3Csvg width='26' height='8' viewBox='0 0 26 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25.3536 4.35355C25.5488 4.15829 25.5488 3.84171 25.3536 3.64645L22.1716 0.464466C21.9763 0.269204 21.6597 0.269204 21.4645 0.464466C21.2692 0.659728 21.2692 0.976311 21.4645 1.17157L24.2929 4L21.4645 6.82843C21.2692 7.02369 21.2692 7.34027 21.4645 7.53553C21.6597 7.7308 21.9763 7.7308 22.1716 7.53553L25.3536 4.35355ZM0 4.5H25V3.5H0V4.5Z' fill='black'/%3E%3C/svg%3E");
+        }
+
+        /* Выпускники карточки */
+        .graduate-card {
+            background: var(--white);
+            border: none;
+            border-radius: 15px;
+            box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.25);
+            min-width: 807px;
+            height: 471px;
+            margin-right: 20px;
+        }
+
+        .graduate-photo {
+            width: 275px;
+            height: 270px;
+            border-radius: 10px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .graduate-name {
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        .graduate-info {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--grey-dark);
+            margin-top: 5px;
+        }
+
+        .graduate-website {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--grey-dark);
+            margin-top: 5px;
+        }
+
+        .graduate-text {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        /* Галерея карточки */
+        .gallery-card {
+            border-radius: 15px;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-card:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-card-small {
+            width: 394px;
+            height: 263px;
+        }
+
+        .gallery-card-large {
+            width: 600px;
+            height: 400px;
         }
 
         /* ===== КНОПКИ И ССЫЛКИ ===== */
@@ -142,7 +243,12 @@
             font-weight: 500;
             border-radius: 50px;
             transition: all 0.3s ease;
-            padding: 12px 30px;
+        }
+
+        .btn-lg {
+            padding: 16px 24px;
+            font-size: 14px;
+            font-weight: 700;
             text-transform: uppercase;
         }
 
@@ -155,153 +261,69 @@
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(8, 13, 107, 0.3);
-            color: var(--white);
         }
 
-        .btn-outline-primary {
-            border: 2px solid var(--primary-blue);
-            color: var(--primary-blue);
-            background: transparent;
+        /* ===== ФИЛЬТРЫ ===== */
+        .filter-container {
+            margin-bottom: 40px;
         }
 
-        .btn-outline-primary:hover {
-            background: var(--primary-blue);
-            color: var(--white);
-        }
-
-        .link-arrow {
+        .filter-item {
             display: inline-flex;
             align-items: center;
             gap: 10px;
+            padding: 0;
+            background: none;
+            border: none;
+            font-size: 16px;
+            color: var(--black);
+            cursor: pointer;
+        }
+
+        .filter-item.active {
             color: var(--primary-blue);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
         }
 
-        .link-arrow:hover {
-            gap: 15px;
-            color: var(--secondary-pink);
-        }
-
-        /* ===== ТАЙМЛАЙН ===== */
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-            margin-top: 40px;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--gradient-primary);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 40px;
-            padding-left: 30px;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -38px;
-            top: 5px;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: var(--gradient-primary);
-            border: 3px solid white;
-            box-shadow: 0 0 0 3px var(--primary-blue);
-        }
-
-        .timeline-year {
-            font-size: 28px;
+        .filter-count {
+            font-size: 12px;
             font-weight: 600;
             color: var(--primary-blue);
-            margin-bottom: 10px;
+            text-transform: uppercase;
         }
 
-        .timeline-content {
-            font-size: 20px;
-            color: var(--black);
-        }
-
-        /* ===== СПИСОК НАПРАВЛЕНИЙ ===== */
-        .directions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        .year-filter {
+            display: flex;
             gap: 30px;
-            margin-top: 40px;
-        }
-
-        .direction-category {
-            background: var(--white);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .category-title {
-            font-size: 20px;
-            font-weight: 500;
-            color: var(--white);
-            background: var(--primary-blue);
-            padding: 15px;
-            border-radius: 10px;
             margin-bottom: 20px;
-            text-align: center;
         }
 
-        .direction-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .direction-list li {
-            padding: 10px 0;
-            border-bottom: 1px solid var(--light-grey);
+        .year-item {
+            background: none;
+            border: none;
             font-size: 16px;
-            position: relative;
-            padding-left: 20px;
+            color: var(--black);
+            cursor: pointer;
         }
 
-        .direction-list li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
+        .year-item.active {
             color: var(--primary-blue);
-            font-size: 20px;
+            font-weight: 500;
         }
 
-        .direction-list li:last-child {
-            border-bottom: none;
+        /* ===== ГРАФИКА ===== */
+        .hero-graphic {
+            position: relative;
+            width: 341px;
+            height: 474px;
         }
 
-        /* ===== КАДРОВЫЙ ПОТЕНЦИАЛ ГРИД ===== */
-        .staff-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        .staff-card {
-            background: var(--light-grey);
-            border-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .staff-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        .graphic-element {
+            position: absolute;
+            width: 57px;
+            height: 57px;
+            background: var(--gradient-primary);
+            border-radius: 10px;
+            transform: rotate(30deg);
         }
 
         /* ===== АДАПТИВНОСТЬ ===== */
@@ -309,13 +331,9 @@
             .hero-title {
                 font-size: 70px;
             }
-            
+
             .section-title {
                 font-size: 36px;
-            }
-            
-            .stat-number {
-                font-size: 70px;
             }
         }
 
@@ -323,17 +341,13 @@
             .hero-title {
                 font-size: 60px;
             }
-            
+
             .section-title {
                 font-size: 32px;
             }
-            
-            .stat-number {
-                font-size: 60px;
-            }
-            
-            .staff-grid {
-                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+
+            .graduate-card {
+                min-width: 700px;
             }
         }
 
@@ -341,79 +355,67 @@
             .hero-title {
                 font-size: 50px;
             }
-            
+
             .section-title {
                 font-size: 28px;
-                text-align: center;
             }
-            
+
             .hero-subtitle {
                 font-size: 14px;
-                text-align: center;
-                margin: 0 auto 40px;
             }
-            
-            .stat-number {
-                font-size: 50px;
+
+            .news-image {
+                width: 100%;
+                max-width: 353px;
             }
-            
-            .timeline {
-                padding-left: 20px;
+
+            .graduate-card {
+                min-width: 600px;
             }
-            
-            .timeline-item {
-                padding-left: 20px;
-            }
-            
-            .timeline-item::before {
-                left: -28px;
-            }
-            
-            .directions-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .staff-grid {
-                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+
+            .gallery-card-small,
+            .gallery-card-large {
+                width: 100%;
+                max-width: 394px;
+                height: 263px;
             }
         }
 
         @media (max-width: 768px) {
-            section {
-                padding: 60px 0;
-            }
-            
             .hero-title {
                 font-size: 40px;
                 text-align: center;
             }
-            
+
             .section-title {
                 font-size: 24px;
+                text-align: center;
             }
-            
-            .stat-number {
-                font-size: 40px;
+
+            .hero-subtitle {
+                text-align: center;
+                margin: 0 auto 40px;
             }
-            
-            .stat-label {
-                font-size: 14px;
+
+            .news-card {
+                text-align: center;
             }
-            
-            .timeline-content {
-                font-size: 16px;
+
+            .news-image {
+                margin: 0 auto 20px;
             }
-            
-            .timeline-year {
-                font-size: 24px;
+
+            .graduate-card {
+                min-width: 100%;
+                height: auto;
+                padding: 20px;
             }
-            
-            .building-card {
-                margin-bottom: 30px;
-            }
-            
-            .staff-grid {
-                grid-template-columns: repeat(2, 1fr);
+
+            .graduate-photo {
+                width: 100%;
+                max-width: 275px;
+                height: 200px;
+                margin: 0 auto 20px;
             }
         }
 
@@ -421,51 +423,79 @@
             .hero-title {
                 font-size: 32px;
             }
-            
+
             .section-title {
                 font-size: 20px;
             }
-            
-            .btn {
-                padding: 10px 20px;
-                font-size: 14px;
+
+            .btn-lg {
+                padding: 12px 20px;
+                font-size: 12px;
             }
-            
-            .stat-card {
-                padding: 20px 15px;
+
+            .filter-container {
+                overflow-x: auto;
+                white-space: nowrap;
+                padding-bottom: 10px;
             }
-            
-            .stat-number {
-                font-size: 32px;
+
+            .year-filter {
+                overflow-x: auto;
+                white-space: nowrap;
+                padding-bottom: 10px;
             }
-            
-            .info-card {
-                padding: 20px;
-            }
-            
-            .staff-grid {
-                grid-template-columns: 1fr;
-            }
+        }
+
+        /* ===== КАРУСЕЛЬ ===== */
+        .owl-carousel .owl-nav button.owl-prev,
+        .owl-carousel .owl-nav button.owl-next {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-blue) !important;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white !important;
+            font-size: 24px;
+        }
+
+        .owl-carousel .owl-nav button.owl-prev {
+            left: -25px;
+        }
+
+        .owl-carousel .owl-nav button.owl-next {
+            right: -25px;
+        }
+
+        .owl-carousel .owl-nav button.owl-prev:hover,
+        .owl-carousel .owl-nav button.owl-next:hover {
+            background: var(--secondary-pink) !important;
+        }
+
+        .owl-carousel .owl-dots {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .owl-carousel .owl-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--grey-dark) !important;
+            margin: 0 5px;
+        }
+
+        .owl-carousel .owl-dot.active {
+            width: 40px;
+            border-radius: 20px;
+            background: var(--primary-blue) !important;
         }
 
         /* ===== ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ ===== */
-        .bg-gradient-dark {
-            background: var(--gradient-dark);
-            color: var(--white);
-        }
-
-        .bg-gradient-primary {
-            background: var(--gradient-primary);
-            color: var(--white);
-        }
-
-        .text-gradient {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
         .scroll-top-btn {
             position: fixed;
             bottom: 30px;
@@ -495,698 +525,663 @@
             box-shadow: 0 10px 20px rgba(8, 13, 107, 0.3);
         }
 
-        /* ===== КАРУСЕЛЬ ===== */
-        .owl-carousel .owl-nav {
-            display: flex !important;
-            justify-content: space-between;
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            transform: translateY(-50%);
-            pointer-events: none;
+        /* Контейнер для фильтров - отдельно для вашей кастомизации */
+        #filtersContainer {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
         }
-
-        .owl-carousel .owl-nav button {
-            pointer-events: all;
-            width: 40px;
-            height: 40px;
-            background: var(--white) !important;
-            border-radius: 50% !important;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            display: flex !important;
+        
+        /* Основной контейнер с галереей */
+        .gallery-container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        
+        /* Стили для фильтров (остаются как были) */
+        .filter-line {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .filter-label {
+            min-width: 100px;
+            font-weight: bold;
+            color: #666;
+            display: flex;
+            align-items: center;
+        }
+        
+        .filter-option {
+            padding: 8px 16px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        
+        .type-option {
+            border-radius: 20px;
+            background: #f0f0f0;
+            color: #333;
+        }
+        
+        .type-option.active {
+            background: #3498db;
+            color: white;
+        }
+        
+        .cat-option, .year-option {
+            color: #333;
+            position: relative;
+        }
+        
+        .cat-option.active, .year-option.active {
+            color: #3498db;
+        }
+        
+        .cat-option.active::after, .year-option.active::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #3498db;
+        }
+        
+        /* Стили для карточек */
+        .gallery-item {
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Разные размеры для фото */
+        .gallery-item.photo.size-2 { grid-column: span 2; }
+        .gallery-item.photo.size-3 { grid-column: span 3; }
+        .gallery-item.photo.size-4 { grid-column: span 4; }
+        .gallery-item.photo.size-5 { grid-column: span 5; }
+        .gallery-item.photo.size-6 { grid-column: span 6; }
+        
+        /* Фиксированный размер для видео */
+        .gallery-item.video { grid-column: span 4; }
+        
+        /* Изображения и видео */
+        .gallery-item img,
+        .gallery-item .video-thumbnail {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+        }
+        
+        .video-thumbnail {
+            position: relative;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px !important;
-            color: var(--primary-blue) !important;
-            transition: all 0.3s ease;
+            color: white;
+            font-size: 48px;
         }
-
-        .owl-carousel .owl-nav button:hover {
-            background: var(--primary-blue) !important;
-            color: var(--white) !important;
-            transform: scale(1.1);
+        
+        /* Градиентный оверлей при наведении */
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 0;
+            background: linear-gradient(to top, rgba(52, 152, 219, 0.9) 0%, rgba(52, 152, 219, 0.7) 30%, rgba(255, 255, 255, 0) 100%);
+            transition: height 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            color: white;
+            border-radius: 10px;
         }
-
-        .owl-carousel .owl-dots {
-            display: flex !important;
-            justify-content: center;
-            margin-top: 30px;
+        
+        .gallery-item:hover .gallery-overlay {
+            height: 100%;
         }
-
-        .owl-carousel .owl-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--grey-dark) !important;
-            margin: 0 5px;
-            transition: all 0.3s ease;
+        
+        .overlay-content {
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.3s ease 0.1s;
         }
-
-        .owl-carousel .owl-dot.active {
-            width: 40px;
-            border-radius: 20px;
-            background: var(--primary-blue) !important;
+        
+        .gallery-item:hover .overlay-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .overlay-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .overlay-meta {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            display: flex;
+            gap: 15px;
+        }
+        
+        .badge {
+            font-size: 0.8rem;
+            padding: 4px 10px;
+        }
+        
+        .badge-photo {
+            background: #2ecc71;
+        }
+        
+        .badge-video {
+            background: #e74c3c;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+        
+        .no-results-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-item.photo.size-2,
+            .gallery-item.photo.size-3,
+            .gallery-item.photo.size-4,
+            .gallery-item.photo.size-5,
+            .gallery-item.photo.size-6,
+            .gallery-item.video {
+                grid-column: span 12 !important;
+            }
+            
+            .filter-line {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .filter-label {
+                min-width: auto;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Кнопка наверх -->
-    <a href="#" class="scroll-top-btn">
-        <i class="fas fa-chevron-up"></i>
-    </a>
+    <main class="main-content">
+      <header id="header-placeholder">
+    </header>
 
-    <!-- ===== СЕКЦИЯ 1: ОБ АКАДЕМИИ ===== -->
-    <section class="about-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <h1 class="hero-title text-gradient">об академии</h1>
-                    <p class="hero-subtitle">
-                        Академия архитектуры и искусств ЮФУ объединяет традиции образовательного процесса с современными подходами, готовя специалистов в области архитектуры, дизайна и искусства.
-                    </p>
-                    
-                    <!-- Быстрые ссылки -->
-                    <div class="row g-4 mb-5">
-                        <div class="col-md-6 col-lg-3">
-                            <a href="#" class="link-arrow">
-                                дирекция
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-lg-3">
-                            <a href="#" class="link-arrow">
-                                студсовет
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-lg-3">
-                            <a href="#" class="link-arrow">
-                                ученый совет
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-lg-3">
-                            <a href="#" class="link-arrow">
-                                история ААИ ЮФУ
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Документ -->
-                    <div class="d-flex align-items-center mb-5">
-                        <div class="me-3">
-                            <i class="fas fa-file-alt fa-2x text-primary"></i>
-                        </div>
-                        <div>
-                            <a href="#" class="link-arrow">
-                                Положение об Академии архитектуры и искусств ЮФУ
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
+    <section id="start">
+        <div class="row">
+            <div class="col-7 row">
+                <div class="col-7 offset-3"><img src="images/1.png"  ></div>
+                <div class="col-7 offset-5"><img src="images/2.png"  ></div>
+                <div class="col-7 offset-2"><img src="images/3.png"  ></div>
+                <div class="row ">
+                  <div class="col-7 offset-2"><h2>Готовим специалистов в сфере искусства с 1964 года в главном вузе юга России</h2></div>
+                    <div class="col-6 offset-2"><button class="btn" id="sign"><li>Поступить в академию</li></button></div>
+                    <div class="col-4 ">Подробнее</div>
                 </div>
-                <div class="col-lg-5">
-                    <div class="position-relative">
-                        <img src="https://via.placeholder.com/400x500/080D6B/FFFFFF?text=ААИ+ЮФУ" 
-                             alt="Академия архитектуры и искусств ЮФУ" 
-                             class="img-fluid rounded-3 shadow">
-                        <div class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-primary opacity-10 rounded-3"></div>
-                    </div>
-                </div>
+
             </div>
+            <div class="mx-auto col-4">
+                <img src="images/Cube.png" alt="Image2">
+            </div>
+
         </div>
     </section>
 
-    <!-- ===== СЕКЦИЯ 2: ОСНОВНАЯ ИНФОРМАЦИЯ ===== -->
-    <section class="bg-gradient-dark">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-lg-8">
-                    <h2 class="section-title">ААИ ЮФУ</h2>
-                    <p class="lead">
-                        Академия архитектуры и искусств в настоящее время является структурным подразделением ФГАОУ ВО «Южный федеральный университет», но имеет почти пятидесятилетнюю историю. В сентябре 2013 г. в связи с реорганизацией структуры ЮФУ Институт архитектуры и искусств был переименован в Академию архитектуры и искусств и к нему присоединены художественные кафедры бывшего Художественно-графического факультета ЮФУ.
-                    </p>
-                </div>
-            </div>
+        <!-- ===== СЕКЦИЯ 2: БЛИЖАЙШИЕ СОБЫТИЯ ===== -->
+        <section class="events-section py-5" style="background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.9) 100%);">
+            <div class="container">
+                <h2 class="section-title text-center text-primary mb-5">ближайшие события</h2>
 
-            <!-- Инфо карточки -->
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="info-card">
-                        <h4 class="mb-3">Обучение студентов</h4>
-                        <p>
-                            Сегодня в Академии обучается около 1800 студентов по более чем 18 направлениям подготовки и специальностям высшего образования и более чем 4500 слушателей, обучающихся по программам дополнительного образования.
-                        </p>
+                <!-- Карусель событий -->
+                <div class="owl-carousel owl-theme events-carousel">
+                    <!-- Событие 1 -->
+                    <div class="item">
+                        <div class="event-card">
+                            <div class="event-image" style="background-image: url('./image/dc0cd7e003a32d89db20c424ab3b7480df425d01.png');"></div>
+                            <div class="event-date">19.06.2025</div>
+                            <div class="card-body p-4">
+                                <h3 class="event-title">Защита вкр</h3>
+                                <p class="event-description">
+                                    Студенты Кафедры дизайна представят свои дипломные проекты. Показ студенческих коллекций и не только!
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="info-card">
-                        <h4 class="mb-3">Практическая подготовка</h4>
-                        <p>
-                            Студенты Академии получают знания не только по архитектурно-художественным, но и по ряду инженерно-экономических дисциплин. Большое внимание уделяется практической подготовке, работе над реальными проектами и заданиями.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-4">
-                    <div class="info-card">
-                        <h4 class="mb-3">Научные исследования</h4>
-                        <p>
-                            В Академии проводятся исследования по проблемам архитектуры и градостроительства Юга России, реставрации зданий, исследования в области историко-культурного наследия, истории и проблемам дизайна, прикладных искусств.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- ===== СЕКЦИЯ 3: РЕЙТИНГИ ===== -->
-    <section>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <div class="bg-gradient-primary text-white p-5 rounded-4 shadow">
-                        <h3 class="h4 mb-3">Согласно рейтингу</h3>
-                        <h2 class="display-4 fw-bold mb-3">топ-10</h2>
-                        <h4 class="mb-4">лучших архитектурных вузов России</h4>
-                        <p class="small mb-0 opacity-75">
-                            *по результатам всероссийского фестиваля «Драйверы развития современного города 2020, 2021 и 2022 гг.» в номинации лучшая архитектурная школа россии
-                        </p>
+                    <!-- Событие 2 -->
+                    <div class="item">
+                        <div class="event-card">
+                            <div class="event-image" style="background-image: url('./image/06759594f3217526b33a34da8545b55df436e0be.png');"></div>
+                            <div class="event-date">20.07.2025</div>
+                            <div class="card-body p-4">
+                                <h3 class="event-title">всероссийская конференция</h3>
+                                <p class="event-description">
+                                    Научно-практическая конференция «Архитектура и искусство: от теории к практике»
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="bg-dark text-white p-5 rounded-4 shadow">
-                        <h3 class="h4 mb-3">ЮФУ —</h3>
-                        <h4 class="mb-4">1 из 18 вузов-победителей программы «приоритет 2030» по треку «исследовательское лидерство»</h4>
-                        <p class="lead mb-0">
-                            ЮФУ — пространство смыслов и возможностей
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- ===== СЕКЦИЯ 4: ИСТОРИЯ ===== -->
-    <section class="bg-light">
-        <div class="container">
-            <h2 class="section-title text-center">архитектурно-художественная школа юфу: этапы становления</h2>
-            
-            <div class="timeline">
-                <!-- 1964 -->
-                <div class="timeline-item">
-                    <div class="timeline-year">1964</div>
-                    <div class="timeline-content">
-                        Архитектурный факультет Ростовского инженерно-строительного института
+                    <!-- Событие 3 -->
+                    <div class="item">
+                        <div class="event-card">
+                            <div class="event-image" style="background-image: url('./image/c2987600d20a6bcf3ff044d89e24e53fc1147624.png');"></div>
+                            <div class="event-date">21.07.2025</div>
+                            <div class="card-body p-4">
+                                <h3 class="event-title">выставка дипломных проектов</h3>
+                                <p class="event-description">
+                                    Событие приурочено к 40-летию основания архитектурного факультета и послучаю юбилея Дамасского университета.
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                
-                <!-- 1971 -->
-                <div class="timeline-item">
-                    <div class="timeline-year">1971</div>
-                    <div class="timeline-content">
-                        Художественно-графический факультет Ростовского государственного педагогического института
-                    </div>
-                </div>
-                
-                <!-- 1988 -->
-                <div class="timeline-item">
-                    <div class="timeline-year">1988</div>
-                    <div class="timeline-content">
-                        Ростовский государственный архитектурный институт
-                    </div>
-                </div>
-                
-                <!-- 1994 -->
-                <div class="timeline-item">
-                    <div class="timeline-year">1994</div>
-                    <div class="timeline-content">
-                        + Отделение декоративно-прикладного искусства
-                    </div>
-                </div>
-                
-                <!-- 2000 -->
-                <div class="timeline-item">
-                    <div class="timeline-year">2000</div>
-                    <div class="timeline-content">
-                        + Отделение Дизайна
-                    </div>
-                </div>
-                
-                <!-- 2001-2012 -->
-                <div class="timeline-item">
-                    <div class="timeline-year">2001-2012</div>
-                    <div class="timeline-content">
-                        + Отделение Живописи, Графики, Скульптуры, Монументально-декоративного искусства
-                    </div>
-                </div>
-                
-                <!-- 2006 -->
-                <div class="timeline-item">
-                    <div class="timeline-year">2006</div>
-                    <div class="timeline-content">
-                        Архитектурный институт ЮФУ + Факультет изобразительного искусства
-                    </div>
-                </div>
-                
-                <!-- 2013 -->
-                <div class="timeline-item">
-                    <div class="timeline-year">2013</div>
-                    <div class="timeline-content">
-                        Академия архитектуры и искусств
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- ===== СЕКЦИЯ 5: ПОДРАЗДЕЛЕНИЯ ===== -->
-    <section>
-        <div class="container">
-            <h2 class="section-title text-center">подразделения ааи юфу</h2>
-            
-            <div class="row g-4">
-                <!-- Кафедры -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="stat-card">
-                        <div class="stat-number">12</div>
-                        <div class="stat-label">кафедр</div>
-                        <div class="mt-3 text-start small">
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>выпускающих</span>
-                                <strong class="text-primary">8</strong>
+                    <!-- Событие 4 -->
+                    <div class="item">
+                        <div class="event-card">
+                            <div class="event-image" style="background-image: url('./image/1cdca27d01a59b001b1c12906bf9952e93c89564.png');"></div>
+                            <div class="event-date">23.06.2025</div>
+                            <div class="card-body p-4">
+                                <h3 class="event-title">Защита ВКР</h3>
+                                <p class="event-description">
+                                    Защита студенческих выпускных квалификационных работ по направлению Графический дизайн. Фирменный стиль, оформление выставок и фестивалей, упаковка, веб-дизайн и не только!
+                                </p>
                             </div>
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>невыпускающих</span>
-                                <strong class="text-primary">4</strong>
-                            </div>
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>архитектурной направленности</span>
-                                <strong class="text-primary">5</strong>
-                            </div>
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>художественной направленности и дизайна</span>
-                                <strong class="text-primary">4</strong>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <span>инженерно-технической направленности</span>
-                                <strong class="text-primary">3</strong>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Центры -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="stat-card">
-                        <div class="stat-number">10</div>
-                        <div class="stat-label">центров</div>
-                        <div class="mt-3 text-start small">
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>учебно-образовательных</span>
-                                <strong class="text-primary">3</strong>
-                            </div>
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>организационно-сопровождающих</span>
-                                <strong class="text-primary">6</strong>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <span>научно-образовательный</span>
-                                <strong class="text-primary">1</strong>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- НОЦ -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="stat-card">
-                        <div class="stat-number">4</div>
-                        <div class="stat-label">ноц</div>
-                        <div class="mt-3 text-start small">
-                            <div>• теория и история архитектуры и проблем сохранения наследия</div>
-                            <div>• учебно-творческая лаборатория (МДИ)</div>
-                            <div>• учебно-творческая лаборатория театрально-сценических искусств и анимационных технологий</div>
-                            <div>• лаборатория костюма и моды</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Мастерские -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="stat-card">
-                        <div class="stat-number">5</div>
-                        <div class="stat-label">мастерских</div>
-                        <div class="mt-3 text-start small">
-                            <div>• мастерская художественной керамики</div>
-                            <div>• учебная мастерская обработки самоцветной древесины</div>
-                            <div>• мастерская дизайна</div>
-                            <div>• учебная швейная мастерская</div>
-                            <div>• лаборатория фотодизайна</div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ===== СЕКЦИЯ 6: НАПРАВЛЕНИЯ ОБРАЗОВАНИЯ ===== -->
-    <section class="bg-light">
-        <div class="container">
-            <h2 class="section-title text-center">диапозон направлений архитектурно-художественного образования ААИ юфу</h2>
-            
-            <div class="directions-grid">
-                <!-- Глобальный уровень -->
-                <div class="direction-category">
-                    <div class="category-title">Глобальный территориальный, городской районный, квартальный, дворовой уровень преобразования пространства</div>
-                    <ul class="direction-list">
-                        <li>Градостроительство Урбанистика</li>
-                        <li>Дизайн архитектурной среды и ландшафтная архитектура</li>
-                        <li>Объектная архитектура</li>
-                    </ul>
-                </div>
-                
-                <!-- Городской уровень -->
-                <div class="direction-category">
-                    <div class="category-title">Городской, районный, квартальный, дворовой уровень преобразования пространства</div>
-                    <ul class="direction-list">
-                        <li>Реконструкция и реставрация объектов архитектурного наследия</li>
-                        <li>Монументальное искусство</li>
-                    </ul>
-                </div>
-                
-                <!-- Эстетическое наполнение -->
-                <div class="direction-category">
-                    <div class="category-title">Эстетического и предметного наполнения обитаемого пространства</div>
-                    <ul class="direction-list">
-                        <li>Дизайн интерьера, костюма, графический, предметный</li>
-                        <li>Декоративно-прикладное искусство, Графика, Скульптура, Живопись</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- ===== СЕКЦИЯ 3: НОВОСТИ ===== -->
+        <section class="news-section py-5" style="background: white;">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">новости</h2>
 
-    <!-- ===== СЕКЦИЯ 7: КАДРОВЫЙ ПОТЕНЦИАЛ ===== -->
-    <section>
-        <div class="container">
-            <h2 class="section-title text-center">кадровый потенциал ААИ ЮФУ</h2>
-            
-            <div class="staff-grid">
-                <div class="staff-card">
-                    <div class="stat-number">129</div>
-                    <div class="stat-label">штатных сотрудников</div>
+                <!-- Фильтры новостей -->
+                <div class="filter-container mb-5">
+                    <div class="d-flex flex-wrap gap-4">
+                        <button class="filter-item active">
+                            <span>все</span>
+                        </button>
+                        <button class="filter-item">
+                            <span>образование</span>
+                            <span class="filter-count">4</span>
+                        </button>
+                        <button class="filter-item">
+                            <span>наука</span>
+                            <span class="filter-count">2</span>
+                        </button>
+                        <button class="filter-item">
+                            <span>абитуриенту</span>
+                            <span class="filter-count">13</span>
+                        </button>
+                        <button class="filter-item">
+                            <span>выпускнику</span>
+                            <span class="filter-count">5</span>
+                        </button>
+                    </div>
                 </div>
-                
-                <div class="staff-card">
-                    <div class="stat-number">1</div>
-                    <div class="stat-label">действующий член академии РАХ (академика)</div>
-                </div>
-                
-                <div class="staff-card">
-                    <div class="stat-number">8</div>
-                    <div class="stat-label">докторов</div>
-                </div>
-                
-                <div class="staff-card">
-                    <div class="stat-number">48</div>
-                    <div class="stat-label">кандидатов наук</div>
-                </div>
-                
-                <div class="staff-card">
-                    <div class="stat-number">8</div>
-                    <div class="stat-label">заслуженных художников РФ</div>
-                </div>
-                
-                <div class="staff-card">
-                    <div class="stat-number">3</div>
-                    <div class="stat-label">почетных члена РАХ</div>
-                </div>
-                
-                <div class="staff-card">
-                    <div class="stat-number">51</div>
-                    <div class="stat-label">средний возраст НПР</div>
-                </div>
-                
-                <div class="staff-card">
-                    <div class="stat-number">>85%</div>
-                    <div class="stat-label">членов профильных творческих союзов</div>
-                </div>
-                
-                <div class="staff-card">
-                    <div class="stat-number">17</div>
-                    <div class="stat-label">профильных экспертов</div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- ===== СЕКЦИЯ 8: ОБРАЗОВАТЕЛЬНАЯ ДЕЯТЕЛЬНОСТЬ ===== -->
-    <section class="bg-light">
-        <div class="container">
-            <h2 class="section-title text-center">образовательная деятельность ааи юфу</h2>
-            
-            <div class="row g-4 mb-5">
-                <div class="col-md-6 col-lg-4">
-                    <div class="stat-card">
-                        <div class="stat-number">13</div>
-                        <div class="stat-label">направлений бакалавриата и специалитета (16 программ)</div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4">
-                    <div class="stat-card">
-                        <div class="stat-number">7</div>
-                        <div class="stat-label">направлений магистратуры (8 программ)</div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4">
-                    <div class="stat-card">
-                        <div class="stat-number">1</div>
-                        <div class="stat-label">направление аспирантуры (2 научные специальности)</div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4">
-                    <div class="stat-card">
-                        <div class="stat-number">4</div>
-                        <div class="stat-label">направления ассистентуры-стажировки (4 программы)</div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4">
-                    <div class="stat-card">
-                        <div class="stat-number">35</div>
-                        <div class="stat-label">программ ДПО</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Статистика студентов -->
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="info-card">
-                        <h4 class="text-center mb-4">студентов на 2025 год</h4>
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="d-flex justify-content-between border-bottom pb-2">
-                                    <span>Бакалавры</span>
-                                    <strong class="text-primary">1279</strong>
-                                </div>
+                <!-- Новости грид -->
+                <div class="row mb-5">
+                    <!-- Новость 1 -->
+                    <div class="col-md-8 news-card offset-1">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="news-image" style="background-image: url('./image/736c500b1ce5368b8451743bfcc18e670f5bee46.png');"></div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="d-flex justify-content-between border-bottom pb-2">
-                                    <span>Специалисты</span>
-                                    <strong class="text-primary">189</strong>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="d-flex justify-content-between border-bottom pb-2">
-                                    <span>Магистры</span>
-                                    <strong class="text-primary">265</strong>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="d-flex justify-content-between border-bottom pb-2">
-                                    <span>Аспиранты / Ассистенты</span>
-                                    <strong class="text-primary">41</strong>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="d-flex justify-content-between border-bottom pb-2">
-                                    <span>Всего обучающихся</span>
-                                    <strong class="text-primary">1783</strong>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="d-flex justify-content-between">
-                                    <span>ДПО</span>
-                                    <strong class="text-primary">4465</strong>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== СЕКЦИЯ 9: УЧЕБНЫЕ КОРПУСА ===== -->
-    <section class="bg-gradient-dark">
-        <div class="container">
-            <h2 class="section-title text-center">учебные корпуса академии</h2>
-            
-            <div class="row g-4">
-                <!-- Корпус 1 -->
-                <div class="col-md-4">
-                    <div class="building-card">
-                        <div class="building-image" 
-                             style="background-image: url('https://via.placeholder.com/400x209/080D6B/FFFFFF?text=Корпус+1');">
-                        </div>
-                        <div class="building-info">
-                            <h5 class="mb-3">Корпус №1</h5>
-                            <p class="text-muted mb-3">
-                                г. Ростов-на-Дону, пр. Буденновский, д. 39
-                            </p>
-                            <a href="#" class="link-arrow">
-                                Посмотреть на карте
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Корпус 2 -->
-                <div class="col-md-4">
-                    <div class="building-card">
-                        <div class="building-image" 
-                             style="background-image: url('https://via.placeholder.com/400x209/ED1160/FFFFFF?text=Корпус+2');">
-                        </div>
-                        <div class="building-info">
-                            <h5 class="mb-3">Корпус №2</h5>
-                            <p class="text-muted mb-3">
-                                г. Ростов-на-Дону, ул. Максима Горького, д. 75/78
-                            </p>
-                            <a href="#" class="link-arrow">
-                                Посмотреть на карте
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Корпус 3 -->
-                <div class="col-md-4">
-                    <div class="building-card">
-                        <div class="building-image" 
-                             style="background-image: url('https://via.placeholder.com/400x209/232328/FFFFFF?text=Корпус+3');">
-                        </div>
-                        <div class="building-info">
-                            <h5 class="mb-3">Корпус №3</h5>
-                            <p class="text-muted mb-3">
-                                г. Ростов-на-Дону, ул. Филимоновская, д. 137
-                            </p>
-                            <a href="#" class="link-arrow">
-                                Посмотреть на карте
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== СЕКЦИЯ 10: КОНТАКТЫ И ПРИЗЫВ К ДЕЙСТВИЮ ===== -->
-    <section>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <h2 class="section-title">Хотите узнать больше?</h2>
-                    <p class="lead mb-4">
-                        Свяжитесь с нами для получения дополнительной информации о поступлении, программах обучения или сотрудничестве.
-                    </p>
-                    <div class="d-flex flex-wrap gap-3">
-                        <a href="#" class="btn btn-primary">
-                            <i class="fas fa-user-graduate me-2"></i>
-                            Поступить в академию
-                        </a>
-                        <a href="#" class="btn btn-outline-primary">
-                            <i class="fas fa-envelope me-2"></i>
-                            Написать нам
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="bg-gradient-primary text-white p-5 rounded-4 shadow">
-                        <h3 class="h4 mb-4">Контакты</h3>
-                        <div class="mb-3">
-                            <i class="fas fa-phone me-2"></i>
-                            <span>+7 (863) 123-45-67</span>
-                        </div>
-                        <div class="mb-3">
-                            <i class="fas fa-envelope me-2"></i>
-                            <span>aaai@sfedu.ru</span>
-                        </div>
-                        <div class="mb-3">
-                            <i class="fas fa-map-marker-alt me-2"></i>
-                            <span>г. Ростов-на-Дону, пр. Буденновский, 39</span>
-                        </div>
-                        <div class="mt-4">
-                            <h5 class="h6 mb-3">Мы в социальных сетях:</h5>
-                            <div class="d-flex gap-3">
-                                <a href="#" class="text-white fs-4">
-                                    <i class="fab fa-vk"></i>
+                            <div class="col-md-7">
+                                <div class="news-date">18.04.2025</div>
+                                <h3 class="news-title">Дни открытых дверей</h3>
+                                <p class="news-description">
+                                    В течение двух дней, 16 и 17 декабря, в Главном корпусе ЮФУ будущие абитуриенты знакомились с направлениями подготовки и специальностями, которые реализуются в Академии.
+                                </p>
+                                <a href="#" class="news-link">
+                                    Поброднее
+                                    <span class="news-link-arrow"></span>
                                 </a>
-                                <a href="#" class="text-white fs-4">
-                                    <i class="fab fa-telegram"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Новость 2 -->
+                    <div class="col-md-8 news-card offset-1">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="news-image" style="background-image: url('./image/Rectangle_238_2871.png');"></div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="news-date">18.04.2025</div>
+                                <h3 class="news-title">Выставка в Сирии</h3>
+                                <p class="news-description">
+                                    В Сирии состоялась выставка дипломных проектов 2023 года выпускников-архитекторов Академии архитектуры и искусств ЮФУ и Дамасского университета
+                                </p>
+                                <a href="#" class="news-link">
+                                    Поброднее
+                                    <span class="news-link-arrow"></span>
                                 </a>
-                                <a href="#" class="text-white fs-4">
-                                    <i class="fab fa-youtube"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Новость 3 -->
+                    <div class="col-md-8 news-card offset-1">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="news-image" style="background-image: url('./image/fbab5b55037ee0df900bfe078e19bcff37eb348c.png');"></div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="news-date">18.04.2025</div>
+                                <h3 class="news-title">Достижения выпускников</h3>
+                                <p class="news-description">
+                                    Выпускница ЮФУ победила в Международном конкурсе архитектурных школ СНГ
+                                </p>
+                                <a href="#" class="news-link">
+                                    Поброднее
+                                    <span class="news-link-arrow"></span>
                                 </a>
-                                <a href="#" class="text-white fs-4">
-                                    <i class="fab fa-instagram"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Новость 4 -->
+                    <div class="col-md-8 news-card offset-1">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="news-image" style="background-image: url('./image/Rectangle_238_2873.png');"></div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="news-date">18.04.2025</div>
+                                <h3 class="news-title">Конференция «Архитектура и искусство: от теории к практике»</h3>
+                                <p class="news-description">
+                                    С 22 по 24 ноября в Академии архитектуры и искусств Южного федерального университета прошла всероссийская научно-практическая конференция «Архитектура и искусство: от теории к практике»
+                                </p>
+                                <a href="#" class="news-link">
+                                    Поброднее
+                                    <span class="news-link-arrow"></span>
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Кнопка "Больше новостей" -->
+                <div class="text-center">
+                    <a href="#" class="btn btn-primary btn-lg">
+                        Больше новостей
+                    </a>
+                </div>
             </div>
-        </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 4: РАССЫЛКА ===== -->
+        <section class="newsletter-section py-5" style="background: var(--dark-grey);">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="bg-dark p-4 p-lg-5 rounded-3 position-relative">
+                            <div class="row align-items-center">
+                                <div class="col-lg-8">
+                                    <h3 class="text-white mb-3">Будьте в курсе наших новостей</h3>
+                                    <div class="position-relative">
+                                        <input type="email" class="form-control bg-transparent border-0 border-bottom border-white rounded-0 text-white py-3 px-0" placeholder="Ваш email" style="color: var(--grey-dark) !important;">
+                                        <div class="position-absolute bottom-0 start-0 w-100 border-top border-white"></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                                    <button class="btn btn-primary btn-lg">
+                                        Подписаться
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== СЕКЦИЯ 5: ВЫПУСКНИКИ ===== -->
+        <section class="graduates-section py-5" style="background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.9) 100%);">
+            <div class="container">
+                <h2 class="section-title text-center text-white mb-5">выпускники об академии:</h2>
+
+                <!-- Карусель выпускников -->
+                <div class="owl-carousel owl-theme graduates-carousel">
+                    <!-- Выпускник 1 -->
+                    <div class="item">
+                        <div class="graduate-card">
+                            <div class="row h-100">
+                                <div class="col-md-4">
+                                    <div class="graduate-photo" style="background-image: url('./image/Rectangle_413_7224.png');"></div>
+                                    <h4 class="graduate-name">дарья ярцева</h4>
+                                    <p class="graduate-info">
+                                        выпускница 2018 года <br>
+                                        направление «Скульптура»
+                                    </p>
+                                    <p class="graduate-website">
+                                        https://yartseva.es/
+                                    </p>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="p-4">
+                                        <p class="graduate-text">
+                                            «Я выбрала эту специальность из-за давней мечты работать с объемом, а также из-за талантливых педагогов, таких как Сергей Николаевич Олешня. Свои студенческие годы обучения и работы в мастерской Академии я вспоминаю с большой теплотой из-за выездных пленэрных практик, активной творческой и выставочной деятельности.<br><br>
+                                            Сразу после выпуска из Академии получила должность преподавателя скульптуры в Краснодарском государственном институте культуры.<br><br>
+                                            С 2022 года живу и работаю в Валенсии (Испания), где создаю уникальные произведения в стиле русской академической школы, органично соединяя традиции и современность»
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Выпускник 2 -->
+                    <div class="item">
+                        <div class="graduate-card">
+                            <div class="row h-100">
+                                <div class="col-md-4">
+                                    <div class="graduate-photo" style="background-image: url('./image/Rectangle_413_7242.png');"></div>
+                                    <h4 class="graduate-name">Юлия Калинина</h4>
+                                    <p class="graduate-info">
+                                        выпускница магистратуры 2017 года <br>
+                                        направление «Реконструкция и реставрация архитектурного наследия»
+                                    </p>
+                                    <p class="graduate-website">
+                                        https://krgp.ru/
+                                    </p>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="p-4">
+                                        <p class="graduate-text">
+                                            «Выбор профессии для меня был очевиден, потому что я с детства любила старинные дома, историю и архитектуру. Сразу после учёбы я переехала в Санкт-Петербург, где занималась историко-архивными исследованиями, будучи специалистом по государственной историко-культурной экспертизе. Мне удалось поработать со многими известными объектами, например, Усадьба в Рождествено, где провёл свое детство Набоков, и даже старинным надгробием на Александро-Невской лавре.<br><br>
+                                            Как вы понимаете, работа очень увлекательная и интересная. Именно за то, что у меня есть сейчас, я благодарна своей кафедре, потому что именно здесь вы получите те знания и навыки, которые помогут вам войти в профессию и заниматься любимым делом. Если в вас теплится дух исследователя, также, как и во мне, то эта кафедра точно для вас. Желаю всем успехов!»
+                                        </p>
+                                        <p class="graduate-info mt-3">
+                                            В настоящее время Юлия Калинина является начальником группы архитекторов АО ТИЖГП «Краснодаргражданпроект» (ГК KRGP).
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Выпускник 3 -->
+                    <div class="item">
+                        <div class="graduate-card">
+                            <div class="row h-100">
+                                <div class="col-md-4">
+                                    <div class="graduate-photo" style="background-image: url('./image/Rectangle_413_7230.png'); transform: scaleX(-1);"></div>
+                                    <h4 class="graduate-name">екатерина семенько</h4>
+                                    <p class="graduate-info">
+                                        выпускница 2010 года <br>
+                                        направление «Дизайн интерьера»
+                                    </p>
+                                    <p class="graduate-website">
+                                        https://www.semenkodesign.com/
+                                    </p>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="p-4">
+                                        <p class="graduate-text">
+                                            «Всем привет, я – Катя Семенько, живу и работаю в Чикаго (США). К настоящему времени завоевала более 30 международных наград, практически в каждом конкурсе это были первые места.<br><br>
+                                            Сейчас я работаю как фрилансер на себя, делаю концепты для креативных товаров массового потребления и запускаю много своих проектов. Среди моих одногруппников-друзей есть несколько безумно крутых с серьезными портфолио международного профессионального уровня.<br><br>
+                                            Поэтому я желаю вам быть крутыми одиночками и крутыми team players, «гореть своим делом», выполняя с первого курса творческие проекты, и больших вам горизонтов, ребята!»
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Выпускник 4 -->
+                    <div class="item">
+                        <div class="graduate-card">
+                            <div class="row h-100">
+                                <div class="col-md-4">
+                                    <div class="graduate-photo" style="background-image: url('./image/Rectangle_413_7236.png');"></div>
+                                    <h4 class="graduate-name">Анна Гагина</h4>
+                                    <p class="graduate-info">
+                                        выпускница 2001 года <br>
+                                        направление «Декоративно-прикладное искусство и народные промыслы (художественная керамика)»
+                                    </p>
+                                    <p class="graduate-website">
+                                        https://vk.com/agart
+                                    </p>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="p-4">
+                                        <p class="graduate-text">
+                                            «Я занимаюсь керамикой всю жизнь, все 24 года. Из них 18 лет я преподавала в вузе, сейчас я работаю на себя. И всё это время я нахожусь в профессии.<br><br>
+                                            Я очень благодарна своей кафедре и институту, что получила здесь образование, получила путёвку в жизнь, в свою замечательную, самую лучшую в мире профессию. Спасибо!»
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+     <section id="end">
+ <div id="footer-placeholder"></div>
     </section>
 
-    <!-- Подключаем скрипты -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Подключаем Bootstrap JS и Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/@coreui/coreui/dist/js/coreui.bundle.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="tabs.js"></script>
+    <script src="js/script.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
 
     <script>
-        // Инициализация Owl Carousel (если понадобится для галереи)
+        // Инициализация Owl Carousel для событий
         $(document).ready(function(){
-            // Пример карусели для галереи работ
-            if ($('.owl-carousel').length) {
-                $('.owl-carousel').owlCarousel({
-                    loop: true,
-                    margin: 20,
-                    nav: true,
-                    dots: true,
-                    responsive: {
-                        0: {
-                            items: 1
-                        },
-                        768: {
-                            items: 2
-                        },
-                        992: {
-                            items: 3
-                        }
+            // Карусель событий
+            $('.events-carousel').owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: true,
+                dots: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    768: {
+                        items: 2
+                    },
+                    992: {
+                        items: 3
+                    },
+                    1200: {
+                        items: 4
                     }
-                });
-            }
-            
+                }
+            });
+
+            // Карусель выпускников
+            $('.graduates-carousel').owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: true,
+                dots: true,
+                items: 1,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true
+            });
+
+            // Фильтры новостей
+            $('.filter-item').click(function() {
+                $('.filter-item').removeClass('active');
+                $(this).addClass('active');
+            });
+
+            // Фильтры по годам
+            $('.year-item').click(function() {
+                $('.year-item').removeClass('active');
+                $(this).addClass('active');
+            });
+
             // Кнопка "Наверх"
             $(window).scroll(function() {
                 if ($(this).scrollTop() > 300) {
@@ -1195,14 +1190,14 @@
                     $('.scroll-top-btn').removeClass('visible');
                 }
             });
-            
+
             $('.scroll-top-btn').click(function(e) {
                 e.preventDefault();
                 $('html, body').animate({scrollTop: 0}, 300);
             });
-            
+
             // Анимация карточек при наведении
-            $('.info-card, .stat-card, .building-card').hover(
+            $('.event-card, .gallery-card').hover(
                 function() {
                     $(this).css('transform', 'translateY(-10px)');
                 },
@@ -1210,45 +1205,251 @@
                     $(this).css('transform', 'translateY(0)');
                 }
             );
-            
-            // GSAP анимации
-            gsap.registerPlugin(ScrollTrigger);
-            
-            // Анимация появления элементов при скролле
-            gsap.utils.toArray('.info-card, .stat-card, .building-card').forEach(card => {
-                gsap.from(card, {
-                    scrollTrigger: {
-                        trigger: card,
-                        start: "top 80%",
-                        end: "bottom 20%",
-                        toggleActions: "play none none reverse"
-                    },
-                    y: 50,
-                    opacity: 0,
-                    duration: 1,
-                    ease: "power3.out"
-                });
-            });
-            
-            // Анимация заголовков секций
-            gsap.utils.toArray('.section-title').forEach(title => {
-                gsap.from(title, {
-                    scrollTrigger: {
-                        trigger: title,
-                        start: "top 85%",
-                        end: "bottom 15%",
-                        toggleActions: "play none none reverse"
-                    },
-                    y: 30,
-                    opacity: 0,
-                    duration: 1,
-                    ease: "power3.out"
-                });
-            });
         });
     </script>
+
+    <script>
+        // Данные с разными размерами для фото
+        const itemsData = [
+            // Фото с разными размерами (2-6 колонок)
+            { id: 1, type: 'photo', category: 'event', year: '2021', title: 'Концерт на открытом воздухе', 
+              imageUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80',
+              size: 4 },
+            
+            { id: 2, type: 'photo', category: 'education', year: '2021', title: 'Учебная лаборатория', 
+              imageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h-400&q=80',
+              size: 3 },
+            
+            { id: 3, type: 'photo', category: 'science', year: '2022', title: 'Исследование микроорганизмов', 
+              imageUrl: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80',
+              size: 5 },
+            
+            { id: 4, type: 'photo', category: 'conference', year: '2022', title: 'IT конференция 2022', 
+              imageUrl: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80',
+              size: 6 },
+            
+            { id: 5, type: 'photo', category: 'event', year: '2023', title: 'Спортивные соревнования', 
+              imageUrl: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80',
+              size: 2 },
+            
+            { id: 6, type: 'photo', category: 'education', year: '2023', title: 'Мастер-класс по программированию', 
+              imageUrl: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80',
+              size: 4 },
+            
+            { id: 7, type: 'photo', category: 'science', year: '2024', title: 'Химический эксперимент', 
+              imageUrl: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80',
+              size: 3 },
+            
+            { id: 8, type: 'photo', category: 'conference', year: '2024', title: 'Научная выставка', 
+              imageUrl: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80',
+              size: 5 },
+            
+            { id: 9, type: 'photo', category: 'event', year: '2025', title: 'Музыкальный фестиваль', 
+              imageUrl: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80',
+              size: 4 },
+            
+            { id: 10, type: 'photo', category: 'education', year: '2025', title: 'Онлайн обучение', 
+              imageUrl: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80',
+              size: 6 },
+            
+            // Видео (всегда 4 колонки)
+            { id: 11, type: 'video', category: 'event', year: '2021', title: 'Запись городского мероприятия', 
+              videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+              thumbnailUrl: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80' },
+            
+            { id: 12, type: 'video', category: 'education', year: '2021', title: 'Обучающий курс по математике', 
+              videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+              thumbnailUrl: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80' },
+            
+            { id: 13, type: 'video', category: 'science', year: '2022', title: 'Научный доклад о космосе', 
+              videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+              thumbnailUrl: 'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80' },
+            
+            { id: 14, type: 'video', category: 'conference', year: '2022', title: 'Презентация новых технологий', 
+              videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+              thumbnailUrl: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80' },
+            
+            { id: 15, type: 'video', category: 'event', year: '2023', title: 'Прямая трансляция концерта', 
+              videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+              thumbnailUrl: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80' },
+            
+            { id: 16, type: 'video', category: 'education', year: '2023', title: 'Вебинар по веб-разработке', 
+              videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+              thumbnailUrl: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80' },
+            
+            { id: 17, type: 'video', category: 'science', year: '2024', title: 'Исследование климата', 
+              videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+              thumbnailUrl: 'https://images.unsplash.com/photo-1507413245164-6160d8298b31?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80' },
+            
+            { id: 18, type: 'video', category: 'conference', year: '2024', title: 'Круглый стол экспертов', 
+              videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+              thumbnailUrl: 'https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80' },
+            
+            { id: 19, type: 'video', category: 'event', year: '2025', title: 'Интервью с участниками', 
+              videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+              thumbnailUrl: 'https://images.unsplash.com/photo-1496337589254-7e19d01fa585?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80' },
+            
+            { id: 20, type: 'video', category: 'education', year: '2025', title: 'Онлайн лекция по истории', 
+              videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+              thumbnailUrl: 'https://images.unsplash.com/photo-1417733403748-83bbc7c05140?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80' },
+        ];
+
+        // Текущие фильтры
+        const filters = {
+            type: 'all',
+            category: 'all',
+            year: 'all'
+        };
+
+        // Инициализация
+        function init() {
+            renderGallery();
+            setupFilters();
+            updateFilteredGallery();
+        }
+
+        // Рендеринг галереи с использованием Bootstrap сетки
+        function renderGallery() {
+            const grid = document.getElementById('galleryGrid');
+            const categories = {
+                event: 'Мероприятие',
+                education: 'Образование', 
+                science: 'Наука',
+                conference: 'Конференции'
+            };
+            
+            itemsData.forEach(item => {
+                // Для фото: случайный размер от 2 до 6, если не указан
+                if (item.type === 'photo' && !item.size) {
+                    item.size = Math.floor(Math.random() * 5) + 2; // 2-6
+                }
+                
+                const colClass = item.type === 'photo' 
+                    ? `col-md-${item.size * 2}` // Bootstrap: 12 колонок, 1 размер = 2 колонки
+                    : 'col-md-8 col-lg-8'; // Видео: 4 колонки (8/12 = 4 колонки)
+                
+                const div = document.createElement('div');
+                div.className = `${colClass} gallery-item ${item.type} ${item.type === 'photo' ? `size-${item.size}` : ''}`;
+                div.setAttribute('data-type', item.type);
+                div.setAttribute('data-category', item.category);
+                div.setAttribute('data-year', item.year);
+                
+                // Контент в зависимости от типа
+                let mediaContent = '';
+                
+                if (item.type === 'photo') {
+                    mediaContent = `<img src="${item.imageUrl}" alt="${item.title}" class="img-fluid">`;
+                } else {
+                    mediaContent = `
+                        <div class="video-thumbnail">
+                            <div class="play-icon">▶</div>
+                            <img src="${item.thumbnailUrl}" alt="${item.title}" class="img-fluid">
+                        </div>
+                    `;
+                }
+                
+                div.innerHTML = `
+                    ${mediaContent}
+                    <div class="gallery-overlay">
+                        <div class="overlay-content">
+                            <div class="overlay-title">${item.title}</div>
+                            <div class="overlay-meta">
+                                <span class="badge ${item.type === 'photo' ? 'badge-photo' : 'badge-video'}">
+                                    ${item.type === 'photo' ? 'Фото' : 'Видео'}
+                                </span>
+                                <span>${categories[item.category]}</span>
+                                <span>${item.year} год</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                // Обработчик клика для видео
+                if (item.type === 'video' && item.videoUrl) {
+                    div.addEventListener('click', (e) => {
+                        if (!e.target.closest('.filter-option')) {
+                            window.open(item.videoUrl, '_blank');
+                        }
+                    });
+                }
+                
+                grid.appendChild(div);
+            });
+        }
+
+        // Настройка фильтров
+        function setupFilters() {
+            document.querySelectorAll('.filter-option').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const filterType = this.getAttribute('data-filter');
+                    const filterValue = this.getAttribute('data-value');
+                    
+                    // Сброс активного состояния в группе
+                    document.querySelectorAll(`[data-filter="${filterType}"]`)
+                        .forEach(b => b.classList.remove('active'));
+                    
+                    // Установка активного состояния
+                    this.classList.add('active');
+                    
+                    // Обновление фильтра
+                    filters[filterType] = filterValue;
+                    
+                    // Применение фильтрации
+                    updateFilteredGallery();
+                });
+            });
+        }
+
+        // Обновление отфильтрованной галереи
+        function updateFilteredGallery() {
+            const items = document.querySelectorAll('.gallery-item');
+            let visibleCount = 0;
+            
+            items.forEach(item => {
+                const matchesType = filters.type === 'all' || item.getAttribute('data-type') === filters.type;
+                const matchesCat = filters.category === 'all' || item.getAttribute('data-category') === filters.category;
+                const matchesYear = filters.year === 'all' || item.getAttribute('data-year') === filters.year;
+                
+                // Отображаем только если ВСЕ условия выполнены
+                if (matchesType && matchesCat && matchesYear) {
+                    item.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            // Обновление счетчика
+            document.getElementById('count').textContent = visibleCount;
+            
+            // Сообщение если нет результатов
+            showNoResults(visibleCount);
+        }
+
+        // Показать/скрыть сообщение об отсутствии результатов
+        function showNoResults(count) {
+            const grid = document.getElementById('galleryGrid');
+            let msg = document.querySelector('.no-results');
+            
+            if (count === 0) {
+                if (!msg) {
+                    msg = document.createElement('div');
+                    msg.className = 'col-12 no-results';
+                    msg.innerHTML = `
+                        <div class="no-results-icon">🔍</div>
+                        <h4>Ничего не найдено</h4>
+                        <p>Попробуйте изменить параметры фильтрации</p>
+                    `;
+                    grid.appendChild(msg);
+                }
+            } else if (msg) {
+                msg.remove();
+            }
+        }
+
+        // Запуск при загрузке
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+    
 </body>
 </html>
-
-   
-   
