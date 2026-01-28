@@ -2,40 +2,20 @@
 
 // Объявляем функцию в глобальной области видимости
 function initTabs() {
-  console.log('initTabs function called');
+  console.log('Simplified tabs init');
   
-  const navbarMenu = document.querySelector('.navbar-menu');
   const tabTriggers = document.querySelectorAll('#academy-tab .nav-link');
   const tabPanes = document.querySelectorAll('.tab-pane');
+  const navbarMenu = document.querySelector('.navbar-menu');
   
-  console.log('Found elements:', {
-    navbarMenu: !!navbarMenu,
-    tabTriggers: tabTriggers.length,
-    tabPanes: tabPanes.length
+  // Инициализация - все закрыто
+  tabPanes.forEach(pane => pane.classList.remove('show', 'active'));
+  tabTriggers.forEach(trigger => {
+    trigger.classList.remove('active');
+    trigger.setAttribute('aria-selected', 'false');
   });
   
-  let activeTab = null;
-
-  // Закрываем все табы при инициализации
-  function closeAllTabsOnLoad() {
-    tabTriggers.forEach(trigger => {
-      trigger.classList.remove('active');
-      trigger.setAttribute('aria-selected', 'false');
-    });
-    
-    tabPanes.forEach(pane => {
-      pane.classList.remove('show', 'active');
-    });
-    
-    activeTab = null;
-    if (navbarMenu) {
-      navbarMenu.classList.remove('tab-open');
-    }
-  }
-
-  // Вызываем при загрузке
-  closeAllTabsOnLoad();
-
+  // Обработчик кликов
   tabTriggers.forEach(trigger => {
     trigger.addEventListener('click', function(e) {
       e.preventDefault();
@@ -44,67 +24,37 @@ function initTabs() {
       const targetId = this.getAttribute('data-coreui-target');
       const targetPane = document.querySelector(targetId);
       
-      if (!targetPane) {
-        console.error('Target pane not found:', targetId);
-        return;
-      }
+      if (!targetPane) return;
       
-      // Если кликаем на активный таб - закрываем все
-      if (this === activeTab) {
-        closeAllTabs();
-      } else {
-        // Активируем выбранный таб
-        activateTab(this, targetPane);
-      }
+      // Закрываем все
+      tabTriggers.forEach(t => t.classList.remove('active'));
+      tabPanes.forEach(p => p.classList.remove('show', 'active'));
+      
+      // Открываем выбранный
+      this.classList.add('active');
+      this.setAttribute('aria-selected', 'true');
+      targetPane.classList.add('show', 'active');
+      
+      // Добавляем класс для стилей
+      if (navbarMenu) navbarMenu.classList.add('tab-open');
     });
-  });
-
-  function activateTab(trigger, pane) {
-    // Деактивируем все табы
-    closeAllTabs();
-    
-    // Активируем выбранный
-    trigger.classList.add('active');
-    trigger.setAttribute('aria-selected', 'true');
-    pane.classList.add('show', 'active');
-    
-    activeTab = trigger;
-    if (navbarMenu) {
-      navbarMenu.classList.add('tab-open');
-    }
-  }
-
-  function closeAllTabs() {
-    tabTriggers.forEach(trigger => {
-      trigger.classList.remove('active');
-      trigger.setAttribute('aria-selected', 'false');
-    });
-    
-    tabPanes.forEach(pane => {
-      pane.classList.remove('show', 'active');
-    });
-    
-    activeTab = null;
-    if (navbarMenu) {
-      navbarMenu.classList.remove('tab-open');
-    }
-  }
-
-  // Закрытие по клику вне области
-  document.addEventListener('click', function(e) {
-    if (activeTab && navbarMenu && !navbarMenu.contains(e.target)) {
-      closeAllTabs();
-    }
-  });
-
-  // Закрытие по Escape
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && activeTab) {
-      closeAllTabs();
-    }
   });
   
-  console.log('Tabs initialized successfully');
+  // Закрытие по клику вне
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.navbar-menu')) {
+      tabTriggers.forEach(t => t.classList.remove('active'));
+      tabPanes.forEach(p => p.classList.remove('show', 'active'));
+      if (navbarMenu) navbarMenu.classList.remove('tab-open');
+    }
+  });
+}
+
+// Запуск при загрузке
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initTabs);
+} else {
+  initTabs();
 }
 
 // Явно добавляем функцию в window
