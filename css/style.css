@@ -42,15 +42,6 @@
     z-index: 1031 !important;
 }
 
-/* Отступ для первой секции под фиксированный хедер */
-#start, section:first-of-type {
-    padding-top: 120px !important; /* Подберите под высоту хедера + таба */
-}
-
-body {
-    padding-top: 70px !important; /* Высота хедера */
-}
-
 /*@media (min-width: 1200px) {
     .container, .container-lg, .container-md, .container-sm, .container-xl {
         max-width: 1320px;
