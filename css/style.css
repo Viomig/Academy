@@ -175,7 +175,6 @@ header li{
 
 .row{
   --bs-gutter-x: 22px !important;
-  --bs-gutter-y: 22px !important;
   --nested-gutter-x: 12px !important;
   --nested-gutter-y: 12px !important;
 }
