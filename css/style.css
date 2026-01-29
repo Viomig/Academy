@@ -7,7 +7,6 @@
 
 /* ФИКС ДЛЯ ХЕДЕРА С ТАБАМИ */
 .academy-navbar {
-    position: fixed !important;
     top: 0 !important;
     left: 0 !important;
     right: 0 !important;
@@ -895,7 +894,6 @@ table {
 
  .academy-navbar {
   width: 100%;
-  position: fixed;
   min-height: 70px;
   background-color: #232328;
   color: white;
