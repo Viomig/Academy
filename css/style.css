@@ -24,7 +24,6 @@
 /* Когда таб открыт - фиксируем меню */
 .navbar-menu.tab-open {
     position: fixed !important;
-    top: 70px !important; /* Высота хедера */
     left: 0 !important;
     right: 0 !important;
     width: 100% !important;
