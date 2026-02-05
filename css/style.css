@@ -40,13 +40,14 @@
     z-index: 1031 !important;
 }
 
-/*@media (min-width: 1200px) {
+@media (min-width: 1200px) {
     .container, .container-lg, .container-md, .container-sm, .container-xl {
         max-width: 1320px;
+        overflow-x: hidden !important;
     }
 }
 
-@media (min-width: 560px) {
+/*@media (min-width: 560px) {
     .container, .container-lg, .container-md, .container-sm, .container-xl {
         max-width: 1320px;
     }
@@ -87,8 +88,6 @@ html {
 }
 
 body {
-  max-width: 1280px;
-  overflow-x: hidden;
   width: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
