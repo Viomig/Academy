@@ -45,12 +45,6 @@
         max-width: 1320px;
         overflow-x: hidden !important;
     }
-
-    section{
-      margin: 0 auto;
-        overflow-x: hidden !important;
-        max-width: 1320px;
-    }
 }
 
 /*@media (min-width: 560px) {
