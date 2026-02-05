@@ -47,6 +47,7 @@
     }
 
     section{
+      margin: 0 auto;
         overflow-x: hidden !important;
         max-width: 1320px;
     }
