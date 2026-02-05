@@ -47,7 +47,7 @@ function initTabs() {
       tabPanes.forEach(p => p.classList.remove('show', 'active'));
       if (navbarMenu) navbarMenu.classList.remove('tab-open');
     }
-  });
+  }, true);
 }
 
 // Запуск при загрузке
