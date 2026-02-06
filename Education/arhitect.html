@@ -26,977 +26,647 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<style>
-    /* ===== БАЗОВЫЕ СТИЛИ И ПЕРЕМЕННЫЕ ===== */
-    :root {
-        --primary-blue: #080D6B;
-        --secondary-pink: #ED1160;
-        --dark-grey: #232328;
-        --medium-grey: #777777;
-        --light-grey: #f3f3f3;
-        --white: #ffffff;
-        --black: #000000;
-        --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%);
-        --gradient-dark: linear-gradient(45deg, #131313, var(--primary-blue));
-    }
-
-    /* ===== ОБЩИЕ СТИЛИ ===== */
-    body {
-        font-family: 'Montserrat', sans-serif;
-        color: var(--black);
-        line-height: 1.6;
-    }
-
-    /* ===== ТИПОГРАФИКА ===== */
-    h1, h2, h3, h4, h5, h6 {
-        font-weight: 500;
-        margin-bottom: 1rem;
-    }
-
-    .section-title {
-        font-size: 40px;
-        font-weight: 500;
-        text-transform: uppercase;
-        line-height: 1.3;
-        margin-bottom: 40px;
-        position: relative;
-    }
-
-    .section-title::after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        left: 0;
-        width: 60px;
-        height: 3px;
-        background-color: var(--primary-blue);
-    }
-
-    /* ===== СЕКЦИИ ===== */
-    section {
-        padding: 80px 0;
-    }
-
-    @media (max-width: 768px) {
-        section {
-            padding: 60px 0;
+ <style>
+        :root {
+            --primary-blue: #080D6B;
+            --secondary-pink: #ED1160;
+            --dark-grey: #232328;
+            --medium-grey: #777777;
+            --light-grey: #f3f3f3;
+            --white: #ffffff;
+            --black: #000000;
+            --light-blue: #E6E7F0;
+            --dark-grey-text: #8C8C8C;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--black);
+            line-height: 1.6;
         }
         
         .section-title {
-            font-size: 32px;
-        }
-    }
-
-    @media (max-width: 576px) {
-        section {
-            padding: 40px 0;
+            font-size: 40px;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-bottom: 40px;
         }
         
-        .section-title {
-            font-size: 28px;
-        }
-    }
-
-    /* ===== НАВИГАЦИЯ ===== */
-    .navbar {
-        padding: 1rem 0;
-        transition: all 0.3s ease;
-        background: var(--gradient-dark) !important;
-    }
-
-    .navbar-brand {
-        font-weight: 700;
-        font-size: 1.5rem;
-        color: var(--white) !important;
-    }
-
-    .nav-link {
-        font-weight: 600;
-        font-size: 0.9rem;
-        text-transform: uppercase;
-        margin: 0 0.5rem;
-        transition: color 0.3s ease;
-        color: rgba(255, 255, 255, 0.9) !important;
-    }
-
-    .nav-link:hover,
-    .nav-link.active {
-        color: var(--secondary-pink) !important;
-    }
-
-    .navbar-toggler {
-        border: none;
-        padding: 0;
-        color: var(--white);
-    }
-
-    .navbar-toggler:focus {
-        box-shadow: none;
-    }
-
-    .search-container .form-control {
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        color: var(--white);
-    }
-
-    .search-container .form-control::placeholder {
-        color: rgba(255, 255, 255, 0.6);
-    }
-
-    .search-container .btn-outline-light {
-        border-color: rgba(255, 255, 255, 0.2);
-    }
-
-    /* ===== ГЕРОЙ СЕКЦИЯ ===== */
-    .hero-section {
-        margin-top: 73px;
-    }
-
-    .hero-banner {
-        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                    url('image/hero-bg.jpg') center/cover no-repeat;
-        min-height: 60vh;
-        position: relative;
-    }
-
-    .hero-content h1 {
-        font-size: 60px;
-        font-weight: 500;
-        line-height: 1.1;
-        margin-bottom: 30px;
-        text-transform: uppercase;
-    }
-
-    .program-info p {
-        margin-bottom: 0.75rem;
-        font-size: 1.1rem;
-        color: rgba(255, 255, 255, 0.9);
-    }
-
-    .program-info strong {
-        color: var(--secondary-pink);
-        font-weight: 600;
-    }
-
-    @media (max-width: 992px) {
-        .hero-content h1 {
-            font-size: 48px;
-        }
-        
-        .program-info p {
-            font-size: 1rem;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .hero-content h1 {
-            font-size: 36px;
-        }
-        
-        .hero-banner {
-            min-height: 50vh;
-        }
-    }
-
-    /* ===== КАРТОЧКИ ===== */
-    .partner-card {
-        transition: all 0.3s ease;
-        border: none;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-        height: 100%;
-    }
-
-    .partner-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-    }
-
-    .partner-card img {
-        max-height: 80px;
-        width: auto;
-        object-fit: contain;
-        padding: 1rem;
-    }
-
-    .program-card {
-        border-radius: 15px;
-        overflow: hidden;
-        min-height: 250px;
-        background-size: cover;
-        background-position: center;
-        transition: all 0.3s ease;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        position: relative;
-    }
-
-    .program-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-    }
-
-    .card-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
-        z-index: 1;
-    }
-
-    /* ===== АККОРДЕОН ===== */
-    .accordion-button {
-        font-size: 1.25rem;
-        font-weight: 500;
-        padding: 1.5rem;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        border-radius: 12px !important;
-        margin-bottom: 0.5rem;
-        background: var(--white);
-        transition: all 0.3s ease;
-    }
-
-    .accordion-button:not(.collapsed) {
-        background-color: var(--white);
-        color: var(--primary-blue);
-        border-color: var(--primary-blue);
-        box-shadow: 0 5px 15px rgba(8, 13, 107, 0.1);
-    }
-
-    .accordion-button:focus {
-        border-color: var(--primary-blue);
-        box-shadow: 0 0 0 0.25rem rgba(8, 13, 107, 0.25);
-    }
-
-    .accordion-button::after {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23080D6B'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-    }
-
-    .accordion-button:not(.collapsed)::after {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ED1160'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-    }
-
-    .accordion-body {
-        padding: 1.5rem;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        border-top: none;
-        border-radius: 0 0 12px 12px;
-        background: var(--white);
-    }
-
-    /* ===== ПРАКТИКИ ===== */
-    .practice-map {
-        min-height: 300px;
-        background: var(--light-grey);
-        border-radius: 15px;
-        overflow: hidden;
-        position: relative;
-    }
-
-    .practice-location {
-        padding: 2rem;
-        background: var(--white);
-        border-radius: 15px;
-        transition: all 0.3s ease;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-        text-align: center;
-        height: 100%;
-    }
-
-    .practice-location:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-    }
-
-    .practice-location .icon {
-        font-size: 48px;
-        margin-bottom: 1rem;
-    }
-
-    /* ===== ПРЕИМУЩЕСТВА ===== */
-    .advantages-card {
-        background: var(--gradient-dark);
-        border: none;
-        border-radius: 15px;
-        color: var(--white);
-        overflow: hidden;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-    }
-
-    .advantages-card .card-body {
-        padding: 3rem;
-    }
-
-    /* ===== КОНТАКТЫ ===== */
-    .contact-section {
-        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    }
-
-    .contact-image {
-        width: 100%;
-        height: 300px;
-        background: var(--gradient-primary);
-        border-radius: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--white);
-    }
-
-    .contact-image i {
-        font-size: 100px;
-    }
-
-    .contact-info p {
-        font-size: 1.1rem;
-        margin-bottom: 1rem;
-    }
-
-    .contact-info a {
-        color: var(--primary-blue);
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-
-    .contact-info a:hover {
-        color: var(--secondary-pink);
-    }
-
-    /* ===== КНОПКИ ===== */
-    .btn {
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 500;
-        border-radius: 50px;
-        transition: all 0.3s ease;
-        padding: 0.75rem 1.5rem;
-    }
-
-    .btn-dark-grey {
-        background: var(--dark-grey);
-        border: none;
-        color: var(--white);
-    }
-
-    .btn-dark-grey:hover,
-    .btn-dark-grey.active {
-        background: var(--gradient-primary);
-        color: var(--white);
-        transform: translateY(-2px);
-        box-shadow: 0 10px 20px rgba(8, 13, 107, 0.3);
-    }
-
-    .btn-outline-dark-grey {
-        border: 2px solid var(--dark-grey);
-        color: var(--dark-grey);
-        background: transparent;
-    }
-
-    .btn-outline-dark-grey:hover {
-        background: var(--gradient-dark);
-        border-color: transparent;
-        color: var(--white);
-        transform: translateY(-2px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    .btn-blue {
-        background: var(--primary-blue);
-        color: var(--white);
-        border: none;
-    }
-
-    .btn-blue:hover {
-        background: var(--gradient-primary);
-        color: var(--white);
-        transform: translateY(-2px);
-        box-shadow: 0 10px 20px rgba(8, 13, 107, 0.3);
-    }
-
-    /* ===== ФУТЕР ===== */
-    footer {
-        background: var(--gradient-dark);
-        color: var(--white);
-        position: relative;
-    }
-
-    .footer-title {
-        font-size: 1rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        padding-bottom: 0.5rem;
-        margin-bottom: 1.5rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        position: relative;
-    }
-
-    .footer-title::after {
-        content: '';
-        position: absolute;
-        bottom: -1px;
-        left: 0;
-        width: 40px;
-        height: 2px;
-        background: var(--secondary-pink);
-    }
-
-    .footer-menu {
-        margin-top: 0.5rem;
-    }
-
-    .footer-link {
-        color: rgba(255, 255, 255, 0.8);
-        text-decoration: none;
-        font-size: 0.9rem;
-        display: block;
-        margin-bottom: 0.75rem;
-        transition: all 0.3s ease;
-        padding: 0.25rem 0;
-    }
-
-    .footer-link:hover {
-        color: var(--secondary-pink);
-        transform: translateX(5px);
-    }
-
-    .footer-contact p {
-        font-size: 0.9rem;
-        margin-bottom: 0.75rem;
-        color: rgba(255, 255, 255, 0.8);
-    }
-
-    .social-link {
-        display: inline-block;
-        color: rgba(255, 255, 255, 0.8);
-        font-size: 1.25rem;
-        margin-right: 1rem;
-        transition: all 0.3s ease;
-    }
-
-    .social-link:hover {
-        color: var(--secondary-pink);
-        transform: translateY(-3px);
-    }
-
-    .footer-logo {
-        width: 150px;
-        height: 150px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 1.5rem;
-    }
-
-    /* ===== КНОПКА "НАВЕРХ" ===== */
-    .scroll-top-btn {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        z-index: 1000;
-    }
-
-    .scroll-top-btn .btn {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.3s ease;
-        background: var(--gradient-primary);
-        border: none;
-        box-shadow: 0 5px 15px rgba(8, 13, 107, 0.3);
-    }
-
-    .scroll-top-btn .btn.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .scroll-top-btn .btn:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(8, 13, 107, 0.4);
-    }
-
-    /* ===== АНИМАЦИИ ===== */
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .fade-in-up {
-        animation: fadeInUp 0.6s ease forwards;
-    }
-
-    /* ===== УТИЛИТЫ ===== */
-    .min-vh-50 {
-        min-height: 50vh;
-    }
-
-    .z-2 {
-        z-index: 2;
-    }
-
-    .bg-gradient-dark {
-        background: var(--gradient-dark);
-    }
-
-    .text-gradient {
-        background: var(--gradient-primary);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-
-    /* ===== АДАПТИВНОСТЬ ===== */
-    @media (max-width: 992px) {
-        .navbar-collapse {
-            background: var(--gradient-dark);
-            padding: 1.5rem;
+        .program-header {
+            background-size: cover;
+            background-position: center;
             border-radius: 15px;
-            margin-top: 1rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            min-height: 290px;
+            position: relative;
         }
         
-        .nav-link {
-            margin: 0.5rem 0;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
+        .program-overlay {
+            background: linear-gradient(180deg, rgba(8, 13, 107, 0) 0%, rgba(8, 13, 107, 0.9) 100%);
+            border-radius: 15px;
+            padding: 32px;
         }
         
-        .nav-link:hover,
-        .nav-link.active {
-            background: rgba(255, 255, 255, 0.1);
+        .program-code {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 12px;
         }
         
-        .search-container {
-            margin-top: 1rem;
+        .program-name {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--white);
+            text-transform: uppercase;
         }
-    }
-
-    @media (max-width: 768px) {
-        .btn-group {
-            flex-wrap: wrap;
+        
+        .info-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .info-label {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 4px;
+        }
+        
+        .info-value {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+        
+        .advantage-card {
+            background: var(--primary-blue);
+            border-radius: 15px;
+            padding: 40px;
+            color: var(--white);
+        }
+        
+        .advantage-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .partner-card {
+            background: var(--white);
+            border: 1px solid #D2D2D2;
+            border-radius: 15px;
+            padding: 28px;
+            height: 100%;
+            display: flex;
+            align-items: center;
             justify-content: center;
         }
         
-        .btn-group .btn {
-            margin-bottom: 0.5rem;
-            margin-right: 0.5rem;
+        .partner-logo {
+            max-width: 100%;
+            max-height: 80px;
+            object-fit: contain;
         }
         
-        .program-card {
-            min-height: 200px;
+        .discipline-card {
+            background: var(--white);
+            border: 1px solid #D2D2D2;
+            border-radius: 15px;
+            padding: 28px;
+            margin-bottom: 20px;
         }
         
-        .advantages-card .card-body {
-            padding: 2rem;
-        }
-    }
-
-    @media (max-width: 576px) {
-        .hero-content h1 {
-            font-size: 32px;
+        .discipline-title {
+            font-size: 22px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 0;
         }
         
-        .practice-location {
-            padding: 1.5rem;
+        .contact-section {
+            background: var(--light-grey);
+            border-radius: 15px;
+            padding: 60px;
         }
         
-        .footer-logo {
-            width: 100px;
-            height: 100px;
+        .contact-person {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--black);
+            margin-bottom: 20px;
         }
-    }
-</style>
+        
+        .contact-info {
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+        
+        .other-program-card {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%);
+            border-radius: 15px;
+            padding: 20px;
+            height: 100%;
+            color: var(--white);
+            text-decoration: none;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .other-program-card:hover {
+            transform: translateY(-5px);
+            color: var(--white);
+            text-decoration: none;
+        }
+        
+        .other-program-code {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .other-program-name {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+        
+        .filter-btn {
+            background: var(--light-blue);
+            border: none;
+            border-radius: 50px;
+            padding: 10px 16px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--dark-grey-text);
+            margin-right: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .filter-btn.active {
+            background: var(--dark-grey-text);
+            color: var(--white);
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+        
+        .back-link:hover {
+            color: var(--secondary-pink);
+        }
+        
+        .text-primary-blue {
+            color: var(--primary-blue);
+        }
+        
+        .text-decoration-underline {
+            text-decoration: underline;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .program-header {
+                min-height: 200px;
+            }
+            
+            .program-code,
+            .program-name {
+                font-size: 24px;
+            }
+            
+            .advantage-card {
+                padding: 30px;
+            }
+            
+            .contact-section {
+                padding: 40px 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .program-overlay {
+                padding: 20px;
+            }
+            
+            .filter-btn {
+                font-size: 12px;
+                padding: 8px 12px;
+                margin-right: 8px;
+                margin-bottom: 8px;
+            }
+            
+            .partner-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
 <body>
-
     <header class="header" id="header-placeholder">
+        <!-- Общая навигация будет здесь -->
     </header>
 
-    <!-- Герой секция -->
-    <section class="hero-section">
-        <div class="container-fluid p-0">
-            <div class="hero-banner position-relative">
-                <div class="container position-relative z-2 py-5">
-                    <div class="row align-items-center min-vh-50">
-                        <div class="col-lg-8">
-                            <div class="hero-content text-white">
-                                <h1 class="hero-title">07.03.01 <br>Архитектура</h1>
-                                <div class="program-info">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <p><strong>Уровень образования:</strong> Бакалавриат</p>
-                                            <p><strong>Направление подготовки:</strong> Архитектура</p>
-                                            <p><strong>Место реализации:</strong> г. Ростов-на-Дону</p>
-                                            <p><strong>Структурное подразделение:</strong> Академия архитектуры и искусств</p>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p><strong>Бюджетные места:</strong> 90</p>
-                                            <p><strong>Коммерческие места:</strong> 25</p>
-                                            <p><strong>Язык обучения:</strong> Русский</p>
-                                        </div>
+    <main class="main-content">
+        <!-- Секция программы -->
+        <section class="py-5">
+            <div class="container">
+                <!-- Хлебные крошки -->
+                <a href="#" class="back-link">
+                    <i class="bi bi-arrow-left fs-5 me-2"></i>
+                    <span>Образование</span>
+                </a>
+                
+                <!-- Заголовок программы -->
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <div class="program-header" style="background-image: url('https://via.placeholder.com/1220x290');">
+                            <div class="program-overlay h-100 d-flex flex-column justify-content-end">
+                                <div class="program-code">07.03.01</div>
+                                <div class="program-name">Архитектура</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Информация о программе -->
+                <div class="row mb-5">
+                    <div class="col-lg-8">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="info-card">
+                                    <div class="info-label">Уровень образования:</div>
+                                    <div class="info-value">Бакалавриат</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-card">
+                                    <div class="info-label">Направление подготовки:</div>
+                                    <div class="info-value">Архитектура</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-card">
+                                    <div class="info-label">Место реализации:</div>
+                                    <div class="info-value">г. Ростов-на-Дону</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-card">
+                                    <div class="info-label">Структурное подразделение:</div>
+                                    <div class="info-value">Академия архитектуры и искусств</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="info-card h-100">
+                            <div class="info-label">Бюджетные места:</div>
+                            <div class="info-value">90</div>
+                            
+                            <div class="info-label mt-3">Коммерческие места:</div>
+                            <div class="info-value">25</div>
+                            
+                            <div class="info-label mt-3">Язык обучения:</div>
+                            <div class="info-value">Русский</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- О программе -->
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <h2 class="section-title">о программе</h2>
+                    </div>
+                </div>
+                
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <h4 class="fw-bold mb-3">Что будет во время обучения?</h4>
+                        <p class="mb-4">
+                            Образовательный каркас программы подготовки 07.03.01 «Архитектура» — это взаимосвязанная система дисциплин, развивающая общекультурные и формирующая профессиональные компетенции.
+                        </p>
+                        <p class="mb-4">
+                            Данная программа бакалавриата будет реализована высококвалифицированным профессорско-преподавательским составом Академии архитектуры и искусств ЮФУ с привлечением соответствующих организаций-партнеров.
+                        </p>
+                        <p>
+                            Наряду с традиционным образовательным форматом, для реализации дисциплин программы предполагается широкое использование возможностей современного электронного обучения и цифровых информационных технологий, включая защиту дипломной работы. Планируется освоение навыков визуальной и вербальной презентации архитектурного проекта, технологий искусственного интеллекта и нейросетевой генерации в архитектурном проектировании, элементов BIM-проектирования.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <h4 class="fw-bold mb-3">Кого и зачем учат по данной программе?</h4>
+                        <p>
+                            Главная цель программы 07.03.01 «Архитектура» — выпуск специалистов, востребованных в сфере архитектурно-строительной деятельности. Достичь поставленную цель предполагается в том числе за счет вовлечения представителей реального сектора экономики (работодателей, экспертов, чиновников) в процессы формирования концепции подготовки, образовательного процесса, контроля полученных знаний и итоговой аттестации.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <h4 class="fw-bold mb-3">Где смогут работать выпускники программы?</h4>
+                        <p class="mb-4">
+                            Высокий уровень подготовки обеспечит будущих бакалавров возможностью эффективно заниматься архитектурной деятельностью в различных профильных организациях (проектные институты, архитектурные бюро, творческие мастерские, административные органы управления в сфере архитектуры и т.д.).
+                        </p>
+                        <p>
+                            Накопленный опыт и традиции, поддержка нескольких научных направлений, научный потенциал, высококвалифицированный профессорско-преподавательский состав, налаженное взаимодействие с потенциальными работодателями позволят выпускникам программы не только успешно решить задачу гарантированного трудоустройства по специальности или продолжить обучение в магистратуре, но и активно заниматься научно-исследовательской работой.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Преимущества программы -->
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <div class="advantage-card">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <h3 class="advantage-title">Преимущества программы</h3>
+                                    <p class="mb-4">
+                                        Основная общая концепция программы — синхронизация всех дисциплин и практик, позволяющая получить полноценное профессиональное образование направления подготовки 07.03.01 «Архитектура», бакалавриат.
+                                    </p>
+                                    <p>
+                                        Конкурентным преимуществом программы являются студентоориентированность, актуальность преподаваемых дисциплин, плотное взаимодействие с заявленными организациями-партнерами на всех этапах обучения, а также прогнозируемая широкая востребованность и трудоустроенность выпускников программы.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Места проведения практик -->
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <h2 class="section-title">места проведения практик</h2>
+                        <p class="fs-5 fw-medium">
+                            Санкт-Петербург и пригороды, Казань, Москва и пригороды, Вологодская область, Псков, Ростов-на-Дону и города Ростовской области и др.
+                        </p>
+                        <!-- Здесь может быть карта или изображение с картой -->
+                        <div class="mt-4" style="height: 400px; background: var(--light-grey); border-radius: 15px;">
+                            <!-- Карта практик -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Партнеры программы -->
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <h2 class="section-title">партнеры программы</h2>
+                        
+                        <div class="row g-4 mt-4">
+                            <!-- Партнер 1 -->
+                            <div class="col-6 col-md-4 col-lg-3">
+                                <div class="partner-card">
+                                    <img src="https://via.placeholder.com/135x35" alt="Партнер" class="partner-logo">
+                                </div>
+                            </div>
+                            
+                            <!-- Партнер 2 -->
+                            <div class="col-6 col-md-4 col-lg-3">
+                                <div class="partner-card">
+                                    <img src="https://via.placeholder.com/63x81" alt="Партнер" class="partner-logo">
+                                </div>
+                            </div>
+                            
+                            <!-- Партнер 3 -->
+                            <div class="col-6 col-md-4 col-lg-3">
+                                <div class="partner-card">
+                                    <img src="https://via.placeholder.com/76x98" alt="Партнер" class="partner-logo">
+                                </div>
+                            </div>
+                            
+                            <!-- Партнер 4 -->
+                            <div class="col-6 col-md-4 col-lg-3">
+                                <div class="partner-card">
+                                    <img src="https://via.placeholder.com/135x41" alt="Партнер" class="partner-logo">
+                                </div>
+                            </div>
+                            
+                            <!-- Добавьте остальных партнеров аналогичным образом -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Дисциплины -->
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <h2 class="section-title">дисциплины</h2>
+                        
+                        <!-- Аккордеон с дисциплинами -->
+                        <div class="accordion" id="disciplinesAccordion">
+                            <!-- Набор базовых дисциплин -->
+                            <div class="discipline-card">
+                                <button class="btn w-100 text-start p-0" type="button" data-bs-toggle="collapse" data-bs-target="#basicDisciplines">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h3 class="discipline-title">набор базовых дисциплин</h3>
+                                        <i class="bi bi-chevron-down fs-4"></i>
+                                    </div>
+                                </button>
+                                <div id="basicDisciplines" class="collapse" data-bs-parent="#disciplinesAccordion">
+                                    <div class="pt-3">
+                                        <!-- Список базовых дисциплин -->
+                                        <p>Содержимое базовых дисциплин...</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Набор профессиональных дисциплин -->
+                            <div class="discipline-card">
+                                <button class="btn w-100 text-start p-0" type="button" data-bs-toggle="collapse" data-bs-target="#professionalDisciplines">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h3 class="discipline-title">набор профессиональных дисциплин</h3>
+                                        <i class="bi bi-chevron-down fs-4"></i>
+                                    </div>
+                                </button>
+                                <div id="professionalDisciplines" class="collapse" data-bs-parent="#disciplinesAccordion">
+                                    <div class="pt-3">
+                                        <!-- Список профессиональных дисциплин -->
+                                        <p>Содержимое профессиональных дисциплин...</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Элективные дисциплины -->
+                            <div class="discipline-card">
+                                <button class="btn w-100 text-start p-0" type="button" data-bs-toggle="collapse" data-bs-target="#electiveDisciplines">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h3 class="discipline-title">элективные дисциплины</h3>
+                                        <i class="bi bi-chevron-down fs-4"></i>
+                                    </div>
+                                </button>
+                                <div id="electiveDisciplines" class="collapse" data-bs-parent="#disciplinesAccordion">
+                                    <div class="pt-3">
+                                        <!-- Список элективных дисциплин -->
+                                        <p>Содержимое элективных дисциплин...</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                
+                <!-- Контакты -->
+                <div class="row mb-5">
+                    <div class="col-12">
+                        <div class="contact-section">
+                            <h2 class="section-title">Контакты</h2>
+                            
+                            <div class="row mt-4">
+                                <div class="col-lg-8">
+                                    <div class="contact-person">Руководитель программы:</div>
+                                    <div class="fs-4 fw-bold mb-4">Шеремет Анастасия Анатольевна</div>
+                                    
+                                    <div class="contact-info">
+                                        <span class="fw-medium">тел.:</span>
+                                        <span class="text-primary-blue fw-medium">+7 (906) 111-11-11</span>
+                                    </div>
+                                    
+                                    <div class="contact-info">
+                                        <span class="fw-medium">e-mail:</span>
+                                        <a href="mailto:aasheremet@sfedu.ru" class="text-primary-blue fw-medium text-decoration-underline">aasheremet@sfedu.ru</a>
+                                    </div>
+                                    
+                                    <div class="contact-info">
+                                        <span class="fw-medium">Группа </span>
+                                        <a href="#" class="text-primary-blue fw-medium text-decoration-underline">ВКонтакте</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Другие программы -->
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="section-title">другие программы</h2>
+                        
+                        <!-- Фильтры -->
+        <div class="row mb-4">
+          <div class="col-12">
+            <div class="program-filter">
+              <button class="filter-btn active" data-filter="bachelor">бакалавриат</button>
+              <button class="filter-btn" data-filter="specialty">Специалитет</button>
+              <button class="filter-btn" data-filter="master">магистратура</button>
+              <button class="filter-btn" data-filter="postgraduate">аспирантура</button>
             </div>
+          </div>
         </div>
-    </section>
-
-    <!-- О программе -->
-    <section>
-        <div class="container">
-            <h2 class="section-title mb-5">О программе</h2>
-            
-            <div class="row mb-5">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <h3 class="h4 fw-bold mb-4">Что будет во время обучения?</h3>
-                    <p class="lead">Образовательный каркас программы подготовки 07.03.01 «Архитектура» — это взаимосвязанная система дисциплин, развивающая общекультурные и формирующая профессиональные компетенции.</p>
-                    <p>Данная программа бакалавриата будет реализована высококвалифицированным профессорско-преподавательским составом Академии архитектуры и искусств ЮФУ с привлечением соответствующих организаций-партнеров.</p>
-                </div>
-                <div class="col-lg-6">
-                    <h3 class="h4 fw-bold mb-4">Кого и зачем учат по данной программе?</h3>
-                    <p class="lead">Главная цель программы 07.03.01 «Архитектура» — выпуск специалистов, востребованных в сфере архитектурно-строительной деятельности.</p>
-                    <p>Достичь поставленную цель предполагается в том числе за счет вовлечения представителей реального сектора экономики (работодателей, экспертов, чиновников) в процессы формирования концепции подготовки, образовательного процесса, контроля полученных знаний и итоговой аттестации.</p>
-                </div>
+        
+        <!-- Карточки программ -->
+        <div class="row" id="programsGrid">
+          <!-- Программа 1 -->
+          <div class="col-xl-2 col-lg-4 col-md-6">
+            <a href="/Academy/Education/arhitect.html"><div class="program-card" style="background-image: url('./image/1f4b07afd5301b4b982831a9b47e496be7c33acb.png'); background-size: cover;">
+              <div class="program-content">
+                <div class="program-code">07.03.01</div>
+                <div class="program-name">Архитектура</div>
+              </div>
+            </div></a>
+          </div>
+          
+          <!-- Программа 2 -->
+          <div class="col-xl-2 col-lg-4 col-md-6">
+            <div class="program-card" style="background-image: url('./image/Frame_55_31501.png'); background-size: cover;">
+              <div class="program-content">
+                <div class="program-code">07.03.02</div>
+                <div class="program-name">Реконструкция и реставрация архитектурного наследия</div>
+              </div>
             </div>
-            
-            <!-- Преимущества -->
-            <div class="advantages-card card mb-5 fade-in-up">
-                <div class="card-body">
-                    <div class="row align-items-center">
-                        <div class="col-lg-8">
-                            <h3 class="h3 fw-bold mb-4">Преимущества программы</h3>
-                            <p class="mb-0 fs-5">Основная общая концепция программы — синхронизация всех дисциплин и практик, позволяющая получить полноценное профессиональное образование направления подготовки 07.03.01 «Архитектура», бакалавриат. Конкурентным преимуществом программы являются студентоориентированность, актуальность преподаваемых дисциплин, плотное взаимодействие с заявленными организациями-партнерами на всех этапах обучения, а также прогнозируемая широкая востребованность и трудоустроенность выпускников программы.</p>
-                        </div>
-                        <div class="col-lg-4 text-center">
-                            <i class="bi bi-award-fill display-1 text-pink"></i>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          
+          <!-- Программа 3 -->
+          <div class="col-xl-2 col-lg-4 col-md-6">
+            <div class="program-card" style="background-image: url('./image/698d72831fb2b5cf328de77b70bdaaa117c9bbf0.png'); background-size: cover;">
+              <div class="program-content">
+                <div class="program-code">07.03.04</div>
+                <div class="program-name">Градостроительство</div>
+              </div>
             </div>
-            
-            <div class="row">
-                <div class="col-12">
-                    <h3 class="h4 fw-bold mb-4">Где смогут работать выпускники программы?</h3>
-                    <p class="lead">Высокий уровень подготовки обеспечит будущих бакалавров возможностью эффективно заниматься архитектурной деятельностью в различных профильных организациях.</p>
-                    <p>Накопленный опыт и традиции, поддержка нескольких научных направлений, научный потенциал, высококвалифицированный профессорско-преподавательский состав, налаженное взаимодействие с потенциальными работодателями позволят выпускникам программы не только успешно решить задачу гарантированного трудоустройства по специальности или продолжить обучение в магистратуре, но и активно заниматься научно-исследовательской работой.</p>
-                </div>
+          </div>
+          
+          <!-- Программа 4 -->
+          <div class="col-xl-2 col-lg-4 col-md-6">
+            <div class="program-card" style="background-image: url('./image/Frame_55_31509.png'); background-size: cover;">
+              <div class="program-content">
+                <div class="program-code">09.03.01</div>
+                <div class="program-name">Информатика и вычислительная техника</div>
+              </div>
             </div>
+          </div>
+          
+          <!-- Программа 5 -->
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="program-card" style="background-image: url('./image/Frame_55_31513.png'); background-size: cover;">
+              <div class="program-content">
+                <div class="program-code">44.03.05</div>
+                <div class="program-name">Педагогическое образование с двумя профилями подготовки</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Программа 6 -->
+          <div class="col-xl-2 col-lg-4 col-md-6">
+            <a href="/Academy/Education/design.html"><div class="program-card" style="background-image: url('./image/343b264953a174f668dc5697d32ea9e38f048f35.png'); background-size: cover;">
+              <div class="program-content">
+                <div class="program-code">54.03.01</div>
+                <div class="program-name">Дизайн</div>
+              </div>
+            </div></a>
+          </div>
+          
+          <!-- Программа 7 -->
+          <div class="col-xl-2 col-lg-4 col-md-6">
+            <div class="program-card" style="background-image: url('./image/Frame_55_31525.png'); background-size: cover;">
+              <div class="program-content">
+                <div class="program-code">54.03.01</div>
+                <div class="program-name">Дизайн костюма</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Программа 8 -->
+          <div class="col-xl-2 col-lg-4 col-md-6">
+            <div class="program-card" style="background-image: url('./image/Frame_55_31529.png'); background-size: cover;">
+              <div class="program-content">
+                <div class="program-code">54.03.02</div>
+                <div class="program-name">Декоративно-прикладное искусство и народные промыслы</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Программа 9 -->
+          <div class="col-xl-2 col-lg-4 col-md-6">
+            <div class="program-card" style="background-image: url('./image/Frame_55_31517.png'); background-size: cover;">
+              <div class="program-content">
+                <div class="program-code">54.03.03</div>
+                <div class="program-name">Искусство костюма и текстиля</div>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
-
-    <!-- Места проведения практик -->
-    <section class="bg-light">
-        <div class="container">
-            <h2 class="section-title mb-5">Места проведения практик</h2>
-            
-            <div class="practice-map position-relative mb-5 fade-in-up">
-                <div class="text-center py-5 px-3">
-                    <h3 class="h4 fw-bold mb-4">География практик</h3>
-                    <p class="lead mb-0">Санкт-Петербург и пригороды, Казань, Москва и пригороды, Вологодская область, Псков, Ростов-на-Дону и города Ростовской области и др.</p>
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="practice-location fade-in-up">
-                        <div class="icon text-blue">
-                            <i class="bi bi-geo-alt-fill"></i>
-                        </div>
-                        <h4 class="h5 fw-bold">Санкт-Петербург</h4>
-                        <p class="text-muted mb-0">Культурная столица России с богатым архитектурным наследием</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="practice-location fade-in-up">
-                        <div class="icon text-blue">
-                            <i class="bi bi-geo-alt-fill"></i>
-                        </div>
-                        <h4 class="h5 fw-bold">Москва</h4>
-                        <p class="text-muted mb-0">Современная архитектура и исторические памятники</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="practice-location fade-in-up">
-                        <div class="icon text-blue">
-                            <i class="bi bi-geo-alt-fill"></i>
-                        </div>
-                        <h4 class="h5 fw-bold">Ростов-на-Дону</h4>
-                        <p class="text-muted mb-0">Крупнейший культурный и деловой центр Юга России</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Партнеры программы -->
-    <section>
-        <div class="container">
-            <h2 class="section-title mb-5">Партнеры программы</h2>
-            
-            <div class="row g-4">
-                <!-- Партнер 1 -->
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="partner-card card h-100 fade-in-up">
-                        <div class="card-body d-flex align-items-center justify-content-center p-3">
-                            <img src="image/partner1.png" alt="Партнер 1" class="img-fluid">
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Партнер 2 -->
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="partner-card card h-100 fade-in-up">
-                        <div class="card-body d-flex align-items-center justify-content-center p-3">
-                            <img src="image/partner2.png" alt="Партнер 2" class="img-fluid">
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Партнер 3 -->
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="partner-card card h-100 fade-in-up">
-                        <div class="card-body d-flex align-items-center justify-content-center p-3">
-                            <img src="image/partner3.png" alt="Партнер 3" class="img-fluid">
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Партнер 4 -->
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="partner-card card h-100 fade-in-up">
-                        <div class="card-body d-flex align-items-center justify-content-center p-3">
-                            <span class="fw-bold fs-5 text-dark">ООО «АМТ»</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Дисциплины -->
-    <section class="bg-light">
-        <div class="container">
-            <h2 class="section-title mb-5">Дисциплины</h2>
-            
-            <div class="accordion" id="disciplinesAccordion">
-                <!-- Базовые дисциплины -->
-                <div class="accordion-item mb-3 fade-in-up">
-                    <h3 class="accordion-header">
-                        <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#basicDisciplines">
-                            <i class="bi bi-book me-2"></i>
-                            Набор базовых дисциплин
-                        </button>
-                    </h3>
-                    <div id="basicDisciplines" class="accordion-collapse collapse show" data-bs-parent="#disciplinesAccordion">
-                        <div class="accordion-body">
-                            <p class="lead">Фундаментальные дисциплины, формирующие базовые компетенции архитектора.</p>
-                            <ul class="list-unstyled">
-                                <li class="mb-2 d-flex">
-                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                                    <span>История архитектуры и градостроительства</span>
-                                </li>
-                                <li class="mb-2 d-flex">
-                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                                    <span>Начертательная геометрия</span>
-                                </li>
-                                <li class="mb-2 d-flex">
-                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                                    <span>Архитектурное проектирование</span>
-                                </li>
-                                <li class="mb-2 d-flex">
-                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                                    <span>Строительные конструкции</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Профессиональные дисциплины -->
-                <div class="accordion-item mb-3 fade-in-up">
-                    <h3 class="accordion-header">
-                        <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#professionalDisciplines">
-                            <i class="bi bi-briefcase me-2"></i>
-                            Набор профессиональных дисциплин
-                        </button>
-                    </h3>
-                    <div id="professionalDisciplines" class="accordion-collapse collapse" data-bs-parent="#disciplinesAccordion">
-                        <div class="accordion-body">
-                            <p class="lead">Специализированные дисциплины для глубокого погружения в профессию.</p>
-                            <ul class="list-unstyled">
-                                <li class="mb-2 d-flex">
-                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                                    <span>Архитектурная физика</span>
-                                </li>
-                                <li class="mb-2 d-flex">
-                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                                    <span>Ландшафтная архитектура</span>
-                                </li>
-                                <li class="mb-2 d-flex">
-                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                                    <span>Дизайн архитектурной среды</span>
-                                </li>
-                                <li class="mb-2 d-flex">
-                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                                    <span>Реставрация памятников архитектуры</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Элективные дисциплины -->
-                <div class="accordion-item fade-in-up">
-                    <h3 class="accordion-header">
-                        <button class="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#electiveDisciplines">
-                            <i class="bi bi-list-check me-2"></i>
-                            Элективные дисциплины
-                        </button>
-                    </h3>
-                    <div id="electiveDisciplines" class="accordion-collapse collapse" data-bs-parent="#disciplinesAccordion">
-                        <div class="accordion-body">
-                            <p class="lead">Дисциплины по выбору для индивидуальной траектории развития.</p>
-                            <ul class="list-unstyled">
-                                <li class="mb-2 d-flex">
-                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                                    <span>Цифровые технологии в архитектуре</span>
-                                </li>
-                                <li class="mb-2 d-flex">
-                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                                    <span>Урбанистика и городское планирование</span>
-                                </li>
-                                <li class="mb-2 d-flex">
-                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                                    <span>Экологическая архитектура</span>
-                                </li>
-                                <li class="mb-2 d-flex">
-                                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                                    <span>Менеджмент в архитектуре</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Контакты -->
-    <section class="contact-section">
-        <div class="container">
-            <h2 class="section-title mb-5">Контакты</h2>
-            
-            <div class="row align-items-center">
-                <div class="col-lg-3 mb-4 mb-lg-0">
-                    <div class="contact-image fade-in-up">
-                        <i class="bi bi-person-badge"></i>
-                    </div>
-                </div>
-                <div class="col-lg-9 fade-in-up">
-                    <h3 class="h2 fw-bold mb-3">Руководитель программы</h3>
-                    <h4 class="h3 text-gradient mb-4">Шеремет Анастасия Анатольевна</h4>
-                    
-                    <div class="contact-info">
-                        <p class="fs-5 mb-3">
-                            <i class="bi bi-telephone me-2 text-primary"></i>
-                            тел.: <a href="tel:+79064181790">+7 (906) 418-17-90</a>
-                        </p>
-                        <p class="fs-5 mb-3">
-                            <i class="bi bi-envelope me-2 text-primary"></i>
-                            e-mail: <a href="mailto:aasheremet@sfedu.ru">aasheremet@sfedu.ru</a>
-                        </p>
-                        <p class="fs-5 mb-0">
-                            <i class="bi bi-people me-2 text-primary"></i>
-                            Группа <a href="#" class="fw-bold">ВКонтакте</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Другие программы -->
-    <section>
-        <div class="container">
-            <h2 class="section-title mb-5">Другие программы</h2>
-            
-            <div class="mb-5">
-                <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-dark-grey active">Бакалавриат</button>
-                    <button type="button" class="btn btn-outline-dark-grey">Специалитет</button>
-                    <button type="button" class="btn btn-outline-dark-grey">Магистратура</button>
-                    <button type="button" class="btn btn-outline-dark-grey">Аспирантура</button>
-                </div>
-            </div>
-            
-            <div class="row g-4">
-                <!-- Программа 1 -->
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div class="program-card card h-100 border-0 text-white fade-in-up" style="background-image: url('image/program1-bg.jpg');">
-                        <div class="card-overlay"></div>
-                        <div class="card-body position-relative z-2 d-flex flex-column">
-                            <h5 class="card-title fw-bold fs-4">07.03.01</h5>
-                            <p class="card-text flex-grow-1 fs-5">Архитектура</p>
-                            <small class="text-white-50">Бакалавриат</small>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Программа 2 -->
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div class="program-card card h-100 border-0 text-white fade-in-up" style="background-image: url('image/program2-bg.jpg');">
-                        <div class="card-overlay"></div>
-                        <div class="card-body position-relative z-2 d-flex flex-column">
-                            <h5 class="card-title fw-bold fs-4">07.03.02</h5>
-                            <p class="card-text flex-grow-1 fs-5">Реконструкция и реставрация архитектурного наследия</p>
-                            <small class="text-white-50">Бакалавриат</small>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Программа 3 -->
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div class="program-card card h-100 border-0 text-white fade-in-up" style="background-image: url('image/program3-bg.jpg');">
-                        <div class="card-overlay"></div>
-                        <div class="card-body position-relative z-2 d-flex flex-column">
-                            <h5 class="card-title fw-bold fs-4">07.03.04</h5>
-                            <p class="card-text flex-grow-1 fs-5">Градостроительство</p>
-                            <small class="text-white-50">Бакалавриат</small>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Программа 4 -->
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div class="program-card card h-100 border-0 text-white fade-in-up" style="background-image: url('image/program4-bg.jpg');">
-                        <div class="card-overlay"></div>
-                        <div class="card-body position-relative z-2 d-flex flex-column">
-                            <h5 class="card-title fw-bold fs-4">09.03.01</h5>
-                            <p class="card-text flex-grow-1 fs-5">Информатика и вычислительная техника</p>
-                            <small class="text-white-50">Бакалавриат</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     
 <section id="end">
