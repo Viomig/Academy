@@ -1,73 +1,60 @@
 // Функция для загрузки компонентов
 async function loadComponent(componentName, targetElement) {
   try {
-    // ОРИГИНАЛЬНАЯ РАБОЧАЯ ЛОГИКА:
+    // ВАША ОРИГИНАЛЬНАЯ ЛОГИКА (которая работала на всех страницах)
     const hasSubfolder = window.location.pathname.split('/').filter(Boolean).length > 1;
     let basePath = hasSubfolder ? '../' : './';
     
-    // ДОПОЛНЕНИЕ: Проверка специально для главной страницы на GitHub
+    // МИНИМАЛЬНОЕ ИСПРАВЛЕНИЕ ТОЛЬКО ДЛЯ ГЛАВНОЙ СТРАНИЦЫ:
     const path = window.location.pathname;
     
-    // Если мы на главной странице GitHub Pages (/Academy/ или /Academy)
-    if (path === '/Academy/' || path === '/Academy' || path === '/Academy/index.html') {
-      basePath = './'; // Компоненты в той же папке
-      console.log('GitHub Pages main detected, using ./');
-    }
-    // Если мы на главной странице локального сервера
-    else if (path === '/' || path === '/index.html' || path.endsWith('/index.html')) {
+    // Если путь похож на главную страницу (корень или index.html)
+    const isMainPage = path === '/' || 
+                      path === '/index.html' || 
+                      path.endsWith('/index.html') ||
+                      path === '/Academy/' ||
+                      path === '/Academy' ||
+                      path === '/Academy/index.html' ||
+                      (path.split('/').filter(Boolean).length === 1 && 
+                       !path.includes('.html')); // Только одно слово в пути
+    
+    if (isMainPage) {
+      // Для главной страницы ВСЕГДА используем ./
       basePath = './';
-      console.log('Local main page detected, using ./');
+      console.log('Main page detected, forcing basePath to ./');
     }
     
-    console.log(`Path: ${path}, hasSubfolder: ${hasSubfolder}, basePath: ${basePath}`);
+    console.log(`Loading ${componentName}, path: ${path}, basePath: ${basePath}`);
     
     const response = await fetch(`${basePath}components/${componentName}.html`);
     
     if (!response.ok) {
-      // Если не сработало, пробуем альтернативные пути
-      console.log(`Trying alternative paths for ${path}...`);
+      // Если не сработало, пробуем противоположный путь
+      const oppositePath = basePath === './' ? '../' : './';
+      console.log(`Primary path failed, trying opposite: ${oppositePath}`);
       
-      // Для отладки - пробуем все возможные пути
-      const altPaths = [
-        `${basePath}components/${componentName}.html`,
-        `./components/${componentName}.html`,
-        `../components/${componentName}.html`,
-        `components/${componentName}.html`,
-        `/components/${componentName}.html`,
-        `/Academy/components/${componentName}.html`
-      ];
-      
-      for (const altPath of altPaths) {
-        try {
-          const altResponse = await fetch(altPath);
-          if (altResponse.ok) {
-            const html = await altResponse.text();
-            const target = document.querySelector(targetElement);
-            if (target) {
-              target.innerHTML = html;
-              initializeComponents();
-              console.log(`Successfully loaded from: ${altPath}`);
-              return;
-            }
-          }
-        } catch (e) {
-          continue; // Пробуем следующий путь
+      const altResponse = await fetch(`${oppositePath}components/${componentName}.html`);
+      if (altResponse.ok) {
+        const html = await altResponse.text();
+        const target = document.querySelector(targetElement);
+        if (target) {
+          target.innerHTML = html;
+          initializeComponents();
+          return;
         }
       }
       
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(`Failed to load ${componentName}`);
     }
     
     const html = await response.text();
-    
-    // Вставляем HTML в целевой элемент
     const target = document.querySelector(targetElement);
+    
     if (target) {
       target.innerHTML = html;
-      
-      // Инициализируем компоненты после загрузки
       initializeComponents();
     }
+    
   } catch (error) {
     console.error(`Error loading ${componentName}:`, error);
   }
