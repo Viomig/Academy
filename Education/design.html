@@ -240,6 +240,151 @@
                 padding: 40px 0;
             }
         }
+
+        /* Фильтры */
+    .program-filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 40px;
+    }
+    
+    .filter-btn {
+      padding: 10px 16px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: capitalize;
+      border: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .filter-btn.active {
+      background-color: var(--grey-dark);
+      color: var(--white);
+    }
+    
+    .filter-btn:not(.active) {
+      background-color: var(--grey-light);
+      color: var(--grey-dark);
+    }
+    
+    .filter-btn:not(.active):hover {
+      background-color: var(--grey-dark);
+      color: var(--white);
+    }
+    
+    /* Карточки программ */
+    .program-card {
+      width: 187px;
+      height: 187px;
+      border-radius: 15px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      margin-bottom: 20px;
+    }
+    
+    .program-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .program-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--gradient-blue);
+      opacity: 0.8;
+      border-radius: 15px;
+      z-index: 1;
+    }
+    
+    .program-content {
+      position: relative;
+      z-index: 2;
+      color: var(--white);
+    }
+    
+    .program-code {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+    
+    .program-name {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+    
+    /* Декоративные элементы */
+    .graphic-element {
+      position: absolute;
+      z-index: -1;
+    }
+    
+    .graphic-1 {
+      width: 695px;
+      height: 372px;
+      right: 0;
+      top: -194px;
+      background-image: url('./image/Frame_981_9756.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    
+    .graphic-2 {
+      width: 113px;
+      height: 419px;
+      right: 0;
+      top: 353px;
+      background-image: url('./image/Group_1767_23725.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    
+    /* Адаптивность */
+    @media (max-width: 1200px) {
+      .program-card {
+        width: 160px;
+        height: 160px;
+      }
+    }
+    
+    @media (max-width: 992px) {
+      .program-card {
+        width: 180px;
+        height: 180px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .program-card {
+        width: 100%;
+        max-width: 250px;
+        height: 200px;
+        margin: 0 auto 20px;
+      }
+      
+      .program-filter {
+        justify-content: center;
+      }
+    }
+    
+    /* Утилиты */
+    .cursor-pointer {
+      cursor: pointer;
+    }
     </style>
 </head>
 <body>
@@ -608,131 +753,110 @@
             </div>
         </section>
 
-        <!-- ===== СЕКЦИЯ 8: ДРУГИЕ ПРОГРАММЫ ===== -->
-        <section class="info-section">
-            <div class="container">
-                <h2 class="section-title">другие программы</h2>
-                
-                <!-- Фильтр -->
-                <div class="mb-5">
-                    <button class="program-filter-btn active">бакалавриат</button>
-                    <button class="program-filter-btn">Специалитет</button>
-                    <button class="program-filter-btn">магистратура</button>
-                    <button class="program-filter-btn">аспирантура</button>
-                </div>
-                
-                <!-- Карточки программ -->
-                <div class="row">
-                    <!-- Программа 1 -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="other-program-card p-3 d-flex flex-column justify-content-end">
-                            <div style="font-size: 14px; font-weight: 700; color: var(--white); position: relative; z-index: 2;">
-                                07.03.01
-                            </div>
-                            <div style="font-size: 14px; font-weight: 500; color: var(--white); position: relative; z-index: 2;">
-                                Архитектура
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Программа 2 -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="other-program-card p-3 d-flex flex-column justify-content-end">
-                            <div style="font-size: 14px; font-weight: 700; color: var(--white); position: relative; z-index: 2;">
-                                07.03.02
-                            </div>
-                            <div style="font-size: 14px; font-weight: 500; color: var(--white); position: relative; z-index: 2;">
-                                Реконструкция и реставрация архитектурного наследия
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Программа 3 -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="other-program-card p-3 d-flex flex-column justify-content-end">
-                            <div style="font-size: 14px; font-weight: 700; color: var(--white); position: relative; z-index: 2;">
-                                07.03.04
-                            </div>
-                            <div style="font-size: 14px; font-weight: 500; color: var(--white); position: relative; z-index: 2;">
-                                Градостроительство
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Программа 4 -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="other-program-card p-3 d-flex flex-column justify-content-end">
-                            <div style="font-size: 14px; font-weight: 700; color: var(--white); position: relative; z-index: 2;">
-                                09.03.01
-                            </div>
-                            <div style="font-size: 14px; font-weight: 500; color: var(--white); position: relative; z-index: 2;">
-                                Информатика и вычислительная техника
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Программа 5 -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="other-program-card p-3 d-flex flex-column justify-content-end">
-                            <div style="font-size: 14px; font-weight: 700; color: var(--white); position: relative; z-index: 2;">
-                                44.03.05
-                            </div>
-                            <div style="font-size: 14px; font-weight: 500; color: var(--white); position: relative; z-index: 2;">
-                                Педагогическое образование с двумя профилями подготовки
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Программа 6 -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="other-program-card p-3 d-flex flex-column justify-content-end">
-                            <div style="font-size: 14px; font-weight: 700; color: var(--white); position: relative; z-index: 2;">
-                                54.03.01
-                            </div>
-                            <div style="font-size: 14px; font-weight: 500; color: var(--white); position: relative; z-index: 2;">
-                                Дизайн
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Программа 7 -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="other-program-card p-3 d-flex flex-column justify-content-end">
-                            <div style="font-size: 14px; font-weight: 700; color: var(--white); position: relative; z-index: 2;">
-                                54.03.01
-                            </div>
-                            <div style="font-size: 14px; font-weight: 500; color: var(--white); position: relative; z-index: 2;">
-                                Дизайн костюма
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Программа 8 -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="other-program-card p-3 d-flex flex-column justify-content-end">
-                            <div style="font-size: 14px; font-weight: 700; color: var(--white); position: relative; z-index: 2;">
-                                54.03.02
-                            </div>
-                            <div style="font-size: 14px; font-weight: 500; color: var(--white); position: relative; z-index: 2;">
-                                Декоративно-прикладное искусство и народные промыслы
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Программа 9 -->
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="other-program-card p-3 d-flex flex-column justify-content-end">
-                            <div style="font-size: 14px; font-weight: 700; color: var(--white); position: relative; z-index: 2;">
-                                54.03.03
-                            </div>
-                            <div style="font-size: 14px; font-weight: 500; color: var(--white); position: relative; z-index: 2;">
-                                Искусство костюма и текстиля
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!-- Фильтры -->
+        <div class="row mb-4">
+          <div class="col-12 offset-1">
+            <div class="program-filter">
+              <button class="filter-btn active" data-filter="bachelor">бакалавриат</button>
+              <button class="filter-btn" data-filter="specialty">Специалитет</button>
+              <button class="filter-btn" data-filter="master">магистратура</button>
+              <button class="filter-btn" data-filter="postgraduate">аспирантура</button>
             </div>
-        </section>
+          </div>
+        </div>
+        
+        <!-- Карточки программ -->
+        <div class="row offset-1" id="programsGrid">
+          <!-- Программа 1 -->
+          <div class="col-xl-2 col-lg-4 col-md-6">
+            <a href="/Academy/Education/arhitect.html"><div class="program-card" style="background-image: url('./image/1f4b07afd5301b4b982831a9b47e496be7c33acb.png'); background-size: cover;">
+              <div class="program-content">
+                <div class="program-code">07.03.01</div>
+                <div class="program-name">Архитектура</div>
+              </div>
+            </div></a>
+          </div>
+          
+          <!-- Программа 2 -->
+          <div class="col-xl-2 col-lg-4 col-md-6">
+            <div class="program-card" style="background-image: url('./image/Frame_55_31501.png'); background-size: cover;">
+              <div class="program-content">
+                <div class="program-code">07.03.02</div>
+                <div class="program-name">Реконструкция и реставрация архитектурного наследия</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Программа 3 -->
+          <div class="col-xl-2 col-lg-4 col-md-6">
+            <div class="program-card" style="background-image: url('./image/698d72831fb2b5cf328de77b70bdaaa117c9bbf0.png'); background-size: cover;">
+              <div class="program-content">
+                <div class="program-code">07.03.04</div>
+                <div class="program-name">Градостроительство</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Программа 4 -->
+          <div class="col-xl-2 col-lg-4 col-md-6">
+            <div class="program-card" style="background-image: url('./image/Frame_55_31509.png'); background-size: cover;">
+              <div class="program-content">
+                <div class="program-code">09.03.01</div>
+                <div class="program-name">Информатика и вычислительная техника</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Программа 5 -->
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="program-card" style="background-image: url('./image/Frame_55_31513.png'); background-size: cover;">
+              <div class="program-content">
+                <div class="program-code">44.03.05</div>
+                <div class="program-name">Педагогическое образование с двумя профилями подготовки</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Программа 6 -->
+          <div class="col-xl-2 col-lg-4 col-md-6">
+            <a href="/Academy/Education/design.html"><div class="program-card" style="background-image: url('./image/343b264953a174f668dc5697d32ea9e38f048f35.png'); background-size: cover;">
+              <div class="program-content">
+                <div class="program-code">54.03.01</div>
+                <div class="program-name">Дизайн</div>
+              </div>
+            </div></a>
+          </div>
+          
+          <!-- Программа 7 -->
+          <div class="col-xl-2 col-lg-4 col-md-6">
+            <div class="program-card" style="background-image: url('./image/Frame_55_31525.png'); background-size: cover;">
+              <div class="program-content">
+                <div class="program-code">54.03.01</div>
+                <div class="program-name">Дизайн костюма</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Программа 8 -->
+          <div class="col-xl-2 col-lg-4 col-md-6">
+            <div class="program-card" style="background-image: url('./image/Frame_55_31529.png'); background-size: cover;">
+              <div class="program-content">
+                <div class="program-code">54.03.02</div>
+                <div class="program-name">Декоративно-прикладное искусство и народные промыслы</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Программа 9 -->
+          <div class="col-xl-2 col-lg-4 col-md-6">
+            <div class="program-card" style="background-image: url('./image/Frame_55_31517.png'); background-size: cover;">
+              <div class="program-content">
+                <div class="program-code">54.03.03</div>
+                <div class="program-name">Искусство костюма и текстиля</div>
+              </div>
+            </div>
+          </div>
+        </div>
     </main>
 
 <section id="end">
