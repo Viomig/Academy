@@ -49,7 +49,7 @@
     section{
       margin: 0 auto;
         overflow-x: hidden !important;
-        max-width: 1320px;
+        max-width: calc(1320px - 40px);
     }
 }
 
