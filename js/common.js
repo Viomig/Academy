@@ -1,36 +1,63 @@
 // Функция для загрузки компонентов
 async function loadComponent(componentName, targetElement) {
   try {
-    // Исправленная логика определения пути
+    // ОРИГИНАЛЬНАЯ РАБОЧАЯ ЛОГИКА:
+    const hasSubfolder = window.location.pathname.split('/').filter(Boolean).length > 1;
+    let basePath = hasSubfolder ? '../' : './';
+    
+    // ДОПОЛНЕНИЕ: Проверка специально для главной страницы на GitHub
     const path = window.location.pathname;
-    let basePath;
     
-    // 1. Если это главная страница (в корне)
-    if (path === '/' || 
-        path.endsWith('/index.html') || 
-        path === '/Academy/' || 
-        path === '/Academy/index.html' ||
-        path.endsWith('/')) {
-      basePath = './'; // components/ в той же папке
-      console.log('Main page detected, using ./');
+    // Если мы на главной странице GitHub Pages (/Academy/ или /Academy)
+    if (path === '/Academy/' || path === '/Academy' || path === '/Academy/index.html') {
+      basePath = './'; // Компоненты в той же папке
+      console.log('GitHub Pages main detected, using ./');
     }
-    // 2. Если страница в подпапке (например, /pages/about.html)
-    else if (path.includes('/pages/')) {
-      basePath = '../'; // Поднимаемся на уровень выше
-      console.log('Subpage detected, using ../');
-    }
-    // 3. Для любых других случаев (запасной вариант)
-    else {
-      basePath = './'; // По умолчанию в той же папке
-      console.log('Other page, using ./');
+    // Если мы на главной странице локального сервера
+    else if (path === '/' || path === '/index.html' || path.endsWith('/index.html')) {
+      basePath = './';
+      console.log('Local main page detected, using ./');
     }
     
-    console.log(`Loading ${componentName} from: ${basePath}components/${componentName}.html`);
+    console.log(`Path: ${path}, hasSubfolder: ${hasSubfolder}, basePath: ${basePath}`);
     
     const response = await fetch(`${basePath}components/${componentName}.html`);
+    
     if (!response.ok) {
+      // Если не сработало, пробуем альтернативные пути
+      console.log(`Trying alternative paths for ${path}...`);
+      
+      // Для отладки - пробуем все возможные пути
+      const altPaths = [
+        `${basePath}components/${componentName}.html`,
+        `./components/${componentName}.html`,
+        `../components/${componentName}.html`,
+        `components/${componentName}.html`,
+        `/components/${componentName}.html`,
+        `/Academy/components/${componentName}.html`
+      ];
+      
+      for (const altPath of altPaths) {
+        try {
+          const altResponse = await fetch(altPath);
+          if (altResponse.ok) {
+            const html = await altResponse.text();
+            const target = document.querySelector(targetElement);
+            if (target) {
+              target.innerHTML = html;
+              initializeComponents();
+              console.log(`Successfully loaded from: ${altPath}`);
+              return;
+            }
+          }
+        } catch (e) {
+          continue; // Пробуем следующий путь
+        }
+      }
+      
       throw new Error(`HTTP error! status: ${response.status}`);
     }
+    
     const html = await response.text();
     
     // Вставляем HTML в целевой элемент
