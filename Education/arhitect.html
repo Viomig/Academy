@@ -16,11 +16,6 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     
-    <!-- Montserrat Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
 </head>
 
  <style>
@@ -926,5 +921,40 @@
             });
         });
     </script>
+
+    <script>
+    // Инициализация фильтров
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Удаляем активный класс у всех кнопок
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          
+          // Добавляем активный класс текущей кнопке
+          this.classList.add('active');
+          
+          // Здесь можно добавить логику фильтрации карточек
+          const filterType = this.getAttribute('data-filter');
+          console.log('Фильтр:', filterType);
+          // Реализуйте фильтрацию по типу программы
+        });
+      });
+      
+      // Обработка кликов по карточкам
+      const programCards = document.querySelectorAll('.program-card');
+      programCards.forEach(card => {
+        card.addEventListener('click', function() {
+          // Здесь можно добавить логику перехода на страницу программы
+          console.log('Клик по программе');
+        });
+      });
+    });
+    
+    // Инициализация GSAP
+    const $ = id => document.getElementById(id);
+    CustomEase.create("LINEAR", "0,0,1,1");
+  </script>
 </body>
 </html>
