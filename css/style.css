@@ -5,6 +5,54 @@
     padding: 0;
 }
 
+/* Для WebKit браузеров (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: var(--scroll-size, 15px);
+  height: var(--scroll-size, 15px);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scroll-track, rgb(255 255 255 / 10%));
+  border-radius: var(--scroll-radius, 20px);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb, linear-gradient(45deg, #00aeff, #a68eff));
+  border-radius: var(--scroll-radius, 20px);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  opacity: 0.8;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Для Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-thumb, linear-gradient(45deg, #00aeff, #a68eff)) 
+                   var(--scroll-track, rgb(255 255 255 / 10%));
+}
+
+/* Для Firefox - дополнительные стили */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-thumb, linear-gradient(45deg, #00aeff, #a68eff)) 
+                   var(--scroll-track, rgb(255 255 255 / 10%));
+}
+
+/* Применение кастомных свойств */
+:root {
+  --scroll-size: 15px;
+  --scroll-radius: 20px;
+  --scroll-track: rgb(255 255 255 / 10%);
+  --scroll-thumb: linear-gradient(45deg, #00aeff, #a68eff);
+}
+
 /* ФИКС ДЛЯ ХЕДЕРА С ТАБАМИ */
 .academy-navbar {
     top: 0 !important;
