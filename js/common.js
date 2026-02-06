@@ -4,6 +4,10 @@ async function loadComponent(componentName, targetElement) {
     // Всегда поднимаемся на один уровень вверх из любой папки со страницей
     const hasSubfolder = window.location.pathname.split('/').filter(Boolean).length > 1;
 const basePath = hasSubfolder ? '../' : './';
+if (path === '/' || path.endsWith('/index.html') || path.endsWith('/')) {
+      basePath = './'; // Компоненты в той же папке
+      console.log('Main page detected, using ./');
+    }
     
     const response = await fetch(`${basePath}components/${componentName}.html`);
     if (!response.ok) {
