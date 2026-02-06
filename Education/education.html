@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/owl.theme.green.css">
+    <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+  <style>
+    /* Упрощенные базовые стили */
+    :root {
+      --white: #FFFFFF;
+      --black: #000000;
+      --grey-dark: #8C8C8C;
+      --grey-light: #E6E7F0;
+      --gradient-blue: linear-gradient(135deg, #080D6B 0%, #ED1160 100%);
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--white);
+    }
+    
+    /* Типографика */
+    .education-title {
+      font-size: 80px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      margin-bottom: 30px;
+    }
+    
+    @media (max-width: 992px) {
+      .education-title {
+        font-size: 60px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .education-title {
+        font-size: 40px;
+      }
+    }
+    
+    .education-description {
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--black);
+      margin-bottom: 40px;
+    }
+    
+    /* Фильтры */
+    .program-filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 40px;
+    }
+    
+    .filter-btn {
+      padding: 10px 16px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: capitalize;
+      border: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .filter-btn.active {
+      background-color: var(--grey-dark);
+      color: var(--white);
+    }
+    
+    .filter-btn:not(.active) {
+      background-color: var(--grey-light);
+      color: var(--grey-dark);
+    }
+    
+    .filter-btn:not(.active):hover {
+      background-color: var(--grey-dark);
+      color: var(--white);
+    }
+    
+    /* Карточки программ */
+    .program-card {
+      width: 187px;
+      height: 187px;
+      border-radius: 15px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      margin-bottom: 20px;
+    }
+    
+    .program-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .program-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--gradient-blue);
+      opacity: 0.8;
+      border-radius: 15px;
+      z-index: 1;
+    }
+    
+    .program-content {
+      position: relative;
+      z-index: 2;
+      color: var(--white);
+    }
+    
+    .program-code {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+    
+    .program-name {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+    
+    /* Декоративные элементы */
+    .graphic-element {
+      position: absolute;
+      z-index: -1;
+    }
+    
+    .graphic-1 {
+      width: 695px;
+      height: 372px;
+      right: 0;
+      top: -194px;
+      background-image: url('./image/Frame_981_9756.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    
+    .graphic-2 {
+      width: 113px;
+      height: 419px;
+      right: 0;
+      top: 353px;
+      background-image: url('./image/Group_1767_23725.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    
+    /* Адаптивность */
+    @media (max-width: 1200px) {
+      .program-card {
+        width: 160px;
+        height: 160px;
+      }
+    }
+    
+    @media (max-width: 992px) {
+      .program-card {
+        width: 180px;
+        height: 180px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .program-card {
+        width: 100%;
+        max-width: 250px;
+        height: 200px;
+        margin: 0 auto 20px;
+      }
+      
+      .program-filter {
+        justify-content: center;
+      }
+    }
+    
+    /* Утилиты */
+    .cursor-pointer {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+    <header id="header-placeholder">
+    </header>
+
+  <div class="container-fluid px-0">
+    <!-- Основная секция -->
+    <section class="py-5 position-relative overflow-hidden">
+      <!-- Декоративные элементы -->
+      <div class="graphic-element graphic-1 d-none d-xl-block"></div>
+      <div class="graphic-element graphic-2 d-none d-xl-block"></div>
+      
+      <div class="container">
+        <!-- Заголовок -->
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h1 class="education-title">образование</h1>
+          </div>
+        </div>
+        
+        <!-- Описание -->
+        <div class="row mb-5">
+          <div class="col-lg-6">
+            <p class="education-description">
+              Академия предлагает широкий спектр образовательных программ, охватывающих ключевые направления в области архитектуры, дизайна, изобразительного и прикладного искусства, градостроительства, искусствоведения и смежных дисциплин.
+            </p>
+            <p class="education-description mb-0">
+              В этом разделе вы найдёте подробную информацию о каждой образовательной программе Академии.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Фильтры -->
+        <div class="row mb-4">
+          <div class="col-12">
+            <div class="program-filter">
+              <button class="filter-btn active" data-filter="bachelor">бакалавриат</button>
+              <button class="filter-btn" data-filter="specialty">Специалитет</button>
+              <button class="filter-btn" data-filter="master">магистратура</button>
+              <button class="filter-btn" data-filter="postgraduate">аспирантура</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Карточки программ -->
+        <div class="row" id="programsGrid">
+          <!-- Программа 1 -->
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="program-card" style="background-image: url('./image/1f4b07afd5301b4b982831a9b47e496be7c33acb.png'); background-size: cover;">
+              <div class="program-content">
+                <div class="program-code">07.03.01</div>
+                <div class="program-name">Архитектура</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Программа 2 -->
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="program-card" style="background-image: url('./image/Frame_55_31501.png'); background-size: cover;">
+              <div class="program-content">
+                <div class="program-code">07.03.02</div>
+                <div class="program-name">Реконструкция и реставрация архитектурного наследия</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Программа 3 -->
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="program-card" style="background-image: url('./image/698d72831fb2b5cf328de77b70bdaaa117c9bbf0.png'); background-size: cover;">
+              <div class="program-content">
+                <div class="program-code">07.03.04</div>
+                <div class="program-name">Градостроительство</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Программа 4 -->
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="program-card" style="background-image: url('./image/Frame_55_31509.png'); background-size: cover;">
+              <div class="program-content">
+                <div class="program-code">09.03.01</div>
+                <div class="program-name">Информатика и вычислительная техника</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Программа 5 -->
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="program-card" style="background-image: url('./image/Frame_55_31513.png'); background-size: cover;">
+              <div class="program-content">
+                <div class="program-code">44.03.05</div>
+                <div class="program-name">Педагогическое образование с двумя профилями подготовки</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Программа 6 -->
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="program-card" style="background-image: url('./image/343b264953a174f668dc5697d32ea9e38f048f35.png'); background-size: cover;">
+              <div class="program-content">
+                <div class="program-code">54.03.01</div>
+                <div class="program-name">Дизайн</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Программа 7 -->
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="program-card" style="background-image: url('./image/Frame_55_31525.png'); background-size: cover;">
+              <div class="program-content">
+                <div class="program-code">54.03.01</div>
+                <div class="program-name">Дизайн костюма</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Программа 8 -->
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="program-card" style="background-image: url('./image/Frame_55_31529.png'); background-size: cover;">
+              <div class="program-content">
+                <div class="program-code">54.03.02</div>
+                <div class="program-name">Декоративно-прикладное искусство и народные промыслы</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Программа 9 -->
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="program-card" style="background-image: url('./image/Frame_55_31517.png'); background-size: cover;">
+              <div class="program-content">
+                <div class="program-code">54.03.03</div>
+                <div class="program-name">Искусство костюма и текстиля</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section id="end">
+ <div id="footer-placeholder"></div>
+    </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- GSAP -->
+  <script src="js/animation.js"></script>
+  
+  <script>
+    // Инициализация фильтров
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Удаляем активный класс у всех кнопок
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          
+          // Добавляем активный класс текущей кнопке
+          this.classList.add('active');
+          
+          // Здесь можно добавить логику фильтрации карточек
+          const filterType = this.getAttribute('data-filter');
+          console.log('Фильтр:', filterType);
+          // Реализуйте фильтрацию по типу программы
+        });
+      });
+      
+      // Обработка кликов по карточкам
+      const programCards = document.querySelectorAll('.program-card');
+      programCards.forEach(card => {
+        card.addEventListener('click', function() {
+          // Здесь можно добавить логику перехода на страницу программы
+          console.log('Клик по программе');
+        });
+      });
+    });
+    
+    // Инициализация GSAP
+    const $ = id => document.getElementById(id);
+    CustomEase.create("LINEAR", "0,0,1,1");
+  </script>
+</body>
+</html>
