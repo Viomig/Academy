@@ -508,7 +508,7 @@ table {
 
 /* Новые стили для мобильного меню */
 .footer-section {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .footer-header {
@@ -558,10 +558,6 @@ table {
     .footer-header {
         border-bottom: none;
         padding: 0;
-    }
-    
-    .footer-section {
-        margin-bottom: 0;
     }
 }
 
