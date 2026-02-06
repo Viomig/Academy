@@ -1,9 +1,31 @@
 // Функция для загрузки компонентов
 async function loadComponent(componentName, targetElement) {
   try {
-    // Всегда поднимаемся на один уровень вверх из любой папки со страницей
-    const hasSubfolder = window.location.pathname.split('/').filter(Boolean).length > 1;
-const basePath = hasSubfolder ? '../' : './';
+    // Исправленная логика определения пути
+    const path = window.location.pathname;
+    let basePath;
+    
+    // 1. Если это главная страница (в корне)
+    if (path === '/' || 
+        path.endsWith('/index.html') || 
+        path === '/Academy/' || 
+        path === '/Academy/index.html' ||
+        path.endsWith('/')) {
+      basePath = './'; // components/ в той же папке
+      console.log('Main page detected, using ./');
+    }
+    // 2. Если страница в подпапке (например, /pages/about.html)
+    else if (path.includes('/pages/')) {
+      basePath = '../'; // Поднимаемся на уровень выше
+      console.log('Subpage detected, using ../');
+    }
+    // 3. Для любых других случаев (запасной вариант)
+    else {
+      basePath = './'; // По умолчанию в той же папке
+      console.log('Other page, using ./');
+    }
+    
+    console.log(`Loading ${componentName} from: ${basePath}components/${componentName}.html`);
     
     const response = await fetch(`${basePath}components/${componentName}.html`);
     if (!response.ok) {
