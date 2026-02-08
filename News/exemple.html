@@ -11,6 +11,136 @@
     <link href="/Academy/css/style.css" rel="stylesheet">
 </head>
 
+<style>
+    .section-title {
+            font-size: 40px;
+            font-weight: 500;
+            text-transform: uppercase;
+            line-height: 1.3;
+            margin-bottom: 40px;
+        }
+
+        /* ===== АДАПТИВНОСТЬ ===== */
+        @media (max-width: 1400px) {
+            .hero-title {
+                font-size: 70px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 60px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .graduate-card {
+                min-width: 700px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 50px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .hero-subtitle {
+                font-size: 14px;
+            }
+
+            .news-image {
+                width: 100%;
+                max-width: 353px;
+            }
+
+            .graduate-card {
+                min-width: 600px;
+            }
+
+            .gallery-card-small,
+            .gallery-card-large {
+                width: 100%;
+                max-width: 394px;
+                height: 263px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 40px;
+                text-align: center;
+            }
+
+            .section-title {
+                font-size: 24px;
+                text-align: center;
+            }
+
+            .hero-subtitle {
+                text-align: center;
+                margin: 0 auto 40px;
+            }
+
+            .news-card {
+                text-align: center;
+            }
+
+            .news-image {
+                margin: 0 auto 20px;
+            }
+
+            .graduate-card {
+                min-width: 100%;
+                height: auto;
+                padding: 20px;
+            }
+
+            .graduate-photo {
+                width: 100%;
+                max-width: 275px;
+                height: 200px;
+                margin: 0 auto 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 32px;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+
+            .btn-lg {
+                padding: 12px 20px;
+                font-size: 12px;
+            }
+
+            .filter-container {
+                overflow-x: auto;
+                white-space: nowrap;
+                padding-bottom: 10px;
+            }
+
+            .year-filter {
+                overflow-x: auto;
+                white-space: nowrap;
+                padding-bottom: 10px;
+            }
+        }
+</style>
+
 <body>
     <header id="header-placeholder">
     </header>
@@ -28,17 +158,17 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-12 g-2">
+                <div class="row col-12 g-2">
                 <div class="col-md-2">
                     <div>Время чтения: 10 мин</div><br>
-                    <div>автор текста: Курдинова А.Р.</div><br>
+                    <div>автор текста: Курдинова А.Р.</div>
                     <div>фото: Курдинова А.Р.</div>
                 </div>    
                     <div class="col-md-6 offset-2">С 4 по 8 октября в Сочи проходил XVI Международный конкурс молодых дизайнеров и модельеров «Подиум 2023», победу в котором одержала выпускница Академии архитектуры 
                    и искусства ЮФУ Инна Басишвили. 
                    Специальный призовой диплом Лаборатории моды SuzieMFFashionLAB за инновационный подход в моде получила также выпускница 
                    ААИ ЮФУ Юлия Пантелеенко.
-                   </div>
+                   </div><br>
                 </div>
                 <div class="col-md-12">
                     <div class="col-md-6 offset-4">Молодые креативные дизайнеры из 16 вузов и двух учебных заведений среднего профессионального образования представили профессиональному жюри конкурсные показы 
@@ -50,13 +180,134 @@
                    </div>
                    <div class="col-md-6 offset-4">
                     Молодой модельер представил коллекцию одежды как выпускную квалификационную работу под руководством доцента кафедры дизайна ЮФУ Дарьи Василиско.
-                   </div>
+                   </div><br>
                    <div class="col-md-6 offset-4">«Для дизайнера одежды важно иметь свой авторский почерк, и у Инны он есть. Тонкая и изысканная работа, оригинальный подход делает ее коллекцию выразительной и запоминающейся. Автор работает в направлении экологичной моды, используя концевые остатки и метод апсайклинга. Успешные эксперименты с плоским кроем, нестандартный подход к выбору материалов, нюансные оттенки цвета, натуральные ткани, погружают зрителя в мир созидания и красоты. Автор создает красивую коллекцию, которую хочется носить. Мне очень нравится платье, стянутое кулисками, выполненное из купры; интересна подача мужского пиджака, расцвеченного красивым кружевом, брюки из буклированной шерсти. В коллекции найдены интересные дизайнерские «фишки», которые придают оригинальность. Завершает коллекцию законченный стилистический образ. Как руководитель рада, что Инна продолжает профессиональную деятельность уже не в стенах вуза, а успешно делает первые самостоятельные шаги в номинации «Профи», — отметила Василиско.
                       Вторая выпускная квалификационная работа под руководством Дарьи Василиско также была отмечена жюри в номинации «Рret-a-porter». Коллекция мужских костюмов «Never grow up» студентки Пантелеенко удостоена специального призового диплома Лаборатории моды SuzieMFFashionLAB за инновационный подход в моде.
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+
+        <section class="news-section py-5" style="background: white;">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">новости</h2>
+
+                <!-- Фильтры новостей -->
+                <div class="filter-container mb-5">
+                    <div class="d-flex flex-wrap gap-4">
+                        <button class="filter-item active">
+                            <span>все</span>
+                        </button>
+                        <button class="filter-item">
+                            <span>образование</span>
+                            <span class="filter-count">4</span>
+                        </button>
+                        <button class="filter-item">
+                            <span>наука</span>
+                            <span class="filter-count">2</span>
+                        </button>
+                        <button class="filter-item">
+                            <span>абитуриенту</span>
+                            <span class="filter-count">13</span>
+                        </button>
+                        <button class="filter-item">
+                            <span>выпускнику</span>
+                            <span class="filter-count">5</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Новости грид -->
+                <div class="row mb-5">
+                    <!-- Новость 1 -->
+                    <div class="col-md-12 news-card">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="news-image" style="background-image: url('./image/736c500b1ce5368b8451743bfcc18e670f5bee46.png');"></div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="news-date">18.04.2025</div>
+                                <h3 class="news-title">Дни открытых дверей</h3>
+                                <p class="news-description">
+                                    В течение двух дней, 16 и 17 декабря, в Главном корпусе ЮФУ будущие абитуриенты знакомились с направлениями подготовки и специальностями, которые реализуются в Академии.
+                                </p>
+                            </div>
+                            <div class="col-md-2 justify-content-end align-items-center">
+                                <a href="/Academy/News/exemple.html" class="news-link">
+                                    Поброднее
+                                    <span class="news-link-arrow"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Новость 2 -->
+                    <div class="col-md-12 news-card">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="news-image" style="background-image: url('./image/Rectangle_238_2871.png');"></div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="news-date">18.04.2025</div>
+                                <h3 class="news-title">Выставка в Сирии</h3>
+                                <p class="news-description">
+                                    В Сирии состоялась выставка дипломных проектов 2023 года выпускников-архитекторов Академии архитектуры и искусств ЮФУ и Дамасского университета
+                                </p>
+                                </div>
+                            <div class="col-md-2 justify-content-center align-items-center">
+                                <a href="#" class="news-link">
+                                    Поброднее
+                                    <span class="news-link-arrow"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Новость 3 -->
+                    <div class="col-md-12 news-card">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="news-image" style="background-image: url('./image/fbab5b55037ee0df900bfe078e19bcff37eb348c.png');"></div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="news-date">18.04.2025</div>
+                                <h3 class="news-title">Достижения выпускников</h3>
+                                <p class="news-description">
+                                    Выпускница ЮФУ победила в Международном конкурсе архитектурных школ СНГ
+                                </p>
+                                </div>
+                            <div class="col-md-2 justify-content-center align-items-center">
+                                <a href="#" class="news-link">
+                                    Поброднее
+                                    <span class="news-link-arrow"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Новость 4 -->
+                    <div class="col-md-12 news-card">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="news-image" style="background-image: url('./image/Rectangle_238_2873.png');"></div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="news-date">18.04.2025</div>
+                                <h3 class="news-title">Конференция «Архитектура и искусство: от теории к практике»</h3>
+                                <p class="news-description">
+                                    С 22 по 24 ноября в Академии архитектуры и искусств Южного федерального университета прошла всероссийская научно-практическая конференция «Архитектура и искусство: от теории к практике»
+                                </p>
+                                </div>
+                            <div class="col-md-2 justify-content-center align-items-center">
+                                <a href="#" class="news-link">
+                                    Поброднее
+                                    <span class="news-link-arrow"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
     </section>
 
 
