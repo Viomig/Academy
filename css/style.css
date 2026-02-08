@@ -998,6 +998,28 @@ table {
   position: relative;
 }
 
+#academy-tab-content .nav-link {
+  color: white !important;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none !important;
+  border-radius: 0;
+  transition: all 0.3s ease;
+  position: relative;
+  margin: 0;
+}
+
+#academy-tab-content .nav-link:hover {
+  background-color: #232328;
+  color: #d63a47 !important;
+}
+
+#academy-tab-content .nav-link.active {
+  background-color: #232328;
+  color: #e63c58 !important;
+  border-bottom: 3px solid #e42b53 !important;
+}
 .navbar-collapse{
   background-color:#232328 ;
   z-index: 100;
