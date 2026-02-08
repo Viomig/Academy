@@ -419,6 +419,25 @@
     .cursor-pointer {
       cursor: pointer;
     }
+
+    .arhitectStart{
+         background: 
+    linear-gradient(to top, 
+      rgba(8, 13, 107, 0.9) 0%,  
+      rgba(237, 17, 96, 0.5) 40%,   
+      rgba(239, 86, 112, 0.3) 90%
+    ), 
+    url('imageArh/main.png') center/cover no-repeat;
+        height: 290px;
+        text-decoration:var(--white);
+        border-radius: 15px;
+        background-size: cover;
+    }
+
+    .advantage{
+        background: var(--primary-blue);
+        border-radius: 15px;
+    }
     </style>
 </head>
 <body>
@@ -429,85 +448,42 @@
         <!-- Секция программы -->
         <section class="py-5">
             <div class="container">
-                <!-- Хлебные крошки -->
                 <a href="#" class="back-link">
                     <i class="bi bi-arrow-left fs-5 me-2"></i>
                     <span>Образование</span>
                 </a>
                 
                 <!-- Заголовок программы -->
-                <div class="row mb-5">
+                <div class="container mb-5">
+                  <div class="row g-2">
                     <div class="col-12">
-                        <div class="program-header" style="background-image: url('https://via.placeholder.com/1220x290');">
-                            <div class="program-overlay h-100 d-flex flex-column justify-content-end">
-                                <div class="program-code">07.03.01</div>
-                                <div class="program-name">Архитектура</div>
-                            </div>
+                        <div class="arhitectStart p-4 d-flex flex-column justify-content-end align-items-start">
+                            <h3 class="program-title mb-2 text-white">07.03.01</h3>
+                            <h3 class="program-title mb-2 text-white">Архитектура</h3>
                         </div>
                     </div>
+                  </div>
                 </div>
                 
-                <!-- Информация о программе -->
-                <div class="row mb-5">
-                    <div class="col-lg-8">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="info-card">
-                                    <div class="info-label">Уровень образования:</div>
-                                    <div class="info-value">Бакалавриат</div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="info-card">
-                                    <div class="info-label">Направление подготовки:</div>
-                                    <div class="info-value">Архитектура</div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="info-card">
-                                    <div class="info-label">Место реализации:</div>
-                                    <div class="info-value">г. Ростов-на-Дону</div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="info-card">
-                                    <div class="info-label">Структурное подразделение:</div>
-                                    <div class="info-value">Академия архитектуры и искусств</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="info-card h-100">
-                            <div class="info-label">Бюджетные места:</div>
-                            <div class="info-value">90</div>
-                            
-                            <div class="info-label mt-3">Коммерческие места:</div>
-                            <div class="info-value">25</div>
-                            
-                            <div class="info-label mt-3">Язык обучения:</div>
-                            <div class="info-value">Русский</div>
-                        </div>
-                    </div>
-                </div>
+                
                 
                 <!-- О программе -->
                 <div class="row mb-5">
                     <div class="col-12">
-                        <h2 class="section-title">о программе</h2>
+                        <h2 class="section-title offset-1">о программе</h2>
                     </div>
                 </div>
                 
                 <div class="row mb-5">
                     <div class="col-12">
-                        <h4 class="fw-bold mb-3">Что будет во время обучения?</h4>
-                        <p class="mb-4">
+                        <h4 class="fw-bold mb-3 offset-1">Что будет во время обучения?</h4>
+                        <p class="mb-4 offset-2">
                             Образовательный каркас программы подготовки 07.03.01 «Архитектура» — это взаимосвязанная система дисциплин, развивающая общекультурные и формирующая профессиональные компетенции.
                         </p>
-                        <p class="mb-4">
+                        <p class="mb-4 offset-2">
                             Данная программа бакалавриата будет реализована высококвалифицированным профессорско-преподавательским составом Академии архитектуры и искусств ЮФУ с привлечением соответствующих организаций-партнеров.
                         </p>
-                        <p>
+                        <p class="offset-2">
                             Наряду с традиционным образовательным форматом, для реализации дисциплин программы предполагается широкое использование возможностей современного электронного обучения и цифровых информационных технологий, включая защиту дипломной работы. Планируется освоение навыков визуальной и вербальной презентации архитектурного проекта, технологий искусственного интеллекта и нейросетевой генерации в архитектурном проектировании, элементов BIM-проектирования.
                         </p>
                     </div>
@@ -515,8 +491,8 @@
                 
                 <div class="row mb-5">
                     <div class="col-12">
-                        <h4 class="fw-bold mb-3">Кого и зачем учат по данной программе?</h4>
-                        <p>
+                        <h4 class="fw-bold mb-3 offset-1">Кого и зачем учат по данной программе?</h4>
+                        <p class="offset-2">
                             Главная цель программы 07.03.01 «Архитектура» — выпуск специалистов, востребованных в сфере архитектурно-строительной деятельности. Достичь поставленную цель предполагается в том числе за счет вовлечения представителей реального сектора экономики (работодателей, экспертов, чиновников) в процессы формирования концепции подготовки, образовательного процесса, контроля полученных знаний и итоговой аттестации.
                         </p>
                     </div>
@@ -524,8 +500,8 @@
                 
                 <div class="row mb-5">
                     <div class="col-12">
-                        <h4 class="fw-bold mb-3">Где смогут работать выпускники программы?</h4>
-                        <p class="mb-4">
+                        <h4 class="fw-bold mb-3 offset-1">Где смогут работать выпускники программы?</h4>
+                        <p class="mb-4 offset-2">
                             Высокий уровень подготовки обеспечит будущих бакалавров возможностью эффективно заниматься архитектурной деятельностью в различных профильных организациях (проектные институты, архитектурные бюро, творческие мастерские, административные органы управления в сфере архитектуры и т.д.).
                         </p>
                         <p>
@@ -535,23 +511,21 @@
                 </div>
                 
                 <!-- Преимущества программы -->
-                <div class="row mb-5">
+            <div class="container mb-5">
+                <div class="row g-2">
                     <div class="col-12">
-                        <div class="advantage-card">
-                            <div class="row">
-                                <div class="col-lg-8">
-                                    <h3 class="advantage-title">Преимущества программы</h3>
-                                    <p class="mb-4">
-                                        Основная общая концепция программы — синхронизация всех дисциплин и практик, позволяющая получить полноценное профессиональное образование направления подготовки 07.03.01 «Архитектура», бакалавриат.
-                                    </p>
-                                    <p>
-                                        Конкурентным преимуществом программы являются студентоориентированность, актуальность преподаваемых дисциплин, плотное взаимодействие с заявленными организациями-партнерами на всех этапах обучения, а также прогнозируемая широкая востребованность и трудоустроенность выпускников программы.
-                                    </p>
-                                </div>
-                            </div>
+                        <div class="advantage p-5">
+                            <h3 class="mb-4 offset-1" style="font-size: 22px; font-weight: 700; color: var(--white);">Преимущества программы</h3>
+                            <p class="benefits-text mb-0 offset-2">
+                                Основная общая концепция программы — синхронизация всех дисциплин и практик, позволяющая получить полноценное профессиональное образование направления подготовки 07.03.01 «Архитектура», бакалавриат.
+                            </p>
+                            <p>
+                                Конкурентным преимуществом программы являются студентоориентированность, актуальность преподаваемых дисциплин, плотное взаимодействие с заявленными организациями-партнерами на всех этапах обучения, а также прогнозируемая широкая востребованность и трудоустроенность выпускников программы.
+                            </p>
                         </div>
                     </div>
                 </div>
+            </div>
                 
                 <!-- Места проведения практик -->
                 <div class="row mb-5">
