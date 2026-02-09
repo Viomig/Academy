@@ -441,14 +441,13 @@
 
     /* ===== АККОРДЕОН ===== */
         .accordion-custom {
-            border: 2px solid var(--grey-dark);
-            border-radius: 15px;
             overflow: hidden;
         }
 
         .accordion-custom .accordion-item {
-            border: none;
-            border-bottom: 2px solid var(--grey-dark);
+            border-radius: 15px;
+            border: 1px solid var(--grey-dark);
+            border-bottom: 1px solid var(--grey-dark);
         }
 
         .accordion-custom .accordion-item:last-child {
@@ -509,11 +508,11 @@
                 </div>
 
                 <section>
-                    <div class="row">
+                    <div class="row gy-2">
                     <div class="col-12">
                         <div class="accordion accordion-custom" id="educationLevelsAccordion">
                             <!-- Бакалавриат / специалитет -->
-                            <div class="accordion-item">
+                            <div class="accordion-item ">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
                                         Набор базовых дисциплин
