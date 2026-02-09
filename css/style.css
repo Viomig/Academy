@@ -125,7 +125,6 @@ body {
 
 h1{
   font-family: 'Montserrat-Medium';
-  font-size: 80px;
   color: #000000;
   margin: 0 0 4px;
 }
@@ -162,6 +161,10 @@ h3{
 h6{
   font-family: 'Montserrat-Bold';
   margin: 0 0 0px;
+}
+
+.hero-title{
+  font-size: 80px;
 }
 
 
