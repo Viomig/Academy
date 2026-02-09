@@ -448,24 +448,7 @@
             border-radius: 15px;
             border: 1px solid var(--grey-dark);
             border-bottom: 1px solid var(--grey-dark);
-         margin-bottom: 15px; /* Добавляем отступ снизу */
-}
-
-          /* Убираем стандартные границы Bootstrap */
-        .accordion-custom .accordion-item:last-child {
-            border-bottom: 1px solid var(--grey-dark); /* Возвращаем границу */
-            margin-bottom: 0; /* Убираем отступ у последнего элемента */
-        }
-        
-        /* Убираем стандартные скругления между элементами */
-        .accordion-custom .accordion-item:not(:last-of-type) {
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-        }
-        
-.accordion-custom .accordion-item:not(:first-of-type) {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+            margin-bottom: 15px; /* Добавляем отступ снизу */
 }
 
         .accordion-custom .accordion-item:last-child {
@@ -1036,5 +1019,67 @@
     const $ = id => document.getElementById(id);
     CustomEase.create("LINEAR", "0,0,1,1");
   </script>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const accordion = document.getElementById('educationLevelsAccordion');
+    const accordionButtons = accordion.querySelectorAll('.accordion-button');
+    
+    // 1. Закрытие при повторном нажатии
+    accordionButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('data-bs-target');
+            const targetCollapse = document.querySelector(targetId);
+            const isCollapsed = this.classList.contains('collapsed');
+            
+            // Если аккордион уже открыт
+            if (!isCollapsed) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Закрываем его
+                const bsCollapse = bootstrap.Collapse.getInstance(targetCollapse) || 
+                                  new bootstrap.Collapse(targetCollapse);
+                bsCollapse.hide();
+                
+                // Обновляем состояние кнопки
+                this.classList.add('collapsed');
+                this.setAttribute('aria-expanded', 'false');
+            }
+        });
+    });
+    
+    // 2. Закрытие при клике вне аккордиона
+    document.addEventListener('click', function(e) {
+        if (!accordion.contains(e.target)) {
+            const openButtons = accordion.querySelectorAll('.accordion-button:not(.collapsed)');
+            
+            openButtons.forEach(button => {
+                const targetId = button.getAttribute('data-bs-target');
+                const targetCollapse = document.querySelector(targetId);
+                
+                if (targetCollapse && targetCollapse.classList.contains('show')) {
+                    const bsCollapse = bootstrap.Collapse.getInstance(targetCollapse);
+                    if (bsCollapse) {
+                        bsCollapse.hide();
+                        button.classList.add('collapsed');
+                        button.setAttribute('aria-expanded', 'false');
+                    }
+                }
+            });
+        }
+    });
+    
+    // 3. Обработчик события закрытия аккордиона
+    accordion.addEventListener('hidden.bs.collapse', function(e) {
+        const button = document.querySelector(`[data-bs-target="#${e.target.id}"]`);
+        if (button) {
+            button.classList.add('collapsed');
+            button.setAttribute('aria-expanded', 'false');
+        }
+    });
+});
+</script>
+
 </body>
 </html>
