@@ -440,47 +440,70 @@
     }
 
     /* ===== АККОРДЕОН ===== */
-        .accordion-custom {
-            overflow: hidden;
-        }
-
-        .accordion-custom .accordion-item {
-            border-radius: 15px;
-            border: 1px solid var(--grey-dark);
-            border-bottom: 1px solid var(--grey-dark);
-            margin-bottom: 15px; /* Добавляем отступ снизу */
+       .accordion-custom {
+    /* Убираем overflow: hidden - он обрезает скругления! */
+    /* overflow: hidden; */
 }
 
-        .accordion-custom .accordion-item:last-child {
-            border-bottom: none;
-        }
+.accordion-custom .accordion-item {
+    border-radius: 15px !important;
+    border: 1px solid var(--grey-dark) !important;
+    margin-bottom: 15px; /* Отступ между аккордионами */
+    overflow: hidden; /* Добавляем сюда вместо общего */
+}
 
-        .accordion-custom .accordion-button {
-            background-color: var(--white);
-            color: var(--black);
-            font-size: 22px;
-            font-weight: 600;
-            text-transform: uppercase;
-            padding: 28px;
-            box-shadow: none;
-        }
+/* Убираем стандартные стили Bootstrap */
+.accordion-custom .accordion-item,
+.accordion-custom .accordion-button,
+.accordion-custom .accordion-collapse {
+    border: none !important;
+}
 
-        .accordion-custom .accordion-button:not(.collapsed) {
-            color: var(--primary-blue);
-            background-color: var(--white);
-            box-shadow: none;
-        }
+/* Кнопка аккордиона */
+.accordion-custom .accordion-button {
+    background-color: var(--white);
+    color: var(--black);
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 28px;
+    border-radius: 15px 15px 0 0 !important; /* Скругляем только верхние углы */
+    box-shadow: none !important;
+    border-bottom: 1px solid var(--grey-dark) !important;
+}
 
-        .accordion-custom .accordion-button::after {
-            background-image: url("data:image/svg+xml,%3Csvg width='13' height='7' viewBox='0 0 13 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6.5 6L12 1' stroke='%23000' stroke-width='2'/%3E%3C/svg%3E");
-            transform: rotate(0deg);
-            transition: transform 0.2s ease;
-        }
+/* Когда аккордион открыт */
+.accordion-custom .accordion-button:not(.collapsed) {
+    color: var(--primary-blue);
+    background-color: var(--white);
+    box-shadow: none !important;
+    border-bottom: 1px solid var(--grey-dark) !important;
+    border-radius: 15px 15px 0 0 !important;
+}
 
-        .accordion-custom .accordion-button:not(.collapsed)::after {
-            background-image: url("data:image/svg+xml,%3Csvg width='13' height='7' viewBox='0 0 13 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6.5 6L12 1' stroke='%23080D6B' stroke-width='2'/%3E%3C/svg%3E");
-            transform: rotate(180deg);
-        }
+/* Когда аккордион закрыт */
+.accordion-custom .accordion-button.collapsed {
+    border-radius: 15px !important; /* Все углы скруглены */
+    border-bottom: 1px solid transparent !important;
+}
+
+/* Тело аккордиона */
+.accordion-custom .accordion-body {
+    padding: 28px;
+    border-radius: 0 0 15px 15px !important;
+}
+
+/* Стрелочка */
+.accordion-custom .accordion-button::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='13' height='7' viewBox='0 0 13 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6.5 6L12 1' stroke='%23000' stroke-width='2'/%3E%3C/svg%3E");
+    transform: rotate(0deg);
+    transition: transform 0.2s ease;
+}
+
+.accordion-custom .accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='13' height='7' viewBox='0 0 13 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6.5 6L12 1' stroke='%23080D6B' stroke-width='2'/%3E%3C/svg%3E");
+    transform: rotate(180deg);
+}
     </style>
 </head>
 <body>
@@ -509,53 +532,73 @@
                 </div>
 
                 <section>
-                    <div class="row gy-2">
+                     <!-- Дисциплины -->
+                <div class="row mb-5">
                     <div class="col-12">
-                        <div class="accordion accordion-custom" id="educationLevelsAccordion">
-                            <!-- Бакалавриат / специалитет -->
-                            <div class="accordion-item ">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                                        Набор базовых дисциплин
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#educationLevelsAccordion">
-                                    <div class="accordion-body">
-                                        <!-- Контент для бакалавриата/специалитета -->
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Магистратура -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                                        набор профессиональных дисциплин
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#educationLevelsAccordion">
-                                    <div class="accordion-body">
-                                        <!-- Контент для магистратуры -->
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Аспирантура -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-                                        элективные дисциплины
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#educationLevelsAccordion">
-                                    <div class="accordion-body">
-                                        <!-- Контент для аспирантуры -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <h2 class="section-title offset-1">дисциплины</h2>
                     </div>
                 </div>
+                    <div class="row">
+    <div class="col-12">
+        <div class="accordion accordion-custom" id="educationLevelsAccordion">
+            <!-- Бакалавриат / специалитет -->
+            <div class="accordion-item mb-3">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                        Бакалавриат / специалитет
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#educationLevelsAccordion">
+                    <div class="accordion-body">
+                        <!-- Контент -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Магистратура -->
+            <div class="accordion-item mb-3">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                        магистратура
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-target="#educationLevelsAccordion">
+                    <div class="accordion-body">
+                        <!-- Контент -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Аспирантура -->
+            <div class="accordion-item mb-3">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                        аспирантура
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#educationLevelsAccordion">
+                    <div class="accordion-body">
+                        <!-- Контент -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ассистентура-стажировка -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                        ассистентура-стажировка
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#educationLevelsAccordion">
+                    <div class="accordion-body">
+                        <!-- Контент -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
                 </section>
                 
                 
@@ -673,63 +716,6 @@
                     </div>
                 </div>
                 
-                <!-- Дисциплины -->
-                <div class="row mb-5">
-                    <div class="col-12">
-                        <h2 class="section-title offset-1">дисциплины</h2>
-                        
-                        <!-- Аккордеон с дисциплинами -->
-                        <div class="accordion offset-2" id="disciplinesAccordion">
-                            <!-- Набор базовых дисциплин -->
-                            <div class="discipline-card">
-                                <button class="btn w-100 text-start p-0" type="button" data-bs-toggle="collapse" data-bs-target="#basicDisciplines">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <h3 class="discipline-title">набор базовых дисциплин</h3>
-                                        <i class="bi bi-chevron-down fs-4"></i>
-                                    </div>
-                                </button>
-                                <div id="basicDisciplines" class="collapse" data-bs-parent="#disciplinesAccordion">
-                                    <div class="pt-3">
-                                        <!-- Список базовых дисциплин -->
-                                        <p>Содержимое базовых дисциплин...</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Набор профессиональных дисциплин -->
-                            <div class="discipline-card">
-                                <button class="btn w-100 text-start p-0" type="button" data-bs-toggle="collapse" data-bs-target="#professionalDisciplines">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <h3 class="discipline-title">набор профессиональных дисциплин</h3>
-                                        <i class="bi bi-chevron-down fs-4"></i>
-                                    </div>
-                                </button>
-                                <div id="professionalDisciplines" class="collapse" data-bs-parent="#disciplinesAccordion">
-                                    <div class="pt-3">
-                                        <!-- Список профессиональных дисциплин -->
-                                        <p>Содержимое профессиональных дисциплин...</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Элективные дисциплины -->
-                            <div class="discipline-card">
-                                <button class="btn w-100 text-start p-0" type="button" data-bs-toggle="collapse" data-bs-target="#electiveDisciplines">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <h3 class="discipline-title">элективные дисциплины</h3>
-                                        <i class="bi bi-chevron-down fs-4"></i>
-                                    </div>
-                                </button>
-                                <div id="electiveDisciplines" class="collapse" data-bs-parent="#disciplinesAccordion">
-                                    <div class="pt-3">
-                                        <!-- Список элективных дисциплин -->
-                                        <p>Содержимое элективных дисциплин...</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -1021,61 +1007,58 @@
   </script>
 
   <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  // Простой и рабочий вариант
+document.addEventListener('DOMContentLoaded', function() {
     const accordion = document.getElementById('educationLevelsAccordion');
-    const accordionButtons = accordion.querySelectorAll('.accordion-button');
     
-    // 1. Закрытие при повторном нажатии
-    accordionButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('data-bs-target');
-            const targetCollapse = document.querySelector(targetId);
-            const isCollapsed = this.classList.contains('collapsed');
-            
-            // Если аккордион уже открыт
-            if (!isCollapsed) {
-                e.preventDefault();
-                e.stopPropagation();
-                
-                // Закрываем его
-                const bsCollapse = bootstrap.Collapse.getInstance(targetCollapse) || 
-                                  new bootstrap.Collapse(targetCollapse);
-                bsCollapse.hide();
-                
-                // Обновляем состояние кнопки
-                this.classList.add('collapsed');
-                this.setAttribute('aria-expanded', 'false');
+    // Убираем data-bs-parent чтобы аккордионы работали независимо
+    const collapses = accordion.querySelectorAll('.accordion-collapse');
+    collapses.forEach(collapse => {
+        collapse.removeAttribute('data-bs-parent');
+    });
+    
+    // Вешаем обработчик на весь аккордион
+    accordion.addEventListener('click', function(e) {
+        const button = e.target.closest('.accordion-button');
+        if (!button) return;
+        
+        const targetId = button.getAttribute('data-bs-target');
+        const targetCollapse = document.querySelector(targetId);
+        
+        // Проверяем, открыт ли уже этот аккордион
+        const isAlreadyOpen = targetCollapse.classList.contains('show');
+        
+        // Закрываем все аккордионы
+        const allCollapses = accordion.querySelectorAll('.accordion-collapse');
+        allCollapses.forEach(collapse => {
+            if (collapse.classList.contains('show')) {
+                const bsCollapse = bootstrap.Collapse.getInstance(collapse);
+                if (bsCollapse) {
+                    bsCollapse.hide();
+                }
             }
         });
-    });
-    
-    // 2. Закрытие при клике вне аккордиона
-    document.addEventListener('click', function(e) {
-        if (!accordion.contains(e.target)) {
-            const openButtons = accordion.querySelectorAll('.accordion-button:not(.collapsed)');
-            
-            openButtons.forEach(button => {
-                const targetId = button.getAttribute('data-bs-target');
-                const targetCollapse = document.querySelector(targetId);
-                
-                if (targetCollapse && targetCollapse.classList.contains('show')) {
-                    const bsCollapse = bootstrap.Collapse.getInstance(targetCollapse);
-                    if (bsCollapse) {
-                        bsCollapse.hide();
-                        button.classList.add('collapsed');
-                        button.setAttribute('aria-expanded', 'false');
-                    }
-                }
+        
+        // Если аккордион не был открыт - открываем его
+        if (!isAlreadyOpen) {
+            const bsCollapse = new bootstrap.Collapse(targetCollapse, {
+                toggle: true
             });
         }
+        
+        e.preventDefault();
     });
     
-    // 3. Обработчик события закрытия аккордиона
-    accordion.addEventListener('hidden.bs.collapse', function(e) {
-        const button = document.querySelector(`[data-bs-target="#${e.target.id}"]`);
-        if (button) {
-            button.classList.add('collapsed');
-            button.setAttribute('aria-expanded', 'false');
+    // Закрытие при клике вне
+    document.addEventListener('click', function(e) {
+        if (!accordion.contains(e.target)) {
+            const openCollapses = accordion.querySelectorAll('.accordion-collapse.show');
+            openCollapses.forEach(collapse => {
+                const bsCollapse = bootstrap.Collapse.getInstance(collapse);
+                if (bsCollapse) {
+                    bsCollapse.hide();
+                }
+            });
         }
     });
 });
