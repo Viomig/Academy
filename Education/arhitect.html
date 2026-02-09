@@ -448,7 +448,25 @@
             border-radius: 15px;
             border: 1px solid var(--grey-dark);
             border-bottom: 1px solid var(--grey-dark);
+         margin-bottom: 15px; /* Добавляем отступ снизу */
+}
+
+          /* Убираем стандартные границы Bootstrap */
+        .accordion-custom .accordion-item:last-child {
+            border-bottom: 1px solid var(--grey-dark); /* Возвращаем границу */
+            margin-bottom: 0; /* Убираем отступ у последнего элемента */
         }
+        
+        /* Убираем стандартные скругления между элементами */
+        .accordion-custom .accordion-item:not(:last-of-type) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        
+.accordion-custom .accordion-item:not(:first-of-type) {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
 
         .accordion-custom .accordion-item:last-child {
             border-bottom: none;
