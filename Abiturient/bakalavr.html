@@ -822,6 +822,68 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(8, 13, 107, 0.3);
         }
+
+        /* ===== ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ ФИЛЬТРА ===== */
+        .filter-badge {
+            cursor: pointer;
+            background-color: var(--light-grey);
+            padding: 8px 20px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-right: 12px;
+            font-weight: 500;
+            transition: 0.2s;
+            border: 1px solid transparent;
+        }
+        .filter-badge.active-filter {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+        .dir-chip {
+            cursor: pointer;
+            background-color: white;
+            border: 1px solid #dee2e6;
+            padding: 6px 16px;
+            border-radius: 30px;
+            display: inline-block;
+            margin: 0 8px 8px 0;
+            font-size: 0.95rem;
+            transition: 0.2s;
+        }
+        .dir-chip.active-dir {
+            background-color: var(--primary-blue);
+            border-color: var(--primary-blue);
+            color: white;
+        }
+        /* Owl Carousel кастомизация под размер 282x202 */
+        .owl-carousel .owl-item img {
+            width: 202px;
+            height: 282px;
+            object-fit: cover;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto;
+        }
+        .owl-carousel {
+            height: 300px;
+        }
+        .owl-stage-outer, .owl-stage, .owl-item {
+            height: 100%;
+        }
+        .owl-carousel .owl-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* Стрелки owl темы (светлые на темном фоне) */
+        .owl-theme .owl-nav [class*='owl-'] {
+            background: rgba(0,0,0,0.5) !important;
+            color: white !important;
+            border-radius: 30px;
+        }
+        .owl-theme .owl-nav [class*='owl-']:hover {
+            background: var(--primary-blue) !important;
+        }
     </style>
 </head>
 <body>
@@ -1116,92 +1178,57 @@
             </div>
         </section>
 
-        <!-- ===== СЕКЦИЯ 4: ПРОГРАММЫ ВСТУПИТЕЛЬНЫХ ИСПЫТАНИЙ ===== -->
-        <section class="programs-section py-5" id="Vstupitelnye">
+        <!-- ===== НОВАЯ СЕКЦИЯ 4: ПРОГРАММЫ ВСТУПИТЕЛЬНЫХ ИСПЫТАНИЙ (с двухуровневым фильтром) ===== -->
+        <section class="programs-section py-5" id="Vstupitelnye-programs">
             <div class="container">
-                <h2 class="section-title">программы<br>вступительных испытаний</h2>
-                
-                <div class="row">
-                    <div class="col-lg-8">
-                        <!-- Навигация -->
-                        <ul class="nav nav-pills mb-4">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#content-tab" data-bs-toggle="pill">Содержание заданий</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#criteria-tab" data-bs-toggle="pill">Критерии оценивания</a>
-                            </li>
-                        </ul>
-                        
-                        <!-- Кнопки предметов -->
-                        <div class="d-flex flex-wrap gap-2 mb-4">
-                            <button class="btn btn-outline-primary btn-sm">Архитектурная композиция</button>
-                            <button class="btn btn-primary btn-sm">Дизайнерская композиция</button>
-                            <button class="btn btn-outline-primary btn-sm">История архитектуры и искусств</button>
-                            <button class="btn btn-outline-primary btn-sm">История искусств</button>
-                            <button class="btn btn-outline-primary btn-sm">Живопись</button>
-                            <button class="btn btn-outline-primary btn-sm">Рисунок</button>
-                            <button class="btn btn-outline-primary btn-sm">Художественное оформление материалов в костюме</button>
-                            <button class="btn btn-outline-primary btn-sm">Черчение</button>
-                            <button class="btn btn-outline-primary btn-sm">Чертежная графика</button>
+                <h2 class="section-title mb-5 offset-1">программы вступительных испытаний</h2>
+
+                <!-- Первый уровень фильтра (категории) -->
+                <div class="mb-4 d-flex flex-wrap align-items-center offset-1">
+                    <span class="me-3 fw-semibold">Тип:</span>
+                    <div id="firstFilterGroup">
+                        <span class="filter-badge active-filter" data-first="content">Содержание заданий</span>
+                        <span class="filter-badge" data-first="criteria">Критерии оценивания</span>
+                    </div>
+                </div>
+
+                <!-- Второй уровень (направления) -->
+                <div class="mb-4 offset-1">
+                    <span class="me-3 fw-semibold">Направление:</span>
+                    <div id="secondFilterGroup" class="d-flex flex-wrap">
+                        <!-- динамически через js -->
+                    </div>
+                    <div class="mt-2 small text-secondary" id="activeDirHint"></div>
+                </div>
+
+                <!-- Блок контента: текст + карусель (6+6 колонок) -->
+                <div class="row g-4">
+                    <!-- Левая колонка (текст) -->
+                    <div class="col-md-6" id="textContentBlock">
+                        <div class="p-4 bg-white border rounded h-100" style="min-height: 280px; white-space: pre-line;">
+                            Выберите категорию и направление
                         </div>
-                        
-                        <!-- Контент -->
-                        <div class="tab-content">
-                            <div class="tab-pane fade show active" id="content-tab">
-                                <h3 class="exam-title mb-4">Дизайнерская композиция</h3>
-                                <p class="mb-4">
-                                    Работа состоит из двух частей.<br>
-                                    <strong>Часть 1.</strong> Ассоциативно-образная плоскостная композиция в цвете на заданную тему. Материалы и инструменты: гуашь, кисти<br>
-                                    <strong>Часть 2.</strong> Стилизация объекта биоформы (графика). Материалы и инструменты: черная тушь, перо, черная гелиевая ручка и т.п.(по выбору абитуриента)<br>
-                                    Продолжительность испытания — 360 минут (6 астрономических часов).<br>
-                                    Обе части работы размещаются на одном листе ватмана формата А2 (594х420).
-                                </p>
-                                
-                                <a href="#" class="document-link d-inline-flex">
-                                    <div class="icon-wrapper">
-                                        <!-- SVG иконка документа -->
-                                    </div>
-                                    <span class="text">программа</span>
-                                </a>
-                            </div>
-                            
-                            <div class="tab-pane fade" id="criteria-tab">
-                                <!-- Контент критериев оценивания -->
+                    </div>
+                    <!-- Правая колонка (owl carousel) -->
+                    <div class="col-md-6">
+                        <div class="bg-white border rounded p-2" style="height:300px;">
+                            <div id="owlCarouselDemo" class="owl-carousel owl-theme">
+                                <!-- картинки будут вставляться скриптом -->
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="col-lg-4">
-                        <!-- Галерея работ -->
-                        <div class="position-relative">
-                            <div class="row g-3">
-                                <div class="col-6">
-                                    <img src="https://via.placeholder.com/282x202" class="img-fluid rounded" alt="Работа студента">
-                                </div>
-                                <div class="col-6">
-                                    <img src="https://via.placeholder.com/282x202" class="img-fluid rounded" alt="Работа студента">
-                                </div>
-                                <div class="col-12">
-                                    <img src="https://via.placeholder.com/393x282" class="img-fluid rounded" alt="Работа студента">
-                                </div>
-                            </div>
-                            
-                            <div class="text-end mt-3">
-                                <a href="#" class="text-decoration-none fw-semibold">
-                                    Посмотреть больше работ
-                                    <i class="bi bi-arrow-right ms-2"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+
+                <!-- Подсказка разработчику -->
+                <div class="info-hint small text-secondary mt-4 offset-1">
+                    <strong>📌 Как добавлять контент:</strong> откройте консоль и отредактируйте объект <code>window.examplesData</code> (ключи вида "content:arch", "criteria:design" и т.д.)
                 </div>
             </div>
         </section>
 
         <!-- ===== СЕКЦИЯ 5: ПЛАТНОЕ ОБУЧЕНИЕ ===== -->
-        <section class="price-section py-5" >
-           
+        <section class="price-section py-5" id="Comercia-placeholder">
+            <!-- содержимое секции 5 остаётся без изменений, просто маркер -->
         </section>    
                 
 <div class="paid-bakalavr">
@@ -1687,6 +1714,150 @@
                 e.preventDefault();
                 cardsContainer.scrollLeft += e.deltaY;
             });
+        });
+    </script>
+    <!-- Скрипты фильтра и Owl Carousel -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Данные (пример)
+            window.examplesData = {
+                "content:arch": {
+                    text: "Работа состоит из двух частей.\nЧасть 1. Ассоциативно-образная плоскостная композиция в цвете на заданную тему. Материалы и инструменты: гуашь, кисти.\nЧасть 2. Стилизация объекта биоформы (графика). Материалы и инструменты: черная тушь, перо, черная гелиевая ручка и т.п.(по выбору абитуриента).\nПродолжительность испытания — 360 минут (6 астрономических часов).\nОбе части работы размещаются на одном листе ватмана формата А2 (594х420).",
+                    images: [
+                        "https://picsum.photos/id/1015/202/282",
+                        "https://picsum.photos/id/1018/202/282",
+                        "https://picsum.photos/id/1043/202/282",
+                        "https://picsum.photos/id/1/202/282",
+                        "https://picsum.photos/id/20/202/282"
+                    ]
+                },
+                "content:design": {
+                    text: "Дизайнерская композиция: создать графическую композицию из трёх объектов на тему «Город». Формат А2, смешанная техника. Время выполнения — 5 часов. Критически важна цельность композиции.",
+                    images: [
+                        "https://picsum.photos/id/100/202/282",
+                        "https://picsum.photos/id/101/202/282",
+                        "https://picsum.photos/id/102/202/282",
+                        "https://picsum.photos/id/103/202/282"
+                    ]
+                },
+                "content:черчение": {
+                    text: "Черчение: построить аксонометрическую проекцию детали. Три вида с разрезами. Лист А2, чертёжные инструменты. Время 5 часов.",
+                    images: [
+                        "https://picsum.photos/id/119/202/282",
+                        "https://picsum.photos/id/120/202/282",
+                        "https://picsum.photos/id/121/202/282"
+                    ]
+                },
+                "criteria:arch": {
+                    text: "Критерии оценивания (Архитектурная композиция): Композиционная целостность — 5 баллов, Выразительность образа — 4 балла, Техника — 3 балла. Всего 12 баллов.",
+                    images: [
+                        "https://picsum.photos/id/124/202/282",
+                        "https://picsum.photos/id/125/202/282",
+                        "https://picsum.photos/id/126/202/282"
+                    ]
+                },
+                "criteria:design": {
+                    text: "Критерии (Дизайнерская композиция): Новизна решения — 6, Цветовая гармония — 5, Подача — 4. Итого 15.",
+                    images: [
+                        "https://picsum.photos/id/127/202/282",
+                        "https://picsum.photos/id/128/202/282"
+                    ]
+                }
+            };
+            // Список направлений
+            const directionList = [
+                { slug: 'arch', name: 'Архитектурная композиция' },
+                { slug: 'design', name: 'Дизайнерская композиция' },
+                { slug: 'histarch', name: 'История архитектуры и искусства' },
+                { slug: 'histart', name: 'История искусств' },
+                { slug: 'painting', name: 'Живопись' },
+                { slug: 'drawing', name: 'Рисунок' },
+                { slug: 'other', name: '........' },
+                { slug: 'черчение', name: 'Черчение' },
+                { slug: 'чертежнаяграфика', name: 'Чертежная Графика' }
+            ];
+
+            let activeFirst = 'content';
+            let activeSecond = 'arch';
+            let owl = null;
+
+            const firstFilter = document.getElementById('firstFilterGroup');
+            const secondDiv = document.getElementById('secondFilterGroup');
+            const textBlock = document.getElementById('textContentBlock');
+            const hint = document.getElementById('activeDirHint');
+            const owlElement = document.getElementById('owlCarouselDemo');
+
+            function renderSecond() {
+                let html = '';
+                directionList.forEach(d => {
+                    html += `<span class="dir-chip ${activeSecond === d.slug ? 'active-dir' : ''}" data-dir="${d.slug}">${d.name}</span>`;
+                });
+                secondDiv.innerHTML = html;
+                document.querySelectorAll('.dir-chip').forEach(chip => {
+                    chip.addEventListener('click', function() {
+                        const slug = this.dataset.dir;
+                        if (slug !== activeSecond) {
+                            activeSecond = slug;
+                            document.querySelectorAll('.dir-chip').forEach(c => c.classList.remove('active-dir'));
+                            this.classList.add('active-dir');
+                            updateContent();
+                        }
+                    });
+                });
+            }
+
+            function updateContent() {
+                const key = activeFirst + ':' + activeSecond;
+                const data = window.examplesData[key];
+                const dirObj = directionList.find(d => d.slug === activeSecond);
+                hint.innerText = `Активно: ${activeFirst === 'content' ? 'Содержание заданий' : 'Критерии оценивания'} → ${dirObj ? dirObj.name : activeSecond}`;
+
+                if (!data) {
+                    textBlock.innerHTML = `<div class="p-4 bg-white border rounded h-100" style="white-space: pre-line;">Нет контента для комбинации "${key}". Добавьте запись в examplesData.</div>`;
+                    if (owl) owl.destroy();
+                    owlElement.innerHTML = '';
+                    return;
+                }
+
+                textBlock.innerHTML = `<div class="p-4 bg-white border rounded h-100" style="white-space: pre-line;">${data.text}</div>`;
+
+                // Пересоздаём owl
+                owlElement.innerHTML = '';
+                data.images.forEach(src => {
+                    owlElement.innerHTML += `<img src="${src}" alt="пример">`;
+                });
+                if (owl) owl.destroy();
+                owl = $(owlElement).owlCarousel({
+                    loop: true,
+                    margin: 10,
+                    nav: true,
+                    dots: true,
+                    items: 3,
+                    responsive: {
+                        0: { items: 1 },
+                        768: { items: 2 },
+                        992: { items: 3 }
+                    }
+                });
+            }
+
+            firstFilter.addEventListener('click', (e) => {
+                const badge = e.target.closest('.filter-badge');
+                if (!badge) return;
+                const val = badge.dataset.first;
+                if (!val) return;
+                document.querySelectorAll('.filter-badge').forEach(b => b.classList.remove('active-filter'));
+                badge.classList.add('active-filter');
+                if (activeFirst !== val) {
+                    activeFirst = val;
+                    activeSecond = 'arch';
+                    renderSecond();
+                    updateContent();
+                }
+            });
+
+            renderSecond();
+            updateContent();
         });
     </script>
 </body>
