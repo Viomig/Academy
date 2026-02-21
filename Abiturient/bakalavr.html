@@ -864,9 +864,6 @@
             display: block;
             margin: 0 auto;
         }
-        .owl-carousel {
-            height: 300px;
-        }
         .owl-stage-outer, .owl-stage, .owl-item {
             height: 100%;
         }
@@ -1209,26 +1206,29 @@
                             Выберите категорию и направление
                         </div>
                     </div>
-                    <!-- Правая колонка (owl carousel) -->
-                    <div class="col-md-6">
-                        <div class="bg-white border rounded p-2" style="height:300px;">
-                            <div id="owlCarouselDemo" class="owl-carousel owl-theme">
-                                <!-- картинки будут вставляться скриптом -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Подсказка разработчику -->
-                <div class="info-hint small text-secondary mt-4 offset-1">
-                    <strong>📌 Как добавлять контент:</strong> откройте консоль и отредактируйте объект <code>window.examplesData</code> (ключи вида "content:arch", "criteria:design" и т.д.)
+                    <!-- Правая колонка (Bootstrap carousel) -->
+<div class="col-md-6">
+    <div class="bg-white border rounded p-2" style="height:300px; display: flex; align-items: center;">
+        <div id="bootstrapCarousel" class="carousel slide w-100" data-bs-ride="false">
+            <div class="carousel-inner" id="carouselInner"></div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#bootstrapCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Предыдущий</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#bootstrapCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Следующий</span>
+            </button>
+        </div>
+    </div>
+</div>
                 </div>
             </div>
         </section>
 
         <!-- ===== СЕКЦИЯ 5: ПЛАТНОЕ ОБУЧЕНИЕ ===== -->
         <section class="price-section py-5" id="Comercia-placeholder">
-            <!-- содержимое секции 5 остаётся без изменений, просто маркер -->
+           
         </section>    
                 
 <div class="paid-bakalavr">
@@ -1553,7 +1553,7 @@
   
 
        <!-- Подключаем Bootstrap JS и Popper.js -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="/Academy/js/owl.carousel.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
@@ -1718,17 +1718,17 @@
     </script>
     <!-- Скрипты фильтра и Owl Carousel -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Данные (пример)
+      const carouselInner = document.getElementById('carouselInner');
+            // Данные (пример) - расширим для наглядности
             window.examplesData = {
+                // Содержание заданий
                 "content:arch": {
                     text: "Работа состоит из двух частей.\nЧасть 1. Ассоциативно-образная плоскостная композиция в цвете на заданную тему. Материалы и инструменты: гуашь, кисти.\nЧасть 2. Стилизация объекта биоформы (графика). Материалы и инструменты: черная тушь, перо, черная гелиевая ручка и т.п.(по выбору абитуриента).\nПродолжительность испытания — 360 минут (6 астрономических часов).\nОбе части работы размещаются на одном листе ватмана формата А2 (594х420).",
                     images: [
                         "https://picsum.photos/id/1015/202/282",
                         "https://picsum.photos/id/1018/202/282",
                         "https://picsum.photos/id/1043/202/282",
-                        "https://picsum.photos/id/1/202/282",
-                        "https://picsum.photos/id/20/202/282"
+                        "https://picsum.photos/id/1/202/282"
                     ]
                 },
                 "content:design": {
@@ -1736,24 +1736,63 @@
                     images: [
                         "https://picsum.photos/id/100/202/282",
                         "https://picsum.photos/id/101/202/282",
-                        "https://picsum.photos/id/102/202/282",
-                        "https://picsum.photos/id/103/202/282"
+                        "https://picsum.photos/id/102/202/282"
+                    ]
+                },
+                "content:histarch": {
+                    text: "История архитектуры и искусства: проанализировать памятник архитектуры (на выбор). Письменный анализ с зарисовками. Объём 2-3 страницы + иллюстрации.",
+                    images: [
+                        "https://picsum.photos/id/104/202/282",
+                        "https://picsum.photos/id/106/202/282"
+                    ]
+                },
+                "content:histart": {
+                    text: "История искусств: тест и анализ картины эпохи Возрождения. Указать стиль, автора, иконографию. Работа выполняется письменно.",
+                    images: [
+                        "https://picsum.photos/id/108/202/282",
+                        "https://picsum.photos/id/169/202/282"
+                    ]
+                },
+                "content:painting": {
+                    text: "Живопись: натюрморт из бытовых предметов на фоне драпировки. Акварель или гуашь. Формат А2. Время 6 часов.",
+                    images: [
+                        "https://picsum.photos/id/110/202/282",
+                        "https://picsum.photos/id/111/202/282"
+                    ]
+                },
+                "content:drawing": {
+                    text: "Рисунок: гипсовая голова (Аполлон, Венера). Материал — графитный карандаш. Формат А2. Передача светотени.",
+                    images: [
+                        "https://picsum.photos/id/113/202/282",
+                        "https://picsum.photos/id/114/202/282"
+                    ]
+                },
+                "content:other": {
+                    text: "Прочее направление: творческое задание на свободную тему. Формат А3, техника по выбору.",
+                    images: [
+                        "https://picsum.photos/id/117/202/282"
                     ]
                 },
                 "content:черчение": {
                     text: "Черчение: построить аксонометрическую проекцию детали. Три вида с разрезами. Лист А2, чертёжные инструменты. Время 5 часов.",
                     images: [
                         "https://picsum.photos/id/119/202/282",
-                        "https://picsum.photos/id/120/202/282",
-                        "https://picsum.photos/id/121/202/282"
+                        "https://picsum.photos/id/120/202/282"
                     ]
                 },
+                "content:чертежнаяграфика": {
+                    text: "Чертёжная графика: выполнить чертёж фасада здания (архитектурный проект). Тушь, рапидограф. Требуется точность линий.",
+                    images: [
+                        "https://picsum.photos/id/122/202/282",
+                        "https://picsum.photos/id/123/202/282"
+                    ]
+                },
+                // Критерии оценивания
                 "criteria:arch": {
                     text: "Критерии оценивания (Архитектурная композиция): Композиционная целостность — 5 баллов, Выразительность образа — 4 балла, Техника — 3 балла. Всего 12 баллов.",
                     images: [
                         "https://picsum.photos/id/124/202/282",
-                        "https://picsum.photos/id/125/202/282",
-                        "https://picsum.photos/id/126/202/282"
+                        "https://picsum.photos/id/125/202/282"
                     ]
                 },
                 "criteria:design": {
@@ -1762,8 +1801,15 @@
                         "https://picsum.photos/id/127/202/282",
                         "https://picsum.photos/id/128/202/282"
                     ]
+                },
+                "criteria:histarch": {
+                    text: "Критерии (История архитектуры): полнота раскрытия темы, использование терминов, качество иллюстраций. Макс. 10 баллов.",
+                    images: [
+                        "https://picsum.photos/id/129/202/282"
+                    ]
                 }
             };
+            
             // Список направлений
             const directionList = [
                 { slug: 'arch', name: 'Архитектурная композиция' },
@@ -1779,7 +1825,7 @@
 
             let activeFirst = 'content';
             let activeSecond = 'arch';
-            let owl = null;
+            let owlInstance = null;
 
             const firstFilter = document.getElementById('firstFilterGroup');
             const secondDiv = document.getElementById('secondFilterGroup');
@@ -1787,12 +1833,16 @@
             const hint = document.getElementById('activeDirHint');
             const owlElement = document.getElementById('owlCarouselDemo');
 
+            // Функция рендера второго уровня
             function renderSecond() {
                 let html = '';
                 directionList.forEach(d => {
-                    html += `<span class="dir-chip ${activeSecond === d.slug ? 'active-dir' : ''}" data-dir="${d.slug}">${d.name}</span>`;
+                    const activeClass = (activeSecond === d.slug) ? 'active-dir' : '';
+                    html += `<span class="dir-chip ${activeClass}" data-dir="${d.slug}">${d.name}</span>`;
                 });
                 secondDiv.innerHTML = html;
+                
+                // Назначаем обработчики
                 document.querySelectorAll('.dir-chip').forEach(chip => {
                     chip.addEventListener('click', function() {
                         const slug = this.dataset.dir;
@@ -1806,59 +1856,51 @@
                 });
             }
 
-            function updateContent() {
-                const key = activeFirst + ':' + activeSecond;
-                const data = window.examplesData[key];
-                const dirObj = directionList.find(d => d.slug === activeSecond);
-                hint.innerText = `Активно: ${activeFirst === 'content' ? 'Содержание заданий' : 'Критерии оценивания'} → ${dirObj ? dirObj.name : activeSecond}`;
+            // Функция обновления контента (текст + карусель)
+function updateContent() {
+    const key = activeFirst + ':' + activeSecond;
+    const data = window.examplesData[key];
+    const dirObj = directionList.find(d => d.slug === activeSecond);
+    const firstName = activeFirst === 'content' ? 'Содержание заданий' : 'Критерии оценивания';
+    hint.innerText = `Активно: ${firstName} → ${dirObj ? dirObj.name : activeSecond}`;
 
-                if (!data) {
-                    textBlock.innerHTML = `<div class="p-4 bg-white border rounded h-100" style="white-space: pre-line;">Нет контента для комбинации "${key}". Добавьте запись в examplesData.</div>`;
-                    if (owl) owl.destroy();
-                    owlElement.innerHTML = '';
-                    return;
-                }
+    if (!data) {
+        textBlock.innerHTML = `<div class="p-4 bg-white border rounded h-100" style="white-space: pre-line;">Нет контента для комбинации "${key}". Добавьте запись в examplesData.</div>`;
+        document.getElementById('carouselInner').innerHTML = '<div class="carousel-item active"><div class="d-flex justify-content-center p-4">Нет изображений</div></div>';
+        return;
+    }
 
-                textBlock.innerHTML = `<div class="p-4 bg-white border rounded h-100" style="white-space: pre-line;">${data.text}</div>`;
+    // Обновляем текст
+    textBlock.innerHTML = `<div class="p-4 bg-white border rounded h-100" style="white-space: pre-line;">${data.text}</div>`;
 
-                // Пересоздаём owl
-                owlElement.innerHTML = '';
-                data.images.forEach(src => {
-                    owlElement.innerHTML += `<img src="${src}" alt="пример">`;
-                });
-                if (owl) owl.destroy();
-                owl = $(owlElement).owlCarousel({
-                    loop: true,
-                    margin: 10,
-                    nav: true,
-                    dots: true,
-                    items: 3,
-                    responsive: {
-                        0: { items: 1 },
-                        768: { items: 2 },
-                        992: { items: 3 }
-                    }
-                });
-            }
-
-            firstFilter.addEventListener('click', (e) => {
-                const badge = e.target.closest('.filter-badge');
-                if (!badge) return;
-                const val = badge.dataset.first;
-                if (!val) return;
-                document.querySelectorAll('.filter-badge').forEach(b => b.classList.remove('active-filter'));
-                badge.classList.add('active-filter');
-                if (activeFirst !== val) {
-                    activeFirst = val;
-                    activeSecond = 'arch';
-                    renderSecond();
-                    updateContent();
-                }
-            });
-
-            renderSecond();
-            updateContent();
+    // Обновляем карусель (группируем по 3 изображения)
+    const carouselInner = document.getElementById('carouselInner');
+    carouselInner.innerHTML = '';
+    
+    if (!data.images || data.images.length === 0) {
+        carouselInner.innerHTML = '<div class="carousel-item active"><div class="d-flex justify-content-center p-4">Нет изображений</div></div>';
+        return;
+    }
+    
+    // Группируем изображения по 3 на слайд
+    for (let i = 0; i < data.images.length; i += 3) {
+        const slideImages = data.images.slice(i, i + 3);
+        const isActive = i === 0 ? 'active' : '';
+        
+        let imagesHtml = '';
+        slideImages.forEach(src => {
+            imagesHtml += `<img src="${src}" alt="пример работы" style="width:202px; height:282px; object-fit:cover; margin:0 5px; border-radius:8px;">`;
         });
+        
+        carouselInner.innerHTML += `
+            <div class="carousel-item ${isActive}">
+                <div class="d-flex justify-content-center align-items-center" style="height:282px;">
+                    ${imagesHtml}
+                </div>
+            </div>
+        `;
+    }
+}
     </script>
 </body>
 </html>
