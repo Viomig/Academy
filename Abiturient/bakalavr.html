@@ -1207,6 +1207,7 @@
                         </div>
                     </div>
                     <!-- Правая колонка (Bootstrap carousel) -->
+<!-- Правая колонка (Bootstrap carousel) -->
 <div class="col-md-6">
     <div class="bg-white border rounded p-2" style="height:300px; display: flex; align-items: center;">
         <div id="bootstrapCarousel" class="carousel slide w-100" data-bs-ride="false">
@@ -1716,9 +1717,9 @@
             });
         });
     </script>
-    <!-- Скрипты фильтра и Owl Carousel -->
+       <!-- Скрипты фильтра с Bootstrap Carousel -->
     <script>
-      const carouselInner = document.getElementById('carouselInner');
+        document.addEventListener('DOMContentLoaded', function() {
             // Данные (пример) - расширим для наглядности
             window.examplesData = {
                 // Содержание заданий
@@ -1825,13 +1826,12 @@
 
             let activeFirst = 'content';
             let activeSecond = 'arch';
-            let owlInstance = null;
 
             const firstFilter = document.getElementById('firstFilterGroup');
             const secondDiv = document.getElementById('secondFilterGroup');
             const textBlock = document.getElementById('textContentBlock');
             const hint = document.getElementById('activeDirHint');
-            const owlElement = document.getElementById('owlCarouselDemo');
+            const carouselInner = document.getElementById('carouselInner');
 
             // Функция рендера второго уровня
             function renderSecond() {
@@ -1857,50 +1857,86 @@
             }
 
             // Функция обновления контента (текст + карусель)
-function updateContent() {
-    const key = activeFirst + ':' + activeSecond;
-    const data = window.examplesData[key];
-    const dirObj = directionList.find(d => d.slug === activeSecond);
-    const firstName = activeFirst === 'content' ? 'Содержание заданий' : 'Критерии оценивания';
-    hint.innerText = `Активно: ${firstName} → ${dirObj ? dirObj.name : activeSecond}`;
+            function updateContent() {
+                const key = activeFirst + ':' + activeSecond;
+                const data = window.examplesData[key];
+                const dirObj = directionList.find(d => d.slug === activeSecond);
+                const firstName = activeFirst === 'content' ? 'Содержание заданий' : 'Критерии оценивания';
+                
+                if (hint) {
+                    hint.innerText = `Активно: ${firstName} → ${dirObj ? dirObj.name : activeSecond}`;
+                }
 
-    if (!data) {
-        textBlock.innerHTML = `<div class="p-4 bg-white border rounded h-100" style="white-space: pre-line;">Нет контента для комбинации "${key}". Добавьте запись в examplesData.</div>`;
-        document.getElementById('carouselInner').innerHTML = '<div class="carousel-item active"><div class="d-flex justify-content-center p-4">Нет изображений</div></div>';
-        return;
-    }
+                if (!data) {
+                    if (textBlock) {
+                        textBlock.innerHTML = `<div class="p-4 bg-white border rounded h-100" style="white-space: pre-line;">Нет контента для комбинации "${key}". Добавьте запись в examplesData.</div>`;
+                    }
+                    if (carouselInner) {
+                        carouselInner.innerHTML = '<div class="carousel-item active"><div class="d-flex justify-content-center p-4">Нет изображений</div></div>';
+                    }
+                    return;
+                }
 
-    // Обновляем текст
-    textBlock.innerHTML = `<div class="p-4 bg-white border rounded h-100" style="white-space: pre-line;">${data.text}</div>`;
+                // Обновляем текст
+                if (textBlock) {
+                    textBlock.innerHTML = `<div class="p-4 bg-white border rounded h-100" style="white-space: pre-line;">${data.text}</div>`;
+                }
 
-    // Обновляем карусель (группируем по 3 изображения)
-    const carouselInner = document.getElementById('carouselInner');
-    carouselInner.innerHTML = '';
-    
-    if (!data.images || data.images.length === 0) {
-        carouselInner.innerHTML = '<div class="carousel-item active"><div class="d-flex justify-content-center p-4">Нет изображений</div></div>';
-        return;
-    }
-    
-    // Группируем изображения по 3 на слайд
-    for (let i = 0; i < data.images.length; i += 3) {
-        const slideImages = data.images.slice(i, i + 3);
-        const isActive = i === 0 ? 'active' : '';
-        
-        let imagesHtml = '';
-        slideImages.forEach(src => {
-            imagesHtml += `<img src="${src}" alt="пример работы" style="width:202px; height:282px; object-fit:cover; margin:0 5px; border-radius:8px;">`;
+                // Обновляем карусель (группируем по 3 изображения)
+                if (carouselInner) {
+                    carouselInner.innerHTML = '';
+                    
+                    if (!data.images || data.images.length === 0) {
+                        carouselInner.innerHTML = '<div class="carousel-item active"><div class="d-flex justify-content-center p-4">Нет изображений</div></div>';
+                        return;
+                    }
+                    
+                    // Группируем изображения по 3 на слайд
+                    for (let i = 0; i < data.images.length; i += 3) {
+                        const slideImages = data.images.slice(i, i + 3);
+                        const isActive = i === 0 ? 'active' : '';
+                        
+                        let imagesHtml = '';
+                        slideImages.forEach(src => {
+                            imagesHtml += `<img src="${src}" alt="пример работы" style="width:202px; height:282px; object-fit:cover; margin:0 5px; border-radius:8px;">`;
+                        });
+                        
+                        carouselInner.innerHTML += `
+                            <div class="carousel-item ${isActive}">
+                                <div class="d-flex justify-content-center align-items-center" style="height:282px;">
+                                    ${imagesHtml}
+                                </div>
+                            </div>
+                        `;
+                    }
+                }
+            }
+
+            // Обработка кликов по первому фильтру
+            if (firstFilter) {
+                firstFilter.addEventListener('click', (e) => {
+                    const badge = e.target.closest('.filter-badge');
+                    if (!badge) return;
+                    
+                    const val = badge.dataset.first;
+                    if (!val) return;
+                    
+                    document.querySelectorAll('.filter-badge').forEach(b => b.classList.remove('active-filter'));
+                    badge.classList.add('active-filter');
+                    
+                    if (activeFirst !== val) {
+                        activeFirst = val;
+                        activeSecond = 'arch'; // сбрасываем на первое направление
+                        renderSecond(); // перерисовываем второй уровень с активным arch
+                        updateContent();
+                    }
+                });
+            }
+
+            // Инициализация
+            renderSecond();
+            updateContent();
         });
-        
-        carouselInner.innerHTML += `
-            <div class="carousel-item ${isActive}">
-                <div class="d-flex justify-content-center align-items-center" style="height:282px;">
-                    ${imagesHtml}
-                </div>
-            </div>
-        `;
-    }
-}
     </script>
 </body>
 </html>
