@@ -1720,96 +1720,75 @@
        <!-- Скрипты фильтра с Bootstrap Carousel -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Данные (пример) - расширим для наглядности
-            window.examplesData = {
-                // Содержание заданий
-                "content:arch": {
-                    text: "Работа состоит из двух частей.\nЧасть 1. Ассоциативно-образная плоскостная композиция в цвете на заданную тему. Материалы и инструменты: гуашь, кисти.\nЧасть 2. Стилизация объекта биоформы (графика). Материалы и инструменты: черная тушь, перо, черная гелиевая ручка и т.п.(по выбору абитуриента).\nПродолжительность испытания — 360 минут (6 астрономических часов).\nОбе части работы размещаются на одном листе ватмана формата А2 (594х420).",
-                    images: [
-                        "https://picsum.photos/id/1015/202/282",
-                        "https://picsum.photos/id/1018/202/282",
-                        "https://picsum.photos/id/1043/202/282",
-                        "https://picsum.photos/id/1/202/282"
-                    ]
-                },
-                "content:design": {
-                    text: "Дизайнерская композиция: создать графическую композицию из трёх объектов на тему «Город». Формат А2, смешанная техника. Время выполнения — 5 часов. Критически важна цельность композиции.",
-                    images: [
-                        "https://picsum.photos/id/100/202/282",
-                        "https://picsum.photos/id/101/202/282",
-                        "https://picsum.photos/id/102/202/282"
-                    ]
-                },
-                "content:histarch": {
-                    text: "История архитектуры и искусства: проанализировать памятник архитектуры (на выбор). Письменный анализ с зарисовками. Объём 2-3 страницы + иллюстрации.",
-                    images: [
-                        "https://picsum.photos/id/104/202/282",
-                        "https://picsum.photos/id/106/202/282"
-                    ]
-                },
-                "content:histart": {
-                    text: "История искусств: тест и анализ картины эпохи Возрождения. Указать стиль, автора, иконографию. Работа выполняется письменно.",
-                    images: [
-                        "https://picsum.photos/id/108/202/282",
-                        "https://picsum.photos/id/169/202/282"
-                    ]
-                },
-                "content:painting": {
-                    text: "Живопись: натюрморт из бытовых предметов на фоне драпировки. Акварель или гуашь. Формат А2. Время 6 часов.",
-                    images: [
-                        "https://picsum.photos/id/110/202/282",
-                        "https://picsum.photos/id/111/202/282"
-                    ]
-                },
-                "content:drawing": {
-                    text: "Рисунок: гипсовая голова (Аполлон, Венера). Материал — графитный карандаш. Формат А2. Передача светотени.",
-                    images: [
-                        "https://picsum.photos/id/113/202/282",
-                        "https://picsum.photos/id/114/202/282"
-                    ]
-                },
-                "content:other": {
-                    text: "Прочее направление: творческое задание на свободную тему. Формат А3, техника по выбору.",
-                    images: [
-                        "https://picsum.photos/id/117/202/282"
-                    ]
-                },
-                "content:черчение": {
-                    text: "Черчение: построить аксонометрическую проекцию детали. Три вида с разрезами. Лист А2, чертёжные инструменты. Время 5 часов.",
-                    images: [
-                        "https://picsum.photos/id/119/202/282",
-                        "https://picsum.photos/id/120/202/282"
-                    ]
-                },
-                "content:чертежнаяграфика": {
-                    text: "Чертёжная графика: выполнить чертёж фасада здания (архитектурный проект). Тушь, рапидограф. Требуется точность линий.",
-                    images: [
-                        "https://picsum.photos/id/122/202/282",
-                        "https://picsum.photos/id/123/202/282"
-                    ]
-                },
-                // Критерии оценивания
-                "criteria:arch": {
-                    text: "Критерии оценивания (Архитектурная композиция): Композиционная целостность — 5 баллов, Выразительность образа — 4 балла, Техника — 3 балла. Всего 12 баллов.",
-                    images: [
-                        "https://picsum.photos/id/124/202/282",
-                        "https://picsum.photos/id/125/202/282"
-                    ]
-                },
-                "criteria:design": {
-                    text: "Критерии (Дизайнерская композиция): Новизна решения — 6, Цветовая гармония — 5, Подача — 4. Итого 15.",
-                    images: [
-                        "https://picsum.photos/id/127/202/282",
-                        "https://picsum.photos/id/128/202/282"
-                    ]
-                },
-                "criteria:histarch": {
-                    text: "Критерии (История архитектуры): полнота раскрытия темы, использование терминов, качество иллюстраций. Макс. 10 баллов.",
-                    images: [
-                        "https://picsum.photos/id/129/202/282"
-                    ]
-                }
-            };
+           // Данные - изображения привязаны к направлению, текст к комбинации тип+направление
+window.examplesData = {
+    // Изображения для каждого направления (общие для обоих типов)
+    images: {
+        "arch": [
+            "https://picsum.photos/id/1015/202/282",
+            "https://picsum.photos/id/1018/202/282",
+            "https://picsum.photos/id/1043/202/282",
+            "https://picsum.photos/id/1/202/282"
+        ],
+        "design": [
+            "https://picsum.photos/id/100/202/282",
+            "https://picsum.photos/id/101/202/282",
+            "https://picsum.photos/id/102/202/282"
+        ],
+        "histarch": [
+            "https://picsum.photos/id/104/202/282",
+            "https://picsum.photos/id/106/202/282"
+        ],
+        "histart": [
+            "https://picsum.photos/id/108/202/282",
+            "https://picsum.photos/id/169/202/282"
+        ],
+        "painting": [
+            "https://picsum.photos/id/110/202/282",
+            "https://picsum.photos/id/111/202/282"
+        ],
+        "drawing": [
+            "https://picsum.photos/id/113/202/282",
+            "https://picsum.photos/id/114/202/282"
+        ],
+        "other": [
+            "https://picsum.photos/id/117/202/282"
+        ],
+        "черчение": [
+            "https://picsum.photos/id/119/202/282",
+            "https://picsum.photos/id/120/202/282"
+        ],
+        "чертежнаяграфика": [
+            "https://picsum.photos/id/122/202/282",
+            "https://picsum.photos/id/123/202/282"
+        ]
+    },
+    
+    // Тексты для каждой комбинации тип+направление
+    texts: {
+        // Содержание заданий
+        "content:arch": "Работа состоит из двух частей.\nЧасть 1. Ассоциативно-образная плоскостная композиция в цвете на заданную тему. Материалы и инструменты: гуашь, кисти.\nЧасть 2. Стилизация объекта биоформы (графика). Материалы и инструменты: черная тушь, перо, черная гелиевая ручка и т.п.(по выбору абитуриента).\nПродолжительность испытания — 360 минут (6 астрономических часов).\nОбе части работы размещаются на одном листе ватмана формата А2 (594х420).",
+        "content:design": "Дизайнерская композиция: создать графическую композицию из трёх объектов на тему «Город». Формат А2, смешанная техника. Время выполнения — 5 часов. Критически важна цельность композиции.",
+        "content:histarch": "История архитектуры и искусства: проанализировать памятник архитектуры (на выбор). Письменный анализ с зарисовками. Объём 2-3 страницы + иллюстрации.",
+        "content:histart": "История искусств: тест и анализ картины эпохи Возрождения. Указать стиль, автора, иконографию. Работа выполняется письменно.",
+        "content:painting": "Живопись: натюрморт из бытовых предметов на фоне драпировки. Акварель или гуашь. Формат А2. Время 6 часов.",
+        "content:drawing": "Рисунок: гипсовая голова (Аполлон, Венера). Материал — графитный карандаш. Формат А2. Передача светотени.",
+        "content:other": "Прочее направление: творческое задание на свободную тему. Формат А3, техника по выбору.",
+        "content:черчение": "Черчение: построить аксонометрическую проекцию детали. Три вида с разрезами. Лист А2, чертёжные инструменты. Время 5 часов.",
+        "content:чертежнаяграфика": "Чертёжная графика: выполнить чертёж фасада здания (архитектурный проект). Тушь, рапидограф. Требуется точность линий.",
+        
+        // Критерии оценивания
+        "criteria:arch": "Критерии оценивания (Архитектурная композиция): Композиционная целостность — 5 баллов, Выразительность образа — 4 балла, Техника — 3 балла. Всего 12 баллов.",
+        "criteria:design": "Критерии (Дизайнерская композиция): Новизна решения — 6, Цветовая гармония — 5, Подача — 4. Итого 15.",
+        "criteria:histarch": "Критерии (История архитектуры): полнота раскрытия темы, использование терминов, качество иллюстраций. Макс. 10 баллов.",
+        "criteria:histart": "Критерии (История искусств): знание художественных стилей, атрибуция произведений, анализ композиции. Макс. 15 баллов.",
+        "criteria:painting": "Критерии (Живопись): цветовое решение, композиция, техника исполнения. Макс. 20 баллов.",
+        "criteria:drawing": "Критерии (Рисунок): построение, светотень, пропорции. Макс. 18 баллов.",
+        "criteria:other": "Критерии (Другие направления): творческий подход, качество исполнения. Макс. 10 баллов.",
+        "criteria:черчение": "Критерии (Черчение): точность построения, оформление, соответствие ГОСТ. Макс. 25 баллов.",
+        "criteria:чертежнаяграфика": "Критерии (Чертежная графика): качество линий, штриховка, компоновка. Макс. 22 балла."
+    }
+};
             
             // Список направлений
             const directionList = [
@@ -1857,60 +1836,58 @@
             }
 
             // Функция обновления контента (текст + карусель)
-            function updateContent() {
-                const key = activeFirst + ':' + activeSecond;
-                const data = window.examplesData[key];
-                const dirObj = directionList.find(d => d.slug === activeSecond);
-                const firstName = activeFirst === 'content' ? 'Содержание заданий' : 'Критерии оценивания';
-                
-                if (hint) {
-                    hint.innerText = `Активно: ${firstName} → ${dirObj ? dirObj.name : activeSecond}`;
-                }
+function updateContent() {
+    const textKey = activeFirst + ':' + activeSecond;
+    const text = window.examplesData.texts[textKey];
+    const images = window.examplesData.images[activeSecond]; // изображения по направлению!
+    
+    const dirObj = directionList.find(d => d.slug === activeSecond);
+    const firstName = activeFirst === 'content' ? 'Содержание заданий' : 'Критерии оценивания';
+    
+    if (hint) {
+        hint.innerText = `Активно: ${firstName} → ${dirObj ? dirObj.name : activeSecond}`;
+    }
 
-                if (!data) {
-                    if (textBlock) {
-                        textBlock.innerHTML = `<div class="p-4 bg-white border rounded h-100" style="white-space: pre-line;">Нет контента для комбинации "${key}". Добавьте запись в examplesData.</div>`;
-                    }
-                    if (carouselInner) {
-                        carouselInner.innerHTML = '<div class="carousel-item active"><div class="d-flex justify-content-center p-4">Нет изображений</div></div>';
-                    }
-                    return;
-                }
+    if (!text) {
+        if (textBlock) {
+            textBlock.innerHTML = `<div class="p-4 bg-white border rounded h-100" style="white-space: pre-line;">Нет текста для комбинации "${textKey}".</div>`;
+        }
+    } else {
+        // Обновляем текст
+        if (textBlock) {
+            textBlock.innerHTML = `<div class="p-4 bg-white border rounded h-100" style="white-space: pre-line;">${text}</div>`;
+        }
+    }
 
-                // Обновляем текст
-                if (textBlock) {
-                    textBlock.innerHTML = `<div class="p-4 bg-white border rounded h-100" style="white-space: pre-line;">${data.text}</div>`;
-                }
-
-                // Обновляем карусель (группируем по 3 изображения)
-                if (carouselInner) {
-                    carouselInner.innerHTML = '';
-                    
-                    if (!data.images || data.images.length === 0) {
-                        carouselInner.innerHTML = '<div class="carousel-item active"><div class="d-flex justify-content-center p-4">Нет изображений</div></div>';
-                        return;
-                    }
-                    
-                    // Группируем изображения по 3 на слайд
-                    for (let i = 0; i < data.images.length; i += 3) {
-                        const slideImages = data.images.slice(i, i + 3);
-                        const isActive = i === 0 ? 'active' : '';
-                        
-                        let imagesHtml = '';
-                        slideImages.forEach(src => {
-                            imagesHtml += `<img src="${src}" alt="пример работы" style="width:202px; height:282px; object-fit:cover; margin:0 5px; border-radius:8px;">`;
-                        });
-                        
-                        carouselInner.innerHTML += `
-                            <div class="carousel-item ${isActive}">
-                                <div class="d-flex justify-content-center align-items-center" style="height:282px;">
-                                    ${imagesHtml}
-                                </div>
-                            </div>
-                        `;
-                    }
-                }
-            }
+    // Обновляем карусель (изображения по направлению)
+    if (carouselInner) {
+        carouselInner.innerHTML = '';
+        
+        if (!images || images.length === 0) {
+            carouselInner.innerHTML = '<div class="carousel-item active"><div class="d-flex justify-content-center p-4">Нет изображений</div></div>';
+            return;
+        }
+        
+        // Группируем изображения по 3 на слайд
+        for (let i = 0; i < images.length; i += 3) {
+            const slideImages = images.slice(i, i + 3);
+            const isActive = i === 0 ? 'active' : '';
+            
+            let imagesHtml = '';
+            slideImages.forEach(src => {
+                imagesHtml += `<img src="${src}" alt="пример работы" style="width:202px; height:282px; object-fit:cover; margin:0 5px; border-radius:8px;">`;
+            });
+            
+            carouselInner.innerHTML += `
+                <div class="carousel-item ${isActive}">
+                    <div class="d-flex justify-content-center align-items-center" style="height:282px;">
+                        ${imagesHtml}
+                    </div>
+                </div>
+            `;
+        }
+    }
+}
 
             // Обработка кликов по первому фильтру
             if (firstFilter) {
