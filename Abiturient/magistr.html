@@ -33,6 +33,7 @@
             --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%);
             --gradient-dark: linear-gradient(45deg, #131313, var(--primary-blue));
             --light-blue: rgba(230, 231, 240, 1);
+            --primary-pink: liner-gradient(135deg, #232328, #ED1160);
         }
 
         /* ===== ОБЩИЕ СТИЛИ ===== */
@@ -325,6 +326,10 @@
             font-size: 16px;
             font-weight: 700;
             color: var(--primary-white);
+        }
+
+        .bg-pink{
+            background-color: var(--primary-pink);
         }
     </style>
 </head>
@@ -632,8 +637,8 @@
             </div>
         </section>
 
-        <!-- ===== СЕКЦИЯ 4: ЦИФРЫ НАБОРА ===== -->
-        <section class="numbers-section py-5 bg-gradient-dark text-white" id="Nabor">
+        <div class="bg-pink"><!-- ===== СЕКЦИЯ 4: ЦИФРЫ НАБОРА ===== -->
+        <section class="numbers-section py-5 text-white" id="Nabor">
             <div class="container">
                 <h2 class="section-title text-center mb-5">Цифры набора 2025 года</h2>
                 
@@ -807,6 +812,7 @@
                 </div>
             </div>
         </section>
+        </div>
 
         <!-- ===== СЕКЦИЯ 5: ВСТУПИТЕЛЬНЫЕ ИСПЫТАНИЯ ===== -->
         <section class="exams-section py-5" id="Vstupitelnye">
