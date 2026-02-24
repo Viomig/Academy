@@ -373,6 +373,84 @@
             border-radius: 15px;
             background: var(--primary-blue);
         }
+
+         /* Контейнер для карточек с горизонтальным скроллом */
+        .cards-container {
+            width: 100%;
+            overflow-x: auto;
+            padding: 20px 0;
+            margin: 40px 0;
+        }
+        
+        .cards-scroll {
+            display: inline-flex;
+            gap: 30px;
+            padding: 0 134px 0 237px;
+            min-width: min-content;
+        }
+        
+        /* Стили для столбца с двумя карточками */
+        .card-column {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            min-width: 497px;
+        }
+        
+        /* Точные стили карточки */
+        .price-card {
+            width: 497px;
+            height: 241px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 24px;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        /* Стили для цены */
+        .price-amount {
+            font-family: Montserrat;
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 49px;
+            letter-spacing: 0%;
+            text-align: left;
+            margin-bottom: 8px;
+        }
+        
+        .price-blue {
+            color: var(--blue-dark);
+        }
+        
+        .price-pink {
+            color: var(--secondary-pink);
+        }
+        
+        /* Стили для названия программы */
+        .program-name {
+            font-family: Montserrat;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.4;
+            color: #ffffff !important;
+            margin: 0;
+            flex: 1;
+        }
+        
+        /* Стили для типа студента */
+        .student-type {
+            font-family: Montserrat;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-align: right;
+        }
     </style>
 </head>
 <body>
@@ -869,100 +947,200 @@
             </div>
         </section>
 
-        <!-- ===== СЕКЦИЯ 6: ПЛАТНОЕ ОБУЧЕНИЕ ===== -->
-        <section class="tuition-section py-5 bg-gradient-dark text-white" id="Comercia">
-            <div class="container">
-                <h2 class="section-title text-center mb-5">Платное обучение</h2>
+        <!-- ===== СЕКЦИЯ 5: ПЛАТНОЕ ОБУЧЕНИЕ ===== -->
+        <section class="price-section py-5" id="Comercia-placeholder">
+           
+        </section>    
                 
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <div class="card border-0 bg-white text-dark mb-4">
-                            <div class="card-body p-5">
-                                <h3 class="section-subtitle text-blue mb-4">
-                                    Стоимость платных образовательных услуг по программам магистратуры
-                                </h3>
-                                
-                                <div class="row g-4">
-                                    <!-- Карточка 1 -->
-                                    <div class="col-md-6">
-                                        <div class="card border-0 shadow-sm h-100">
-                                            <div class="card-body p-4">
-                                                <div class="d-flex align-items-start mb-3">
-                                                    <h3 class="display-4 fw-bold text-pink me-3">170 000</h3>
-                                                    <span class="text-muted">₽/год</span>
-                                                </div>
-                                                <ul class="list-unstyled mb-0">
-                                                    <li class="mb-2">Архитектура</li>
-                                                    <li class="mb-2">Реконструкция и реставрация архитектурного наследия</li>
-                                                    <li>Дизайн архитектурной среды</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Карточка 2 -->
-                                    <div class="col-md-6">
-                                        <div class="card border-0 shadow-sm h-100">
-                                            <div class="card-body p-4">
-                                                <div class="d-flex align-items-start mb-3">
-                                                    <h3 class="display-4 fw-bold text-pink me-3">150 000</h3>
-                                                    <span class="text-muted">₽/год</span>
-                                                </div>
-                                                <ul class="list-unstyled mb-0">
-                                                    <li>Педагогическое образование: Изобразительное искусство в системе непрерывного художественного образования</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Карточка 3 -->
-                                    <div class="col-md-6">
-                                        <div class="card border-0 shadow-sm h-100">
-                                            <div class="card-body p-4">
-                                                <div class="d-flex align-items-start mb-3">
-                                                    <h3 class="display-4 fw-bold text-pink me-3">220 000</h3>
-                                                    <span class="text-muted">₽/год</span>
-                                                </div>
-                                                <ul class="list-unstyled mb-0">
-                                                    <li>Urban Design (Городской дизайн)</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Карточка 4 -->
-                                    <div class="col-md-6">
-                                        <div class="card border-0 shadow-sm h-100">
-                                            <div class="card-body p-4">
-                                                <div class="d-flex align-items-start mb-3">
-                                                    <h3 class="display-4 fw-bold text-pink me-3">300 000</h3>
-                                                    <span class="text-muted">₽/год</span>
-                                                </div>
-                                                <ul class="list-unstyled mb-0">
-                                                    <li class="mb-2">Дизайн</li>
-                                                    <li>Декоративно-прикладное искусство и народные промыслы</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
+<div class="paid-bakalavr">
+    <section class="paid-education-section" id="Comercia">
+         <div class="container offset-1">
+                <h2 class="section-title mb-5 text-white">платное обучение</h2>
+                
+                <p class="text-white fs-5 mb-5">
+                    Стоимость платных образовательных услуг по программам бакалавриата и специалитета
+                </p>
+            </div>
+
+        <div class="container-fluid p-0">
+            <!-- Контейнер с горизонтальным скроллом -->
+            <div class="cards-container">
+                <div class="cards-scroll">
+                    <!-- Колонка 1 -->
+                    <div class="card-column">
+                        <!-- Карточка 1.1 - Граждане РФ -->
+                        <div class="price-card row row-cols-12">
+                            <div class="col-7">
+                                <div class="price-amount price-pink">136 000</div>
+                            </div>
+                            <div class="col-5">
+                                <div class="student-type">для граждан РФ</div>
+                            </div>
+                            <div class="program-container col-12">
+                                <div class="program-text-container offset-1">
+                                    <h6 class="program-name">
+                                        <li>Педагогическое образование с двумя профилями подготовки</li> 
+                                        <li>Изобразительное искусство.</li> 
+                                        <li>Черчение и компьютерная графика</li>
+                                    </h6>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="text-center">
-                            <p class="lead mb-4">
-                                Подробную информацию о стоимости обучения и условиях оплаты 
-                                вы можете узнать в приемной комиссии
-                            </p>
-                            <button class="btn btn-light btn-lg px-5">
-                                <i class="bi bi-telephone me-2"></i>
-                                Контакты приемной комиссии
-                            </button>
+                        <!-- Карточка 1.2 - Иностранные граждане -->
+                        <div class="price-card row row-cols-12">
+                            <div class="col-7">
+                                <div class="price-amount price-blue">136 000</div>
+                            </div>
+                            <div class="col-5">
+                                <div class="student-type">для иностранных граждан</div>
+                            </div>
+                            <div class="program-container col-12">
+                                <div class="program-text-container offset-1">
+                                    <h6 class="program-name">
+                                        <li>Педагогическое образование с двумя профилями подготовки</li> 
+                                        <li>Изобразительное искусство.</li> 
+                                        <li>Черчение и компьютерная графика</li>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Колонка 2 -->
+                    <div class="card-column">
+                        <!-- Карточка 1.1 - Граждане РФ -->
+                        <div class="price-card row row-cols-12">
+                            <div class="col-7">
+                                <div class="price-amount price-pink">136 000</div>
+                            </div>
+                            <div class="col-5">
+                                <div class="student-type">для граждан РФ</div>
+                            </div>
+                            <div class="program-container col-12">
+                                <div class="program-text-container offset-1">
+                                    <h6 class="program-name">
+                                        <li>Педагогическое образование с двумя профилями подготовки</li> 
+                                        <li>Изобразительное искусство.</li> 
+                                        <li>Черчение и компьютерная графика</li>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Карточка 1.2 - Иностранные граждане -->
+                        <div class="price-card row row-cols-12">
+                            <div class="col-7">
+                                <div class="price-amount price-blue">136 000</div>
+                            </div>
+                            <div class="col-5">
+                                <div class="student-type">для иностранных граждан</div>
+                            </div>
+                            <div class="program-container col-12">
+                                <div class="program-text-container offset-1">
+                                    <h6 class="program-name">
+                                        <li>Педагогическое образование с двумя профилями подготовки</li> 
+                                        <li>Изобразительное искусство.</li> 
+                                        <li>Черчение и компьютерная графика</li>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Колонка 3 -->
+                    <div class="card-column">
+                        <!-- Карточка 1.1 - Граждане РФ -->
+                        <div class="price-card row row-cols-12">
+                            <div class="col-7">
+                                <div class="price-amount price-pink">136 000</div>
+                            </div>
+                            <div class="col-5">
+                                <div class="student-type">для граждан РФ</div>
+                            </div>
+                            <div class="program-container col-12">
+                                <div class="program-text-container offset-1">
+                                    <h6 class="program-name">
+                                        <li>Педагогическое образование с двумя профилями подготовки</li> 
+                                        <li>Изобразительное искусство.</li> 
+                                        <li>Черчение и компьютерная графика</li>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Колонка 4 -->
+                    <div class="card-column">
+                        <!-- Карточка 1.1 - Граждане РФ -->
+                        <div class="price-card row row-cols-12">
+                            <div class="col-7">
+                                <div class="price-amount price-pink">136 000</div>
+                            </div>
+                            <div class="col-5">
+                                <div class="student-type">для граждан РФ</div>
+                            </div>
+                            <div class="program-container col-12">
+                                <div class="program-text-container offset-1">
+                                    <h6 class="program-name">
+                                        <li>Педагогическое образование с двумя профилями подготовки</li> 
+                                        <li>Изобразительное искусство.</li> 
+                                        <li>Черчение и компьютерная графика</li>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Колонка 5 -->
+                    <div class="card-column">
+                        <!-- Карточка 1.1 - Граждане РФ -->
+                        <div class="price-card row row-cols-12">
+                            <div class="col-7">
+                                <div class="price-amount price-pink">136 000</div>
+                            </div>
+                            <div class="col-5">
+                                <div class="student-type">для граждан РФ</div>
+                            </div>
+                            <div class="program-container col-12">
+                                <div class="program-text-container offset-1">
+                                    <h6 class="program-name">
+                                        <li>Педагогическое образование с двумя профилями подготовки</li> 
+                                        <li>Изобразительное искусство.</li> 
+                                        <li>Черчение и компьютерная графика</li>
+                                    </h6>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+            
+            <!-- Навигация -->
+            <div class="carousel-controls">
+                <div class="nav-arrow left" id="prevBtn">
+                    <svg width="26" height="8" viewBox="0 0 26 8" fill="none">
+                        <path d="M25.3536 4.35355C25.5488 4.15829 25.5488 3.84171 25.3536 3.64645L22.1716 0.464466C21.9763 0.269204 21.6597 0.269204 21.4645 0.464466C21.2692 0.659728 21.2692 0.976311 21.4645 1.17157L24.2929 4L21.4645 6.82843C21.2692 7.02369 21.2692 7.34027 21.4645 7.53553C21.6597 7.7308 21.9763 7.7308 22.1716 7.53553L25.3536 4.35355ZM0 4.5H25V3.5H0V4.5Z" fill="currentColor"/>
+                    </svg>
+                </div>
+                
+                <div class="nav-dots">
+                    <div class="nav-dot active" data-index="0"></div>
+                    <div class="nav-dot" data-index="1"></div>
+                    <div class="nav-dot" data-index="2"></div>
+                    <div class="nav-dot" data-index="3"></div>
+                    <div class="nav-dot" data-index="4"></div>
+                </div>
+                
+                <div class="nav-arrow" id="nextBtn">
+                    <svg width="26" height="8" viewBox="0 0 26 8" fill="none">
+                        <path d="M25.3536 4.35355C25.5488 4.15829 25.5488 3.84171 25.3536 3.64645L22.1716 0.464466C21.9763 0.269204 21.6597 0.269204 21.4645 0.464466C21.2692 0.659728 21.2692 0.976311 21.4645 1.17157L24.2929 4L21.4645 6.82843C21.2692 7.02369 21.2692 7.34027 21.4645 7.53553C21.6597 7.7308 21.9763 7.7308 22.1716 7.53553L25.3536 4.35355ZM0 4.5H25V3.5H0V4.5Z" fill="currentColor"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>        
 
         <section>
             <div class="text-center" id="Celevoe">
