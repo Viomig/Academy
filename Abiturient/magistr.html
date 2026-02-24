@@ -1213,25 +1213,6 @@
                                 </div>
                             </div>
                         </div>
-                        
-                        <!-- Карточка 1.2 - Иностранные граждане -->
-                        <div class="price-card row row-cols-12">
-                            <div class="col-7">
-                                <div class="price-amount price-blue">136 000</div>
-                            </div>
-                            <div class="col-5">
-                                <div class="student-type">для иностранных граждан</div>
-                            </div>
-                            <div class="program-container col-12">
-                                <div class="program-text-container offset-1">
-                                    <h6 class="program-name">
-                                        <li>Педагогическое образование с двумя профилями подготовки</li> 
-                                        <li>Изобразительное искусство.</li> 
-                                        <li>Черчение и компьютерная графика</li>
-                                    </h6>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     
                     <!-- Колонка 2 -->
@@ -1243,25 +1224,6 @@
                             </div>
                             <div class="col-5">
                                 <div class="student-type">для граждан РФ</div>
-                            </div>
-                            <div class="program-container col-12">
-                                <div class="program-text-container offset-1">
-                                    <h6 class="program-name">
-                                        <li>Педагогическое образование с двумя профилями подготовки</li> 
-                                        <li>Изобразительное искусство.</li> 
-                                        <li>Черчение и компьютерная графика</li>
-                                    </h6>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Карточка 1.2 - Иностранные граждане -->
-                        <div class="price-card row row-cols-12">
-                            <div class="col-7">
-                                <div class="price-amount price-blue">136 000</div>
-                            </div>
-                            <div class="col-5">
-                                <div class="student-type">для иностранных граждан</div>
                             </div>
                             <div class="program-container col-12">
                                 <div class="program-text-container offset-1">
@@ -1671,5 +1633,88 @@
     // Инициализация календаря при загрузке страницы
     document.addEventListener('DOMContentLoaded', renderCalendar);
 </script>
+
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cardsContainer = document.querySelector('.cards-container');
+            const cardsScroll = document.querySelector('.cards-scroll');
+            const navDots = document.querySelectorAll('.nav-dot');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const columns = document.querySelectorAll('.card-column');
+            
+            let currentColumn = 0;
+            const totalColumns = columns.length;
+            const columnWidth = columns[0].offsetWidth + 30; // ширина колонки + gap
+            
+            // Функция для обновления активной точки
+            function updateNavDots() {
+                navDots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentColumn);
+                });
+            }
+            
+            // Функция для прокрутки к определенной колонке
+            function scrollToColumn(index) {
+                currentColumn = Math.max(0, Math.min(index, totalColumns - 1));
+                cardsContainer.scrollTo({
+                    left: currentColumn * columnWidth,
+                    behavior: 'smooth'
+                });
+                updateNavDots();
+            }
+            
+            // Навигация стрелками
+            prevBtn.addEventListener('click', () => {
+                scrollToColumn(currentColumn - 1);
+            });
+            
+            nextBtn.addEventListener('click', () => {
+                scrollToColumn(currentColumn + 1);
+            });
+            
+            // Навигация точками
+            navDots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    const index = parseInt(dot.getAttribute('data-index'));
+                    scrollToColumn(index);
+                });
+            });
+            
+            // Обработка события прокрутки
+            cardsContainer.addEventListener('scroll', () => {
+                const scrollLeft = cardsContainer.scrollLeft;
+                const newColumn = Math.round(scrollLeft / columnWidth);
+                
+                if (newColumn !== currentColumn) {
+                    currentColumn = newColumn;
+                    updateNavDots();
+                }
+            });
+            
+            // Адаптация к изменению размера окна
+            window.addEventListener('resize', () => {
+                // Пересчитываем ширину колонки
+                const newColumnWidth = columns[0].offsetWidth + 30;
+                if (newColumnWidth !== columnWidth) {
+                    // Прокручиваем к текущей колонке с новой шириной
+                    cardsContainer.scrollTo({
+                        left: currentColumn * newColumnWidth,
+                        behavior: 'auto'
+                    });
+                }
+            });
+            
+            // Инициализация
+            updateNavDots();
+            
+            // Добавляем возможность прокрутки колесом мыши
+            cardsContainer.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                cardsContainer.scrollLeft += e.deltaY;
+            });
+        });
+    </script>
+    
 </body>
 </html>
