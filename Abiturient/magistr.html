@@ -297,6 +297,35 @@
         .border-light-grey {
             border-color: #D2D2D2 !important;
         }
+
+        /* Стили для названия программы */
+        .program-name {
+            font-family: Montserrat;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.4;
+            color: #ffffff;
+            margin: 0;
+            flex: 1;
+        }
+
+        .program-card {
+            background-color: var(--primary-blue);
+            border: none;
+            border-radius: 15px;
+            color: var(--white);
+            transition: transform 0.3s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .program-code {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary-white);
+        }
     </style>
 </head>
 <body>
@@ -353,114 +382,81 @@
         <!-- ===== СЕКЦИЯ 2: НАПРАВЛЕНИЯ ПОДГОТОВКИ ===== -->
         <section class="programs-section py-5">
             <div class="container">
-            <div class="row">
-                <h2 class="section-title mb-5 offset-1">Набор 2025 года</h2>
-                <div class="col-md-8 d-flex row bg-gradient-dark text-white programs-blok mb-5">
-                    <div class="col-md-12 g-4">
-                        <h2>Магистратура</h2>
-                    </div>
-                    <!-- Левая колонка -->
-                    <div class="col-md-6 p-2">
-                        <div class="row g-4">
-                            <div class="col-12">
-                                <div class="info-card h-100">
-                                    <div class="d-flex align-items-start mb-3">
-                                        <span class="badge bg-primary fs-6 fw-normal me-3">07.04.01</span>
-                                        <p class="mb-0 fs-6">Архитектура: программа «Архитектура зданий и сооружений» (по кафедре АЖОЗ)</p>
+
+                <div class="row g-4">
+                    <!-- -->
+                    <div class="col-lg-8 col-md-8">
+                        <div class="program-card p-4 p-lg-5">
+                            <h3 class="section-subtitle mb-4">Магистратура</h3>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3 row">
+                                        <div class="program-code col-3">07.04.01</div>
+                                        <div class="program-name col-9">Архитектура: программа «Архитектура зданий и сооружений» (по кафедре АЖОЗ)</div>
+                                    </div>
+                                    
+                                    <div class="mb-3 row">
+                                        <div class="program-code col-3">07.04.01</div>
+                                        <div class="program-name col-9">Архитектура: программа «Экологическая архитектура» (по кафедре АЖОЗ)</div>
+                                    </div>
+                                    
+                                    <div class="mb-3 row">
+                                        <div class="program-code col-3">07.04.01</div>
+                                        <div class="program-name col-9">Архитектура: программа «Архитектура общественных зданий и сооружений» (по кафедре АСП)</div>
+                                    </div>
+                                    
+                                    <div class="mb-3 row">
+                                        <div class="program-code col-3">07.04.01</div>
+                                        <div class="program-name col-9">Архитектура: программа «Urban Design (Городской дизайн)»</div>
+                                    </div>
+                                    
+                                    <div class="mb-3 row">
+                                        <div class="program-code col-3">07.04.02</div>
+                                        <div class="program-name col-9">Реконструкция и реставрация архитектурного наследия: программа «Визуальная реконструкция историко-архитектурного наследия и анимация»</div>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <div class="col-12">
-                                <div class="info-card h-100">
-                                    <div class="d-flex align-items-start mb-3">
-                                        <span class="badge bg-primary fs-6 fw-normal me-3">07.04.01</span>
-                                        <p class="mb-0 fs-6">Архитектура: программа «Экологическая архитектура» (по кафедре АЖОЗ)</p>
+                                
+                                <div class="col-md-6">
+                                    <div class="mb-3 row">
+                                        <div class="program-code col-3">07.04.03</div>
+                                        <div class="program-name col-9">Дизайн архитектурной среды: программа «Городской интерьер и мастер-планирование»</div>
                                     </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-12">
-                                <div class="info-card h-100">
-                                    <div class="d-flex align-items-start mb-3">
-                                        <span class="badge bg-primary fs-6 fw-normal me-3">07.04.01</span>
-                                        <p class="mb-0 fs-6">Архитектура: программа «Архитектура общественных зданий и сооружений» (по кафедре АСП)</p>
+                                    
+                                    <div class="mb-3 row">
+                                        <div class="program-code col-3">44.04.01</div>
+                                        <div class="program-name col-9">Педагогическое образование: программа «Изобразительное искусство в системе непрерывного художественного образования»</div>
                                     </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-12">
-                                <div class="info-card h-100">
-                                    <div class="d-flex align-items-start mb-3">
-                                        <span class="badge bg-primary fs-6 fw-normal me-3">07.04.01</span>
-                                        <p class="mb-0 fs-6">Архитектура: программа «Urban Design (Городской дизайн)»</p>
+                                    
+                                    <div class="mb-3 row">
+                                        <div class="program-code col-3">54.04.01</div>
+                                        <div class="program-name col-9">Дизайн: программа «Дизайн»</div>
                                     </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-12">
-                                <div class="info-card h-100">
-                                    <div class="d-flex align-items-start mb-3">
-                                        <span class="badge bg-primary fs-6 fw-normal me-3">07.04.02</span>
-                                        <p class="mb-0 fs-6">Реконструкция и реставрация архитектурного наследия: программа «Визуальная реконструкция историко-архитектурного наследия и анимация»</p>
+                                    
+                                    <div class="mb-3 row">
+                                        <div class="program-code col-3">54.04.02</div>
+                                        <div class="program-name col-9">Декоративно-прикладное искусство и народные промыслы: программа «Арт-практики в декоративном искусстве»</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Правая колонка -->
-                    <div class="col-md-6 p-2">
-                        <div class="row g-4">
-                            <div class="col-12">
-                                <div class="info-card h-100">
-                                    <div class="d-flex align-items-start mb-3">
-                                        <span class="badge bg-primary fs-6 fw-normal me-3">07.04.03</span>
-                                        <p class="mb-0 fs-6">Дизайн архитектурной среды: программа «Городской интерьер и мастер-планирование»</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-12">
-                                <div class="info-card h-100">
-                                    <div class="d-flex align-items-start mb-3">
-                                        <span class="badge bg-primary fs-6 fw-normal me-3">44.04.01</span>
-                                        <p class="mb-0 fs-6">Педагогическое образование: программа «Изобразительное искусство в системе непрерывного художественного образования»</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-12">
-                                <div class="info-card h-100">
-                                    <div class="d-flex align-items-start mb-3">
-                                        <span class="badge bg-primary fs-6 fw-normal me-3">54.04.01</span>
-                                        <p class="mb-0 fs-6">Дизайн: программа «Дизайн»</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-12">
-                                <div class="info-card h-100">
-                                    <div class="d-flex align-items-start mb-3">
-                                        <span class="badge bg-primary fs-6 fw-normal me-3">54.04.02</span>
-                                        <p class="mb-0 fs-6">Декоративно-прикладное искусство и народные промыслы: программа «Арт-практики в декоративном искусстве»</p>
-                                    </div>
-                                </div>
+                    <!--  -->
+                    <div class="col-lg-4 col-md-4">
+                        <div class="program-card p-4 p-lg-5 ">
+                            <div>Выбирайте магистерскую программу в соответствии со своими профессиональными навыками и творческими целями. 
+                                Наши направления охватывают ключевые области архитектурного, художественного и дизайнерского образования и ориентированы на 
+                                развитие практических навыков и исследовательской компетенции.
                             </div>
                         </div>
+                        <div class="text-end mt-5">
+                    <a href="#" class="btn btn-primary btn-lg">Подать заявление</a>
+                </div>
                     </div>
-                </div>
-                <div class="col-md-4 d-flex justify-content-between row">
-                    <p class="fs-6 text-blue fw-medium mb-5">
-                            Выбирайте магистерскую программу в соответствии со своими профессиональными 
-                            навыками и творческими целями. Наши направления охватывают ключевые области 
-                            архитектурного, художественного и дизайнерского образования и ориентированы 
-                            на развитие практических навыков и исследовательской компетенции.
-                        </p>
-                    <div class="d-flex justify-content-end align-items-end"><a href="abiturient.html" class="btn btn-primary align-content-center">Подать заявление</a></div>
-                </div>
             </div>
-            </div>
+
+        </div>
         </section>
 
         <!-- ===== СЕКЦИЯ 7: ДОКУМЕНТЫ ===== -->
