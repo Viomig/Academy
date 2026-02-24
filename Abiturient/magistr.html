@@ -451,6 +451,204 @@
             letter-spacing: 0.5px;
             text-align: right;
         }
+
+        /* Контейнер для программы */
+        .program-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 15px;
+            flex: 1;
+            width: 100%;
+        }
+        
+        .program-text-container {
+            flex: 1;
+            text-decoration: #000000;
+        }
+        
+        .program-icon {
+            width: 82px;
+            height: 65px;
+            flex-shrink: 0;
+            background-color: var(--blue-light);
+            border-radius: 8px;
+        }
+        
+        /* Навигация */
+        .carousel-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 50px;
+            padding: 0 20px;
+        }
+        
+        .nav-arrow {
+            width: 26px;
+            height: 8px;
+            background-color: var(--blue-dark);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-arrow:hover {
+            background-color: var(--pink);
+        }
+        
+        .nav-arrow.left {
+            transform: rotate(180deg);
+        }
+        
+        .nav-dots {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .nav-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--grey-light);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-dot.active {
+            background-color: var(--blue-dark);
+        }
+        
+        /* Заголовочная секция */
+        .title-section {
+            background-color: var(--blue-dark);
+            padding: 100px 0 0 0;
+        }
+        
+        /* Скрыть стандартный скроллбар */
+        .cards-container::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .cards-container::-webkit-scrollbar-track {
+            background: var(--grey-light);
+            border-radius: 4px;
+        }
+        
+        .cards-container::-webkit-scrollbar-thumb {
+            background: var(--grey-dark);
+            border-radius: 4px;
+        }
+        
+        .cards-container::-webkit-scrollbar-thumb:hover {
+            background: var(--blue-dark);
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 1400px) {
+            .cards-scroll {
+                padding: 0 50px;
+            }
+            
+            .card-column {
+                min-width: 450px;
+            }
+            
+        }
+        
+        @media (max-width: 992px) {
+            .paid-education-section {
+                padding: 60px 0;
+                min-height: auto;
+            }
+            
+            .title-section {
+                padding: 60px 0 0 0;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .section-subtitle {
+                font-size: 18px;
+            }
+            
+            .cards-scroll {
+                padding: 0 30px;
+            }
+            
+            .card-column {
+                min-width: 400px;
+            }
+            
+            .price-card {
+                width: 400px;
+                height: auto;
+                min-height: 241px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .price-amount {
+                font-size: 32px;
+                line-height: 40px;
+            }
+            
+            .program-name {
+                font-size: 14px;
+            }
+            
+            .card-column {
+                min-width: 350px;
+            }
+            
+            .price-card {
+                width: 350px;
+                padding: 20px;
+            }
+            
+            .program-icon {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .student-type {
+                position: relative;
+                right: auto;
+                bottom: auto;
+                margin-top: 10px;
+                text-align: right;
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .cards-scroll {
+                padding: 0 20px;
+            }
+            
+            .card-column {
+                min-width: 300px;
+            }
+            
+            .price-card {
+                width: 300px;
+            }
+            
+            .program-container {
+                flex-direction: column;
+            }
+            
+            .program-icon {
+                width: 50px;
+                height: 50px;
+            }
+        }
     </style>
 </head>
 <body>
