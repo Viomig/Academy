@@ -82,11 +82,6 @@
             padding: 80px 0;
         }
 
-        .program-section {
-            background: var(--gradient-dark);
-            color: var(--white);
-        }
-
         .directors-section {
             background: var(--gradient-dark);
             color: var(--white);
@@ -209,7 +204,6 @@
             font-size: 22px;
             font-weight: 600;
             padding: 28px;
-            border: 1px solid #D2D2D2;
             border-radius: 15px !important;
             background: var(--white);
             color: var(--black);
@@ -237,7 +231,6 @@
 
         .accordion-body {
             padding: 28px;
-            border: 1px solid #D2D2D2;
             border-top: none;
             border-radius: 0 0 15px 15px;
         }
@@ -404,6 +397,14 @@
         <section class="hero-section py-5">
             <div class="container">
                 <div class="row align-items-center">
+                    <div class="d-flex align-items-center mt-4">
+                            <div class="me-3">
+                                <i class="bi bi-arrow-left" style="font-size: 20px; color: var(--primary-blue);"></i>
+                            </div>
+                            <span class="text-uppercase fw-bold" style="color: var(--primary-blue); font-size: 16px;">
+                                абитуриенту
+                            </span>
+                        </div>
                     <div class="col-lg-7 mb-5 mb-lg-0">
                         <h1 class="hero-title mb-4">Аспирантура</h1>
                         <p class="hero-subtitle lead">
@@ -412,39 +413,9 @@
                             Участие в выставках, конференциях и грантовых проектах.<br>
                             Возможность преподавания и стажировок в России и за рубежом.
                         </p>
-                        <div class="d-flex align-items-center mt-4">
-                            <div class="me-3">
-                                <i class="bi bi-arrow-left" style="font-size: 20px; color: var(--primary-blue);"></i>
-                            </div>
-                            <span class="text-uppercase fw-bold" style="color: var(--primary-blue); font-size: 16px;">
-                                абитуриенту
-                            </span>
-                        </div>
                     </div>
                     <div class="col-lg-5">
-                        <!-- Декоративная графика -->
-                        <div class="hero-graphic">
-                            <div class="graphic-container position-relative" style="height: 456px;">
-                                <!-- Геометрические фигуры -->
-                                <div class="position-absolute top-50 start-0 translate-middle-y" style="width: 144px; height: 166px;">
-                                    <div class="position-absolute" style="width: 83px; height: 83px; background: var(--gradient-primary); border-radius: 10px; transform: rotate(30deg);"></div>
-                                    <div class="position-absolute top-50 start-0" style="width: 83px; height: 83px; background: var(--gradient-primary); border-radius: 10px; transform: rotate(30deg); opacity: 0.7;"></div>
-                                    <div class="position-absolute top-50 end-0" style="width: 83px; height: 83px; background: var(--gradient-primary); border-radius: 10px; transform: rotate(30deg); opacity: 0.5;"></div>
-                                </div>
-                                
-                                <div class="position-absolute top-50 start-50 translate-middle" style="width: 144px; height: 166px;">
-                                    <div class="position-absolute" style="width: 83px; height: 83px; background: var(--gradient-primary); border-radius: 10px; transform: rotate(30deg); opacity: 0.8;"></div>
-                                    <div class="position-absolute top-50 start-0" style="width: 83px; height: 83px; background: var(--gradient-primary); border-radius: 10px; transform: rotate(30deg); opacity: 0.6;"></div>
-                                    <div class="position-absolute top-50 end-0" style="width: 83px; height: 83px; background: var(--gradient-primary); border-radius: 10px; transform: rotate(30deg); opacity: 0.4;"></div>
-                                </div>
-                                
-                                <div class="position-absolute top-50 end-0 translate-middle-y" style="width: 144px; height: 166px;">
-                                    <div class="position-absolute" style="width: 83px; height: 83px; background: var(--gradient-primary); border-radius: 10px; transform: rotate(30deg); opacity: 0.9;"></div>
-                                    <div class="position-absolute top-50 start-0" style="width: 83px; height: 83px; background: var(--gradient-primary); border-radius: 10px; transform: rotate(30deg); opacity: 0.7;"></div>
-                                    <div class="position-absolute top-50 end-0" style="width: 83px; height: 83px; background: var(--gradient-primary); border-radius: 10px; transform: rotate(30deg); opacity: 0.5;"></div>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -453,7 +424,7 @@
         <!-- ===== СЕКЦИЯ 2: НАБОР 2025 ГОДА ===== -->
         <section class="program-section py-5">
             <div class="container">
-                <h2 class="section-title text-center text-white mb-5">набор 2025 года</h2>
+                <h2 class="section-title text-center text-black mb-5">набор 2025 года</h2>
                 
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
@@ -485,7 +456,7 @@
                             
                             <div class="col-lg-5 d-flex flex-column justify-content-start">
                                 <div class="col-md-12">
-                                            <p class="text-white">
+                                            <p class="text-black">
                                                 Подготовка научно-педагогических и научных кадров в аспирантуре ААИ ЮФУ осуществляется по направлению подготовки 2.1. «Строительство и архитектура», а также в порядке соискательства. Аспирантура начала функционировать с 1993 года.
                                             </p>
                                         </div>
@@ -504,7 +475,7 @@
         <!-- ===== СЕКЦИЯ 3: О ПРОГРАММАХ ===== -->
         <section class="programs-section py-5">
             <div class="container">
-                <h2 class="section-title text-center mb-5">о программах</h2>
+                <h2 class="section-title mb-5 offset-1">о программах</h2>
                 
                 <div class="accordion" id="programsAccordion">
                     <!-- Программа 2.1.11 -->
