@@ -28,6 +28,20 @@
   background: linear-gradient(135deg, #080D6B 0%, #ED1160 100%);
 }
 
+:root {
+            --primary-blue: #080D6B;
+            --secondary-pink: #ED1160;
+            --dark-grey: #232328;
+            --medium-grey: #777777;
+            --light-grey: #f3f3f3;
+            --white: #ffffff;
+            --black: #000000;
+            --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%);
+            --gradient-dark: linear-gradient(45deg, #131313, var(--primary-blue));
+            --light-blue: rgba(230, 231, 240, 1);
+            --primary-pink: linear-gradient(135deg, #232328, var(--secondary-pink));
+        }
+
 /* ФИКС ДЛЯ ХЕДЕРА С ТАБАМИ */
 .academy-navbar {
     top: 0 !important;
@@ -1076,7 +1090,7 @@ table {
 }
 
 .tab-column li:hover {
-  color: #232328;
+  color: var(--secondary-pink);
   padding-left: 10px;
 }
 
