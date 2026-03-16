@@ -761,6 +761,42 @@
         .event-info.hidden {
             display: none !important;
         }
+
+          /* ===== АККОРДЕОНЫ ===== */
+        .accordion-button {
+            font-size: 22px;
+            font-weight: 600;
+            padding: 28px;
+            border-radius: 15px !important;
+            background: var(--white);
+            color: var(--black);
+        }
+
+        .accordion-button:not(.collapsed) {
+            background: var(--white);
+            color: var(--black);
+            box-shadow: none;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: #D2D2D2;
+        }
+
+        .accordion-button::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
+
+        .accordion-item {
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        .accordion-body {
+            padding: 28px;
+            border-top: none;
+            border-radius: 0 0 15px 15px;
+        }
     </style>
 </head>
 <body>
@@ -853,21 +889,21 @@
               <div class="row"><h5 class="line-title col-5 offset-1">ДЕЙСТВУЮЩИЕ СНО В ААИ</h5></div>
                <div class="offset-1">
                 <div class="owl-carousel custom-carousel owl-theme " id="slider-2">
-                  <div class="item" style="background-image: url(/Academy/Abiturient/imageAB/slider/image.png)">
+                  <div class="item" style="background-image: url(/Academy/Abiturient/imageAb/slider/image.png)">
                     <div class="item-desc">
                       
                       <p>СНО «Экологическая архитектура»</p>
                     </div>
                   </div>
               
-                  <div class="item" style="background-image: url(/Academy/Abiturient/imageAB/slider/image-1.png)">
+                  <div class="item" style="background-image: url(/Academy/Abiturient/imageAb/slider/image-1.png)">
                     <div class="item-desc">
                       
                       <p>СНО «Экономические решения в архитектуре (ЭРА)»</p>
                     </div>
                   </div>
               
-                  <div class="item" style="background-image: url(/Academy/Abiturient/imageAB/slider/image-2.png);">
+                  <div class="item" style="background-image: url(/Academy/Abiturient/imageAb/slider/image-2.png);">
                     <div class="item-desc">
                       
                       <p>СНО «Пропорции и композиция»</p>
@@ -1196,7 +1232,7 @@
         </section>
 
         <!-- ===== СЕКЦИЯ 5: ДОКУМЕНТЫ ===== -->
-        <section class="documents-section py-5 bg-light-grey">
+        <section class="documents-section py-5">
             <div class="container">
                 <h2 class="section-title mb-5">перечень необходимых документов</h2>
                 
@@ -1328,14 +1364,15 @@
         </section>
 
         <!-- ===== СЕКЦИЯ 6: ПУНКТЫ ПРИЕМА ===== -->
-        <section class="reception-section py-5 bg-dark-gradient">
+         <div class=" bg-dark-gradient">
+        <section class="reception-section py-5">
             <div class="container">
                 <h2 class="section-title text-center text-white mb-5">пункты приема документов</h2>
                 
                 <div class="row mb-4">
                     <div class="col-lg-12">
                         <p class="text-center text-white fs-5 fw-bold">
-                            Приём документов осуществляется c 20 июня 2025 года
+                            Приём документов осуществляется c 20 июня 2026 года
                         </p>
                     </div>
                 </div>
@@ -1351,12 +1388,12 @@
                                 </div>
                             </div>
                             <div class="reception-content">
-                                <h3 class="reception-title">В электронном формате</h3>
                                 <p class="reception-desc">
                                     Суперсервис «Поступление в вуз онлайн» на федеральной государственной информационной 
                                     системы «Единый портал государственных и муниципальных услуг (функций)»
                                 </p>
                                 <a href="#" class="link-arrow">Поступление в вуз онлайн</a>
+                                <h3 class="reception-title">В электронном формате</h3>
                             </div>
                         </div>
                     </div>
@@ -1366,11 +1403,11 @@
                         <div class="reception-card">
                             <div class="reception-image" style="background-image: url('https://via.placeholder.com/353x160/080D6B/FFFFFF?text=Ростов-на-Дону');"></div>
                             <div class="reception-content">
-                                <h3 class="reception-title">в очном формате</h3>
                                 <p class="reception-desc">
                                     г. Ростов-на-Дону, ул. Пушкинская, д. 148-150 (Зональная научная библиотека им. Ю.А. Жданова)
                                 </p>
                                 <a href="#" class="link-arrow">Посмотреть на карте</a>
+                                <h3 class="reception-title">в очном формате</h3>
                             </div>
                         </div>
                     </div>
@@ -1380,17 +1417,18 @@
                         <div class="reception-card">
                             <div class="reception-image" style="background-image: url('https://via.placeholder.com/353x160/ED1160/FFFFFF?text=Таганрог');"></div>
                             <div class="reception-content">
-                                <h3 class="reception-title">в очном формате</h3>
                                 <p class="reception-desc">
                                     г. Таганрог, пер. Некрасовский, д. 44, корпус "Д" (Инженерно-технологическая Академия ЮФУ)
                                 </p>
                                 <a href="#" class="link-arrow">Посмотреть на карте</a>
+                                <h3 class="reception-title">в очном формате</h3>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        </div>
 
         <!-- ===== СЕКЦИЯ 7: КОНТАКТЫ ===== -->
         <section class="contacts-section py-5">
@@ -1403,14 +1441,16 @@
                             ЦЕНТР ОРГАНИЗАЦИИ РАБОТЫ С АБИТУРИЕНТАМИ, ПРОФОРИЕНТАЦИИ И ПРОДВИЖЕНИЯ ОБРАЗОВАТЕЛЬНЫХ ПРОГРАММ АКАДЕМИИ ОБЕСПЕЧИВАЕТ:
                         </h3>
                         <p class="text-black fs-5">
-                            информационное и консультативное сопровождение абитуриентов по вопросам поступления в Академию, содержанию образовательных программ, 
-                            правилам приема, особенностями обучения на программах различных уровней;<br>
-                            сопровождение Приемной кампании в части образовательных программ Академии;<br>
-                            организацию и проведение дополнительных вступительных испытаний творческой направленности, олимпиад и конкурсов для поступления в магистратуру, 
-                            аспирантуру и ассистентуру-стажировку;<br>
-                            проведение Дней открытых дверей Академии и других профориентационных мероприятий;<br>
-                            содействие при оформлении документов по целевому обучению граждан в Академию;<br>
-                            организацию процедуры заключения договоров на обучение с полным возмещением затрат (коммерция) при приеме на 1 курс.
+                            <ul>
+                                <li>информационное и консультативное сопровождение абитуриентов по вопросам поступления в Академию, содержанию образовательных программ, 
+                            правилам приема, особенностями обучения на программах различных уровней;<br></li>
+                            <li>сопровождение Приемной кампании в части образовательных программ Академии;<br></li>
+                            <li>организацию и проведение дополнительных вступительных испытаний творческой направленности, олимпиад и конкурсов для поступления в магистратуру, 
+                            аспирантуру и ассистентуру-стажировку;<br></li>
+                            <li>проведение Дней открытых дверей Академии и других профориентационных мероприятий;<br></li>
+                            <li>содействие при оформлении документов по целевому обучению граждан в Академию;<br></li>
+                            <li>организацию процедуры заключения договоров на обучение с полным возмещением затрат (коммерция) при приеме на 1 курс.</li>
+                            </ul>
                         </p>
                     </div>
                 </div>
