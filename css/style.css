@@ -298,6 +298,10 @@ a {
     color: inherit !important;
 }
 
+header a{
+  font-size: 14px;
+}
+
 ul, ol {
     list-style: none;
 }
