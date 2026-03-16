@@ -542,7 +542,7 @@ table {
 
 .footer a {
     text-decoration: none;
-    color: #fdfdfd;
+    color: #fdfdfd !important;
     transition: color 0.3s;
 }
 
