@@ -18,7 +18,7 @@
     <!-- Custom CSS -->
     <style>
         /* ===== БАЗОВЫЕ СТИЛИ И ПЕРЕМЕННЫЕ ===== */
-        :root {
+         :root {
             --primary-blue: #080D6B;
             --secondary-pink: #ED1160;
             --dark-grey: #232328;
@@ -28,6 +28,9 @@
             --black: #000000;
             --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%);
             --gradient-dark: linear-gradient(45deg, #131313, var(--primary-blue));
+            --light-blue: #E6E7F0;
+            --light-grey-bg: #F3F3F3;
+            --dark-grey-text: #8C8C8C;
         }
 
         /* ===== ОБЩИЕ СТИЛИ ===== */
@@ -318,9 +321,10 @@
             font-size: 16px;
         }
 
-        .btn-primary {
-            background: var(--primary-blue);
+         .btn-primary {
+            background: var(--gradient-primary);
             border: none;
+            color: var(--white);
         }
 
         .btn-primary:hover {
@@ -718,7 +722,7 @@
             </div>
         </section>
 
-        <div class="bg-blue"><!-- ===== СЕКЦИЯ 2: ДНИ ОТКРЫТЫХ ДВЕРЕЙ ===== -->
+        <div class="bg-gradient-dark"><!-- ===== СЕКЦИЯ 2: ДНИ ОТКРЫТЫХ ДВЕРЕЙ ===== -->
         <section class="open-day-section py-5" id="DniOD">
             <div class="container">
                 <h2 class="section-title text-center text-white mb-5">дни открытых дверей</h2>
