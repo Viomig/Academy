@@ -797,6 +797,86 @@
             border-top: none;
             border-radius: 0 0 15px 15px;
         }
+
+        .game-section3 {
+  background: linear-gradient(45deg,#131313, #080D6B);
+}
+
+.game-section3 .line-title {
+  margin-top: 30px;
+  color: #ffffff;
+}
+
+.game-section3 .owl-stage {
+  margin: 15px 0;
+  display: flex;
+  display: -webkit-flex;
+}
+.game-section3 .item {
+  margin: 0 15px 60px;
+  width: 380px;
+  height: 180px;
+  display: flex;
+  display: -webkit-flex;
+  align-items: flex-end;
+  -webkit-align-items: flex-end;
+  background: #343434 no-repeat center center / cover;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+.game-section3 .item.active {
+  width: 380px;
+  height: 180px;
+  box-shadow: 12px 40px 40px rgba(255, 255, 255, 0.25);
+  -webkit-box-shadow: 12px 40px 40px rgba(255, 255, 255, 0.25);
+}
+.game-section3 .item:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.3), #080D6B);
+}
+.game-section3 .item-desc {
+  padding: 0 24px 12px;
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transform: translateY(calc(100% - 54px));
+  -webkit-transform: translateY(calc(100% - 54px));
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+}
+.game-section3 .item.active .item-desc {
+  opacity: 0.8;
+  transform: none;
+  -webkit-transform: none;
+}
+.game-section3 .item-desc p {
+  opacity: 0;
+  -webkit-transform: translateY(32px);
+  transform: translateY(32px);
+  transition: all 0.4s ease-in-out 0.2s;
+  -webkit-transition: all 0.4s ease-in-out 0.2s;
+}
+.game-section3 .item.active .item-desc p {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+.game-section3 .owl-theme.custom-carousel .owl-dots {
+  margin-top: -20px;
+  position: relative;
+  z-index: 5;
+}
     </style>
 </head>
 <body>
@@ -885,34 +965,36 @@
                 </div>
                 
                 <!-- Карусель дат -->
-
-              <div class="row"><h5 class="line-title col-5 offset-1">ДЕЙСТВУЮЩИЕ СНО В ААИ</h5></div>
-               <div class="offset-1">
-                <div class="owl-carousel custom-carousel owl-theme " id="slider-2">
-                  <div class="item" style="background-image: url(/Academy/Abiturient/imageAb/slider/image.png)">
-                    <div class="item-desc">
-                      
-                      <p>СНО «Экологическая архитектура»</p>
-                    </div>
-                  </div>
+                <section class="game-section3">
+                <div class="row"><h5 class="line-title col-5 offset-1">ДЕЙСТВУЮЩИЕ СНО В ААИ</h5></div>
+                               <div class="offset-1">
+                                <div class="owl-carousel custom-carousel owl-theme " id="slider-2">
+                                  <div class="item" style="background-image: url(/Academy/Abiturient/imageAb/slider/image.png)">
+                                    <div class="item-desc">
+                                      
+                                      <p>СНО «Экологическая архитектура»</p>
+                                    </div>
+                                  </div>
+                              
+                                  <div class="item" style="background-image: url(/Academy/Abiturient/imageAb/slider/image-1.png)">
+                                    <div class="item-desc">
+                                      
+                                      <p>СНО «Экономические решения в архитектуре (ЭРА)»</p>
+                                    </div>
+                                  </div>
+                              
+                                  <div class="item" style="background-image: url(/Academy/Abiturient/imageAb/slider/image-2.png);">
+                                    <div class="item-desc">
+                                      
+                                      <p>СНО «Пропорции и композиция»</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                    
+                            </div>
+                </section>
               
-                  <div class="item" style="background-image: url(/Academy/Abiturient/imageAb/slider/image-1.png)">
-                    <div class="item-desc">
-                      
-                      <p>СНО «Экономические решения в архитектуре (ЭРА)»</p>
-                    </div>
-                  </div>
-              
-                  <div class="item" style="background-image: url(/Academy/Abiturient/imageAb/slider/image-2.png);">
-                    <div class="item-desc">
-                      
-                      <p>СНО «Пропорции и композиция»</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-    
-            </div>
         </section>
         </div>
 
