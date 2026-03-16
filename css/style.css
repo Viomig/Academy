@@ -534,6 +534,7 @@ table {
 }
 
 .footer li a {
+  color: #ffffff !important;
     font-family: "Montserrat-Regular";
     font-size: 14px;
     margin-bottom: 8px;
