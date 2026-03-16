@@ -665,6 +665,102 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(8, 13, 107, 0.3);
         }
+
+        /* ===== КАЛЕНДАРЬ ===== */
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+            max-width: 100%;
+        }
+
+        .calendar-day {
+            width: 80px;
+            height: 46px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #D2D2D2;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background: var(--white);
+        }
+
+        .calendar-day:hover:not(.border-0) {
+            background: #f8f9fa;
+            transform: scale(1.02);
+        }
+
+        .calendar-day.event-day {
+            border: 2px solid var(--secondary-pink);
+            position: relative;
+        }
+
+        .calendar-day.event-day.selected {
+            background: var(--primary-pink);
+            color: var(--white);
+            border-color: var(--primary-pink);
+        }
+
+        .calendar-day.current {
+            background: var(--light-blue);
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+        }
+
+        .calendar-day.highlight {
+            background: var(--secondary-pink);
+            border-color: var(--secondary-pink);
+            color: var(--white);
+        }
+
+        .calendar-day.border-0 {
+            border: none;
+            cursor: default;
+            background: transparent;
+        }
+
+        .calendar-day.border-0:hover {
+            background: transparent;
+            transform: none;
+        }
+
+        .month-nav {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .month-nav-btn {
+            flex: 1;
+            padding: 10px;
+            border: 0 0 2px 0 solid var(--primary-blue);
+            background: white;
+            color: var(--primary-blue);
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .month-nav-btn.active {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .month-nav-btn:hover {
+            background: var(--primary-blue);
+        }
+
+        .event-info {
+            transition: all 0.3s ease;
+        }
+
+        .event-info.hidden {
+            display: none !important;
+        }
     </style>
 </head>
 <body>
@@ -923,64 +1019,73 @@
         <!-- ===== СЕКЦИЯ 4: КАЛЕНДАРЬ ===== -->
         <section class="calendar-section py-5">
             <div class="container">
-                <h2 class="section-title mb-5">календарь</h2>
-                <p class="text-blue fs-4 mb-5">
-                    Сроки приема документов на очное отделение у лиц, поступающих для обучения по программам подготовки в 2025 году
-                </p>
+                <h2 class="section-title text-center mb-5">Календарь приема</h2>
                 
-                <div class="calendar-container">
-                    <div class="d-flex align-items-center gap-3 mb-4">
-                        <button class="btn btn-outline-primary">Июнь</button>
-                        <button class="btn btn-primary">Июль</button>
-                        <button class="btn btn-outline-primary">Август</button>
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="card border-0">
+                            <div class="card-body p-5">
+                                <h3 class="section-subtitle text-blue mb-4">
+                                    Сроки приема документов на очное отделение у лиц, поступающих для обучения 
+                                    по программам подготовки в магистратуру в 2025 году
+                                </h3>
+                                
+                                <!-- Навигация по трем месяцам -->
+                                <div class="month-nav mb-4">
+                                    <button class="month-nav-btn active" data-month="5">Июнь</button>
+                                    <button class="month-nav-btn" data-month="6">Июль</button>
+                                    <button class="month-nav-btn" data-month="7">Август</button>
+                                </div>
+                                
+                                <div class="row">
+                                    <!-- Календарь: 6 колонок с offset-1 -->
+                                    <div class="col-md-7">
+                                        <div class="calendar-grid" id="calendar">
+                                            <!-- Дни недели -->
+                                            <div class="calendar-day border-0 fw-bold text-muted">Пн</div>
+                                            <div class="calendar-day border-0 fw-bold text-muted">Вт</div>
+                                            <div class="calendar-day border-0 fw-bold text-muted">Ср</div>
+                                            <div class="calendar-day border-0 fw-bold text-muted">Чт</div>
+                                            <div class="calendar-day border-0 fw-bold text-muted">Пт</div>
+                                            <div class="calendar-day border-0 fw-bold text-muted">Сб</div>
+                                            <div class="calendar-day border-0 fw-bold text-muted">Вс</div>
+                                            
+                                            <!-- Здесь будут генерироваться дни календаря -->
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Информация о событиях: 5 колонок справа -->
+                                    <div class="col-md-5">
+                                        <!-- Блок с информацией о событиях -->
+                                        <div class="alert alert-info border-0 bg-light-blue event-info" id="eventInfo">
+                                            <div class="d-flex">
+                                                <i class="bi bi-info-circle-fill fs-4 text-primary me-3"></i>
+                                                <div>
+                                                    <p class="mb-2 fs-5 fw-bold" id="eventTitle">
+                                                        Публикация расписания вступительных испытаний ЮФУ на сайте
+                                                    </p>
+                                                    <p class="mb-0" id="eventDescription">
+                                                        20 июля — ключевая дата для публикации расписания
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Шаблон для скрытого сообщения (будет показываться, если нет событий) -->
+                                        <div class="alert alert-secondary border-0 event-info hidden" id="noEventInfo">
+                                            <div class="d-flex">
+                                                <i class="bi bi-calendar-x fs-4 text-secondary me-3"></i>
+                                                <div>
+                                                    <p class="mb-2 fs-5 fw-bold">Нет событий</p>
+                                                    <p class="mb-0">На выбранную дату нет запланированных вступительных испытаний</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <!-- Календарь -->
-                    <div class="row g-2 mb-4">
-                        <!-- Дни июня -->
-                        <div class="col calendar-day disabled">30</div>
-                        <!-- Дни июля -->
-                        <div class="col calendar-day">1</div>
-                        <div class="col calendar-day">2</div>
-                        <div class="col calendar-day">3</div>
-                        <div class="col calendar-day">4</div>
-                        <div class="col calendar-day">5</div>
-                        <div class="col calendar-day">6</div>
-                        <div class="col calendar-day">7</div>
-                        <div class="col calendar-day">8</div>
-                        <div class="col calendar-day">9</div>
-                        <div class="col calendar-day">10</div>
-                        <div class="col calendar-day">11</div>
-                        <div class="col calendar-day">12</div>
-                        <div class="col calendar-day">13</div>
-                        <div class="col calendar-day">14</div>
-                        <div class="col calendar-day active">15</div>
-                        <div class="col calendar-day">16</div>
-                        <div class="col calendar-day">17</div>
-                        <div class="col calendar-day">18</div>
-                        <div class="col calendar-day">19</div>
-                        <div class="col calendar-day">20</div>
-                        <div class="col calendar-day">21</div>
-                        <div class="col calendar-day">22</div>
-                        <div class="col calendar-day">23</div>
-                        <div class="col calendar-day">24</div>
-                        <div class="col calendar-day highlight">25</div>
-                        <div class="col calendar-day">26</div>
-                        <div class="col calendar-day highlight">27</div>
-                        <div class="col calendar-day">28</div>
-                        <div class="col calendar-day">29</div>
-                        <div class="col calendar-day">30</div>
-                        <div class="col calendar-day">31</div>
-                        <!-- Дни августа -->
-                        <div class="col calendar-day disabled">1</div>
-                        <div class="col calendar-day disabled">2</div>
-                        <div class="col calendar-day disabled">3</div>
-                    </div>
-                    
-                    <p class="text-muted mb-0">
-                        <strong>Окончание приема документов</strong> у лиц, поступающих для обучения по направлениям подготовки (специальностям), 
-                        при приеме на которые проводятся дополнительные вступительные испытания творческой или профессиональной направленности.
-                    </p>
                 </div>
             </div>
         </section>
@@ -1412,5 +1517,203 @@
             });
         });
     </script>
+
+     <script>
+    // Данные о событиях (вступительных испытаниях)
+    const eventsData = {
+        // Формат: 'год-месяц-день': { title: 'Название события', description: 'Описание' }
+        '2025-6-10': {
+            title: 'Предварительная запись',
+            description: 'Открытие предварительной записи на вступительные испытания.'
+        },
+        '2025-7-1': {
+            title: 'Начало приема документов',
+            description: 'Старт приемной кампании 2025 года. Начало подачи документов в магистратуру.'
+        },
+        '2025-7-15': {
+            title: 'Консультация по вступительным испытаниям',
+            description: 'Онлайн-консультация для абитуриентов магистратуры в 15:00.'
+        },
+        '2025-7-20': {
+            title: 'Публикация расписания вступительных испытаний ЮФУ на сайте',
+            description: '20 июля — ключевая дата для публикации расписания'
+        },
+        '2025-7-25': {
+            title: 'Вступительное испытание по математике',
+            description: 'Письменный экзамен по высшей математике. Начало в 10:00.'
+        },
+        '2025-7-28': {
+            title: 'Вступительное испытание по информатике',
+            description: 'Тестирование по основам программирования. Начало в 14:00.'
+        },
+        '2025-8-5': {
+            title: 'Дополнительный набор',
+            description: 'Подача документов на вакантные места в магистратуру.'
+        },
+        '2025-8-15': {
+            title: 'Резервный день',
+            description: 'Дополнительный день для сдачи вступительных испытаний.'
+        }
+    };
+
+    // Текущий отображаемый месяц и год
+    let currentDate = new Date(2025, 6, 1); // Июль 2025 (месяцы в JS: 0 - январь, 6 - июль)
+    
+    // Месяцы для отображения
+    const monthNames = [
+        'Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
+        'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'
+    ];
+
+    // Функция для получения количества дней в месяце
+    function getDaysInMonth(year, month) {
+        return new Date(year, month + 1, 0).getDate();
+    }
+
+    // Функция для получения первого дня месяца (0 - воскресенье, 1 - понедельник, ...)
+    function getFirstDayOfMonth(year, month) {
+        const day = new Date(year, month, 1).getDay();
+        // Преобразуем воскресенье (0) в 7 для удобства, чтобы понедельник был 1
+        return day === 0 ? 7 : day;
+    }
+
+    // Функция для проверки, есть ли событие в указанную дату
+    function hasEvent(year, month, day) {
+        return eventsData[`${year}-${month + 1}-${day}`] !== undefined;
+    }
+
+    // Функция для получения события по дате
+    function getEvent(year, month, day) {
+        return eventsData[`${year}-${month + 1}-${day}`];
+    }
+
+    // Функция для отображения информации о событии
+    function showEventInfo(eventData) {
+        const eventInfo = document.getElementById('eventInfo');
+        const noEventInfo = document.getElementById('noEventInfo');
+        
+        if (eventData) {
+            document.getElementById('eventTitle').textContent = eventData.title;
+            document.getElementById('eventDescription').textContent = eventData.description;
+            eventInfo.classList.remove('hidden');
+            noEventInfo.classList.add('hidden');
+        } else {
+            eventInfo.classList.add('hidden');
+            noEventInfo.classList.remove('hidden');
+        }
+    }
+
+    // Функция для обновления календаря
+    function renderCalendar() {
+        const calendar = document.getElementById('calendar');
+        
+        const year = currentDate.getFullYear();
+        const month = currentDate.getMonth();
+        
+        // Сохраняем текущие дни недели (первые 7 элементов)
+        const weekdays = Array.from(calendar.children).slice(0, 7);
+        
+        // Очищаем календарь, но оставляем дни недели
+        calendar.innerHTML = '';
+        weekdays.forEach(day => calendar.appendChild(day));
+        
+        // Получаем данные для текущего месяца
+        const daysInMonth = getDaysInMonth(year, month);
+        const firstDay = getFirstDayOfMonth(year, month); // 1-7, где 1 - понедельник
+        
+        // Добавляем пустые ячейки для дней предыдущего месяца
+        for (let i = 1; i < firstDay; i++) {
+            const emptyDay = document.createElement('div');
+            emptyDay.className = 'calendar-day border-0';
+            emptyDay.textContent = '';
+            calendar.appendChild(emptyDay);
+        }
+        
+        // Добавляем дни текущего месяца
+        for (let day = 1; day <= daysInMonth; day++) {
+            const dayElement = document.createElement('div');
+            dayElement.className = 'calendar-day';
+            dayElement.textContent = day;
+            dayElement.dataset.day = day;
+            dayElement.dataset.month = month + 1;
+            dayElement.dataset.year = year;
+            
+            // Проверяем, есть ли событие в этот день
+            if (hasEvent(year, month, day)) {
+                dayElement.classList.add('event-day');
+            }
+            
+            // Особые дни (можно добавить логику для current и highlight)
+            // Например, сегодняшний день
+            const today = new Date();
+            if (year === today.getFullYear() && month === today.getMonth() && day === today.getDate()) {
+                dayElement.classList.add('current');
+            }
+            
+            // Добавляем обработчик клика
+            dayElement.addEventListener('click', function() {
+                // Убираем выделение со всех дней
+                document.querySelectorAll('.calendar-day.selected').forEach(el => {
+                    el.classList.remove('selected');
+                });
+                
+                // Выделяем текущий день
+                this.classList.add('selected');
+                
+                // Получаем данные о событии
+                const selectedDay = parseInt(this.dataset.day);
+                const selectedMonth = parseInt(this.dataset.month);
+                const selectedYear = parseInt(this.dataset.year);
+                
+                const eventData = getEvent(selectedYear, selectedMonth - 1, selectedDay);
+                
+                // Отображаем информацию
+                showEventInfo(eventData);
+            });
+            
+            calendar.appendChild(dayElement);
+        }
+        
+        // Добавляем пустые ячейки для выравнивания (если нужно)
+        const totalCells = firstDay - 1 + daysInMonth;
+        const remainingCells = 42 - totalCells; // 6 рядов по 7 дней = 42
+        
+        if (remainingCells > 0 && remainingCells < 7) {
+            for (let i = 0; i < remainingCells; i++) {
+                const emptyDay = document.createElement('div');
+                emptyDay.className = 'calendar-day border-0';
+                emptyDay.textContent = '';
+                calendar.appendChild(emptyDay);
+            }
+        }
+        
+        // Сбрасываем выделение и показываем общую информацию
+        showEventInfo(null);
+    }
+
+    // Обработчики для кнопок месяцев
+    document.querySelectorAll('.month-nav-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Убираем активный класс у всех кнопок
+            document.querySelectorAll('.month-nav-btn').forEach(b => {
+                b.classList.remove('active');
+            });
+            
+            // Добавляем активный класс текущей кнопке
+            this.classList.add('active');
+            
+            // Устанавливаем текущий месяц
+            const monthIndex = parseInt(this.dataset.month);
+            currentDate = new Date(2025, monthIndex, 1);
+            
+            // Обновляем календарь
+            renderCalendar();
+        });
+    });
+
+    // Инициализация календаря при загрузке страницы
+    document.addEventListener('DOMContentLoaded', renderCalendar);
+</script>
+
 </body>
 </html>
