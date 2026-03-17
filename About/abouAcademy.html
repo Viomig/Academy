@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Академия архитектуры и искусств ЮФУ</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Academy/css/owl.carousel.css">
+    <link rel="stylesheet" href="Academy/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="Academy/css/owl.theme.green.css">
+    <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css">
     <link href="/Academy/css/style.css" rel="stylesheet">
-    <style>
-        /* ===== БАЗОВЫЕ СТИЛИ И ПЕРЕМЕННЫЕ ===== */
+    <link rel="stylesheet" href="/Academy/css/aboutCSS.css">
+</head>
+
+<style>
+   /* ===== БАЗОВЫЕ СТИЛИ И ПЕРЕМЕННЫЕ ===== */
         :root {
             --primary-blue: #080D6B;
             --secondary-pink: #ED1160;
@@ -548,623 +550,195 @@
             border-radius: 20px;
             background: var(--primary-blue) !important;
         }
-    </style>
-</head>
+</style>
 <body>
     <header class="header" id="header-placeholder">
     </header>
 
-    <!-- Кнопка наверх -->
-    <a href="#" class="scroll-top-btn">
-        <i class="fas fa-chevron-up"></i>
-    </a>
 
-    <!-- ===== СЕКЦИЯ 1: ОБ АКАДЕМИИ ===== -->
-    <section class="about-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <h1 class="hero-title text-gradient">об академии</h1>
-                    <p class="hero-subtitle">
-                        Академия архитектуры и искусств ЮФУ объединяет традиции образовательного процесса с современными подходами, готовя специалистов в области архитектуры, дизайна и искусства.
-                    </p>
-                    
-                    <!-- Быстрые ссылки -->
-                    <div class="row g-4 mb-5">
-                        <div class="col-md-6 col-lg-3">
-                            <a href="#" class="link-arrow">
-                                дирекция
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-lg-3">
-                            <a href="#" class="link-arrow">
-                                студсовет
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-lg-3">
-                            <a href="#" class="link-arrow">
-                                ученый совет
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                        <div class="col-md-6 col-lg-3">
-                            <a href="#" class="link-arrow">
-                                история ААИ ЮФУ
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Документ -->
-                    <div class="d-flex align-items-center mb-5">
-                        <div class="me-3">
-                            <i class="fas fa-file-alt fa-2x text-primary"></i>
-                        </div>
-                        <div>
-                            <a href="#" class="link-arrow">
-                                Положение об Академии архитектуры и искусств ЮФУ
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
+    <section id="start">
+        <div class="row">
+            <div class="col-7 offset-1">
+                <div><h1>ОБ АКАДЕМИИ</h1></div>
+                <div>Академия архитектуры и искусств ЮФУ объединяет традиции образовательного процесса с современными подходами, готовя специалистов в области архитектуры, дизайна и искусства. </div>
+                <div class="row">
+                    <div class="col-6"><button class="btngprsl"><a href="/Academy/404.html">Дирекция</a><span class="arrow">→</span></button></div>
+                    <div class="col-6"><button class="btngprsl"><a href="/Academy/404.html">Ученый совет</a><span class="arrow">→</span></button></div>
+                    <div class="col-6"><button class="btngprsl"><a href="/Academy/404.html">Студсовет</a><span class="arrow">→</span></button></div>
+                    <div class="col-6"><button class="btngprsl"><a href="/Academy/404.html">История ААИ ЮФУ</a><span class="arrow">→</span></div>
                 </div>
-                <div class="col-lg-5">
-                    <div class="position-relative">
-                        <img src="https://via.placeholder.com/400x500/080D6B/FFFFFF?text=ААИ+ЮФУ" 
-                             alt="Академия архитектуры и искусств ЮФУ" 
-                             class="img-fluid rounded-3 shadow">
-                        <div class="position-absolute top-0 start-0 w-100 h-100 bg-gradient-primary opacity-10 rounded-3"></div>
-                    </div>
-                </div>
+                
             </div>
+            <div class="col-4">
+                <img src="images/about/1.png" alt="Image2">
+            </div>
+
         </div>
     </section>
 
-    <!-- ===== СЕКЦИЯ 2: ОСНОВНАЯ ИНФОРМАЦИЯ ===== -->
-    <section class="bg-gradient-dark">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-lg-8">
-                    <h2 class="section-title">ААИ ЮФУ</h2>
-                    <p class="lead">
-                        Академия архитектуры и искусств в настоящее время является структурным подразделением ФГАОУ ВО «Южный федеральный университет», но имеет почти пятидесятилетнюю историю. В сентябре 2013 г. в связи с реорганизацией структуры ЮФУ Институт архитектуры и искусств был переименован в Академию архитектуры и искусств и к нему присоединены художественные кафедры бывшего Художественно-графического факультета ЮФУ.
-                    </p>
-                </div>
+    <section id="all about">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="mx-auto col-md-3">
+                <h5>ААИ ЮФУ</h5>
             </div>
-
-            <!-- Инфо карточки -->
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="info-card">
-                        <h4 class="mb-3">Обучение студентов</h4>
-                        <p>
-                            Сегодня в Академии обучается около 1800 студентов по более чем 18 направлениям подготовки и специальностям высшего образования и более чем 4500 слушателей, обучающихся по программам дополнительного образования.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="info-card">
-                        <h4 class="mb-3">Практическая подготовка</h4>
-                        <p>
-                            Студенты Академии получают знания не только по архитектурно-художественным, но и по ряду инженерно-экономических дисциплин. Большое внимание уделяется практической подготовке, работе над реальными проектами и заданиями.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-12 col-lg-4">
-                    <div class="info-card">
-                        <h4 class="mb-3">Научные исследования</h4>
-                        <p>
-                            В Академии проводятся исследования по проблемам архитектуры и градостроительства Юга России, реставрации зданий, исследования в области историко-культурного наследия, истории и проблемам дизайна, прикладных искусств.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== СЕКЦИЯ 3: РЕЙТИНГИ ===== -->
-    <section>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <div class="bg-gradient-primary text-white p-5 rounded-4 shadow">
-                        <h3 class="h4 mb-3">Согласно рейтингу</h3>
-                        <h2 class="display-4 fw-bold mb-3">топ-10</h2>
-                        <h4 class="mb-4">лучших архитектурных вузов России</h4>
-                        <p class="small mb-0 opacity-75">
-                            *по результатам всероссийского фестиваля «Драйверы развития современного города 2020, 2021 и 2022 гг.» в номинации лучшая архитектурная школа россии
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="bg-dark text-white p-5 rounded-4 shadow">
-                        <h3 class="h4 mb-3">ЮФУ —</h3>
-                        <h4 class="mb-4">1 из 18 вузов-победителей программы «приоритет 2030» по треку «исследовательское лидерство»</h4>
-                        <p class="lead mb-0">
-                            ЮФУ — пространство смыслов и возможностей
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== СЕКЦИЯ 4: ИСТОРИЯ ===== -->
-    <section class="bg-light">
-        <div class="container">
-            <h2 class="section-title text-center">архитектурно-художественная школа юфу: этапы становления</h2>
-            
-            <div class="timeline">
-                <!-- 1964 -->
-                <div class="timeline-item">
-                    <div class="timeline-year">1964</div>
-                    <div class="timeline-content">
-                        Архитектурный факультет Ростовского инженерно-строительного института
-                    </div>
-                </div>
-                
-                <!-- 1971 -->
-                <div class="timeline-item">
-                    <div class="timeline-year">1971</div>
-                    <div class="timeline-content">
-                        Художественно-графический факультет Ростовского государственного педагогического института
-                    </div>
-                </div>
-                
-                <!-- 1988 -->
-                <div class="timeline-item">
-                    <div class="timeline-year">1988</div>
-                    <div class="timeline-content">
-                        Ростовский государственный архитектурный институт
-                    </div>
-                </div>
-                
-                <!-- 1994 -->
-                <div class="timeline-item">
-                    <div class="timeline-year">1994</div>
-                    <div class="timeline-content">
-                        + Отделение декоративно-прикладного искусства
-                    </div>
-                </div>
-                
-                <!-- 2000 -->
-                <div class="timeline-item">
-                    <div class="timeline-year">2000</div>
-                    <div class="timeline-content">
-                        + Отделение Дизайна
-                    </div>
-                </div>
-                
-                <!-- 2001-2012 -->
-                <div class="timeline-item">
-                    <div class="timeline-year">2001-2012</div>
-                    <div class="timeline-content">
-                        + Отделение Живописи, Графики, Скульптуры, Монументально-декоративного искусства
-                    </div>
-                </div>
-                
-                <!-- 2006 -->
-                <div class="timeline-item">
-                    <div class="timeline-year">2006</div>
-                    <div class="timeline-content">
-                        Архитектурный институт ЮФУ + Факультет изобразительного искусства
-                    </div>
-                </div>
-                
-                <!-- 2013 -->
-                <div class="timeline-item">
-                    <div class="timeline-year">2013</div>
-                    <div class="timeline-content">
-                        Академия архитектуры и искусств
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== СЕКЦИЯ 5: ПОДРАЗДЕЛЕНИЯ ===== -->
-    <section>
-        <div class="container">
-            <h2 class="section-title text-center">подразделения ааи юфу</h2>
-            
-            <div class="row g-4">
-                <!-- Кафедры -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="stat-card">
-                        <div class="stat-number">12</div>
-                        <div class="stat-label">кафедр</div>
-                        <div class="mt-3 text-start small">
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>выпускающих</span>
-                                <strong class="text-primary">8</strong>
-                            </div>
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>невыпускающих</span>
-                                <strong class="text-primary">4</strong>
-                            </div>
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>архитектурной направленности</span>
-                                <strong class="text-primary">5</strong>
-                            </div>
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>художественной направленности и дизайна</span>
-                                <strong class="text-primary">4</strong>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <span>инженерно-технической направленности</span>
-                                <strong class="text-primary">3</strong>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Центры -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="stat-card">
-                        <div class="stat-number">10</div>
-                        <div class="stat-label">центров</div>
-                        <div class="mt-3 text-start small">
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>учебно-образовательных</span>
-                                <strong class="text-primary">3</strong>
-                            </div>
-                            <div class="d-flex justify-content-between mb-2">
-                                <span>организационно-сопровождающих</span>
-                                <strong class="text-primary">6</strong>
-                            </div>
-                            <div class="d-flex justify-content-between">
-                                <span>научно-образовательный</span>
-                                <strong class="text-primary">1</strong>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- НОЦ -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="stat-card">
-                        <div class="stat-number">4</div>
-                        <div class="stat-label">ноц</div>
-                        <div class="mt-3 text-start small">
-                            <div>• теория и история архитектуры и проблем сохранения наследия</div>
-                            <div>• учебно-творческая лаборатория (МДИ)</div>
-                            <div>• учебно-творческая лаборатория театрально-сценических искусств и анимационных технологий</div>
-                            <div>• лаборатория костюма и моды</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Мастерские -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="stat-card">
-                        <div class="stat-number">5</div>
-                        <div class="stat-label">мастерских</div>
-                        <div class="mt-3 text-start small">
-                            <div>• мастерская художественной керамики</div>
-                            <div>• учебная мастерская обработки самоцветной древесины</div>
-                            <div>• мастерская дизайна</div>
-                            <div>• учебная швейная мастерская</div>
-                            <div>• лаборатория фотодизайна</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== СЕКЦИЯ 6: НАПРАВЛЕНИЯ ОБРАЗОВАНИЯ ===== -->
-    <section class="bg-light">
-        <div class="container">
-            <h2 class="section-title text-center">диапозон направлений архитектурно-художественного образования ААИ юфу</h2>
-            
-            <div class="directions-grid">
-                <!-- Глобальный уровень -->
-                <div class="direction-category">
-                    <div class="category-title">Глобальный территориальный, городской районный, квартальный, дворовой уровень преобразования пространства</div>
-                    <ul class="direction-list">
-                        <li>Градостроительство Урбанистика</li>
-                        <li>Дизайн архитектурной среды и ландшафтная архитектура</li>
-                        <li>Объектная архитектура</li>
-                    </ul>
-                </div>
-                
-                <!-- Городской уровень -->
-                <div class="direction-category">
-                    <div class="category-title">Городской, районный, квартальный, дворовой уровень преобразования пространства</div>
-                    <ul class="direction-list">
-                        <li>Реконструкция и реставрация объектов архитектурного наследия</li>
-                        <li>Монументальное искусство</li>
-                    </ul>
-                </div>
-                
-                <!-- Эстетическое наполнение -->
-                <div class="direction-category">
-                    <div class="category-title">Эстетического и предметного наполнения обитаемого пространства</div>
-                    <ul class="direction-list">
-                        <li>Дизайн интерьера, костюма, графический, предметный</li>
-                        <li>Декоративно-прикладное искусство, Графика, Скульптура, Живопись</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== СЕКЦИЯ 7: КАДРОВЫЙ ПОТЕНЦИАЛ ===== -->
-    <section>
-        <div class="container">
-            <h2 class="section-title text-center">кадровый потенциал ААИ ЮФУ</h2>
-            
-            <div class="staff-grid">
-                <div class="staff-card">
-                    <div class="stat-number">129</div>
-                    <div class="stat-label">штатных сотрудников</div>
-                </div>
-                
-                <div class="staff-card">
-                    <div class="stat-number">1</div>
-                    <div class="stat-label">действующий член академии РАХ (академика)</div>
-                </div>
-                
-                <div class="staff-card">
-                    <div class="stat-number">8</div>
-                    <div class="stat-label">докторов</div>
-                </div>
-                
-                <div class="staff-card">
-                    <div class="stat-number">48</div>
-                    <div class="stat-label">кандидатов наук</div>
-                </div>
-                
-                <div class="staff-card">
-                    <div class="stat-number">8</div>
-                    <div class="stat-label">заслуженных художников РФ</div>
-                </div>
-                
-                <div class="staff-card">
-                    <div class="stat-number">3</div>
-                    <div class="stat-label">почетных члена РАХ</div>
-                </div>
-                
-                <div class="staff-card">
-                    <div class="stat-number">51</div>
-                    <div class="stat-label">средний возраст НПР</div>
-                </div>
-                
-                <div class="staff-card">
-                    <div class="stat-number">>85%</div>
-                    <div class="stat-label">членов профильных творческих союзов</div>
-                </div>
-                
-                <div class="staff-card">
-                    <div class="stat-number">17</div>
-                    <div class="stat-label">профильных экспертов</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== СЕКЦИЯ 8: ОБРАЗОВАТЕЛЬНАЯ ДЕЯТЕЛЬНОСТЬ ===== -->
-    <section class="bg-light">
-        <div class="container">
-            <h2 class="section-title text-center">образовательная деятельность ааи юфу</h2>
-            
-            <div class="row g-4 mb-5">
-                <div class="col-md-6 col-lg-4">
-                    <div class="stat-card">
-                        <div class="stat-number">13</div>
-                        <div class="stat-label">направлений бакалавриата и специалитета (16 программ)</div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4">
-                    <div class="stat-card">
-                        <div class="stat-number">7</div>
-                        <div class="stat-label">направлений магистратуры (8 программ)</div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4">
-                    <div class="stat-card">
-                        <div class="stat-number">1</div>
-                        <div class="stat-label">направление аспирантуры (2 научные специальности)</div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4">
-                    <div class="stat-card">
-                        <div class="stat-number">4</div>
-                        <div class="stat-label">направления ассистентуры-стажировки (4 программы)</div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-4">
-                    <div class="stat-card">
-                        <div class="stat-number">35</div>
-                        <div class="stat-label">программ ДПО</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Статистика студентов -->
+            <div class="col-8"></div>
             <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="info-card">
-                        <h4 class="text-center mb-4">студентов на 2025 год</h4>
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="d-flex justify-content-between border-bottom pb-2">
-                                    <span>Бакалавры</span>
-                                    <strong class="text-primary">1279</strong>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="d-flex justify-content-between border-bottom pb-2">
-                                    <span>Специалисты</span>
-                                    <strong class="text-primary">189</strong>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="d-flex justify-content-between border-bottom pb-2">
-                                    <span>Магистры</span>
-                                    <strong class="text-primary">265</strong>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="d-flex justify-content-between border-bottom pb-2">
-                                    <span>Аспиранты / Ассистенты</span>
-                                    <strong class="text-primary">41</strong>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="d-flex justify-content-between border-bottom pb-2">
-                                    <span>Всего обучающихся</span>
-                                    <strong class="text-primary">1783</strong>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="d-flex justify-content-between">
-                                    <span>ДПО</span>
-                                    <strong class="text-primary">4465</strong>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-7 align-self-around offset-2">
+               <p><br>Академия архитектуры и искусств в настоящее время является структурным подразделением ФГАОУ ВО «Южный федеральный университет», но имеет почти
+                 пятидесятилетнюю историю. В сентябре 2013 г. в связи с реорганизацией структуры ЮФУ Институт архитектуры и искусств был переименован 
+                 в Академию архитектуры и искусств и к нему присоединены художественные кафедры бывшего Художественно-графического факультета ЮФУ.</p> 
+                 
+                 <p><br>Сегодня в Академии обучается около 1800 студентов по более чем 18 направлениям подготовки и специальностям высшего образования и более чем 4500 слушателей, 
+                  обучающихся по программам дополнительного образования.</p>
+
+                  <p><br>Студенты Академии получают знания не только по архитектурно-художественным, но и по ряду инженерно-экономических дисциплин, что позволяет им находиться 
+                    на уровне требований современной архитектурной и художественной практики. Большое внимание уделяется практической подготовке студентов, 
+                    работе над реальными проектами и заданиями. Большинство учебных работ и дипломных проектов выполняются на реальной основе – по 
+                    заказам городов, областей и республик юга России.</p>
+                    
+                    <p><br>Большое внимание в процессе обучения уделяется научным исследованиям, являющимся составляющей частью компетенций, необходимых архитектору, 
+                      градостроителю, дизайнеру, преподавателю изящных искусств. В Академии проводятся исследования по проблемам архитектуры и градостроительства 
+                      Юга России, реставрации зданий, исследования в области историко-культурного наследия, истории и проблемам дизайна, прикладных искусств, 
+                      художественного творчества.</p>
+            </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== СЕКЦИЯ 9: УЧЕБНЫЕ КОРПУСА ===== -->
-    <section class="bg-gradient-dark">
-        <div class="container">
-            <h2 class="section-title text-center">учебные корпуса академии</h2>
-            
-            <div class="row g-4">
-                <!-- Корпус 1 -->
-                <div class="col-md-4">
-                    <div class="building-card">
-                        <div class="building-image" 
-                             style="background-image: url('https://via.placeholder.com/400x209/080D6B/FFFFFF?text=Корпус+1');">
-                        </div>
-                        <div class="building-info">
-                            <h5 class="mb-3">Корпус №1</h5>
-                            <p class="text-muted mb-3">
-                                г. Ростов-на-Дону, пр. Буденновский, д. 39
-                            </p>
-                            <a href="#" class="link-arrow">
-                                Посмотреть на карте
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Корпус 2 -->
-                <div class="col-md-4">
-                    <div class="building-card">
-                        <div class="building-image" 
-                             style="background-image: url('https://via.placeholder.com/400x209/ED1160/FFFFFF?text=Корпус+2');">
-                        </div>
-                        <div class="building-info">
-                            <h5 class="mb-3">Корпус №2</h5>
-                            <p class="text-muted mb-3">
-                                г. Ростов-на-Дону, ул. Максима Горького, д. 75/78
-                            </p>
-                            <a href="#" class="link-arrow">
-                                Посмотреть на карте
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Корпус 3 -->
-                <div class="col-md-4">
-                    <div class="building-card">
-                        <div class="building-image" 
-                             style="background-image: url('https://via.placeholder.com/400x209/232328/FFFFFF?text=Корпус+3');">
-                        </div>
-                        <div class="building-info">
-                            <h5 class="mb-3">Корпус №3</h5>
-                            <p class="text-muted mb-3">
-                                г. Ростов-на-Дону, ул. Филимоновская, д. 137
-                            </p>
-                            <a href="#" class="link-arrow">
-                                Посмотреть на карте
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section id="aboutTop">
+        <div class="row">
+                <div class=" col-md-7 offset-md-2" ><img src="images/about/5.png" alt="Image2" ></div>
+                <div class=" col-md-7 offset-md-2"><img src="images/about/6.png" alt="Image2"></div>
         </div>
+
     </section>
 
-    <!-- ===== СЕКЦИЯ 10: КОНТАКТЫ И ПРИЗЫВ К ДЕЙСТВИЮ ===== -->
-    <section>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0">
-                    <h2 class="section-title">Хотите узнать больше?</h2>
-                    <p class="lead mb-4">
-                        Свяжитесь с нами для получения дополнительной информации о поступлении, программах обучения или сотрудничестве.
-                    </p>
-                    <div class="d-flex flex-wrap gap-3">
-                        <a href="#" class="btn btn-primary">
-                            <i class="fas fa-user-graduate me-2"></i>
-                            Поступить в академию
-                        </a>
-                        <a href="#" class="btn btn-outline-primary">
-                            <i class="fas fa-envelope me-2"></i>
-                            Написать нам
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="bg-gradient-primary text-white p-5 rounded-4 shadow">
-                        <h3 class="h4 mb-4">Контакты</h3>
-                        <div class="mb-3">
-                            <i class="fas fa-phone me-2"></i>
-                            <span>+7 (863) 123-45-67</span>
-                        </div>
-                        <div class="mb-3">
-                            <i class="fas fa-envelope me-2"></i>
-                            <span>aaai@sfedu.ru</span>
-                        </div>
-                        <div class="mb-3">
-                            <i class="fas fa-map-marker-alt me-2"></i>
-                            <span>г. Ростов-на-Дону, пр. Буденновский, 39</span>
-                        </div>
-                        <div class="mt-4">
-                            <h5 class="h6 mb-3">Мы в социальных сетях:</h5>
-                            <div class="d-flex gap-3">
-                                <a href="#" class="text-white fs-4">
-                                    <i class="fab fa-vk"></i>
-                                </a>
-                                <a href="#" class="text-white fs-4">
-                                    <i class="fab fa-telegram"></i>
-                                </a>
-                                <a href="#" class="text-white fs-4">
-                                    <i class="fab fa-youtube"></i>
-                                </a>
-                                <a href="#" class="text-white fs-4">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="about-section">
+  <div class="row">
+        <div class="col-md-8 offset-md-1"><h5 class="line-title">Подразделения ааи юфу</h5>
         </div>
+        </div>
+  <div class="owl-carousel owl-theme " id="aboutslider">
+      <div class="item" style="background-color: aliceblue;">
+      <div class="item-desc">
+        <h3></h3>
+        <p></p>
+        <p> </p>
+        <p></p>
+      </div>
+    </div>
+    <div class="item" style="background-color: aliceblue;">
+      <div class="item-desc">
+        <h3></h3>
+        <p></p>
+      </div>
+    </div>
+    <div class="item" style="background-color: aliceblue;">
+      <div class="item-desc">
+        <h3></h3>
+        <p></p>
+      </div>
+    </div>
+    <div class="item" style="background-color: aliceblue;">
+      <div class="item-desc">
+        <h3></h3>
+        <p></p>
+      </div>
+    </div>
+  </div>
+  </div>
     </section>
 
-    <section id="end">
+    <section class="about2-section">
+      <div class="row">
+        <div class="col-md-8 offset-md-1"><h5 class="line-title">Диапозон направлений
+архитектурно-художественного 
+образования ААИ юфу</h5>
+        </div>
+        </div>
+  <div class="row">
+    <div class="col-md-12 owl-carousel owl-theme row" id="about2slider">
+      <div class="item1 justify-content-center" style="background-color: rgb(8, 45, 77);">
+        <h3>Глобальный территориальный, городской районный, квартальный, дворовой уровень преобразования пространства</h3>
+        <div class="item2" style="background-color: rgb(255, 255, 255);">
+          <div class="item-desc">
+        
+        <p><li>Градостроительство Урбанистика</li></p>
+        <p><li>Дизайн архитектурной среды и ландшафтная архитектура</li></p>
+        <p><li>Объектная архитектура</li></p>
+      </div>
+        </div>
+    </div>
+    <div class="item1" style="background-color: rgb(8, 45, 77);">
+        <h3>Городской, районный, квартальный, дворовой уровень преобразования пространства</h3>
+        <div class="item2" style="background-color: rgb(255, 255, 255);">
+          <div class="item-desc">
+        
+        <p><li>Реконструкция и реставрация объектов архитектурного наследия</li></p>
+        <p><li>Монументальное искусство</li></p>
+      </div>
+        </div>
+    </div>
+    <div class="item1" style="background-color: rgb(8, 45, 77);">
+        <h3>Эстетического и предметного наполнения обитаемого пространства</h3>
+        <div class="item2" style="background-color: rgb(255, 255, 255);">
+          <div class="item-desc">
+        
+        <p><li>Дизайн интерьера, костюма, графический, предметный/li></p>
+        <p><li>Декоративно-прикладное искусство, Графика, Скульптура, Живопись</li></p>
+      </div>
+        </div>
+    </div></div>
+  </div>
+    </section>
+
+    <section class="about3-section">
+  <div class="row">
+        <div class="col-md-8 offset-md-1"><h5 class="line-title">Подразделения ааи юфу</h5>
+        </div>
+        </div>
+  <div class="owl-carousel owl-theme " id="about3slider">
+      <div class="item3" style="background-color: aliceblue;">
+      <div class="item-descmain">
+        <h3>13</h3>
+        <p>направлений бакалавриата 
+и специалитета (16 программ)</p>
+      </div>
+    </div>
+    <div class="item3" style="background-color: aliceblue;">
+      <div class="item-descmain">
+        <h3>3</h3>
+        <p>направлений бакалавриата 
+и специалитета (16 программ)</p>
+      </div>
+    </div>
+    <div class="item3" style="background-color: aliceblue;">
+      <div class="item-descmain">
+        <h3>7</h3>
+        <p>направлений 
+магистратуры (8 программ)</p>
+      </div>
+    </div>
+    <div class="item3" style="background-color: aliceblue;">
+      <div class="item-descmain">
+        <h3>1</h3>
+        <p>направление аспирантуры 
+(2 научные специальности)</p>
+      </div>
+    </div>
+  </div>
+  </div>
+    </section>
+
+   <section id="end">
  <div id="footer-placeholder"></div>
     </section>
 
-    <!-- Подключаем скрипты -->
+
+
+    
+      <!-- Подключаем Bootstrap JS и Popper.js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="/Academy/js/owl.carousel.js"></script>
@@ -1174,110 +748,67 @@
     <script src="/Academy/js/common.js"></script>
     <script src="/Academy/js/tabs.js"></script>
     <script src="/Academy/js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- jQuery (необходим для Owl Carousel) -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
-    <!-- Owl Carousel JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    
-    <!-- Custom JS -->
-    <script src="/js/owl.carousel.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script>
+      $(document).ready(function(){
+    const slider = $("#aboutslider").owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:4
+            }
+        }
+    });
+});
+    </script>
 
     <script>
-        // Инициализация Owl Carousel (если понадобится для галереи)
-        $(document).ready(function(){
-            // Пример карусели для галереи работ
-            if ($('.owl-carousel').length) {
-                $('.owl-carousel').owlCarousel({
-                    loop: true,
-                    margin: 20,
-                    nav: true,
-                    dots: true,
-                    responsive: {
-                        0: {
-                            items: 1
-                        },
-                        768: {
-                            items: 2
-                        },
-                        992: {
-                            items: 3
-                        }
-                    }
-                });
+      $(document).ready(function(){
+    const slider = $("#about2slider").owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:2
+            },
+            1000:{
+                items:3
             }
-            
-            // Кнопка "Наверх"
-            $(window).scroll(function() {
-                if ($(this).scrollTop() > 300) {
-                    $('.scroll-top-btn').addClass('visible');
-                } else {
-                    $('.scroll-top-btn').removeClass('visible');
-                }
-            });
-            
-            $('.scroll-top-btn').click(function(e) {
-                e.preventDefault();
-                $('html, body').animate({scrollTop: 0}, 300);
-            });
-            
-            // Анимация карточек при наведении
-            $('.info-card, .stat-card, .building-card').hover(
-                function() {
-                    $(this).css('transform', 'translateY(-10px)');
-                },
-                function() {
-                    $(this).css('transform', 'translateY(0)');
-                }
-            );
-            
-            // GSAP анимации
-            gsap.registerPlugin(ScrollTrigger);
-            
-            // Анимация появления элементов при скролле
-            gsap.utils.toArray('.info-card, .stat-card, .building-card').forEach(card => {
-                gsap.from(card, {
-                    scrollTrigger: {
-                        trigger: card,
-                        start: "top 80%",
-                        end: "bottom 20%",
-                        toggleActions: "play none none reverse"
-                    },
-                    y: 50,
-                    opacity: 0,
-                    duration: 1,
-                    ease: "power3.out"
-                });
-            });
-            
-            // Анимация заголовков секций
-            gsap.utils.toArray('.section-title').forEach(title => {
-                gsap.from(title, {
-                    scrollTrigger: {
-                        trigger: title,
-                        start: "top 85%",
-                        end: "bottom 15%",
-                        toggleActions: "play none none reverse"
-                    },
-                    y: 30,
-                    opacity: 0,
-                    duration: 1,
-                    ease: "power3.out"
-                });
-            });
-        });
+        }
+    });
+});
+    </script>
+
+    <script>
+      $(document).ready(function(){
+    const slider = $("#about3slider").owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:2
+            },
+            1000:{
+                items:5
+            }
+        }
+    });
+});
     </script>
 </body>
 </html>
-
-   
-   
