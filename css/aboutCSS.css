@@ -115,7 +115,6 @@ table {
 
 .about-section {
   padding: 60px 15px;
-  background-color: #ffffff;
 }
 .about-section .owl-stage {
   margin: 15px 0;
@@ -128,8 +127,6 @@ table {
   height: 508px;
   display: flex;
   display: -webkit-flex;
-  align-items: flex-end;
-  -webkit-align-items: flex-end;
   background: #ffffff no-repeat center center / cover;
   border-radius: 16px;
   overflow: hidden;
