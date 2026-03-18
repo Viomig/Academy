@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="Academy/css/owl.theme.green.css">
     <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="/Academy/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="/Academy/css/aboutCSS.css">
+    <link href="/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/aboutCSS.css">
 </head>
 
 <style>
@@ -568,10 +568,10 @@
                 <div><h1>ОБ АКАДЕМИИ</h1></div>
                 <div>Академия архитектуры и искусств ЮФУ объединяет традиции образовательного процесса с современными подходами, готовя специалистов в области архитектуры, дизайна и искусства. </div>
                 <div class="row">
-                    <div class="col-6"><button class="btngprsl"><a href="/Academy/404.html">Дирекция</a><span class="arrow">→</span></button></div>
-                    <div class="col-6"><button class="btngprsl"><a href="/Academy/404.html">Ученый совет</a><span class="arrow">→</span></button></div>
-                    <div class="col-6"><button class="btngprsl"><a href="/Academy/404.html">Студсовет</a><span class="arrow">→</span></button></div>
-                    <div class="col-6"><button class="btngprsl"><a href="/Academy/404.html">История ААИ ЮФУ</a><span class="arrow">→</span></div>
+                    <div class="col-6"><button class="btngprsl"><a href="/404.html">Дирекция</a><span class="arrow">→</span></button></div>
+                    <div class="col-6"><button class="btngprsl"><a href="/404.html">Ученый совет</a><span class="arrow">→</span></button></div>
+                    <div class="col-6"><button class="btngprsl"><a href="/404.html">Студсовет</a><span class="arrow">→</span></button></div>
+                    <div class="col-6"><button class="btngprsl"><a href="/404.html">История ААИ ЮФУ</a><span class="arrow">→</span></div>
                 </div>
                 
             </div>
@@ -809,7 +809,7 @@
         </div>
   <div class="row offset-1">
     <div class="col-md-12 owl-carousel owl-theme row" id="about2slider">
-      <div class="item1 justify-content-center" style="background-color: rgb(8, 45, 77);">
+      <div class="item1 justify-content-center mx-5" style="background-color: var(--primary-blue);">
         <h3>Глобальный территориальный, городской районный, квартальный, дворовой уровень преобразования пространства</h3>
         <div class="item2" style="background-color: rgb(255, 255, 255);">
           <div class="item-desc">
@@ -820,7 +820,7 @@
       </div>
         </div>
     </div>
-    <div class="item1" style="background-color: rgb(8, 45, 77);">
+    <div class="item1 mx-5" style="background-color: var(--primary-blue);">
         <h3>Городской, районный, квартальный, дворовой уровень преобразования пространства</h3>
         <div class="item2" style="background-color: rgb(255, 255, 255);">
           <div class="item-desc">
@@ -830,7 +830,7 @@
       </div>
         </div>
     </div>
-    <div class="item1" style="background-color: rgb(8, 45, 77);">
+    <div class="item1 mx-5" style="background-color: var(--primary-blue);">
         <h3>Эстетического и предметного наполнения обитаемого пространства</h3>
         <div class="item2" style="background-color: rgb(255, 255, 255);">
           <div class="item-desc">
@@ -891,13 +891,13 @@
       <!-- Подключаем Bootstrap JS и Popper.js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="/Academy/js/owl.carousel.js"></script>
+    <script src="/js/owl.carousel.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/@coreui/coreui/dist/js/coreui.bundle.min.js"></script>
-    <script src="/Academy/js/common.js"></script>
-    <script src="/Academy/js/tabs.js"></script>
-    <script src="/Academy/js/script.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/tabs.js"></script>
+    <script src="/js/script.js"></script>
     <script>
       $(document).ready(function(){
     const slider = $("#aboutslider").owlCarousel({
@@ -925,6 +925,7 @@
         loop:true,
         margin:10,
         nav:true,
+        startPosition: 0,
         responsive:{
             0:{
                 items:1

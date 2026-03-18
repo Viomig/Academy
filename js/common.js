@@ -12,9 +12,9 @@ async function loadComponent(componentName, targetElement) {
     const isMainPage = path === '/' || 
                       path === '/index.html' || 
                       path.endsWith('/index.html') ||
-                      path === '/Academy/' ||
-                      path === '/Academy' ||
-                      path === '/Academy/index.html' ||
+                      path === '/' ||
+                      path === '' ||
+                      path === '/index.html' ||
                       (path.split('/').filter(Boolean).length === 1 && 
                        !path.includes('.html')); // Только одно слово в пути
     
