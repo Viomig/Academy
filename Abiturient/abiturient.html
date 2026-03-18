@@ -1264,13 +1264,13 @@
                                     <div class="col-md-7">
                                         <div class="calendar-grid" id="calendar">
                                             <!-- Дни недели -->
-                                            <div class="calendar-day border-0 fw-bold text-muted">Пн</div>
-                                            <div class="calendar-day border-0 fw-bold text-muted">Вт</div>
-                                            <div class="calendar-day border-0 fw-bold text-muted">Ср</div>
-                                            <div class="calendar-day border-0 fw-bold text-muted">Чт</div>
-                                            <div class="calendar-day border-0 fw-bold text-muted">Пт</div>
-                                            <div class="calendar-day border-0 fw-bold text-muted">Сб</div>
-                                            <div class="calendar-day border-0 fw-bold text-muted">Вс</div>
+                                            <div class="calendar-day border-0 fw-bold text-black">Пн</div>
+                                            <div class="calendar-day border-0 fw-bold text-black">Вт</div>
+                                            <div class="calendar-day border-0 fw-bold text-black">Ср</div>
+                                            <div class="calendar-day border-0 fw-bold text-black">Чт</div>
+                                            <div class="calendar-day border-0 fw-bold text-black">Пт</div>
+                                            <div class="calendar-day border-0 fw-bold text-black">Сб</div>
+                                            <div class="calendar-day border-0 fw-bold text-black">Вс</div>
                                             
                                             <!-- Здесь будут генерироваться дни календаря -->
                                         </div>
@@ -1680,47 +1680,48 @@
             //title: 'Предварительная запись',
             description: 'Публикация расписания вступительных испытаний ЮФУ на сайте'
         },
-        '2025-6-20': {
+        '2026-6-20': {
             title: 'Начало приема документов',
             description: 'Начало приема документов от лиц, поступающих по направлениям подготовки (специальностям) бакалавриата, специалитета, магистратуры'
         },
-        '2025-7-15': {
+        '2026-7-15': {
             description: 'Окончание приема документов у лиц, поступающих для обучения по направлениям подготовки (специальностям), при приеме на которые проводятся дополнительные вступительные испытания творческой или профессиональной направленности.'
         },
-        '2025-7-25': {
+        '2026-7-25': {
             description: 'Завершение приема индивидуальных достижений по личному заявлению поступающего с предоставлением подтверждающих документов'
         },
-        '2025-7-27': {
+        '2026-7-27': {
             description: 'Срок публикации конкурсных ранжированных списков на сайте ЮФУ'
         },
-        '2025-8-1': {
+        '2026-8-1': {
             description: 'Завершение представления согласия на зачисление от лиц, подлежащих зачислению на этапе приоритетного зачисления (представление согласия на зачисление осуществляется до 12:00 по московскому времени).'
         },
-        '2025-8-3': {
+        '2026-8-3': {
             description: 'Издание приказа о зачислении лиц, на этапе приоритетного зачисления — зачисление лиц, поступающих без вступительных испытаний (БВИ), поступающих на места в пределах квот (квота особого права, целевая квота, отдельная квота — СВО)'
         },
-        '2025-8-5': {
+        '2026-8-5': {
             description: 'Завершение представления согласия на зачисление от лиц, подлежащих зачислению на основном этапе зачисления(представление согласия на зачисление осуществляется до 12:00 по московскому времени)'
         },
-        '2025-8-7': {
+        '2026-8-7': {
             description: 'Издание приказа о зачислении на основном этапе зачисления'
         },
-        '2025-8-10': {
+        '2026-8-10': {
             description: 'Поступающие, успешно прошедшие вступительные испытания вправе подать заявление с основанием «полное возмещение затрат» по указанным ранее направлениямдо 10.08.2026 включительно'
         },
-        '2025-8-12': {
+        '2026-8-12': {
             description: 'Публикация конкурсных списков с основанием «полное возмещение затрат»'
         },
-        '2025-8-14': {
+        '2026-8-14': {
             description: 'Завершение заключения договоров об оказании платных образовательных услуг (осуществляется до 18:00 по московскому времени)'
         },
-        '2025-8-16': {
+        '2026-8-16': {
             description: 'Издание приказа (приказов) о зачислении на коммерческой основе «полное возмещение затрат»'
         }
     };
 
-    // Текущий отображаемый месяц и год
-    let currentDate = new Date(2025, 6, 1); // Июль 2025 (месяцы в JS: 0 - январь, 6 - июль)
+   // Текущий отображаемый месяц и год
+    // ВАЖНО: Месяцы в JS: 0 - январь, 1 - февраль, 2 - март, 3 - апрель, 4 - май, 5 - ИЮНЬ, 6 - июль
+    let currentDate = new Date(2026, 5, 1); // Июнь 2026 (месяц 5 = июнь)
     
     // Месяцы для отображения
     const monthNames = [
@@ -1736,8 +1737,8 @@
     // Функция для получения первого дня месяца (0 - воскресенье, 1 - понедельник, ...)
     function getFirstDayOfMonth(year, month) {
         const day = new Date(year, month, 1).getDay();
-        // Преобразуем воскресенье (0) в 7 для удобства, чтобы понедельник был 1
-        return day === 0 ? 7 : day;
+        // Преобразуем: воскресенье (0) -> 6, понедельник (1) -> 0, вторник (2) -> 1 и т.д.
+        return day === 0 ? 6 : day - 1;
     }
 
     // Функция для проверки, есть ли событие в указанную дату
@@ -1773,6 +1774,12 @@
         const year = currentDate.getFullYear();
         const month = currentDate.getMonth();
         
+        // Обновляем заголовок месяца
+        const currentMonthElement = document.getElementById('currentMonth');
+        if (currentMonthElement) {
+            currentMonthElement.textContent = `${monthNames[month]} ${year}`;
+        }
+        
         // Сохраняем текущие дни недели (первые 7 элементов)
         const weekdays = Array.from(calendar.children).slice(0, 7);
         
@@ -1782,12 +1789,12 @@
         
         // Получаем данные для текущего месяца
         const daysInMonth = getDaysInMonth(year, month);
-        const firstDay = getFirstDayOfMonth(year, month); // 1-7, где 1 - понедельник
+        const firstDay = getFirstDayOfMonth(year, month); // 0-6, где 0 - понедельник
         
         // Добавляем пустые ячейки для дней предыдущего месяца
-        for (let i = 1; i < firstDay; i++) {
+        for (let i = 0; i < firstDay; i++) {
             const emptyDay = document.createElement('div');
-            emptyDay.className = 'calendar-day border-0';
+            emptyDay.className = 'calendar-day border-0'; // Возвращаем border-0
             emptyDay.textContent = '';
             calendar.appendChild(emptyDay);
         }
@@ -1804,13 +1811,6 @@
             // Проверяем, есть ли событие в этот день
             if (hasEvent(year, month, day)) {
                 dayElement.classList.add('event-day');
-            }
-            
-            // Особые дни (можно добавить логику для current и highlight)
-            // Например, сегодняшний день
-            const today = new Date();
-            if (year === today.getFullYear() && month === today.getMonth() && day === today.getDate()) {
-                dayElement.classList.add('current');
             }
             
             // Добавляем обработчик клика
@@ -1837,41 +1837,96 @@
             calendar.appendChild(dayElement);
         }
         
-        // Добавляем пустые ячейки для выравнивания (если нужно)
-        const totalCells = firstDay - 1 + daysInMonth;
-        const remainingCells = 42 - totalCells; // 6 рядов по 7 дней = 42
+        // Добавляем пустые ячейки для выравнивания (до 42 ячеек - 6 рядов по 7 дней)
+        const totalCells = firstDay + daysInMonth;
+        const remainingCells = 42 - totalCells;
         
-        if (remainingCells > 0 && remainingCells < 7) {
-            for (let i = 0; i < remainingCells; i++) {
-                const emptyDay = document.createElement('div');
-                emptyDay.className = 'calendar-day border-0';
-                emptyDay.textContent = '';
-                calendar.appendChild(emptyDay);
-            }
+        for (let i = 0; i < remainingCells; i++) {
+            const emptyDay = document.createElement('div');
+            emptyDay.className = 'calendar-day border-0'; // Возвращаем border-0
+            emptyDay.textContent = '';
+            calendar.appendChild(emptyDay);
         }
         
         // Сбрасываем выделение и показываем общую информацию
         showEventInfo(null);
     }
 
-    // Обработчики для кнопок месяцев
-    document.querySelectorAll('.month-nav-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            // Убираем активный класс у всех кнопок
-            document.querySelectorAll('.month-nav-btn').forEach(b => {
-                b.classList.remove('active');
-            });
-            
-            // Добавляем активный класс текущей кнопке
-            this.classList.add('active');
-            
-            // Устанавливаем текущий месяц
-            const monthIndex = parseInt(this.dataset.month);
-            currentDate = new Date(2025, monthIndex, 1);
-            
-            // Обновляем календарь
-            renderCalendar();
+    // Функция для переключения на предыдущий месяц
+    function prevMonth() {
+        currentDate.setMonth(currentDate.getMonth() - 1);
+        renderCalendar();
+        
+        // Обновляем активный класс у кнопок месяцев
+        updateActiveMonthButton();
+    }
+
+    // Функция для переключения на следующий месяц
+    function nextMonth() {
+        currentDate.setMonth(currentDate.getMonth() + 1);
+        renderCalendar();
+        
+        // Обновляем активный класс у кнопок месяцев
+        updateActiveMonthButton();
+    }
+
+    // Функция для обновления активной кнопки месяца
+    function updateActiveMonthButton() {
+        const currentMonth = currentDate.getMonth();
+        
+        document.querySelectorAll('.month-nav-btn').forEach(btn => {
+            const btnMonth = parseInt(btn.dataset.month);
+            if (btnMonth === currentMonth) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
         });
+    }
+
+    // Инициализация календаря при загрузке страницы
+    document.addEventListener('DOMContentLoaded', function() {
+        // Убеждаемся, что currentDate установлен на ИЮНЬ 2026 года (месяц 5)
+        currentDate = new Date(2026, 5, 1); // 5 = Июнь
+        
+        renderCalendar();
+        
+        // Добавляем обработчики для кнопок навигации по месяцам, если они есть
+        const prevMonthBtn = document.getElementById('prevMonth');
+        const nextMonthBtn = document.getElementById('nextMonth');
+        
+        if (prevMonthBtn) {
+            prevMonthBtn.addEventListener('click', prevMonth);
+        }
+        
+        if (nextMonthBtn) {
+            nextMonthBtn.addEventListener('click', nextMonth);
+        }
+        
+        // Обработчики для кнопок месяцев
+        document.querySelectorAll('.month-nav-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Убираем активный класс у всех кнопок
+                document.querySelectorAll('.month-nav-btn').forEach(b => {
+                    b.classList.remove('active');
+                });
+                
+                // Добавляем активный класс текущей кнопке
+                this.classList.add('active');
+                
+                // Устанавливаем текущий месяц (сохраняем текущий год - 2026)
+                const monthIndex = parseInt(this.dataset.month);
+                
+                // ВАЖНО: Всегда используем 2026 год при клике на кнопку месяца
+                currentDate = new Date(2026, monthIndex, 1);
+                
+                // Обновляем календарь
+                renderCalendar();
+            });
+        });
+        
+        // Устанавливаем активную кнопку для текущего месяца (Июнь - индекс 5)
+        updateActiveMonthButton();
     });
 
     // Инициализация календаря при загрузке страницы

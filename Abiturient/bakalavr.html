@@ -128,7 +128,7 @@
             font-size: 16px;
             font-weight: 700;
             line-height: 1.4;
-            color: #ffffff !important;
+            color: #000000 !important;
             margin: 0;
             flex: 1;
         }
@@ -890,6 +890,115 @@
         .owl-theme .owl-nav [class*='owl-']:hover {
             background: var(--primary-blue) !important;
         }
+
+        .exam-card {
+            background-color: var(--light-grey-bg);
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            height: 100%;
+            margin: 0 8px;
+        }
+        
+        .exam-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .exam-base {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--dark-grey-text);
+        }
+        
+        .program-code {
+            font-size: 16px;
+            font-weight: 600;
+            color: #0d6efd;
+            margin-bottom: 5px;
+        }
+        
+        .program-name {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        .exam-list {
+            font-size: 13px;
+            line-height: 1.5;
+            color: #212529;
+        }
+        
+        /* Стили для карусели */
+        .carousel-inner {
+            padding: 20px 0 30px 0;
+            overflow: visible;
+        }
+        
+        .carousel-item {
+            transition: transform 0.6s ease-in-out;
+        }
+        
+        .carousel-item .row {
+            display: flex;
+            flex-wrap: nowrap;
+            margin-right: 0;
+            margin-left: 0;
+        }
+        
+        .carousel-item .col-md-4 {
+            flex: 0 0 33.333%;
+            max-width: 33.333%;
+            padding-right: 8px;
+            padding-left: 8px;
+        }
+        
+        .carousel-control-prev, 
+        .carousel-control-next {
+            width: 40px;
+            height: 40px;
+            background: rgba(13, 110, 253, 0.8);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.9;
+        }
+        
+        .carousel-control-prev {
+            left: -20px;
+        }
+        
+        .carousel-control-next {
+            right: -20px;
+        }
+        
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            width: 20px;
+            height: 20px;
+        }
+        
+        /* Для эффекта 3.5 карточки */
+        .carousel-item.active .col-md-4:last-child {
+            opacity: 0.7;
+            mask-image: linear-gradient(to right, black 70%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to right, black 70%, transparent 100%);
+        }
+        
+        @media (max-width: 768px) {
+            .carousel-item .col-md-4 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            .carousel-item.active .col-md-4:last-child {
+                opacity: 1;
+                mask-image: none;
+                -webkit-mask-image: none;
+            }
+        }
+
+
     </style>
 </head>
 <body>
@@ -916,7 +1025,7 @@
                         <!-- Декоративная графика -->
                         <div class="hero-graphic">
                             <div class="graphic-container position-relative">
-                                <!-- Геометрические фигуры будут здесь -->
+                                <img src="/Abiturient/imageBak/scin (1).png" alt="">
                             </div>
                         </div>
                     </div>
@@ -936,7 +1045,7 @@
                             
                             <div class="col-md-4 text-center">
                                 <div class="stat-number">469</div>
-                                <div class="stat-label">новых студентов<br>в 2024 году</div>
+                                <div class="stat-label">новых студентов<br>в 2025 году</div>
                             </div>
                             
                             <div class="col-md-4 text-center">
@@ -951,7 +1060,7 @@
         </section>
 
         <section>
-             <h2 class="section-title offset-1">набор 2025 года</h2>
+             <h2 class="section-title offset-1 text-black">набор 2026 года</h2>
 
             <div class="container">
 
@@ -969,35 +1078,35 @@
                                     </div>
                                     
                                     <div class="mb-3 row">
+                                        <div class="program-code col-3">07.03.01</div>
+                                        <div class="program-ttl col-9">Цифровая архитектура (Технологии информационного моделирования и генеративное проектирование)</div>
+                                    </div>
+                                    
+                                    <div class="mb-3 row">
                                         <div class="program-code col-3">07.03.02</div>
                                         <div class="program-ttl col-9">Реконструкция и реставрация архитектурного наследия</div>
                                     </div>
                                     
                                     <div class="mb-3 row">
-                                        <div class="program-code col-3">07.03.04</div>
-                                        <div class="program-ttl col-9">Градостроительство</div>
+                                        <div class="program-code col-3">54.03.01</div>
+                                        <div class="program-ttl col-9">Дизайн. Анимационный дизайн</div>
                                     </div>
                                     
                                     <div class="mb-3 row">
-                                        <div class="program-code col-3">09.03.01</div>
-                                        <div class="program-ttl col-9">Информатика и вычислительная техника BIM-технологии в архитектуре и градостроительстве (совместно с ИКТИБ ЮФУ)</div>
-                                    </div>
-                                    
-                                    <div class="mb-3 row">
-                                        <div class="program-code col-3">44.03.05</div>
-                                        <div class="program-ttl col-9">Педагогическое образование с двумя профилями подготовки «Изобразительное искусство. Черчение, компьютерная графика и анимация»</div>
+                                        <div class="program-code col-3">54.03.01</div>
+                                        <div class="program-ttl col-9">Дизайн. Дизайн интерьера</div>
                                     </div>
                                 </div>
                                 
                                 <div class="col-md-6">
                                     <div class="mb-3 row">
                                         <div class="program-code col-3">54.03.01</div>
-                                        <div class="program-ttl col-9">Дизайн</div>
+                                        <div class="program-ttl col-9">Дизайн.Коммуникационный дизайн</div>
                                     </div>
                                     
                                     <div class="mb-3 row">
                                         <div class="program-code col-3">54.03.01</div>
-                                        <div class="program-ttl col-9">Дизайн костюма</div>
+                                        <div class="program-ttl col-9">Дизайн. Дизайн костюма</div>
                                     </div>
                                     
                                     <div class="mb-3 row">
@@ -1031,11 +1140,11 @@
                             
                             <div class="mb-3">
                                 <div class="program-code">54.05.03</div>
-                                <div class="program-ttl">Скульптура</div>
+                                <div class="program-ttl">Графика</div>
                             </div>
                         </div>
                         <div class="text-end mt-5">
-                    <a href="#" class="btn btn-primary btn-lg">Подать заявление</a>
+                    <a href="#" class="btn btn-primary btn-lg text-white">Подать заявление</a>
                 </div>
                     </div>
             </div>
@@ -1047,33 +1156,33 @@
         <!-- ===== СЕКЦИЯ 2: ДОКУМЕНТЫ ===== -->
         <section class="documents-section py-5" id="PravilaPriema">
             <div class="container">
-                <h2 class="section-title offset-1">документы</h2>
+                <h2 class="section-title offset-1 text-black">документы</h2>
 
                  <div class="d-flex flex-wrap mb-3 row offset-2">
                             <a href="#" class="document-link col-md-5 mb-5">
                                 <div class="icon-wrapper">
-                                    <!-- SVG иконка документа -->
+                                    <img src="/Abiturient/imageBak/ПДФ.png" alt="">
                                 </div>
                                 <span class="text">правила приема</span>
                             </a>
                             
                             <a href="#" class="document-link col-md-5 mb-5">
                                 <div class="icon-wrapper">
-                                    <!-- SVG иконка документа -->
+                                    <img src="/Abiturient/imageBak/ПДФ.png" alt="">
                                 </div>
                                 <span class="text">цифры набора</span>
                             </a>
                             
                             <a href="#" class="document-link col-md-5 mb-5">
                                 <div class="icon-wrapper">
-                                    <!-- SVG иконка документа -->
+                                    <img src="/Abiturient/imageBak/ПДФ.png" alt="">
                                 </div>
                                 <span class="text">расписание<br>вступительных испытаний</span>
                             </a>
                             
                             <a href="#" class="document-link col-md-5 mb-5">
                                 <div class="icon-wrapper">
-                                    <!-- SVG иконка документа -->
+                                    <img src="/Abiturient/imageBak/ПДФ.png" alt="">
                                 </div>
                                 <span class="text">перечень <br>вступительных испытаний</span>
                             </a>
@@ -1083,106 +1192,422 @@
             </div>
         </section>
 
-        <!-- ===== СЕКЦИЯ 3: ВСТУПИТЕЛЬНЫЕ ИСПЫТАНИЯ ===== -->
-        <section class="exams-section py-5" id="Vstupitelnye">
-            <div class="container">
-                <h2 class="section-title mb-5 offset-1">вступительные испытания</h2>
+         <!-- ===== СЕКЦИЯ 3: ВСТУПИТЕЛЬНЫЕ ИСПЫТАНИЯ ===== -->
+    <section class="exams-section py-5" id="Vstupitelnye">
+        <div class="container position-relative">
+            <h2 class="section-title mb-5 offset-1 text-black">вступительные испытания</h2>
+            
+            <!-- БАКАЛАВРИАТ с каруселью -->
+            <div class="mb-5">
+                <h3 class="exam-title mb-4">Бакалавриат</h3>
                 
-                <!-- Бакалавриат -->
-                <div class="mb-5">
-                    <h3 class="exam-title mb-4">Бакалавриат</h3>
-                    
-                    <div class="row g-4">
-                        <!-- Карточка 1 -->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="exam-card p-4">
-                                <div class="mb-3">
-                                    <div class="program-code">07.03.01</div>
-                                    <div class="program-name">Архитектура</div>
+                <div id="carouselBachelor" class="carousel slide" data-bs-ride="false" data-bs-interval="false">
+                    <div class="carousel-inner">
+                        <!-- СЛАЙД 1 -->
+                        <div class="carousel-item active">
+                            <div class="row flex-nowrap">
+                                <!-- Карточка 1: 07.03.01 Архитектура -->
+                                <div class="col-md-4">
+                                    <div class="exam-card p-4">
+                                        <div class="mb-3">
+                                            <div class="program-code">07.03.01</div>
+                                            <div class="program-name text-black">Архитектура</div>
+                                        </div>
+                                        
+                                        <div class="exam-details pt-3">
+                                            <div class="exam-base mb-2">на базе 11 классов</div>
+                                            <div class="exam-list mb-3">
+                                                математика (мин. балл — 50/50*)<br>
+                                                русский язык (мин. балл — 50/50*)<br>
+                                                рисунок (мин. балл — 60/50*)<br>
+                                                архитектурная композиция (мин. балл — 60/50*)<br>
+                                                черчение (мин. балл — 60/50*)
+                                            </div>
+                                            
+                                            <div class="exam-base mb-2">на базе СПО</div>
+                                            <div class="exam-list">
+                                                прием осуществляется также как и на базе 11 классов
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 
-                                <div class="exam-details pt-3">
-                                    <div class="exam-base mb-2">на базе 11 классов</div>
-                                    <div class="exam-list mb-3">
-                                        математика (мин. балл — 50/50*)<br>
-                                        русский язык (мин. балл — 50/50*)<br>
-                                        рисунок (мин. балл — 65/60*)<br>
-                                        архитектурная композиция (мин. балл — 65/60*)<br>
-                                        черчение (мин. балл — 65/60*)
+                                <!-- Карточка 2: 07.03.01 Цифровая архитектура -->
+                                <div class="col-md-4">
+                                    <div class="exam-card p-4">
+                                        <div class="mb-3">
+                                            <div class="program-code">07.03.01</div>
+                                            <div class="program-name text-black">Цифровая архитектура. (Технологии информационного моделирования и генеративное проектирование)</div>
+                                        </div>
+                                        
+                                        <div class="exam-details pt-3">
+                                            <div class="exam-base mb-2">на базе 11 классов</div>
+                                            <div class="exam-list mb-3">
+                                                математика (мин. балл — 50/50*)<br>
+                                                русский язык (мин. балл — 50/50*)<br>
+                                                архитектурная композиция (мин. балл — 60/50*)<br>
+                                                черчение (мин. балл — 60/50*)
+                                            </div>
+                                            
+                                            <div class="exam-base mb-2">на базе СПО</div>
+                                            <div class="exam-list">
+                                                прием осуществляется также как и на базе 11 классов
+                                            </div>
+                                        </div>
                                     </div>
-                                    
-                                    <div class="exam-base mb-2">на базе СПО</div>
-                                    <div class="exam-list">
-                                        история архитектуры и искусств (мин. балл — 50/50*)<br>
-                                        русский язык (мин. балл — 50/50*)<br>
-                                        рисунок (мин. балл — 65/60*)<br>
-                                        архитектурная композиция (мин. балл — 65/60*)<br>
-                                        черчение (мин. балл — 65/60*)
+                                </div>
+                                
+                                <!-- Карточка 3: 07.03.02 Реконструкция и реставрация -->
+                                <div class="col-md-4">
+                                    <div class="exam-card p-4">
+                                        <div class="mb-3">
+                                            <div class="program-code">07.03.02</div>
+                                            <div class="program-name text-black">Реконструкция и реставрация архитектурного наследия</div>
+                                        </div>
+                                        
+                                        <div class="exam-details pt-3">
+                                            <div class="exam-base mb-2">на базе 11 классов</div>
+                                            <div class="exam-list mb-3">
+                                                математика (мин. балл — 50/50*)<br>
+                                                русский язык (мин. балл — 50/50*)<br>
+                                                рисунок (мин. балл — 60/50*)<br>
+                                                архитектурная композиция (мин. балл — 60/50*)
+                                            </div>
+                                            
+                                            <div class="exam-base mb-2">на базе СПО</div>
+                                            <div class="exam-list">
+                                                прием осуществляется также как и на базе 11 классов
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Карточка 4: 54.03.01 Анимационный дизайн (половинка) -->
+                                <div class="col-md-4">
+                                    <div class="exam-card p-4">
+                                        <div class="mb-3">
+                                            <div class="program-code">54.03.01</div>
+                                            <div class="program-name text-black">Анимационный дизайн</div>
+                                        </div>
+                                        
+                                        <div class="exam-details pt-3">
+                                            <div class="exam-base mb-2">на базе 11 классов</div>
+                                            <div class="exam-list mb-3">
+                                                литература (мин. балл — 50/50*)<br>
+                                                русский язык (мин. балл — 50/50*)<br>
+                                                рисунок (мин. балл — 60/50*)<br>
+                                                сюжетно-графическая композиция (мин. балл — 60/50*)
+                                            </div>
+                                            
+                                            <div class="exam-base mb-2">на базе СПО</div>
+                                            <div class="exam-list">
+                                                история искусств (мин. балл — 50/50*)<br>
+                                                русский язык (мин. балл — 50/50*)<br>
+                                                рисунок (мин. балл — 60/50*)<br>
+                                                сюжетно-графическая композиция (мин. балл — 60/50*)
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         
-                        <!-- Добавьте остальные карточки бакалавриата аналогичным образом -->
-                        
-                    </div>
-                </div>
-                
-                <!-- Специалитет -->
-                <div>
-                    <h3 class="exam-title mb-4">Специалитет</h3>
-                    
-                    <div class="row g-4">
-                        <!-- Карточка 1 -->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="exam-card p-4">
-                                <div class="mb-3">
-                                    <div class="program-code">54.05.01</div>
-                                    <div class="program-name">Монументально-декоративное искусство (интерьеры)</div>
+                        <!-- СЛАЙД 2 -->
+                        <div class="carousel-item">
+                            <div class="row flex-nowrap">
+                                <!-- Карточка 5: 54.03.01 Дизайн интерьера -->
+                                <div class="col-md-4">
+                                    <div class="exam-card p-4">
+                                        <div class="mb-3">
+                                            <div class="program-code">54.03.01</div>
+                                            <div class="program-name text-black">Дизайн интерьера</div>
+                                        </div>
+                                        
+                                        <div class="exam-details pt-3">
+                                            <div class="exam-base mb-2">на базе 11 классов</div>
+                                            <div class="exam-list mb-3">
+                                                литература (мин. балл — 50/50*)<br>
+                                                русский язык (мин. балл — 50/50*)<br>
+                                                рисунок (мин. балл — 60/50*)<br>
+                                                живопись (мин. балл — 60/50*)<br>
+                                                дизайнерская композиция (мин. балл — 60/50*)
+                                            </div>
+                                            
+                                            <div class="exam-base mb-2">на базе СПО</div>
+                                            <div class="exam-list">
+                                                история искусств (мин. балл — 50/50*)<br>
+                                                русский язык (мин. балл — 50/50*)<br>
+                                                рисунок (мин. балл — 60/50*)<br>
+                                                живопись (мин. балл — 60/50*)<br>
+                                                дизайнерская композиция (мин. балл — 60/50*)
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 
-                                <div class="exam-details pt-3">
-                                    <div class="exam-base mb-2">на базе 11 классов</div>
-                                    <div class="exam-list mb-3">
-                                        литература (мин. балл — 50/50*)<br>
-                                        русский язык (мин. балл — 50/50*)<br>
-                                        рисунок (мин. балл — 65/60*)<br>
-                                        живопись (мин. балл — 65/60*)<br>
-                                        дизайнерская композиция (мин. балл — 65/60*)
+                                <!-- Карточка 6: 54.03.01 Дизайн костюма -->
+                                <div class="col-md-4">
+                                    <div class="exam-card p-4">
+                                        <div class="mb-3">
+                                            <div class="program-code">54.03.01</div>
+                                            <div class="program-name text-black">Дизайн костюма</div>
+                                        </div>
+                                        
+                                        <div class="exam-details pt-3">
+                                            <div class="exam-base mb-2">на базе 11 классов</div>
+                                            <div class="exam-list mb-3">
+                                                литература (мин. балл — 50/50*)<br>
+                                                русский язык (мин. балл — 50/50*)<br>
+                                                рисунок (мин. балл — 60/50*)<br>
+                                                живопись (мин. балл — 60/50*)<br>
+                                                дизайнерская композиция (мин. балл — 60/50*)
+                                            </div>
+                                            
+                                            <div class="exam-base mb-2">на базе СПО</div>
+                                            <div class="exam-list">
+                                                художественное оформление материалов в костюме (мин. балл — 50/50*)<br>
+                                                русский язык (мин. балл — 50/50*)<br>
+                                                рисунок (мин. балл — 60/50*)<br>
+                                                живопись (мин. балл — 60/50*)<br>
+                                                дизайнерская композиция (мин. балл — 60/50*)
+                                            </div>
+                                        </div>
                                     </div>
-                                    
-                                    <div class="exam-base mb-2">на базе СПО</div>
-                                    <div class="exam-list">
-                                        история искусств (мин. балл — 50/50*)<br>
-                                        русский язык (мин. балл — 50/50*)<br>
-                                        рисунок (мин. балл — 65/60*)<br>
-                                        живопись (мин. балл — 65/60*)<br>
-                                        дизайнерская композиция (мин. балл — 65/60*)
+                                </div>
+                                
+                                <!-- Карточка 7: 54.03.01 Коммуникационный дизайн -->
+                                <div class="col-md-4">
+                                    <div class="exam-card p-4">
+                                        <div class="mb-3">
+                                            <div class="program-code">54.03.01</div>
+                                            <div class="program-name text-black">Коммуникационный дизайн</div>
+                                        </div>
+                                        
+                                        <div class="exam-details pt-3">
+                                            <div class="exam-base mb-2">на базе 11 классов</div>
+                                            <div class="exam-list mb-3">
+                                                литература (мин. балл — 50/50*)<br>
+                                                русский язык (мин. балл — 50/50*)<br>
+                                                рисунок (мин. балл — 60/50*)<br>
+                                                живопись (мин. балл — 60/50*)<br>
+                                                дизайнерская композиция (мин. балл — 60/50*)
+                                            </div>
+                                            
+                                            <div class="exam-base mb-2">на базе СПО</div>
+                                            <div class="exam-list">
+                                                история искусств (мин. балл — 50/50*)<br>
+                                                русский язык (мин. балл — 50/50*)<br>
+                                                рисунок (мин. балл — 60/50*)<br>
+                                                живопись (мин. балл — 60/50*)<br>
+                                                дизайнерская композиция (мин. балл — 60/50*)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Карточка 8: 54.03.02 Декоративно-прикладное искусство (половинка) -->
+                                <div class="col-md-4">
+                                    <div class="exam-card p-4">
+                                        <div class="mb-3">
+                                            <div class="program-code">54.03.02</div>
+                                            <div class="program-name text-black">Декоративно-прикладное искусство и народные промыслы. Арт-технологии в декоративно-прикладном искусстве</div>
+                                        </div>
+                                        
+                                        <div class="exam-details pt-3">
+                                            <div class="exam-base mb-2">на базе 11 классов</div>
+                                            <div class="exam-list mb-3">
+                                                литература (мин. балл — 50/50*)<br>
+                                                русский язык (мин. балл — 50/50*)<br>
+                                                живопись (мин. балл — 60/50*)<br>
+                                                дизайнерская композиция (мин. балл — 60/50*)
+                                            </div>
+                                            
+                                            <div class="exam-base mb-2">на базе СПО</div>
+                                            <div class="exam-list">
+                                                художественное оформление материалов в костюме (мин. балл — 50/50*)<br>
+                                                русский язык (мин. балл — 50/50*)<br>
+                                                живопись (мин. балл — 60/50*)<br>
+                                                дизайнерская композиция (мин. балл — 60/50*)
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         
-                        <!-- Добавьте остальные карточки специалитета аналогичным образом -->
-                        
+                        <!-- СЛАЙД 3 -->
+                        <div class="carousel-item">
+                            <div class="row flex-nowrap">
+                                <!-- Карточка 9: 54.03.03 Искусство костюма и текстиля -->
+                                <div class="col-md-4">
+                                    <div class="exam-card p-4">
+                                        <div class="mb-3">
+                                            <div class="program-code">54.03.03</div>
+                                            <div class="program-name text-black">Искусство костюма и текстиля</div>
+                                        </div>
+                                        
+                                        <div class="exam-details pt-3">
+                                            <div class="exam-base mb-2">на базе 11 классов</div>
+                                            <div class="exam-list mb-3">
+                                                литература (мин. балл — 50/50*)<br>
+                                                русский язык (мин. балл — 50/50*)<br>
+                                                рисунок (мин. балл — 60/50*)<br>
+                                                живопись (мин. балл — 60/50*)<br>
+                                                дизайнерская композиция (мин. балл — 60/50*)
+                                            </div>
+                                            
+                                            <div class="exam-base mb-2">на базе СПО</div>
+                                            <div class="exam-list">
+                                                история искусств (мин. балл — 50/50*)<br>
+                                                русский язык (мин. балл — 50/50*)<br>
+                                                рисунок (мин. балл — 60/50*)<br>
+                                                живопись (мин. балл — 60/50*)<br>
+                                                дизайнерская композиция (мин. балл — 60/50*)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                
-                <!-- Примечание -->
-                <div class="mt-5 pt-4">
-                    <p class="text-muted fs-6 offset-1">
-                        * Минимальные баллы по образовательным программам высшего образования – программам бакалавриата на места по договорам об оказании платных образовательных услуг
-                    </p>
-                </div>
-                
-                <!-- Кнопка -->
-                <div class="text-end mt-5">
-                    <a href="#" class="btn btn-primary btn-lg">
-                        Расписание вступительных испытаний
-                    </a>
+                    
+                    <!-- Элементы управления каруселью -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselBachelor" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Предыдущий</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselBachelor" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Следующий</span>
+                    </button>
                 </div>
             </div>
-        </section>
+            
+            <!-- СПЕЦИАЛИТЕТ с каруселью -->
+            <div>
+                <h3 class="exam-title mb-4">Специалитет</h3>
+                
+                <div id="carouselSpecialist" class="carousel slide" data-bs-ride="false" data-bs-interval="false">
+                    <div class="carousel-inner">
+                        <!-- СЛАЙД 1 -->
+                        <div class="carousel-item active">
+                            <div class="row flex-nowrap">
+                                <!-- Карточка 1: 54.05.01 Монументально-декоративное искусство -->
+                                <div class="col-md-4">
+                                    <div class="exam-card p-4">
+                                        <div class="mb-3">
+                                            <div class="program-code">54.05.01</div>
+                                            <div class="program-name text-black">Монументально-декоративное искусство (интерьеры)</div>
+                                        </div>
+                                        
+                                        <div class="exam-details pt-3">
+                                            <div class="exam-base mb-2">на базе 11 классов</div>
+                                            <div class="exam-list mb-3">
+                                                литература (мин. балл — 50/50*)<br>
+                                                русский язык (мин. балл — 50/50*)<br>
+                                                рисунок (мин. балл — 60/50*)<br>
+                                                живопись (мин. балл — 60/50*)<br>
+                                                дизайнерская композиция (мин. балл — 60/50*)
+                                            </div>
+                                            
+                                            <div class="exam-base mb-2">на базе СПО</div>
+                                            <div class="exam-list">
+                                                история искусств (мин. балл — 50/50*)<br>
+                                                русский язык (мин. балл — 50/50*)<br>
+                                                рисунок (мин. балл — 60/50*)<br>
+                                                живопись (мин. балл — 60/50*)<br>
+                                                дизайнерская композиция (мин. балл — 60/50*)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Карточка 2: 54.05.02 Живопись -->
+                                <div class="col-md-4">
+                                    <div class="exam-card p-4">
+                                        <div class="mb-3">
+                                            <div class="program-code">54.05.02</div>
+                                            <div class="program-name text-black">Живопись. Художник-живописец (станковая живопись)</div>
+                                        </div>
+                                        
+                                        <div class="exam-details pt-3">
+                                            <div class="exam-base mb-2">на базе 11 классов</div>
+                                            <div class="exam-list mb-3">
+                                                литература (мин. балл — 50/50*)<br>
+                                                русский язык (мин. балл — 50/50*)<br>
+                                                рисунок (мин. балл — 60/50*)<br>
+                                                живопись (мин. балл — 60/50*)
+                                            </div>
+                                            
+                                            <div class="exam-base mb-2">на базе СПО</div>
+                                            <div class="exam-list">
+                                                история искусств (мин. балл — 50/50*)<br>
+                                                русский язык (мин. балл — 50/50*)<br>
+                                                рисунок (мин. балл — 60/50*)<br>
+                                                живопись (мин. балл — 60/50*)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Карточка 3: 54.05.03 Графика -->
+                                <div class="col-md-4">
+                                    <div class="exam-card p-4">
+                                        <div class="mb-3">
+                                            <div class="program-code">54.05.03</div>
+                                            <div class="program-name text-black">Графика. Художник-график (станковая графика)</div>
+                                        </div>
+                                        
+                                        <div class="exam-details pt-3">
+                                            <div class="exam-base mb-2">на базе 11 классов</div>
+                                            <div class="exam-list mb-3">
+                                                литература (мин. балл — 50/50*)<br>
+                                                русский язык (мин. балл — 50/50*)<br>
+                                                рисунок (мин. балл — 60/50*)<br>
+                                                живопись (мин. балл — 60/50*)
+                                            </div>
+                                            
+                                            <div class="exam-base mb-2">на базе СПО</div>
+                                            <div class="exam-list">
+                                                история искусств (мин. балл — 50/50*)<br>
+                                                русский язык (мин. балл — 50/50*)<br>
+                                                рисунок (мин. балл — 60/50*)<br>
+                                                живопись (мин. балл — 60/50*)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Элементы управления каруселью -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselSpecialist" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Предыдущий</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselSpecialist" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Следующий</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Примечание -->
+            <div class="mt-5 pt-4">
+                <p class="text-black fs-6 offset-1">
+                    * Минимальные баллы по образовательным программам высшего образования – программам бакалавриата на места по договорам об оказании платных образовательных услуг
+                </p>
+            </div>
+            
+            <!-- Кнопка -->
+            <div class="text-end mt-5">
+                <a href="#" class="btn btn-primary btn-lg">
+                    Расписание вступительных испытаний
+                </a>
+            </div>
+        </div>
+    </section>
 
         <!-- ===== НОВАЯ СЕКЦИЯ 4: ПРОГРАММЫ ВСТУПИТЕЛЬНЫХ ИСПЫТАНИЙ (с двухуровневым фильтром) ===== -->
         <section class="programs-section py-5" id="Vstupitelnye-programs">
@@ -1239,253 +1664,373 @@
         <!-- ===== СЕКЦИЯ 5: ПЛАТНОЕ ОБУЧЕНИЕ ===== -->
         <section class="price-section py-5" id="Comercia-placeholder">
            
-        </section>    
+          </section>  
                 
 <div class="paid-bakalavr">
     <section class="paid-education-section" id="Comercia">
-         <div class="container offset-1">
-                <h2 class="section-title mb-5 text-white">платное обучение</h2>
-                
-                <p class="text-white fs-5 mb-5">
-                    Стоимость платных образовательных услуг по программам бакалавриата и специалитета
-                </p>
-            </div>
+    <div class="container offset-1">
+        <h2 class="section-title mb-5 text-white">платное обучение</h2>
+        <p class="text-white fs-5 mb-5">
+            Стоимость платных образовательных услуг по программам бакалавриата и специалитета
+        </p>
+    </div>
 
-        <div class="container-fluid p-0">
-            <!-- Контейнер с горизонтальным скроллом -->
-            <div class="cards-container">
-                <div class="cards-scroll">
-                    <!-- Колонка 1 -->
-                    <div class="card-column">
-                        <!-- Карточка 1.1 - Граждане РФ -->
-                        <div class="price-card row row-cols-12">
-                            <div class="col-7">
-                                <div class="price-amount price-pink">136 000</div>
-                            </div>
-                            <div class="col-5">
-                                <div class="student-type">для граждан РФ</div>
-                            </div>
-                            <div class="program-container col-12">
-                                <div class="program-text-container offset-1">
-                                    <h6 class="program-name">
-                                        <li>Педагогическое образование с двумя профилями подготовки</li> 
-                                        <li>Изобразительное искусство.</li> 
-                                        <li>Черчение и компьютерная графика</li>
-                                    </h6>
-                                </div>
-                            </div>
+    <div class="container-fluid p-0">
+        <!-- Контейнер с горизонтальным скроллом -->
+        <div class="cards-container">
+            <div class="cards-scroll">
+                <!-- Колонка 1 (Архитектура 209/250) -->
+                <div class="card-column">
+                    <!-- Карточка 1.1 - Граждане РФ 209 000 -->
+                    <div class="price-card row row-cols-12">
+                        <div class="col-7">
+                            <div class="price-amount price-pink">209 000</div>
                         </div>
-                        
-                        <!-- Карточка 1.2 - Иностранные граждане -->
-                        <div class="price-card row row-cols-12">
-                            <div class="col-7">
-                                <div class="price-amount price-blue">136 000</div>
-                            </div>
-                            <div class="col-5">
-                                <div class="student-type">для иностранных граждан</div>
-                            </div>
-                            <div class="program-container col-12">
-                                <div class="program-text-container offset-1">
-                                    <h6 class="program-name">
-                                        <li>Педагогическое образование с двумя профилями подготовки</li> 
-                                        <li>Изобразительное искусство.</li> 
-                                        <li>Черчение и компьютерная графика</li>
-                                    </h6>
-                                </div>
+                        <div class="col-5">
+                            <div class="student-type">для граждан РФ</div>
+                        </div>
+                        <div class="program-container col-12">
+                            <div class="program-text-container offset-1">
+                                <h6 class="program-name">
+                                    <li>Архитектура</li>
+                                    <li>Цифровая архитектура</li>
+                                    <li>Реконструкция и реставрация архитектурного наследия</li>
+                                </h6>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Колонка 2 -->
-                    <div class="card-column">
-                        <!-- Карточка 1.1 - Граждане РФ -->
-                        <div class="price-card row row-cols-12">
-                            <div class="col-7">
-                                <div class="price-amount price-pink">136 000</div>
-                            </div>
-                            <div class="col-5">
-                                <div class="student-type">для граждан РФ</div>
-                            </div>
-                            <div class="program-container col-12">
-                                <div class="program-text-container offset-1">
-                                    <h6 class="program-name">
-                                        <li>Педагогическое образование с двумя профилями подготовки</li> 
-                                        <li>Изобразительное искусство.</li> 
-                                        <li>Черчение и компьютерная графика</li>
-                                    </h6>
-                                </div>
-                            </div>
+                    <!-- Карточка 1.2 - Иностранные граждане 250 000 -->
+                    <div class="price-card row row-cols-12">
+                        <div class="col-7">
+                            <div class="price-amount price-blue">250 000</div>
                         </div>
-                        
-                        <!-- Карточка 1.2 - Иностранные граждане -->
-                        <div class="price-card row row-cols-12">
-                            <div class="col-7">
-                                <div class="price-amount price-blue">136 000</div>
-                            </div>
-                            <div class="col-5">
-                                <div class="student-type">для иностранных граждан</div>
-                            </div>
-                            <div class="program-container col-12">
-                                <div class="program-text-container offset-1">
-                                    <h6 class="program-name">
-                                        <li>Педагогическое образование с двумя профилями подготовки</li> 
-                                        <li>Изобразительное искусство.</li> 
-                                        <li>Черчение и компьютерная графика</li>
-                                    </h6>
-                                </div>
+                        <div class="col-5">
+                            <div class="student-type">для иностранных граждан</div>
+                        </div>
+                        <div class="program-container col-12">
+                            <div class="program-text-container offset-1">
+                                <h6 class="program-name">
+                                    <li>Архитектура</li>
+                                    <li>Реконструкция и реставрация архитектурного наследия</li>
+                                </h6>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Колонка 3 -->
-                    <div class="card-column">
-                        <!-- Карточка 1.1 - Граждане РФ -->
-                        <div class="price-card row row-cols-12">
-                            <div class="col-7">
-                                <div class="price-amount price-pink">136 000</div>
-                            </div>
-                            <div class="col-5">
-                                <div class="student-type">для граждан РФ</div>
-                            </div>
-                            <div class="program-container col-12">
-                                <div class="program-text-container offset-1">
-                                    <h6 class="program-name">
-                                        <li>Педагогическое образование с двумя профилями подготовки</li> 
-                                        <li>Изобразительное искусство.</li> 
-                                        <li>Черчение и компьютерная графика</li>
-                                    </h6>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Карточка 1.2 - Иностранные граждане -->
-                        <div class="price-card row row-cols-12">
-                            <div class="col-7">
-                                <div class="price-amount price-blue">136 000</div>
-                            </div>
-                            <div class="col-5">
-                                <div class="student-type">для иностранных граждан</div>
-                            </div>
-                            <div class="program-container col-12">
-                                <div class="program-text-container offset-1">
-                                    <h6 class="program-name">
-                                        <li>Педагогическое образование с двумя профилями подготовки</li> 
-                                        <li>Изобразительное искусство.</li> 
-                                        <li>Черчение и компьютерная графика</li>
-                                    </h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Колонка 4 -->
-                    <div class="card-column">
-                        <!-- Карточка 1.1 - Граждане РФ -->
-                        <div class="price-card row row-cols-12">
-                            <div class="col-7">
-                                <div class="price-amount price-pink">136 000</div>
-                            </div>
-                            <div class="col-5">
-                                <div class="student-type">для граждан РФ</div>
-                            </div>
-                            <div class="program-container col-12">
-                                <div class="program-text-container offset-1">
-                                    <h6 class="program-name">
-                                        <li>Педагогическое образование с двумя профилями подготовки</li> 
-                                        <li>Изобразительное искусство.</li> 
-                                        <li>Черчение и компьютерная графика</li>
-                                    </h6>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Карточка 1.2 - Иностранные граждане -->
-                        <div class="price-card row row-cols-12">
-                            <div class="col-7">
-                                <div class="price-amount price-blue">136 000</div>
-                            </div>
-                            <div class="col-5">
-                                <div class="student-type">для иностранных граждан</div>
-                            </div>
-                            <div class="program-container col-12">
-                                <div class="program-text-container offset-1">
-                                    <h6 class="program-name">
-                                        <li>Педагогическое образование с двумя профилями подготовки</li> 
-                                        <li>Изобразительное искусство.</li> 
-                                        <li>Черчение и компьютерная графика</li>
-                                    </h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Колонка 5 -->
-                    <div class="card-column">
-                        <!-- Карточка 1.1 - Граждане РФ -->
-                        <div class="price-card row row-cols-12">
-                            <div class="col-7">
-                                <div class="price-amount price-pink">136 000</div>
-                            </div>
-                            <div class="col-5">
-                                <div class="student-type">для граждан РФ</div>
-                            </div>
-                            <div class="program-container col-12">
-                                <div class="program-text-container offset-1">
-                                    <h6 class="program-name">
-                                        <li>Педагогическое образование с двумя профилями подготовки</li> 
-                                        <li>Изобразительное искусство.</li> 
-                                        <li>Черчение и компьютерная графика</li>
-                                    </h6>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Карточка 1.2 - Иностранные граждане -->
-                        <div class="price-card row row-cols-12">
-                            <div class="col-7">
-                                <div class="price-amount price-blue">136 000</div>
-                            </div>
-                            <div class="col-5">
-                                <div class="student-type">для иностранных граждан</div>
-                            </div>
-                            <div class="program-container col-12">
-                                <div class="program-text-container offset-1">
-                                    <h6 class="program-name">
-                                        <li>Педагогическое образование с двумя профилями подготовки</li> 
-                                        <li>Изобразительное искусство.</li> 
-                                        <li>Черчение и компьютерная графика</li>
-                                    </h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Навигация -->
-            <div class="carousel-controls">
-                <div class="nav-arrow left" id="prevBtn">
-                    <svg width="26" height="8" viewBox="0 0 26 8" fill="none">
-                        <path d="M25.3536 4.35355C25.5488 4.15829 25.5488 3.84171 25.3536 3.64645L22.1716 0.464466C21.9763 0.269204 21.6597 0.269204 21.4645 0.464466C21.2692 0.659728 21.2692 0.976311 21.4645 1.17157L24.2929 4L21.4645 6.82843C21.2692 7.02369 21.2692 7.34027 21.4645 7.53553C21.6597 7.7308 21.9763 7.7308 22.1716 7.53553L25.3536 4.35355ZM0 4.5H25V3.5H0V4.5Z" fill="currentColor"/>
-                    </svg>
                 </div>
                 
-                <div class="nav-dots">
-                    <div class="nav-dot active" data-index="0"></div>
-                    <div class="nav-dot" data-index="1"></div>
-                    <div class="nav-dot" data-index="2"></div>
-                    <div class="nav-dot" data-index="3"></div>
-                    <div class="nav-dot" data-index="4"></div>
+                <!-- Колонка 2 (Коммуникационный дизайн 324/350) -->
+                <div class="card-column">
+                    <!-- Карточка 2.1 - Граждане РФ 324 000 -->
+                    <div class="price-card row row-cols-12">
+                        <div class="col-7">
+                            <div class="price-amount price-pink">324 000</div>
+                        </div>
+                        <div class="col-5">
+                            <div class="student-type">для граждан РФ</div>
+                        </div>
+                        <div class="program-container col-12">
+                            <div class="program-text-container offset-1">
+                                <h6 class="program-name">
+                                    <li>Дизайн коммуникационный</li>
+                                    <li>Дизайн анимационный</li>
+                                    <li>Дизайн интерьера</li>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Карточка 2.2 - Иностранные граждане 350 000 -->
+                    <div class="price-card row row-cols-12">
+                        <div class="col-7">
+                            <div class="price-amount price-blue">350 000</div>
+                        </div>
+                        <div class="col-5">
+                            <div class="student-type">для иностранных граждан</div>
+                        </div>
+                        <div class="program-container col-12">
+                            <div class="program-text-container offset-1">
+                                <h6 class="program-name">
+                                    <li>Дизайн коммуникационный</li>
+                                    <li>Дизайн анимационный</li>
+                                    <li>Дизайн интерьера</li>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="nav-arrow" id="nextBtn">
-                    <svg width="26" height="8" viewBox="0 0 26 8" fill="none">
-                        <path d="M25.3536 4.35355C25.5488 4.15829 25.5488 3.84171 25.3536 3.64645L22.1716 0.464466C21.9763 0.269204 21.6597 0.269204 21.4645 0.464466C21.2692 0.659728 21.2692 0.976311 21.4645 1.17157L24.2929 4L21.4645 6.82843C21.2692 7.02369 21.2692 7.34027 21.4645 7.53553C21.6597 7.7308 21.9763 7.7308 22.1716 7.53553L25.3536 4.35355ZM0 4.5H25V3.5H0V4.5Z" fill="currentColor"/>
-                    </svg>
+                <!-- Колонка 3 (Дизайн костюма 324/350) -->
+                <div class="card-column">
+                    <!-- Карточка 3.1 - Граждане РФ 324 000 -->
+                    <div class="price-card row row-cols-12">
+                        <div class="col-7">
+                            <div class="price-amount price-pink">324 000</div>
+                        </div>
+                        <div class="col-5">
+                            <div class="student-type">для граждан РФ</div>
+                        </div>
+                        <div class="program-container col-12">
+                            <div class="program-text-container offset-1">
+                                <h6 class="program-name">
+                                    <li>Дизайн костюма</li>
+                                    <li>Декоративно-прикладное искусство и народные промыслы</li>
+                                    <li>Искусство костюма и текстиля</li>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Карточка 3.2 - Иностранные граждане 350 000 -->
+                    <div class="price-card row row-cols-12">
+                        <div class="col-7">
+                            <div class="price-amount price-blue">350 000</div>
+                        </div>
+                        <div class="col-5">
+                            <div class="student-type">для иностранных граждан</div>
+                        </div>
+                        <div class="program-container col-12">
+                            <div class="program-text-container offset-1">
+                                <h6 class="program-name">
+                                    <li>Дизайн костюма</li>
+                                    <li>Декоративно-прикладное искусство и народные промыслы</li>
+                                    <li>Искусство костюма и текстиля</li>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Колонка 4 (Дизайн 300/390) -->
+                <div class="card-column">
+                    <!-- Карточка 4.1 - Граждане РФ 300 000 -->
+                    <div class="price-card row row-cols-12">
+                        <div class="col-7">
+                            <div class="price-amount price-pink">300 000</div>
+                        </div>
+                        <div class="col-5">
+                            <div class="student-type">для граждан РФ</div>
+                        </div>
+                        <div class="program-container col-12">
+                            <div class="program-text-container offset-1">
+                                <h6 class="program-name">
+                                    <li>Дизайн</li>
+                                    <li>Дизайн костюма</li>
+                                    <li>Декоративно-прикладное искусство и народные промыслы</li>
+                                    <li>Искусство костюма и текстиля</li>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Карточка 4.2 - Иностранные граждане 390 000 -->
+                    <div class="price-card row row-cols-12">
+                        <div class="col-7">
+                            <div class="price-amount price-blue">390 000</div>
+                        </div>
+                        <div class="col-5">
+                            <div class="student-type">для иностранных граждан</div>
+                        </div>
+                        <div class="program-container col-12">
+                            <div class="program-text-container offset-1">
+                                <h6 class="program-name">
+                                    <li>Дизайн</li>
+                                    <li>Дизайн костюма</li>
+                                    <li>Декоративно-прикладное искусство и народные промыслы</li>
+                                    <li>Искусство костюма и текстиля</li>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Колонка 5 (Живопись 300/390) -->
+                <div class="card-column">
+                    <!-- Карточка 5.1 - Граждане РФ 300 000 -->
+                    <div class="price-card row row-cols-12">
+                        <div class="col-7">
+                            <div class="price-amount price-pink">300 000</div>
+                        </div>
+                        <div class="col-5">
+                            <div class="student-type">для граждан РФ</div>
+                        </div>
+                        <div class="program-container col-12">
+                            <div class="program-text-container offset-1">
+                                <h6 class="program-name">
+                                    <li>Живопись</li>
+                                    <li>Графика</li>
+                                    <li>Монументально-декоративное искусство (интерьеры)</li>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Карточка 5.2 - Иностранные граждане 390 000 -->
+                    <div class="price-card row row-cols-12">
+                        <div class="col-7">
+                            <div class="price-amount price-blue">390 000</div>
+                        </div>
+                        <div class="col-5">
+                            <div class="student-type">для иностранных граждан</div>
+                        </div>
+                        <div class="program-container col-12">
+                            <div class="program-text-container offset-1">
+                                <h6 class="program-name">
+                                    <li>Живопись</li>
+                                    <li>Графика</li>
+                                    <li>Монументально-декоративное искусство (интерьеры)</li>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Колонка 6 (Архитектура 180/236) -->
+                <div class="card-column">
+                    <!-- Карточка 6.1 - Граждане РФ 180 000 -->
+                    <div class="price-card row row-cols-12">
+                        <div class="col-7">
+                            <div class="price-amount price-pink">180 000</div>
+                        </div>
+                        <div class="col-5">
+                            <div class="student-type">для граждан РФ</div>
+                        </div>
+                        <div class="program-container col-12">
+                            <div class="program-text-container offset-1">
+                                <h6 class="program-name">
+                                    <li>Архитектура</li>
+                                    <li>Реконструкция и реставрация архитектурного наследия</li>
+                                    <li>Градостроительство</li>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Карточка 6.2 - Иностранные граждане 236 000 -->
+                    <div class="price-card row row-cols-12">
+                        <div class="col-7">
+                            <div class="price-amount price-blue">236 000</div>
+                        </div>
+                        <div class="col-5">
+                            <div class="student-type">для иностранных граждан</div>
+                        </div>
+                        <div class="program-container col-12">
+                            <div class="program-text-container offset-1">
+                                <h6 class="program-name">
+                                    <li>Архитектура</li>
+                                    <li>Реконструкция и реставрация архитектурного наследия</li>
+                                    <li>Градостроительство</li>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Колонка 7 (BIM-технологии 200/250) -->
+                <div class="card-column">
+                    <!-- Карточка 7.1 - Граждане РФ 200 000 -->
+                    <div class="price-card row row-cols-12">
+                        <div class="col-7">
+                            <div class="price-amount price-pink">200 000</div>
+                        </div>
+                        <div class="col-5">
+                            <div class="student-type">для граждан РФ</div>
+                        </div>
+                        <div class="program-container col-12">
+                            <div class="program-text-container offset-1">
+                                <h6 class="program-name">
+                                    <li>Информатика и вычислительная техника.</li> 
+                                    <li>BIM-технологии в архитектуре и градостроительстве (совместно с ИКТИБ ЮФУ)</li>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Карточка 7.2 - Иностранные граждане 250 000 -->
+                    <div class="price-card row row-cols-12">
+                        <div class="col-7">
+                            <div class="price-amount price-blue">250 000</div>
+                        </div>
+                        <div class="col-5">
+                            <div class="student-type">для иностранных граждан</div>
+                        </div>
+                        <div class="program-container col-12">
+                            <div class="program-text-container offset-1">
+                                <h6 class="program-name">
+                                    <li>Информатика и вычислительная техника.</li> 
+                                    <li>BIM-технологии в архитектуре и градостроительстве (совместно с ИКТИБ ЮФУ)</li>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Колонка 8 (Педагогическое образование 136/236) -->
+                <div class="card-column">
+                    <!-- Карточка 8.1 - Граждане РФ 136 000 -->
+                    <div class="price-card row row-cols-12">
+                        <div class="col-7">
+                            <div class="price-amount price-pink">136 000</div>
+                        </div>
+                        <div class="col-5">
+                            <div class="student-type">для граждан РФ</div>
+                        </div>
+                        <div class="program-container col-12">
+                            <div class="program-text-container offset-1">
+                                <h6 class="program-name">
+                                    <li>Педагогическое образование с двумя профилями подготовки</li> 
+                                    <li>«Изобразительное искусство. Черчение и компьютерная графика»</li>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Карточка 8.2 - Иностранные граждане 236 000 -->
+                    <div class="price-card row row-cols-12">
+                        <div class="col-7">
+                            <div class="price-amount price-blue">236 000</div>
+                        </div>
+                        <div class="col-5">
+                            <div class="student-type">для иностранных граждан</div>
+                        </div>
+                        <div class="program-container col-12">
+                            <div class="program-text-container offset-1">
+                                <h6 class="program-name">
+                                    <li>Педагогическое образование с двумя профилями подготовки</li> 
+                                    <li>«Изобразительное искусство. Черчение и компьютерная графика»</li>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+        
+        <!-- Навигация (оставлена без изменений) -->
+        <div class="carousel-controls">
+            <div class="nav-arrow left" id="prevBtn">
+                <svg width="26" height="8" viewBox="0 0 26 8" fill="none">
+                    <path d="M25.3536 4.35355C25.5488 4.15829 25.5488 3.84171 25.3536 3.64645L22.1716 0.464466C21.9763 0.269204 21.6597 0.269204 21.4645 0.464466C21.2692 0.659728 21.2692 0.976311 21.4645 1.17157L24.2929 4L21.4645 6.82843C21.2692 7.02369 21.2692 7.34027 21.4645 7.53553C21.6597 7.7308 21.9763 7.7308 22.1716 7.53553L25.3536 4.35355ZM0 4.5H25V3.5H0V4.5Z" fill="currentColor"/>
+                </svg>
+            </div>
+            
+            <div class="nav-dots">
+                <div class="nav-dot active" data-index="0"></div>
+                <div class="nav-dot" data-index="1"></div>
+                <div class="nav-dot" data-index="2"></div>
+                <div class="nav-dot" data-index="3"></div>
+                <div class="nav-dot" data-index="4"></div>
+                <!-- Добавьте точки под количество колонок, если нужно -->
+            </div>
+            
+            <div class="nav-arrow" id="nextBtn">
+                <svg width="26" height="8" viewBox="0 0 26 8" fill="none">
+                    <path d="M25.3536 4.35355C25.5488 4.15829 25.5488 3.84171 25.3536 3.64645L22.1716 0.464466C21.9763 0.269204 21.6597 0.269204 21.4645 0.464466C21.2692 0.659728 21.2692 0.976311 21.4645 1.17157L24.2929 4L21.4645 6.82843C21.2692 7.02369 21.2692 7.34027 21.4645 7.53553C21.6597 7.7308 21.9763 7.7308 22.1716 7.53553L25.3536 4.35355ZM0 4.5H25V3.5H0V4.5Z" fill="currentColor"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
 </div>        
 
         <!-- ===== СЕКЦИЯ 6: ЦЕЛЕВОЕ ОБУЧЕНИЕ ===== -->
@@ -1496,7 +2041,7 @@
                 <div class="row">
                     <div class="col-lg-7 offset-2">
                         <p class=" mb-4">
-                            Прием на целевое обучение осуществляется в пределах целевой квоты по специальностям, направлениям подготовки, входящим в перечень, определяемый Правительством Российской Федерации (федеральный закон «Об образовании в Российской Федерации» ФЗ-273.
+                            Прием на целевое обучение осуществляется в пределах целевой квоты по специальностям, направлениям подготовки, входящим в перечень, определяемый Правительством Российской Федерации (федеральный закон «Об образовании в Российской Федерации» ФЗ-273).
                         </p>
                         
                         <p class=" mb-4">
@@ -1508,10 +2053,9 @@
                         
                         <p>
                             <div class=" mb-5 col-md-7 offset-1">
-                            <li>Договоры о целевом обучении с поступающими могут быть заключены, только если заказчик оформит предложение на портале «Работа России» в срок до 10 июня 2024 года<br></li>
                             <li>Обязательным остаётся трудоустройство и отработка на предприятии-заказчике сроком от 3 лет до 5 лет<br></li>
                             <li>Для поступающих на бакалавриат и специалитет меры материальной поддержки от организации обязательны.<br></li>
-                            <li>Предложение по целевому обучению открыто для всех желающих, а не закрепляется за конкретным поступающим. Откликнуться на него можно в те же сроки, что и подача документов, с 20 июня 2024 года и до окончания приёма документов. Отбор на данное место пройдёт по конкурсным баллам в период зачисления.<br>
+                            <li>Предложение по целевому обучению открыто для всех желающих, а не закрепляется за конкретным поступающим. Откликнуться на него можно в те же сроки, что и подача документов, с 20 июня 2026 года и до окончания приёма документов. Отбор на данное место пройдёт по конкурсным баллам в период зачисления.<br>
                             Стороны, нарушившие условия, прописанные в Постановлении, несут соответствующую ответственность.</li>
                             </div>
                         </p>
@@ -1522,21 +2066,10 @@
                         <!-- Важная информация -->
                         <div class="program-card p-4 p-lg-5">
                             <h3 class="section-subtitle mb-4">Важно!</h3>
-                            <p class="text-white offset-2">
-                                Для начала абитуриенту необходимо ознакомиться с бразовательными направлениями Академии и квотами для приема на целевое обучение, а также с субъектами РФ, на территориях которых можете быть трудоустроены в соответствии с договором о целевом обучении.<br><br>
-                                Затем родители могут сами обратиться в организацию, чтобы она до этого срока разместила информацию на указанном цифровом сервисе. Иначе прием в рамках квоты целевого обучения будет невозможен.
-                            </p>
 
                             <!-- Документы -->
                         <div class="d-flex flex-wrap gap-4 mb-5 offset-1">
-                            <a href="#" class="document-link">
-                                <div class="icon-wrapper">
-                                    <!-- SVG иконка документа -->
-                                </div>
-                                <span class="text text-white">Детализации целевой квоты на 2024 год по программам, реализуемым Академией архитектуры и искусств ЮФУ</span>
-                            </a>
-                            
-                            <a href="#" class="document-link">
+                            <a href="/404.html" class="document-link">
                                 <div class="icon-wrapper">
                                     <!-- SVG иконка документа -->
                                 </div>

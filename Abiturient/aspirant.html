@@ -83,7 +83,6 @@
         }
 
         .directors-section {
-            background: var(--gradient-dark);
             color: var(--white);
         }
 
@@ -103,6 +102,10 @@
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             height: 100%;
+        }
+
+        .director-card h4{
+            color: #000000;
         }
 
         .director-card:hover {
@@ -384,6 +387,10 @@
         .fade-in-up {
             animation: fadeInUp 0.6s ease forwards;
         }
+
+        .bg-dark-gradient {
+            background: linear-gradient(45deg, #131313, var(--primary-blue)) !important;
+        }
     </style>
 </head>
 <body>
@@ -424,7 +431,7 @@
         <!-- ===== СЕКЦИЯ 2: НАБОР 2025 ГОДА ===== -->
         <section class="program-section py-5">
             <div class="container">
-                <h2 class="section-title text-center text-black mb-5">набор 2025 года</h2>
+                <h2 class="section-title text-center text-black mb-5">набор 2026 года</h2>
                 
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
@@ -486,7 +493,34 @@
                         </h2>
                         <div id="programOne" class="accordion-collapse collapse" data-bs-parent="#programsAccordion">
                             <div class="accordion-body">
-                                <!-- Контент программы будет добавлен при раскрытии -->
+                                <div class="row mb-4">
+                                    <div class="col-lg-3">
+                                        <p class="fw-bold">Особенностями профиля являются исследования, направленные на разработку:</p>
+                                    </div>
+                                    <div class="col-lg-9">
+                                        <p>
+                                            Фундаментальных проблем теории архитектуры: ее социальных и социально-функциональных аспектов, формо- и стилеобразования, семантики, эстетики и художественной образности, а также конструктивно-технической, экономической, социально-культурной и экологической обусловленности архитектурной деятельности, этнокультурных и региональных особенностей, сохранения историко-культурных ценностей, архитектурного наследия, взаимоотношений традиций и новаторства, творческого освоения исторического опыта;<br>
+                                            Вопросов и проблем истории архитектуры, охватывающей изучение закономерностей развития архитектуры в связи с общими закономерностями исторического процесса, историей культуры и обществ, а также выявление и изучение памятников архитектуры и градостроительства, закономерностей и особенностей процесса развития профессионального мастерства с древних времен до современности, роли и места российской архитектуры в мировом архитектурном процессе творчества мастеров архитектуры;<br>
+                                            Проблемы реконструкции историко-архитектурного наследия, охватывающие исследование и выработку предложений по проблемам сохранения, консервации и модернизации исторически сложившейся городской среды, отдельных архитектурных комплексов и зданий, воссоздания утраченных архитектурных памятников.<br>
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <p class="fw-bold">Областями исследования профиля являются:</p>
+                                    </div>
+                                    <div class="col-lg-9">
+                                        <p>
+                                            Научные основы теории и истории архитектуры;<br>
+                                            Развитие профессиональной культуры;<br>
+                                            Предпроектные историко-теоретические и научно-методические концептуальные разработки;<br>
+                                            Теоретические концепции и научно-проектные предложения;<br>
+                                            Проблемы сохранения и преобразования среды жизнедеятельности;<br>
+                                            Информационное и программное обеспечение архитектурной деятельности.<br>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -536,7 +570,9 @@
             </div>
         </section>
 
-        <!-- ===== СЕКЦИЯ 4: НАУЧНЫЕ РУКОВОДИТЕЛИ ===== -->
+        
+    <!-- ===== СЕКЦИЯ 4: НАУЧНЫЕ РУКОВОДИТЕЛИ ===== -->
+     <div class="bg-dark-gradient">
         <section class="directors-section py-5" id="Rukovoditely">
             <div class="container">
                 <h2 class="section-title text-center text-white mb-5">научные руководители</h2>
@@ -550,29 +586,28 @@
                     <div class="col-lg-6">
                         <div class="director-card p-4">
                             <div class="row g-4">
-                                <div class="col-md-4">
-                                    <div class="director-photo" style="background: var(--gradient-primary);">
-                                        <div class="h-100 d-flex align-items-center justify-content-center text-white">
-                                            <i class="bi bi-person-circle display-4"></i>
-                                        </div>
+                                <div class="col-md-4 d-flex flex-column justify-content-between">
+                                    <div class="director-photo" style="background-image: url(/Abiturient/imageAs/Ivleeva.png);background-size: cover; background-position: center; background-repeat: no-repeat;"> 
+                                    </div>
+                                    <div class="">
+                                        <a href="#" class="director-link">
+                                        научное руководство аспирантами
+                                        <i class="bi bi-arrow-right"></i>
+                                    </a>
                                     </div>
                                 </div>
                                 <div class="col-md-8">
                                     <h4 class="mb-3">Иевлева Ольга Тиховна</h4>
-                                    <p class="text-muted mb-2">
+                                    <p class="text-black mb-2">
                                         <strong>Должность:</strong> Заведующий кафедрой графики и информационных технологий архитектурного проектирования, доктор технических наук, профессор. Руководитель программы 2.1, ответственная за аспирантуру в ААИ ЮФУ.
                                     </p>
-                                    <p class="text-muted mb-2">
+                                    <p class="text-black mb-2">
                                         <strong>Направления:</strong> Исследование, формализация и моделирование объектов архитектуры и дизайна; информационное обеспечение архитектурной и дизайнерской деятельности.
                                     </p>
                                     <p class="text-primary mb-3">
                                         <strong>Email:</strong> ijevleva@sfedu.ru<br>
                                         ijevleva@yandex.ru
                                     </p>
-                                    <a href="#" class="director-link">
-                                        научное руководство аспирантами
-                                        <i class="bi bi-arrow-right"></i>
-                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -582,29 +617,30 @@
                     <div class="col-lg-6">
                         <div class="director-card p-4">
                             <div class="row g-4">
-                                <div class="col-md-4">
-                                    <div class="director-photo" style="background: var(--gradient-primary);">
-                                        <div class="h-100 d-flex align-items-center justify-content-center text-white">
-                                            <i class="bi bi-person-circle display-4"></i>
-                                        </div>
+                                <div class="col-md-4 d-flex flex-column justify-content-between">
+                                    <div class="director-photo" style="background-image: url(/Abiturient/imageAs/Ivanova.png);background-size: cover; background-position: center; background-repeat: no-repeat;">
+                                        
+                                    </div>
+                                    <div>
+                                        <a href="#" class="director-link">
+                                        научное руководство аспирантами
+                                        <i class="bi bi-arrow-right"></i>
+                                    </a>
                                     </div>
                                 </div>
                                 <div class="col-md-8">
                                     <h4 class="mb-3">Иванова-Ильичева Анна Михайловна</h4>
-                                    <p class="text-muted mb-2">
+                                    <p class="text-black mb-2">
                                         <strong>Должность:</strong> Заведующий кафедрой истории архитектуры, искусства и архитектурной реставрации, доцент, доктор архитектуры.
                                     </p>
-                                    <p class="text-muted mb-2">
+                                    <p class="text-black mb-2">
                                         <strong>Направления:</strong> Теория и история архитектуры.
                                     </p>
                                     <p class="text-primary mb-3">
                                         <strong>Email:</strong> amivanova-ilicheva@sfedu.ru<br>
                                         AMI0202@yandex.ru
                                     </p>
-                                    <a href="#" class="director-link">
-                                        научное руководство аспирантами
-                                        <i class="bi bi-arrow-right"></i>
-                                    </a>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -614,29 +650,30 @@
                     <div class="col-lg-6">
                         <div class="director-card p-4">
                             <div class="row g-4">
-                                <div class="col-md-4">
-                                    <div class="director-photo" style="background: var(--gradient-primary);">
-                                        <div class="h-100 d-flex align-items-center justify-content-center text-white">
-                                            <i class="bi bi-person-circle display-4"></i>
-                                        </div>
+                                <div class="col-md-4 d-flex flex-column justify-content-between">
+                                    <div class="director-photo" style="background-image: url(/Abiturient/imageAs/Morgun.png);background-size: cover; background-position: center; background-repeat: no-repeat;">
+                                        
+                                    </div>
+                                    <div>
+                                        <a href="#" class="director-link">
+                                        научное руководство аспирантами
+                                        <i class="bi bi-arrow-right"></i>
+                                    </a>
                                     </div>
                                 </div>
                                 <div class="col-md-8">
                                     <h4 class="mb-3">Моргун Николай Анатольевич</h4>
-                                    <p class="text-muted mb-2">
+                                    <p class="text-black mb-2">
                                         <strong>Должность:</strong> Заведующий кафедрой Архитектурного и средового проектирования, профессор, кандидат архитектуры.
                                     </p>
-                                    <p class="text-muted mb-2">
+                                    <p class="text-black mb-2">
                                         <strong>Направления:</strong> Архитектура общественных зданий (образовательные, спортивные, общественные центры).
                                     </p>
                                     <p class="text-primary mb-3">
                                         <strong>Email:</strong> namorgun@sfedu.ru<br>
                                         nik-morgun@yandex.ru
                                     </p>
-                                    <a href="#" class="director-link">
-                                        научное руководство аспирантами
-                                        <i class="bi bi-arrow-right"></i>
-                                    </a>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -646,29 +683,29 @@
                     <div class="col-lg-6">
                         <div class="director-card p-4">
                             <div class="row g-4">
-                                <div class="col-md-4">
-                                    <div class="director-photo" style="background: var(--gradient-primary);">
-                                        <div class="h-100 d-flex align-items-center justify-content-center text-white">
-                                            <i class="bi bi-person-circle display-4"></i>
-                                        </div>
+                                <div class="col-md-4 d-flex flex-column justify-content-between">
+                                    <div class="director-photo" style="background-image: url(/Abiturient/imageAs/Molchanov.png);background-size: cover; background-position: center; background-repeat: no-repeat;">
+                                    </div>
+                                    <div>
+                                        <a href="#" class="director-link">
+                                        научное руководство аспирантами
+                                        <i class="bi bi-arrow-right"></i>
+                                    </a>
                                     </div>
                                 </div>
                                 <div class="col-md-8">
                                     <h4 class="mb-3">Молчанов Виктор Михайлович</h4>
-                                    <p class="text-muted mb-2">
+                                    <p class="text-black mb-2">
                                         <strong>Должность:</strong> Заведующий кафедрой архитектуры жилых и общественных зданий, кандидат архитектуры, профессор.
                                     </p>
-                                    <p class="text-muted mb-2">
+                                    <p class="text-black mb-2">
                                         <strong>Направления:</strong> Социально-функциональные основы архитектуры жилища.
                                     </p>
                                     <p class="text-primary mb-3">
                                         <strong>Email:</strong> vmmolchanov@sfedu.ru<br>
                                         vimolchanov@yandex.ru
                                     </p>
-                                    <a href="#" class="director-link">
-                                        научное руководство аспирантами
-                                        <i class="bi bi-arrow-right"></i>
-                                    </a>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -676,30 +713,31 @@
                     
                     <!-- Руководитель 5 -->
                     <div class="col-lg-6">
-                        <div class="director-card p-4">
+                        <div class="director-card p-4 d-flex flex-column justify-content-between">
                             <div class="row g-4">
                                 <div class="col-md-4">
-                                    <div class="director-photo" style="background: var(--gradient-primary);">
-                                        <div class="h-100 d-flex align-items-center justify-content-center text-white">
-                                            <i class="bi bi-person-circle display-4"></i>
-                                        </div>
+                                    <div class="director-photo" style="background-image: url(/Abiturient/imageAs/Skopincev.png);background-size: cover; background-position: center; background-repeat: no-repeat;">
+                                        
+                                    </div>
+                                    <div>
+                                        <a href="#" class="director-link">
+                                        научное руководство аспирантами
+                                        <i class="bi bi-arrow-right"></i>
+                                    </a>
                                     </div>
                                 </div>
                                 <div class="col-md-8">
                                     <h4 class="mb-3">Скопинцев Анатолий Вениаминович</h4>
-                                    <p class="text-muted mb-2">
+                                    <p class="text-black mb-2">
                                         <strong>Должность:</strong> Профессор кафедры архитектурного и средового проектирования, кандидат архитектуры, профессор.
                                     </p>
-                                    <p class="text-muted mb-2">
+                                    <p class="text-black mb-2">
                                         <strong>Направления:</strong> Архитектура, дизайн архитектурной среды, экологическое направление в средовом и архитектурно-дизайнерском проектировании.
                                     </p>
                                     <p class="text-primary mb-3">
                                         <strong>Email:</strong> avskopincev@sfedu.ru
                                     </p>
-                                    <a href="#" class="director-link">
-                                        научное руководство аспирантами
-                                        <i class="bi bi-arrow-right"></i>
-                                    </a>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -707,21 +745,19 @@
                     
                     <!-- Руководитель 6 -->
                     <div class="col-lg-6">
-                        <div class="director-card p-4">
+                        <div class="director-card p-4 d-flex flex-column justify-content-between">
                             <div class="row g-4">
                                 <div class="col-md-4">
-                                    <div class="director-photo" style="background: var(--gradient-primary);">
-                                        <div class="h-100 d-flex align-items-center justify-content-center text-white">
-                                            <i class="bi bi-person-circle display-4"></i>
-                                        </div>
+                                    <div class="director-photo" style="background-image: url(/Abiturient/imageAs/Gorgorova.png);background-size: cover; background-position: center; background-repeat: no-repeat;">
+                                        
                                     </div>
                                 </div>
                                 <div class="col-md-8">
                                     <h4 class="mb-3">Горгорова Юлия Владимировна</h4>
-                                    <p class="text-muted mb-2">
+                                    <p class="text-black mb-2">
                                         <strong>Должность:</strong> Профессор кафедры архитектурного и средового проектирования, кандидат архитектуры, доцент.
                                     </p>
-                                    <p class="text-muted mb-2">
+                                    <p class="text-black mb-2">
                                         <strong>Направления:</strong> Архитектурное проектирование общественных зданий в условиях реконструкции; экспериментальное проектирование.
                                     </p>
                                     <p class="text-primary mb-3">
@@ -734,7 +770,7 @@
                 </div>
             </div>
         </section>
-
+</div>
         <!-- ===== СЕКЦИЯ 5: ПОСТУПЛЕНИЕ ===== -->
         <section class="admission-section py-5" id="Nabor">
             <div class="container">
@@ -743,8 +779,8 @@
                 <div class="row mb-5">
                     <div class="col-lg-8">
                         <p class="fs-5">
-                            Правила приёма в Южный федеральный университет на обучение по программам подготовки научно-педагогических кадров в аспирантуре в 2025 году.<br>
-                            Прием документов на обучение по программам аспирантуры осуществляется Приемной комиссией Университета <strong>с 20 июня по 2 августа 2025 года</strong> включительно.
+                            Правила приёма в Южный федеральный университет на обучение по программам подготовки научно-педагогических кадров в аспирантуре в 2026 году.<br>
+                            Прием документов на обучение по программам аспирантуры осуществляется Приемной комиссией Университета <strong>с 20 июня по 3 августа 2026 года</strong> включительно.
                         </p>
                     </div>
                     
@@ -755,18 +791,14 @@
                         <h3 class="mb-4" style="color: var(--primary-blue);">Зачисление в аспирантуру производится приказом ректора по Южному федеральному университету:</h3>
                         
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="mb-4">
-                                    <p class="fw-bold mb-2">на места по квоте приема на целевое обучение</p>
-                                    <p class="fw-bold text-primary">21 августа 2025 года</p>
-                                </div>
-                                <div class="mb-4">
-                                    <p class="fw-bold mb-2">на места за счет средств федерального бюджета</p>
-                                    <p class="fw-bold text-primary">25 августа 2025 года</p>
+                                    <div class="fw-bold mb-2 col-6">на места за счет средств федерального бюджета</div>
+                                    <div class="fw-bold text-primary col-6">24 августа 2026 года</div>
                                 </div>
                                 <div>
-                                    <p class="fw-bold mb-2">на места по договорам об оказании платных образовательных услуг</p>
-                                    <p class="fw-bold text-primary">не позднее 29 августа 2025 года</p>
+                                    <div class="fw-bold mb-2 col-6">на места по договорам об оказании платных образовательных услуг</div>
+                                    <div class="fw-bold text-primary col-6">не позднее 31 августа 2026 года</div>
                                 </div>
                             </div>
                         </div>
@@ -777,28 +809,28 @@
                     <div class="container row">
 
                         <div class="text-center col-md-6">
-                    <a href="#" class="document-link card text-decoration-none hover-lift d-inline-block p-4">
+                    <a href="https://sfedu.ru/00_main_2010/abitur/abit_2026/asp_ekz/2.1.pdf" class="document-link card text-decoration-none hover-lift d-inline-block p-4">
                         <div class="d-flex align-items-center">
                             <div class="document-icon bg-primary bg-opacity-10 rounded-3 p-3 me-4">
                                 <i class="bi bi-file-text fs-1 text-primary"></i>
                             </div>
                             <div>
                                 <h5 class="card-title mb-1">Программа вступительных испытаний</h5>
-                                <p class="card-text text-muted mb-0">Программа вступительных испытаний в аспирантуру</p>
+                                <p class="card-text text-black mb-0">Программа вступительных испытаний в аспирантуру</p>
                             </div>
                         </div>
                     </a>
                 </div>
 
                 <div class="col-lg-6 col-md-6">
-                        <a href="#" class="document-link card h-100 text-decoration-none hover-lift p-4">
+                        <a href="https://sfedu.ru/00_main_2010/abitur/abit_2026/pravila_priema_asp_2026.pdf" class="document-link card h-100 text-decoration-none hover-lift p-4">
                             <div class="d-flex align-items-center">
                                 <div class="document-icon bg-primary bg-opacity-10 rounded-3 p-3 me-4">
                                     <i class="bi bi-file-earmark-text fs-1 text-primary"></i>
                                 </div>
                                 <div>
                                     <h5 class="card-title mb-1">Правила приема</h5>
-                                    <p class="card-text text-muted mb-0">Правила приема в аспирантуру 2025 году</p>
+                                    <p class="card-text text-black mb-0">Правила приема в аспирантуру 2026 году</p>
                                 </div>
                             </div>
                         </a>
@@ -814,11 +846,13 @@
                         <div class="col-md-4">
                             <h4 class="table-title">код и наименование направления подготовки</h4>
                         </div>
-                        <div class="col-md-2">
-                            <h4 class="table-title">количество мест</h4>
+                        <div class="col-4">
+                        <div class="fw-bold text-white text-center">Количество мест</div>
+                        <div class="d-grid text-center" style="grid-template-columns: repeat(3, 1fr);">
+                            <div class="fw-bold text-white">ГБ</div>
+                            <div class="fw-bold text-white">Из них ЦП</div>
+                            <div class="fw-bold text-white">ПВЗ</div>
                         </div>
-                        <div class="col-md-3">
-                            <h4 class="table-title text-center">из них ЦП</h4>
                         </div>
                         <div class="col-md-3">
                             <h4 class="table-title text-center">стоимость обучения в 2025 году, руб.</h4>
@@ -831,11 +865,12 @@
                         <div class="col-md-4">
                             <p class="mb-0">2.1.11 Теория и история архитектуры, реставрация и реконструкция историко-архитектурного наследия</p>
                         </div>
-                        <div class="col-md-2">
-                            <p class="mb-0 fs-4 fw-bold">1</p>
+                        <div class="col-4">
+                        <div class="d-grid text-center" style="grid-template-columns: repeat(3, 1fr);">
+                            <div class="fw-bold text-white">2</div>
+                            <div class="fw-bold text-white">-</div>
+                            <div class="fw-bold text-white">1</div>
                         </div>
-                        <div class="col-md-3 text-center">
-                            <p class="mb-0 fs-4 fw-bold">1</p>
                         </div>
                         <div class="col-md-3 text-center">
                             <p class="mb-0 fs-4 fw-bold text-pink">202 000</p>
@@ -848,11 +883,12 @@
                         <div class="col-md-4">
                             <p class="mb-0">2.1.12 Архитектура зданий и сооружений. Творческие концепции архитектурной деятельности</p>
                         </div>
-                        <div class="col-md-2">
-                            <p class="mb-0 fs-4 fw-bold">7</p>
+                        <div class="col-4">
+                        <div class="d-grid text-center" style="grid-template-columns: repeat(3, 1fr);">
+                            <div class="fw-bold text-white">2</div>
+                            <div class="fw-bold text-white">-</div>
+                            <div class="fw-bold text-white">1</div>
                         </div>
-                        <div class="col-md-3 text-center">
-                            <p class="mb-0">-</p>
                         </div>
                         <div class="col-md-3 text-center">
                             <p class="mb-0 fs-4 fw-bold text-pink">202 000</p>
@@ -877,7 +913,7 @@
                         <div class="grant-content">
                             <p class="mb-4">
                                 ЮФУ проводит конкурсный отбор на предоставление гранта на обучение по программам подготовки научных и научно-педагогических кадров в аспирантуре.
-                                Конкурсный отбор на предоставление гранта на обучение по программам подготовки научных и научно-педагогических кадров в аспирантуре Южного федерального университета проводится в соответствии с <a href="#" class="text-decoration-underline fw-bold" style="color: var(--primary-blue);">приказом</a>.
+                                Конкурсный отбор на предоставление гранта на обучение по программам подготовки научных и научно-педагогических кадров в аспирантуре Южного федерального университета проводится в соответствии с <a href="https://sfedu.ru/00_main_2010/abitur/abit_2026/Grant_v_aspiranturu_P425.pdf" class="text-decoration-underline fw-bold" style="color: var(--primary-blue);">приказом</a>.
                             </p>
                             
                             <p class="fw-bold mb-3">Для участия в Конкурсе необходимо предоставить:</p>
@@ -901,7 +937,7 @@
                                         </div>
                                         <div>
                                             <h5 class="card-title mb-1">Инструкция</h5>
-                                            <p class="card-text text-muted mb-0">Инструкция для заполнения заявки</p>
+                                            <p class="card-text text-black mb-0">Инструкция для заполнения заявки</p>
                                         </div>
                                     </div>
                                 </a>
@@ -913,7 +949,7 @@
                                         </div>
                                         <div>
                                             <h5 class="card-title mb-1">Заполнить заявку</h5>
-                                            <p class="card-text text-muted mb-0">Заполнить заявку на участие в конкурсе для получения гранта на обучение в аспирантуре</p>
+                                            <p class="card-text text-black mb-0">Заполнить заявку на участие в конкурсе для получения гранта на обучение в аспирантуре</p>
                                         </div>
                                     </div>
                                 </a>
@@ -924,12 +960,14 @@
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#grantDeadlines">
-                                            сроки проведения конкурса на грант в 2025 году
+                                            сроки проведения конкурса на грант в 2026 году
                                         </button>
                                     </h2>
                                     <div id="grantDeadlines" class="accordion-collapse collapse" data-bs-parent="#grantAccordion">
                                         <div class="accordion-body">
-                                            <!-- Контент сроков будет добавлен -->
+                                            <div>
+                                                Сроки подачи заявок на участие в конкурсе с 5 апреля 2026 года по 20 мая 2026 года
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -974,7 +1012,7 @@
                                     </h2>
                                     <div id="grantDirectors" class="accordion-collapse collapse" data-bs-parent="#grantAccordion">
                                         <div class="accordion-body">
-                                            <!-- Контент руководителей будет добавлен -->
+                                            Ознакомиться с составом научных руководителей можно <a href="https://login.microsoftonline.com/19ba435d-e46c-436a-84f2-1b01e693e480/oauth2/authorize?client_id=00000003-0000-0ff1-ce00-000000000000&response_mode=form_post&ear_jwe_crypto=eyJhbGciOiJFQ0RILUVTIiwiZW5jIjoiQTI1NkdDTSIsImFwdiI6IkFBQUFDVVZoY2tOc2FXVnVkR2dBQUFCRlEwc3pNQUFBQUF2NEgyaVVib3dwbnRZYithZ1VvYnBwd0JRZFg5Yy9JRzdOWFhXU3Z0UVVqc0pGUWM4VzJXSCtJWWxERkVFWjB4NkJuL0FJdE1vYmFycU5kTEdqWlpaaFNvWTFVUk1HZjJRNmpZNnZwUmVWTnVvc2Y1MGZRSUljNUFuZ3BuZDJpUUFBQUJoYmdTczFVNVlnWUVFRStZU3JVV3pDZS91ZU9XNG8rRXc9In0%3D&ear_jwk=eyJhbGciOiJFQ0RILUVTIiwiY3J2IjoiUC0zODQiLCJ4IjoiQUFBQU1BdjRIMmlVYm93cG50WWIrYWdVb2JwcHdCUWRYOWMvSUc3TlhYV1N2dFFVanNKRlFjOFcyV0grSVlsREZFRVowdz09IiwieSI6IkFBQUFNQjZCbi9BSXRNb2JhcnFOZExHalpaWmhTb1kxVVJNR2YyUTZqWTZ2cFJlVk51b3NmNTBmUUlJYzVBbmdwbmQyaVE9PSIsImt0eSI6IkVDIn0%3D&spa_client_id=08e18876-6177-487e-b8b5-cf950c1e598c&client_info=1&response_type=code%20id_token%20spa_rt&resource=00000003-0000-0ff1-ce00-000000000000&scope=openid&nonce=06D5359144E210B5D3A04A4DAE1CCF54B5F315A736C1B6CE-4F6C57F302A326C6CB95C1D8F8E25C582E37D9CFB4EAFF1F05F7CC91ED64B9B9&redirect_uri=https%3A%2F%2Fsfedu-my%2Esharepoint%2Ecom%2F_forms%2Fdefault%2Easpx&state=OD0wJjMyPUFBTGpqQUFBQUJRNzI4MlFkU1lLamZBU0pYSiUyRmI4aVo4VzV2aG5GMUloclNNTXRCdVIxUk8ydTFrJTJCJTJGJTJGV3R0S1hzWmJWT0pLazBMek41clNRNkFVbVR1T2oyUFFuWUd5cTBWVmNFeTNYVWg5dUJod1d6bnlSRFg3SVNQYmNXTGpVSHgzOXBhRG9JaXo2WjRQWnh1ZHJ4WWtWVmVKWmtSdDVoZGJxeEp1UlQwYjltcGZvS3c2cmRZTUx5dHMwb1NPVVBjb01zbzZwcyUyQmNzVSUyRjNRYms4R0JJWHRBd091Y3BIZVlCVEFHZFYyRG9qcElENmVtNmQlMkZOSFF0eTdTQlhxcFJYMHhIOEglMkJXWllKdW0yMW5hQmY1YXJFUktWb09qaVJwbzY2THVsWmM4cmhqbzduU3RKWXFjTHZwc0l3R2dpTklsRXRmVjFiOENpWHk4SGhpZTQwSkwyRm45TGlMRkRKdTdxRkpDMzF3RDN1TmF6UWRJanM4SEVUQmlOUklVeXI&claims=%7B%22id_token%22%3A%7B%22xms_cc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&wsucxt=1&cobrandid=11bd8083-87e0-41b5-bb78-0bc43c8a8e8a&client-request-id=c03b01a2-c00d-f000-b7ec-04f0d9dfea61">здесь</a>
                                         </div>
                                     </div>
                                 </div>
@@ -989,10 +1027,16 @@
         <section class="contacts-section py-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8">
+                    <div class="col-lg-12">
                         <h2 class="section-title mb-4">Контакты</h2>
+                        </div>
+                <div class="row col-12">
+                            <div class="col-md-2 offset-1">
+                                    <div class="contact-photo rounded-3" style="background-image: url(/Abiturient/imageAs/Ivleeva.png); height: 215px; width: 160px;background-size: cover; background-position: center; background-repeat: no-repeat;">
+                                    </div>
+                                </div>
                         
-                        <div class="contact-info">
+                        <div class="contact-info col-6">
                             <p class="fs-5 fw-bold mb-3">Руководитель программы:</p>
                             <p class="fs-5 mb-4">
                                 <span class="fw-bold">Иевлева Ольга Тихоновна</span> — доктор технических наук, профессор, зав. кафедрой графики и информационных технологий архитектурного проектирования – руководитель образовательной программы 2.1. Строительство и архитектура.
@@ -1013,16 +1057,10 @@
                                         <a href="mailto:ijevleva@sfedu.ru" class="text-decoration-underline" style="color: var(--primary-blue);">ijevleva@sfedu.ru</a>
                                     </p>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="contact-photo rounded-3" style="background: var(--gradient-primary); height: 215px; width: 160px;">
-                                        <div class="h-100 d-flex align-items-center justify-content-center text-white">
-                                            <i class="bi bi-person-circle display-1"></i>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
-                    </div>
+                </div>
+                    
                 </div>
             </div>
         </section>
