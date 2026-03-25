@@ -151,7 +151,8 @@
         
         /* Stage Cards */
         .card-stage {
-            height: 100%;
+            width: 806px;
+            height: 270px;
             border-radius: 15px;
             border: 1px solid var(--color-white);
             background: var(--color-white);
@@ -373,6 +374,54 @@
                 padding: 60px 0 30px;
             }
         }
+
+        /* Новостные карточки */
+        .news-card {
+            margin-bottom: 40px;
+        }
+
+        .news-image {
+            width: 353px;
+            height: 201px;
+            border-radius: 15px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .news-date {
+            font-size: 16px;
+            color: var(--grey-dark);
+            margin-bottom: 10px;
+        }
+
+        .news-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .news-description {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        .news-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--black);
+            margin-top: 15px;
+        }
+
+        .news-link-arrow {
+            width: 26px;
+            height: 8px;
+            background-image: url("data:image/svg+xml,%3Csvg width='26' height='8' viewBox='0 0 26 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25.3536 4.35355C25.5488 4.15829 25.5488 3.84171 25.3536 3.64645L22.1716 0.464466C21.9763 0.269204 21.6597 0.269204 21.4645 0.464466C21.2692 0.659728 21.2692 0.976311 21.4645 1.17157L24.2929 4L21.4645 6.82843C21.2692 7.02369 21.2692 7.34027 21.4645 7.53553C21.6597 7.7308 21.9763 7.7308 22.1716 7.53553L25.3536 4.35355ZM0 4.5H25V3.5H0V4.5Z' fill='black'/%3E%3C/svg%3E");
+        }
     </style>
 </head>
 <body>
@@ -384,7 +433,7 @@
     <section class="hero-section">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-7 mb-5 mb-lg-0">
+                <div class="col-lg-6 mb-5 mb-lg-0 offset-1">
                     <h1 class="hero-title text-dark-grey">ЮРмош</h1>
                     <p class="mb-4">
                         XVII Южно-Российская межрегиональная олимпиада школьников «Архитектура и искусство» по комплексу предметов <strong>(рисунок, живопись, композиция, черчение).</strong>
@@ -402,32 +451,28 @@
                 <div class="col-lg-5">
                     <!-- Geometric Graphic -->
                     <div class="text-center">
-                        <img src="./image/geometric-graphic.png" alt="Geometric Graphic" class="img-fluid">
+                        <img src="./image/Grafica.png" alt="Geometric Graphic" class="img-fluid">
                     </div>
                 </div>
 
-                <div class="row mt-5">
-                        <div class="col-6 col-md-4 col-lg-2 mb-4">
+                <div class="row mt-5 offset-1">
+                        <div class="col-2 mb-4">
                             <div class="stat-number">10 000+</div>
                             <div class="stat-label text-black">участников</div>
                         </div>
-                        <div class="col-6 col-md-4 col-lg-2 mb-4">
+                        <div class="col-2 mb-4">
                             <div class="stat-number">73</div>
                             <div class="stat-label text-black">площадки проведения</div>
                         </div>
-                        <div class="col-6 col-md-4 col-lg-2 mb-4">
-                            <div class="stat-number">9,2/10</div>
-                            <div class="stat-label text-black">средний балл</div>
-                        </div>
-                        <div class="col-6 col-md-4 col-lg-2 mb-4">
+                        <div class="col-2 mb-4">
                             <div class="stat-number">№1</div>
                             <div class="stat-label text-black">в рейтинге олимпиад по искусству</div>
                         </div>
-                        <div class="col-6 col-md-4 col-lg-2 mb-4">
+                        <div class="col-2 mb-4">
                             <div class="stat-number">№5</div>
                             <div class="stat-label text-black">в рейтинге олимпиад РСОШ (из 755)</div>
                         </div>
-                        <div class="col-6 col-md-4 col-lg-2 mb-4">
+                        <div class="col-2 mb-4">
                             <div class="stat-number">1</div>
                             <div class="stat-label text-black">уровень олимпиады</div>
                         </div>
@@ -441,10 +486,10 @@
     <section class="py-5 map-section">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-md-8 mb-5 mb-md-0">
+                <div class="col-md-7 mb-4 mb-md-0 offset-1">
                     <!-- Map would go here -->
                     <div class="map-container">
-                        <img src="./image/map.png" alt="Map" class="img-fluid w-100">
+                        <img src="./image/Group.png" alt="Map" class="img-fluid w-100">
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -466,193 +511,522 @@
         </div>
     </section>
 
-    <!-- News Section -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="section-title text-black">новости</h2>
-            
-            <div class="row g-4">
-                <!-- News 1 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card-news">
-                        <img src="./image/news1.jpg" class="card-news-img" alt="News 1">
-                        <div class="p-4">
-                            <p class="text-grey-dark mb-2">25.03.2025</p>
-                            <h5 class="font-weight-600 mb-3">Итоги заключительного этапа олимпиады</h5>
-                            <p class="text-black mb-4">Мы подвели итоги заключительного этапа XVII Южно-Российской межрегиональной олимпиады школьников «Архитектура и искусство» и спешим их Вам представить.</p>
-                            <a href="#" class="text-black font-weight-600 text-decoration-none">Подробнее →</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- News 2 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card-news">
-                        <img src="./image/news2.jpg" class="card-news-img" alt="News 2">
-                        <div class="p-4">
-                            <p class="text-grey-dark mb-2">07.02.2025</p>
-                            <h5 class="font-weight-600 mb-3">Итоги отборочного регионального этапа</h5>
-                            <p class="text-black mb-4">Результаты отборочного регионального этапа XVII ЮРМОШ-2025. Победители и призеры допускаются к участию в заключительном этапе XVII ЮРМОШ-2025.</p>
-                            <a href="#" class="text-black font-weight-600 text-decoration-none">Подробнее →</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- News 3 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card-news">
-                        <img src="./image/news3.jpg" class="card-news-img" alt="News 3">
-                        <div class="p-4">
-                            <p class="text-grey-dark mb-2">25.12.2024</p>
-                            <h5 class="font-weight-600 mb-3">Расписание отборочного регионального этапа</h5>
-                            <p class="text-black mb-4">Уважаемые участники XVII ЮРМОШ – 2025! Ознакомьтесь с расписанием отборочного РЕГИОНАЛЬНОГО этапа</p>
-                            <a href="#" class="text-black font-weight-600 text-decoration-none">Подробнее →</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-5">
-                <button class="btn btn-custom btn-blue">Больше новостей</button>
-            </div>
-        </div>
-    </section>
+    <section class="news-section py-5" style="background: white;">
+            <div class="container">
+                <h2 class="section-title mb-5 offset-1">новости</h2>
 
-    <!-- Stages Section -->
-    <section class="py-5 bg-dark-grey">
+                <!-- Новости грид -->
+                <div class="row mb-5 offset-1">
+                    <!-- Новость 1 -->
+                    <div class="col-md-12 news-card">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="news-image" style="background-image: url('./image/image-3.png');"></div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="news-date">17.03.2026</div>
+                                <h3 class="news-title">Студент ААИ - победитель Всероссийского конкурса «Неочевидное. Арктика»  </h3>
+                                <p class="news-description">
+                                    Проект Глеба Чуркина, студента-архитектора выпускного курса бакалавриата в числе лучших по итогам конкурса
+                                </p>
+                            </div>
+                            <div class="col-md-2 justify-content-end align-items-center">
+                                <a href="/News/exemple.html" class="news-link">
+                                    Подробнее
+                                    <span class="news-link-arrow"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Новость 2 -->
+                    <div class="col-md-12 news-card">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="news-image" style="background-image: url('image/image.png');"></div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="news-date">16.03.2026</div>
+                                <h3 class="news-title">XVIII ЮРМОШ-2026. Проверка работ заключительного этапа</h3>
+                                <p class="news-description">
+                                    В Академии архитектуры искусств ЮФУ с 10 по 13 марта 2026 года комиссиями по рисунку, живописи, композиции и черчению проводилось подведение итогов заключительного этапа.
+                                </p>
+                                </div>
+                            <div class="col-md-2 justify-content-center align-items-center">
+                                <a href="#" class="news-link">
+                                    Подробнее
+                                    <span class="news-link-arrow"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Новость 3 -->
+                    <div class="col-md-12 news-card">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="news-image" style="background-image: url('image/image-1.png');"></div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="news-date">06.03.2026</div>
+                                <h3 class="news-title">Заключительный этап XVIII ЮРМОШ-2026</h3>
+                                <p class="news-description">
+                                    Заключительный этап XVIII ЮРМОШ-2026 прошел на 73 площадках в более 20 регионах России
+                                </p>
+                                </div>
+                            <div class="col-md-2 justify-content-center align-items-center">
+                                <a href="#" class="news-link">
+                                    Подробнее
+                                    <span class="news-link-arrow"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <a href="#" class="btn btn-primary btn-lg text-white">
+                        Больше новостей
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stages Section -->
+    <div class="bg-dark-gradient">    
+    <section class="py-5 ">
         <div class="container">
-            <h2 class="section-title text-white">этапы</h2>
-            
-            <div class="row g-4">
-                <!-- Stage 1 -->
-                <div class="col-md-6 col-lg-4">
+            <h2 class="section-title text-white offset-1">этапы</h2>
+
+             <!-- Карусель событий -->
+                <div class="owl-carousel owl-theme events-carousel offset-2">
+                    <!-- Событие 1 -->
+                    <div class="item">
+                        <div class="col-md-6 col-lg-4">
                     <div class="card-stage">
                         <h3 class="text-black font-weight-700 mb-3">Этап 1<br>отборочный муниципальный</h3>
-                        <p class="text-black">Проводится на более чем 75 площадках олимпиады в очной и заочной форме в соответствии с графиком проведения, размещаемом на сайте Олимпиады.</p>
+                        <p class="text-black offset-1">Проводится на более чем 75 площадках олимпиады в очной и заочной форме в соответствии с графиком проведения, размещаемом на сайте Олимпиады.</p>
                     </div>
                 </div>
-                
-                <!-- Stage 2 -->
-                <div class="col-md-6 col-lg-4">
+                    </div>
+
+                    <!-- Событие 2 -->
+                    <div class="item">
+                        <div class="col-md-6 col-lg-4">
                     <div class="card-stage">
-                        <h3 class="text-grey font-weight-700 mb-3">Этап 2<br>отборочный региональный</h3>
-                        <p class="text-grey">Проводится на более чем 75 площадках олимпиады в очной и заочной форме в соответствии с графиком проведения, размещаемом на сайте Олимпиады.</p>
+                        <h3 class="text-black font-weight-700 mb-3">Этап 2<br>отборочный региональный</h3>
+                        <p class="text-black offset-1">Проводится на более чем 75 площадках олимпиады в очной и заочной форме в соответствии с графиком проведения, размещаемом на сайте Олимпиады.</p>
                     </div>
                 </div>
-                
-                <!-- Stage 3 -->
-                <div class="col-md-6 col-lg-4">
+                    </div>
+
+                    <!-- Событие 3 -->
+                    <div class="item">
+                        <div class="col-md-6 col-lg-4">
                     <div class="card-stage">
-                        <h3 class="text-grey font-weight-700 mb-3">Этап 3<br>заключительный межрегиональный</h3>
-                        <p class="text-grey">Проводится на более чем 70 в очной форме на площадках олимпиады заключительного этапа в соответствии с графиком проведения</p>
+                        <h3 class="text-black font-weight-700 mb-3">Этап 3<br>заключительный межрегиональный</h3>
+                        <p class="text-black offset-1">Проводится на более чем 70 в очной форме на площадках олимпиады заключительного этапа в соответствии с графиком проведения</p>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Progress Dots -->
-            <div class="d-flex justify-content-center mt-5">
-                <div class="progress-dot active"></div>
-                <div class="progress-dot"></div>
-                <div class="progress-dot"></div>
-            </div>
+                    </div>
+                </div>
         </div>
     </section>
+    </div> 
 
     <!-- Calendar Section -->
-    <section class="py-5 bg-white">
-        <div class="container">
-            <h2 class="section-title text-black">календарь олимпиады</h2>
-            
-            <!-- Tabs -->
-            <div class="mb-5">
-                <div class="d-flex flex-wrap gap-3 mb-3">
-                    <button class="tab-item active">Муниципальный этап</button>
-                    <button class="tab-item inactive">Региональный этап</button>
-                    <button class="tab-item inactive">Заключительный этап</button>
-                </div>
-                <div class="border-bottom"></div>
-                <div class="bg-blue" style="width: 171px; height: 4px;"></div>
+<section class="py-5 bg-white">
+    <div class="container">
+        <h2 class="section-title text-black offset-1">календарь олимпиады</h2>
+        
+        <!-- Tabs -->
+        <div class="mb-5 offset-1">
+            <div class="d-flex flex-wrap gap-3 mb-3" id="tabButtons">
+                <button class="tab-item active" data-stage="municipal">Муниципальный этап</button>
+                <button class="tab-item inactive" data-stage="regional">Региональный этап</button>
+                <button class="tab-item inactive" data-stage="final">Заключительный этап</button>
             </div>
-            
-            <!-- Calendar Events -->
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <h3 class="text-blue font-weight-600">15 октября 2024</h3>
-                    <p class="text-black">Начало отборочного муниципального этапа и открытие подачи заявок в электронной форме на участие в Олимпиаде и подписания согласия на персональную обработку данных.</p>
-                </div>
-                <div class="col-md-6">
-                    <h3 class="text-blue font-weight-600">8 декабря 2024</h3>
-                    <p class="text-black">Закрытие подачи заявок в электронной форме на участие в Олимпиаде.</p>
-                </div>
-                <div class="col-md-6">
-                    <h3 class="text-blue font-weight-600">15 декабря 2024</h3>
-                    <p class="text-black">Окончание отборочного муниципального этапа.</p>
-                </div>
-                <div class="col-md-6">
-                    <h3 class="text-blue font-weight-600">21 декабря 2024</h3>
-                    <p class="text-black">Публикация результатов отборочного муниципального этапа.</p>
-                </div>
-            </div>
+            <div class="border-bottom"></div>
+            <div class="bg-blue" style="width: 171px; height: 4px;" id="tabIndicator"></div>
         </div>
-    </section>
+        
+        <!-- Calendar Events -->
+        <div class="row g-4 offset-1" id="eventsContainer">
+            <!-- События будут подставляться сюда через JavaScript -->
+        </div>
+    </div>
+</section>
+
+<script>
+    // Данные событий для каждого этапа
+    const eventsData = {
+        municipal: [
+            {
+                date: "15 октября 2025",
+                description: "Начало отборочного муниципального этапа и открытие подачи заявок в электронной форме на участие в Олимпиаде."
+            },
+            {
+                date: "7 декабря 2025",
+                description: "Закрытие подачи заявок в электронной форме на участие в Олимпиаде."
+            },
+            {
+                date: "14 декабря 2025",
+                description: "Окончание отборочного муниципального этапа."
+            },
+            {
+                date: "23 декабря 2025",
+                description: "Публикация результатов отборочного муниципального этапа."
+            }
+        ],
+        regional: [
+            {
+                date: "25 декабря 2025",
+                description: "Начало отборочного регионального этапа."
+            },
+            {
+                date: "25 января 2026",
+                description: "Окончание отборочного регионального этапа и закрытие подачи заявок в электронной форме на участие в Олимпиаде для победителей и призёров заключительного этапа XVII Олимпиады 2024-2025 г. и XVI Олимпиады 2023-2024 г."
+            },
+            {
+                date: "6 февраля 2026",
+                description: "Публикация результатов отборочного регионального этапа."
+            }
+        ],
+        final: [
+            {
+                date: "10 – 22 февраля 2026",
+                description: "Электронная регистрация на площадки заключительного этапа Олимпиады."
+            },
+            {
+                date: "26 февраля – 1 марта 2026",
+                description: "Проведение очного заключительного этапа Олимпиады."
+            },
+            {
+                date: "2 – 10 марта 2026",
+                description: "Прием всех работ заключительного этапа с площадок Олимпиады в Академии архитектуры и искусств ЮФУ в г. Ростове-на-Дону, ул. М.Горького, 75."
+            },
+            {
+                date: "10 – 13 марта 2026",
+                description: "Проверка творческих работ предметно-методическими комиссиями совместно с членами оргкомитетом и Жюри Олимпиады."
+            },
+            {
+                date: "24 марта 2026",
+                description: "Публикация результатов заключительного этапа и критериев определения победителей и призеров. Размещение Порядка подачи и рассмотрения апелляций участников заключительного этапа 6-11 классов на сайте Олимпиады."
+            },
+            {
+                date: "до 10 апреля 2026",
+                description: "Жюри определяет победителей и призёров олимпиады на основании баллов, полученных участниками за выполнение олимпиадных заданий с учётом результатов апелляции."
+            },
+            {
+                date: "10 апреля 2026",
+                description: "Размещение результатов заключительного этапа на сайте Олимпиады."
+            },
+            {
+                date: "до 1 июня 2026",
+                description: "Вручение дипломов победителям и призерам заключительного этапа Олимпиады."
+            },
+        ]
+    };
+
+    // Функция для отображения событий
+    function renderEvents(stage) {
+        const container = document.getElementById('eventsContainer');
+        const events = eventsData[stage] || [];
+        
+        // Очищаем контейнер
+        container.innerHTML = '';
+        
+        // Добавляем события
+        events.forEach(event => {
+            const col = document.createElement('div');
+            col.className = 'row col-md-12 mb-4';
+            col.innerHTML = `
+                <h3 class="col-6 text-blue font-weight-600">${event.date}</h3>
+                <p class="col-6 text-black">${event.description}</p>
+            `;
+            container.appendChild(col);
+        });
+        
+        // Если событий нет (на всякий случай)
+        if (events.length === 0) {
+            container.innerHTML = '<div class="col-12"><p class="text-center text-muted">Нет событий для отображения</p></div>';
+        }
+    }
+
+    // Переключение активной вкладки
+    function setupTabs() {
+        const tabs = document.querySelectorAll('[data-stage]');
+        const indicator = document.getElementById('tabIndicator');
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Убираем активный класс у всех вкладок
+                tabs.forEach(t => {
+                    t.classList.remove('active');
+                    t.classList.add('inactive');
+                });
+                
+                // Добавляем активный класс текущей вкладке
+                this.classList.add('active');
+                this.classList.remove('inactive');
+                
+                // Получаем этап и отображаем события
+                const stage = this.getAttribute('data-stage');
+                renderEvents(stage);
+                
+                // Анимация индикатора (опционально)
+                // Здесь можно добавить перемещение полоски под активную вкладку
+                // Но для простоты оставим как есть
+            });
+        });
+    }
+
+    // Инициализация при загрузке страницы
+    document.addEventListener('DOMContentLoaded', function() {
+        setupTabs();
+        renderEvents('municipal'); // По умолчанию показываем муниципальный этап
+    });
+</script>
 
     <!-- Documents Section -->
     <section class="py-5 bg-grey-light">
         <div class="container">
-            <h2 class="section-title text-black">Документы</h2>
+            <h2 class="section-title text-black offset-1">Документы</h2>
             
             <div class="row g-4">
                 <div class="col-lg-6">
+                   <a href="https://disk.360.yandex.ru/i/nVS4edgfrj4dog"> 
                     <div class="document-card">
                         <div class="d-flex align-items-start">
                             <div class="me-4">
-                                <i class="fas fa-file-pdf text-blue" style="font-size: 40px;"></i>
+                                <img src="image/ПДФ.png">
                             </div>
                             <div>
                                 <h5 class="font-weight-500 text-black mb-0">ПОЛОЖЕНИЕ и РЕГЛАМЕНТ XVII Южно-Российской межрегиональной олимпиады школьников «Архитектура и искусство»</h5>
                             </div>
                         </div>
                     </div>
+                    </a>
                 </div>
                 
                 <div class="col-lg-6">
+                    <a href="https://disk.360.yandex.ru/i/fXGNLy9tMK6KLQ">
                     <div class="document-card">
                         <div class="d-flex align-items-start">
                             <div class="me-4">
-                                <i class="fas fa-file-pdf text-blue" style="font-size: 40px;"></i>
+                               <img src="image/ПДФ.png">
                             </div>
                             <div>
                                 <h5 class="font-weight-500 text-black mb-0">Согласие на обработку персональных данных и публикацию работ</h5>
                             </div>
                         </div>
                     </div>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Information Section -->
-    <section class="py-5 bg-white">
-        <div class="container">
-            <h2 class="section-title text-black">информация</h2>
-            
-            <!-- Tabs -->
-            <div class="mb-5">
-                <div class="d-flex flex-wrap gap-3 mb-3">
-                    <button class="tab-item active">Участникам</button>
-                    <button class="tab-item inactive">Организаторам</button>
-                    <button class="tab-item inactive">Контакты</button>
-                </div>
-                <div class="border-bottom"></div>
-                <div class="bg-blue" style="width: 100px; height: 4px;"></div>
+<section class="py-5 bg-white">
+    <div class="container">
+        <h2 class="section-title text-black">информация</h2>
+        <!-- Tabs -->
+        <div class="mb-5">
+            <div class="d-flex flex-wrap gap-3 mb-3" id="infoTabButtons">
+                <button class="tab-item active" data-info="participants">Участникам</button>
+                <button class="tab-item inactive" data-info="organizers">Организаторам</button>
+                <button class="tab-item inactive" data-info="contacts">Контакты</button>
             </div>
+            <div class="border-bottom"></div>
+            <div class="bg-blue" style="width: 100px; height: 4px;" id="infoTabIndicator"></div>
+        </div>
+        
+        <!-- Контейнер для динамического контента -->
+        <div id="infoContentContainer"></div>
+    </div>
+</section>
+
+<script>
+    // Функция для инициализации аккордеонов после загрузки контента
+    function initAccordions() {
+        document.querySelectorAll('.accordion-card').forEach(card => {
+            const header = card.querySelector('.accordion-header');
+            const chevron = header.querySelector('.fa-chevron-down, .fa-chevron-up');
+            const content = card.querySelector('.accordion-content');
             
+            // Если контента еще нет, создаем его
+            if (!content) {
+                // Ищем скрытый текст или создаем новый контейнер
+                let hiddenText = card.querySelector('p.d-none');
+                let newContent = document.createElement('div');
+                newContent.className = 'accordion-content';
+                
+                if (hiddenText) {
+                    newContent.innerHTML = `<div class="p-3 bg-light mt-2 rounded">${hiddenText.innerHTML}</div>`;
+                    hiddenText.remove();
+                } else {
+                    // Добавляем контент для каждого аккордеона на основе текста заголовка
+                    const headerText = header.querySelector('h5, h4')?.innerText || '';
+                    if (headerText.includes('Задания')) {
+                        newContent.innerHTML = `
+                            <div class="p-3 bg-light mt-2 rounded">
+                                <p class="mb-2"><strong>Участники отборочного муниципального этапа представляют или выполняют на формате А3 или А2 на площадке олимпиады две творческие работы на выбор из трех номинаций: «Рисунок», «Живопись», «Композиция»:</strong></p>
+                                <ul class="mb-0">
+                                    <li>рисунок (натюрморт из бытовых предметов 6-9 кл., натюрморт из геометрических тел 10 кл., рисунок гипсовой головы или геометрических тел для 10, 11 класса по выбору);</li>
+                                    <li>живопись (натюрморт из бытовых предметов 6-11 кл.)</li>
+                                    <li>композиция по заданной теме.</li>
+                                </ul>
+                            </div>
+                        `;
+                    } else if (headerText.includes('Куда сдавать')) {
+                        newContent.innerHTML = `
+                            <div class="p-3 bg-light mt-2 rounded">
+                                <p class="mb-2">Творческие работы можно доставить лично в Региональный центр архитектурно-художественной довузовской подготовки Академии архитектуры и искусств ЮФУ по адресу:<strong> г. Ростов-на-Дону, пр. Будённовский, 39, каб.12.</strong></p>
+                                <p class="mb-2"><strong>Тел. 8(863) 218 40 00 доб. 20079</strong></p>
+                                <p class="mb-0">Творческие работы в электронном виде не принимаются.</p>
+                                <p class="mb-0">Для отправки документов и творческих работ Почтой России на письме указываются следующие данные:</p>
+                                <p class="mb-0">Кому:<strong>Курдиновой Анне Романовне</strong></p>
+                                <p class="mb-0"><strong>Куда: 344082, г. Ростов-на-Дону, ул Пушкинская, д. 48/39-41, каб. 12.</strong></p>
+                                <p class="mb-0">Номер отслеживания посылки необходимо направить на электронный адрес: <a href="#" class="copy-email" data-email="olimpiad_arch_and_art@mail.ru">olimpiad_arch_and_art@mail.ru</a> </p>
+                            </div>
+                        `;
+                    } else if (headerText.includes('Где будут результаты')) {
+                        newContent.innerHTML = `
+                            <div class="p-3 bg-light mt-2 rounded">
+                                <p class="mb-2"><strong>Результаты отборочного муниципального этапа Олимпиады помещаются на информационных стендах и сайтах организаторов олимпиады не позднее 23 декабря 2025 г. </strong></p>
+                            </div>
+                        `;
+                    } else if (headerText.includes('Где бyдут результаты')) {
+                        newContent.innerHTML = `
+                            <div class="p-3 bg-light mt-2 rounded">
+                                <p class="mb-2"><strong>Работы обсуждаются и оцениваются региональными предметно-методическими комиссиями совместно с членами оргкомитета, анализируются региональными жюри в обезличенном виде (проверка и апелляция работ проводится до 4 февраля 2026 г. на площадках олимпиады). Результаты отборочного регионального этапа Олимпиады помещаются на информационных стендах и сайтах организаторов олимпиады не позднее 6 февраля 2026 г.</strong></p>
+                            </div>
+                        `;
+
+                    } else if (headerText.includes('В день олимпиады')) {
+                        newContent.innerHTML = `
+                            <div class="p-3 bg-light mt-2 rounded">
+                                <ol class="mb-0">
+                                    <li>Осуществляется регистрация участников отборочного муниципального этапа по каждому предмету согласно расписанию в присутствии участника. Регистрация начинается не менее, чем за 30 мин до начала испытания.</li>
+                                    <li>При регистрации участник предъявляет менеджеру-организатору документ, удостоверяющий личность (паспорт или свидетельство о рождении).</li>
+                                    <li>После прохождения регистрации участнику выдается Титульный лист.</li>
+                                    <li>МАТЕРИАЛЫ ДЛЯ ВЫПОЛНЕНИЯ ТВОРЧЕСКИХ РАБОТ участник заключительного этапа использует свои. Бумагу (форматы А3, А2), карандаши, краски, кисти, емкости для воды, чертёжные принадлежности площадка олимпиады НЕ ПРЕДОСТАВЛЯЕТ.</li>
+                                    <li>Учащиеся, которые самостоятельно будут покидать образовательное учреждение (площадку Олимпиады), должны иметь на руках РАЗРЕШЕНИЕ ОТ РОДИТЕЛЕЙ, написанное в свободной форме, имеющее фразу: разрешаю моему ребёнку Ф.И.О. самостоятельно передвигаться по городу. (Фамилия и подпись родителей).</li>
+                                </ol>
+                            </div>
+                        `;
+                    } else if (headerText.includes('Продолжительность')) {
+                        newContent.innerHTML = `
+                            <div class="p-3 bg-light mt-2 rounded">
+                                <ol class="mb-0">
+                                    <li>Номинация «Рисунок»:
+                                        <ul>
+                                            <li>6-7 классы – 3 часа</li>
+                                            <li>8-9-10 классы – 4 часа</li>
+                                            <li>11 класс – 5 часов</li>
+                                        </ul>
+                                    </li>
+                                    <p><li>Номинация «Живопись»:
+                                        <ul>
+                                            <li>6-7 классы – 3 часа</li>
+                                            <li>8-9-10 классы – 4 часа</li>
+                                            <li>11 класс – 5 часов</li>
+                                        </ul>
+                                    </li></p>
+                                    <p><li>Номинация «Композиция»:
+                                        <ul>
+                                            <li>6-7 классы – 3 часа</li>
+                                            <li>8-9-10 классы – 4 часа</li>
+                                            <li>11 класс – 5 часов</li>
+                                        </ul>
+                                    </li></p>
+                                    <p><li>Номинация «Черчение»:
+                                        <ul>
+                                            <li>9-10 класс – 4 часа</li>
+                                            <li>10-11 класс – 5 часов</li>
+                                        </ul>
+                                    </li></p>
+                                </ol>
+                            </div>
+                        `;
+                    } else if (headerText.includes('01') || headerText.includes('Зарегистрироваться')) {
+                        newContent.innerHTML = `
+                            <div class="p-3 bg-light mt-2 rounded">
+                                <p class="mb-2"><strong>Проходя регистрацию на отборочный этап, считается, что Вы сразу регистрируетесь на отборочный муниципальный и отборочный региональный этапы.</strong></p>
+                                <button class="btn btn-custom btn-blue btn-sm mb-2"><a href="https://forms.yandex.ru/cloud/6891b8d690fa7b29b2601a48/">Зарегистрироваться</a></button>
+                            </div>
+                        `;
+                    } else if (headerText.includes('02') || headerText.includes('Предоставить')) {
+                        newContent.innerHTML = `
+                            <div class="p-3 bg-light mt-2 rounded">
+                                <p class="mb-2"><strong>Необходимые документы:</strong></p>
+                                <ol class="mb-0">
+                                    <li>Школьникам младше 14 лет копию свидетельства о рождении, старше 14 лет – паспорт и ксерокопию страниц с паспортными данными и регистрацией;</li>
+                                    <li>Ксерокопию СНИЛС (страхового номера индивидуального лицевого счета);</li>
+                                    <li>Справку из среднего общеобразовательного учебного заведения, подтверждающую статус учащегося (с подписью руководителя и печатью);</li>
+                                    <li>Согласие совершеннолетнего участника на обработку его персональных данных (сбор, хранение, использование, распространение) и согласие на обработку персональных данных, разрешенных участником для распространения (публикацию собственных персональных данных, а также олимпиадных работ, в том числе в сети «Интернет») илисогласие родителя (законного представителя) на обработку персональных данных несовершеннолетнего участника (сбор, хранение, использование, распространение) и согласие на обработку персональных данных, разрешенных законным представителем для распространения (публикацию персональных данных несовершеннолетнего участника, а также его олимпиадных работ, в том числе в сети «Интернет»);Скачать формы согласий</li>
+                                    <li>Две творческие работы по выбору из комплекса (рисунок, живопись, композиция) (задания и темы публикуются на официальном сайте Олимпиады в разделе «Участнику»).</li>
+                                </ol>
+                            </div>
+                        `;
+                    } else {
+                        newContent.innerHTML = `
+                            <div class="p-3 bg-light mt-2 rounded">
+                                <p class="mb-0">Дополнительная информация будет опубликована позже. Следите за обновлениями на сайте.</p>
+                            </div>
+                        `;
+                    }
+                }
+                
+                // Вставляем контент после заголовка
+                header.insertAdjacentElement('afterend', newContent);
+                
+                // Скрываем контент по умолчанию
+                newContent.style.display = 'none';
+            }
+        });
+
+        // Добавляем обработчики кликов
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', function(e) {
+                // Предотвращаем клик по кнопке регистрации
+                if (e.target.closest('.btn')) return;
+                
+                const card = this.closest('.accordion-card');
+                const content = card.querySelector('.accordion-content');
+                const chevron = this.querySelector('.fa-chevron-down, .fa-chevron-up');
+                
+                if (content) {
+                    if (content.style.display === 'none') {
+                        content.style.display = 'block';
+                        if (chevron) {
+                            chevron.classList.remove('fa-chevron-down');
+                            chevron.classList.add('fa-chevron-up');
+                        }
+                    } else {
+                        content.style.display = 'none';
+                        if (chevron) {
+                            chevron.classList.remove('fa-chevron-up');
+                            chevron.classList.add('fa-chevron-down');
+                        }
+                    }
+                }
+            });
+            
+            // Добавляем курсор-поинтер
+            header.style.cursor = 'pointer';
+        });
+    }
+
+    // Функция для получения HTML контента для участников
+    function getParticipantsContent() {
+        return `
             <div class="row g-4">
                 <div class="col-6">
                     <h3 class="text-blue font-weight-700 mb-4">Для участия в отборочном этапе Олимпиады участнику необходимо</h3>
                 </div>
                 <div class="col-lg-6">
-                    
                     
                     <!-- Step 1 -->
                     <div class="accordion-card">
@@ -660,12 +1034,10 @@
                             <div class="d-flex align-items-start">
                                 <h4 class="text-blue font-weight-600 me-3 mb-0">01</h4>
                                 <div>
-                                    <h5 class="font-weight-600 text-black mb-1">Зарегистрироваться на отборочный этап с 15 октября по 15 декабря 2024 г.</h5>
-                                    <p class="text-black mt-2 mb-0 d-none">Проходя регистрацию на отборочный этап, считается, что Вы сразу регистрируетесь на отборочный муниципальный и отборочный региональный этапы.</p>
+                                    <h5 class="font-weight-600 text-black mb-1">Зарегистрироваться на отборочный этап с 15 октября по 7 декабря 2025 г.</h5>
                                 </div>
                             </div>
                             <div class="text-end">
-                                <button class="btn btn-custom btn-blue btn-sm mb-2">Зарегистрироваться</button>
                                 <div>
                                     <i class="fas fa-chevron-down text-blue"></i>
                                 </div>
@@ -703,7 +1075,7 @@
             <div class="row g-4 mt-4">
                 <!-- Stage 1 Details -->
                 <div class="col-lg-6 mb-4">
-                    <h3 class="text-blue font-weight-700 mb-3">Этап 1<br>отборочный муниципальный<br>15.10.2024 — 15.12.2024</h3>
+                    <h3 class="text-blue font-weight-700 mb-3">Этап 1<br>отборочный муниципальный<br>15.10.2025 — 14.12.2025</h3>
                     <p class="text-black mb-4">Участники отборочного муниципального этапа представляют или выполняют на формате А3 или А2 на площадке олимпиады две творческие работы на выбор из трех номинаций: «Рисунок», «Живопись», «Композиция».</p>
                 </div>
 
@@ -737,8 +1109,8 @@
                 
                 <!-- Stage 2 Details -->
                 <div class="col-lg-6 mb-5">
-                    <h3 class="text-blue font-weight-700 mb-3">Этап 2<br>отборочный региональный<br>25.12.2024 — 29.01.2025</h3>
-                    <p class="text-black mb-4">К участию в отборочном региональном этапе Олимпиады допускаются победители и призеры отборочного муниципального этапа Олимпиады 2024-2025 г.</p>
+                    <h3 class="text-blue font-weight-700 mb-3">Этап 2<br>отборочный региональный<br>25.12.2025 — 25.01.2026</h3>
+                    <p class="text-black mb-4">К участию в отборочном региональном этапе Олимпиады допускаются победители и призеры отборочного муниципального этапа Олимпиады 2025-2026 г.</p>
                 </div>
                 <div class="col-lg-6">
                     <div class="accordion-card">
@@ -757,14 +1129,2402 @@
                     
                     <div class="accordion-card">
                         <div class="accordion-header">
-                            <h5 class="text-blue font-weight-600 mb-0">Где будут результаты?</h5>
+                            <h5 class="text-blue font-weight-600 mb-0">Где бyдут результаты?</h5>
                             <i class="fas fa-chevron-down text-blue"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    // Функция для получения HTML контента для организаторов
+    function getOrganizersContent() {
+        return `
+            <div class="row g-4">
+                <div class="col-12">
+                    <h3 class="text-blue font-weight-700 mb-4">Документы для организаторов</h3>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="accordion-card p-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h5 class="text-blue font-weight-600 mb-1">Информационное письмо о проведении XVIII Южно-Российской межрегиональной олимпиады школьников «Архитектура и искусство» 2025-2026</h5>
+                                
+                            </div>
+                            <a href="https://disk.360.yandex.ru/i/9vP9UpWfTZ9iAQ" class="btn btn-custom btn-blue btn-sm">Скачать</a>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-card p-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h5 class="text-blue font-weight-600 mb-1">Презентация XVIII ЮРМОШ – 2026</h5>
+                               
+                            </div>
+                            <a href="https://vk.com/doc53016988_690614710" class="btn btn-custom btn-blue btn-sm">Скачать</a>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-card p-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h5 class="text-blue font-weight-600 mb-1">Шаблон договора о сотрудничестве</h5>
+                                
+                            </div>
+                            <a href="#" class="btn btn-custom btn-blue btn-sm">Скачать</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="accordion-card p-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h5 class="text-blue font-weight-600 mb-1">Регистрация площадок ОТБОРОЧНЫХ этапов XVIII ЮРМОШ – 2026</h5>
+                             
+                            </div>
+                            <a href="https://forms.yandex.ru/cloud/689215f4d046882d983c918a/" class="btn btn-custom btn-blue btn-sm">Скачать</a>
+                        </div>
+                    </div>
+
+                    <div class="accordion-card p-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h5 class="text-blue font-weight-600 mb-1">Регистрация площадок ЗАКЛЮЧИТЕЛЬНОГО этапа XVIII ЮРМОШ – 2026</h5>
+                              
+                            </div>
+                            <a href="https://forms.yandex.ru/cloud/68921765eb61462d36ca9223/" class="btn btn-custom btn-blue btn-sm">Скачать</a>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="col-12 mt-4">
+                    <div class="alert alert-light border">
+                        <p class="text-black mb-0">До 10 октября 2025 года планируется проведение XХVIII методического семинара-совещания и заседания организационного комитета XVIII Южно-Российской межрегиональной олимпиады школьников «Архитектура и искусство» в Овальном зале Южного федерального университета (г. Ростов-на-Дону, ул. Б. Садовая, 105/42, 1 этаж).
+                         Представители площадок, которые не смогут приехать, смогут подключиться к собранию через Microsoft Teams.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    // Функция для получения HTML контента для контактов
+    function getContactsContent() {
+        return `
+            <div class="contacts-section py-5">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 class="section-title mb-4">Контакты</h2>
+                    </div>
+                    
+                    <div class="row col-12">
+                        <div class="col-md-2 offset-1">
+                            <div class="contact-photo rounded-3" style="background-image: url(/Olimpiada/image/Kurdinova.png); height: 215px; width: 160px; background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                        </div>
+                        
+                        <div class="contact-info col-6">
+                            <p class="fs-5 fw-bold mb-3">Ответственный секретарь ЮРМОШ "Архитектура и искусство":</p>
+                            <p class="fs-5 mb-4">
+                                <span class="fw-bold">Курдинова Анна Романовна</span> 
+                            </p>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p class="mb-2">
+                                        <strong>Адрес:</strong><br>
+                                        Будённовский проспект 39, каб. № 8
+                                    </p>
+                                    <p class="mb-2">
+                                        <strong>Телефон:</strong><br>
+                                        +7 (863) 218-40-00 доб. 20079;
+                                    </p>
+                                    <p class="mb-0">
+                                        <strong>E-mail:</strong><br>
+                                        <a href="mailto:olimpiad_arch_and_art@mail.ru" class="text-decoration-underline" style="color: var(--primary-blue);">olimpiad_arch_and_art@mail.ru</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    // Функция для отображения контента
+    function renderInfoContent(infoType) {
+        const container = document.getElementById('infoContentContainer');
+        
+        switch(infoType) {
+            case 'participants':
+                container.innerHTML = getParticipantsContent();
+                break;
+            case 'organizers':
+                container.innerHTML = getOrganizersContent();
+                break;
+            case 'contacts':
+                container.innerHTML = getContactsContent();
+                break;
+            default:
+                container.innerHTML = getParticipantsContent();
+        }
+        
+        // Инициализируем аккордеоны после загрузки контента
+        setTimeout(initAccordions, 100);
+    }
+
+    // Переключение активной вкладки
+    function setupInfoTabs() {
+        const tabs = document.querySelectorAll('[data-info]');
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Убираем активный класс у всех вкладок
+                tabs.forEach(t => {
+                    t.classList.remove('active');
+                    t.classList.add('inactive');
+                });
+                
+                // Добавляем активный класс текущей вкладке
+                this.classList.add('active');
+                this.classList.remove('inactive');
+                
+                // Получаем раздел и отображаем контент
+                const infoType = this.getAttribute('data-info');
+                renderInfoContent(infoType);
+            });
+        });
+    }
+
+    // Инициализация при загрузке страницы
+    document.addEventListener('DOMContentLoaded', function() {
+        setupInfoTabs();
+        renderInfoContent('participants'); // По умолчанию показываем "Участникам"
+    });
+</script>
+
+<script>
+document.querySelectorAll('.copy-email').forEach(function(element) {
+    element.addEventListener('click', function(e) {
+        e.preventDefault();
+        const email = this.getAttribute('data-email');
+        
+        navigator.clipboard.writeText(email).then(function() {
+            // Показываем временное уведомление
+            const notification = document.createElement('span');
+            notification.textContent = '✓ Скопировано!';
+            notification.style.marginLeft = '10px';
+            notification.style.color = 'green';
+            notification.style.fontSize = '12px';
+            
+            element.parentNode.insertBefore(notification, element.nextSibling);
+            
+            setTimeout(function() {
+                notification.remove();
+            }, 2000);
+        });
+    });
+});
+</script>
+
+
+<!-- Materials Section -->
+<section class="py-5 bg-white">
+    <div class="container">
+        <h2 class="section-title text-black">материалы олимпиады</h2>
+        
+        <!-- Tabs -->
+        <div class="mb-5">
+            <div class="d-flex flex-wrap gap-3 mb-3" id="materialsTabButtons">
+                <button class="tab-item active" data-materials="tasks">Материалы заданий</button>
+                <button class="tab-item inactive" data-materials="criteria">Критерии оценивания</button>
+            </div>
+            <div class="border-bottom"></div>
+            <div class="bg-blue" style="width: 150px; height: 4px;" id="materialsTabIndicator"></div>
+        </div>
+        
+        <!-- Контейнер для динамического контента -->
+        <div id="materialsContentContainer"></div>
+    </div>
+</section>
+
+<script>
+    // =========================================================================
+    // 1. ДАННЫЕ ДЛЯ КРИТЕРИЕВ ОЦЕНИВАНИЯ
+    // =========================================================================
+    const criteriaData = {
+        // Для критериев используем тот же этап, что и для заданий
+        otborochniy_municipal: {
+            risunok: {
+                "6-7": {
+                    content: `<div class="col-lg-12">
+                        <div class="bg-white rounded-3 p-4">
+                            <h4 class="text-blue font-weight-600 mb-3">Натюрморт из бытовых предметов</h4>
+                            <p class="text-black mb-3">Соответствие учебно-реалистическим основам изображения — 70 баллов:</p>
+                            <div class="text-black-50 offset-1">
+                                <ol>
+                                    <li>Композиция в формате листа — 20 баллов;</li>
+                                    <li>Построение натюрморта на предметной плоскости с соблюдением законов перспективы — 30 баллов;</li>
+                                    <li>Тональное решение натюрморта — 20 баллов.</li>
+                                </ol>
+                            </div>
+                            <p class="text-black mb-3">Мастерство художественного решения — 30 баллов;</p>
+                            <p class="text-black mb-3 font-weight-400">ИТОГО: 100 баллов</p>
+                        </div>
+                    </div>`,
+                    images: []
+                },
+                "8-9": {
+                    content: `<div class="col-lg-12">
+                        <div class="bg-white rounded-3 p-4">
+                            <h4 class="text-blue font-weight-600 mb-3">Натюрморт из бытовых предметов</h4>
+                            <p class="text-black mb-3">Соответствие учебно-реалистическим основам изображения — 70 баллов:</p>
+                            <div class="text-black-50 offset-1">
+                                <ol>
+                                    <li>Композиция в формате листа — 20 баллов;</li>
+                                    <li>Построение натюрморта на предметной плоскости с соблюдением законов перспективы — 30 баллов;</li>
+                                    <li>Тональное решение натюрморта — 20 баллов.</li>
+                                </ol>
+                            </div>
+                            <p class="text-black mb-3">Мастерство художественного решения — 30 баллов;</p>
+                            <p class="text-black mb-3 font-weight-400">ИТОГО: 100 баллов</p>
+                        </div>
+                    </div>`,
+                    images: [
+                    ]
+                },
+                "10-11": {
+                    content: `<div class="col-lg-12">
+                        <div class="bg-white rounded-3 p-4">
+                            <h4 class="text-blue font-weight-600 mb-3">Натюрморт из геометрических тел (10 класс)</h4>
+                            <p class="text-black mb-3">Соответствие учебно-реалистическим основам изображения — 70 баллов:</p>
+                            <div class="text-black-50 offset-1">
+                                <ol>
+                                    <li>Композиция в формате листа — 20 баллов</li>
+                                    <li>Конструктивное решение формы с перспективным построением натюрморта на предметной плоскости и выявление больших пропорций — 30 баллов </li>
+                                    <li>Использование тона для выявления цельности видения постановки — 20 баллов.</li>
+                                </ol>
+                            </div>
+                            <p class="text-black mb-3">Мастерство художественного решения — 30 баллов;</p>
+                            <p class="text-black mb-3 font-weight-400">ИТОГО: 100 баллов</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 mt-4">
+                        <div class="bg-white rounded-3 p-4">
+                            <h4 class="text-blue font-weight-600 mb-3">Рисунок гипсовой головы (11 класс)</h4>
+                            <p class="text-black mb-3">Соответствие учебно-реалистическим основам изображения — 80 баллов:</p>
+                            <div class="text-black-50 offset-1">
+                                <ol>
+                                    <li>Композиция в формате листа — 20 баллов</li>
+                                    <li>Точность передачи характера (пропорции) головы — 20 баллов </li>
+                                    <li>Выявление конструктивных особенностей —  10 баллов</li>
+                                    <li>Понятие перспективных особенностей построения — 10 баллов</li>
+                                    <li>Мастерство художественного решения — 20 баллов</li>
+                                </ol>
+                            </div>
+                            <p class="text-black mb-3">Цельность видения большой формы (большой свет, большая тень, соподчиненность деталей целому, владение понятиями свет, тень, полутон, рефлекс) — 20 баллов;</p>
+                            <p class="text-black mb-3 font-weight-400">ИТОГО: 100 баллов</p>
+                        </div>
+                    </div>`,
+                    images: [
+                        "image/Task/image-6.png",
+                        "image/Task/image-7.png",
+                        "image/Task/image-8.png",
+                        "image/Task/image-9.png",
+                        "image/Task/image-10.png"
+                    ]
+                }
+            },
+            kompoziciya: {
+                "6-7": {
+                    content: `<div class="row col-lg-12">
+                        <div class="bg-white rounded-3 p-4 col-12">
+                            <h4 class="text-blue font-weight-600 mb-3">ТЕМАТИЧЕСКАЯ КОМПОЗИЦИЯ НА ЗАДАННУЮ ТЕМУ</h4>
+                            <div class="text-black">
+                                <ol>
+                                    <li>Соответствие заданию — 20 баллов. </li>
+                                    <li>Оригинальность и мастерство художественного решения — 20 баллов.</li>
+                                    <li>Соответствие академическим основам изображения (плоскостного, цветового, объемного) — 60 баллов, включающих:</li>
+                                </ol>
+                            </div>
+                            <div class="text-black-50 offset-1">
+                                <ol style="list-style-type: none;">
+                                    <li> 3.1
+                                         Оценку компоновки изображения в заданном формате – до 10 баллов, при этом: 
+                                        - за гармоничное композиционное решение соответствующее заданному формату – 10 баллов
+                                        - за недостаточно убедительное композиционное решение – 5 баллов.</li>
+                                    <li>3.2. Оценку построения структуры в соответствии с законами композиции – до 30 баллов, в том числе: 
+                                        - за выразительность и целостность композиционного решения – 10 баллов
+                                        - за использование композиционных приемов – 20 баллов, в том числе: 
+                                        - за выявление композиционной доминанты и ее взаимодействия с остальными элементами композиции – 10 баллов
+                                        - за построение структуры композиции на основе ассоциативно-образного решения – 10 баллов.</li>
+                                </ol>
+                            </div>
+                            <div class="text-black-50">
+                              3.3. Оценку за передачу цвето-тональных соотношений – до 20 баллов, в том числе: 
+                              - за гармоничную передачу цвето-тональных соотношений – 10 баллов
+                              - за графические качества и техническую культуру – 10 баллов, при этом: 
+                              - высокую – 10 баллов, 
+                              - недостаточно высокую – 5 баллов
+                            </div> 
+                            <p class="text-black mt-3 font-weight-400">ИТОГО: 100 баллов</p>
+                        </div>
+                    </div>`,
+                    images: []
+                },
+                "8-9": {
+                    content: `<div class="row col-lg-12">
+                        <div class="bg-white rounded-3 p-4 col-12">
+                            <h4 class="text-blue font-weight-600 mb-3">ТЕМАТИЧЕСКАЯ КОМПОЗИЦИЯ НА ЗАДАННУЮ ТЕМУ</h4>
+                            <div class="text-black">
+                                <ol>
+                                    <li>Соответствие заданию — 20 баллов. </li>
+                                    <li>Оригинальность и мастерство художественного решения — 20 баллов.</li>
+                                    <li>Соответствие академическим основам изображения (плоскостного, цветового, объемного) — 60 баллов, включающих:</li>
+                                </ol>
+                            </div>
+                            <div class="text-black-50 offset-1">
+                                <ol style="list-style-type: none;">
+                                    <li> 3.1
+                                         Оценку компоновки изображения в заданном формате – до 10 баллов, при этом: 
+                                        - за гармоничное композиционное решение соответствующее заданному формату – 10 баллов
+                                        - за недостаточно убедительное композиционное решение – 5 баллов.</li>
+                                    <li>3.2. Оценку построения структуры в соответствии с законами композиции – до 30 баллов, в том числе: 
+                                        - за выразительность и целостность композиционного решения – 10 баллов
+                                        - за использование композиционных приемов – 20 баллов, в том числе: 
+                                        - за выявление композиционной доминанты и ее взаимодействия с остальными элементами композиции – 10 баллов
+                                        - за построение структуры композиции на основе ассоциативно-образного решения – 10 баллов.</li>
+                                </ol>
+                            </div>
+                            <div class="text-black-50">
+                              3.3. Оценку за передачу цвето-тональных соотношений – до 20 баллов, в том числе: 
+                              - за гармоничную передачу цвето-тональных соотношений – 10 баллов
+                              - за графические качества и техническую культуру – 10 баллов, при этом: 
+                              - высокую – 10 баллов, 
+                              - недостаточно высокую – 5 баллов
+                            </div> 
+                            <p class="text-black mt-3 font-weight-400">ИТОГО: 100 баллов</p>
+                        </div>
+                    </div>`,
+                    images: []
+                },
+                "10-11": {
+                    content: `<div class="row col-lg-12">
+                        <div class="bg-white rounded-3 p-4 col-12">
+                            <h4 class="text-blue font-weight-600 mb-3">ЭСКИЗ КОЛОРИСТИЧЕСКОЙ КОМПОЗИЦИИ НА ЗАДАННУЮ ТЕМУ И СТИЛИЗАЦИЯ ПРЕДЛОЖЕННОГО ОБЪЕКТА</h4>
+                            <div class="text-black">
+                                <ol>
+                                    <li>Соответствие заданию — 20 баллов.  </li>
+                                    <li>Оригинальность и мастерство художественного решения — 20 баллов. </li>
+                                    <li>Соответствие академическим основам изображения (плоскостного, цветового, объемного) — 60 баллов, включающих:</li>
+                                </ol>
+                            </div>
+                            <div class="text-black-50 offset-1">
+                                <ol style="list-style-type: none;">
+                                    <li> 3.1
+                                         Оценку компоновки изображения в заданном формате – до 10 баллов, при этом: 
+                                        - за гармоничное композиционное решение соответствующее заданному формату – 10 баллов
+                                        - за недостаточно убедительное композиционное решение – 5 баллов.</li>
+                                    <li>3.2. Оценку построения структуры в соответствии с законами композиции – до 30 баллов, в том числе: 
+                                        - за выразительность и целостность композиционного решения – 10 баллов
+                                        - за использование композиционных приемов – 20 баллов, в том числе: 
+                                        - за выявление композиционной доминанты и ее взаимодействия с остальными элементами композиции – 10 баллов
+                                        - за построение структуры композиции на основе ассоциативно-образного решения – 10 баллов.</li>
+                                </ol>
+                            </div>
+                            <div class="text-black-50">
+                              3.3. Оценку за передачу цвето-тональных соотношений – до 20 баллов, в том числе: 
+                              - за гармоничную передачу цвето-тональных соотношений – 10 баллов
+                              - за графические качества и техническую культуру – 10 баллов, при этом: 
+                              - высокую – 10 баллов, 
+                              - недостаточно высокую – 5 баллов
+                            </div> 
+                            <p class="text-black mt-3 font-weight-400">ИТОГО: 100 баллов</p>
+                        </div>
+                    </div>
+                    <div class="row col-lg-12 mt-4">
+                        <div class="bg-white rounded-3 p-4 col-12">
+                            <h4 class="text-blue font-weight-600 mb-3">ОБЪЕМНО-ПРОСТРАНСТВЕННАЯ КОМПОЗИЦИЯ НА ЗАДАННУЮ ТЕМУ</h4>
+                            <div class="text-black">
+                                <ol>
+                                    <li>Соответствие заданию — 20 баллов. </li>
+                                    <li>Оригинальность и мастерство художественного решения — 20 баллов.</li>
+                                    <li>Соответствие академическим основам изображения (плоскостного, цветового, объемного) — 60 баллов, включающих:</li>
+                                </ol>
+                            </div>
+                            <div class="text-black-50 offset-1">
+                                <ol style="list-style-type: none;">
+                                    <li> 3.1
+                                         Оценку компоновки изображения в заданном формате – до 10 баллов, при этом: 
+                                        - за гармоничное композиционное решение соответствующее заданному формату – 10 баллов
+                                        - за недостаточно убедительное композиционное решение – 5 баллов.</li>
+                                    <li>3.2. Оценку построения структуры в соответствии с законами композиции – до 30 баллов, в том числе: 
+                                        - за выразительность и целостность композиционного решения – 10 баллов
+                                        - за использование композиционных приемов – 20 баллов, в том числе: 
+                                        - за выявление композиционной доминанты и ее взаимодействия с остальными элементами композиции – 10 баллов
+                                        - за построение структуры композиции на основе ассоциативно-образного решения – 10 баллов.</li>
+                                </ol>
+                            </div>
+                            <div class="text-black-50">
+                              3.3. Оценку за передачу цвето-тональных соотношений – до 20 баллов, в том числе: 
+                              - за гармоничную передачу цвето-тональных соотношений – 10 баллов
+                              - за графические качества и техническую культуру – 10 баллов, при этом: 
+                              - высокую – 10 баллов, 
+                              - недостаточно высокую – 5 баллов
+                            </div> 
+                            <p class="text-black mt-3 font-weight-400">ИТОГО: 100 баллов</p>
+                        </div>
+                    </div>`,
+                    images: []
+                }
+            },
+            cherchenie: {
+                "9": {
+                    content: `<div class="row col-lg-12">
+                        <div class="bg-white rounded-3 p-4 col-12">
+                            <h4 class="text-blue font-weight-600 mb-3">Деление окружности на равные части. Построение сопряжений; Проекционное черчение</h4>
+                            <div class="text-black">
+                                <ol>
+                                    <li>Компоновка на листе формата А3 — 10 баллов. </li>
+                                    <li>Графика — 10 баллов: соблюдение толщины и начертания линий в соответствии с ГОСТ — 5 баллов; использование чертежного шрифта — 5 баллов.</li>
+                                    <li>Построение сопряжений и деления окружностей — 15 баллов: правильность построения — 10 баллов; правильность простановки размеров — 5 баллов </li>
+                                </ol>
+                            </div>
+                            <div class="text-black">
+                                <p>
+                                    Построение видов — по 15 баллов за каждый вид, в том числе: правильность построения видов — по 10 баллов для каждого вида; наличие и правильное 
+                                    простановка размеров — по 5 баллов для каждого вида; построение аксонометрии — 20 баллов.
+                                </p>
+                                <p>
+                                    Наличие любой ошибки оценивается в 5 баллов. Неточность (замечание) — 3 балла.
+                                </p>  
+                            </div>
+                            <p class="text-black mt-3 font-weight-400">ИТОГО: 100 баллов</p>
+                        </div>
+                    </div>`,
+                    images: []
+                },
+                "10": {
+                    content: `<div class="row col-lg-12">
+                        <div class="bg-white rounded-3 p-4 col-12">
+                            <h4 class="text-blue font-weight-600 mb-3">Построение сопряжений; Проекционное черчение</h4>
+                            <div class="text-black">
+                                <ol>
+                                    <li>Компоновка на листе формата А3 — 10 баллов. </li>
+                                    <li>Графика — 10 баллов: соблюдение толщины и начертания линий в соответствии с ГОСТ — 5 баллов; использование чертежного шрифта — 5 баллов.</li>
+                                    <li>Построение сопряжений — 15 баллов: правильность построения — 10 баллов; правильность простановки размеров — 5 баллов </li>
+                                </ol>
+                            </div>
+                            <div class="text-black">
+                                <p>
+                                    Построение видов — по 15 баллов за каждый вид, в том числе: правильность построения видов — по 10 баллов для каждого вида; наличие и правильное 
+                                    простановка размеров — по 5 баллов для каждого вида; построение аксонометрии — 20 баллов.
+                                </p>
+                                <p>
+                                    Наличие любой ошибки оценивается в 5 баллов. Неточность (замечание) — 3 балла.
+                                </p>  
+                            </div>
+                            <p class="text-black mt-3 font-weight-400">ИТОГО: 100 баллов</p>
+                        </div>
+                    </div>`,
+                    images: []
+                },
+                "11": {
+                    content: `<div class="row col-lg-12">
+                        <div class="bg-white rounded-3 p-4 col-12">
+                            <h4 class="text-blue font-weight-600 mb-3">Построение сопряжений; Проекционное черчение</h4>
+                            <div class="text-black">
+                                <ol>
+                                    <li>Компоновка на листе формата А3 — 5 баллов. </li>
+                                    <li>Чертежная графика — 5 баллов; использование чертежного шрифта — 5 баллов.</li>
+                                    <li>Построение сопряжений — 15 баллов: правильность построения — 10 баллов; правильность простановки размеров — 5 баллов. </li>
+                                    <li>Построение видов и разрезов детали: 
+                                        <br> - фронтальный вид — 15 баллов;<br> 
+                                        - вид сверху — 15 баллов; <br> 
+                                        - боковой вид — 20 баллов; <br> 
+                                        - аксонометрия — 20 баллов.<br> 
+                                    </li>
+                                </ol>
+                            </div>
+                            <p class="text-black mt-3 font-weight-400">ИТОГО: 100 баллов</p>
+                        </div>
+                    </div>`,
+                    images: []
+                }
+            },
+            zhivopis: {
+                "6-7": {
+                    content: `<div class="row col-lg-12">
+                        <div class="bg-white rounded-3 p-4 col-12">
+                            <h4 class="text-blue font-weight-600 mb-3">Этюд натюрморта</h4>
+                            <div class="text-black">
+                                <ol>
+                                    <li>Соответствие заданию — 20 баллов.  </li>
+                                    <li>Оригинальность и мастерство художественного решения — 20 баллов. </li>
+                                    <li>Соответствие академическим основам изображения (плоскостного, цветового, объемного) — 60 баллов, включающих:</li>
+                                </ol>
+                            </div>
+                            <div class="text-black-50 offset-1">
+                                <ol style="list-style-type: none;">
+                                    <li> 3.1
+                                         Компоновка в формате листа и масштаб изображения — 10, при этом: убедительно найденное композиционное решение — 10; недостаточно убедительно найденное композиционное решение и масштаб изображения — 5</li>
+                                    <li>3.2. Передача пропорций, конструкции предметов —10, при этом: верно, в соответствии с законами линейной перспективы, разработано конструктивное строение формы предметов, точно переданы их пропорции — 10; имеются ошибки и недочеты в передаче конструкции и пропорций предметов — 5</li>
+                                    <li>3.3. Передача больших цвето-тональных отношений (с учетом теплохолодности), колорит — 20, при этом: убедительно с учетом теплохолодности, переданы большие цвето-тональные отношения, гармоничные цветовые сочетания — 20; недостаточно убедительно переданы большие цвето-тональные отношения и теплохолодность, цветовые сочетания недостаточно гармоничны — 10</li>
+                                    <li>3.4. Цельность изображения — 10, при этом: изображение целостное — 10; изображение недостаточно целостное — 5 </li>
+                                    <li>3.5. Техника и культура исполнения — 10, при этом: высокая — 10; недостаточно высокая — 5</li>
+                                </ol>
+                            </div>
+                            <p class="text-black mt-3 font-weight-400">ИТОГО: 100 баллов</p>
+                        </div>
+                    </div>`,
+                    images: []
+                },
+                "8-9": {
+                    content: `<div class="row col-lg-12">
+                        <div class="bg-white rounded-3 p-4 col-12">
+                            <h4 class="text-blue font-weight-600 mb-3">Этюд натюрморта</h4>
+                            <div class="text-black">
+                                <ol>
+                                    <li>Соответствие заданию — 20 баллов.  </li>
+                                    <li>Оригинальность и мастерство художественного решения — 20 баллов. </li>
+                                    <li>Соответствие академическим основам изображения (плоскостного, цветового, объемного) — 60 баллов, включающих:</li>
+                                </ol>
+                            </div>
+                            <div class="text-black-50 offset-1">
+                                <ol style="list-style-type: none;">
+                                    <li> 3.1
+                                         Компоновка в формате листа и масштаб изображения — 10, при этом: убедительно найденное композиционное решение — 10; недостаточно убедительно найденное композиционное решение и масштаб изображения — 5</li>
+                                    <li>3.2. Передача пропорций, конструкции предметов —10, при этом: верно, в соответствии с законами линейной перспективы, разработано конструктивное строение формы предметов, точно переданы их пропорции — 10; имеются ошибки и недочеты в передаче конструкции и пропорций предметов — 5</li>
+                                    <li>3.3. Передача больших цвето-тональных отношений (с учетом теплохолодности), колорит — 20, при этом: убедительно с учетом теплохолодности, переданы большие цвето-тональные отношения, гармоничные цветовые сочетания — 20; недостаточно убедительно переданы большие цвето-тональные отношения и теплохолодность, цветовые сочетания недостаточно гармоничны — 10</li>
+                                    <li>3.4. Цельность изображения — 10, при этом: изображение целостное — 10; изображение недостаточно целостное — 5 </li>
+                                    <li>3.5. Техника и культура исполнения — 10, при этом: высокая — 10; недостаточно высокая — 5</li>
+                                </ol>
+                            </div>
+                            <p class="text-black mt-3 font-weight-400">ИТОГО: 100 баллов</p>
+                        </div>
+                    </div>`,
+                    images: []
+                },
+                "10-11": {
+                    content: `<div class="row col-lg-12">
+                        <div class="bg-white rounded-3 p-4 col-12">
+                            <h4 class="text-blue font-weight-600 mb-3">Этюд сложного натюрморта (10 класс)</h4>
+                            <div class="text-black">
+                                <ol>
+                                    <li>Соответствие заданию — 20 баллов.  </li>
+                                    <li>Оригинальность и мастерство художественного решения — 20 баллов. </li>
+                                    <li>Соответствие академическим основам изображения (плоскостного, цветового, объемного) — 60 баллов, включающих:</li>
+                                </ol>
+                            </div>
+                            <div class="text-black-50 offset-1">
+                                <ol style="list-style-type: none;">
+                                    <li> 3.1
+                                         Компоновка в формате листа и масштаб изображения — 10, при этом: убедительно найденное композиционное решение — 10; недостаточно убедительно найденное композиционное решение и масштаб изображения — 5</li>
+                                    <li>3.2. Передача пропорций, конструкции предметов —10, при этом: верно, в соответствии с законами линейной перспективы, разработано конструктивное строение формы предметов, точно переданы их пропорции — 10; имеются ошибки и недочеты в передаче конструкции и пропорций предметов — 5</li>
+                                    <li>3.3. Передача больших цвето-тональных отношений (с учетом теплохолодности), колорит — 20, при этом: убедительно с учетом теплохолодности, переданы большие цвето-тональные отношения, гармоничные цветовые сочетания — 20; недостаточно убедительно переданы большие цвето-тональные отношения и теплохолодность, цветовые сочетания недостаточно гармоничны — 10</li>
+                                    <li>3.4. Цельность изображения — 10, при этом: изображение целостное — 10; изображение недостаточно целостное — 5 </li>
+                                    <li>3.5. Техника и культура исполнения — 10, при этом: высокая — 10; недостаточно высокая — 5</li>
+                                </ol>
+                            </div>
+                            <p class="text-black mt-3 font-weight-400">ИТОГО: 100 баллов</p>
+                        </div>
+                    </div>
+                    <div class="row col-lg-12 mt-4">
+                        <div class="bg-white rounded-3 p-4 col-12">
+                            <h4 class="text-blue font-weight-600 mb-3">Этюд сложного натюрморта (11 класс)</h4>
+                            <div class="text-black">
+                                <ol>
+                                    <li>Соответствие заданию — 20 баллов.  </li>
+                                    <li>Оригинальность и мастерство художественного решения — 20 баллов. </li>
+                                    <li>Соответствие академическим основам изображения (плоскостного, цветового, объемного) — 60 баллов, включающих:</li>
+                                </ol>
+                            </div>
+                            <div class="text-black-50 offset-1">
+                                <ol style="list-style-type: none;">
+                                    <li> 3.1
+                                         Компоновка в формате листа и масштаб изображения — 10, при этом: убедительно найденное композиционное решение — 10; недостаточно убедительно найденное композиционное решение и масштаб изображения — 5</li>
+                                    <li>3.2. Передача пропорций, конструкции предметов —10, при этом: верно, в соответствии с законами линейной перспективы, разработано конструктивное строение формы предметов, точно переданы их пропорции — 10; имеются ошибки и недочеты в передаче конструкции и пропорций предметов — 5</li>
+                                    <li>3.3. Передача больших цвето-тональных отношений (с учетом теплохолодности), колорит — 20, при этом: убедительно с учетом теплохолодности, переданы большие цвето-тональные отношения, гармоничные цветовые сочетания — 20; недостаточно убедительно переданы большие цвето-тональные отношения и теплохолодность, цветовые сочетания недостаточно гармоничны — 10</li>
+                                    <li>3.4. Цельность изображения — 10, при этом: изображение целостное — 10; изображение недостаточно целостное — 5 </li>
+                                    <li>3.5. Техника и культура исполнения — 10, при этом: высокая — 10; недостаточно высокая — 5</li>
+                                </ol>
+                            </div>
+                            <p class="text-black mt-3 font-weight-400">ИТОГО: 100 баллов</p>
+                        </div>
+                    </div>`,
+                    images: []
+                }
+            }
+        },
+        otborochniy_regional: {
+            risunok: {
+                "6-7": {
+                    content: `<div class="col-lg-12">
+                        <div class="bg-white rounded-3 p-4">
+                            <h4 class="text-blue font-weight-600 mb-3">Натюрморт из бытовых предметов</h4>
+                            <p class="text-black mb-3">Соответствие учебно-реалистическим основам изображения — 70 баллов:</p>
+                            <div class="text-black-50 offset-1">
+                                <ol>
+                                    <li>Композиция в формате листа — 20 баллов;</li>
+                                    <li>Построение натюрморта на предметной плоскости с соблюдением законов перспективы — 30 баллов;</li>
+                                    <li>Тональное решение натюрморта — 20 баллов.</li>
+                                </ol>
+                            </div>
+                            <p class="text-black mb-3">Мастерство художественного решения — 30 баллов;</p>
+                            <p class="text-black mb-3 font-weight-400">ИТОГО: 100 баллов</p>
+                        </div>
+                    </div>`,
+                    images: []
+                },
+                "8-9": {
+                    content: `<div class="col-lg-12">
+                        <div class="bg-white rounded-3 p-4">
+                            <h4 class="text-blue font-weight-600 mb-3">Натюрморт из бытовых предметов</h4>
+                            <p class="text-black mb-3">Соответствие учебно-реалистическим основам изображения — 70 баллов:</p>
+                            <div class="text-black-50 offset-1">
+                                <ol>
+                                    <li>Композиция в формате листа — 20 баллов;</li>
+                                    <li>Построение натюрморта на предметной плоскости с соблюдением законов перспективы — 30 баллов;</li>
+                                    <li>Тональное решение натюрморта — 20 баллов.</li>
+                                </ol>
+                            </div>
+                            <p class="text-black mb-3">Мастерство художественного решения — 30 баллов;</p>
+                            <p class="text-black mb-3 font-weight-400">ИТОГО: 100 баллов</p>
+                        </div>
+                    </div>`,
+                    images: []
+                },
+                "10-11": {
+                    content: `<div class="col-lg-12">
+                        <div class="bg-white rounded-3 p-4">
+                            <h4 class="text-blue font-weight-600 mb-3">Натюрморт из геометрических тел (10 класс)</h4>
+                            <p class="text-black mb-3">Соответствие учебно-реалистическим основам изображения — 70 баллов:</p>
+                            <div class="text-black-50 offset-1">
+                                <ol>
+                                    <li>Композиция в формате листа — 20 баллов</li>
+                                    <li>Конструктивное решение формы с перспективным построением натюрморта на предметной плоскости и выявление больших пропорций — 30 баллов </li>
+                                    <li>Использование тона для выявления цельности видения постановки — 20 баллов.</li>
+                                </ol>
+                            </div>
+                            <p class="text-black mb-3">Мастерство художественного решения — 30 баллов;</p>
+                            <p class="text-black mb-3 font-weight-400">ИТОГО: 100 баллов</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 mt-4">
+                        <div class="bg-white rounded-3 p-4">
+                            <h4 class="text-blue font-weight-600 mb-3">Рисунок гипсовой головы (11 класс)</h4>
+                            <p class="text-black mb-3">Соответствие учебно-реалистическим основам изображения — 80 баллов:</p>
+                            <div class="text-black-50 offset-1">
+                                <ol>
+                                    <li>Композиция в формате листа — 20 баллов</li>
+                                    <li>Точность передачи характера (пропорции) головы — 20 баллов </li>
+                                    <li>Выявление конструктивных особенностей —  10 баллов</li>
+                                    <li>Понятие перспективных особенностей построения — 10 баллов</li>
+                                    <li>Мастерство художественного решения — 20 баллов</li>
+                                </ol>
+                            </div>
+                            <p class="text-black mb-3">Цельность видения большой формы (большой свет, большая тень, соподчиненность деталей целому, владение понятиями свет, тень, полутон, рефлекс) — 20 баллов;</p>
+                            <p class="text-black mb-3 font-weight-400">ИТОГО: 100 баллов</p>
+                        </div>
+                    </div>`,
+                    images: []
+                }
+            },
+            kompoziciya: {
+                "6-7": {
+                    content: `<div class="row col-lg-12">
+                        <div class="bg-white rounded-3 p-4 col-12">
+                            <h4 class="text-blue font-weight-600 mb-3">ТЕМАТИЧЕСКАЯ КОМПОЗИЦИЯ НА ЗАДАННУЮ ТЕМУ</h4>
+                            <div class="text-black">
+                                <ol>
+                                    <li>Соответствие заданию — 20 баллов. </li>
+                                    <li>Оригинальность и мастерство художественного решения — 20 баллов.</li>
+                                    <li>Соответствие академическим основам изображения (плоскостного, цветового, объемного) — 60 баллов, включающих:</li>
+                                </ol>
+                            </div>
+                            <div class="text-black-50 offset-1">
+                                <ol style="list-style-type: none;">
+                                    <li> 3.1
+                                         Оценку компоновки изображения в заданном формате – до 10 баллов, при этом: 
+                                        - за гармоничное композиционное решение соответствующее заданному формату – 10 баллов
+                                        - за недостаточно убедительное композиционное решение – 5 баллов.</li>
+                                    <li>3.2. Оценку построения структуры в соответствии с законами композиции – до 30 баллов, в том числе: 
+                                        - за выразительность и целостность композиционного решения – 10 баллов
+                                        - за использование композиционных приемов – 20 баллов, в том числе: 
+                                        - за выявление композиционной доминанты и ее взаимодействия с остальными элементами композиции – 10 баллов
+                                        - за построение структуры композиции на основе ассоциативно-образного решения – 10 баллов.</li>
+                                </ol>
+                            </div>
+                            <div class="text-black-50">
+                              3.3. Оценку за передачу цвето-тональных соотношений – до 20 баллов, в том числе: 
+                              - за гармоничную передачу цвето-тональных соотношений – 10 баллов
+                              - за графические качества и техническую культуру – 10 баллов, при этом: 
+                              - высокую – 10 баллов, 
+                              - недостаточно высокую – 5 баллов
+                            </div> 
+                            <p class="text-black mt-3 font-weight-400">ИТОГО: 100 баллов</p>
+                        </div>
+                    </div>`,
+                    images: []
+                },
+                "8-9": {
+                    content: `<div class="row col-lg-12">
+                        <div class="bg-white rounded-3 p-4 col-12">
+                            <h4 class="text-blue font-weight-600 mb-3">ТЕМАТИЧЕСКАЯ КОМПОЗИЦИЯ НА ЗАДАННУЮ ТЕМУ</h4>
+                            <div class="text-black">
+                                <ol>
+                                    <li>Соответствие заданию — 20 баллов. </li>
+                                    <li>Оригинальность и мастерство художественного решения — 20 баллов.</li>
+                                    <li>Соответствие академическим основам изображения (плоскостного, цветового, объемного) — 60 баллов, включающих:</li>
+                                </ol>
+                            </div>
+                            <div class="text-black-50 offset-1">
+                                <ol style="list-style-type: none;">
+                                    <li> 3.1
+                                         Оценку компоновки изображения в заданном формате – до 10 баллов, при этом: 
+                                        - за гармоничное композиционное решение соответствующее заданному формату – 10 баллов
+                                        - за недостаточно убедительное композиционное решение – 5 баллов.</li>
+                                    <li>3.2. Оценку построения структуры в соответствии с законами композиции – до 30 баллов, в том числе: 
+                                        - за выразительность и целостность композиционного решения – 10 баллов
+                                        - за использование композиционных приемов – 20 баллов, в том числе: 
+                                        - за выявление композиционной доминанты и ее взаимодействия с остальными элементами композиции – 10 баллов
+                                        - за построение структуры композиции на основе ассоциативно-образного решения – 10 баллов.</li>
+                                </ol>
+                            </div>
+                            <div class="text-black-50">
+                              3.3. Оценку за передачу цвето-тональных соотношений – до 20 баллов, в том числе: 
+                              - за гармоничную передачу цвето-тональных соотношений – 10 баллов
+                              - за графические качества и техническую культуру – 10 баллов, при этом: 
+                              - высокую – 10 баллов, 
+                              - недостаточно высокую – 5 баллов
+                            </div> 
+                            <p class="text-black mt-3 font-weight-400">ИТОГО: 100 баллов</p>
+                        </div>
+                    </div>`,
+                    images: []
+                },
+                "10-11": {
+                    content: `<div class="row col-lg-12">
+                        <div class="bg-white rounded-3 p-4 col-12">
+                            <h4 class="text-blue font-weight-600 mb-3">ЭСКИЗ КОЛОРИСТИЧЕСКОЙ КОМПОЗИЦИИ НА ЗАДАННУЮ ТЕМУ И СТИЛИЗАЦИЯ ПРЕДЛОЖЕННОГО ОБЪЕКТА</h4>
+                            <div class="text-black">
+                                <ol>
+                                    <li>Соответствие заданию — 20 баллов.  </li>
+                                    <li>Оригинальность и мастерство художественного решения — 20 баллов. </li>
+                                    <li>Соответствие академическим основам изображения (плоскостного, цветового, объемного) — 60 баллов, включающих:</li>
+                                </ol>
+                            </div>
+                            <div class="text-black-50 offset-1">
+                                <ol style="list-style-type: none;">
+                                    <li> 3.1
+                                         Оценку компоновки изображения в заданном формате – до 10 баллов, при этом: 
+                                        - за гармоничное композиционное решение соответствующее заданному формату – 10 баллов
+                                        - за недостаточно убедительное композиционное решение – 5 баллов.</li>
+                                    <li>3.2. Оценку построения структуры в соответствии с законами композиции – до 30 баллов, в том числе: 
+                                        - за выразительность и целостность композиционного решения – 10 баллов
+                                        - за использование композиционных приемов – 20 баллов, в том числе: 
+                                        - за выявление композиционной доминанты и ее взаимодействия с остальными элементами композиции – 10 баллов
+                                        - за построение структуры композиции на основе ассоциативно-образного решения – 10 баллов.</li>
+                                </ol>
+                            </div>
+                            <div class="text-black-50">
+                              3.3. Оценку за передачу цвето-тональных соотношений – до 20 баллов, в том числе: 
+                              - за гармоничную передачу цвето-тональных соотношений – 10 баллов
+                              - за графические качества и техническую культуру – 10 баллов, при этом: 
+                              - высокую – 10 баллов, 
+                              - недостаточно высокую – 5 баллов
+                            </div> 
+                            <p class="text-black mt-3 font-weight-400">ИТОГО: 100 баллов</p>
+                        </div>
+                    </div>
+                    <div class="row col-lg-12 mt-4">
+                        <div class="bg-white rounded-3 p-4 col-12">
+                            <h4 class="text-blue font-weight-600 mb-3">ОБЪЕМНО-ПРОСТРАНСТВЕННАЯ КОМПОЗИЦИЯ НА ЗАДАННУЮ ТЕМУ</h4>
+                            <div class="text-black">
+                                <ol>
+                                    <li>Соответствие заданию — 20 баллов. </li>
+                                    <li>Оригинальность и мастерство художественного решения — 20 баллов.</li>
+                                    <li>Соответствие академическим основам изображения (плоскостного, цветового, объемного) — 60 баллов, включающих:</li>
+                                </ol>
+                            </div>
+                            <div class="text-black-50 offset-1">
+                                <ol style="list-style-type: none;">
+                                    <li> 3.1
+                                         Оценку компоновки изображения в заданном формате – до 10 баллов, при этом: 
+                                        - за гармоничное композиционное решение соответствующее заданному формату – 10 баллов
+                                        - за недостаточно убедительное композиционное решение – 5 баллов.</li>
+                                    <li>3.2. Оценку построения структуры в соответствии с законами композиции – до 30 баллов, в том числе: 
+                                        - за выразительность и целостность композиционного решения – 10 баллов
+                                        - за использование композиционных приемов – 20 баллов, в том числе: 
+                                        - за выявление композиционной доминанты и ее взаимодействия с остальными элементами композиции – 10 баллов
+                                        - за построение структуры композиции на основе ассоциативно-образного решения – 10 баллов.</li>
+                                </ol>
+                            </div>
+                            <div class="text-black-50">
+                              3.3. Оценку за передачу цвето-тональных соотношений – до 20 баллов, в том числе: 
+                              - за гармоничную передачу цвето-тональных соотношений – 10 баллов
+                              - за графические качества и техническую культуру – 10 баллов, при этом: 
+                              - высокую – 10 баллов, 
+                              - недостаточно высокую – 5 баллов
+                            </div> 
+                            <p class="text-black mt-3 font-weight-400">ИТОГО: 100 баллов</p>
+                        </div>
+                    </div>`,
+                    images: []
+                }
+            },
+            cherchenie: {
+                "9": {
+                    content: `<div class="row col-lg-12">
+                        <div class="bg-white rounded-3 p-4 col-12">
+                            <h4 class="text-blue font-weight-600 mb-3">Деление окружности на равные части. Построение сопряжений; Проекционное черчение</h4>
+                            <div class="text-black">
+                                <ol>
+                                    <li>Компоновка на листе формата А3 — 10 баллов. </li>
+                                    <li>Графика — 10 баллов: соблюдение толщины и начертания линий в соответствии с ГОСТ — 5 баллов; использование чертежного шрифта — 5 баллов.</li>
+                                    <li>Построение сопряжений и деления окружностей — 15 баллов: правильность построения — 10 баллов; правильность простановки размеров — 5 баллов </li>
+                                </ol>
+                            </div>
+                            <div class="text-black">
+                                <p>
+                                    Построение видов — по 15 баллов за каждый вид, в том числе: правильность построения видов — по 10 баллов для каждого вида; наличие и правильное 
+                                    простановка размеров — по 5 баллов для каждого вида; построение аксонометрии — 20 баллов.
+                                </p>
+                                <p>
+                                    Наличие любой ошибки оценивается в 5 баллов. Неточность (замечание) — 3 балла.
+                                </p>  
+                            </div>
+                            <p class="text-black mt-3 font-weight-400">ИТОГО: 100 баллов</p>
+                        </div>
+                    </div>`,
+                    images: []
+                },
+                "10": {
+                    content: `<div class="row col-lg-12">
+                        <div class="bg-white rounded-3 p-4 col-12">
+                            <h4 class="text-blue font-weight-600 mb-3">Построение сопряжений; Проекционное черчение</h4>
+                            <div class="text-black">
+                                <ol>
+                                    <li>Компоновка на листе формата А3 — 10 баллов. </li>
+                                    <li>Графика — 10 баллов: соблюдение толщины и начертания линий в соответствии с ГОСТ — 5 баллов; использование чертежного шрифта — 5 баллов.</li>
+                                    <li>Построение сопряжений — 15 баллов: правильность построения — 10 баллов; правильность простановки размеров — 5 баллов </li>
+                                </ol>
+                            </div>
+                            <div class="text-black">
+                                <p>
+                                    Построение видов — по 15 баллов за каждый вид, в том числе: правильность построения видов — по 10 баллов для каждого вида; наличие и правильное 
+                                    простановка размеров — по 5 баллов для каждого вида; построение аксонометрии — 20 баллов.
+                                </p>
+                                <p>
+                                    Наличие любой ошибки оценивается в 5 баллов. Неточность (замечание) — 3 балла.
+                                </p>  
+                            </div>
+                            <p class="text-black mt-3 font-weight-400">ИТОГО: 100 баллов</p>
+                        </div>
+                    </div>`,
+                    images: []
+                },
+                "11": {
+                    content: `<div class="row col-lg-12">
+                        <div class="bg-white rounded-3 p-4 col-12">
+                            <h4 class="text-blue font-weight-600 mb-3">Построение сопряжений; Проекционное черчение</h4>
+                            <div class="text-black">
+                                <ol>
+                                    <li>Компоновка на листе формата А3 — 5 баллов. </li>
+                                    <li>Чертежная графика — 5 баллов; использование чертежного шрифта — 5 баллов.</li>
+                                    <li>Построение сопряжений — 15 баллов: правильность построения — 10 баллов; правильность простановки размеров — 5 баллов. </li>
+                                    <li>Построение видов и разрезов детали: 
+                                        <br> - фронтальный вид — 15 баллов;<br> 
+                                        - вид сверху — 15 баллов; <br> 
+                                        - боковой вид — 20 баллов; <br> 
+                                        - аксонометрия — 20 баллов.<br> 
+                                    </li>
+                                </ol>
+                            </div>
+                            <p class="text-black mt-3 font-weight-400">ИТОГО: 100 баллов</p>
+                        </div>
+                    </div>`,
+                    images: []
+                }
+            },
+            zhivopis: {
+                "6-7": {
+                    content: `<div class="row col-lg-12">
+                        <div class="bg-white rounded-3 p-4 col-12">
+                            <h4 class="text-blue font-weight-600 mb-3">Этюд натюрморта</h4>
+                            <div class="text-black">
+                                <ol>
+                                    <li>Соответствие заданию — 20 баллов.  </li>
+                                    <li>Оригинальность и мастерство художественного решения — 20 баллов. </li>
+                                    <li>Соответствие академическим основам изображения (плоскостного, цветового, объемного) — 60 баллов, включающих:</li>
+                                </ol>
+                            </div>
+                            <div class="text-black-50 offset-1">
+                                <ol style="list-style-type: none;">
+                                    <li> 3.1
+                                         Компоновка в формате листа и масштаб изображения — 10, при этом: убедительно найденное композиционное решение — 10; недостаточно убедительно найденное композиционное решение и масштаб изображения — 5</li>
+                                    <li>3.2. Передача пропорций, конструкции предметов —10, при этом: верно, в соответствии с законами линейной перспективы, разработано конструктивное строение формы предметов, точно переданы их пропорции — 10; имеются ошибки и недочеты в передаче конструкции и пропорций предметов — 5</li>
+                                    <li>3.3. Передача больших цвето-тональных отношений (с учетом теплохолодности), колорит — 20, при этом: убедительно с учетом теплохолодности, переданы большие цвето-тональные отношения, гармоничные цветовые сочетания — 20; недостаточно убедительно переданы большие цвето-тональные отношения и теплохолодность, цветовые сочетания недостаточно гармоничны — 10</li>
+                                    <li>3.4. Цельность изображения — 10, при этом: изображение целостное — 10; изображение недостаточно целостное — 5 </li>
+                                    <li>3.5. Техника и культура исполнения — 10, при этом: высокая — 10; недостаточно высокая — 5</li>
+                                </ol>
+                            </div>
+                            <p class="text-black mt-3 font-weight-400">ИТОГО: 100 баллов</p>
+                        </div>
+                    </div>`,
+                    images: []
+                },
+                "8-9": {
+                    content: `<div class="row col-lg-12">
+                        <div class="bg-white rounded-3 p-4 col-12">
+                            <h4 class="text-blue font-weight-600 mb-3">Этюд натюрморта</h4>
+                            <div class="text-black">
+                                <ol>
+                                    <li>Соответствие заданию — 20 баллов.  </li>
+                                    <li>Оригинальность и мастерство художественного решения — 20 баллов. </li>
+                                    <li>Соответствие академическим основам изображения (плоскостного, цветового, объемного) — 60 баллов, включающих:</li>
+                                </ol>
+                            </div>
+                            <div class="text-black-50 offset-1">
+                                <ol style="list-style-type: none;">
+                                    <li> 3.1
+                                         Компоновка в формате листа и масштаб изображения — 10, при этом: убедительно найденное композиционное решение — 10; недостаточно убедительно найденное композиционное решение и масштаб изображения — 5</li>
+                                    <li>3.2. Передача пропорций, конструкции предметов —10, при этом: верно, в соответствии с законами линейной перспективы, разработано конструктивное строение формы предметов, точно переданы их пропорции — 10; имеются ошибки и недочеты в передаче конструкции и пропорций предметов — 5</li>
+                                    <li>3.3. Передача больших цвето-тональных отношений (с учетом теплохолодности), колорит — 20, при этом: убедительно с учетом теплохолодности, переданы большие цвето-тональные отношения, гармоничные цветовые сочетания — 20; недостаточно убедительно переданы большие цвето-тональные отношения и теплохолодность, цветовые сочетания недостаточно гармоничны — 10</li>
+                                    <li>3.4. Цельность изображения — 10, при этом: изображение целостное — 10; изображение недостаточно целостное — 5 </li>
+                                    <li>3.5. Техника и культура исполнения — 10, при этом: высокая — 10; недостаточно высокая — 5</li>
+                                </ol>
+                            </div>
+                            <p class="text-black mt-3 font-weight-400">ИТОГО: 100 баллов</p>
+                        </div>
+                    </div>`,
+                    images: []
+                },
+                "10-11": {
+                    content: `<div class="row col-lg-12">
+                        <div class="bg-white rounded-3 p-4 col-12">
+                            <h4 class="text-blue font-weight-600 mb-3">Этюд сложного натюрморта (10 класс)</h4>
+                            <div class="text-black">
+                                <ol>
+                                    <li>Соответствие заданию — 20 баллов.  </li>
+                                    <li>Оригинальность и мастерство художественного решения — 20 баллов. </li>
+                                    <li>Соответствие академическим основам изображения (плоскостного, цветового, объемного) — 60 баллов, включающих:</li>
+                                </ol>
+                            </div>
+                            <div class="text-black-50 offset-1">
+                                <ol style="list-style-type: none;">
+                                    <li> 3.1
+                                         Компоновка в формате листа и масштаб изображения — 10, при этом: убедительно найденное композиционное решение — 10; недостаточно убедительно найденное композиционное решение и масштаб изображения — 5</li>
+                                    <li>3.2. Передача пропорций, конструкции предметов —10, при этом: верно, в соответствии с законами линейной перспективы, разработано конструктивное строение формы предметов, точно переданы их пропорции — 10; имеются ошибки и недочеты в передаче конструкции и пропорций предметов — 5</li>
+                                    <li>3.3. Передача больших цвето-тональных отношений (с учетом теплохолодности), колорит — 20, при этом: убедительно с учетом теплохолодности, переданы большие цвето-тональные отношения, гармоничные цветовые сочетания — 20; недостаточно убедительно переданы большие цвето-тональные отношения и теплохолодность, цветовые сочетания недостаточно гармоничны — 10</li>
+                                    <li>3.4. Цельность изображения — 10, при этом: изображение целостное — 10; изображение недостаточно целостное — 5 </li>
+                                    <li>3.5. Техника и культура исполнения — 10, при этом: высокая — 10; недостаточно высокая — 5</li>
+                                </ol>
+                            </div>
+                            <p class="text-black mt-3 font-weight-400">ИТОГО: 100 баллов</p>
+                        </div>
+                    </div>
+                    <div class="row col-lg-12 mt-4">
+                        <div class="bg-white rounded-3 p-4 col-12">
+                            <h4 class="text-blue font-weight-600 mb-3">Этюд сложного натюрморта (11 класс)</h4>
+                            <div class="text-black">
+                                <ol>
+                                    <li>Соответствие заданию — 20 баллов.  </li>
+                                    <li>Оригинальность и мастерство художественного решения — 20 баллов. </li>
+                                    <li>Соответствие академическим основам изображения (плоскостного, цветового, объемного) — 60 баллов, включающих:</li>
+                                </ol>
+                            </div>
+                            <div class="text-black-50 offset-1">
+                                <ol style="list-style-type: none;">
+                                    <li> 3.1
+                                         Компоновка в формате листа и масштаб изображения — 10, при этом: убедительно найденное композиционное решение — 10; недостаточно убедительно найденное композиционное решение и масштаб изображения — 5</li>
+                                    <li>3.2. Передача пропорций, конструкции предметов —10, при этом: верно, в соответствии с законами линейной перспективы, разработано конструктивное строение формы предметов, точно переданы их пропорции — 10; имеются ошибки и недочеты в передаче конструкции и пропорций предметов — 5</li>
+                                    <li>3.3. Передача больших цвето-тональных отношений (с учетом теплохолодности), колорит — 20, при этом: убедительно с учетом теплохолодности, переданы большие цвето-тональные отношения, гармоничные цветовые сочетания — 20; недостаточно убедительно переданы большие цвето-тональные отношения и теплохолодность, цветовые сочетания недостаточно гармоничны — 10</li>
+                                    <li>3.4. Цельность изображения — 10, при этом: изображение целостное — 10; изображение недостаточно целостное — 5 </li>
+                                    <li>3.5. Техника и культура исполнения — 10, при этом: высокая — 10; недостаточно высокая — 5</li>
+                                </ol>
+                            </div>
+                            <p class="text-black mt-3 font-weight-400">ИТОГО: 100 баллов</p>
+                        </div>
+                    </div>`,
+                    images: []
+                }
+            }
+        }
+    };
+
+    // =========================================================================
+    // 2. ДАННЫЕ ДЛЯ МАТЕРИАЛОВ ЗАДАНИЙ
+    // =========================================================================
+    const tasksData = {
+        otborochniy_municipal: {
+            risunok: {
+                "6-7": {
+                    content: `<div class="bg-white rounded-3 p-4 h-100">
+                        <h4 class="text-blue font-weight-600 mb-3">Натюрморт из бытовых предметов</h4>
+                        <div class="text-black">
+                            <p>Содержание задания: участнику олимпиады предлагается выполнить рисунок трёх бытовых предметов на фоне двух драпировок (без складок).</p>
+                            <p><strong>Материал:</strong> графитный карандаш, лист бумаги не менее формата А3.</p>
+                            <p><strong>Продолжительность испытания:</strong> 180 минут (3 часа).</p>
+                        </div>
+                    </div>`,
+                    images: []
+                },
+                "8-9": {
+                    content: `<div class="bg-white rounded-3 p-4 h-100">
+                        <h4 class="text-blue font-weight-600 mb-3">Натюрморт из бытовых предметов</h4>
+                        <div class="text-black">
+                            <p>Содержание задания: участнику олимпиады предлагается выполнить рисунок пяти бытовых предметов на фоне трёх драпировок (без складок).</p>
+                            <p><strong>Материал:</strong> графитный карандаш, лист бумаги не менее формата А3.</p>
+                            <p><strong>Продолжительность испытания:</strong> 240 минут (4 часа).</p>
+                        </div>
+                    </div>`,
+                    images: [
+                        "image/Task/image-3.png",
+                        "image/Task/image-4.png",
+                        "image/Task/image-5.png"
+                    ]
+                },
+                "10-11": {
+                    content: `
+                        <div class="mb-5">
+                            <div class="bg-white rounded-3 p-4 h-100 mb-4">
+                                <h4 class="text-blue font-weight-600 mb-3">Натюрморт из геометрических тел (10 класс)</h4>
+                                <div class="text-black">
+                                    <p>Содержание задания: участнику олимпиады предлагается выполнить рисунок натюрморта из трёх гипсовых геометрических тел с натуры на фоне одной-двух драпировок (без складок).</p>
+                                    <p><strong>Материал:</strong> графитный карандаш, лист бумаги формата А2.</p>
+                                    <p><strong>Продолжительность испытания:</strong> 240 минут (4 часа).</p>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-3 p-4 h-100">
+                                <h4 class="text-blue font-weight-600 mb-3">Рисунок гипсовой головы (11 класс)</h4>
+                                <div class="text-black">
+                                    <p>Участнику олимпиады предлагается выполнить рисунок одной из предложенных заданием гипсовой головы: (Венера, Аполлон, Артемида, Антиной, Гермес, Римский гражданин, Гатамелатта, Германик, Цезарь, Дорифор).</p>
+                                    <p><strong>Материал:</strong> графитный карандаш, лист бумаги формата А2.</p>
+                                    <p><strong>Продолжительность испытания:</strong> 300 минут (5 часов).</p>
+                                </div>
+                            </div>
+                        </div>
+                    `,
+                    images: [
+                        "image/Task/image-6.png",
+                        "image/Task/image-7.png",
+                        "image/Task/image-8.png",
+                        "image/Task/image-9.png",
+                        "image/Task/image-10.png"
+                    ]
+                }
+            },
+            kompoziciya: {
+                "6-7": {
+                    content: `<div class="bg-white rounded-3 p-4 h-100">
+                        <h4 class="text-blue font-weight-600 mb-3">Тематическая композиция на заданную тему</h4>
+                        <div class="text-black">
+                            <p>Содержание задания: участнику олимпиады предлагается выполнить эскиз композиции на одну из заданных тем.</p>
+                            <p><strong>Материал:</strong> лист бумаги не менее формата А3, материалы по выбору автора (исключается масло).</p>
+                            <p><strong>Продолжительность испытания:</strong> 180 минут (3 часа).</p>
+                        </div>
+                    </div>`,
+                    images: []
+                },
+                "8-9": {
+                    content: `<div class="bg-white rounded-3 p-4 h-100">
+                        <h4 class="text-blue font-weight-600 mb-3">Тематическая композиция на заданную тему</h4>
+                        <div class="text-black">
+                            <p>Содержание задания: участнику олимпиады предлагается выполнить эскиз композиции на заданную тему или выполнить один эскиз стилизации предложенного объекта размером не более 15х15 см. с вариантами и разработками одного из предложенного объекта, выдаваемых при вскрытии конверта с заданиями.</p>
+                            <p><strong>Материал:</strong> лист бумаги не менее формата А3, материалы по выбору автора (исключается масло).</p>
+                            <p><strong>Продолжительность испытания:</strong> 240 минут (4 часа).</p>
+                        </div>
+                    </div>`,
+                    images: []
+                },
+                "10-11": {
+                    content: `
+                        <div class="mb-5">
+                            <div class="bg-white rounded-3 p-4 h-100 mb-4">
+                                <h4 class="text-blue font-weight-600 mb-3">Эскиз колористической композиции на заданную тему</h4>
+                                <div class="text-black">
+                                    <p>Содержание задания: участнику олимпиады предлагается на листе формата А2 выполнить эскиз размером А3 колористической декоративно-плоскостной, беспредметной композиции на одну из заданных тем, выдаваемых при вскрытии конверта с заданиями.</p>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-3 p-4 h-100 mb-4">
+                                <h4 class="text-blue font-weight-600 mb-3">Эскиз стилизации предложенного объекта</h4>
+                                <div class="text-black">
+                                    <p>Содержание задания: выполнить один эскиз стилизации размером не более 15х15 см. с вариантами и разработками одного из предложенного объекта, выдаваемых при вскрытии конверта с заданиями: животные, насекомые, растения, персонажи сказок.</p>
+                                    <p><strong>Материал:</strong> лист бумаги формата А2, материалы по выбору автора (исключается масло).</p>
+                                    <p><strong>Продолжительность испытания:</strong> 300 минут (5 часов).</p>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-3 p-4 h-100">
+                                <h4 class="text-blue font-weight-600 mb-3">Объемно-пространственная композиция на заданную тему</h4>
+                                <div class="text-black">
+                                    <p>Содержание задания: участнику олимпиады предлагается выполнить рисунок композиции на одну из заданных тем, выдаваемых при вскрытии конверта с заданиями. Для этого следует использовать по выбору от 5 до 9 любых геометрических тел из набора тел, приведённых в таблице на оборотной стороне листа с заданием. Всего в композиции должно быть не менее 7 элементов (геометрических тел).</p>
+                                    <p><strong>Материал:</strong> лист бумаги формата А3, графитный карандаш.</p>
+                                    <p><strong>Продолжительность испытания:</strong> 300 минут (5 часов).</p>
+                                    <p><strong>Требования к условиям выполнения задания:</strong></p>
+                                    <ul>
+                                        <li>Соблюдение правил построения линейной перспективы. Линия горизонта может быть выбрана с учётом наилучшего раскрытия темы задания.</li>
+                                        <li>Повторяющиеся геометрические тела, выбранные для композиции, при соблюдении заданных пропорций могут использоваться в разных масштабах.</li>
+                                        <li>В композиции может быть использован приём взаимоврезания геометрических тел.</li>
+                                        <li>Рисунок выполняется карандашом с лёгкой светотеневой проработкой объёмов геометрических тел.</li>
+                                        <li>Рисунок выполняется вручную, без использования линеек и линейных приспособлений.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    `,
+                    images: []
+                }
+            },
+            zhivopis: {
+                "6-7": {
+                    content: `<div class="bg-white rounded-3 p-4 h-100">
+                        <h4 class="text-blue font-weight-600 mb-3">Этюд натюрморта</h4>
+                        <div class="text-black">
+                            <p>Содержание задания: участнику олимпиады предлагается выполнить этюд постановки натюрморта из предметов с натуры. Количество предметов, включая муляжи: 3. Количество драпировок: 2 (без складок).</p>
+                            <p><strong>Материал:</strong> лист бумаги формата А3; краски по выбору: акварель, гуашь, темпера, акрил.</p>
+                            <p><strong>Продолжительность испытания:</strong> 180 минут (3 часа).</p>
+                        </div>
+                    </div>`,
+                    images: []
+                },
+                "8-9": {
+                    content: `<div class="bg-white rounded-3 p-4 h-100">
+                        <h4 class="text-blue font-weight-600 mb-3">Этюд натюрморта</h4>
+                        <div class="text-black">
+                            <p>Содержание задания: участнику олимпиады предлагается выполнить этюд постановки натюрморта из предметов с натуры. Количество предметов, включая муляжи: 3. Количество драпировок: 3 (со складками).</p>
+                            <p><strong>Материал:</strong> лист бумаги формата А3; краски по выбору: акварель, гуашь, темпера, акрил.</p>
+                            <p><strong>Продолжительность испытания:</strong> 240 минут (4 часа).</p>
+                        </div>
+                    </div>`,
+                    images: []
+                },
+                "10-11": {
+                    content: `
+                        <div class="mb-5">
+                            <div class="bg-white rounded-3 p-4 h-100 mb-4">
+                                <h4 class="text-blue font-weight-600 mb-3">Этюд сложного натюрморта (10 класс)</h4>
+                                <div class="text-black">
+                                    <p>Содержание задания: участнику олимпиады предлагается выполнить этюд постановки натюрморта из бытовых предметов с натуры. Количество предметов, включая муляжи: пять: не менее двух бытовых предметов + фрукты и овощи. Количество драпировок: три-четыре (со складками).</p>
+                                    <p><strong>Материал:</strong> лист бумаги формата А2; краски по выбору: акварель, гуашь, темпера, акрил.</p>
+                                    <p><strong>Продолжительность испытания:</strong> 240 минут (4 часа).</p>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-3 p-4 h-100">
+                                <h4 class="text-blue font-weight-600 mb-3">Этюд сложного натюрморта (11 класс)</h4>
+                                <div class="text-black">
+                                    <p>Содержание задания: участнику олимпиады предлагается выполнить этюд постановки натюрморта из бытовых предметов с натуры. Количество предметов, включая муляжи: пять: не менее двух бытовых предметов + фрукты и овощи. Количество драпировок: три-четыре (со складками).</p>
+                                    <p><strong>Материал:</strong> лист бумаги формата А2; краски по выбору: акварель, гуашь, темпера, акрил.</p>
+                                    <p><strong>Продолжительность испытания:</strong> 300 минут (5 часов).</p>
+                                </div>
+                            </div>
+                        </div>
+                    `,
+                    images: []
+                }
+            }
+        },
+        otborochniy_regional: {
+            risunok: {
+                "6-7": {
+                    content: `<div class="bg-white rounded-3 p-4 h-100">
+                        <h4 class="text-blue font-weight-600 mb-3">Натюрморт из бытовых предметов</h4>
+                        <div class="text-black">
+                            <p>Содержание задания: участнику олимпиады предлагается выполнить рисунок трёх бытовых предметов на фоне двух драпировок (без складок).</p>
+                            <p><strong>Материал:</strong> графитный карандаш, лист бумаги не менее формата А3.</p>
+                            <p><strong>Продолжительность испытания:</strong> 180 минут (3 часа).</p>
+                        </div>
+                    </div>`,
+                    images: [
+                        "image/Task/image.png",
+                        "image/Task/image-1.png",
+                        "image/Task/image-2.png"
+                    ]
+                },
+                "8-9": {
+                    content: `<div class="bg-white rounded-3 p-4 h-100">
+                        <h4 class="text-blue font-weight-600 mb-3">Натюрморт из бытовых предметов</h4>
+                        <div class="text-black">
+                            <p>Содержание задания: участнику олимпиады предлагается выполнить рисунок пяти бытовых предметов на фоне трёх драпировок (без складок).</p>
+                            <p><strong>Материал:</strong> графитный карандаш, лист бумаги не менее формата А3.</p>
+                            <p><strong>Продолжительность испытания:</strong> 240 минут (4 часа).</p>
+                        </div>
+                    </div>`,
+                    images: []
+                },
+                "10-11": {
+                    content: `
+                        <div class="mb-5">
+                            <div class="bg-white rounded-3 p-4 h-100 mb-4">
+                                <h4 class="text-blue font-weight-600 mb-3">Натюрморт из геометрических тел (10 класс)</h4>
+                                <div class="text-black">
+                                    <p>Содержание задания: участнику олимпиады предлагается выполнить рисунок натюрморта из трёх гипсовых геометрических тел с натуры на фоне одной-двух драпировок (без складок).</p>
+                                    <p><strong>Материал:</strong> графитный карандаш, лист бумаги формата А2.</p>
+                                    <p><strong>Продолжительность испытания:</strong> 240 минут (4 часа).</p>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-3 p-4 h-100">
+                                <h4 class="text-blue font-weight-600 mb-3">Рисунок гипсовой головы (11 класс)</h4>
+                                <div class="text-black">
+                                    <p>Участнику олимпиады предлагается выполнить рисунок одной из предложенных заданием гипсовой головы: (Венера, Аполлон, Артемида, Антиной, Гермес, Римский гражданин, Гатамелатта, Германик, Цезарь, Дорифор).</p>
+                                    <p><strong>Материал:</strong> графитный карандаш, лист бумаги формата А2.</p>
+                                    <p><strong>Продолжительность испытания:</strong> 300 минут (5 часов).</p>
+                                </div>
+                            </div>
+                        </div>
+                    `,
+                    images: []
+                }
+            },
+            kompoziciya: {
+                "6-7": {
+                    content: `<div class="bg-white rounded-3 p-4 h-100">
+                        <h4 class="text-blue font-weight-600 mb-3">Тематическая композиция на заданную тему</h4>
+                        <div class="text-black">
+                            <p>Содержание задания: участнику олимпиады предлагается выполнить эскиз композиции на одну из заданных тем.</p>
+                            <p><strong>Материал:</strong> лист бумаги не менее формата А3, материалы по выбору автора (исключается масло).</p>
+                            <p><strong>Продолжительность испытания:</strong> 180 минут (3 часа).</p>
+                        </div>
+                    </div>`,
+                    images: []
+                },
+                "8-9": {
+                    content: `<div class="bg-white rounded-3 p-4 h-100">
+                        <h4 class="text-blue font-weight-600 mb-3">Тематическая композиция на заданную тему</h4>
+                        <div class="text-black">
+                            <p>Содержание задания: участнику олимпиады предлагается выполнить эскиз композиции на заданную тему или выполнить один эскиз стилизации предложенного объекта размером не более 15х15 см. с вариантами и разработками одного из предложенного объекта, выдаваемых при вскрытии конверта с заданиями.</p>
+                            <p><strong>Материал:</strong> лист бумаги не менее формата А3, материалы по выбору автора (исключается масло).</p>
+                            <p><strong>Продолжительность испытания:</strong> 240 минут (4 часа).</p>
+                        </div>
+                    </div>`,
+                    images: []
+                },
+                "10-11": {
+                    content: `
+                        <div class="mb-5">
+                            <div class="bg-white rounded-3 p-4 h-100 mb-4">
+                                <h4 class="text-blue font-weight-600 mb-3">Эскиз колористической композиции на заданную тему</h4>
+                                <div class="text-black">
+                                    <p>Содержание задания: участнику олимпиады предлагается на листе формата А2 выполнить эскиз размером А3 колористической декоративно-плоскостной, беспредметной композиции на одну из заданных тем, выдаваемых при вскрытии конверта с заданиями.</p>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-3 p-4 h-100 mb-4">
+                                <h4 class="text-blue font-weight-600 mb-3">Эскиз стилизации предложенного объекта</h4>
+                                <div class="text-black">
+                                    <p>Содержание задания: выполнить один эскиз стилизации размером не более 15х15 см. с вариантами и разработками одного из предложенного объекта, выдаваемых при вскрытии конверта с заданиями: животные, насекомые, растения, персонажи сказок.</p>
+                                    <p><strong>Материал:</strong> лист бумаги формата А2, материалы по выбору автора (исключается масло).</p>
+                                    <p><strong>Продолжительность испытания:</strong> 300 минут (5 часов).</p>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-3 p-4 h-100">
+                                <h4 class="text-blue font-weight-600 mb-3">Объемно-пространственная композиция на заданную тему</h4>
+                                <div class="text-black">
+                                    <p>Содержание задания: участнику олимпиады предлагается выполнить рисунок композиции на одну из заданных тем, выдаваемых при вскрытии конверта с заданиями. Для этого следует использовать по выбору от 5 до 9 любых геометрических тел из набора тел, приведённых в таблице на оборотной стороне листа с заданием. Всего в композиции должно быть не менее 7 элементов (геометрических тел).</p>
+                                    <p><strong>Материал:</strong> лист бумаги формата А3, графитный карандаш.</p>
+                                    <p><strong>Продолжительность испытания:</strong> 300 минут (5 часов).</p>
+                                    <p><strong>Требования к условиям выполнения задания:</strong></p>
+                                    <ul>
+                                        <li>Соблюдение правил построения линейной перспективы. Линия горизонта может быть выбрана с учётом наилучшего раскрытия темы задания.</li>
+                                        <li>Повторяющиеся геометрические тела, выбранные для композиции, при соблюдении заданных пропорций могут использоваться в разных масштабах.</li>
+                                        <li>В композиции может быть использован приём взаимоврезания геометрических тел.</li>
+                                        <li>Рисунок выполняется карандашом с лёгкой светотеневой проработкой объёмов геометрических тел.</li>
+                                        <li>Рисунок выполняется вручную, без использования линеек и линейных приспособлений.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    `,
+                    images: []
+                }
+            },
+            cherchenie: {
+                "9": {
+                    content: `<div class="bg-white rounded-3 p-4 h-100">
+                        <h4 class="text-blue font-weight-600 mb-3">Деление окружности на равные части. Построение сопряжений; Проекционное черчение</h4>
+                        <div class="text-black">
+                            <p>На листе проводится одинарная рамка на расстоянии 5 мм от края листа со всех сторон. Задание состоит из двух частей и выполняется в соответствии с нормативными требованиями к толщине линий, расположению видов на чертеже, начертанию шрифта и простановке размеров. Изображение на билете является безмасштабным. Чертеж выполняется в соответствии с нанесенными в билете размерами в масштабе 1:1.</p>
+                            <p><strong>Задание №1 «Деление окружности на равные части. Построение сопряжений»:</strong> участнику олимпиады предлагается построить очертания архитектурной детали (вазы / архитектурного облома) или декоративного элемента в соответствии с правилами построения сопряжений и деления окружности на равные части, продемонстрировав знания и умения в выполнении чертежа по предложенному образцу. На чертеже должны быть проставлены все размеры и оставлены линии построения сопряжений.</p>
+                            <p><strong>Задание №2 «Проекционное черчение»:</strong> участнику олимпиады предлагается по заданным двум проекциям построить три проекции детали и ее объемное изображение (прямоугольную изометрическую проекцию) без выреза четверти.</p>
+                            <p>Чертеж может быть закомпонован как горизонтально, так и вертикально. Архитектурную деталь (вазу или архитектурный облом) для улучшения компоновки можно переворачивать и даже располагать зеркально по отношению к заданию.</p>
+                            <p><strong>Материал:</strong> лист ватмана формата А3</p>
+                            <p><strong>Продолжительность испытания:</strong> 240 минут (4 часа).</p>
+                        </div>
+                    </div>`,
+                    images: []
+                },
+                "10": {
+                    content: `<div class="bg-white rounded-3 p-4 h-100">
+                        <h4 class="text-blue font-weight-600 mb-3">Построение сопряжений; Проекционное черчение</h4>
+                        <div class="text-black">
+                            <p>На листе проводится одинарная рамка на расстоянии 5 мм от края листа со всех сторон. Задание состоит из двух частей и выполняется в соответствии с нормативными требованиями к толщине линий, расположению видов на чертеже, начертанию шрифта и простановке размеров. Изображение на билете является безмасштабным. Чертеж выполняется в соответствии с нанесенными в билете размерами в масштабе 1:1.</p>
+                            <p><strong>Задание №1 «Построение сопряжений»:</strong> участнику олимпиады предлагается построить очертания архитектурной детали (вазы или архитектурного облома) в соответствии с правилами построения сопряжений, продемонстрировав знания и умения в выполнении чертежа по предложенному образцу. На чертеже должны быть проставлены все размеры и оставлены линии построения сопряжений.</p>
+                            <p><strong>Задание №2 «Проекционное черчение»:</strong> участнику олимпиады предлагается по заданным двум проекциям построить три проекции детали и ее объемное изображение (прямоугольную изометрическую проекцию) без выреза четверти.</p>
+                            <p>Чертеж может быть закомпонован как горизонтально, так и вертикально. Архитектурную деталь (вазу или архитектурный облом) для улучшения компоновки можно переворачивать и даже располагать зеркально по отношению к заданию.</p>
+                            <p><strong>Материал:</strong> лист ватмана формата А3</p>
+                            <p><strong>Продолжительность испытания:</strong> 240 минут (4 часа).</p>
+                        </div>
+                    </div>`,
+                    images: []
+                },
+                "11": {
+                    content: `<div class="bg-white rounded-3 p-4 h-100">
+                        <h4 class="text-blue font-weight-600 mb-3">Построение сопряжений; Проекционное черчение</h4>
+                        <div class="text-black">
+                            <p>На листе проводится одинарная рамка на расстоянии 5 мм от края листа со всех сторон. Задание состоит из двух частей и выполняется в соответствии с нормативными требованиями к толщине линий, расположению видов на чертеже, начертанию шрифта и простановке размеров. Изображение на билете является безмасштабным. Чертеж выполняется в соответствии с нанесенными в билете размерами в масштабе 1:1.</p>
+                            <p><strong>Задание №1 «Построение сопряжений»:</strong> участнику олимпиады предлагается построить очертания архитектурной детали (вазы) в соответствии с правилами построения сопряжений, продемонстрировав знания и умения в выполнении чертежа по предложенному образцу.</p>
+                            <p><strong>Задание №2 «Проекционное черчение»:</strong> участнику олимпиады предлагается построить три проекции детали, выполнить полезные разрезы и сечения, проставить необходимые размеры, построить объемное изображение детали (прямоугольную изометрическую проекцию) без выреза четверти.</p>
+                            <p>Чертеж может быть закомпонован как горизонтально, так и вертикально. Архитектурную деталь (вазу или архитектурный облом) для улучшения компоновки можно переворачивать и даже располагать зеркально по отношению к заданию.</p>
+                            <p><strong>Материал:</strong> лист ватмана формата А3</p>
+                            <p><strong>Продолжительность испытания:</strong> 300 минут (5 часов).</p>
+                        </div>
+                    </div>`,
+                    images: []
+                }
+            },
+            zhivopis: {
+                "6-7": {
+                    content: `<div class="bg-white rounded-3 p-4 h-100">
+                        <h4 class="text-blue font-weight-600 mb-3">Этюд натюрморта</h4>
+                        <div class="text-black">
+                            <p>Содержание задания: участнику олимпиады предлагается выполнить этюд постановки натюрморта из предметов с натуры. Количество предметов, включая муляжи: 3. Количество драпировок: 2 (без складок).</p>
+                            <p><strong>Материал:</strong> лист бумаги формата А3; краски по выбору: акварель, гуашь, темпера, акрил.</p>
+                            <p><strong>Продолжительность испытания:</strong> 180 минут (3 часа).</p>
+                        </div>
+                    </div>`,
+                    images: []
+                },
+                "8-9": {
+                    content: `<div class="bg-white rounded-3 p-4 h-100">
+                        <h4 class="text-blue font-weight-600 mb-3">Этюд натюрморта</h4>
+                        <div class="text-black">
+                            <p>Содержание задания: участнику олимпиады предлагается выполнить этюд постановки натюрморта из предметов с натуры. Количество предметов, включая муляжи: 3. Количество драпировок: 3 (со складками).</p>
+                            <p><strong>Материал:</strong> лист бумаги формата А3; краски по выбору: акварель, гуашь, темпера, акрил.</p>
+                            <p><strong>Продолжительность испытания:</strong> 240 минут (4 часа).</p>
+                        </div>
+                    </div>`,
+                    images: []
+                },
+                "10-11": {
+                    content: `
+                        <div class="mb-5">
+                            <div class="bg-white rounded-3 p-4 h-100 mb-4">
+                                <h4 class="text-blue font-weight-600 mb-3">Этюд сложного натюрморта (10 класс)</h4>
+                                <div class="text-black">
+                                    <p>Содержание задания: участнику олимпиады предлагается выполнить этюд постановки натюрморта из бытовых предметов с натуры. Количество предметов, включая муляжи: пять: не менее двух бытовых предметов + фрукты и овощи. Количество драпировок: три-четыре (со складками).</p>
+                                    <p><strong>Материал:</strong> лист бумаги формата А2; краски по выбору: акварель, гуашь, темпера, акрил.</p>
+                                    <p><strong>Продолжительность испытания:</strong> 240 минут (4 часа).</p>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-3 p-4 h-100">
+                                <h4 class="text-blue font-weight-600 mb-3">Этюд сложного натюрморта (11 класс)</h4>
+                                <div class="text-black">
+                                    <p>Содержание задания: участнику олимпиады предлагается выполнить этюд постановки натюрморта из бытовых предметов с натуры. Количество предметов, включая муляжи: пять: не менее двух бытовых предметов + фрукты и овощи. Количество драпировок: три-четыре (со складками).</p>
+                                    <p><strong>Материал:</strong> лист бумаги формата А2; краски по выбору: акварель, гуашь, темпера, акрил.</p>
+                                    <p><strong>Продолжительность испытания:</strong> 300 минут (5 часов).</p>
+                                </div>
+                            </div>
+                        </div>
+                    `,
+                    images: []
+                }
+            }
+        }
+    };
+
+    // =========================================================================
+    // 3. ФУНКЦИИ ДЛЯ ОБНОВЛЕНИЯ ФИЛЬТРОВ И ОТОБРАЖЕНИЯ КОНТЕНТА
+    // =========================================================================
+
+    let currentTab = 'tasks';
+    let currentTasksFilters = {
+        stage: 'otborochniy_municipal',
+        subject: 'risunok',
+        class: '6-7'
+    };
+    let currentCriteriaFilters = {
+        stage: 'otborochniy_municipal',
+        subject: 'risunok',
+        class: '6-7'
+    };
+    
+    let owlCarousel = null;
+
+    function getCurrentData() {
+        return currentTab === 'tasks' ? tasksData : criteriaData;
+    }
+
+    function getCurrentFilters() {
+        return currentTab === 'tasks' ? currentTasksFilters : currentCriteriaFilters;
+    }
+
+    function updateClassOptions() {
+        const classFilterContainer = document.querySelector('.class-filter');
+        if (!classFilterContainer) return;
+        
+        const data = getCurrentData();
+        const filters = getCurrentFilters();
+        
+        const stageData = data[filters.stage];
+        const subjectData = stageData?.[filters.subject];
+        
+        let availableClasses = [];
+        
+        if (subjectData && Object.keys(subjectData).length > 0) {
+            availableClasses = Object.keys(subjectData);
+        }
+        
+        classFilterContainer.innerHTML = '';
+        
+        if (availableClasses.length === 0) {
+            classFilterContainer.innerHTML = '<span class="text-muted small">Нет доступных классов</span>';
+            return;
+        }
+        
+        if (!availableClasses.includes(filters.class)) {
+            filters.class = availableClasses[0];
+        }
+        
+        availableClasses.forEach(className => {
+            const btn = document.createElement('button');
+            btn.className = `tab-item ${filters.class === className ? 'active' : 'inactive'}`;
+            
+            let displayText = className;
+            if (filters.subject === 'cherchenie') {
+                displayText = className + ' класс';
+            } else if (className === '6-7' || className === '8-9' || className === '10-11') {
+                displayText = className + ' классы';
+            } else if (className === '10' || className === '11') {
+                displayText = className + ' класс';
+            } else {
+                displayText = className + ' классы';
+            }
+            btn.textContent = displayText;
+            btn.setAttribute('data-class', className);
+            
+            btn.addEventListener('click', () => {
+                if (currentTab === 'tasks') {
+                    currentTasksFilters.class = className;
+                } else {
+                    currentCriteriaFilters.class = className;
+                }
+                renderContent();
+            });
+            
+            classFilterContainer.appendChild(btn);
+        });
+    }
+    
+    function initCarousel(images) {
+        const owlContainer = document.getElementById('owlCarousel');
+        
+        if (owlCarousel) {
+            owlCarousel.trigger('destroy.owl.carousel');
+            owlCarousel = null;
+        }
+        
+        if (owlContainer) {
+            owlContainer.innerHTML = '';
+        }
+        
+        if (!images || images.length === 0 || !owlContainer) {
+            return false;
+        }
+        
+        for (let i = 0; i < images.length; i += 3) {
+            const slideImages = images.slice(i, i + 3);
+            let imagesHtml = '';
+            slideImages.forEach(src => {
+                imagesHtml += `<img src="${src}" alt="пример работы" style="width:202px; height:282px; object-fit:cover; margin:0 5px; border-radius:8px;">`;
+            });
+            
+            const slideDiv = document.createElement('div');
+            slideDiv.className = 'item';
+            slideDiv.innerHTML = `
+                <div class="d-flex justify-content-center align-items-center" style="min-height:282px;">
+                    ${imagesHtml}
+                </div>
+            `;
+            owlContainer.appendChild(slideDiv);
+        }
+        
+        setTimeout(() => {
+            if (owlContainer.children.length > 0) {
+                owlCarousel = $(owlContainer).owlCarousel({
+                    loop: true,
+                    margin: 10,
+                    nav: true,
+                    dots: true,
+                    items: 1,
+                    navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
+                    autoplay: false
+                });
+            }
+        }, 50);
+        
+        return true;
+    }
+    
+    function renderContent() {
+        const container = document.getElementById('materialsContentContainer');
+        if (!container) return;
+        
+        const data = getCurrentData();
+        const filters = getCurrentFilters();
+        
+        const stageData = data[filters.stage];
+        const subjectData = stageData?.[filters.subject];
+        const classData = subjectData?.[filters.class];
+        
+        let contentHtml = '';
+        let images = [];
+        let hasImages = false;
+        
+        if (!classData || Object.keys(classData).length === 0) {
+            contentHtml = `
+                <div class="bg-white rounded-3 p-5 text-center">
+                    <h4 class="text-blue mb-3">Материалы недоступны</h4>
+                    <p class="text-black mb-0">Для выбранной комбинации фильтров материалы отсутствуют.</p>
+                    <p class="text-black-50 mt-2 small">Пожалуйста, выберите другую комбинацию фильтров.</p>
+                </div>
+            `;
+            images = [];
+        } else {
+            contentHtml = classData.content || `<div class="bg-white rounded-3 p-4"><p>Нет текста</p></div>`;
+            images = classData.images || [];
+            hasImages = images.length > 0 && currentTab === 'tasks';
+        }
+        
+        container.innerHTML = `
+            <div class="row g-4">
+                <div class="col-12 mb-4">
+                    <div class="d-flex flex-wrap gap-2 mb-3" id="stageFilterGroup">
+                        <button class="tab-item ${filters.stage === 'otborochniy_municipal' ? 'active' : 'inactive'}" data-stage="otborochniy_municipal">Отборочный Муниципальный</button>
+                        <button class="tab-item ${filters.stage === 'otborochniy_regional' ? 'active' : 'inactive'}" data-stage="otborochniy_regional">Отборочный Региональный</button>
+                    </div>
+                    
+                    <div class="d-flex flex-wrap gap-2 mb-3" id="subjectFilterGroup">
+                        <button class="tab-item ${filters.subject === 'risunok' ? 'active' : 'inactive'}" data-subject="risunok">Рисунок</button>
+                        <button class="tab-item ${filters.subject === 'kompoziciya' ? 'active' : 'inactive'}" data-subject="kompoziciya">Композиция</button>
+                        <button class="tab-item ${filters.subject === 'cherchenie' ? 'active' : 'inactive'}" data-subject="cherchenie">Черчение</button>
+                        <button class="tab-item ${filters.subject === 'zhivopis' ? 'active' : 'inactive'}" data-subject="zhivopis">Живопись</button>
+                    </div>
+                    
+                    <div class="d-flex flex-wrap gap-2 class-filter"></div>
+                </div>
+                
+                <div class="col-lg-12" id="textContentBlock">
+                    <div class="bg-white rounded-3">
+                        ${contentHtml}
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        updateActiveFilterClasses();
+        updateClassOptions();
+        
+        if (hasImages) {
+            const textBlock = document.getElementById('textContentBlock');
+            if (textBlock) {
+                textBlock.classList.remove('col-lg-12');
+                textBlock.classList.add('col-lg-6');
+                
+                let carouselColumn = document.getElementById('carouselColumn');
+                if (!carouselColumn) {
+                    const newCarouselColumn = document.createElement('div');
+                    newCarouselColumn.id = 'carouselColumn';
+                    newCarouselColumn.className = 'col-lg-6';
+                    newCarouselColumn.innerHTML = '<div id="owlCarousel" class="owl-carousel owl-theme"></div>';
+                    container.querySelector('.row').appendChild(newCarouselColumn);
+                    carouselColumn = newCarouselColumn;
+                } else {
+                    carouselColumn.style.display = 'block';
+                    carouselColumn.classList.remove('col-lg-12');
+                    carouselColumn.classList.add('col-lg-6');
+                    carouselColumn.innerHTML = '<div id="owlCarousel" class="owl-carousel owl-theme"></div>';
+                }
+                
+                initCarousel(images);
+            }
+        } else {
+            const textBlock = document.getElementById('textContentBlock');
+            if (textBlock) {
+                textBlock.classList.remove('col-lg-6');
+                textBlock.classList.add('col-lg-12');
+            }
+            
+            const carouselColumn = document.getElementById('carouselColumn');
+            if (carouselColumn) {
+                carouselColumn.style.display = 'none';
+            }
+            
+            if (owlCarousel) {
+                owlCarousel.trigger('destroy.owl.carousel');
+                owlCarousel = null;
+            }
+        }
+        
+        setupFilters();
+    }
+    
+    function updateActiveFilterClasses() {
+        const filters = getCurrentFilters();
+        
+        document.querySelectorAll('#stageFilterGroup .tab-item').forEach(btn => {
+            const stage = btn.getAttribute('data-stage');
+            if (stage === filters.stage) {
+                btn.classList.add('active');
+                btn.classList.remove('inactive');
+            } else {
+                btn.classList.remove('active');
+                btn.classList.add('inactive');
+            }
+        });
+        
+        document.querySelectorAll('#subjectFilterGroup .tab-item').forEach(btn => {
+            const subject = btn.getAttribute('data-subject');
+            if (subject === filters.subject) {
+                btn.classList.add('active');
+                btn.classList.remove('inactive');
+            } else {
+                btn.classList.remove('active');
+                btn.classList.add('inactive');
+            }
+        });
+    }
+    
+    function setupFilters() {
+        document.querySelectorAll('#stageFilterGroup .tab-item').forEach(btn => {
+            btn.removeEventListener('click', handleStageClick);
+            btn.addEventListener('click', handleStageClick);
+        });
+        
+        document.querySelectorAll('#subjectFilterGroup .tab-item').forEach(btn => {
+            btn.removeEventListener('click', handleSubjectClick);
+            btn.addEventListener('click', handleSubjectClick);
+        });
+    }
+    
+    function handleStageClick(e) {
+        const stage = this.getAttribute('data-stage');
+        
+        if (currentTab === 'tasks') {
+            currentTasksFilters.stage = stage;
+            const data = tasksData[stage]?.[currentTasksFilters.subject];
+            if (data && Object.keys(data).length > 0) {
+                currentTasksFilters.class = Object.keys(data)[0];
+            }
+        } else {
+            currentCriteriaFilters.stage = stage;
+            const data = criteriaData[stage]?.[currentCriteriaFilters.subject];
+            if (data && Object.keys(data).length > 0) {
+                currentCriteriaFilters.class = Object.keys(data)[0];
+            }
+        }
+        
+        renderContent();
+    }
+    
+    function handleSubjectClick(e) {
+        const subject = this.getAttribute('data-subject');
+        
+        if (currentTab === 'tasks') {
+            currentTasksFilters.subject = subject;
+            const data = tasksData[currentTasksFilters.stage]?.[subject];
+            if (data && Object.keys(data).length > 0) {
+                currentTasksFilters.class = Object.keys(data)[0];
+            }
+        } else {
+            currentCriteriaFilters.subject = subject;
+            const data = criteriaData[currentCriteriaFilters.stage]?.[subject];
+            if (data && Object.keys(data).length > 0) {
+                currentCriteriaFilters.class = Object.keys(data)[0];
+            }
+        }
+        
+        renderContent();
+    }
+    
+    function setupMaterialsTabs() {
+        const tasksTab = document.querySelector('[data-materials="tasks"]');
+        const criteriaTab = document.querySelector('[data-materials="criteria"]');
+        
+        if (tasksTab) {
+            tasksTab.addEventListener('click', () => {
+                currentTab = 'tasks';
+                tasksTab.classList.add('active');
+                tasksTab.classList.remove('inactive');
+                if (criteriaTab) {
+                    criteriaTab.classList.remove('active');
+                    criteriaTab.classList.add('inactive');
+                }
+                renderContent();
+            });
+        }
+        
+        if (criteriaTab) {
+            criteriaTab.addEventListener('click', () => {
+                currentTab = 'criteria';
+                criteriaTab.classList.add('active');
+                criteriaTab.classList.remove('inactive');
+                if (tasksTab) {
+                    tasksTab.classList.remove('active');
+                    tasksTab.classList.add('inactive');
+                }
+                renderContent();
+            });
+        }
+    }
+    
+    function addCarouselStyles() {
+        const style = document.createElement('style');
+        style.textContent = `
+            .owl-carousel .owl-nav button.owl-prev,
+            .owl-carousel .owl-nav button.owl-next {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background: rgba(0,0,0,0.5) !important;
+                color: white !important;
+                width: 40px;
+                height: 40px;
+                border-radius: 50% !important;
+                font-size: 20px !important;
+            }
+            .owl-carousel .owl-nav button.owl-prev {
+                left: -20px;
+            }
+            .owl-carousel .owl-nav button.owl-next {
+                right: -20px;
+            }
+            .owl-carousel .owl-dots {
+                margin-top: 15px;
+            }
+            .owl-carousel .item img {
+                transition: transform 0.3s ease;
+                cursor: pointer;
+            }
+            .owl-carousel .item img:hover {
+                transform: scale(1.05);
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        setupMaterialsTabs();
+        addCarouselStyles();
+        renderContent();
+    });
+</script>
+
+
+<section class="py-5 bg-grey-light">
+        <div class="container">
+            <h2 class="section-title text-black offset-1">списки победителей и призеров</h2>
+            
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="document-card">
+                        <div class="d-flex align-items-start">
+                            <div class="me-4">
+                                <img src="image/ПДФ.png">
+                            </div>
+                            <div>
+                                <h5 class="font-weight-500 text-black mb-0">Победители и призеры заключительного (третьего) этапа Олимпиады 2023-2024 гг.</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="document-card">
+                        <div class="d-flex align-items-start">
+                            <div class="me-4">
+                                <img src="image/ПДФ.png">
+                            </div>
+                            <div>
+                                <h5 class="font-weight-500 text-black mb-0">Победители и призеры отборочного регионального (второго) этапа Олимпиады 2023-2024 гг.</h5>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+
+    <!-- Best Works Section -->
+<section class="py-5 bg-white">
+    <div class="container">
+        <h2 class="section-title text-black">лучшие работы</h2>
+        
+        <!-- Filters -->
+        <div class="mb-5">
+            <div class="d-flex flex-wrap gap-3 mb-4" id="bestWorksFilters">
+                <!-- Первый фильтр: Предмет -->
+                <div class="d-flex flex-wrap gap-2 mb-3 w-100">
+                    <button class="tab-item active" data-best-subject="risunok">Рисунок</button>
+                    <button class="tab-item inactive" data-best-subject="zhivopis">Живопись</button>
+                    <button class="tab-item inactive" data-best-subject="kompoziciya">Композиция</button>
+                </div>
+                
+                <!-- Второй фильтр: Класс -->
+                <div class="d-flex flex-wrap gap-2 class-filter-best">
+                    <button class="tab-item active" data-best-class="6">6 класс</button>
+                    <button class="tab-item inactive" data-best-class="7">7 класс</button>
+                    <button class="tab-item inactive" data-best-class="8">8 класс</button>
+                    <button class="tab-item inactive" data-best-class="9">9 класс</button>
+                    <button class="tab-item inactive" data-best-class="10">10 класс</button>
+                </div>
+            </div>
+            <div class="border-bottom"></div>
+            <div class="bg-blue" style="width: 120px; height: 4px;"></div>
+        </div>
+        
+        <!-- Gallery Container -->
+        <div id="bestWorksGallery" class="gallery-grid">
+            <!-- Галерея будет заполняться динамически -->
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Стили для адаптивной галереи */
+    .gallery-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin: 0 auto;
+    }
+    
+    .gallery-item {
+        flex: 1 1 auto;
+        min-width: 250px;
+        max-width: calc(25% - 15px); /* По умолчанию 4 в ряд */
+        margin-bottom: 20px;
+        transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover {
+        transform: translateY(-5px);
+    }
+    
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
+    }
+    
+    .gallery-item:hover img {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Адаптация под разные размеры экрана */
+    @media (max-width: 1200px) {
+        .gallery-item {
+            max-width: calc(33.333% - 14px); /* 3 в ряд */
+        }
+    }
+    
+    @media (max-width: 900px) {
+        .gallery-item {
+            max-width: calc(50% - 10px); /* 2 в ряд */
+        }
+    }
+    
+    @media (max-width: 600px) {
+        .gallery-item {
+            max-width: 100%; /* 1 в ряд */
+        }
+    }
+    
+    /* Для случаев, когда изображения разного размера */
+    .gallery-item.wide {
+        flex-grow: 2;
+    }
+    
+    .gallery-item.tall {
+        flex-grow: 1;
+    }
+    
+    /* Заглушка для загрузки */
+    .gallery-loading {
+        text-align: center;
+        padding: 40px;
+        color: #666;
+    }
+</style>
+
+<script>
+    // Данные для галереи
+    const bestWorksData = {
+        risunok: {
+            "6": [
+                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&h=400&fit=crop",
+                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=500&h=600&fit=crop",
+                "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=700&h=500&fit=crop",
+                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=550&h=450&fit=crop",
+                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=480&h=480&fit=crop",
+                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=650&h=550&fit=crop",
+                "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=600&h=700&fit=crop",
+                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=580&h=420&fit=crop"
+            ],
+            "7": [
+                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=620&h=450&fit=crop",
+                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=530&h=630&fit=crop",
+                "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=720&h=520&fit=crop",
+                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=560&h=460&fit=crop",
+                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=490&h=490&fit=crop"
+            ],
+            "8": [
+                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&h=500&fit=crop",
+                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=550&h=650&fit=crop",
+                "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=680&h=540&fit=crop",
+                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=590&h=480&fit=crop",
+                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=510&h=510&fit=crop",
+                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=630&h=570&fit=crop"
+            ],
+            "9": [
+                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=640&h=480&fit=crop",
+                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=580&h=680&fit=crop",
+                "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=700&h=560&fit=crop",
+                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&h=500&fit=crop"
+            ],
+            "10": [
+                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=660&h=520&fit=crop",
+                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=600&h=700&fit=crop",
+                "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=720&h=580&fit=crop",
+                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=620&h=520&fit=crop",
+                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=540&h=540&fit=crop",
+                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=650&h=590&fit=crop",
+                "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=690&h=610&fit=crop"
+            ]
+        },
+        zhivopis: {
+            "6": [
+                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=580&h=420&fit=crop",
+                "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=620&h=520&fit=crop",
+                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=540&h=640&fit=crop",
+                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=660&h=480&fit=crop"
+            ],
+            "7": [
+                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&h=440&fit=crop",
+                "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=640&h=540&fit=crop",
+                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=560&h=660&fit=crop",
+                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=680&h=500&fit=crop",
+                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=590&h=450&fit=crop"
+            ],
+            "8": [
+                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=620&h=460&fit=crop",
+                "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=660&h=560&fit=crop",
+                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=580&h=680&fit=crop",
+                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=700&h=520&fit=crop"
+            ],
+            "9": [
+                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=640&h=480&fit=crop",
+                "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=680&h=580&fit=crop",
+                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=600&h=700&fit=crop",
+                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=720&h=540&fit=crop",
+                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=610&h=470&fit=crop",
+                "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=650&h=590&fit=crop"
+            ],
+            "10": [
+                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=660&h=500&fit=crop",
+                "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=700&h=600&fit=crop",
+                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=620&h=720&fit=crop",
+                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=740&h=560&fit=crop"
+            ]
+        },
+        kompoziciya: {
+            "6": [
+                "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=600&h=500&fit=crop",
+                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=580&h=620&fit=crop",
+                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=640&h=480&fit=crop",
+                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=560&h=560&fit=crop"
+            ],
+            "7": [
+                "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=620&h=520&fit=crop",
+                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&h=640&fit=crop",
+                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=660&h=500&fit=crop",
+                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=580&h=580&fit=crop",
+                "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=630&h=530&fit=crop"
+            ],
+            "8": [
+                "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=640&h=540&fit=crop",
+                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=620&h=660&fit=crop",
+                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=680&h=520&fit=crop",
+                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&h=600&fit=crop"
+            ],
+            "9": [
+                "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=660&h=560&fit=crop",
+                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=640&h=680&fit=crop",
+                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=700&h=540&fit=crop",
+                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=620&h=620&fit=crop",
+                "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=650&h=570&fit=crop"
+            ],
+            "10": [
+                "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=680&h=580&fit=crop",
+                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=660&h=700&fit=crop",
+                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=720&h=560&fit=crop",
+                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=640&h=640&fit=crop"
+            ]
+        }
+    };
+
+    // Текущие фильтры
+    let bestFilters = {
+        subject: 'risunok',
+        class: '6'
+    };
+
+    // Функция для загрузки и отображения галереи
+    function renderBestWorksGallery() {
+        const gallery = document.getElementById('bestWorksGallery');
+        const images = bestWorksData[bestFilters.subject]?.[bestFilters.class] || [];
+        
+        if (images.length === 0) {
+            gallery.innerHTML = '<div class="gallery-loading">Нет работ для отображения</div>';
+            return;
+        }
+        
+        // Очищаем галерею
+        gallery.innerHTML = '';
+        
+        // Создаем элементы для каждого изображения
+        images.forEach((imgSrc, index) => {
+            const item = document.createElement('div');
+            item.className = 'gallery-item';
+            
+            // Добавляем случайные классы для разнообразия размеров (опционально)
+            if (index % 3 === 0) item.classList.add('wide');
+            if (index % 4 === 0) item.classList.add('tall');
+            
+            const img = document.createElement('img');
+            img.src = imgSrc;
+            img.alt = `${getSubjectName(bestFilters.subject)} ${bestFilters.class} класс, работа ${index + 1}`;
+            img.loading = 'lazy'; // Ленивая загрузка для производительности
+            
+            item.appendChild(img);
+            gallery.appendChild(item);
+        });
+        
+        // Анимация появления
+        const items = gallery.querySelectorAll('.gallery-item');
+        items.forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
+            }, index * 50); // Каскадная анимация
+        });
+    }
+
+    // Вспомогательная функция для получения названия предмета
+    function getSubjectName(subject) {
+        const names = {
+            risunok: 'Рисунок',
+            zhivopis: 'Живопись',
+            kompoziciya: 'Композиция'
+        };
+        return names[subject] || subject;
+    }
+
+    // Настройка фильтров для лучших работ
+    function setupBestWorksFilters() {
+        // Фильтр по предмету
+        document.querySelectorAll('[data-best-subject]').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const subject = this.getAttribute('data-best-subject');
+                
+                // Обновляем активный класс у кнопок предмета
+                document.querySelectorAll('[data-best-subject]').forEach(b => {
+                    b.classList.remove('active');
+                    b.classList.add('inactive');
+                });
+                this.classList.add('active');
+                this.classList.remove('inactive');
+                
+                bestFilters.subject = subject;
+                renderBestWorksGallery();
+            });
+        });
+        
+        // Фильтр по классу
+        document.querySelectorAll('[data-best-class]').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const className = this.getAttribute('data-best-class');
+                
+                // Обновляем активный класс у кнопок класса
+                document.querySelectorAll('[data-best-class]').forEach(b => {
+                    b.classList.remove('active');
+                    b.classList.add('inactive');
+                });
+                this.classList.add('active');
+                this.classList.remove('inactive');
+                
+                bestFilters.class = className;
+                renderBestWorksGallery();
+            });
+        });
+    }
+
+    // Инициализация при загрузке страницы
+    document.addEventListener('DOMContentLoaded', function() {
+        setupBestWorksFilters();
+        renderBestWorksGallery();
+        
+        // Добавляем ресайз-обработчик для перерисовки при изменении размера окна
+        window.addEventListener('resize', function() {
+            // Просто обновляем галерею без изменения данных
+            renderBestWorksGallery();
+        });
+    });
+</script>
+
+
+<!-- Partners Section -->
+<section class="py-5 bg-white">
+    <div class="container">
+        <h2 class="section-title text-black">соорганизаторы олимпиады</h2>
+        
+        <!-- Partners Grid -->
+        <div class="partners-grid">
+            <!-- Логотипы будут подставляться динамически -->
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Стили для сетки партнеров */
+    .partners-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: flex-start;
+        margin-top: 30px;
+    }
+    
+    .partner-card {
+        width: 187px;
+        height: 131px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+        transition: all 0.3s ease;
+        border: 1px solid #e9ecef;
+    }
+    
+    .partner-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        border-color: var(--primary-blue, #0056b3);
+    }
+    
+    .partner-logo {
+        max-width: 70%;
+        max-height: 70%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        display: block;
+        transition: transform 0.3s ease;
+    }
+    
+    .partner-card:hover .partner-logo {
+        transform: scale(1.05);
+    }
+    
+    /* Адаптация для мобильных устройств */
+    @media (max-width: 768px) {
+        .partners-grid {
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .partner-card {
+            width: calc(50% - 30px);
+            min-width: 140px;
+            height: 100px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .partner-card {
+            width: 100%;
+            max-width: 187px;
+            height: 120px;
+        }
+    }
+    
+    /* Заглушка для загрузки */
+    .partners-loading {
+        text-align: center;
+        padding: 40px;
+        color: #666;
+        width: 100%;
+    }
+</style>
+
+<script>
+    // Данные партнеров (логотипы)
+    const partnersData = [
+        {
+            name: "Северо-Кавказский федеральный университет» Высшая школа креативных индустрий",
+            logo: "image/6s.png",
+            url: "#"
+        },
+        {
+            name: "Российская академия образования",
+            logo: "image/1s.png",
+            url: "#"
+        },
+        {
+            name: "Санкт-Петербургский государственный университет",
+            logo: "image/2s.png",
+            url: "#"
+        },
+        {
+            name: "Московский государственный университет",
+            logo: "image/3s.png",
+            url: "#"
+        },
+        {
+            name: "Высшая школа экономики",
+            logo: "image/4s.png",
+            url: "#"
+        },
+        {
+            name: "Союз архитекторов России",
+            logo: "image/5s.png",
+            url: "#"
+        },
+        {
+            name: "Российская академия художеств",
+            logo: "image/7s.png",
+            url: "#"
+        },
+        {
+            name: "Департамент культуры",
+            logo: "image/8s.png",
+            url: "#"
+        },
+        {
+            name: "Творческий союз художников",
+            logo: "image/9s.png",
+            url: "#"
+        },
+        {
+            name: "Ассоциация искусствоведов",
+            logo: "image/10s.png",
+            url: "#"
+        },
+        {
+            name: "Государственный Эрмитаж",
+            logo: "image/11s.png",
+            url: "#"
+        },
+        {
+            name: "Третьяковская галерея",
+            logo: "image/12s.png",
+            url: "#"
+        },
+        {
+            name: "Российский фонд культуры",
+            logo: "image/13s.png",
+            url: "#"
+        },
+        {
+            name: "Институт искусствознания",
+            logo: "image/14s.png",
+            url: "#"
+        }
+    ];
+
+    // Функция для отображения партнеров
+    function renderPartners() {
+        const container = document.querySelector('.partners-grid');
+        
+        if (!container) return;
+        
+        // Очищаем контейнер
+        container.innerHTML = '';
+        
+        // Создаем карточки для каждого партнера
+        partnersData.forEach((partner, index) => {
+            const card = document.createElement('a');
+            card.href = partner.url;
+            card.className = 'partner-card';
+            card.target = '_blank';
+            card.rel = 'noopener noreferrer';
+            card.setAttribute('aria-label', partner.name);
+            
+            // Добавляем задержку для анимации появления
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            
+            const img = document.createElement('img');
+            img.src = partner.logo;
+            img.alt = partner.name;
+            img.className = 'partner-logo';
+            img.loading = 'lazy'; // Ленивая загрузка
+            
+            // Обработка ошибок загрузки изображения
+            img.onerror = function() {
+                this.src = 'https://via.placeholder.com/150x80?text=Logo';
+                this.alt = partner.name + ' (логотип временно недоступен)';
+            };
+            
+            card.appendChild(img);
+            container.appendChild(card);
+            
+            // Анимация появления
+            setTimeout(() => {
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, index * 50);
+        });
+        
+        // Если партнеров нет, показываем сообщение
+        if (partnersData.length === 0) {
+            container.innerHTML = '<div class="partners-loading">Информация о соорганизаторах скоро появится</div>';
+        }
+    }
+
+    // Функция для перемешивания массива (если нужно случайное отображение)
+    function shufflePartners() {
+        for (let i = partnersData.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [partnersData[i], partnersData[j]] = [partnersData[j], partnersData[i]];
+        }
+    }
+
+    // Инициализация при загрузке страницы
+    document.addEventListener('DOMContentLoaded', function() {
+        // Если хотите перемешать порядок логотипов, раскомментируйте следующую строку
+        // shufflePartners();
+        
+        renderPartners();
+        
+        // Добавляем ресайз-обработчик для корректного отображения на мобильных
+        window.addEventListener('resize', function() {
+            // Ничего не делаем, просто триггерим перерендер если нужно
+            // Можно добавить логику для изменения количества элементов в ряду
+        });
+    });
+</script>
 
 
 
@@ -819,3 +3579,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+
+<script>
+        // Инициализация Owl Carousel для событий
+        $(document).ready(function(){
+            // Карусель событий
+            $('.events-carousel').owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: true,
+                dots: false,
+                responsive: {
+                    0: {
+                        items: 1.1
+                    },
+                    768: {
+                        items: 1.1
+                    },
+                    992: {
+                        items: 1.3
+                    },
+                    1200: {
+                        items: 1.3
+                    }
+                }
+            });
+        });
+    </script>

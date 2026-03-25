@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="Academy/css/owl.carousel.css">
-    <link rel="stylesheet" href="Academy/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="Academy/css/owl.theme.green.css">
+    <link rel="stylesheet" href="/css/owl.carousel.css">
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/css/owl.theme.green.css">
     <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css">
     <link href="/css/style.css" rel="stylesheet">
     <title>Магистратура | ААИ ЮФУ</title>
@@ -750,6 +750,57 @@
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(8, 13, 107, 0.3);
 }
+
+/* ===== ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ ФИЛЬТРА ===== */
+        .filter-badge {
+            cursor: pointer;
+            background-color: var(--light-grey);
+            padding: 8px 20px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-right: 12px;
+            font-weight: 500;
+            transition: 0.2s;
+            border: 1px solid transparent;
+        }
+        .filter-badge.active-filter {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+        .dir-chip {
+            cursor: pointer;
+            background-color: white;
+            border: 1px solid #dee2e6;
+            padding: 6px 16px;
+            border-radius: 30px;
+            display: inline-block;
+            margin: 0 8px 8px 0;
+            font-size: 0.95rem;
+            transition: 0.2s;
+        }
+        .dir-chip.active-dir {
+            background-color: var(--primary-blue);
+            border-color: var(--primary-blue);
+            color: white;
+        }
+
+        /* Owl Carousel кастомизация под размер 282x202 */
+        .owl-carousel .owl-item img {
+            width: 202px;
+            height: 282px;
+            object-fit: cover;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto;
+        }
+        .owl-stage-outer, .owl-stage, .owl-item {
+            height: 100%;
+        }
+        .owl-carousel .owl-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 </head>
 <body>
@@ -764,10 +815,14 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-7 mb-5 mb-lg-0">
-                        <a href="/Abiturient/abiturient.html"><div class="d-flex align-items-center mb-4">
-                            <i class="bi bi-arrow-left fs-4 text-primary me-3"></i>
-                            <h2 class="h4 mb-0 text-primary text-uppercase fw-medium">абитуриенту</h2>
-                        </div></a>
+                        <div class="d-flex align-items-center mt-4">
+                            <div class="me-3">
+                                <i class="bi bi-arrow-left" style="font-size: 20px; color: var(--primary-blue);"></i>
+                            </div>
+                            <span class="text-uppercase fw-bold" style="color: var(--primary-blue); font-size: 16px;">
+                                <a href="/Abiturient/abiturient.html" style="text-decoration: none;">Абитуриенту</a>
+                            </span>
+                        </div>
                         <h1 class="hero-title text-black mb-4 offset-1">магистратура</h1>
                         <p class="lead fs-5 text-dark mb-5 offset-1">
                             Продолжите своё профессиональное и творческое развитие в магистратуре Академии. 
@@ -880,7 +935,7 @@
                             </div>
                         </div>
                         <div class="text-end mt-5">
-                    <a href="#" class="btn btn-primary btn-lg text-white">Подать заявление</a>
+                    <a href="https://www.gosuslugi.ru/vuzonline" class="btn btn-primary btn-lg text-white">Подать заявление</a>
                 </div>
                     </div>
             </div>
@@ -894,73 +949,35 @@
                 <h2 class="section-title mb-5 text-black offset-1">Документы</h2>
                 
                 <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="row g-4">
-                            <div class="col-md-6">
-                                <a href="#" class="card border-0 shadow-sm text-decoration-none hover-lift h-100">
-                                    <div class="card-body p-4">
-                                        <div class="d-flex align-items-center">
-                                            <div class="bg-light-blue p-3 rounded-3 me-4">
-                                                <i class="bi bi-file-text fs-1 text-primary"></i>
-                                            </div>
-                                            <div>
-                                                <h5 class="card-title mb-2">Правила приема</h5>
-                                                <p class="card-text text-black mb-0">Официальные правила приема на 2025 год</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                    <div class="d-flex flex-wrap mb-3 row offset-2">
+                            <a href="https://sfedu.ru/00_main_2010/abitur/abit_2026/pravila_priema2026.pdf" class="document-link col-md-5 mb-5">
+                                <div class="icon-wrapper">
+                                    <img src="/Abiturient/imageBak/ПДФ.png" alt="">
+                                </div>
+                                <span class="text">правила приема</span>
+                            </a>
                             
-                            <div class="col-md-6">
-                                <a href="#" class="card border-0 shadow-sm text-decoration-none hover-lift h-100">
-                                    <div class="card-body p-4">
-                                        <div class="d-flex align-items-center">
-                                            <div class="bg-light-blue p-3 rounded-3 me-4">
-                                                <i class="bi bi-calendar-check fs-1 text-primary"></i>
-                                            </div>
-                                            <div>
-                                                <h5 class="card-title mb-2">Расписание вступительных испытаний</h5>
-                                                <p class="card-text text-black mb-0">Даты и время экзаменов</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                            <a href="https://sfedu.ru/www/stat_pages22.show?p=ABT/N8207/P" class="document-link col-md-5 mb-5">
+                                <div class="icon-wrapper">
+                                    <img src="/Abiturient/imageBak/ПДФ.png" alt="">
+                                </div>
+                                <span class="text">цифры набора</span>
+                            </a>
                             
-                            <div class="col-md-6">
-                                <a href="#" class="card border-0 shadow-sm text-decoration-none hover-lift h-100">
-                                    <div class="card-body p-4">
-                                        <div class="d-flex align-items-center">
-                                            <div class="bg-light-blue p-3 rounded-3 me-4">
-                                                <i class="bi bi-list-task fs-1 text-primary"></i>
-                                            </div>
-                                            <div>
-                                                <h5 class="card-title mb-2">Перечень вступительных испытаний</h5>
-                                                <p class="card-text text-black mb-0">Требования для каждого направления</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                            <a href="#" class="document-link col-md-5 mb-5">
+                                <div class="icon-wrapper">
+                                    <img src="/Abiturient/imageBak/ПДФ.png" alt="">
+                                </div>
+                                <span class="text">расписание<br>вступительных испытаний</span>
+                            </a>
                             
-                            <div class="col-md-6">
-                                <a href="#" class="card border-0 shadow-sm text-decoration-none hover-lift h-100">
-                                    <div class="card-body p-4">
-                                        <div class="d-flex align-items-center">
-                                            <div class="bg-light-blue p-3 rounded-3 me-4">
-                                                <i class="bi bi-bar-chart fs-1 text-primary"></i>
-                                            </div>
-                                            <div>
-                                                <h5 class="card-title mb-2">Цифры набора</h5>
-                                                <p class="card-text text-black mb-0">Количество мест по направлениям</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                            <a href="https://sfedu.ru/www/stat_pages22.show?p=ABT/N8207/P" class="document-link col-md-5 mb-5">
+                                <div class="icon-wrapper">
+                                    <img src="/Abiturient/imageBak/ПДФ.png" alt="">
+                                </div>
+                                <span class="text">перечень <br>вступительных испытаний</span>
+                            </a>
                         </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -1005,7 +1022,7 @@
                             <!-- Информация о событиях: 5 колонок справа -->
                             <div class="col-md-5">
     <!-- Блок с информацией о событиях -->
-                                <div class="alert alert-info border-0 bg-light-blue event-info" id="eventInfo">
+                                <div class="alert alert-info border-0 bg-white-blue event-info" id="eventInfo">
                                     <div class="d-flex">
                                         <i class=" fs-4 text-primary me-3"></i>
                                         <div>
@@ -1229,42 +1246,511 @@
         </section>
         </div>
 
-        <!-- ===== СЕКЦИЯ 5: ВСТУПИТЕЛЬНЫЕ ИСПЫТАНИЯ ===== -->
-        <section class="exams-section py-5" id="Vstupitelnye">
-            <div class="container">
-                <h2 class="section-title text-center mb-5">Вступительные испытания</h2>
-                
-                <div class="row justify-content-center">
-                    <div class="col-10">
-                                <div class="align-items-center">
-                                        <div class="row g-4 bg-blue">
-                                            <div class="col-md-6">
-                                                <div class=" text-white p-4 rounded-3 h-100">
-                                                    <h4 class="display-4 fw-bold mb-3">50+</h4>
-                                                    <p class="mb-0">
-                                                        Минимальное количество баллов, подтверждающее успешное 
-                                                        прохождение вступительных испытаний на места в рамках 
-                                                        контрольных цифр приема граждан на обучение за счет средств 
-                                                        бюджетных ассигнований федерального бюджета
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class=" text-white p-4 rounded-3 h-100">
-                                                    <h4 class="display-4 fw-bold mb-3">40+</h4>
-                                                    <p class="mb-0">
-                                                        Минимальное количество баллов, подтверждающее успешное 
-                                                        прохождение вступительных испытаний на места по договорам 
-                                                        об оказании платных образовательных услуг
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                        </div>
-                    </div>
+      <section class="programs-section py-5" id="Vstupitelnye-programs">
+    <div class="container">
+        <h2 class="section-title mb-5 offset-1 text-black">программы вступительных испытаний</h2>
+
+        <!-- Первый уровень фильтра (категории) -->
+        <div class="mb-4 d-flex flex-wrap align-items-center offset-1">
+            <span class="me-3 fw-semibold"></span>
+            <div id="firstFilterGroup">
+                <span class="filter-badge active-filter" data-first="content">Содержание заданий</span>
+                <span class="filter-badge" data-first="criteria">Критерии оценивания</span>
+            </div>
+        </div>
+
+        <!-- Второй уровень (направления) -->
+        <div class="mb-4 offset-1">
+            <span class="me-3 fw-semibold"></span>
+            <div id="secondFilterGroup" class="d-flex flex-wrap">
+                <!-- динамически через js -->
+            </div>
+            <div class="mt-2 small text-secondary" id="activeDirHint"></div>
+        </div>
+
+        <!-- Блок контента: текст + карусель -->
+        <div class="row g-4">
+            <!-- Левая колонка (текст) -->
+            <div class="col-md-5 offset-1" id="textContentBlock">
+                <div class="p-4 bg-white border rounded h-100" style="min-height: 280px; white-space: pre-line;">
+                    Выберите категорию и направление
                 </div>
             </div>
-        </section>
+            <!-- Правая колонка (Owl Carousel) -->
+            <div class="col-md-6" id="carouselColumn">
+              <div class="bg-white rounded p-2" style="min-height:300px; display: flex; align-items: center;">
+                  <div class="owl-carousel owl-theme w-100" id="owlCarousel"></div>
+              </div>
+           </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Данные - изображения привязаны к направлению, текст к комбинации тип+направление
+        window.examplesData = {
+            // Изображения для каждого направления (общие для обоих типов)
+            images: {
+                "architecture": [
+                    "imageMag/Arch/image1.png",
+                    "imageMag/Arch/image3.png",
+                    "imageMag/Arch/image3-1.png",
+                    "imageMag/Arch/image3-2.png"
+                ],
+                "rran": [
+                    "imageMag/VRIAN/image3.png"
+                ],
+                "gradostroitelstvo": [
+                    "imageMag/TPR/image1.png"
+                ],
+                "pedizo": [
+                    "imageMag/Ped/image1.png",
+                    "imageMag/Ped/image2.png",
+                    "imageMag/Ped/image2-1.png",
+                    "imageMag/Ped/image2-2.png"
+                ],
+                "design": [
+                    "imageMag/Diz/image1.png",
+                    "imageMag/Diz/image3.png",
+                    "imageMag/Diz/image3-1.png",
+                    "imageMag/Diz/image3-2.png",
+                    "imageMag/Diz/image3-3.png"
+                ],
+                "dpi": [
+                    "imageMag/Dpi/image1.png",
+                    "imageMag/Dpi/image2.png",
+                    "imageMag/Dpi/image2-1.png",
+                    "imageMag/Dpi/image3.png"
+                ]
+            },
+            
+            // Тексты для каждой комбинации тип+направление (HTML формат)
+            texts: {
+                // Содержание заданий
+                "content:architecture": `<div class="row col-lg-12">
+                    <div class="bg-white rounded-3 p-4 col-12">
+                        <h4 class="text-blue font-weight-600 mb-3">Архитектура</h4>
+                        <div class="text-black">
+                            <p><strong>Архитектура</strong></p>
+                            <p>Вступительный экзамен в магистратуру состоит из одного задания — клаузуры на заданную тему, творческой работы, направленной на выявление проектных навыков и умений.</p>
+                            <p><strong>Время выполнения</strong> — 6 астрономических часов (360 минут).</p>
+                            <p><strong>Техника</strong> — ручная графика.</p>
+                            <p><strong>Формат</strong> — лист А-1 (594×841 мм).</p>
+                        </div>
+                        <div class="mt-3">
+                            <a href="#" class="pdf-link" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: #0d6efd;">
+                                <img src="imageMag/ПДФ.png" alt="PDF" style="width: 20px; height: 20px;">
+                                <span>Скачать программу вступительного испытания</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>`,
+                
+                "content:rran": `<div class="row col-lg-12">
+                    <div class="bg-white rounded-3 p-4 col-12">
+                        <h4 class="text-blue font-weight-600 mb-3">Реконструкция и реставрация архитектурного наследия</h4>
+                        <div class="text-black">
+                            <p><strong>Визуальная реконструкция историко-архитектурного наследия</strong></p>
+                            <p>Вступительный экзамен в магистратуру состоит из одного задания — клаузуры на заданную тему, творческой работы, направленной на выявление проектных навыков и умений.</p>
+                            <p><strong>Время выполнения</strong> — 6 астрономических часов (360 минут).</p>
+                            <p><strong>Техника</strong> — ручная графика.</p>
+                            <p><strong>Формат</strong> — лист А-1 (594×841 мм).</p>
+                        </div>
+                        <div class="mt-3">
+                            <a href="#" class="pdf-link" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: #0d6efd;">
+                                <img src="imageMag/ПДФ.png" alt="PDF" style="width: 20px; height: 20px;">
+                                <span>Скачать программу вступительного испытания</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>`,
+                
+                "content:gradostroitelstvo": `<div class="row col-lg-12">
+                    <div class="bg-white rounded-3 p-4 col-12">
+                        <h4 class="text-blue font-weight-600 mb-3">Градостроительство</h4>
+                        <div class="text-black">
+                            <p><strong>Территориально-пространственное развитие системы опорных населенных пунктов</strong></p>
+                            <p>Вступительный экзамен в магистратуру состоит из одного задания — клаузуры на заданную тему, творческой работы, направленной на выявление проектных навыков и умений.</p>
+                            <p><strong>Время выполнения</strong> — 6 астрономических часов (360 минут).</p>
+                            <p><strong>Техника</strong> — ручная графика.</p>
+                            <p><strong>Формат</strong> — лист А2 (594×420 мм).</p>
+                        </div>
+                        <div class="mt-3">
+                            <a href="#" class="pdf-link" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: #0d6efd;">
+                                <img src="imageMag/ПДФ.png" alt="PDF" style="width: 20px; height: 20px;">
+                                <span>Скачать программу вступительного испытания</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>`,
+                
+                "content:pedizo": `<div class="row col-lg-12">
+                    <div class="bg-white rounded-3 p-4 col-12">
+                        <h4 class="text-blue font-weight-600 mb-3">Педагогическое образование</h4>
+                        <div class="text-black">
+                            <p><strong>Педагогическое образование. Изобразительное искусство в системе непрерывного художественного образования</strong></p>
+                            <p>Вступительный экзамен в магистратуру состоит из одного задания — выполнение живописного изображения натюрморта с натуры.</p>
+                            <p><strong>Время выполнения</strong> — 6 астрономических часов (360 минут).</p>
+                            <p><strong>Материал</strong> — по выбору абитуриента (акварель, гуашь, темпера).</p>
+                            <p><strong>Формат</strong> — лист А2 (594×420 мм).</p>
+                        </div>
+                        <div class="mt-3">
+                            <a href="#" class="pdf-link" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: #0d6efd;">
+                                <img src="imageMag/ПДФ.png" alt="PDF" style="width: 20px; height: 20px;">
+                                <span>Скачать программу вступительного испытания</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>`,
+                
+                "content:design": `<div class="row col-lg-12">
+                    <div class="bg-white rounded-3 p-4 col-12">
+                        <h4 class="text-blue font-weight-600 mb-3">Дизайн</h4>
+                        <div class="text-black">
+                            <p><strong>Дизайн</strong></p>
+                            <p>Вступительный экзамен в магистратуру состоит из одного задания — клаузуры на заданную тему, творческой работы, направленной на выявление проектных навыков и умений.</p>
+                            <p><strong>Время выполнения</strong> — 6 астрономических часов (360 минут).</p>
+                            <p><strong>Техника</strong> — ручная графика (акварель, гуашь, темпера, пастель, фломастеры, тушь).</p>
+                            <p><strong>Формат</strong> — лист А1 (594×841 мм).</p>
+                        </div>
+                        <div class="mt-3">
+                            <a href="#" class="pdf-link" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: #0d6efd;">
+                                <img src="imageMag/ПДФ.png" alt="PDF" style="width: 20px; height: 20px;">
+                                <span>Скачать программу вступительного испытания</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>`,
+                
+                "content:dpi": `<div class="row col-lg-12">
+                    <div class="bg-white rounded-3 p-4 col-12">
+                        <h4 class="text-blue font-weight-600 mb-3">Декоративно-прикладное искусство и народные промыслы</h4>
+                        <div class="text-black">
+                            <p><strong>Декоративно-прикладное искусство и народные промыслы: Арт практики в декоративном искусстве</strong></p>
+                            <p>Вступительный экзамен в магистратуру состоит из одного задания — клаузуры на заданную тему, творческой работы, направленной на выявление проектных навыков и умений.</p>
+                            <p><strong>Время выполнения</strong> — 6 астрономических часов (360 минут).</p>
+                            <p><strong>Техника</strong> — гуашь, гуашь с акварелью, пастель, фломастеры (маркеры); возможно использование коллажа.</p>
+                            <p><strong>Формат</strong> — лист А1 (594×841 мм).</p>
+                        </div>
+                        <div class="mt-3">
+                            <a href="#" class="pdf-link" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: #0d6efd;">
+                                <img src="imageMag/ПДФ.png" alt="PDF" style="width: 20px; height: 20px;">
+                                <span>Скачать программу вступительного испытания</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>`,
+                
+                // Критерии оценивания
+                "criteria:architecture": `<div class="row">
+                    <div class="col-12">
+                        <h4 class="text-blue font-weight-600 mb-3">Архитектура</h4>
+                        <p><strong>Архитектура</strong></p>
+                        <ol>
+                            <li>Соответствие теме задания — 10 баллов;</li>
+                            <li>Профессиональная грамотность — 50 баллов;</li>
+                            <li>Компоновка листа и наличие всех требуемых проекций — 10 баллов;</li>
+                            <li>Графическое мастерство — 30 баллов.</li>
+                        </ol>
+                        <p class="mt-3 font-weight-400"><strong>ИТОГО — 100 баллов</strong></p>
+                    </div>
+                </div>`,
+                
+                "criteria:rran": `<div class="row">
+                    <div class="col-12">
+                        <h4 class="text-blue font-weight-600 mb-3">Реконструкция и реставрация архитектурного наследия</h4>
+                        <p><strong>Визуальная реконструкция историко-архитектурного наследия</strong></p>
+                        <ol>
+                            <li>Соответствие заданию — 10 баллов;</li>
+                            <li>Профессиональная грамотность — 50 баллов;</li>
+                            <li>Компоновка листа и наличие всех требуемых проекций — 10 баллов;</li>
+                            <li>Графическое мастерство — 30 баллов.</li>
+                        </ol>
+                        <p class="mt-3 font-weight-400"><strong>ИТОГО — 100 баллов</strong></p>
+                    </div>
+                </div>`,
+                
+                "criteria:gradostroitelstvo": `<div class="row">
+                    <div class="col-12">
+                        <h4 class="text-blue font-weight-600 mb-3">Градостроительство</h4>
+                        <p><strong>Территориально-пространственное развитие системы опорных населенных пунктов</strong></p>
+                        <ol>
+                            <li>Соответствие заданию — 10 баллов;</li>
+                            <li>Профессиональная грамотность — 50 баллов;</li>
+                            <li>Компоновка листа и наличие всех требуемых проекций — 10 баллов;</li>
+                            <li>Графическое мастерство — 30 баллов.</li>
+                        </ol>
+                        <p class="mt-3 font-weight-400"><strong>ИТОГО — 100 баллов</strong></p>
+                    </div>
+                </div>`,
+                
+                "criteria:pedizo": `<div class="row">
+                    <div class="col-12">
+                        <h4 class="text-blue font-weight-600 mb-3">Педагогическое образование</h4>
+                        <p><strong>Педагогическое образование. Изобразительное искусство в системе непрерывного художественного образования</strong></p>
+                        <ol>
+                            <li>Компоновка в формате листа и масштаб изображения — 10 баллов;</li>
+                            <li>Передача пропорций, конструкции и расположения предметов в пространстве — 15 баллов;</li>
+                            <li>Передача больших тоновых и цветовых отношений с учетом характера освещения — 30 баллов;</li>
+                            <li>Светотеневая и цветовая моделировка формы — 30 баллов;</li>
+                            <li>Владение техническими приемами живописи, использование выразительных возможностей — 15 баллов.</li>
+                        </ol>
+                        <p class="mt-3 font-weight-400"><strong>ИТОГО — 100 баллов</strong></p>
+                    </div>
+                </div>`,
+                
+                "criteria:design": `<div class="row">
+                    <div class="col-12">
+                        <h4 class="text-blue font-weight-600 mb-3">Дизайн</h4>
+                        <p><strong>Дизайн</strong></p>
+                        <ol>
+                            <li>Соответствие теме задания — 10 баллов;</li>
+                            <li>Профессиональная грамотность — 50 баллов;</li>
+                            <li>Компоновка листа и наличие всех требуемых проекций — 10 баллов;</li>
+                            <li>Графическое мастерство — 30 баллов.</li>
+                        </ol>
+                        <p class="mt-3 font-weight-400"><strong>ИТОГО — 100 баллов</strong></p>
+                    </div>
+                </div>`,
+                
+                "criteria:dpi": `<div class="row">
+                    <div class="col-12">
+                        <h4 class="text-blue font-weight-600 mb-3">Декоративно-прикладное искусство и народные промыслы</h4>
+                        <p><strong>Декоративно-прикладное искусство и народные промыслы: Арт практики в декоративном искусстве</strong></p>
+                        <ol>
+                            <li>Соответствие теме задания — 10 баллов;</li>
+                            <li>Профессиональная грамотность — 50 баллов;</li>
+                            <li>Компоновка листа и наличие всех требуемых проекций — 10 баллов;</li>
+                            <li>Графическое мастерство — 30 баллов.</li>
+                        </ol>
+                        <p class="mt-3 font-weight-400"><strong>ИТОГО — 100 баллов</strong></p>
+                    </div>
+                </div>`
+            }
+        };
+        
+        // Список направлений
+        const directionList = [
+            { slug: 'architecture', name: '07.04.01 Архитектура' },
+            { slug: 'rran', name: '07.04.02 Реконструкция и реставрация архитектурного наследия' },
+            { slug: 'gradostroitelstvo', name: '07.04.04 Градостроительство' },
+            { slug: 'pedizo', name: '44.04.01 Педагогическое образование' },
+            { slug: 'design', name: '54.04.01 Дизайн' },
+            { slug: 'dpi', name: '54.04.02 Декоративно-прикладное искусство и народные промыслы' }
+        ];
+
+        let activeFirst = 'content';
+        let activeSecond = 'architecture';
+        let owlCarousel = null;
+
+        const firstFilter = document.getElementById('firstFilterGroup');
+        const secondDiv = document.getElementById('secondFilterGroup');
+        const textBlock = document.getElementById('textContentBlock');
+        const hint = document.getElementById('activeDirHint');
+        const carouselColumn = document.getElementById('carouselColumn');
+        const owlContainer = document.getElementById('owlCarousel');
+
+        // Функция для обновления ширины текстового блока
+        function updateTextBlockWidth() {
+            if (!textBlock) return;
+            
+            // Определяем, должна ли показываться карусель
+            const shouldShowCarousel = activeFirst === 'content' && 
+                                       window.examplesData.images[activeSecond] && 
+                                       window.examplesData.images[activeSecond].length > 0;
+            
+            // Если карусель показывается, текст занимает 6 колонок
+            if (shouldShowCarousel) {
+                textBlock.classList.add('col-md-5');
+                textBlock.classList.remove('col-md-10');
+            } 
+            // Если карусель не показывается (Критерии или нет изображений), текст занимает 10 колонок
+            else {
+                textBlock.classList.add('col-md-10');
+                textBlock.classList.remove('col-md-5');
+            }
+        }
+
+        // Функция полного обновления карусели
+        function rebuildCarousel() {
+            // Уничтожаем существующую карусель
+            if (owlCarousel) {
+                owlCarousel.trigger('destroy.owl.carousel');
+                owlCarousel = null;
+            }
+            
+            // Очищаем контейнер
+            if (owlContainer) {
+                owlContainer.innerHTML = '';
+            }
+            
+            // Показываем карусель только если активен тип "content" и есть изображения
+            const shouldShowCarousel = activeFirst === 'content' && 
+                                       window.examplesData.images[activeSecond] && 
+                                       window.examplesData.images[activeSecond].length > 0;
+            
+            if (!shouldShowCarousel) {
+                // Скрываем колонку с каруселью
+                if (carouselColumn) {
+                    carouselColumn.style.display = 'none';
+                }
+                // Обновляем ширину текстового блока
+                updateTextBlockWidth();
+                return;
+            }
+            
+            // Показываем колонку с каруселью
+            if (carouselColumn) {
+                carouselColumn.style.display = 'block';
+            }
+            
+            const images = window.examplesData.images[activeSecond];
+            
+            // Создаем слайды с изображениями (по 3 на слайд)
+            for (let i = 0; i < images.length; i += 3) {
+                const slideImages = images.slice(i, i + 3);
+                
+                let imagesHtml = '';
+                slideImages.forEach(src => {
+                    imagesHtml += `<img src="${src}" alt="пример работы" style="width:202px; height:282px; object-fit:cover; margin:0 5px; border-radius:8px;">`;
+                });
+                
+                const slideDiv = document.createElement('div');
+                slideDiv.className = 'item';
+                slideDiv.innerHTML = `
+                    <div class="d-flex justify-content-center align-items-center" style="min-height:282px;">
+                        ${imagesHtml}
+                    </div>
+                `;
+                owlContainer.appendChild(slideDiv);
+            }
+            
+            // Обновляем ширину текстового блока
+            updateTextBlockWidth();
+            
+            // Инициализируем новую карусель
+            setTimeout(function() {
+                if (owlContainer.children.length > 0) {
+                    owlCarousel = $(owlContainer).owlCarousel({
+                        loop: true,
+                        margin: 10,
+                        nav: true,
+                        dots: true,
+                        items: 1,
+                        navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
+                        autoplay: false
+                    });
+                }
+            }, 50);
+        }
+
+        // Функция рендера второго уровня
+        function renderSecond() {
+            let html = '';
+            directionList.forEach(d => {
+                const activeClass = (activeSecond === d.slug) ? 'active-dir' : '';
+                html += `<span class="dir-chip ${activeClass}" data-dir="${d.slug}">${d.name}</span>`;
+            });
+            secondDiv.innerHTML = html;
+            
+            // Назначаем обработчики
+            document.querySelectorAll('.dir-chip').forEach(chip => {
+                chip.addEventListener('click', function() {
+                    const slug = this.dataset.dir;
+                    if (slug !== activeSecond) {
+                        activeSecond = slug;
+                        document.querySelectorAll('.dir-chip').forEach(c => c.classList.remove('active-dir'));
+                        this.classList.add('active-dir');
+                        updateContent();
+                    }
+                });
+            });
+        }
+
+        // Функция обновления контента
+        function updateContent() {
+            const textKey = activeFirst + ':' + activeSecond;
+            const text = window.examplesData.texts[textKey];
+            
+            const dirObj = directionList.find(d => d.slug === activeSecond);
+            const firstName = activeFirst === 'content' ? 'Содержание заданий' : 'Критерии оценивания';
+            
+            if (hint) {
+                hint.innerText = `Активно: ${firstName} → ${dirObj ? dirObj.name : activeSecond}`;
+            }
+
+            // Обновляем текст
+            if (textBlock) {
+                if (!text) {
+                    textBlock.innerHTML = `<div class="bg-white rounded h-100 p-4">Нет текста для комбинации "${textKey}".</div>`;
+                } else {
+                    textBlock.innerHTML = `<div class="bg-white rounded h-100">${text}</div>`;
+                }
+            }
+
+            // Полностью перестраиваем карусель
+            rebuildCarousel();
+        }
+
+        // Обработка кликов по первому фильтру
+        if (firstFilter) {
+            firstFilter.addEventListener('click', (e) => {
+                const badge = e.target.closest('.filter-badge');
+                if (!badge) return;
+                
+                const val = badge.dataset.first;
+                if (!val) return;
+                
+                document.querySelectorAll('.filter-badge').forEach(b => b.classList.remove('active-filter'));
+                badge.classList.add('active-filter');
+                
+                if (activeFirst !== val) {
+                    activeFirst = val;
+                    activeSecond = 'architecture';
+                    renderSecond();
+                    updateContent();
+                }
+            });
+        }
+
+        // Инициализация
+        renderSecond();
+        updateContent();
+
+        const style = document.createElement('style');
+style.textContent = `
+    .owl-carousel .owl-nav button.owl-prev,
+    .owl-carousel .owl-nav button.owl-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.5) !important;
+        color: white !important;
+        width: 40px;
+        height: 40px;
+        border-radius: 50% !important;
+        font-size: 20px !important;
+    }
+    .owl-carousel .owl-nav button.owl-prev {
+        left: -20px;
+    }
+    .owl-carousel .owl-nav button.owl-next {
+        right: -20px;
+    }
+    .owl-carousel .owl-dots {
+        margin-top: 15px;
+    }
+    .owl-carousel .item img {
+        transition: transform 0.3s ease;
+    }
+    .owl-carousel .item img:hover {
+        transform: scale(1.05);
+    }
+`;
+document.head.appendChild(style);
+    });
+</script>
 
         <!-- ===== СЕКЦИЯ 5: ПЛАТНОЕ ОБУЧЕНИЕ ===== -->
         <section class="price-section py-5" id="Comercia-placeholder">
@@ -1288,7 +1774,7 @@
                 <div class="card-column">
                     <div class="price-card row row-cols-12">
                         <div class="col-7">
-                            <div class="price-amount price-pink">300 000</div>
+                            <div class="price-amount price-pink">185 000</div>
                         </div>
                         <div class="col-5">
                             
@@ -1296,8 +1782,9 @@
                         <div class="program-container col-12">
                             <div class="program-text-container offset-1">
                                 <h6 class="program-name">
-                                    <li>Дизайн</li>
-                                    <li>Декоративно-прикладное искусство и народные промыслы</li>
+                                    <li>07.04.01 Архитектура</li>
+                                    <li>07.04.02 Реконструкция и реставрация архитектурного наследия</li>
+                                    <li>07.04.04 Градостроительство</li>
                                 </h6>
                             </div>
                         </div>
@@ -1308,7 +1795,7 @@
                 <div class="card-column">
                     <div class="price-card row row-cols-12">
                         <div class="col-7">
-                            <div class="price-amount price-pink">220 000</div>
+                            <div class="price-amount price-pink">165 000</div>
                         </div>
                         <div class="col-5">
                             
@@ -1316,7 +1803,7 @@
                         <div class="program-container col-12">
                             <div class="program-text-container offset-1">
                                 <h6 class="program-name">
-                                    <li>Urban Design (Городской дизайн)</li>
+                                    <li>44.04.01 Педагогическое образование: Изобразительное искусство в системе непрерывного художественного образования</li>
                                 </h6>
                             </div>
                         </div>
@@ -1346,7 +1833,7 @@
                 <div class="card-column">
                     <div class="price-card row row-cols-12">
                         <div class="col-7">
-                            <div class="price-amount price-pink">150 000</div>
+                            <div class="price-amount price-pink">300 000</div>
                         </div>
                         <div class="col-5">
                             
@@ -1354,68 +1841,8 @@
                         <div class="program-container col-12">
                             <div class="program-text-container offset-1">
                                 <h6 class="program-name">
-                                    <li>Педагогическое образование: Изобразительное искусство в системе непрерывного художественного образования</li>
-                                </h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Колонка 5 -->
-                <div class="card-column">
-                    <div class="price-card row row-cols-12">
-                        <div class="col-7">
-                            <div class="price-amount price-pink">165 000</div>
-                        </div>
-                        <div class="col-5">
-                            
-                        </div>
-                        <div class="program-container col-12">
-                            <div class="program-text-container offset-1">
-                                <h6 class="program-name">
-                                    <li>44.04.01 Педагогическое образование: Изобразительное искусство в системе непрерывного художественного образования</li>
-                                </h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Колонка 6 -->
-                <div class="card-column">
-                    <div class="price-card row row-cols-12">
-                        <div class="col-7">
-                            <div class="price-amount price-pink">170 000</div>
-                        </div>
-                        <div class="col-5">
-                            
-                        </div>
-                        <div class="program-container col-12">
-                            <div class="program-text-container offset-1">
-                                <h6 class="program-name">
-                                    <li>Архитектура</li>
-                                    <li>Реконструкция и реставрация архитектурного наследия</li>
-                                    <li>Дизайн архитектурной среды</li>
-                                </h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Колонка 7 -->
-                <div class="card-column">
-                    <div class="price-card row row-cols-12">
-                        <div class="col-7">
-                            <div class="price-amount price-pink">185 000</div>
-                        </div>
-                        <div class="col-5">
-                            
-                        </div>
-                        <div class="program-container col-12">
-                            <div class="program-text-container offset-1">
-                                <h6 class="program-name">
-                                    <li>07.04.01 Архитектура</li>
-                                    <li>07.04.02 Реконструкция и реставрация архитектурного наследия</li>
-                                    <li>07.04.04 Градостроительство</li>
+                                    <li>54.04.01 Дизайн</li>
+                                    <li>54.04.02 Декоративно-прикладное искусство и народные промыслы</li>
                                 </h6>
                             </div>
                         </div>
@@ -1456,13 +1883,12 @@
                             <h3 class="section-subtitle text-blue mb-4 offset-1">Поступи в магистратуру без экзаменов</h3>
                             <div class="row g-4 justify-content-center offset-1">
                                 <div class="col-md-5">
-                                    <a href="#" class="card border-0 shadow-sm text-decoration-none hover-lift h-100">
+                                    <a href="https://магистратураолимпиада.рф/?ysclid=mmuafz9kr3433540411" class="card border-0 shadow-sm text-decoration-none hover-lift h-100">
                                         <div class="card-body p-4">
                                             <div class="d-flex align-items-center">
-                                                <i class="bi bi-trophy fs-1 text-primary me-4"></i>
+                                                <i class="bi bi-arrow-right fs-1 text-primary me-4"></i>
                                                 <div>
                                                     <h5 class="card-title mb-2">Олимпиада федеральных университетов для поступающих в магистратуру</h5>
-                                                    <p class="card-text text-black mb-0">Участвуйте и поступайте без вступительных испытаний</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -1472,10 +1898,9 @@
                                     <a href="https://master.sfedu.ru/" class="card border-0 shadow-sm text-decoration-none hover-lift h-100">
                                         <div class="card-body p-4">
                                             <div class="d-flex align-items-center">
-                                                <i class="bi bi-briefcase fs-1 text-primary me-4"></i>
+                                                <i class="bi bi-arrow-right fs-1 text-primary me-4"></i>
                                                 <div>
                                                     <h5 class="card-title mb-2">Конкурс портфолио «Магистратура ЮФУ»</h5>
-                                                    <p class="card-text text-black mb-0">Представьте свои достижения и проекты</p>
                                                 </div>
                                             </div>
                                         </div>

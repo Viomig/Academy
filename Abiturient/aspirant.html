@@ -409,7 +409,7 @@
                                 <i class="bi bi-arrow-left" style="font-size: 20px; color: var(--primary-blue);"></i>
                             </div>
                             <span class="text-uppercase fw-bold" style="color: var(--primary-blue); font-size: 16px;">
-                                абитуриенту
+                                <a href="/Abiturient/abiturient.html" style="text-decoration: none;">Абитуриенту</a>
                             </span>
                         </div>
                     <div class="col-lg-7 mb-5 mb-lg-0">
@@ -467,8 +467,8 @@
                                                 Подготовка научно-педагогических и научных кадров в аспирантуре ААИ ЮФУ осуществляется по направлению подготовки 2.1. «Строительство и архитектура», а также в порядке соискательства. Аспирантура начала функционировать с 1993 года.
                                             </p>
                                         </div>
-                                <div class="text-center text-lg-end mb-4 mb-lg-0">
-                                    <a href="#" class="btn btn-primary btn-lg">
+                                <div class="text-center text-lg-end mb-4 mb-lg-0 text-white">
+                                    <a href="https://www.gosuslugi.ru/vuzonline" class="btn btn-primary btn-lg">
                                         Подать заявление
                                     </a>
                                 </div>
@@ -570,7 +570,189 @@
             </div>
         </section>
 
+        <style>
+    /* Стили для модального окна */
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(4px);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .modal-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .modal-window {
+        width: 846px;
+        height: 427px;
+        background: #ffffff;
+        border-radius: 15px;
+        overflow: hidden;
+        position: relative;
+        transform: scale(0.9);
+        transition: transform 0.3s ease;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+    
+    .modal-overlay.active .modal-window {
+        transform: scale(1);
+    }
+    
+    .modal-content-split {
+        display: flex;
+        height: 100%;
+    }
+    
+    .modal-left {
+        width: 50%;
+        padding: 32px 24px;
+        background: linear-gradient(135deg, #080D6B 0%, #0a1080 100%);
+        color: #ffffff;
+        overflow-y: auto;
+    }
+    
+    .modal-right {
+        width: 50%;
+        padding: 32px 24px;
+        background: #ffffff;
+        overflow-y: auto;
+    }
+    
+    .modal-left h3 {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 24px;
+        line-height: 1.3;
+        color: #ffffff;
+    }
+    
+    .modal-left h4 {
+        font-size: 18px;
+        font-weight: 600;
+        margin: 20px 0 12px 0;
+        color: #ffffff;
+    }
+    
+    .modal-left p {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 8px;
+        color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .modal-right h3 {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 24px;
+        color: #080D6B;
+    }
+    
+    .modal-right .work-item {
+        margin-bottom: 20px;
+    }
+    
+    .modal-right .work-title {
+        font-size: 15px;
+        font-weight: 600;
+        color: #232328;
+        margin-bottom: 4px;
+        line-height: 1.4;
+    }
+    
+    .modal-right .work-author {
+        font-size: 13px;
+        color: #777777;
+        margin-bottom: 2px;
+    }
+    
+    .modal-right .work-year {
+        font-size: 12px;
+        color: #ED1160;
+        font-weight: 500;
+    }
+    
+    .modal-close {
+        position: absolute;
+        top: 16px;
+        right: 20px;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        z-index: 10;
+    }
+    
+    .modal-close:hover {
+        background: rgba(0, 0, 0, 0.2);
+        transform: rotate(90deg);
+    }
+    
+    .modal-close i {
+        font-size: 20px;
+        color: #666;
+    }
+    
+    /* Стили для скроллбара */
+    .modal-left::-webkit-scrollbar,
+    .modal-right::-webkit-scrollbar {
+        width: 4px;
+    }
+    
+    .modal-left::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+    }
+    
+    .modal-left::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 4px;
+    }
+    
+    .modal-right::-webkit-scrollbar-track {
+        background: #f0f0f0;
+        border-radius: 4px;
+    }
+    
+    .modal-right::-webkit-scrollbar-thumb {
+        background: #c0c0c0;
+        border-radius: 4px;
+    }
+    
+    @media (max-width: 900px) {
+        .modal-window {
+            width: 90%;
+            height: auto;
+            max-height: 80vh;
+        }
         
+        .modal-content-split {
+            flex-direction: column;
+        }
+        
+        .modal-left,
+        .modal-right {
+            width: 100%;
+            padding: 24px;
+        }
+    }
+</style>
     <!-- ===== СЕКЦИЯ 4: НАУЧНЫЕ РУКОВОДИТЕЛИ ===== -->
      <div class="bg-dark-gradient">
         <section class="directors-section py-5" id="Rukovoditely">
@@ -590,7 +772,7 @@
                                     <div class="director-photo" style="background-image: url(/Abiturient/imageAs/Ivleeva.png);background-size: cover; background-position: center; background-repeat: no-repeat;"> 
                                     </div>
                                     <div class="">
-                                        <a href="#" class="director-link">
+                                        <a href="#" class="director-link text-black">
                                         научное руководство аспирантами
                                         <i class="bi bi-arrow-right"></i>
                                     </a>
@@ -622,7 +804,7 @@
                                         
                                     </div>
                                     <div>
-                                        <a href="#" class="director-link">
+                                        <a href="#" class="director-link text-black">
                                         научное руководство аспирантами
                                         <i class="bi bi-arrow-right"></i>
                                     </a>
@@ -655,7 +837,7 @@
                                         
                                     </div>
                                     <div>
-                                        <a href="#" class="director-link">
+                                        <a href="#" class="director-link text-black">
                                         научное руководство аспирантами
                                         <i class="bi bi-arrow-right"></i>
                                     </a>
@@ -687,7 +869,7 @@
                                     <div class="director-photo" style="background-image: url(/Abiturient/imageAs/Molchanov.png);background-size: cover; background-position: center; background-repeat: no-repeat;">
                                     </div>
                                     <div>
-                                        <a href="#" class="director-link">
+                                        <a href="#" class="director-link text-black">
                                         научное руководство аспирантами
                                         <i class="bi bi-arrow-right"></i>
                                     </a>
@@ -716,11 +898,11 @@
                         <div class="director-card p-4 d-flex flex-column justify-content-between">
                             <div class="row g-4">
                                 <div class="col-md-4">
-                                    <div class="director-photo" style="background-image: url(/Abiturient/imageAs/Skopincev.png);background-size: cover; background-position: center; background-repeat: no-repeat;">
+                                    <div class="director-photo" style="background-image: url(/Abiturient/imageAs/Scopincev.png);background-size: cover; background-position: center; background-repeat: no-repeat;">
                                         
                                     </div>
                                     <div>
-                                        <a href="#" class="director-link">
+                                        <a href="#" class="director-link text-black">
                                         научное руководство аспирантами
                                         <i class="bi bi-arrow-right"></i>
                                     </a>
@@ -771,6 +953,253 @@
             </div>
         </section>
 </div>
+<script>
+    // Данные для модальных окон научных руководителей
+    const supervisorsData = {
+        ievleva: {
+            name: "Иевлева Ольга Тиховна",
+            rightContent: `
+                <div class="work-item">
+                    <div class="work-title">«Принципы архитектурного формирования современных промышленных предприятий малого и среднего бизнеса (на примере ЮФО)»</div>
+                    <div class="work-author">Григорьева Лидия Михайловна</div>
+                    <div class="work-year">2022 (защита в ННГАСУ)</div>
+                </div>
+                <div class="work-item">
+                    <div class="work-title">«Архитектурно-пространственная организация и виртуальная реконструкция историко-архитектурных комплексов Гвинеи XVI-XIX вв.»</div>
+                    <div class="work-author">Берете Мори</div>
+                    <div class="work-year">2018 (защита в ННГАСУ)</div>
+                </div>
+                <div class="work-item">
+                    <div class="work-title">«Принципы допустимых трансформаций фасадов исторических зданий крупнейших городов: на примере г. Ростова-на-Дону»</div>
+                    <div class="work-author">Выхольский Николай Александрович</div>
+                    <div class="work-year">2012 (защита в ННГАСУ)</div>
+                </div>
+                <div class="work-item">
+                    <div class="work-title">«Архитектурно-планировочная модернизация спортивных объектов на основе информационного подхода: на примере Ростовской области»</div>
+                    <div class="work-author">Евстратенко Сергей Иванович</div>
+                    <div class="work-year">2007 (защита в СПбГАСУ)</div>
+                </div>
+                <div class="work-item">
+                    <div class="work-title">«Информационное структурирование фасадов архитектурных объектов и их каталогизация: на примере Южнороссийской эклектики»</div>
+                    <div class="work-author">Евстратенко Марина Александровна</div>
+                    <div class="work-year">2006 (защита в ННГАСУ)</div>
+                </div>
+            `
+        },
+        ivanova: {
+            name: "Иванова-Ильичева Анна Михайловна",
+            rightContent: `
+                <div class="work-item">
+                    <div class="work-title">«Архитектура Ростова-на-Дону периода послевоенного восстановления 1943-1957 гг.»</div>
+                    <div class="work-author">Москаленко Ирина Александровна</div>
+                    <div class="work-year">2023 (защита в ННГАСУ)</div>
+                </div>
+                <div class="work-item">
+                    <div class="work-title">«Особенности архитектуры Дамаска периода Французского Мандата»</div>
+                    <div class="work-author">Абасс Хиба Саад</div>
+                    <div class="work-year">2022 (защита в ННГАСУ)</div>
+                </div>
+                <div class="work-item">
+                    <div class="work-title">«Творчество архитектора Николая Матвеевича Соколова»</div>
+                    <div class="work-author">Петрусенко Юлия Викторовна</div>
+                    <div class="work-year">2022 (защита в ННГАСУ)</div>
+                </div>
+                <div class="work-item">
+                    <div class="work-title">«Архитектура синагог Области Войска Донского и Кавказского края второй половины XIX — начала XX вв.»</div>
+                    <div class="work-author">Шапиро Григорий Ефимович</div>
+                    <div class="work-year">2019 (защита в ННГАСУ)</div>
+                </div>
+            `
+        },
+        morgun: {
+            name: "Моргун Николай Анатольевич",
+            rightContent: `
+                <div class="work-item">
+                    <div class="work-title">«Принципы и методы архитектурно-планировочной модернизации школьных зданий (на примере Приднестровской Молдавской республики)»</div>
+                    <div class="work-author">Барабаш Мария Витальевна</div>
+                    <div class="work-year">2016 (защита в ННГАСУ)</div>
+                </div>
+                <div class="work-item">
+                    <div class="work-title">«Принципы формирования архитектуры университетских библиотек»</div>
+                    <div class="work-author">Черненко Глеб Николаевич</div>
+                    <div class="work-year">2012 (защита в ННГАСУ)</div>
+                </div>
+                <div class="work-item">
+                    <div class="work-title">«Принципы проектирования школ-интернатов в условиях Ливана»</div>
+                    <div class="work-author">Ахмад Али Ибрагим</div>
+                    <div class="work-year">1994 (защита в СПбГАСУ)</div>
+                </div>
+                <div class="work-item">
+                    <div class="work-title">«Архитектурно-типологические особенности модернизации сельского школьного фонда: исследования и рекомендации на примере Ростовской области»</div>
+                    <div class="work-author">Евтушенко-Мулукаева Наталья Михайловна</div>
+                    <div class="work-year">2009 (защита в СПбГАСУ)</div>
+                </div>
+                <div class="work-item">
+                    <div class="work-title">«Архитектурно-планировочная модернизация университетских комплексов: на примере Южного федерального университета»</div>
+                    <div class="work-author">Исокова Светлана Александровна</div>
+                    <div class="work-year">2012 (защита в ННГАСУ)</div>
+                </div>
+            `
+        },
+        molchanov: {
+            name: "Молчанов Виктор Михайлович",
+            rightContent: `
+                <div class="work-item">
+                    <div class="work-title">«Архитектурные решения жилых домов для массового строительства в провинции Анбар (Республика Ирак)»</div>
+                    <div class="work-author">Мохаммед Сабах Саад Мохаммед</div>
+                    <div class="work-year">2022 (защита в ННГАСУ)</div>
+                </div>
+                <div class="work-item">
+                    <div class="work-title">«Архитектурное формирование городского жилища СРВ с учётом требований отдыха населения»</div>
+                    <div class="work-author">Ле Ван Зунг</div>
+                    <div class="work-year">2010 (защита в СПбГАСУ)</div>
+                </div>
+                <div class="work-item">
+                    <div class="work-title">«Архитектурное формирование коммерческого жилища на социально-функциональной основе (на примере г. Ростова-на-Дону)»</div>
+                    <div class="work-author">Благова Марианна Викторовна</div>
+                    <div class="work-year">2016 (защита в ННГАСУ)</div>
+                </div>
+            `
+        },
+        skopincev: {
+            name: "Скопинцев Анатолий Вениаминович",
+            rightContent: `
+                <div class="work-item">
+                    <div class="work-title">Научное руководство аспирантами</div>
+                    <div class="work-author">Информация уточняется</div>
+                    <div class="work-year">По вопросам обращаться к руководителю</div>
+                </div>
+            `
+        },
+        gorgorova: {
+            name: "Горгорова Юлия Владимировна",
+            rightContent: `
+                <div class="work-item">
+                    <div class="work-title">Научное руководство аспирантами</div>
+                    <div class="work-author">Информация уточняется</div>
+                    <div class="work-year">По вопросам обращаться к руководителю</div>
+                </div>
+            `
+        }
+    };
+    
+    // Функция для открытия модального окна
+    function openSupervisorModal(supervisorKey) {
+        const data = supervisorsData[supervisorKey];
+        if (!data) return;
+        
+        // Создаем overlay если его нет
+        let overlay = document.querySelector('.modal-overlay');
+        if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.className = 'modal-overlay';
+            document.body.appendChild(overlay);
+        }
+        
+        // Формируем содержимое окна
+        overlay.innerHTML = `
+            <div class="modal-window">
+                <div class="modal-close">
+                    <i class="bi bi-x-lg"></i>
+                </div>
+                <div class="modal-content-split">
+                    <div class="modal-left">
+                        <h3>${data.name}</h3>
+                        <h4>Темы работ</h4>
+                        <p>Научное руководство аспирантами</p>
+                    </div>
+                    <div class="modal-right">
+                        <h3>Темы диссертационных исследований</h3>
+                        ${data.rightContent}
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        // Показываем окно
+        setTimeout(() => {
+            overlay.classList.add('active');
+        }, 10);
+        
+        // Добавляем обработчики закрытия
+        const closeBtn = overlay.querySelector('.modal-close');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', closeModal);
+        }
+        
+        // Закрытие по клику вне окна
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) {
+                closeModal();
+            }
+        });
+        
+        // Закрытие по Escape
+        document.addEventListener('keydown', handleEscKey);
+    }
+    
+    function closeModal() {
+        const overlay = document.querySelector('.modal-overlay');
+        if (overlay) {
+            overlay.classList.remove('active');
+            setTimeout(() => {
+                if (overlay.parentNode) {
+                    overlay.innerHTML = '';
+                }
+            }, 300);
+        }
+        document.removeEventListener('keydown', handleEscKey);
+    }
+    
+    function handleEscKey(e) {
+        if (e.key === 'Escape') {
+            closeModal();
+        }
+    }
+    
+    // Добавляем обработчики на кнопки научного руководства
+    document.addEventListener('DOMContentLoaded', function() {
+        // Находим все ссылки "научное руководство аспирантами" и добавляем обработчики
+        const directorLinks = document.querySelectorAll('.director-link');
+        
+        // Сопоставляем карточки с ключами данных
+        const cardMapping = [
+            { selector: '.director-card h4:contains("Иевлева")', key: 'ievleva' },
+            { selector: '.director-card h4:contains("Иванова-Ильичева")', key: 'ivanova' },
+            { selector: '.director-card h4:contains("Моргун")', key: 'morgun' },
+            { selector: '.director-card h4:contains("Молчанов")', key: 'molchanov' },
+            { selector: '.director-card h4:contains("Скопинцев")', key: 'skopincev' },
+            { selector: '.director-card h4:contains("Горгорова")', key: 'gorgorova' }
+        ];
+        
+        directorLinks.forEach((link, index) => {
+            // Находим родительскую карточку
+            const card = link.closest('.director-card');
+            if (card) {
+                const titleElement = card.querySelector('h4');
+                if (titleElement) {
+                    const titleText = titleElement.innerText;
+                    
+                    // Определяем ключ по тексту заголовка
+                    let supervisorKey = null;
+                    if (titleText.includes('Иевлева')) supervisorKey = 'ievleva';
+                    else if (titleText.includes('Иванова-Ильичева')) supervisorKey = 'ivanova';
+                    else if (titleText.includes('Моргун')) supervisorKey = 'morgun';
+                    else if (titleText.includes('Молчанов')) supervisorKey = 'molchanov';
+                    else if (titleText.includes('Скопинцев')) supervisorKey = 'skopincev';
+                    else if (titleText.includes('Горгорова')) supervisorKey = 'gorgorova';
+                    
+                    if (supervisorKey) {
+                        link.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            openSupervisorModal(supervisorKey);
+                        });
+                    }
+                }
+            }
+        });
+    });
+</script>
         <!-- ===== СЕКЦИЯ 5: ПОСТУПЛЕНИЕ ===== -->
         <section class="admission-section py-5" id="Nabor">
             <div class="container">
@@ -863,7 +1292,8 @@
                     
                     <div class="row mb-3 align-items-center">
                         <div class="col-md-4">
-                            <p class="mb-0">2.1.11 Теория и история архитектуры, реставрация и реконструкция историко-архитектурного наследия</p>
+                            <p class="mb-0">2.1.11 Теория и история архитектуры, реставрация и реконструкция историко-архитектурного наследия</p><br>
+                            <p class="mb-0">2.1.12 Архитектура зданий и сооружений. Творческие концепции архитектурной деятельности</p>
                         </div>
                         <div class="col-4">
                         <div class="d-grid text-center" style="grid-template-columns: repeat(3, 1fr);">
@@ -878,24 +1308,7 @@
                     </div>
                     
                     <div class="table-divider"></div>
-                    
-                    <div class="row align-items-center">
-                        <div class="col-md-4">
-                            <p class="mb-0">2.1.12 Архитектура зданий и сооружений. Творческие концепции архитектурной деятельности</p>
-                        </div>
-                        <div class="col-4">
-                        <div class="d-grid text-center" style="grid-template-columns: repeat(3, 1fr);">
-                            <div class="fw-bold text-white">2</div>
-                            <div class="fw-bold text-white">-</div>
-                            <div class="fw-bold text-white">1</div>
-                        </div>
-                        </div>
-                        <div class="col-md-3 text-center">
-                            <p class="mb-0 fs-4 fw-bold text-pink">202 000</p>
-                        </div>
-                    </div>
-                </div>
-                
+                </div>         
                 
             </div>
         </section>
@@ -904,13 +1317,13 @@
         <section class="grant-section py-5 bg-light" id="Grant">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-7 mb-5 mb-lg-0">
+                    <div class="col-lg-9 mb-5 mb-lg-0">
                         <h2 class="section-title mb-4">грант на поступление</h2>
-                        <h3 class="mb-4" style="color: var(--primary-blue); font-size: 28px; font-weight: 500; text-transform: uppercase;">
+                        <h3 class="mb-4 offset-1" style="color: var(--primary-blue); font-size: 28px; font-weight: 500; text-transform: uppercase;">
                             конкурс на предоставление гранта для поступающих в аспирантуру ЮФУ
                         </h3>
                         
-                        <div class="grant-content">
+                        <div class="grant-content offset-1">
                             <p class="mb-4">
                                 ЮФУ проводит конкурсный отбор на предоставление гранта на обучение по программам подготовки научных и научно-педагогических кадров в аспирантуре.
                                 Конкурсный отбор на предоставление гранта на обучение по программам подготовки научных и научно-педагогических кадров в аспирантуре Южного федерального университета проводится в соответствии с <a href="https://sfedu.ru/00_main_2010/abitur/abit_2026/Grant_v_aspiranturu_P425.pdf" class="text-decoration-underline fw-bold" style="color: var(--primary-blue);">приказом</a>.
@@ -927,17 +1340,16 @@
                         </div>
                     </div>
                     
-                    <div class="col-lg-5">
-                        <div class="sticky-top" style="top: 100px;">
-                            <div class="mb-4">
+                    <div class="col-lg-11 offset-1">
+                        <div class="sticky-top row" style="top: 100px;">
+                            <div class="mb-4 col-6">
                                 <a href="#" class="document-link card text-decoration-none hover-lift p-4 mb-3">
                                     <div class="d-flex align-items-center">
                                         <div class="document-icon bg-primary bg-opacity-10 rounded-3 p-3 me-4">
-                                            <i class="bi bi-file-earmark-text fs-1 text-primary"></i>
+                                            <i class="bi bi-file-earmark-text fs-2 text-primary"></i>
                                         </div>
                                         <div>
-                                            <h5 class="card-title mb-1">Инструкция</h5>
-                                            <p class="card-text text-black mb-0">Инструкция для заполнения заявки</p>
+                                            <h5 class="card-title mb-1">Инструкция для заполнения заявки</h5>
                                         </div>
                                     </div>
                                 </a>
@@ -945,17 +1357,16 @@
                                 <a href="#" class="document-link card text-decoration-none hover-lift p-4">
                                     <div class="d-flex align-items-center">
                                         <div class="document-icon bg-primary bg-opacity-10 rounded-3 p-3 me-4">
-                                            <i class="bi bi-pencil-square fs-1 text-primary"></i>
+                                            <i class="bi bi-pencil-square fs-2 text-primary"></i>
                                         </div>
                                         <div>
-                                            <h5 class="card-title mb-1">Заполнить заявку</h5>
-                                            <p class="card-text text-black mb-0">Заполнить заявку на участие в конкурсе для получения гранта на обучение в аспирантуре</p>
+                                            <h5 class="card-title mb-1">Заполнить заявку на участие в конкурсе для получения гранта на обучение в аспирантуре</h5>
                                         </div>
                                     </div>
                                 </a>
                             </div>
                             
-                            <div class="accordion" id="grantAccordion">
+                            <div class="accordion col-6" id="grantAccordion">
                                 <!-- Сроки проведения конкурса -->
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
@@ -1038,7 +1449,7 @@
                         
                         <div class="contact-info col-6">
                             <p class="fs-5 fw-bold mb-3">Руководитель программы:</p>
-                            <p class="fs-5 mb-4">
+                            <p class="fs-6 mb-4">
                                 <span class="fw-bold">Иевлева Ольга Тихоновна</span> — доктор технических наук, профессор, зав. кафедрой графики и информационных технологий архитектурного проектирования – руководитель образовательной программы 2.1. Строительство и архитектура.
                             </p>
                             

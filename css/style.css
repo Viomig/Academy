@@ -240,6 +240,32 @@ header img{
             background: linear-gradient(45deg, #131313, var(--primary-blue)) !important;
         }
 
+/* ===== КНОПКИ И ССЫЛКИ ===== */
+        .btn {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-lg {
+            padding: 16px 24px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            border: none;
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(8, 13, 107, 0.3);
+        }        
+
 
 
 
@@ -300,6 +326,18 @@ a {
 
 header a{
   font-size: 14px;
+}
+
+@media (min-width: 1200px) {
+    header a {
+        font-size: 14px; /* максимальный размер на больших экранах */
+    }
+}
+
+@media (min-width: 992px) {
+    header a {
+        font-size: 10px; /* максимальный размер на больших экранах */
+    }
 }
 
 ul, ol {
