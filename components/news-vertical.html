@@ -1,0 +1,284 @@
+<!-- Стили для вертикальной секции новостей -->
+<style>
+    .section-title {
+        font-size: 40px;
+        font-weight:500;
+        text-transform: uppercase;
+        line-height: 1.3;
+        margin-bottom: 40px;
+    }
+
+    .news-date {
+        font-size: 16px;
+        color: var(--grey-dark, #8C8C8C);
+        margin-bottom: 10px;
+    }
+
+    .news-title {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+
+    .news-description {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.4;
+    }
+
+    .news-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+        color: var(--black, #000);
+        margin-top: 15px;
+    }
+
+    .news-link-arrow {
+        width: 26px;
+        height: 8px;
+        background-image: url("data:image/svg+xml,%3Csvg width='26' height='8' viewBox='0 0 26 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25.3536 4.35355C25.5488 4.15829 25.5488 3.84171 25.3536 3.64645L22.1716 0.464466C21.9763 0.269204 21.6597 0.269204 21.4645 0.464466C21.2692 0.659728 21.2692 0.976311 21.4645 1.17157L24.2929 4L21.4645 6.82843C21.2692 7.02369 21.2692 7.34027 21.4645 7.53553C21.6597 7.7308 21.9763 7.7308 22.1716 7.53553L25.3536 4.35355ZM0 4.5H25V3.5H0V4.5Z' fill='black'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .filter-container {
+        margin-bottom: 40px;
+    }
+
+    .filter-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 16px;
+        background: none;
+        border: none;
+        font-size: 16px;
+        color: var(--black, #000);
+        cursor: pointer;
+        border-radius: 20px;
+        transition: all 0.2s ease;
+    }
+
+    .filter-item:hover {
+        background: #f0f0f0;
+    }
+
+    .filter-item.active {
+        background: var(--primary-blue, #080D6B);
+        color: white;
+    }
+
+    .filter-count {
+        font-size: 12px;
+        font-weight: 600;
+        opacity: 0.7;
+    }
+
+    .filter-item.active .filter-count {
+        opacity: 1;
+    }
+
+    .news-card {
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .news-card:last-child {
+        border-bottom: none;
+    }
+
+    .news-image {
+        width: 100%;
+        height: 201px;
+        border-radius: 15px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, #080D6B 0%, #ED1160 100%);
+        border: none;
+        color: white;
+    }
+
+    .btn-lg {
+        padding: 16px 24px;
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        border-radius: 50px;
+    }
+
+    @media (max-width: 1400px) {
+        .section-title { font-size: 36px; }
+    }
+
+    @media (max-width: 1200px) {
+        .section-title { font-size: 32px; }
+    }
+
+    @media (max-width: 992px) {
+        .section-title { font-size: 28px; }
+    }
+
+    @media (max-width: 768px) {
+        .section-title {
+            font-size: 24px;
+            text-align: center;
+        }
+        .filter-container {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding-bottom: 10px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .section-title { font-size: 20px; }
+    }
+</style>
+
+<section class="news-section-vertical py-5" style="background: white;">
+    <div class="container">
+        <h2 class="section-title mb-5 offset-1">новости</h2>
+        
+        <div id="news-vertical-filters" class="filter-container mb-5">
+            <div class="d-flex flex-wrap gap-4"></div>
+        </div>
+        
+        <div id="news-vertical-grid" class="news-grid mb-5"></div>
+        
+        <div class="text-center">
+            <a href="/news.html" class="btn btn-primary btn-lg text-white">
+                Больше новостей
+            </a>
+        </div>
+    </div>
+</section>
+
+<script>
+(function() {
+    console.log('=== news-vertical component script ===');
+    
+    function calculateCategories(news) {
+        const categoryMap = new Map();
+        categoryMap.set('все', news.length);
+        
+        news.forEach(item => {
+            const category = item.category;
+            if (category) {
+                categoryMap.set(category, (categoryMap.get(category) || 0) + 1);
+            }
+        });
+        
+        const categories = [];
+        categoryMap.forEach((count, name) => {
+            categories.push({ name, count });
+        });
+        
+        categories.sort((a, b) => {
+            if (a.name === 'все') return -1;
+            if (b.name === 'все') return 1;
+            return a.name.localeCompare(b.name);
+        });
+        
+        return categories;
+    }
+    
+    function waitForDataAndRender(attempts = 0) {
+        if (attempts > 50) {
+            console.error('NEWS_DATA not loaded after 50 attempts');
+            return;
+        }
+        
+        if (typeof NEWS_DATA === 'undefined') {
+            console.log(`NEWS_DATA not ready, attempt ${attempts}...`);
+            setTimeout(() => waitForDataAndRender(attempts + 1), 100);
+            return;
+        }
+        
+        console.log('NEWS_DATA found, rendering vertical...');
+        renderVertical();
+    }
+    
+    function renderVertical() {
+        const filtersContainer = document.querySelector('#news-vertical-filters .d-flex');
+        const gridContainer = document.getElementById('news-vertical-grid');
+        
+        if (!filtersContainer || !gridContainer) {
+            console.error('Containers not found');
+            return;
+        }
+        
+        const categories = calculateCategories(NEWS_DATA.news);
+        console.log('Rendering vertical with', NEWS_DATA.news.length, 'news, categories:', categories);
+        
+        // Рендерим фильтры
+        let filtersHtml = '';
+        categories.forEach((cat, index) => {
+            filtersHtml += `
+                <button class="filter-item ${index === 0 ? 'active' : ''}" data-filter="${cat.name}">
+                    <span>${cat.name}</span>
+                    <span class="filter-count">${cat.count}</span>
+                </button>
+            `;
+        });
+        filtersContainer.innerHTML = filtersHtml;
+        
+        // Рендерим новости
+        let newsHtml = '';
+        NEWS_DATA.news.forEach(item => {
+            newsHtml += `
+                <div class="news-card" data-category="${item.category}">
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <div class="news-image" style="background-image: url('${item.image}');"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="news-date">${item.date}</div>
+                            <h3 class="news-title">${item.title}</h3>
+                            <p class="news-description">${item.description}</p>
+                        </div>
+                        <div class="col-md-2">
+                            <a href="${item.link}" class="news-link">
+                                Подробнее
+                                <span class="news-link-arrow"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        gridContainer.innerHTML = newsHtml;
+        
+        // Инициализация фильтров
+        const filterButtons = document.querySelectorAll('#news-vertical-filters .filter-item');
+        const newsCards = document.querySelectorAll('#news-vertical-grid .news-card');
+        
+        console.log('Filter buttons:', filterButtons.length, 'News cards:', newsCards.length);
+        
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const filter = this.dataset.filter;
+                
+                newsCards.forEach(card => {
+                    card.style.display = (filter === 'все' || card.dataset.category === filter) ? 'block' : 'none';
+                });
+            });
+        });
+        
+        console.log('Vertical news rendered');
+    }
+    
+    // Запускаем
+    waitForDataAndRender();
+})();
+</script>

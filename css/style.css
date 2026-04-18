@@ -42,6 +42,12 @@
             --primary-pink: linear-gradient(135deg, #232328, var(--secondary-pink));
         }
 
+         .bg-primary {
+            background-color: var(--primary-blue) !important;
+        }
+        .bg-grey-light { background-color: var(--light-grey); }
+        .bg-dark-gradient{ background: linear-gradient(45deg,#131313, #080D6B);}
+
 /* ФИКС ДЛЯ ХЕДЕРА С ТАБАМИ */
 .academy-navbar {
     top: 0 !important;
@@ -238,6 +244,9 @@ header img{
 
 .bg-dark-gradient {
             background: linear-gradient(45deg, #131313, var(--primary-blue)) !important;
+        }
+        .bg-dark-grey {
+            background: var(--medium-grey) !important;
         }
 
 /* ===== КНОПКИ И ССЫЛКИ ===== */
@@ -1191,3 +1200,8 @@ table {
     background: linear-gradient(135deg,#080D6B, #FF5774);
     border-radius: 50px;
 }
+
+.blue{
+            color: var(--color-blue);
+            font-size: 24px;
+        }

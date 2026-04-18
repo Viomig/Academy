@@ -3,24 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="Academy/css/owl.carousel.css">
-    <link rel="stylesheet" href="Academy/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="Academy/css/owl.theme.green.css">
-    <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css">
-    <link href="/css/style.css" rel="stylesheet">
-    <title>Ученый совет | ААИ ЮФУ</title>
     
-    <!-- Bootstrap 5 CSS -->
+    <!-- ТОЛЬКО ОДИН Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Montserrat Font -->
+    <!-- Шрифты -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     
-    <!-- Custom CSS -->
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="Academy/css/owl.carousel.css">
+    <link rel="stylesheet" href="Academy/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="Academy/css/owl.theme.green.css">
+    
+    <!-- Ваши стили -->
+    <link href="/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="css/council-bootstrap.css">
     
     <style>
@@ -51,7 +50,7 @@
         }
 
         .hero-title {
-            font-size: 80px;
+            font-size: 70px !important;
             font-weight: 500;
             text-transform: uppercase;
             line-height: 1.1;
@@ -464,24 +463,21 @@
         <!-- ===== СЕКЦИЯ 1: ГЕРОЙ ===== -->
         <section class="hero-section py-5">
             <div class="container">
-                <div class="row align-items-center">
+                <div class="row align-items-center offset-1">
                     <div class="col-lg-7 mb-5 mb-lg-0">
                         <h1 class="hero-title mb-4">ученый совет</h1>
                         <p class="hero-subtitle lead">
-                            Научно-исследовательская деятельность является составляющей частью процесса подготовки молодых специалистов, 
-                            повышения квалификации преподавателей, воспроизводства новых знаний в сфере архитектуры, градостроительства, 
-                            дизайна и художественной культуры.
+                            Ученый совет - выборный коллегиальный орган, который обеспечивает принцип самоуправления в Академии архитектуры и искусств ЮФУ в рамках представленных ему полномочий. 
+                            Основной задачей Ученого совета является рассмотрение вопросов текущей деятельности и перспектив развития Академии.
                         </p>
                         
                         <!-- Кнопка "об академии" -->
                         <a href="#" class="d-flex align-items-center text-decoration-none text-blue">
                             <div class="me-2" style="width: 26px; height: 20px;">
-                                <svg width="26" height="20" viewBox="0 0 26 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <!-- SVG стрелка -->
-                                    <path d="M25.0607 10.5607C25.6464 9.97487 25.6464 9.02513 25.0607 8.43934L16.5147 0.893398C15.9289 0.307611 14.9792 0.307611 14.3934 0.893398C13.8076 1.47919 13.8076 2.42893 14.3934 3.01472L21.8787 10.5L14.3934 17.9853C13.8076 18.5711 13.8076 19.5208 14.3934 20.1066C14.9792 20.6924 15.9289 20.6924 16.5147 20.1066L25.0607 11.5607C25.6464 10.9749 25.6464 10.0251 25.0607 9.43934V10.5607ZM0 11H24V10H0V11Z" fill="#080D6B"/>
-                                </svg>
                             </div>
-                            <span class="fw-medium text-uppercase">об академии</span>
+                            <div class="col-6"><button class="btngprsl"><a href="/About/directsia.html"><span class="text-uppercase fw-bold" style="color: var(--primary-blue); font-size: 16px;">
+                                <a href="abouAcademy.html" style="text-decoration: none;">Об Академии</a>
+                            </span></a><span class="arrow">→</span></button></div>
                         </a>
                     </div>
                     
@@ -501,319 +497,1230 @@
             </div>
         </section>
 
-        <!-- ===== СЕКЦИЯ 2: ПРЕДСЕДАТЕЛЬ ===== -->
+       <div class="bg-grey-light"> <!-- ===== СЕКЦИЯ 2: ПРЕДСЕДАТЕЛЬ ===== -->
         <section class="py-5">
             <div class="container">
                 <h2 class="section-title offset-1 mb-5">председатель</h2>
                 
-                <div class="row">
-                    <div class="col-md-7 offset-2">
-                        <div class="member-card">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <div class="member-photo bg-primary" style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%);">
-                                        <!-- Можно добавить реальное фото -->
-                                        <div class="h-100 d-flex align-items-center justify-content-center text-white">
-                                            <i class="bi bi-person-circle display-1"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="member-info h-100 d-flex flex-column justify-content-center">
-                                        <h3 class="member-name">Чемерисова Наталья Васильевна</h3>
-                                        <p class="member-position">Директор ААИ ЮФУ</p>
-                                        <div class="member-contact">
-                                            <p class="mb-2">тел.: <span>+7(863)218-40-00 доб. 20023</span></p>
-                                            <p class="mb-2">e-mail: <a href="mailto:nvchemerisova@sfedu.ru">nvchemerisova@sfedu.ru</a></p>
-                                            <p class="mb-0">Адрес: пр. Буденновский 39, 4 этаж, кабинет № 40</p>
-                                        </div>
-                                    </div>
-                                </div>
+        <div class="row offset-md-2" id="Card">
+            <div class="col-md-10" id="peopleCard">
+                <div class="row align-items-stretch">
+                    <div class="col-md-5 d-flex flex-column justify-content-end">
+                        <div class="card-img-wrapper ">
+                            <img src="imageUchSov/1.png" alt="Чемерисова Наталья Васильевна" class="card-img">
+                        </div>
+                    </div>
+                    <div class="col-md-7 d-flex flex-column justify-content-end " id="info">
+                        <div class="info-content">
+                            <h6 class="position-title">Директор ААИ ЮФУ</h6>
+                            <h5 class="person-name">Чемерисова Наталья Васильевна</h5>
+                            <p class="person-subtitle">Заведующий кафедрой графики и информационных технологий архитектурного проектирования, доктор технических наук, профессор</p>
+                            <div class="contact-info">
+                                <p class="contact-item"><strong>тел.:</strong> +7(863)218-40-00 доб. 20023</p>
+                                <p class="contact-item"><strong>e-mail:</strong> nvchemerisova@sfedu.ru</p>
+                                <p class="contact-item"><strong>Адрес:</strong> пр. Буденновский 39, 4 этаж, кабинет № 40</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+            </div>
         </section>
-
+</div>
         <!-- ===== СЕКЦИЯ 3: ЗАМЕСТИТЕЛЬ ПРЕДСЕДАТЕЛЯ ===== -->
         <section class="py-5">
             <div class="container">
                 <h2 class="section-title offset-1 mb-5">заместитель председателя</h2>
                 
-                <div class="row">
-                    <div class="col-md-7 offset-2">
-                        <div class="member-card">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <div class="member-photo bg-primary" style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%);">
-                                        <div class="h-100 d-flex align-items-center justify-content-center text-white">
-                                            <i class="bi bi-person-circle display-1"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="member-info h-100 d-flex flex-column justify-content-center">
-                                        <h3 class="member-name">Иевлева Ольга Тихоновна</h3>
-                                        <p class="member-position">
-                                            Заведующий кафедрой графики и информационных технологий архитектурного проектирования, 
-                                            доктор технических наук, профессор
-                                        </p>
-                                        <div class="member-contact">
-                                            <p class="mb-2">тел.: <span>+7(863)218-40-00 доб. 20024</span></p>
-                                            <p class="mb-2">e-mail: <a href="mailto:ijevleva@sfedu.ru">ijevleva@sfedu.ru</a></p>
-                                            <p class="mb-0">Адрес: пр. Будённовский 39, 1 этаж, кабинет № 14</p>
-                                        </div>
-                                    </div>
-                                </div>
+                <div class="row offset-md-2" id="Card">
+            <div class="col-md-10" id="peopleCard">
+                <div class="row align-items-stretch">
+                    <div class="col-md-5 d-flex flex-column justify-content-end">
+                        <div class="card-img-wrapper ">
+                            <img src="imageUchSov/2.png" alt="Иевлева Ольга Тихоновна" class="card-img">
+                        </div>
+                    </div>
+                    <div class="col-md-7 d-flex flex-column justify-content-end " id="info">
+                        <div class="info-content">
+                            <h6 class="position-title">Ответственная за образовательные программы и IT технологии</h6>
+                            <h5 class="person-name">Иевлева Ольга Тихоновна</h5>
+                            <p class="person-subtitle">Заведующий кафедрой графики и информационных технологий архитектурного проектирования, доктор технических наук, профессор</p>
+                            <div class="contact-info">
+                                <p class="contact-item"><strong>тел.:</strong> +7(863)218-40-00 доб. 20024</p>
+                                <p class="contact-item"><strong>e-mail:</strong> ijevleva@sfedu.ru</p>
+                                <p class="contact-item"><strong>Адрес:</strong> пр. Буденновский 39, 5 этаж, кабинет № 52</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+            </div>
         </section>
 
-        <!-- ===== СЕКЦИЯ 4: УЧЕНЫЙ СЕКРЕТАРЬ ===== -->
+        <div class="bg-grey-light"><!-- ===== СЕКЦИЯ 4: УЧЕНЫЙ СЕКРЕТАРЬ ===== -->
         <section class="py-5">
             <div class="container">
                 <h2 class="section-title offset-1 mb-5">ученый секретарь</h2>
                 
+                <div class="row offset-md-2" id="Card">
+            <div class="col-md-10" id="peopleCard">
+                <div class="row align-items-stretch">
+                    <div class="col-md-5 d-flex flex-column justify-content-end">
+                        <div class="card-img-wrapper ">
+                            <img src="imageUchSov/3.png" alt="Иевлева Ольга Тихоновна" class="card-img">
+                        </div>
+                    </div>
+                    <div class="col-md-7 d-flex flex-column justify-content-end " id="info">
+                        <div class="info-content">
+                            <h6 class="position-title"></h6>
+                            <h5 class="person-name">Верещагина Эвелина Ивановна</h5>
+                            <p class="person-subtitle">Доцент кафедры архитектуры жилых и общественных зданий</p>
+                            <div class="contact-info">
+                                <p class="contact-item"><strong>тел.:</strong> +7(863)218-40-00 доб. 20043</p>
+                                <p class="contact-item"><strong>e-mail:</strong> avereshagina@sfedu.ru</p>
+                                <p class="contact-item"><strong>Адрес:</strong> пр. Буденновский 39, 4 этаж, кабинет № 48</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </div>
+        </section>
+</div>
+        <!-- Подключение Owl Carousel (добавьте в <head> если ещё не подключено) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<!-- ===== СЕКЦИЯ: ЧЛЕНЫ СОВЕТА (OWL CAROUSEL) ===== -->
+<section class="py-5 members-section">
+    <div class="container">
+        <h2 class="section-title mb-5 offset-1">члены</h2>
+        
+        <!-- Owl Carousel -->
+        <div class="owl-carousel owl-theme offset-1" id="membersOwlCarousel">
+            
+            <!-- Слайд 1 (2 карточки) -->
+            <div class="members-slide">
+                <!-- Карточка 1 -->
+                <div class="member-list-card">
+                    <div class="row g-0">
+                        <div class="col-4">
+                            <div class="list-member-photo-wrapper">
+                                <img src="imageUchSov/31.png" alt="Андреев Александр Александрович" class="list-member-photo">
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="ps-3">
+                                <h4 class="list-member-name">Андреев Александр Александрович</h4>
+                                <p class="list-member-desc">
+                                    Руководитель центра организации работы с абитуриентами, профориентации и продвижения образовательных программ.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Карточка 2 -->
+                <div class="member-list-card">
+                    <div class="row g-0">
+                        <div class="col-4">
+                            <div class="list-member-photo-wrapper">
+                                <img src="imageUchSov/32.png" alt="Евтушенко-Мулукаева Наталья Михайловна" class="list-member-photo">
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="ps-3">
+                                <h4 class="list-member-name">Евтушенко-Мулукаева Наталья Михайловна</h4>
+                                <p class="list-member-desc">
+                                    Доцент кафедры архитектурного и средового проектирования, председатель профбюро Академии архитектуры и искусств, кандидат архитектуры.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Слайд 2 (2 карточки) -->
+            <div class="members-slide">
+                <!-- Карточка 3 -->
+                <div class="member-list-card">
+                    <div class="row g-0">
+                        <div class="col-4">
+                            <div class="list-member-photo-wrapper">
+                                <img src="imageUchSov/38.png" alt="Водяной Андрей Михайлович" class="list-member-photo">
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="ps-3">
+                                <h4 class="list-member-name">Водяной Андрей Михайлович</h4>
+                                <p class="list-member-desc">
+                                    Профессор кафедры архитектурного и средового проектирования, кандидат архитектуры, доцент.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Карточка 4 -->
+                <div class="member-list-card">
+                    <div class="row g-0">
+                        <div class="col-4">
+                            <div class="list-member-photo-wrapper">
+                                <img src="imageUchSov/53.png" alt="Василенко Александр Иванович" class="list-member-photo">
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="ps-3">
+                                <h4 class="list-member-name">Василенко Александр Иванович</h4>
+                                <p class="list-member-desc">
+                                    Профессор кафедры инженерно-строительных дисциплин, доктор технических наук, профессор.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Слайд 3 (2 карточки) -->
+            <div class="members-slide">
+                <!-- Карточка 5 -->
+                <div class="member-list-card">
+                    <div class="row g-0">
+                        <div class="col-4">
+                            <div class="list-member-photo-wrapper">
+                                <img src="imageUchSov/40.png" alt="Андреева Юлия Владимировна" class="list-member-photo">
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="ps-3">
+                                <h4 class="list-member-name">Андреева Юлия Владимировна</h4>
+                                <p class="list-member-desc">
+                                    Доцент кафедры градостроительства, кандидат архитектуры.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Карточка 6 -->
+                <div class="member-list-card">
+                    <div class="row g-0">
+                        <div class="col-4">
+                            <div class="list-member-photo-wrapper">
+                                <img src="imageUchSov/47.png" alt="Мокина Анна Юрьевна" class="list-member-photo">
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="ps-3">
+                                <h4 class="list-member-name">Мокина Анна Юрьевна</h4>
+                                <p class="list-member-desc">
+                                    Заместитель директора по научной работе, доцент кафедры графики и информационных технологий архитектурного проектирования, кандидат технических наук.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="members-slide">
+                <!-- Карточка 5 -->
+                <div class="member-list-card">
+                    <div class="row g-0">
+                        <div class="col-4">
+                            <div class="list-member-photo-wrapper">
+                                <img src="imageUchSov/39.png" alt="Ерохина Наталья Вячеславовна" class="list-member-photo">
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="ps-3">
+                                <h4 class="list-member-name">Ерохина Наталья Вячеславовна</h4>
+                                <p class="list-member-desc">
+                                    Руководитель центра организации учебной работы студентов.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Карточка 6 -->
+                <div class="member-list-card">
+                    <div class="row g-0">
+                        <div class="col-4">
+                            <div class="list-member-photo-wrapper">
+                                <img src="imageUchSov/42.png" alt="Иванова-Ильичева Анна Михайловна" class="list-member-photo">
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="ps-3">
+                                <h4 class="list-member-name">Иванова-Ильичева Анна Михайловна</h4>
+                                <p class="list-member-desc">
+                                    Заведующий кафедрой истории архитектуры, искусства и архитектурной реставрации, доктор архитектуры, доцент.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="members-slide">
+                <!-- Карточка 5 -->
+                <div class="member-list-card">
+                    <div class="row g-0">
+                        <div class="col-4">
+                            <div class="list-member-photo-wrapper">
+                                <img src="imageUchSov/34.png" alt="Карташева Людмила Владимировна" class="list-member-photo">
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="ps-3">
+                                <h4 class="list-member-name">Карташева Людмила Владимировна</h4>
+                                <p class="list-member-desc">
+                                    Заведующий кафедрой основ архитектурно-художественного проектирования, кандидат архитектуры, доцент.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Карточка 6 -->
+                <div class="member-list-card">
+                    <div class="row g-0">
+                        <div class="col-4">
+                            <div class="list-member-photo-wrapper">
+                                <img src="imageUchSov/43.png" alt="Кокуашвили Наталья Борисовна" class="list-member-photo">
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="ps-3">
+                                <h4 class="list-member-name">Кокуашвили Наталья Борисовна</h4>
+                                <p class="list-member-desc">
+                                    Доцент кафедры дизайна, доцент.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="members-slide">
+                <!-- Карточка 5 -->
+                <div class="member-list-card">
+                    <div class="row g-0">
+                        <div class="col-4">
+                            <div class="list-member-photo-wrapper">
+                                <img src="imageUchSov/4.png" alt="Кудинов Олег Александрович" class="list-member-photo">
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="ps-3">
+                                <h4 class="list-member-name">Кудинов Олег Александрович</h4>
+                                <p class="list-member-desc">
+                                    Заведующий кафедрой строительной механики и конструкций, кандидат технических наук, доцент.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Карточка 6 -->
+                <div class="member-list-card">
+                    <div class="row g-0">
+                        <div class="col-4">
+                            <div class="list-member-photo-wrapper">
+                                <img src="imageUchSov/44.png" alt="Кулешова Анна Александровна" class="list-member-photo">
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="ps-3">
+                                <h4 class="list-member-name">Кулешова Анна Александровна</h4>
+                                <p class="list-member-desc">
+                                    Заведующий кафедрой дизайна, кандидат педагогических наук, доцент.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="members-slide">
+                <!-- Карточка 5 -->
+                <div class="member-list-card">
+                    <div class="row g-0">
+                        <div class="col-4">
+                            <div class="list-member-photo-wrapper">
+                                <img src="imageUchSov/45.png" alt="Лебединская Алла Робертовна" class="list-member-photo">
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="ps-3">
+                                <h4 class="list-member-name">Лебединская Алла Робертовна</h4>
+                                <p class="list-member-desc">
+                                    Заведующий кафедрой инженерно-строительных дисциплин, кандидат физико-математических наук, доцент.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Карточка 6 -->
+                <div class="member-list-card">
+                    <div class="row g-0">
+                        <div class="col-4">
+                            <div class="list-member-photo-wrapper">
+                                <img src="imageUchSov/46.png" alt="Масалова Евгения Владимировна" class="list-member-photo">
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="ps-3">
+                                <h4 class="list-member-name">Масалова Евгения Владимировна</h4>
+                                <p class="list-member-desc">
+                                    Доцент кафедры рисунка, кандидат философских наук.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="members-slide">
+                <!-- Карточка 5 -->
+                <div class="member-list-card">
+                    <div class="row g-0">
+                        <div class="col-4">
+                            <div class="list-member-photo-wrapper">
+                                <img src="imageUchSov/36.png" alt="Молчанов Виктор Михайлович" class="list-member-photo">
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="ps-3">
+                                <h4 class="list-member-name">Молчанов Виктор Михайлович</h4>
+                                <p class="list-member-desc">
+                                    Заведующий кафедрой архитектуры жилых и общественных зданий, кандидат архитектуры, профессор.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Карточка 6 -->
+                <div class="member-list-card">
+                    <div class="row g-0">
+                        <div class="col-4">
+                            <div class="list-member-photo-wrapper">
+                                <img src="imageUchSov/37.png" alt="Моргун Николай Анатольевич" class="list-member-photo">
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="ps-3">
+                                <h4 class="list-member-name">Моргун Николай Анатольевич</h4>
+                                <p class="list-member-desc">
+                                    Заведующий кафедрой архитектурного и средового проектирования, кандидат архитектуры, профессор.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="members-slide">
+                <!-- Карточка 5 -->
+                <div class="member-list-card">
+                    <div class="row g-0">
+                        <div class="col-4">
+                            <div class="list-member-photo-wrapper">
+                                <img src="imageUchSov/52.png" alt="Нагибина Беата Павловна" class="list-member-photo">
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="ps-3">
+                                <h4 class="list-member-name">Нагибина Беата Павловна</h4>
+                                <p class="list-member-desc">
+                                    Студентка, председатель студсовета ААИ.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Карточка 6 -->
+                <div class="member-list-card">
+                    <div class="row g-0">
+                        <div class="col-4">
+                            <div class="list-member-photo-wrapper">
+                                <img src="imageUchSov/48.png" alt="Ордынская Марина Валентиновна" class="list-member-photo">
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="ps-3">
+                                <h4 class="list-member-name">Ордынская Марина Валентиновна</h4>
+                                <p class="list-member-desc">
+                                    Профессор кафедры теории и практики изобразительного искусства, профессор.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="members-slide">
+                <!-- Карточка 5 -->
+                <div class="member-list-card">
+                    <div class="row g-0">
+                        <div class="col-4">
+                            <div class="list-member-photo-wrapper">
+                                <img src="imageUchSov/49.png" alt="Писаренко Сергей Александрович" class="list-member-photo">
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="ps-3">
+                                <h4 class="list-member-name">Писаренко Сергей Александрович</h4>
+                                <p class="list-member-desc">
+                                    Доцент кафедры теории и практики изобразительного искусства, кандидат педагогических наук, доцент.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Карточка 6 -->
+                <div class="member-list-card">
+                    <div class="row g-0">
+                        <div class="col-4">
+                            <div class="list-member-photo-wrapper">
+                                <img src="imageUchSov/50.png" alt="Скоблицкая Юлия Александровна" class="list-member-photo">
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="ps-3">
+                                <h4 class="list-member-name">Скоблицкая Юлия Александровна</h4>
+                                <p class="list-member-desc">
+                                    Профессор кафедры архитектурного и средового проектирования, кандидат архитектуры.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="members-slide">
+                <!-- Карточка 5 -->
+                <div class="member-list-card">
+                    <div class="row g-0">
+                        <div class="col-4">
+                            <div class="list-member-photo-wrapper">
+                                <img src="imageUchSov/51.png" alt="Терещенко Наталья Александровна" class="list-member-photo">
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="ps-3">
+                                <h4 class="list-member-name">Терещенко Наталья Александровна</h4>
+                                <p class="list-member-desc">
+                                    Доцент кафедры теории и практики изобразительного искусства, кандидат педагогических наук.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Карточка 6 -->
+                <div class="member-list-card">
+                    <div class="row g-0">
+                        <div class="col-4">
+                            <div class="list-member-photo-wrapper">
+                                <img src="imageUchSov/33.png" alt="Шапиро Григорий Ефимович" class="list-member-photo">
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="ps-3">
+                                <h4 class="list-member-name">Шапиро Григорий Ефимович</h4>
+                                <p class="list-member-desc">
+                                    Доцент кафедры истории архитектуры, искусства и архитектурной реставрации, кандидат архитектуры.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Стили для слайда (контейнер для двух карточек) */
+    .members-slide {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding: 5px;
+    }
+    
+    /* Основные стили карточки */
+    .member-list-card {
+        background: var(--grey-bg);
+        border: none;
+        border-radius: 15px;
+        padding: 16px 17px;
+        transition: all 0.3s ease;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease, background 0.3s ease;
+    }
+    
+    /* Класс для анимации появления */
+    .member-list-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .member-list-card:hover {
+        background: var(--white);
+        transform: translateY(-3px) !important;
+    }
+    
+    /* Обёртка для фото */
+    .list-member-photo-wrapper {
+        width: 100%;
+        height: 200px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    
+    /* Само фото */
+    .list-member-photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    
+    /* Заглушка на случай отсутствия фото */
+    .list-member-photo-placeholder {
+        width: 100%;
+        height: 200px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 3rem;
+    }
+    
+    /* Имя */
+    .list-member-name {
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: var(--black);
+        margin-bottom: 10px;
+        line-height: 1.4;
+    }
+    
+    /* Описание */
+    .list-member-desc {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--black);
+        line-height: 1.5;
+        margin-bottom: 0;
+    }
+    
+    /* Кастомизация Owl Carousel */
+    #membersOwlCarousel .owl-stage {
+        display: flex;
+    }
+    
+    #membersOwlCarousel .owl-item {
+        display: flex;
+        justify-content: center;
+    }
+    
+    /* Фиксированная ширина слайда */
+    #membersOwlCarousel .members-slide {
+        width: 497px;
+        margin: 0 auto;
+    }
+    
+    /* Стили для точек (dots) */
+    #membersOwlCarousel .owl-dots {
+        margin-top: 30px !important;
+    }
+    
+    #membersOwlCarousel .owl-dots .owl-dot span {
+        width: 10px;
+        height: 10px;
+        margin: 5px 5px;
+        background: var(--light-blue-bg);
+        transition: all 0.3s ease;
+    }
+    
+    #membersOwlCarousel .owl-dots .owl-dot.active span,
+    #membersOwlCarousel .owl-dots .owl-dot:hover span {
+        background: var(--primary-blue);
+    }
+    
+    /* Стили для стрелок (nav) */
+    #membersOwlCarousel .owl-nav {
+        margin-top: 20px;
+    }
+    
+    #membersOwlCarousel .owl-nav button.owl-prev,
+    #membersOwlCarousel .owl-nav button.owl-next {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--light-blue-bg) !important;
+        color: var(--primary-blue) !important;
+        font-size: 24px !important;
+        line-height: 40px !important;
+        text-align: center;
+        transition: all 0.3s ease;
+        margin: 0 5px;
+    }
+    
+    #membersOwlCarousel .owl-nav button.owl-prev:hover,
+    #membersOwlCarousel .owl-nav button.owl-next:hover {
+        background: var(--primary-blue) !important;
+        color: var(--white) !important;
+    }
+    
+    /* Отступы для offset-1 */
+    #membersOwlCarousel.offset-1 {
+        margin-left: 8.333%;
+        width: 91.667%;
+    }
+    
+    /* Адаптивность */
+    @media (max-width: 767.98px) {
+        #membersOwlCarousel .members-slide {
+            width: 100%;
+            max-width: 497px;
+        }
+        
+        .list-member-photo-wrapper,
+        .list-member-photo-placeholder {
+            height: 160px;
+        }
+        
+        .list-member-name {
+            font-size: 14px;
+        }
+        
+        .list-member-desc {
+            font-size: 12px;
+        }
+        
+        #membersOwlCarousel.offset-1 {
+            margin-left: 0;
+            width: 100%;
+        }
+    }
+    
+    /* Для очень маленьких экранов */
+    @media (max-width: 575.98px) {
+        .member-list-card .col-4 {
+            width: 100%;
+            margin-bottom: 12px;
+        }
+        
+        .member-list-card .col-8 {
+            width: 100%;
+            padding-left: 0 !important;
+        }
+        
+        .list-member-photo-wrapper,
+        .list-member-photo-placeholder {
+            height: 250px;
+        }
+    }
+</style>
+
+<script>
+    (function() {
+        // Инициализация Owl Carousel
+        function initOwlCarousel() {
+            const carousel = $('#membersOwlCarousel');
+            
+            if (carousel.length) {
+                carousel.owlCarousel({
+                    loop: true,
+                    margin: 30,
+                    nav: true,
+                    navText: ['‹', '›'],
+                    dots: false,
+                    autoplay: false,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        768: {
+                            items: 1
+                        },
+                        992: {
+                            items: 2
+                        },
+                        1200: {
+                            items: 2.5
+                        }
+                    },
+                    onInitialized: function() {
+                        // После инициализации запускаем анимацию
+                        setTimeout(animateOnScroll, 100);
+                    }
+                });
+            }
+        }
+        
+        // Функция анимации при скролле
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.member-list-card');
+            
+            elements.forEach(function(element) {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+        
+        // Инициализация при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            initOwlCarousel();
+        });
+        
+        // Запуск анимации при скролле
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+        setTimeout(animateOnScroll, 200);
+    })();
+</script>
+
+
+<div class="bg-grey-light">
+<section class="py-5" id="Documents">
+        <div class="container">
+            <h2 class="section-title text-black offset-1">Документы</h2>
+            
+            <div class="row g-4 offset-1">
+                <div class="col-lg-6">
+                   <a href="https://disk.360.yandex.ru/i/IRzeHqKMNkM9UA"> 
+                    <div class="document-card">
+                        <div class="d-flex align-items-start">
+                            <div class="me-4">
+                                <img src="/Abiturient/imageMag/ПДФ.png">
+                            </div>
+                            <div>
+                                <h4 class="font-weight-100 text-black mb-0">О порядке присвоенияученых званий</h4>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                
+                <div class="col-lg-6">
+                    <a href="https://sfedu.ru/www/stat_pages22.show?p=PER/doc_work/P">
+                    <div class="document-card">
+                        <div class="d-flex align-items-start">
+                            <div class="me-4">
+                               <img src="/Abiturient/imageMag/ПДФ.png">
+                            </div>
+                            <div>
+                                <h4 class="font-weight-100 text-black mb-0">Документы для оформления на работу по конкурсу</h4>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+    <style>
+       /* ===== БАЗОВЫЕ СТИЛИ И ПЕРЕМЕННЫЕ ===== */
+        :root {
+            --primary-blue: #080D6B;
+            --secondary-pink: #ED1160;
+            --dark-grey: #232328;
+            --medium-grey: #777777;
+            --light-grey: #f3f3f3;
+            --white: #ffffff;
+            --black: #000000;
+            --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%);
+            --gradient-dark: linear-gradient(45deg, #131313, var(--primary-blue));
+            --light-blue: #E6E7F0;
+            --light-grey-bg: #F3F3F3;
+            --dark-grey-text: #8C8C8C;
+        }
+        
+        /* General Styles */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--color-black);
+            overflow-x: hidden;
+        }
+        .bg-grey-light { background-color: var(--light-grey); }
+    </style>
+
+        <!-- ===== СЕКЦИЯ: ПЛАН РАБОТЫ (ДИНАМИЧЕСКАЯ) ===== -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="section-title mb-5 offset-1">План работы Ученого Совета Академии архитектуры и искусств ЮФУ</h2>
+        
+        <!-- Вкладки семестров -->
+        <div class="semester-tabs mb-4 offset-1">
+            <div class="d-flex gap-4">
+                <div class="semester-tab active" data-semester="1">1 семестр</div>
+                <div class="semester-tab" data-semester="2">2 семестр</div>
+            </div>
+        </div>
+        
+        <!-- Контейнер для кнопок месяцев (будет обновляться динамически) -->
+        <div class="month-buttons offset-1" id="monthButtonsContainer"></div>
+        
+        <!-- Таблица плана -->
+        <div class="work-plan-table offset-1">
+            <div class="plan-header">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <h3 class="plan-title ps-3 ps-md-0">Рассматриваемые вопросы</h3>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="plan-title ps-3 ps-md-0">Ответственные за подготовку</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Тело таблицы будет заполняться через JS -->
+            <div id="planTableBody"></div>
+        </div>
+        
+        <!-- Примечание (текст будет обновляться динамически в зависимости от месяца) -->
+        <div class="alert alert-info border-0 mb-0 mt-4 offset-1">
+            <div class="d-flex align-items-center">
+                <i class="bi bi-info-circle-fill fs-4 text-blue me-3"></i>
+                <div>
+                    <p class="mb-0 fw-medium" id="meetingNoteText">
+                        День заседания Ученого совета – второй четверг месяца, в 14.00.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    (function() {
+        const planData = {
+            // 1 СЕМЕСТР
+            '1': {
+                'Сентябрь': [
+                    { question: 'Конкурс на замещение должности ассистента и преподавателя НОЦ «Перспективные решения в образовании»', responsible: 'Н.В. Чемерисова,<br>Э.И. Верещагина' },
+                    { question: 'Утверждение плана работы Ученого совета Академии с сентября 2024 г. по январь 2025 г.', responsible: 'Н.В. Чемерисова,<br>Э.И. Верещагина' },
+                    { question: 'Утверждение отчетов по результатам самооценки основных профессиональных образовательных программ в рамках прохождения профессионально-общественной аккредитации', responsible: 'О.Т. Иевлева' },
+                    { question: 'Утверждение отчетов ассистентов-стажеров 2 года обучения', responsible: 'Заведующие профильных кафедр' }
+                ],
+                'Октябрь': [
+                    { question: 'Утверждение программ ГИА и тем (тематик) ВКР направлений, специальностей и уровней подготовки, реализуемых в ААИ 2026 года выпуска.', responsible: 'Руководители ООП' },
+                    { question: 'О результатах работы ГЭК.', responsible: 'Заведующие выпускающих кафедр' },
+                    { question: 'Утверждение индивидуальных планов аспирантов научных направлений 2.1.11 Теория и история архитектуры, реставрация и реконструкция историко-архитектурного наследия, 2.1.12 Архитектура зданий и сооружений. Творческие концепции архитектурной деятельности.', responsible: 'О.Т. Иевлева' },
+                    { question: 'Отчет аспирантов о выполнении условий реализации гранта на обучение в аспирантуре за период с 01.02.2025 по 01.10.2025 года.', responsible: 'аспиранты-грантодержатели и научные руководители' },
+                    { question: 'О корректировке темы научных исследований соискателя Али Аль-Самаветли Хусейн Шани по специальности 2.1.12. «Архитектура зданий и сооружений. Творческие концепции архитектурной деятельности».', responsible: 'А.В. Скопинцев' }
+                ],
+                'Ноябрь': [
+                    { question: 'Об итогах летней зачетно-экзаменационной сессии.', responsible: 'Н.В. Ерохина' },
+                    { question: 'Отчет по трудоустройству выпускников 2025 г. О состоянии показателя целевого обучения в ААИ в 2025 г. О взаимодействии с работодателями и трудоустройстве выпускников.', responsible: 'А.А. Шеремет<br>С.А. Ревякин' },
+                    { question: 'Утверждение программ ГИА и тем (тематик) ВКР направлений, специальностей и уровней подготовки, реализуемых в ААИ 2026 года выпуска.', responsible: 'Руководители ООП' },
+                    { question: 'О выдвижении кандидатур в Совет молодых ученых ЮФУ.', responsible: 'А.Ю. Мокина' }
+                ],
+                'Декабрь': [
+                    { question: 'О результатах деятельности Регионального центра переподготовки кадров и перспективах дополнительного профессионального образования в ААИ.', responsible: 'А.А. Андреев' },
+                    { question: 'Отчет о научно-исследовательской работе студентов за 2025 год. Отчеты о работе СНО (кафедры СМиК, ИСД, АЖОЗ, ОАХП).', responsible: 'А.Ю. Мокина<br>руководители СНО' },
+                    { question: 'Отчет о проектной деятельности в ААИ за 2025 год.', responsible: 'С.А. Ревякин' },
+                    { question: 'Отчет о выставочной деятельности в ААИ за 2025 год.', responsible: 'А.М. Водяной' },
+                    { question: 'Отчет о воспитательной работе в ААИ за 2025 год.', responsible: 'М.Н. Меркулова' },
+                    { question: 'Отчет о международной деятельности в ААИ за 2025 год.', responsible: 'О.О. Федорова' }
+                ],
+                'Январь': [
+                    { question: 'Утверждение плана работы Ученого совета Академии на 2 семестр 2025/26 учебного года.', responsible: 'Н.В. Чемерисова<br>Э.И. Верещагина' },
+                    { question: 'О стратегии набора в Академию на 2026 г. Утверждение плана профориентационной работы. 2025/2026гг.', responsible: 'А.А. Андреев<br>А.М. Иванова-Ильичева' },
+                    { question: 'Отчет о научно-исследовательской деятельности в ААИ за 2025 год. О перспективах развития научно-исследовательской деятельности Академии в 2026 году. Утверждение планов НИР и НИРС.', responsible: 'А.Ю. Мокина' },
+                    { question: 'Отчеты кафедр ОАХП, АЖОЗ, ГРАДО по показателям развития за 2025 год.', responsible: 'заведующие кафедрами' },
+                    { question: 'Утверждение комплексного плана воспитательной работы на 2026 год.', responsible: 'М.Н. Меркулова' },
+                    { question: 'Утверждение комплексного плана выставочной деятельности на 2026 год.', responsible: 'А.М. Водяной' },
+                    { question: 'Утверждение комплексного плана проектной деятельности в ААИ на 2026 год.', responsible: 'С.А. Ревякин' },
+                    { question: 'Утверждение комплексного плана международной деятельности в ААИ на 2026 год.', responsible: 'О.О. Федорова' }
+                ]
+            },
+            // 2 СЕМЕСТР
+            '2': {
+                'Февраль': [
+                    { question: 'Отчет о работе Учебно-методического совета ААИ за 2025 год. Утверждение плана работы Учебно-методического совета ААИ на 2026 год.', responsible: 'О.Т. Иевлева' },
+                    { question: 'Отчет о выполнении Программы развития Академии архитектуры и искусств за 2025 г.', responsible: 'Н.В. Чемерисова' },
+                    { question: 'Отчеты кафедр Дизайна, ДПИ, ТиПИЗО по показателям развития за 2025 год.', responsible: 'Заведующие кафедрами' },
+                    { question: 'Отчеты научных руководителей и аспирантов - победителей конкурсного отбора на предоставление гранта на обучение в аспирантуре за период за период с 01.10.2025 по 31.01.2026 года', responsible: 'Научные руководители и аспиранты' },
+                    { question: 'Утверждение программ вступительных испытаний', responsible: 'А.А. Андреев' },
+                    { question: 'Об актуализации программ ГИА образовательных программ выпуска 2025-2026 учебного года', responsible: 'Н.В. Ерохина' }
+                ],
+                'Март': [
+                    { question: 'Отчеты кафедр АСП, ИАИАР, ГИТАП по показателям развития за 2025 год.', responsible: 'Заведующие кафедрами' },
+                    { question: 'Утверждение положений о конкурсе портфолио для поступающих в магистратуру в 2026 году.', responsible: 'А.А. Андреев' },
+                    { question: 'Утверждение списка работников ААИ, рекомендованных к награждению ведомственными наградами.', responsible: 'Н.В. Чемерисова<br>А.П. Лапина' },
+                    { question: 'Утверждение программ дополнительного профессионального образования.', responsible: 'Ю.С. Мирошниченко' }
+                ]
+            }
+        };
+
+        // Списки месяцев для семестров
+        const monthsBySemester = {
+            '1': ['Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь', 'Январь'],
+            '2': ['Февраль', 'Март']
+        };
+
+        // Текущее состояние
+        let currentSemester = '1';
+        let currentMonth = 'Сентябрь';
+
+        // ----- 2. ЭЛЕМЕНТЫ DOM -----
+        const monthContainer = document.getElementById('monthButtonsContainer');
+        const tableBody = document.getElementById('planTableBody');
+        const meetingNoteText = document.getElementById('meetingNoteText');
+        const semesterTabs = document.querySelectorAll('.semester-tab');
+
+        // ----- 3. ФУНКЦИИ ОТРИСОВКИ -----
+        
+        function renderMonthButtons(semester) {
+            const months = monthsBySemester[semester];
+            if (!months) return;
+            
+            let html = '';
+            months.forEach(month => {
+                const activeClass = (month === currentMonth) ? 'active' : '';
+                html += `<button class="month-btn ${activeClass}" data-month="${month}">${month}</button>`;
+            });
+            monthContainer.innerHTML = html;
+            
+            document.querySelectorAll('.month-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.month-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    currentMonth = this.getAttribute('data-month');
+                    renderTable(currentSemester, currentMonth);
+                    updateMeetingNote(currentMonth);
+                });
+            });
+        }
+
+        function renderTable(semester, month) {
+            const rows = planData[semester]?.[month] || [];
+            
+            if (rows.length === 0) {
+                tableBody.innerHTML = `
+                    <div class="plan-row">
+                        <div class="plan-question">
+                            <p class="plan-item text-muted fst-italic">Нет запланированных вопросов на этот месяц</p>
+                        </div>
+                        <div class="plan-responsible">
+                            <p class="plan-item text-muted">—</p>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+
+            let html = '';
+            rows.forEach(item => {
+                html += `
+                    <div class="plan-row">
+                        <div class="plan-question">
+                            <p class="plan-item">${item.question}</p>
+                        </div>
+                        <div class="plan-responsible">
+                            <p class="plan-item">${item.responsible}</p>
+                        </div>
+                    </div>
+                `;
+            });
+            tableBody.innerHTML = html;
+        }
+
+        function updateMeetingNote(month) {
+            // Можно кастомизировать текст для разных месяцев, если нужно
+            // Пока оставляем единый текст как в исходных данных
+            meetingNoteText.textContent = `День заседания Ученого совета – второй четверг ${month.toLowerCase()}, в 14.00.`;
+        }
+
+        function updateUIForSemester(semester) {
+            currentMonth = monthsBySemester[semester][0];
+            renderMonthButtons(semester);
+            renderTable(semester, currentMonth);
+            updateMeetingNote(currentMonth);
+        }
+
+        // ----- 4. ОБРАБОТЧИКИ СОБЫТИЙ -----
+        semesterTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const semester = this.getAttribute('data-semester');
+                
+                semesterTabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                currentSemester = semester;
+                updateUIForSemester(semester);
+            });
+        });
+
+        // ----- 5. ИНИЦИАЛИЗАЦИЯ -----
+        updateUIForSemester(currentSemester);
+    })();
+</script>
+
+<style>
+    .alert-info{
+        --bs-alert-bg: #ffffff;
+    }
+    /* Корректировка для корректного отображения заголовков в строке */
+    .work-plan-table .plan-header .plan-title {
+        margin-bottom: 0;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    
+    /* Чтобы иконка в примечании была синей */
+    .text-blue {
+        color: var(--primary-blue) !important;
+    }
+    
+    /* Стили для активного таба семестра */
+    .semester-tab {
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--primary-blue);
+        cursor: pointer;
+        padding-bottom: 5px;
+        position: relative;
+    }
+    .semester-tab.active {
+        color: var(--black);
+    }
+    .semester-tab.active::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: var(--primary-blue);
+    }
+</style>
+  
+    <section>
+        <h2 class="section-title mb-5 offset-1">РЕШЕНИЯ Ученого Совета Академии архитектуры и искусств ЮФУ</h2>
+    <div class="accordion-item offset-1">
+        <h2 class="accordion-header col-10">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#programOne" aria-expanded="false">
+                2026 ГОД
+            </button>
+        </h2>
+        <div id="programOne" class="accordion-collapse collapse col-10">
+            <div class="accordion-body">
+                <!-- УБРАН ЛИШНИЙ div.direction-card и внутренний h3 -->
                 <div class="row">
-                    <div class="col-md-7 offset-2">
-                        <div class="member-card">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <div class="member-photo bg-primary" style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%);">
-                                        <div class="h-100 d-flex align-items-center justify-content-center text-white">
-                                            <i class="bi bi-person-circle display-1"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="member-info h-100 d-flex flex-column justify-content-center">
-                                        <h3 class="member-name">Верещагина Эвелина Ивановна</h3>
-                                        <p class="member-position">Доцент кафедры архитектуры жилых и общественных зданий</p>
-                                        <div class="member-contact">
-                                            <p class="mb-2">тел.: <span>+7(863)218-40-00 доб. 20024</span></p>
-                                            <p class="mb-2">e-mail: <a href="mailto:avereshagina@sfedu.ru">avereshagina@sfedu.ru</a></p>
-                                            <p class="mb-0">Адрес: пр. Будённовский 39, 1 этаж, кабинет № 14</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="col-md-12">
+                        <div class="mb-3 row">
+                            <h6 class="code-text d-block col-2" style="color:var(--primary-blue)">18.09.2025</h6>
+                            <h6 class="desc-text col-8">Утверждение плана работы Ученого совета Академии на 1 семестр 2025/26 учебного года.</h6>
                         </div>
+                        <div class="mb-3 row">
+                            <h6 class="code-text d-block col-2" style="color:var(--primary-blue)">22.01.2026</h6>
+                            <h6 class="desc-text col-8">Утверждение плана работы Ученого совета Академии на 2 семестр 2025/26 учебного года.</h6>
+                        </div>
+                        <div class="mb-3 row">
+                            <h6 class="code-text d-block col-2" style="color:var(--primary-blue)">12.02.2026</h6>
+                            <h6 class="desc-text col-8">План работы Учебно-методического совета на 2 семестр 2025/26 учебного года.</h6>
+                        </div> 
                     </div>
+                </div>
+                <div class="text-end">
+                    <i class="bi bi-chevron-right text-primary"></i>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
-        <!-- ===== СЕКЦИЯ 5: ЧЛЕНЫ СОВЕТА ===== -->
-        <section class="py-5">
-            <div class="container">
-                <h2 class="section-title text-center mb-5">члены</h2>
-                
-                <!-- Карусель/сетка для членов совета -->
-                <div class="scroll-container mb-4">
-                    <div class="d-flex gap-4" style="min-width: 2000px;">
-                        <!-- Карточка 1 -->
-                        <div class="member-list-card" style="width: 497px; flex-shrink: 0;">
-                            <div class="row g-0">
-                                <div class="col-4">
-                                    <div class="list-member-photo bg-primary" style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%);">
-                                        <div class="h-100 d-flex align-items-center justify-content-center text-white">
-                                            <i class="bi bi-person-circle fs-1"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-8">
-                                    <div class="ps-3">
-                                        <h4 class="list-member-name">Андреев Александр Александрович</h4>
-                                        <p class="list-member-desc">
-                                            Руководитель центра организации работы с абитуриентами, профориентации и продвижения образовательных программ.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Карточка 2 -->
-                        <div class="member-list-card" style="width: 497px; flex-shrink: 0;">
-                            <div class="row g-0">
-                                <div class="col-4">
-                                    <div class="list-member-photo bg-primary" style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%);">
-                                        <div class="h-100 d-flex align-items-center justify-content-center text-white">
-                                            <i class="bi bi-person-circle fs-1"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-8">
-                                    <div class="ps-3">
-                                        <h4 class="list-member-name">Евтушенко-Мулукаева Наталья Михайловна</h4>
-                                        <p class="list-member-desc">
-                                            Доцент кафедры архитектурного и средового проектирования, председатель профбюро Академии архитектуры и искусств, кандидат архитектуры.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Карточка 3 -->
-                        <div class="member-list-card" style="width: 497px; flex-shrink: 0;">
-                            <div class="row g-0">
-                                <div class="col-4">
-                                    <div class="list-member-photo bg-primary" style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%);">
-                                        <div class="h-100 d-flex align-items-center justify-content-center text-white">
-                                            <i class="bi bi-person-circle fs-1"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-8">
-                                    <div class="ps-3">
-                                        <h4 class="list-member-name">Водяной Андрей Михайлович</h4>
-                                        <p class="list-member-desc">
-                                            Профессор кафедры архитектурного и средового проектирования, кандидат архитектуры, доцент.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Добавьте остальные карточки аналогичным образом -->
-                    </div>
-                </div>
-                
-                <!-- Индикатор прокрутки -->
-                <div class="text-center">
-                    <div class="d-inline-flex gap-2">
-                        <div class="rounded-circle" style="width: 10px; height: 10px; background: var(--primary-blue);"></div>
-                        <div class="rounded-circle" style="width: 10px; height: 10px; background: var(--light-blue-bg);"></div>
-                        <div class="rounded-circle" style="width: 10px; height: 10px; background: var(--light-blue-bg);"></div>
-                        <div class="rounded-circle" style="width: 10px; height: 10px; background: var(--light-blue-bg);"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                <style>
+                 .accordion-button {
+    font-size: 22px;
+    font-weight: 600;
+    padding: 28px;
+    border-radius: 15px !important;
+    background: var(--white);
+    color: var(--black);
+    border: 2px solid var(--primary-blue); /* Добавлена граница */
+}
 
-        <!-- ===== СЕКЦИЯ 6: ПЛАН РАБОТЫ ===== -->
-        <section class="py-5">
-            <div class="container">
-                <h2 class="section-title text-center mb-5">План работы Ученого Совета Академии архитектуры и искусств ЮФУ</h2>
-                
-                <!-- Вкладки семестров -->
-                <div class="semester-tabs mb-4">
-                    <div class="d-flex gap-4">
-                        <div class="semester-tab active">1 семестр</div>
-                        <div class="semester-tab">2 семестр</div>
-                    </div>
-                </div>
-                
-                <!-- Кнопки месяцев -->
-                <div class="month-buttons">
-                    <button class="month-btn active">Сентябрь</button>
-                    <button class="month-btn">Октябрь</button>
-                    <button class="month-btn">Ноябрь</button>
-                    <button class="month-btn">Декабрь</button>
-                    <button class="month-btn">Январь</button>
-                </div>
-                
-                <!-- Таблица плана -->
-                <div class="work-plan-table">
-                    <div class="plan-header">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h3 class="plan-title">Рассматриваемые вопросы</h3>
-                            </div>
-                            <div class="col-md-6">
-                                <h3 class="plan-title">Ответственные за подготовку</h3>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="plan-row">
-                        <div class="plan-question">
-                            <p class="plan-item">Конкурс на замещение должности ассистента и преподавателя НОЦ «Перспективные решения в образовании»</p>
-                        </div>
-                        <div class="plan-responsible">
-                            <p class="plan-item">Н.В. Чемерисова,<br>Э.И. Верещагина</p>
-                        </div>
-                    </div>
-                    
-                    <div class="plan-row">
-                        <div class="plan-question">
-                            <p class="plan-item">Утверждение плана работы Ученого совета Академии с сентября 2024 г. по январь 2025 г.</p>
-                        </div>
-                        <div class="plan-responsible">
-                            <p class="plan-item">Н.В. Чемерисова,<br>Э.И. Верещагина</p>
-                        </div>
-                    </div>
-                    
-                    <div class="plan-row">
-                        <div class="plan-question">
-                            <p class="plan-item">Утверждение отчетов по результатам самооценки основных профессиональных образовательных программ в рамках прохождения профессионально-общественной аккредитации</p>
-                        </div>
-                        <div class="plan-responsible">
-                            <p class="plan-item">О.Т. Иевлева</p>
-                        </div>
-                    </div>
-                    
-                    <div class="plan-row">
-                        <div class="plan-question">
-                            <p class="plan-item">Утверждение отчетов ассистентов-стажеров 2 года обучения</p>
-                        </div>
-                        <div class="plan-responsible">
-                            <p class="plan-item">Заведующие профильных кафедр</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Примечание -->
-                <div class="alert alert-info border-0 mb-0">
-                    <div class="d-flex align-items-center">
-                        <i class="bi bi-info-circle-fill fs-4 text-blue me-3"></i>
-                        <div>
-                            <p class="mb-0 fw-medium">
-                                День заседания Ученого совета – второй четверг месяца, в 14.00.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+.accordion-button:not(.collapsed) {
+    background: var(--white);
+    color: var(--black);
+    box-shadow: none;
+    border: 2px solid var(--primary-blue); /* Граница в активном состоянии */
+    border-radius: 15px 15px 0 0 !important; /* Скругление только сверху когда открыт */
+}
 
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: var(--primary-blue);
+    outline: none; /* Убираем стандартный outline если нужно */
+}
+
+.accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-item {
+    border: none;
+    margin-bottom: 20px;
+}
+
+.accordion-collapse {
+    border-left: 2px solid var(--primary-blue); /* Левая граница */
+    border-right: 2px solid var(--primary-blue); /* Правая граница */
+    border-bottom: 2px solid var(--primary-blue); /* Нижняя граница */
+    border-radius: 0 0 15px 15px; /* Скругление только снизу */
+}
+
+.accordion-body {
+    padding: 28px;
+    border-top: none;
+    border-radius: 0 0 15px 15px;
+}
+                </style>
         <!-- ===== СЕКЦИЯ 7: КОНТАКТЫ ===== -->
         <section class="py-5">
             <div class="container">
                 <h2 class="section-title offset-1 mb-5">Контакты</h2>
                 
-                <div class="row">
-                    <div class="col-md-7 offset-2">
-                        <div class="member-card">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <div class="member-photo bg-primary" style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%);">
-                                        <div class="h-100 d-flex align-items-center justify-content-center text-white">
-                                            <i class="bi bi-person-circle display-1"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="member-info h-100 d-flex flex-column justify-content-center">
-                                        <h3 class="member-name">Верещагина Эвелина Ивановна</h3>
-                                        <p class="member-position">
-                                            Ученый секретарь Ученого совета Академии.<br>
-                                            Кафедра архитектуры жилых и общественных зданий – доцент.
-                                        </p>
-                                        <div class="member-contact">
-                                            <p class="mb-2">тел.: <span>+7 (863) 218-40-00 доб. 20043</span></p>
-                                            <p class="mb-2">e-mail: <a href="mailto:eivereshagina@sfedu.ru">eivereshagina@sfedu.ru</a></p>
-                                            <p class="mb-0">Адрес: г. Ростов-на-Дону, пр. Будённовский 39, каб. № 48</p>
-                                        </div>
-                                    </div>
-                                </div>
+                <div class="row offset-md-2" id="Card">
+            <div class="col-md-10" id="peopleCard">
+                <div class="row align-items-stretch">
+                    <div class="col-md-5 d-flex flex-column justify-content-end">
+                        <div class="card-img-wrapper ">
+                            <img src="imageUchSov/3.png" alt="Иевлева Ольга Тихоновна" class="card-img">
+                        </div>
+                    </div>
+                    <div class="col-md-7 d-flex flex-column justify-content-end " id="info">
+                        <div class="info-content">
+                            <h6 class="position-title">Ответственная за образовательные программы и IT технологии</h6>
+                            <h5 class="person-name">Иевлева Ольга Тихоновна</h5>
+                            <p class="person-subtitle">Заведующий кафедрой графики и информационных технологий архитектурного проектирования, доктор технических наук, профессор</p>
+                            <div class="contact-info">
+                                <p class="contact-item"><strong>тел.:</strong> +7(863)218-40-00 доб. 20024</p>
+                                <p class="contact-item"><strong>e-mail:</strong> ijevleva@sfedu.ru</p>
+                                <p class="contact-item"><strong>Адрес:</strong> пр. Буденновский 39</p>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
             </div>
         </section>
 
@@ -829,16 +1736,19 @@
     </footer>
 
      <!-- Подключаем Bootstrap JS и Popper.js -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- jQuery (для Owl Carousel) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Owl Carousel -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="/js/owl.carousel.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/@coreui/coreui/dist/js/coreui.bundle.min.js"></script>
+    
+    <!-- ТОЛЬКО ОДИН Bootstrap JS (Popper уже включен в bundle) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Ваши скрипты -->
     <script src="/js/common.js"></script>
     <script src="/js/tabs.js"></script>
     <script src="/js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Активация кнопки "Наверх"
         document.addEventListener('DOMContentLoaded', function() {
@@ -877,31 +1787,6 @@
                     this.classList.add('active');
                 });
             });
-            
-            // Инициализация анимации при скролле
-            function animateOnScroll() {
-                const elements = document.querySelectorAll('.member-card, .member-list-card');
-                
-                elements.forEach(function(element) {
-                    const elementTop = element.getBoundingClientRect().top;
-                    const elementVisible = 150;
-                    
-                    if (elementTop < window.innerHeight - elementVisible) {
-                        element.style.opacity = '1';
-                        element.style.transform = 'translateY(0)';
-                    }
-                });
-            }
-            
-            // Установка начальных стилей для анимации
-            document.querySelectorAll('.member-card, .member-list-card').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(20px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            });
-            
-            window.addEventListener('scroll', animateOnScroll);
-            animateOnScroll(); // Инициализация при загрузке
         });
     </script>
 </body>

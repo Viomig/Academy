@@ -12,6 +12,77 @@
     <link href="/css/scienceCSS.css" rel="stylesheet">
 </head>
 <body>
+  <style>
+     /* ===== БАЗОВЫЕ СТИЛИ И ПЕРЕМЕННЫЕ ===== */
+        :root {
+            --primary-blue: #080D6B;
+            --secondary-pink: #ED1160;
+            --dark-grey: #232328;
+            --medium-grey: #777777;
+            --light-grey: #f3f3f3;
+            --white: #ffffff;
+            --black: #000000;
+            --grey-dark: #8C8C8C;
+            --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%);
+            --gradient-dark: linear-gradient(45deg, #131313, var(--primary-blue));
+        }
+
+        /* ===== ОБЩИЕ СТИЛИ ===== */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Типографика */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .hero-title {
+            font-size: 80px;
+            font-weight: 400;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 30px;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 500;
+            text-transform: uppercase;
+            line-height: 1.3;
+            margin-bottom: 40px;
+        }
+
+        /* Stats */
+        .stat-number {
+            font-size: 40px;
+            font-weight: 600;
+            color: var(--primary-blue);
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            line-height: 1.3;
+        }
+        .primary{
+            background-color: #ffffff !important;
+  --cui-progress-bg: white !important;
+}
+  </style>
   
     <header class="header" id="header-placeholder">  
     </header>
@@ -19,37 +90,33 @@
     <section id="start">
       <div class="container">
         <div class="row">
-            <div class="col-md-7 col-sm-12 md-2">
-                <div class="offset-1"><h1>Наука</h1></div>
-                <div class="offset-1"><h2>Научно-исследовательская деятельность является составляющей частью процесса подготовки молодых специалистов, повышения квалификации преподавателей, воспроизводства новых знаний в сфере архитектуры, градостроительства, дизайна и художественной культуры. 
-Приоритетными в Академии являются прикладные исследования по проблемам развития архитектуры и градостроительства Юга России, реставрации зданий, изучения историко-культурного наследия, истории и проблем дизайна, интерьера и прикладного искусства, художественного творчества и искусствоведения, что позволяет решать социально-экономические и социокультурные задачи региона.</h2></div>
-                <div class="offset-1 " id="slider">
-        <div class="owl-carousel custom-carousel owl-theme">
-    <div class="item" style="background-color: rgb(255, 255, 255);">
-      <div class="item-desc">
-        <h3>7</h3>
-        <p>Докторов наук</p>
-      </div>
-    </div>
-    <div class="item" style="background-color: rgb(255, 255, 255);">
-      <div class="item-desc">
-        <h3>7</h3>
-        <p>Докторов наук</p>
-      </div>
-    </div>
-    <div class="item" style="background-color: rgb(255, 255, 255);">
-      <div class="item-desc">
-        <h3>7</h3>
-        <p>Докторов наук</p>
-      </div>
-    </div>
-  </div>
-                </div>
-                
+            <div class="col-md-8 col-sm-12 md-2">
+                <div class="offset-1"><h1 class="hero-title mb-4" style="font-size: 80;">Наука</h1></div>
+                <div class="offset-1"><h5 class="hero-subtitle">Научно-исследовательская деятельность является составляющей частью процесса подготовки молодых специалистов, повышения квалификации 
+                  преподавателей, воспроизводства новых знаний в сфере архитектуры, градостроительства, дизайна и художественной культуры. 
+                  Приоритетными в Академии являются прикладные исследования по проблемам развития архитектуры и градостроительства Юга России, реставрации зданий, изучения историко-культурного
+                   наследия, истории и проблем дизайна, интерьера и прикладного искусства, художественного творчества и искусствоведения, что позволяет решать социально-экономические и 
+                   социокультурные задачи региона.</h5></div>
+              
             </div>
-            <div class="col-md-5 col-sm-12" id="Image2">
-                <img src="images/science/scin (3).png" alt="Image2">
+            <div class="col-md-4 col-sm-12" id="Image2">
+                <img src="/images/science/scin (3).png" alt="Image2">
             </div>
+            <div class="col-12 row mt-5 offset-1">
+                        <div class="col-2 mb-4">
+                            <div class="stat-number blue">7</div>
+                            <div class="stat-label text-black">докторов наук</div>
+                        </div>
+                        <div class="col-2 mb-4">
+                            <div class="stat-number">51</div>
+                            <div class="stat-label text-black">кандидат наук</div>
+                        </div>
+                        <div class="col-2 mb-4">
+                            <div class="stat-number">40</div>
+                            <div class="stat-label text-black">аспирантов</div>
+                        </div>
+                    </div>
+            
 
         </div>
     </div>
@@ -128,196 +195,723 @@
 
     <section id="grafik">
 
-    </section>
+        <h2 class="section-title mb-4 offset-1">публикационная активность</h2>
 
-    <section id="dataPub">
-<div class="container my-5">
-  <div class="row justify-content-center">
-    <div class="col-12 col-lg-10">
-      <!-- Фильтр годов -->
-      <div class="year-filter text-center mb-4">
-        <div class="btn-group row" role="group">
-          <input type="radio" class="btn-check col-6" name="yearFilter" id="year2024" checked>
-          <label class="btn btn-outline-primary" for="year2024">2024</label>
-          
-          <input type="radio" class="btn-check col-6" name="yearFilter" id="year2023">
-          <label class="btn btn-outline-primary" for="year2023">2023</label>
-        </div>
-      </div>
-
-      <!-- Карусель -->
-      <div class="stats-carousel owl-carousel owl-theme">
-        <!-- Карточка 2024 года -->
-        <div class="stats-card" data-year="2024">
-          <div class="card-body">
-            <div class="row align-items-center">
-              <!-- Диаграмма слева -->
-              <div class="col-md-6">
-                <div class="chart-container">
-                  <div class="pie-chart-wrapper">
-                    <div class="pie-chart">
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Легенда справа -->
-              <div class="col-md-6">
-                <div class="chart-legend">
-                    <div class="card-header">
-            <h2 class="card-title">Публикационная активность сотрудников ААИ в 2024 году</h2>
+        <h3 class="offset-2" style="color: #080D6B;">Публикационная активность сотрудников ААИ ЮФУ в 2024 году</h3>
+<div class="offset-1">
+        <div class="offset-1 row py-2 align-items-center">
+          <div class="col-6">
+              <div>всего</div>
           </div>
-                  <div class="legend-item">
-                    <span class="legend-color color-1"></span>
-                    <div class="legend-content">
-                      <span class="legend-text">Web of Science / Scopus</span>
-                    </div>
+          <div class="primary progress col-5" style="height: 50px;">
+                  <div class="progress-meter" style="width: 100%; background: var(--gradient-primary); border-radius: 0 10px 10px 0;">
+                      <span class="progress-meter-text"></span>
                   </div>
-                  <div class="legend-item">
-                    <span class="legend-color color-2"></span>
-                    <div class="legend-content">
-                      <span class="legend-text">Монографии / учебные пособия / учебники</span>
-                    </div>
-                  </div>
-                  <div class="legend-item">
-                    <span class="legend-color color-3"></span>
-                    <div class="legend-content">
-                      <span class="legend-text">ВАК</span>
-                    </div>
-                  </div>
-                </div>
               </div>
-            </div>
           </div>
-        </div>
-
-        <!-- Карточка 2023 года -->
-        <div class="stats-card" data-year="2023">
-          <div class="card-body">
-            <div class="row align-items-center">
-              <!-- Диаграмма слева -->
-              <div class="col-md-6">
-                <div class="chart-container">
-                  <div class="pie-chart-wrapper">
-                    <div class="pie-chart pie-chart-2023">
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Легенда справа -->
-              <div class="col-md-6">
-                <div class="chart-legend">
-                    <div class="card-header">
-            <h2 class="card-title">Публикационная активность сотрудников ААИ в 2023 году</h2>
-          </div>
-                  <div class="legend-item">
-                    <span class="legend-color color-1"></span>
-                    <div class="legend-content">
-                      <span class="legend-text">Web of Science / Scopus</span>
-                    </div>
-                  </div>
-                  <div class="legend-item">
-                    <span class="legend-color color-2"></span>
-                    <div class="legend-content">
-                      <span class="legend-text">Монографии / учебные пособия / учебники</span>
-                    </div>
-                  </div>
-                  <div class="legend-item">
-                    <span class="legend-color color-3"></span>
-                    <div class="legend-content">
-                      <span class="legend-text">ВАК</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="offset-1 row py-2 align-items-center">
+          <div class="col-6">
+              <div>прочие статьи / тезисы
 </div>
-    
+          </div>
+          <div class="primary progress col-5" style="height: 50px;">
+                  <div class="progress-meter" style="width: 75%; background: var(--gradient-primary); border-radius: 0 10px 10px 0;">
+                      <span class="progress-meter-text"></span>
+                  </div>
+              </div>
+          </div>
+<div class="offset-1 row py-2 align-items-center">
+          <div class="col-6">
+              <div>РИНЦ</div>
+          </div>
+          <div class="primary progress col-5" style="height: 50px;">
+                  <div class="progress-meter" style="width: 45%; background: var(--gradient-primary); border-radius: 0 10px 10px 0;">
+                      <span class="progress-meter-text"></span>
+                  </div>
+              </div>
+          </div>
+          <div class="offset-1 row py-2 align-items-center">
+          <div class="col-6">
+              <div>ВАК</div>
+          </div>
+          <div class="primary progress col-5" style="height: 50px;">
+                  <div class="progress-meter" style="width: 33%; background: var(--gradient-primary); border-radius: 0 10px 10px 0;">
+                      <span class="progress-meter-text"></span>
+                  </div>
+              </div>
+          </div>
+          <div class="offset-1 row py-2 align-items-center">
+          <div class="col-6">
+              <div>Монографии / учебные пособия / учебники</div>
+          </div>
+          <div class="primary progress col-5" style="height: 50px;">
+                  <div class="progress-meter" style="width: 8%; background: var(--gradient-primary); border-radius: 0 10px 10px 0;">
+                      <span class="progress-meter-text"></span>
+                  </div>
+              </div>
+          </div>
+          <div class="offset-1 row py-2 align-items-center">
+          <div class="col-6">
+              <div>Web of Science / Scopus</div>
+          </div>
+          <div class="primary progress col-5" style="height: 50px;">
+                  <div class="progress-meter" style="width: 6%; background: var(--gradient-primary); border-radius: 0 10px 10px 0;">
+                      <span class="progress-meter-text"></span>
+                  </div>
+              </div>
+          </div>
 
+           <div class="chart-lines-overlay">
+            <div class="chart-line chart-line-0"></div>
+            <div class="chart-line chart-line-50"></div>
+            <div class="chart-line chart-line-100"></div>
+        </div>
+<style>
+    #grafik {
+        position: relative;
+    }
+        .chart-lines-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        pointer-events: none; /* Чтобы клики проходили сквозь */
+        z-index: -1;
+    }
+    
+    /* Адаптивные линии в процентах */
+    .chart-line {
+        position: absolute;
+        top: 180px;
+        bottom: 60px; /* Оставляем место для подписей 0 50 100 */
+        width: 1px;
+        background: rgba(0, 0, 0, 0.2);
+    }
+    
+    .chart-line-0 {
+        left: 59.33%; /* 6/12 + offset */
+    }
+    
+    .chart-line-50 {
+        left: 75.16%; /* Середина между 58.33% и 100% */
+    }
+    
+    .chart-line-100 {
+        left: 89%;
+    }
+    
+    /* Адаптивность */
+    @media (max-width: 992px) {
+        .chart-line-0 {
+            left: 58%;
+        }
+        .chart-line-50 {
+            left: 79%;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .chart-line {
+            bottom: 50px;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .chart-line {
+            bottom: 40px;
+        }
+    }
+</style>
+
+          <div class="offset-1 row">
+            <div class="offset-6 row">
+                <div class="col-2">0</div>
+                <div class="col-2">50</div>
+                <div class="col-2">100</div>
+            </div>
+          </div>
+
+    </div>
     </section>
 
+<section id="dataPub">
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-10">
+              <div>
+                <h2 class="section-title mb-4">Публикационная активность сотрудников ААИ ЮФУ в 2024 году</h2>
+              </div>
+                
+                <!-- Фильтр годов (Табы) -->
+                <div class="year-filter text-center mb-4">
+                    <div class="btn-group" role="group">
+                        <button class="btn btn-outline-primary year-tab active" data-year="2024">2024</button>
+                        <button class="btn btn-outline-primary year-tab" data-year="2023">2023</button>
+                    </div>
+                </div>
+
+                <!-- Контейнер для карточек -->
+                <div class="stats-container">
+                    
+                    <!-- Карточка 2024 года -->
+                    <div class="stats-card" id="yearCard2024" data-year="2024" style="display: block;">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <!-- Диаграмма слева -->
+                                <div class="col-md-6">
+                                    <div class="chart-container">
+                                        <svg viewBox="0 0 200 200" class="pie-chart-svg" id="pieChart2024"></svg>
+                                    </div>
+                                </div>
+                                
+                                <!-- Легенда справа -->
+                                <div class="col-md-6">
+                                    <div class="chart-legend">
+                                        <div class="card-header">
+                                            <h2 class="card-title">Публикационная активность сотрудников ААИ в 2024 году</h2>
+                                        </div>
+                                        <div class="legend-item">
+                                            <span class="legend-color color-1"></span>
+                                            <div class="legend-content">
+                                                <span class="legend-text">Web of Science / Scopus</span>
+                                            </div>
+                                        </div>
+                                        <div class="legend-item">
+                                            <span class="legend-color color-2"></span>
+                                            <div class="legend-content">
+                                                <span class="legend-text">Монографии / учебные пособия / учебники</span>
+                                            </div>
+                                        </div>
+                                        <div class="legend-item">
+                                            <span class="legend-color color-3"></span>
+                                            <div class="legend-content">
+                                                <span class="legend-text">ВАК</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Карточка 2023 года -->
+                    <div class="stats-card" id="yearCard2023" data-year="2023" style="display: none;">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <!-- Диаграмма слева -->
+                                <div class="col-md-6">
+                                    <div class="chart-container">
+                                        <svg viewBox="0 0 200 200" class="pie-chart-svg" id="pieChart2023"></svg>
+                                    </div>
+                                </div>
+                                
+                                <!-- Легенда справа -->
+                                <div class="col-md-6">
+                                    <div class="chart-legend">
+                                        <div class="card-header">
+                                            <h2 class="card-title">Публикационная активность сотрудников ААИ в 2023 году</h2>
+                                        </div>
+                                        <div class="legend-item">
+                                            <span class="legend-color color-1"></span>
+                                            <div class="legend-content">
+                                                <span class="legend-text">Web of Science / Scopus</span>
+                                            </div>
+                                        </div>
+                                        <div class="legend-item">
+                                            <span class="legend-color color-2"></span>
+                                            <div class="legend-content">
+                                                <span class="legend-text">Монографии / учебные пособия / учебники</span>
+                                            </div>
+                                        </div>
+                                        <div class="legend-item">
+                                            <span class="legend-color color-3"></span>
+                                            <div class="legend-content">
+                                                <span class="legend-text">ВАК</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Стили для фильтра годов */
+    .year-filter {
+        margin-bottom: 3rem;
+    }
+    
+    .year-filter .btn-group {
+        border-radius: 25px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        border: 2px solid #080D6B;
+    }
+    
+    .year-filter .btn {
+        padding: 12px 40px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        border: none;
+        color: #080D6B;
+        background: white;
+        transition: all 0.3s ease;
+    }
+    
+    .year-filter .btn.active {
+        background: #080D6B;
+        color: white;
+    }
+    
+    .year-filter .btn:hover {
+        background: #080D6B;
+        color: white;
+    }
+    
+    /* Анимация переключения карточек */
+    .stats-card {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        padding: 40px 30px;
+        margin: 10px;
+        border: 1px solid #e9ecef;
+        animation: fadeIn 0.4s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+        from { 
+            opacity: 0; 
+            transform: translateY(10px); 
+        }
+        to { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+    }
+    
+    .card-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    
+    .card-title {
+        color: #2c3e50;
+        font-weight: 700;
+        font-size: 1.8rem;
+        margin: 0;
+        line-height: 1.3;
+    }
+    
+    /* Контейнер диаграммы */
+    .chart-container {
+        position: relative;
+        width: 280px;
+        height: 280px;
+        margin: 0 auto;
+    }
+    
+    .pie-chart-svg {
+        width: 100%;
+        height: 100%;
+        filter: drop-shadow(0 8px 25px rgba(52, 152, 219, 0.3));
+    }
+    
+    /* Легенда */
+    .chart-legend {
+        padding: 20px 0;
+    }
+    
+    .legend-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 25px;
+        padding: 0;
+        background: none;
+        border: none;
+        transition: transform 0.3s ease;
+    }
+    
+    .legend-item:hover {
+        transform: translateX(5px);
+    }
+    
+    .legend-color {
+        width: 24px;
+        height: 24px;
+        border-radius: 6px;
+        margin-right: 20px;
+        flex-shrink: 0;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+        margin-top: 3px;
+    }
+    
+    .color-1 {
+        background: #080D6B;
+    }
+    
+    .color-2 {
+        background: #ED1160;
+    }
+    
+    .color-3 {
+        background: #ffffff;
+        border: 1px solid #e0e0e0;
+    }
+    
+    .legend-content {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+    
+    .legend-text {
+        color: #2c3e50;
+        font-weight: 500;
+        font-size: 1.1rem;
+        line-height: 1.4;
+    }
+    
+    /* Адаптивность */
+    @media (max-width: 768px) {
+        .card-title {
+            font-size: 1.4rem;
+        }
+        
+        .stats-card {
+            padding: 25px 15px;
+        }
+        
+        .chart-container {
+            width: 240px;
+            height: 240px;
+            margin-bottom: 30px;
+        }
+        
+        .year-filter .btn {
+            padding: 10px 25px;
+            font-size: 1rem;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .chart-container {
+            width: 200px;
+            height: 200px;
+        }
+        
+        .legend-text {
+            font-size: 0.9rem;
+        }
+    }
+</style>
+
+<script>
+    // Функция для создания SVG круговой диаграммы
+    function createPieChart(data) {
+        const svgns = "http://www.w3.org/2000/svg";
+        const centerX = 100;
+        const centerY = 100;
+        const radius = 80;
+        
+        // Создаём группу для диаграммы
+        const g = document.createElementNS(svgns, "g");
+        
+        let startAngle = 0;
+        
+        data.forEach((item) => {
+            const percentage = item.percentage;
+            const color = item.color;
+            
+            if (percentage <= 0) return;
+            
+            // Вычисляем углы
+            const angle = (percentage / 100) * 2 * Math.PI;
+            const endAngle = startAngle + angle;
+            
+            // Вычисляем координаты
+            const x1 = centerX + radius * Math.sin(startAngle);
+            const y1 = centerY - radius * Math.cos(startAngle);
+            const x2 = centerX + radius * Math.sin(endAngle);
+            const y2 = centerY - radius * Math.cos(endAngle);
+            
+            // Определяем флаг большой дуги
+            const largeArcFlag = angle > Math.PI ? 1 : 0;
+            
+            // Создаём путь для сектора
+            const path = document.createElementNS(svgns, "path");
+            const d = [
+                `M ${centerX} ${centerY}`,
+                `L ${x1} ${y1}`,
+                `A ${radius} ${radius} 0 ${largeArcFlag} 1 ${x2} ${y2}`,
+                `Z`
+            ].join(" ");
+            
+            path.setAttribute("d", d);
+            path.setAttribute("fill", color);
+            path.setAttribute("stroke", "#fff");
+            path.setAttribute("stroke-width", "2");
+            
+            g.appendChild(path);
+            
+            // Добавляем текст с процентом
+            if (percentage >= 5) { // Показываем только если процент >= 5
+                const midAngle = startAngle + angle / 2;
+                const textRadius = radius * 0.6;
+                const textX = centerX + textRadius * Math.sin(midAngle);
+                const textY = centerY - textRadius * Math.cos(midAngle);
+                
+                const text = document.createElementNS(svgns, "text");
+                text.setAttribute("x", textX);
+                text.setAttribute("y", textY);
+                text.setAttribute("text-anchor", "middle");
+                text.setAttribute("dominant-baseline", "middle");
+                text.setAttribute("fill", color === "#ffffff" ? "#2c3e50" : "#ffffff");
+                text.setAttribute("font-weight", "bold");
+                text.setAttribute("font-size", "14");
+                text.setAttribute("style", "text-shadow: 1px 1px 3px rgba(0,0,0,0.5);");
+                text.textContent = `${percentage}%`;
+                
+                g.appendChild(text);
+            }
+            
+            startAngle = endAngle;
+        });
+        
+        // Добавляем белый круг в центре для эффекта пончика
+        const centerCircle = document.createElementNS(svgns, "circle");
+        centerCircle.setAttribute("cx", centerX);
+        centerCircle.setAttribute("cy", centerY);
+        centerCircle.setAttribute("r", "25");
+        centerCircle.setAttribute("fill", "white");
+        centerCircle.setAttribute("style", "box-shadow: 0 2px 10px rgba(0,0,0,0.1);");
+        
+        g.appendChild(centerCircle);
+        
+        return g;
+    }
+    
+    // Данные для 2024 года
+    const data2024 = [
+        { percentage: 85, color: '#080D6B', label: 'Web of Science / Scopus' },
+        { percentage: 6, color: '#ED1160', label: 'Монографии / учебные пособия' },
+        { percentage: 9, color: '#ffffff', label: 'ВАК' }
+    ];
+    
+    // Данные для 2023 года
+    const data2023 = [
+        { percentage: 80, color: '#080D6B', label: 'Web of Science / Scopus' },
+        { percentage: 5, color: '#ED1160', label: 'Монографии / учебные пособия' },
+        { percentage: 15, color: '#ffffff', label: 'ВАК' }
+    ];
+    
+    // Инициализация при загрузке
+    document.addEventListener('DOMContentLoaded', function() {
+        // Создаём диаграммы
+        const chart2024 = document.getElementById('pieChart2024');
+        const chart2023 = document.getElementById('pieChart2023');
+        
+        if (chart2024) {
+            chart2024.innerHTML = '';
+            chart2024.appendChild(createPieChart(data2024));
+        }
+        
+        if (chart2023) {
+            chart2023.innerHTML = '';
+            chart2023.appendChild(createPieChart(data2023));
+        }
+        
+        // Логика табов
+        const tabs = document.querySelectorAll('.year-tab');
+        const cards = {
+            '2024': document.getElementById('yearCard2024'),
+            '2023': document.getElementById('yearCard2023')
+        };
+        
+        function switchYear(year) {
+            Object.values(cards).forEach(card => {
+                if (card) card.style.display = 'none';
+            });
+            if (cards[year]) {
+                cards[year].style.display = 'block';
+            }
+            tabs.forEach(tab => {
+                if (tab.dataset.year === year) {
+                    tab.classList.add('active');
+                } else {
+                    tab.classList.remove('active');
+                }
+            });
+        }
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                switchYear(this.dataset.year);
+            });
+        });
+        
+        switchYear('2024');
+    });
+</script>
+
+
+    <div class="bg-grey-light">
+<section class="py-5" id="Documents">
+        <div class="container">
+            <h2 class="section-title text-black offset-1">Документы</h2>
+            
+            <div class="row g-4 offset-1">
+                <div class="col-lg-6">
+                   <a href="https://disk.360.yandex.ru/i/IRzeHqKMNkM9UA"> 
+                    <div class="document-card">
+                        <div class="d-flex align-items-start">
+                            <div class="me-4">
+                                <img src="/Abiturient/imageMag/ПДФ.png">
+                            </div>
+                            <div>
+                                <h4 class="font-weight-100 text-black mb-0">План научной работы ААИ 2025</h4>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                
+                <div class="col-lg-6">
+                    <a href="https://sfedu.ru/www/stat_pages22.show?p=PER/doc_work/P">
+                    <div class="document-card">
+                        <div class="d-flex align-items-start">
+                            <div class="me-4">
+                               <img src="/Abiturient/imageMag/ПДФ.png">
+                            </div>
+                            <div>
+                                <h4 class="font-weight-100 text-black mb-0">Отчет о научной работе ААИ 2024</h4>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row g-4 offset-1 my-3">
+                <div class="col-lg-6">
+                   <a href="https://disk.360.yandex.ru/i/IRzeHqKMNkM9UA"> 
+                    <div class="document-card">
+                        <div class="d-flex align-items-start">
+                            <div class="me-4">
+                                <img src="/Abiturient/imageMag/ПДФ.png">
+                            </div>
+                            <div>
+                                <h4 class="font-weight-100 text-black mb-0">План научно-исследовательской работы студентов ААИ 2025</h4>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                
+                <div class="col-lg-6">
+                    <a href="https://sfedu.ru/www/stat_pages22.show?p=PER/doc_work/P">
+                    <div class="document-card">
+                        <div class="d-flex align-items-start">
+                            <div class="me-4">
+                               <img src="/Abiturient/imageMag/ПДФ.png">
+                            </div>
+                            <div>
+                                <h4 class="font-weight-100 text-black mb-0">Отчет о научно-исследовательской работе студентов ААИ 2024</h4>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
 
     <section id="all">
         <div class="row">
             <div class="col-md-8 offset-md-1">
-                <h5>Молодежная наука</h5>
+                <h5 class="section-title mb-5 offset-1">Молодежная наука</h5>
             </div>
             <div class="row">
             <div class="col-7 offset-2 align-self-around">
-                <p><h3>Научно-исследовательская деятельность обучающихся — одно из важнейших средств повышения качества подготовки и воспитания специалистов
+                <p>Научно-исследовательская деятельность обучающихся — одно из важнейших средств повышения качества подготовки и воспитания специалистов
                  с высшим образованием, способных творчески применять в практической деятельности последние достижения научно-технического и культурного
-                  прогресса.</h3></p>
+                  прогресса.</p>
 
-Студенческое научное общество является добровольной общественной организацией обучающихся, объединившихся на основе общности научных интересов и активно занимающихся научно-исследовательской, инновационной, научно-просветительской деятельностью в подразделениях университета.
-Целями создания и деятельности СНО являются:
-Создание условий для всестороннего и наиболее полного развития и реализации творческого и научного потенциала обучающегося;
-Ориентация обучающегося на занятие научно-исследовательской деятельностью в аспирантуре;
-Профориентация молодежи города на научную деятельность.
-Задачами СНО являются:
-Привитие обучающимся навыков научно-организационной деятельности;
-Выявление наиболее способных и талантливых обучающихся;
-Оказание научно-методической помощи в различных областях знания и практической деятельности;
-Содействие публикации и внедрении в практику лучших научных работ обучающихся;
-Содействие развитию изобретательской и рационализаторской деятельности обучающихся;
-Содействие проведению профориентационной работы среди учащихся средних и средних специальных учебных заведений.
+                 Студенческое научное общество является добровольной общественной организацией обучающихся, объединившихся на основе общности научных интересов 
+                 и активно занимающихся научно-исследовательской, инновационной, научно-просветительской деятельностью в подразделениях университета.
+                 Целями создания и деятельности СНО являются:
+                 Создание условий для всестороннего и наиболее полного развития и реализации творческого и научного потенциала обучающегося;
+                 Ориентация обучающегося на занятие научно-исследовательской деятельностью в аспирантуре;
+                 Профориентация молодежи города на научную деятельность<br>
+                 <br><h6>Целями создания и деятельности СНО являются:</h6>
+                 <div class="offset-1">
+                     <li>Привитие обучающимся навыков научно-организационной деятельности;</li>
+                     <li>Выявление наиболее способных и талантливых обучающихся;</li>
+                     <li>Оказание научно-методической помощи в различных областях знания и практической деятельности;</li>
+                     <li>Содействие публикации и внедрении в практику лучших научных работ обучающихся;</li>
+                     <li>Содействие развитию изобретательской и рационализаторской деятельности обучающихся;</li>
+                     <li>Содействие проведению профориентационной работы среди учащихся средних и средних специальных учебных заведений.</li>
+                 </div>
+                 
             </div>
             </div>
         </div>
     </section>
-
+<div class="bg-dark-gradient">
     <section class="game-section3">
 
         <div class="row"><h5 class="line-title col-5 offset-1">ДЕЙСТВУЮЩИЕ СНО В ААИ</h5></div>
  <div class="offset-1">
   <div class="owl-carousel custom-carousel owl-theme " id="slider-2">
-    <div class="item" style="background-image: url(images/science/slide/image.png)">
+    <div class="item" style="background-image: url(/images/science/slide/image.png)">
       <div class="item-desc">
         
         <p>СНО «Экологическая архитектура»</p>
       </div>
     </div>
 
-    <div class="item" style="background-image: url(images/science/slide/image-1.png)">
+    <div class="item" style="background-image: url(/images/science/slide/image-1.png)">
       <div class="item-desc">
         
         <p>СНО «Экономические решения в архитектуре (ЭРА)»</p>
       </div>
     </div>
 
-    <div class="item" style="background-image: url(images/science/slide/image-2.png);">
+    <div class="item" style="background-image: url(/images/science/slide/image-2.png);">
       <div class="item-desc">
         
         <p>СНО «Пропорции и композиция»</p>
       </div>
     </div>
-    <div class="item" style="background-image: url(images/science/slide/image-3.png);">
+    <div class="item" style="background-image: url(/images/science/slide/image-3.png);">
       <div class="item-desc">
         
         <p>СНИЛ «Строительные конструкции в проектировании современных архитектурных пространств»</p>
       </div>
     </div>
 
-    <div class="item" style="background-image: url(images/science/slide/image-4.png)">
+    <div class="item" style="background-image: url(/images/science/slide/image-4.png)">
       <div class="item-desc">
         
         <p>СНО «Вычислительная механика и особенности конструкторских решений уникальных зданий» </p>
       </div>
     </div>
 
-    <div class="item" style="background-image: url(images/science/slide/image-5.png)">
+    <div class="item" style="background-image: url(/images/science/slide/image-5.png)">
       <div class="item-desc">
         
         <p>СНИЛ «Инновационные строительные материалы в архитектуре»</p>
       </div>
     </div>
 
-    <div class="item" style="background-image: url(images/science/slide/image-6.png)">
+    <div class="item" style="background-image: url(/images/science/slide/image-6.png)">
       <div class="item-desc">
         
         <p>СНИЛ «Статика и современные методики расчета зданий и сооружений» </p>
@@ -326,7 +920,110 @@
   </div>
 </div>
     </section>
+</div>    
+
+<section id="KingDop">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-1">
+                <h5 class="section-title">Контакты</h5>
+            </div>
+        </div>
+
+        <div class="row offset-md-1" id="Card">
+            <div class="col-md-8 offset-md-1" id="peopleCard">
+                <div class="row align-items-stretch">
+                    <div class="col-md-5 d-flex flex-column justify-content-start py-5">
+                        <div class="card-img-wrapper">
+                        <img src="ImgS/image1.png" class="card-img">
+                        </div>
+                    </div>
+                    <div class="col-md-7 d-flex flex-column justify-content-end" id="info">
+                        <div class="info-content">
+                            <h6 class="position-title">Ответственная по научно-исследовательской работе в Академии:</h6>
+                            <h5 class="person-name">Иванова-Ильичева Анна Михайловна</h5>
+                            <p class="person-subtitle">
+                                <p>Звание: Доцент</p>
+                                <p>Степень: Кандидат архитектуры</p>
+                                <p>Степень: Доктор архитектурыКафедра истории архитектуры, искусства и архитектурной реставрации – Заведующий кафедрой</p>
+                            </p>
+                            <div class="contact-info">
+                                <p class="contact-item"><strong>тел.:</strong> +7(863) 218-40-00 доб. 20055; <p>+7(918) 555-02-78</p></p>
+                                <p class="contact-item"><strong>e-mail:</strong> amivanova-ilicheva@sfedu.ru</p>
+                                <p class="contact-item"><strong>Адрес:</strong> Ростов-на-Дону, М. Горького, 75/78</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row offset-md-1" id="Card">
+            <div class="col-md-8 offset-md-1" id="peopleCard">
+                <div class="row align-items-stretch">
+                    <div class="col-md-5 d-flex flex-column justify-content-start py-5">
+                        <div class="card-img-wrapper">
+                        <img src="ImgS/image.png" class="card-img">
+                        </div>
+                    </div>
+                    <div class="col-md-7 d-flex flex-column justify-content-end" id="info">
+                        <div class="info-content">
+                            <h6 class="position-title">Ответственная по научно-исследовательской работе студентов:</h6>
+                            <h5 class="person-name">Мокина Анна Юрьевна</h5>
+                            <p class="person-subtitle">
+                                <p>Звание: Доцент</p>
+                                <p>Кафедра декоративно-прикладного искусства – Профессор</p>
+                            </p>
+                            <div class="contact-info">
+                                <p class="contact-item"><strong>тел.:</strong> +7(863)218-40-00 доб. 20039</p>
+                                <p class="contact-item"><strong>e-mail:</strong> mglushkov@sfedu.ru</p>
+                                <p class="contact-item"><strong>Адрес:</strong> пр. Буденновский 39, 4 этаж, кабинет № 40</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Стили для правой колонки с текстом */
+    p{
+        margin-bottom: 0px !important;
+    }
+    #info {
+        padding: 20px 25px;
+        min-height: 306px;
+    }
     
+    .info-content {
+        width: 100%;
+    }
+    
+    .person-name {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        line-height: 1.3;
+    }
+    
+    .contact-info {
+        margin-top: 15px;
+    }
+    
+    .contact-item {
+        font-size: 14px;
+        margin-bottom: 12px;
+        line-height: 1.5;
+    }
+    
+    .contact-item strong {
+        font-weight: 600;
+        min-width: 50px;
+        display: inline-block;
+    }
+</style>
 
 <footer id="end">
      <div id="footer-placeholder"></div>

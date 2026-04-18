@@ -35,6 +35,9 @@
             --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-pink) 100%);
             --gradient-dark: linear-gradient(45deg, #131313, var(--primary-blue));
         }
+        .bg-light-grey {
+            background: var(--light-grey) !important;
+        }
 
         /* ===== ОБЩИЕ СТИЛИ ===== */
         body {
@@ -50,13 +53,6 @@
             text-transform: uppercase;
             line-height: 1.1;
             margin-bottom: 30px;
-        }
-
-        .hero-subtitle {
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 1.6;
-            max-width: 480px;
         }
 
         .section-title {
@@ -79,21 +75,8 @@
             padding: 80px 0;
         }
 
-        .scholarship-section {
-            background: var(--gradient-dark);
-            color: var(--white);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .benefits-section {
-            background: var(--gradient-dark);
-            color: var(--white);
-        }
-
         /* ===== КАРТОЧКИ ===== */
-        .scholarship-card {
-            background: rgba(255, 255, 255, 0.9);
+        .info-card {
             border: none;
             border-radius: 15px;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
@@ -101,69 +84,40 @@
             height: 100%;
         }
 
-        .scholarship-card:hover {
+        .programs-blok {
+            border-radius: 15px;
+        }
+
+        .info-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
 
-        .scholarship-amount .amount {
-            font-size: 40px;
-            font-weight: 700;
-            color: var(--secondary-pink);
-            display: block;
-            line-height: 1;
-        }
-
-        .scholarship-amount .period {
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--secondary-pink);
-            line-height: 1.2;
-        }
-
-        .scholarship-desc {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        .scholarship-desc .icon {
-            color: var(--primary-blue);
-        }
-
-        /* Карточки льгот */
-        .benefit-card {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+        /* ===== КОНТАКТНАЯ КАРТОЧКА ===== */
+        .contact-card {
             border-radius: 15px;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-            height: 100%;
+            overflow: hidden;
         }
 
-        .benefit-card:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-5px);
-            border-color: rgba(255, 255, 255, 0.3);
+        .contact-photo {
+            background-size: cover;
+            background-position: center;
         }
 
-        .benefit-amount .amount {
-            font-size: 40px;
-            font-weight: 700;
-            color: var(--white);
-            display: block;
-            line-height: 1;
+        .contact-info a {
+            color: var(--primary-blue);
+            text-decoration: none;
         }
 
-        .benefit-amount .period {
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--white);
-            line-height: 1.2;
-        }
-
-        .benefit-desc .icon {
+        .contact-info a:hover {
             color: var(--secondary-pink);
+            text-decoration: underline;
+        }
+
+        .responsibilities .bi-check-square-fill {
+            color: var(--primary-blue);
+            font-size: 20px;
+            flex-shrink: 0;
         }
 
         /* ===== КНОПКИ И ССЫЛКИ ===== */
@@ -198,17 +152,8 @@
             transform: translateY(-2px);
         }
 
-        /* Ссылки на документы */
-        .document-link {
-            border: 1px solid #e0e0e0;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .document-link:hover {
-            border-color: var(--primary-blue);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(8, 13, 107, 0.1);
+        .paid-bakalavr{
+            background: var(--gradient-dark);
         }
 
         /* ===== ИКОНКИ ===== */
@@ -468,26 +413,6 @@
             padding: 30px;
         }
 
-        /* ===== КОНТАКТНЫЕ КАРТОЧКИ ===== */
-        .contact-card {
-            border-radius: 15px;
-            overflow: hidden;
-        }
-
-        .contact-photo {
-            background-size: cover;
-            background-position: center;
-        }
-
-        .staff-card {
-            border-radius: 15px;
-        }
-
-        .staff-photo {
-            background-size: cover;
-            background-position: center;
-        }
-
         /* ===== SCROLL TO TOP BUTTON ===== */
         .scroll-top {
             position: fixed;
@@ -519,14 +444,6 @@
             box-shadow: 0 10px 20px rgba(8, 13, 107, 0.3);
         }
         
-        /* ===== ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ===== */
-        .enhanced-content {
-            background: white;
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-        }
-        
         .support-graphic {
             display: flex;
             flex-direction: column;
@@ -550,8 +467,158 @@
             transform: rotate(30deg);
             position: absolute;
         }
-        
-    </style>
+
+        /* ===== КОНТАКТНАЯ ИНФОРМАЦИЯ ===== */
+.coordinator-photo {
+    width: 290px;
+    height: 327px;
+    border-radius: 15px;
+    box-shadow: inset 0px 0px 100px 2px rgba(0, 0, 0, 0.1);
+    background-size: cover;
+    background-position: center;
+}
+
+.contact-info span {
+    font-size: 18px;
+}
+
+.contact-info a {
+    color: var(--primary-blue);
+    text-decoration: underline;
+}
+
+.contact-info a:hover {
+    color: var(--secondary-pink);
+}
+
+/* ===== НАВИГАЦИЯ ===== */
+        .page-nav {
+            height: 53px;
+        }
+
+        .nav-item {
+            justify-content: center;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            align-items: center;
+            text-decoration: none;
+            color: var(--medium-grey);
+            transition: all 0.3s ease;
+        }
+
+        .nav-item.active {
+            color: var(--primary-blue) !important;
+            font-weight: 500;
+            text-decoration: underline !important;
+            text-underline-offset: 15px;
+            text-decoration-thickness: 4px;
+        }
+
+        .nav-item:hover {
+            color: var(--primary-blue);
+        }
+
+        .nav-divider {
+            width: 100%;
+            height: 1px;
+            background: #e0e0e0;
+            margin-top: 14px;
+        }
+
+        .nav-divider.active {
+            width: 256px;
+            background: var(--primary-blue);
+        }
+
+        /* ===== АДАПТИВНОСТЬ ===== */
+        @media (max-width: 1400px) {
+            .hero-title {
+                font-size: 70px;
+            }
+            
+            .section-title {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 60px;
+            }
+            
+            .hero-graphic {
+                height: 400px;
+                width: 250px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 48px;
+                text-align: center;
+            }
+            
+            .section-title {
+                font-size: 32px;
+                text-align: center;
+            }
+            
+            .hero-graphic {
+                margin: 0 auto;
+            }
+            
+            .page-nav {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 40px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .reviews-carousel .owl-prev {
+                left: -15px;
+            }
+            
+            .reviews-carousel .owl-next {
+                right: -15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 32px;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+            
+            .hero-graphic {
+                height: 300px;
+                width: 200px;
+            }
+            
+            section {
+                padding: 40px 0;
+            }
+        }
+
+        .hero-section {
+            padding-top: 40px;
+            padding-bottom: 80px;
+        }
+</style>
 </head>
 <body>
     <!-- Навигация -->
@@ -560,683 +627,831 @@
 
     <main class="main-content">
         <!-- ===== СЕКЦИЯ 1: ГЕРОЙ ===== -->
-        <section class="hero-section py-5">
-            <div class="container">
+        <section class="hero-section">
+            <div class="container offset-1">
                 <div class="row align-items-center">
-                    <div class="col-lg-7 mb-5 mb-lg-0">
+                    <div class="col-8 mb-5 mb-lg-0">
+                        
+                        
                         <h1 class="hero-title mb-4">студенту</h1>
-                        <p class="hero-subtitle lead">
-                            В данном разделе находится информация о стипендиях и льготах, а также нормативные документы 
-                            и перечни документов, необходимых для подачи заявления на социальную стипендию
+
+                        <!-- Навигация по странице -->
+                        <div class="page-nav mb-5 row">
+                            <div class="d-flex position-relative col-12">
+                                <a href="YchebnyProcess.html" class="nav-item me-3 col-3">
+                                    <span><h1 style="font-size:16px;">Учебный процесс</h1></span>
+                                </a>
+                                <a href="SocialnyeVoprosy.html" class="nav-item active col-4">
+                                    <span><h1 style="font-size:16px;">Социальные вопросы</h1></span>
+                                </a>
+                                <a href="MegdunarodnayMobilnost.html" class="nav-item col-5">
+                                    <span><h1 style="font-size:16px;">Международная деятельность</h1></span>
+                                </a>
+                            </div>
+                            <div class="nav-divider"></div>
+                        </div>
+
+                        <p class="lead fs-5">
+                            В данном разделе находится информация о стипендиях и льготах, а также нормативные документы и перечни документов, необходимых для подачи заявления на социальную стипендию
                         </p>
                     </div>
-                    <div class="col-lg-5">
-                        <div class="hero-graphic">
-                            <div class="graphic-container position-relative" style="height: 456px;">
-                                <!-- Геометрические фигуры -->
-                                <div class="position-absolute top-50 start-0 translate-middle-y" style="width: 144px; height: 166px;">
-                                    <div class="geometric-shape" style="left: 20.25%; top: 6.88%;"></div>
-                                    <div class="geometric-shape" style="left: -6.7%; top: 33.95%; opacity: 0.7;"></div>
-                                    <div class="geometric-shape" style="left: 63.17%; top: 35.05%; opacity: 0.5;"></div>
-                                </div>
-                                
-                                <div class="position-absolute top-50 start-50 translate-middle" style="width: 144px; height: 166px;">
-                                    <div class="geometric-shape" style="left: 20.25%; top: 6.88%; opacity: 0.8;"></div>
-                                    <div class="geometric-shape" style="left: -6.7%; top: 33.95%; opacity: 0.6;"></div>
-                                    <div class="geometric-shape" style="left: 63.17%; top: 35.05%; opacity: 0.4;"></div>
-                                </div>
-                                
-                                <div class="position-absolute top-50 end-0 translate-middle-y" style="width: 144px; height: 166px;">
-                                    <div class="geometric-shape" style="left: 20.25%; top: 6.88%; opacity: 0.9;"></div>
-                                    <div class="geometric-shape" style="left: -6.7%; top: 33.95%; opacity: 0.7;"></div>
-                                    <div class="geometric-shape" style="left: 63.17%; top: 35.05%; opacity: 0.5;"></div>
-                                </div>
-                            </div>
+                    <div class="col-lg-4">
+                        <!-- Геометрическая графика -->
+                        <div class="hero-graphic justify-content-center align-content-center d-flex">
+                           <img src="imageSoc/студенту.png" alt=""> 
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+<section>
+        <div>
+            <img src="imageSoc/main.png" alt="" style="height: 304px; width: 100%;">
+        </div>
+</section>
+<div class="paid-bakalavr">
+    <section class="paid-education-section" id="SocStipendiyCarousel">
+    <div class="container offset-1">
+        <h2 class="section-title mb-5 text-white">ГОСУДАРСТВЕННАЯ<br>СОЦИАЛЬНАЯ СТИПЕНДИЯ</h2>
+    </div>
 
-        <!-- ===== СЕКЦИЯ 2: ГОСУДАРСТВЕННАЯ СОЦИАЛЬНАЯ СТИПЕНДИЯ ===== -->
-        <section class="scholarship-section py-5" id="SocStipendiy">
-            <div class="container">
-                <h2 class="section-title text-center text-white mb-5">ГОСУДАРСТВЕННАЯ<br>СОЦИАЛЬНАЯ СТИПЕНДИЯ</h2>
-                
-                <!-- Owl Carousel для стипендий -->
-                <div class="owl-carousel owl-theme scholarships-carousel d-lg-none">
-                    <!-- Карточка 1 -->
-                    <div class="item">
-                        <div class="card scholarship-card h-100">
-                            <div class="card-body p-4">
-                                <div class="scholarship-amount mb-3">
-                                    <span class="amount display-4 fw-bold">4 106</span>
-                                    <span class="period fs-4 fw-bold d-block">в месяц</span>
-                                </div>
-                                <div class="scholarship-desc pt-3 border-top">
-                                    <div class="icon mb-3">
-                                        <i class="bi bi-cash-stack fs-1 text-primary"></i>
-                                    </div>
-                                    <p class="card-text fs-6">
-                                        Государственная социальная стипендия студентам
-                                    </p>
-                                </div>
-                            </div>
+    <div class="container-fluid p-0">
+        <!-- Контейнер с горизонтальным скроллом -->
+        <div class="cards-container">
+            <div class="cards-scroll offset-1">
+                <!-- Колонка 1 - Стипендия 4 106 -->
+                <div class="card-column">
+                    <div class="price-card scholarship-style-card row row-cols-12">
+                        <div class="col-12">
+                            <div class="price-amount price-pink scholarship-amount-main">4 106 <span class="period-text">в месяц</span></div>
                         </div>
-                    </div>
-                    
-                    <!-- Карточка 2 -->
-                    <div class="item">
-                        <div class="card scholarship-card h-100">
-                            <div class="card-body p-4">
-                                <div class="scholarship-amount mb-3">
-                                    <span class="amount display-4 fw-bold">7 800</span>
-                                    <span class="period fs-4 fw-bold d-block">в месяц</span>
-                                </div>
-                                <div class="scholarship-desc pt-3 border-top">
-                                    <div class="icon mb-3">
-                                        <i class="bi bi-award fs-1 text-primary"></i>
-                                    </div>
-                                    <p class="card-text fs-6">
-                                        Государственная социальная стипендия для студентов 1-2 курсов (бакалавриат, специалитет), 
-                                        успевающих на "хорошо" и "отлично" (в дополнение к социальной и академической стипендии)
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Карточка 3 -->
-                    <div class="item">
-                        <div class="card scholarship-card h-100">
-                            <div class="card-body p-4">
-                                <div class="scholarship-amount mb-3">
-                                    <span class="amount display-4 fw-bold">5 000</span>
-                                    <span class="period fs-4 fw-bold d-block">в месяц</span>
-                                </div>
-                                <div class="scholarship-desc pt-3 border-top">
-                                    <div class="icon mb-3">
-                                        <i class="bi bi-building fs-1 text-primary"></i>
-                                    </div>
-                                    <p class="card-text fs-6">
-                                        Стипендии Правительства Российской Федерации для студентов, обучающихся 
-                                        по специальностям, соответствующим приоритетным направлениям модернизации и 
-                                        технологического развития экономики.
-                                    </p>
-                                </div>
+                        <div class="program-container col-12">
+                            <div class="program-text-container offset-1">
+                                <h6 class="program-name scholarship-desc-text">
+                                    Государственная социальная стипендия студентам
+                                </h6>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Грид для десктопа -->
-                <div class="d-none d-lg-block">
-                    <div class="row g-4 justify-content-center">
-                        <!-- Карточка 1 -->
-                        <div class="col-lg-4">
-                            <div class="card scholarship-card h-100">
-                                <div class="card-body p-4">
-                                    <div class="scholarship-amount mb-3">
-                                        <span class="amount display-4 fw-bold">4 106</span>
-                                        <span class="period fs-4 fw-bold d-block">в месяц</span>
-                                    </div>
-                                    <div class="scholarship-desc pt-3 border-top">
-                                        <div class="icon mb-3">
-                                            <i class="bi bi-cash-stack fs-1 text-primary"></i>
-                                        </div>
-                                        <p class="card-text fs-6">
-                                            Государственная социальная стипендия студентам
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+
+                <!-- Колонка 2 - Стипендия 7 800 -->
+                <div class="card-column">
+                    <div class="price-card scholarship-style-card row row-cols-12">
+                        <div class="col-12">
+                            <div class="price-amount price-pink scholarship-amount-main">7 800 <span class="period-text">в месяц</span></div>
                         </div>
-                        
-                        <!-- Карточка 2 -->
-                        <div class="col-lg-4">
-                            <div class="card scholarship-card h-100">
-                                <div class="card-body p-4">
-                                    <div class="scholarship-amount mb-3">
-                                        <span class="amount display-4 fw-bold">7 800</span>
-                                        <span class="period fs-4 fw-bold d-block">в месяц</span>
-                                    </div>
-                                    <div class="scholarship-desc pt-3 border-top">
-                                        <div class="icon mb-3">
-                                            <i class="bi bi-award fs-1 text-primary"></i>
-                                        </div>
-                                        <p class="card-text fs-6">
-                                            Государственная социальная стипендия для студентов 1-2 курсов (бакалавриат, специалитет), 
-                                            успевающих на "хорошо" и "отлично" (в дополнение к социальной и академической стипендии)
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Карточка 3 -->
-                        <div class="col-lg-4">
-                            <div class="card scholarship-card h-100">
-                                <div class="card-body p-4">
-                                    <div class="scholarship-amount mb-3">
-                                        <span class="amount display-4 fw-bold">5 000</span>
-                                        <span class="period fs-4 fw-bold d-block">в месяц</span>
-                                    </div>
-                                    <div class="scholarship-desc pt-3 border-top">
-                                        <div class="icon mb-3">
-                                            <i class="bi bi-building fs-1 text-primary"></i>
-                                        </div>
-                                        <p class="card-text fs-6">
-                                            Стипендии Правительства Российской Федерации для студентов, обучающихся 
-                                            по специальностям, соответствующим приоритетным направлениям модернизации и 
-                                            технологического развития экономики.
-                                        </p>
-                                    </div>
-                                </div>
+                        <div class="program-container col-12">
+                            <div class="program-text-container offset-1">
+                                <h6 class="program-name scholarship-desc-text">
+                                    Государственная социальная стипендия для студентов 1-2 курсов (бакалавриат, специалитет), 
+                                    успевающих на "хорошо" и "отлично" (в дополнение к социальной и академической стипендии)
+                                </h6>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Ссылки на документы -->
-                <div class="text-center mt-5 pt-4">
-                    <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
-                        <a href="#categoriesModal" class="btn btn-outline-light btn-lg px-4 py-3" data-bs-toggle="modal">
-                            <i class="bi bi-people-fill me-2"></i>
-                            Категории студентов, имеющих право на получение Государственной социальной стипендии
-                        </a>
-                        <a href="#documentsModal" class="btn btn-outline-light btn-lg px-4 py-3" data-bs-toggle="modal">
-                            <i class="bi bi-folder-fill me-2"></i>
-                            Перечень необходимых документов
-                        </a>
+
+                <!-- Колонка 3 - Стипендия 5 000 -->
+                <div class="card-column">
+                    <div class="price-card scholarship-style-card row row-cols-12">
+                        <div class="col-12">
+                            <div class="price-amount price-pink scholarship-amount-main">5 000 <span class="period-text">в месяц</span></div>
+                        </div>
+                        <div class="program-container col-12">
+                            <div class="program-text-container offset-1">
+                                <h6 class="program-name scholarship-desc-text">
+                                    Стипендии Правительства Российской Федерации для студентов, обучающихся 
+                                    по специальностям, соответствующим приоритетным направлениям модернизации и 
+                                    технологического развития экономики.
+                                </h6>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+
+        <!-- Навигация (только стрелки) -->
+        <div class="carousel-controls">
+            <div class="nav-arrow left" id="prevBtnScholarship">
+                <svg width="26" height="8" viewBox="0 0 26 8" fill="none">
+                    <path d="M25.3536 4.35355C25.5488 4.15829 25.5488 3.84171 25.3536 3.64645L22.1716 0.464466C21.9763 0.269204 21.6597 0.269204 21.4645 0.464466C21.2692 0.659728 21.2692 0.976311 21.4645 1.17157L24.2929 4L21.4645 6.82843C21.2692 7.02369 21.2692 7.34027 21.4645 7.53553C21.6597 7.7308 21.9763 7.7308 22.1716 7.53553L25.3536 4.35355ZM0 4.5H25V3.5H0V4.5Z" fill="currentColor"/>
+                </svg>
+            </div>
+            
+            <div class="nav-arrow" id="nextBtnScholarship">
+                <svg width="26" height="8" viewBox="0 0 26 8" fill="none">
+                    <path d="M25.3536 4.35355C25.5488 4.15829 25.5488 3.84171 25.3536 3.64645L22.1716 0.464466C21.9763 0.269204 21.6597 0.269204 21.4645 0.464466C21.2692 0.659728 21.2692 0.976311 21.4645 1.17157L24.2929 4L21.4645 6.82843C21.2692 7.02369 21.2692 7.34027 21.4645 7.53553C21.6597 7.7308 21.9763 7.7308 22.1716 7.53553L25.3536 4.35355ZM0 4.5H25V3.5H0V4.5Z" fill="currentColor"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+
+<style>
+    .cards-container {
+        width: 100%;
+        overflow-x: auto;
+        padding: 20px 0;
+        margin: 40px 0;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    
+    .cards-container::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+    
+    .cards-scroll {
+        display: inline-flex;
+        gap: 30px;
+        min-width: min-content;
+    }
+    
+    /* Стили для столбца с карточками */
+    .card-column {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        min-width: 497px;
+    }
+    
+    /* Точные стили карточки */
+    .price-card {
+        width: 497px;
+        min-height: 241px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 24px;
+        border-radius: 15px;
+        background-color: #ffffff;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        position: relative;
+    }
+    
+    /* Специфические стили для карточек стипендий */
+    .scholarship-style-card {
+        background-color: #ffffff;
+    }
+    
+    .price-amount {
+        font-family: Montserrat, sans-serif;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 49px;
+        letter-spacing: 0%;
+        text-align: left;
+        margin-bottom: 8px;
+    }
+    
+    .scholarship-amount-main {
+        font-size: 44px;
+        font-weight: 700;
+        color: #000;
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    
+    .program-container {
+        margin-top: 15px;
+        width: 100%;
+    }
+    
+    .program-text-container {
+        padding-right: 15px;
+    }
+    
+    .program-name {
+        font-family: Montserrat, sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #333;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .program-name li {
+        margin-bottom: 5px;
+    }
+    
+    .scholarship-desc-text {
+        font-size: 16px;
+        font-weight: 400;
+        color: #333;
+        line-height: 1.5;
+    }
+    
+    .carousel-controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        margin-top: 20px;
+    }
+    
+    .nav-arrow {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    
+    .nav-arrow:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+    
+    .nav-arrow.left svg {
+        transform: rotate(180deg);
+    }
+    
+    /* Адаптация для мобильных устройств */
+    @media (max-width: 768px) {
+        .card-column {
+            min-width: 320px;
+        }
+        
+        .price-card {
+            width: 320px;
+            min-height: 200px;
+            padding: 20px;
+        }
+        
+        .price-amount {
+            font-size: 32px;
+            line-height: 1.2;
+        }
+        
+        .scholarship-amount-main {
+            font-size: 36px;
+        }
+        
+        .period-text {
+            font-size: 16px;
+        }
+        
+        .program-name {
+            font-size: 14px;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Функция для инициализации скролл-карусели
+        function initScrollCarousel(containerSelector, prevBtnSelector, nextBtnSelector) {
+            const container = document.querySelector(containerSelector);
+            const prevBtn = document.getElementById(prevBtnSelector);
+            const nextBtn = document.getElementById(nextBtnSelector);
+            
+            if (!container || !prevBtn || !nextBtn) return;
+            
+            const scrollAmount = 527; // Ширина карточки + gap (497 + 30)
+            
+            prevBtn.addEventListener('click', function() {
+                container.scrollBy({
+                    left: -scrollAmount,
+                    behavior: 'smooth'
+                });
+            });
+            
+            nextBtn.addEventListener('click', function() {
+                container.scrollBy({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Опционально: скрывать/показывать стрелки в зависимости от положения скролла
+            function updateArrowVisibility() {
+                const isAtStart = container.scrollLeft <= 0;
+                const isAtEnd = container.scrollLeft >= (container.scrollWidth - container.clientWidth - 1);
+                
+                prevBtn.style.opacity = isAtStart ? '0.5' : '1';
+                prevBtn.style.pointerEvents = isAtStart ? 'none' : 'auto';
+                
+                nextBtn.style.opacity = isAtEnd ? '0.5' : '1';
+                nextBtn.style.pointerEvents = isAtEnd ? 'none' : 'auto';
+            }
+            
+            container.addEventListener('scroll', updateArrowVisibility);
+            window.addEventListener('resize', updateArrowVisibility);
+            updateArrowVisibility();
+        }
+        
+        // Инициализация карусели для стипендий
+        initScrollCarousel('.cards-container', 'prevBtnScholarship', 'nextBtnScholarship');
+        
+    });
+</script>
 
         <!-- ===== СЕКЦИЯ 3: ПОВЫШЕННАЯ СТИПЕНДИЯ ===== -->
-        <section class="enhanced-section py-5 bg-light" >
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <h3 class="section-subtitle text-primary mb-4">ГОСУДАРСТВЕННАЯ АКАДЕМИЧЕСКАЯ<br>И (ИЛИ) ГОСУДАРСТВЕННАЯ СОЦИАЛЬНАЯ<br>СТИПЕНДИЯ В ПОВЫШЕННОМ РАЗМЕРЕ</h3>
-                        
-                        <div class="enhanced-content">
-                            <ul class="list-unstyled fs-5">
-                                <li class="mb-3 d-flex">
-                                    <i class="bi bi-check-circle-fill text-primary me-3 mt-1"></i>
-                                    <span>Назначается студентам 1 и 2 курсов (бакалавриат, специалитет);</span>
-                                </li>
-                                <li class="mb-3 d-flex">
-                                    <i class="bi bi-check-circle-fill text-primary me-3 mt-1"></i>
-                                    <span>Оценки успеваемости – «отлично» или «хорошо» или «отлично» и «хорошо» (назначена ГАС);</span>
-                                </li>
-                                <li class="mb-3 d-flex">
-                                    <i class="bi bi-check-circle-fill text-primary me-3 mt-1"></i>
-                                    <span>Категории получателей – аналогичны имеющим право на получение ГСС или студенты в возрасте до 20 лет, имеющими только одного родителя - инвалида I группы (назначена ГСС);</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+<section class="enhanced-section py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <h3 class="section-subtitle mb-4" style="color: #080D6B;">ГОСУДАРСТВЕННАЯ АКАДЕМИЧЕСКАЯ<br>И (ИЛИ) ГОСУДАРСТВЕННАЯ СОЦИАЛЬНАЯ<br>СТИПЕНДИЯ В ПОВЫШЕННОМ РАЗМЕРЕ</h3>
+                
+                <div class="enhanced-content offset-1">
+                    <ul class="fs-5" style="color: #080D6B; padding-left: 1.5rem;">
+                        <li class="mb-3">
+                            Назначается студентам 1 и 2 курсов (бакалавриат, специалитет);
+                        </li>
+                        <li class="mb-3">
+                            Оценки успеваемости – «отлично» или «хорошо» или «отлично» и «хорошо» (назначена ГАС);
+                        </li>
+                        <li class="mb-3">
+                            Категории получателей – аналогичны имеющим право на получение ГСС или студенты в возрасте до 20 лет, имеющими только одного родителя - инвалида I группы (назначена ГСС);
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
         <!-- ===== СЕКЦИЯ 4: МАТЕРИАЛЬНАЯ ПОДДЕРЖКА ===== -->
         <section class="support-section py-5" id="MatPoddergka">
             <div class="container">
-                <h2 class="section-title text-center mb-5">МАТЕРИАЛЬНАЯ ПОДДЕРЖКА ОБУЧАЮЩИМСЯ</h2>
+                <h2 class="section-title mb-5 col-10 offset-1">МАТЕРИАЛЬНАЯ ПОДДЕРЖКА ОБУЧАЮЩИМСЯ</h2>
                 
-                <div class="row justify-content-center">
-                    <div class="col-lg-9">
-                        <div class="row">
-                            <div class="col-lg-7 mb-5 mb-lg-0">
-                                <div class="support-info">
-                                    <p class="fs-5 text-dark mb-4">
-                                        Материальная поддержка обучающимся назначается в соответствии с 
-                                        <strong>Положением о порядке оказания материальной поддержки обучающимся ЮФУ от 14.05.2019 г. N 783</strong>
-                                    </p>
-                                    
-                                    <div class="d-flex flex-column flex-sm-row gap-3 mb-4">
-                                        <a href="#supportDocuments" class="btn btn-primary btn-lg" data-bs-toggle="modal">
-                                            <i class="bi bi-file-earmark-text me-2"></i>
-                                            Перечень подтверждающих документов
-                                        </a>
-                                        
-                                        <a href="#" class="btn btn-outline-primary btn-lg">
-                                            <i class="bi bi-download me-2"></i>
-                                            Положение о порядке оказания материальной поддержки обучающимся ЮФУ от 14.05.19 N783
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-lg-5">
-                                <div class="support-graphic bg-primary text-white p-4 rounded-3 h-100">
-                                    <div class="d-flex align-items-center mb-3">
-                                        <i class="bi bi-info-circle-fill fs-1 me-3"></i>
-                                        <h4 class="mb-0">Важно знать</h4>
-                                    </div>
-                                    <p class="mb-0">
-                                        Материальная поддержка оказывается единовременно или на период не более одного года.
-                                        Размер материальной поддержки определяется комиссией индивидуально для каждого случая.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="row align-items-start offset-1">
+                <!-- Левая колонка: две ссылки -->
+                <div class="col-lg-6">
+        <!-- Первая ссылка с иконкой слева -->
+        <div class="mb-4 d-flex align-items-start">
+            <div class="me-3" style="flex-shrink: 0;">
+                <!-- Место для изображения/иконки -->
+                <img src="imageMeg/ПДФ.png" alt="" style="width: 32px; height: 38px;">
+            </div>
+            <a href="" style="font-size: 16px; font-weight: 500; text-decoration: none; color: #000;">
+                Положение о порядке оказания материальной поддержки обучающимся ЮФУ от 14.05.19 N783
+            </a>
+        </div>
+        
+        <!-- Вторая ссылка с точкой-кружком слева -->
+        <div class="d-flex align-items-start">
+            <span style="flex-shrink: 0; margin-right: 12px; margin-top: 8px; width: 6px; height: 6px; border-radius: 50%; display: inline-block; color: #000;"></span>
+            <a href="#" style="text-decoration: underline; font-size: 14px; font-weight: 400; line-height: 1.5; color: #000;">
+                Перечень подтверждающих документов
+            </a>
+        </div>
+                </div>
+    
+    <!-- Правая колонка: текст -->
+    <div class="col-lg-5 offset-1">
+        <p style="font-size: 18px; line-height: 1.6; color: #000; margin: 0;">
+            Материальная поддержка обучающимся назначается в соответствии с Положением о порядке оказания материальной поддержки обучающимся ЮФУ от 14.05.2019 г. N 783
+        </p>
+    </div>
                 </div>
             </div>
         </section>
 
-        <!-- ===== СЕКЦИЯ 5: ЛЬГОТЫ ДЛЯ СТУДЕНТОВ-СИРОТ ===== -->
-        <section class="benefits-section py-5" id="Inkluziv">
-            <div class="container">
-                <h2 class="section-title text-center mb-5">ЛЬГОТЫ ДЛЯ СТУДЕНТОВ ИЗ ЧИСЛА<br>ДЕТЕЙ-СИРОТ И ДЕТЕЙ, ОСТАВШИХСЯ<br>БЕЗ ПОПЕЧЕНИЯ РОДИТЕЛЕЙ</h2>
-                
-                <!-- Owl Carousel для льгот (мобильные) -->
-                <div class="owl-carousel owl-theme benefits-carousel d-lg-none">
-                    <!-- Карточка льготы 1 -->
-                    <div class="item">
-                        <div class="card benefit-card h-100">
-                            <div class="card-body p-4">
-                                <div class="benefit-amount mb-3">
-                                    <span class="amount display-4 fw-bold">13 707,56</span>
-                                    <span class="period fs-4 fw-bold d-block">в месяц</span>
-                                </div>
-                                <div class="benefit-desc pt-3 border-top border-white border-opacity-25">
-                                    <div class="icon mb-3">
-                                        <i class="bi bi-egg-fried fs-1 text-pink"></i>
-                                    </div>
-                                    <h5 class="card-title">Обеспечение питанием</h5>
-                                </div>
+<div class="paid-bakalavr">        <!-- ===== СЕКЦИЯ 5: ЛЬГОТЫ ДЛЯ СТУДЕНТОВ-СИРОТ ===== -->
+<section id="Inkluziv">
+    <div class="container offset-1">
+        <h2 class="section-title mb-5 text-white">ЛЬГОТЫ ДЛЯ СТУДЕНТОВ ИЗ ЧИСЛА<br>ДЕТЕЙ-СИРОТ И ДЕТЕЙ, ОСТАВШИХСЯ<br>БЕЗ ПОПЕЧЕНИЯ РОДИТЕЛЕЙ</h2>
+    </div>
+
+    <div class="container-fluid p-0">
+        <!-- Контейнер с горизонтальным скроллом -->
+        <div class="cards-container benefits-scroll-container">
+            <div class="cards-scroll benefits-scroll offset-1">
+                <!-- Столбец 1 (две карточки) -->
+                <div class="card-column">
+                    <!-- Карточка 1: Обеспечение питанием -->
+                    <div class="price-card benefit-card-item row">
+                        <div class="col-12">
+                            <div class="price-amount price-pink benefit-amount-main">13 707,56 <span class="period-text">в месяц</span></div>
+                        </div>
+                        <div class="program-container col-12">
+                            <div class="program-text-container offset-2">
+                                <h6 class="program-name benefit-desc-text">
+                                    Обеспечение питанием
+                                </h6>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Карточка льготы 2 -->
-                    <div class="item">
-                        <div class="card benefit-card h-100">
-                            <div class="card-body p-4">
-                                <div class="benefit-amount mb-3">
-                                    <span class="amount display-4 fw-bold">9 312</span>
-                                    <span class="period fs-4 fw-bold d-block">ежегодно (сентябрь)</span>
-                                </div>
-                                <div class="benefit-desc pt-3 border-top border-white border-opacity-25">
-                                    <div class="icon mb-3">
-                                        <i class="bi bi-book fs-1 text-pink"></i>
-                                    </div>
-                                    <h5 class="card-title">Обеспечение на выплату ежегодного пособия на приобретение учебной литературы и письменных принадлежностей</h5>
-                                </div>
-                            </div>
+                    <!-- Карточка 2: Учебная литература -->
+                    <div class="price-card benefit-card-item row">
+                        <div class="col-12">
+                            <div class="price-amount price-pink benefit-amount-main">9 312 <span class="period-text">ежегодно (сентябрь)</span></div>
                         </div>
-                    </div>
-                    
-                    <!-- Карточка льготы 3 -->
-                    <div class="item">
-                        <div class="card benefit-card h-100">
-                            <div class="card-body p-4">
-                                <div class="benefit-amount mb-3">
-                                    <span class="amount display-4 fw-bold">108 251</span>
-                                    <span class="period fs-4 fw-bold d-block">единоразово при выпуске</span>
-                                </div>
-                                <div class="benefit-desc pt-3 border-top border-white border-opacity-25">
-                                    <div class="icon mb-3">
-                                        <i class="bi bi-bag-check fs-1 text-pink"></i>
-                                    </div>
-                                    <h5 class="card-title">Обеспечение одеждой, обувью, мягким инвентарем и оборудованием при выпуске</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Карточка льготы 4 -->
-                    <div class="item">
-                        <div class="card benefit-card h-100">
-                            <div class="card-body p-4">
-                                <div class="benefit-amount mb-3">
-                                    <span class="amount display-4 fw-bold">22 554</span>
-                                    <span class="period fs-4 fw-bold d-block">в квартал</span>
-                                </div>
-                                <div class="benefit-desc pt-3 border-top border-white border-opacity-25">
-                                    <div class="icon mb-3">
-                                        <i class="bi bi-tshirt fs-1 text-pink"></i>
-                                    </div>
-                                    <h5 class="card-title">Обеспечение одеждой, обувью, мягким инвентарем и другими предметами вещевого довольствия</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Карточка льготы 5 -->
-                    <div class="item">
-                        <div class="card benefit-card h-100">
-                            <div class="card-body p-4">
-                                <div class="benefit-amount mb-3">
-                                    <span class="amount display-4 fw-bold">1 184</span>
-                                    <span class="period fs-4 fw-bold d-block">в месяц</span>
-                                </div>
-                                <div class="benefit-desc pt-3 border-top border-white border-opacity-25">
-                                    <div class="icon mb-3">
-                                        <i class="bi bi-bus-front fs-1 text-pink"></i>
-                                    </div>
-                                    <h5 class="card-title">Обеспечение проездом</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Карточка льготы 6 -->
-                    <div class="item">
-                        <div class="card benefit-card h-100">
-                            <div class="card-body p-4">
-                                <div class="benefit-amount mb-3">
-                                    <span class="amount display-4 fw-bold">500</span>
-                                    <span class="period fs-4 fw-bold d-block">единоразово при выпуске</span>
-                                </div>
-                                <div class="benefit-desc pt-3 border-top border-white border-opacity-25">
-                                    <div class="icon mb-3">
-                                        <i class="bi bi-cash-coin fs-1 text-pink"></i>
-                                    </div>
-                                    <h5 class="card-title">Обеспечение на выплату единовременного денежного пособия при выпуске</h5>
-                                </div>
+                        <div class="program-container col-12">
+                            <div class="program-text-container offset-2">
+                                <h6 class="program-name benefit-desc-text">
+                                    Обеспечение на выплату ежегодного пособия на приобретение учебной литературы и письменных принадлежностей
+                                </h6>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Грид для десктопа -->
-                <div class="d-none d-lg-block">
-                    <div class="row g-4">
-                        <!-- Карточка льготы 1 -->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="card benefit-card h-100">
-                                <div class="card-body p-4">
-                                    <div class="benefit-amount mb-3">
-                                        <span class="amount display-4 fw-bold">13 707,56</span>
-                                        <span class="period fs-4 fw-bold d-block">в месяц</span>
-                                    </div>
-                                    <div class="benefit-desc pt-3 border-top border-white border-opacity-25">
-                                        <div class="icon mb-3">
-                                            <i class="bi bi-egg-fried fs-1 text-pink"></i>
-                                        </div>
-                                        <h5 class="card-title">Обеспечение питанием</h5>
-                                    </div>
-                                </div>
+
+                <!-- Столбец 2 (две карточки) -->
+                <div class="card-column">
+                    <!-- Карточка 3: При выпуске (одежда) -->
+                    <div class="price-card benefit-card-item row">
+                        <div class="col-12">
+                            <div class="price-amount price-pink benefit-amount-main">108 251 <span class="period-text">единоразово при выпуске</span></div>
+                        </div>
+                        <div class="program-container col-12">
+                            <div class="program-text-container offset-2">
+                                <h6 class="program-name benefit-desc-text">
+                                    Обеспечение одеждой, обувью, мягким инвентарем и оборудованием при выпуске
+                                </h6>
                             </div>
                         </div>
-                        
-                        <!-- Карточка льготы 2 -->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="card benefit-card h-100">
-                                <div class="card-body p-4">
-                                    <div class="benefit-amount mb-3">
-                                        <span class="amount display-4 fw-bold">9 312</span>
-                                        <span class="period fs-4 fw-bold d-block">ежегодно (сентябрь)</span>
-                                    </div>
-                                    <div class="benefit-desc pt-3 border-top border-white border-opacity-25">
-                                        <div class="icon mb-3">
-                                            <i class="bi bi-book fs-1 text-pink"></i>
-                                        </div>
-                                        <h5 class="card-title">Обеспечение на выплату ежегодного пособия на приобретение учебной литературы и письменных принадлежностей</h5>
-                                    </div>
-                                </div>
+                    </div>
+                    
+                    <!-- Карточка 4: Вещевое довольствие -->
+                    <div class="price-card benefit-card-item row">
+                        <div class="col-12">
+                            <div class="price-amount price-pink benefit-amount-main">22 554 <span class="period-text">в квартал</span></div>
+                        </div>
+                        <div class="program-container col-12">
+                            <div class="program-text-container offset-2">
+                                <h6 class="program-name benefit-desc-text">
+                                    Обеспечение одеждой, обувью, мягким инвентарем и другими предметами вещевого довольствия
+                                </h6>
                             </div>
                         </div>
-                        
-                        <!-- Карточка льготы 3 -->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="card benefit-card h-100">
-                                <div class="card-body p-4">
-                                    <div class="benefit-amount mb-3">
-                                        <span class="amount display-4 fw-bold">108 251</span>
-                                        <span class="period fs-4 fw-bold d-block">единоразово при выпуске</span>
-                                    </div>
-                                    <div class="benefit-desc pt-3 border-top border-white border-opacity-25">
-                                        <div class="icon mb-3">
-                                            <i class="bi bi-bag-check fs-1 text-pink"></i>
-                                        </div>
-                                        <h5 class="card-title">Обеспечение одеждой, обувью, мягким инвентарем и оборудованием при выпуске</h5>
-                                    </div>
-                                </div>
+                    </div>
+                </div>
+
+                <!-- Столбец 3 (две карточки) -->
+                <div class="card-column">
+                    <!-- Карточка 5: Проезд -->
+                    <div class="price-card benefit-card-item row">
+                        <div class="col-12">
+                            <div class="price-amount price-pink benefit-amount-main">1 184 <span class="period-text">в месяц</span></div>
+                        </div>
+                        <div class="program-container col-12">
+                            <div class="program-text-container offset-2">
+                                <h6 class="program-name benefit-desc-text">
+                                    Обеспечение проездом
+                                </h6>
                             </div>
                         </div>
-                        
-                        <!-- Карточка льготы 4 -->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="card benefit-card h-100">
-                                <div class="card-body p-4">
-                                    <div class="benefit-amount mb-3">
-                                        <span class="amount display-4 fw-bold">22 554</span>
-                                        <span class="period fs-4 fw-bold d-block">в квартал</span>
-                                    </div>
-                                    <div class="benefit-desc pt-3 border-top border-white border-opacity-25">
-                                        <div class="icon mb-3">
-                                            <i class="bi bi-tshirt fs-1 text-pink"></i>
-                                        </div>
-                                        <h5 class="card-title">Обеспечение одеждой, обувью, мягким инвентарем и другими предметами вещевого довольствия</h5>
-                                    </div>
-                                </div>
-                            </div>
+                    </div>
+                    
+                    <!-- Карточка 6: Пособие при выпуске -->
+                    <div class="price-card benefit-card-item row">
+                        <div class="col-12">
+                            <div class="price-amount price-pink benefit-amount-main">500 <span class="period-text">единоразово при выпуске</span></div>
                         </div>
-                        
-                        <!-- Карточка льготы 5 -->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="card benefit-card h-100">
-                                <div class="card-body p-4">
-                                    <div class="benefit-amount mb-3">
-                                        <span class="amount display-4 fw-bold">1 184</span>
-                                        <span class="period fs-4 fw-bold d-block">в месяц</span>
-                                    </div>
-                                    <div class="benefit-desc pt-3 border-top border-white border-opacity-25">
-                                        <div class="icon mb-3">
-                                            <i class="bi bi-bus-front fs-1 text-pink"></i>
-                                        </div>
-                                        <h5 class="card-title">Обеспечение проездом</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Карточка льготы 6 -->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="card benefit-card h-100">
-                                <div class="card-body p-4">
-                                    <div class="benefit-amount mb-3">
-                                        <span class="amount display-4 fw-bold">500</span>
-                                        <span class="period fs-4 fw-bold d-block">единоразово при выпуске</span>
-                                    </div>
-                                    <div class="benefit-desc pt-3 border-top border-white border-opacity-25">
-                                        <div class="icon mb-3">
-                                            <i class="bi bi-cash-coin fs-1 text-pink"></i>
-                                        </div>
-                                        <h5 class="card-title">Обеспечение на выплату единовременного денежного пособия при выпуске</h5>
-                                    </div>
-                                </div>
+                        <div class="program-container col-12">
+                            <div class="program-text-container offset-2">
+                                <h6 class="program-name benefit-desc-text">
+                                    Обеспечение на выплату единовременного денежного пособия при выпуске
+                                </h6>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+
+        <!-- Навигация (стрелки) -->
+        <div class="carousel-controls">
+            <div class="nav-arrow left" id="prevBtnBenefits">
+                <svg width="26" height="8" viewBox="0 0 26 8" fill="none">
+                    <path d="M25.3536 4.35355C25.5488 4.15829 25.5488 3.84171 25.3536 3.64645L22.1716 0.464466C21.9763 0.269204 21.6597 0.269204 21.4645 0.464466C21.2692 0.659728 21.2692 0.976311 21.4645 1.17157L24.2929 4L21.4645 6.82843C21.2692 7.02369 21.2692 7.34027 21.4645 7.53553C21.6597 7.7308 21.9763 7.7308 22.1716 7.53553L25.3536 4.35355ZM0 4.5H25V3.5H0V4.5Z" fill="currentColor"/>
+                </svg>
+            </div>
+            
+            <div class="nav-arrow" id="nextBtnBenefits">
+                <svg width="26" height="8" viewBox="0 0 26 8" fill="none">
+                    <path d="M25.3536 4.35355C25.5488 4.15829 25.5488 3.84171 25.3536 3.64645L22.1716 0.464466C21.9763 0.269204 21.6597 0.269204 21.4645 0.464466C21.2692 0.659728 21.2692 0.976311 21.4645 1.17157L24.2929 4L21.4645 6.82843C21.2692 7.02369 21.2692 7.34027 21.4645 7.53553C21.6597 7.7308 21.9763 7.7308 22.1716 7.53553L25.3536 4.35355ZM0 4.5H25V3.5H0V4.5Z" fill="currentColor"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+
+<style>
+    /* Стили для скролл-карусели льгот */
+    .benefits-scroll-container {
+        width: 100%;
+        overflow-x: auto;
+        padding: 20px 0;
+        margin: 40px 0;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    
+    .benefits-scroll-container::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .benefits-scroll {
+        display: inline-flex;
+        gap: 30px;
+        min-width: min-content;
+    }
+    
+    .card-column {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        min-width: 497px;
+    }
+    
+    .benefit-card-item {
+        width: 497px;
+        height: 226px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 24px;
+        border-radius: 15px;
+        background-color: #ffffff;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        position: relative;
+    }
+    
+    .benefit-amount-main {
+        font-size: 40px;
+        font-weight: 700;
+        color: #ED1160;
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 8px;
+    }
+    
+    .period-text {
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--secondary-pink);
+        text-transform: lowercase;
+    }
+    
+    .program-container {
+        margin-top: 15px;
+        width: 100%;
+    }
+    
+    .program-text-container {
+        padding-right: 15px;
+    }
+    
+    .program-name {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #333;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .benefit-desc-text {
+        font-size: 16px;
+        font-weight: 400;
+        color: #333;
+        line-height: 1.5;
+    }
+    
+    .carousel-controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        margin-top: 20px;
+    }
+    
+    .nav-arrow {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    
+    .nav-arrow:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+    
+    .nav-arrow.left svg {
+        transform: rotate(180deg);
+    }
+    
+    /* Адаптация для мобильных */
+    @media (max-width: 768px) {
+        .card-column {
+            min-width: 320px;
+        }
+        
+        .benefit-card-item {
+            width: 320px;
+            height: auto;
+            min-height: 200px;
+            padding: 20px;
+        }
+        
+        .benefit-amount-main {
+            font-size: 32px;
+        }
+        
+        .period-text {
+            font-size: 16px;
+        }
+        
+        .program-name {
+            font-size: 14px;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        function initBenefitsCarousel() {
+            const container = document.querySelector('.benefits-scroll-container');
+            const prevBtn = document.getElementById('prevBtnBenefits');
+            const nextBtn = document.getElementById('nextBtnBenefits');
+            
+            if (!container || !prevBtn || !nextBtn) return;
+            
+            const scrollAmount = 527; // 497px + 30px gap
+            
+            prevBtn.addEventListener('click', function() {
+                container.scrollBy({
+                    left: -scrollAmount,
+                    behavior: 'smooth'
+                });
+            });
+            
+            nextBtn.addEventListener('click', function() {
+                container.scrollBy({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+            });
+            
+            function updateArrowVisibility() {
+                const isAtStart = container.scrollLeft <= 0;
+                const isAtEnd = container.scrollLeft >= (container.scrollWidth - container.clientWidth - 1);
+                
+                prevBtn.style.opacity = isAtStart ? '0.5' : '1';
+                prevBtn.style.pointerEvents = isAtStart ? 'none' : 'auto';
+                
+                nextBtn.style.opacity = isAtEnd ? '0.5' : '1';
+                nextBtn.style.pointerEvents = isAtEnd ? 'none' : 'auto';
+            }
+            
+            container.addEventListener('scroll', updateArrowVisibility);
+            window.addEventListener('resize', updateArrowVisibility);
+            updateArrowVisibility();
+        }
+        
+        initBenefitsCarousel();
+    });
+</script>
 
         <!-- ===== СЕКЦИЯ 6: НОРМАТИВНЫЕ ДОКУМЕНТЫ ===== -->
         <section class="documents-section py-5">
             <div class="container">
-                <h2 class="section-title text-center mb-5">НОРМАТИВНЫЕ ДОКУМЕНТЫ</h2>
+                <h2 class="section-title mb-5 offset-1">НОРМАТИВНЫЕ ДОКУМЕНТЫ</h2>
                 
-                <div class="row justify-content-center">
-                    <div class="col-lg-9">
-                        <div class="alert alert-info border-0 bg-light-info mb-5">
-                            <div class="d-flex">
-                                <i class="bi bi-info-circle-fill fs-3 text-primary me-3"></i>
-                                <div>
-                                    <p class="mb-2 fs-5">
-                                        Все о стипендиях Президента РФ, Правительства РФ, а также именных стипендиях вы можете узнать на сайте
-                                    </p>
-                                    <a href="https://стипендия.рф" target="_blank" class="btn btn-primary btn-lg">
-                                        <i class="bi bi-link-45deg me-2"></i>
-                                        стипендия.рф
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="document-links">
-                            <div class="row g-4">
-                                <!-- Документ 1 -->
-                                <div class="col-md-6">
-                                    <a href="#" class="document-link card h-100 text-decoration-none hover-lift">
-                                        <div class="card-body p-4">
-                                            <div class="d-flex align-items-center">
-                                                <div class="document-icon bg-primary bg-opacity-10 rounded-3 p-3 me-4">
-                                                    <i class="bi bi-file-earmark-text fs-1 text-primary"></i>
-                                                </div>
-                                                <div>
-                                                    <h5 class="card-title mb-1">П201-ОД</h5>
-                                                    <p class="card-text text-black mb-0">Положение о стипендиальном обеспечении</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                
-                                <!-- Документ 2 -->
-                                <div class="col-md-6">
-                                    <a href="#" class="document-link card h-100 text-decoration-none hover-lift">
-                                        <div class="card-body p-4">
-                                            <div class="d-flex align-items-center">
-                                                <div class="document-icon bg-primary bg-opacity-10 rounded-3 p-3 me-4">
-                                                    <i class="bi bi-file-earmark-pdf fs-1 text-primary"></i>
-                                                </div>
-                                                <div>
-                                                    <h5 class="card-title mb-1">Положение</h5>
-                                                    <p class="card-text text-black mb-0">О порядке оказания материальной поддержки обучающимся ЮФУ</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="row align-items-start offset-1">
+    <!-- Левая колонка: ссылка с иконкой -->
+    <div class="col-6">
+        <div class="d-flex align-items-start">
+            <div class="me-3" style="flex-shrink: 0;">
+                <!-- Место для иконки -->
+                <img src="imageMeg/ПДФ.png" alt="" style="width: 34px; height: 38px;">
+            </div>
+            <a href="#" target="_blank" style="color: #080D6B; text-decoration: underline; font-size: 16px; font-weight: 500; line-height: 1.5;">
+                П201-ОД Положение 
+                о стипендиальном обеспечении
+            </a>
+        </div>
+    </div>
+    
+    <!-- Правая колонка: текст -->
+    <div class="col-6">
+        <p style="font-size: 18px; line-height: 1.6; color: #000; margin: 0;">
+            Все о стипендиях Президента РФ, Правительства РФ, а также именных стипендиях вы можете узнать на сайте <a href="https://стипендия.рф/" target="_blank" style="color: #080D6B; text-decoration: underline;">стипендия.рф</a>
+        </p>
+    </div>
+</div>
             </div>
         </section>
 
-        <!-- ===== СЕКЦИЯ 7: КОНТАКТЫ ===== -->
-        <section class="contacts-section py-5 bg-light">
-            <div class="container">
-                <h2 class="section-title text-center mb-5">Контакты</h2>
+        <!-- ===== СЕКЦИЯ 5: КООРДИНАТОР ===== -->
+<div class="bg-light-grey">
+<section class="coordinator-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-11">
+                <h2 class="section-title mb-5 offset-1">Контакты</h2>
                 
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <div class="row g-5">
-                            <!-- Контакт 1 -->
-                            <div class="col-lg-6">
-                                <div class="contact-card card border-0 shadow-sm h-100">
-                                    <div class="row g-0 h-100">
-                                        <div class="col-md-5">
-                                            <div class="contact-photo h-100 rounded-start" style="background: var(--gradient-primary); min-height: 300px;">
-                                                <!-- Фото сотрудника -->
-                                                <div class="h-100 d-flex align-items-center justify-content-center text-white p-4">
-                                                    <i class="bi bi-person-circle display-1"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-7">
-                                            <div class="card-body p-4">
-                                                <h4 class="card-title mb-3">Черкасова Мария Николаевна</h4>
-                                                <p class="card-text text-black mb-4">
-                                                    Старший преподаватель кафедры Дизайна, ответственная по социально-воспитательной работе
-                                                </p>
-                                                
-                                                <div class="contact-info">
-                                                    <div class="d-flex align-items-center mb-3">
-                                                        <i class="bi bi-telephone text-primary me-3"></i>
-                                                        <div>
-                                                            <div class="fw-bold">тел.:</div>
-                                                            <a href="tel:+78632184000" class="text-decoration-none">8 (863) 218-40-00 доб. 200-78</a>
-                                                        </div>
-                                                    </div>
-                                                    
-                                                    <div class="d-flex align-items-center mb-3">
-                                                        <i class="bi bi-envelope text-primary me-3"></i>
-                                                        <div>
-                                                            <div class="fw-bold">e-mail:</div>
-                                                            <a href="mailto:mncherkasova@sfedu.ru" class="text-decoration-none">mncherkasova@sfedu.ru</a>
-                                                        </div>
-                                                    </div>
-                                                    
-                                                    <div class="d-flex align-items-center">
-                                                        <i class="bi bi-geo-alt text-primary me-3"></i>
-                                                        <div>
-                                                            <div class="fw-bold">Адрес:</div>
-                                                            <span>пр. Будённовский 39, каб. № 10</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                <div class="row g-5 offset-1">
+                    <div class="col-lg-4">
+                        <div class="coordinator-photo mb-4" style="background-image: url('imageSoc/Ryk.png');">
+                            <!-- Место для фото -->
+                            <div class="h-100 d-flex align-items-center justify-content-center text-white">
                             </div>
+                        </div>
+                        <div class="contact-info">
+                            <p class="fs-6 mb-2">
+                                Старший преподаватель кафедры Дизайна, ответственная по социально-воспитательной работе
+                            </p>
+                            <h3 class="fs-3 fw-bold mb-4">Черкасова Мария Николаевна</h3>
                             
-                            <!-- Обязанности -->
-                            <div class="col-lg-6">
-                                <div class="responsibilities">
-                                    <h4 class="mb-4">Основные функциональные обязанности</h4>
-                                    <ul class="list-unstyled">
-                                        <li class="mb-3 d-flex">
-                                            <i class="bi bi-check-square-fill text-primary me-3 mt-1"></i>
-                                            <span>Оформление социальных стипендий;</span>
-                                        </li>
-                                        <li class="mb-3 d-flex">
-                                            <i class="bi bi-check-square-fill text-primary me-3 mt-1"></i>
-                                            <span>Оформление документов на выплату материальной поддержки;</span>
-                                        </li>
-                                        <li class="mb-3 d-flex">
-                                            <i class="bi bi-check-square-fill text-primary me-3 mt-1"></i>
-                                            <span>Оформление стипендий Губернатора Ростовской области, стипендии Президента и Правительства и пр.;</span>
-                                        </li>
-                                        <li class="mb-3 d-flex">
-                                            <i class="bi bi-check-square-fill text-primary me-3 mt-1"></i>
-                                            <span>Работа с лицами с ограниченными возможностями здоровья и сиротами;</span>
-                                        </li>
-                                        <li class="mb-3 d-flex">
-                                            <i class="bi bi-check-square-fill text-primary me-3 mt-1"></i>
-                                            <span>Проведение дисциплинарных комиссий;</span>
-                                        </li>
-                                        <li class="mb-3 d-flex">
-                                            <i class="bi bi-check-square-fill text-primary me-3 mt-1"></i>
-                                            <span>Проведение мероприятий различного уровня, касающихся воспитательной и социальной работы;</span>
-                                        </li>
-                                        <li class="d-flex">
-                                            <i class="bi bi-check-square-fill text-primary me-3 mt-1"></i>
-                                            <span>Оформление документов по проведению практик для всех направлений ААИ</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <p class="mb-2">
+                                <span>тел.:</span>
+                                <span class="fw-medium">8 (863) 218-40-00 доб. 200-78</span>
+                            </p>
+                            <p class="mb-2">
+                                <span>e-mail:</span>
+                                <a href="mailto:mncherkasova@sfedu.ru" class="fw-medium">mncherkasova@sfedu.ru</a>
+                            </p>
+                            <p class="mb-0">
+                                <span>Адрес:</span>
+                                <span>пр. Будённовский 39, каб. № 10</span>
+                            </p>
                         </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <h4 class="fs-4 fw-bold mb-4">Основные функциональные обязанности</h4>
+                        <ul class="list-unstyled fs-5">
+                            <li class="mb-3 d-flex">
+                                <i class="bi bi-dot text-primary me-3 mt-1"></i>
+                                <span><h6>Оформление социальных стипендий;</h6></span>
+                            </li>
+                            <li class="mb-3 d-flex">
+                                <i class="bi bi-dot text-primary me-3 mt-1"></i>
+                                <span><h6>Оформление документов на выплату материальной поддержки;</h6></span>
+                            </li>
+                            <li class="mb-3 d-flex">
+                                <i class="bi bi-dot text-primary me-3 mt-1"></i>
+                                <span><h6>Оформление стипендий Губернатора Ростовской области, стипендии Президента и Правительства и пр.;</h6></span>
+                            </li>
+                            <li class="mb-3 d-flex">
+                                <i class="bi bi-dot text-primary me-3 mt-1"></i>
+                                <span><h6>Работа с лицами с ограниченными возможностями здоровья и сиротами;</h6></span>
+                            </li>
+                            <li class="mb-3 d-flex">
+                                <i class="bi bi-dot text-primary me-3 mt-1"></i>
+                                <span><h6>Проведение дисциплинарных комиссий;</h6></span>
+                            </li>
+                            <li class="mb-3 d-flex">
+                                <i class="bi bi-dot text-primary me-3 mt-1"></i>
+                                <span><h6>Проведение мероприятий различного уровня, касающихся воспитательной и социальной работы;</h6></span>
+                            </li>
+                            <li class="d-flex">
+                                <i class="bi bi-dot text-primary me-3 mt-1"></i>
+                                <span><h6>Оформление документов по проведению практик для всех направлений ААИ</h6></span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </section>
-
+        </div>
+    </div>
+</section>
+</div>
         <!-- ===== СЕКЦИЯ 8: СОТРУДНИКИ ===== -->
         <section class="staff-section py-5">
             <div class="container">
-                <h2 class="section-title text-center mb-5">Сотрудники</h2>
+                <h2 class="section-title mb-5 offset-1">Сотрудники</h2>
                 
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="staff-card card border-0 bg-light">
                             <div class="card-body p-4">
                                 <div class="row g-4">
-                                    <div class="col-md-4">
-                                        <div class="staff-photo rounded-3" style="background: var(--gradient-primary); height: 200px;">
+                                    <div class="col-md-3">
+                                        <div class="staff-photo rounded-3" style="background: url('imageSoc/Fili.png'); background-size: cover; height: 200px; width: 149px;">
                                             <div class="h-100 d-flex align-items-center justify-content-center text-white">
-                                                <i class="bi bi-person-circle display-4"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -1272,8 +1487,8 @@
     </footer>
 
 
-    <!-- Модальные окна -->
-    <!-- Модальное окно категорий -->
+    <!-- Модальные окна 
+     Модальное окно категорий 
     <div class="modal fade" id="categoriesModal" tabindex="-1">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -1288,7 +1503,7 @@
         </div>
     </div>
     
-    <!-- Модальное окно документов -->
+     Модальное окно документов 
     <div class="modal fade" id="documentsModal" tabindex="-1">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -1303,7 +1518,7 @@
         </div>
     </div>
     
-    <!-- Модальное окно документов поддержки -->
+    Модальное окно документов поддержк
     <div class="modal fade" id="supportDocuments" tabindex="-1">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -1316,7 +1531,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
       <!-- Подключаем Bootstrap JS и Popper.js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>

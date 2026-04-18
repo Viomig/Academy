@@ -198,6 +198,40 @@
         }
 
         /* ===== КНОПКИ И ССЫЛКИ ===== */
+        .btn {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-lg {
+            padding: 15px 30px;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(8, 13, 107, 0.3);
+        }
+
+        .btn-outline-light {
+            border-width: 2px;
+        }
+
+        .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .paid-bakalavr{
+            background: var(--gradient-dark);
+        }
         .guide-link {
             display: flex;
             align-items: center;
@@ -225,11 +259,11 @@
 
         /* ===== НАВИГАЦИЯ ===== */
         .page-nav {
-            width: 649px;
             height: 53px;
         }
 
         .nav-item {
+            justify-content: center;
             display: flex;
             flex-direction: row;
             gap: 10px;
@@ -240,8 +274,11 @@
         }
 
         .nav-item.active {
-            color: var(--primary-blue);
+            color: var(--primary-blue) !important;
             font-weight: 500;
+            text-decoration: underline !important;
+            text-underline-offset: 15px;
+            text-decoration-thickness: 4px;
         }
 
         .nav-item:hover {
@@ -349,7 +386,8 @@
             height: 327px;
             border-radius: 15px;
             box-shadow: inset 0px 0px 100px 2px rgba(0, 0, 0, 0.1);
-            background: var(--gradient-primary);
+            background-image: url('imageMeg/koord.png');
+            background-size: cover;
         }
 
         .contact-info span {
@@ -422,27 +460,29 @@
     <main class="main-content">
         <!-- ===== СЕКЦИЯ 1: ГЕРОЙ ===== -->
         <section class="hero-section">
-            <div class="container">
+            <div class="container offset-1">
                 <div class="row align-items-center">
-                    <div class="col-lg-7 mb-5 mb-lg-0">
+                    <div class="col-8 mb-5 mb-lg-0">
+                        
+                        
+                        <h1 class="hero-title mb-4">студенту</h1>
+
                         <!-- Навигация по странице -->
-                        <div class="page-nav mb-5">
-                            <div class="d-flex position-relative">
-                                <a href="#" class="nav-item me-5">
-                                    <span>Учебный процесс</span>
+                        <div class="page-nav mb-5 row">
+                            <div class="d-flex position-relative col-12">
+                                <a href="YchebnyProcess.html" class="nav-item me-3 col-3">
+                                    <span><h1 style="font-size:16px;">Учебный процесс</h1></span>
                                 </a>
-                                <a href="#" class="nav-item me-5">
-                                    <span>Социальные вопросы</span>
+                                <a href="SocialnyeVoprosy.html" class="nav-item me-2 col-4">
+                                    <span><h1 style="font-size:16px;">Социальные вопросы</h1></span>
                                 </a>
-                                <a href="#" class="nav-item active">
-                                    <span>Международная деятельность</span>
+                                <a href="MegdunarodnayMobilnost.html" class="nav-item active col-5">
+                                    <span><h1 style="font-size:16px;">Международная деятельность</h1></span>
                                 </a>
                             </div>
                             <div class="nav-divider"></div>
-                            <div class="nav-divider active position-absolute top-100 start-0 mt-2" style="width: 256px;"></div>
                         </div>
-                        
-                        <h1 class="hero-title mb-4">студенту</h1>
+
                         <p class="lead fs-5">
                             Южный федеральный университет в рамках договоров сотрудничества с широким кругом зарубежных образовательных и исследовательских учреждений и организаций. Они предусматривают широкий спектр направлений взаимодействия: студенческие и академические обмены, стажировки, совместная научная работа, организация и проведение конференций, семинаров, школ.
                             <br><br>
@@ -451,41 +491,28 @@
                             </a>
                         </p>
                     </div>
-                    <div class="col-lg-5">
+                    <div class="col-lg-4">
                         <!-- Геометрическая графика -->
                         <div class="hero-graphic mx-auto">
-                            <!-- Группа 1 -->
-                            <div class="graphic-group" style="left: 0%; top: 27.41%;">
-                                <div class="graphic-square" style="left: 20.25%; top: 6.88%; opacity: 0.9;"></div>
-                                <div class="graphic-square" style="left: -6.7%; top: 33.95%; opacity: 0.7;"></div>
-                                <div class="graphic-square" style="left: 63.17%; top: 35.05%; opacity: 0.5;"></div>
-                            </div>
-                            
-                            <!-- Группа 2 -->
-                            <div class="graphic-group" style="left: 50.16%; top: 27.31%;">
-                                <div class="graphic-square" style="left: 20.25%; top: 6.88%; opacity: 0.8;"></div>
-                                <div class="graphic-square" style="left: -6.7%; top: 33.95%; opacity: 0.6;"></div>
-                                <div class="graphic-square" style="left: 63.17%; top: 35.05%; opacity: 0.4;"></div>
-                            </div>
-                            
-                            <!-- Группа 3 -->
-                            <div class="graphic-group" style="left: 25.08%; top: 36.42%;">
-                                <div class="graphic-square" style="left: 20.25%; top: 6.88%; opacity: 0.9;"></div>
-                                <div class="graphic-square" style="left: -6.7%; top: 33.95%; opacity: 0.7;"></div>
-                                <div class="graphic-square" style="left: 63.17%; top: 35.05%; opacity: 0.5;"></div>
-                            </div>
+                            <div class="hero-graphic justify-content-center align-content-center d-flex">
+                           <img src="imageSoc/студенту.png" alt=""> 
+                        </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
+        <section>
+        <div>
+            <img src="imageMeg/main.png" alt="" style="height: 304px; width: 100%;">
+        </div>
+        </section>
         <!-- ===== СЕКЦИЯ 2: ПРОГРАММЫ ОБМЕНА ===== -->
         <section class="programs-section">
-            <div class="container">
+            <div class="container offset-1">
                 <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <h2 class="section-title text-center mb-5">Программы обмена</h2>
+                    <div class="col-lg-12">
+                        <h2 class="section-title mb-5">Программы обмена</h2>
                         
                         <div class="row align-items-start">
                             <div class="col-lg-7 mb-5 mb-lg-0">
@@ -497,13 +524,9 @@
                             <div class="col-lg-5">
                                 <a href="#" class="guide-link">
                                     <div class="d-flex align-items-center justify-content-center" style="width: 32px; height: 38px;">
-                                        <!-- Иконка гида -->
-                                        <svg width="32" height="38" viewBox="0 0 32 38" fill="none">
-                                            <path d="M31.5 38H0.5V0.5H31.5V38Z" fill="black"/>
-                                            <path d="M7 15H25V17H7V15Z" fill="white"/>
-                                        </svg>
+                                        <img src="imageMeg/ПДФ.png" alt="">
                                     </div>
-                                    <span class="fs-5 fw-medium text-uppercase">
+                                    <span class="text-uppercase">
                                         ГАЙД. КАК ПОЕХАТЬ ПО ОБМЕНУ<br>В 2025 ГОДУ?
                                     </span>
                                 </a>
@@ -514,19 +537,19 @@
             </div>
         </section>
 
-        <!-- ===== СЕКЦИЯ 3: ВУЗЫ-ПАРТНЕРЫ ===== -->
-        <section class="universities-section">
-            <div class="container">
+        <div class="universities-section"><!-- ===== СЕКЦИЯ 3: ВУЗЫ-ПАРТНЕРЫ ===== -->
+        <section >
+            <div class="container offset-1">
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
-                        <h2 class="section-title text-center mb-5">ВУЗЫ-ПАРТНЕРЫ АКАДЕМИИ</h2>
+                        <h2 class="section-title mb-5">ВУЗЫ-ПАРТНЕРЫ АКАДЕМИИ</h2>
                         
                         <div class="row justify-content-center g-4">
                             <!-- Университет 1 -->
                             <div class="col-lg-6">
                                 <div class="university-card p-5 text-center h-100">
                                     <div class="mb-4">
-                                        <img src="https://via.placeholder.com/171x44" alt="Национальный университет архитектуры и строительства Армении" class="img-fluid">
+                                        <img src="imageMeg/part1.png" alt="Национальный университет архитектуры и строительства Армении" class="img-fluid">
                                     </div>
                                     <h3 class="fs-4 fw-medium text-dark mb-0">
                                         Национальный университет архитектуры и строительства Армении
@@ -538,7 +561,7 @@
                             <div class="col-lg-6">
                                 <div class="university-card p-5 text-center h-100">
                                     <div class="mb-4">
-                                        <img src="https://via.placeholder.com/240x29" alt="Ближневосточный технический университет" class="img-fluid">
+                                        <img src="imageMeg/part2.png" alt="Ближневосточный технический университет" class="img-fluid">
                                     </div>
                                     <h3 class="fs-4 fw-medium text-dark mb-0">
                                         Ближневосточный технический университет (Турция)
@@ -550,13 +573,14 @@
                 </div>
             </div>
         </section>
+        </div>
 
-        <!-- ===== СЕКЦИЯ 4: ОТЗЫВЫ СТУДЕНТОВ ===== -->
-        <section class="reviews-section">
-            <div class="container">
+        <div class="reviews-section"><!-- ===== СЕКЦИЯ 4: ОТЗЫВЫ СТУДЕНТОВ ===== -->
+        <section >
+            <div class="container offset-1">
                 <div class="row justify-content-center">
-                    <div class="col-lg-10">
-                        <h2 class="section-title text-center text-white mb-5">ОТЗЫВЫ СТУДЕНТОВ<br>ОБ ОБУЧЕНИИ ЗАРУБЕЖОМ</h2>
+                    <div class="col-lg-12">
+                        <h2 class="section-title text-white mb-5">ОТЗЫВЫ СТУДЕНТОВ<br>ОБ ОБУЧЕНИИ ЗАРУБЕЖОМ</h2>
                         
                         <!-- Owl Carousel -->
                         <div class="reviews-carousel owl-carousel owl-theme">
@@ -566,17 +590,17 @@
                                     <div class="row g-4">
                                         <div class="col-md-5">
                                             <div class="mb-3">
-                                                <img src="https://via.placeholder.com/275x270" alt="Агаджанян Сюзи" class="img-fluid rounded">
+                                                <img src="imageMeg/1pers.png" alt="Агаджанян Сюзи" class="img-fluid rounded">
                                             </div>
                                             <div class="text-center">
-                                                <h4 class="fs-5 fw-bold text-uppercase mb-2">Агаджанян Сюзи</h4>
+                                                <h4 class="fs-5 fw-bold text-uppercase mb-2 text-black">Агаджанян Сюзи</h4>
                                                 <p class="text-black small mb-0">3 курс, Архитектура<br>Весна 2025</p>
                                             </div>
                                         </div>
                                         <div class="col-md-7">
                                             <div class="mb-3">
-                                                <p class="mb-1"><strong>НУАСА, Армения</strong></p>
-                                                <p class="mb-3">
+                                                <p class="mb-1 text-black"><strong>НУАСА, Армения</strong></p>
+                                                <p class="mb-3 text-black">
                                                     «Весной 2023 года по программе обмена я проходила обучение в Анкаре, в Ближневосточном Техническом Университете. И несмотря на то, что культура карачаевского народа достаточно близка с турецкой я открыла для себя много нового и необычного в этой поездке.
                                                     <br><br>
                                                     Меня очень впечатлил кампус, на территории которого расположены здания всех факультетов, общежития, столовая, магазины, кафе и огромный лес с озером, куда мы ходили, если хотелось провести время на природе. Кампус очень большой, но для удобства студентов и преподавателей по территории каждые полчаса ходят бесплатные автобусы, что очень выручает...»
@@ -594,17 +618,17 @@
                                     <div class="row g-4">
                                         <div class="col-md-5">
                                             <div class="mb-3">
-                                                <img src="https://via.placeholder.com/275x270" alt="Попова Агата" class="img-fluid rounded">
+                                                <img src="imageMeg/2pers.png" alt="Попова Агата" class="img-fluid rounded">
                                             </div>
                                             <div class="text-center">
-                                                <h4 class="fs-5 fw-bold text-uppercase mb-2">Попова Агата</h4>
+                                                <h4 class="fs-5 fw-bold text-uppercase mb-2 text-black">Попова Агата</h4>
                                                 <p class="text-black small mb-0">3 курс, Архитектура<br>Весна 2025</p>
                                             </div>
                                         </div>
                                         <div class="col-md-7">
                                             <div class="mb-3">
-                                                <p class="mb-1"><strong>METU, Турция</strong></p>
-                                                <p class="mb-3">
+                                                <p class="mb-1 text-black"><strong>METU, Турция</strong></p>
+                                                <p class="mb-3 text-black">
                                                     «Весной 2023 года по программе обмена я проходила обучение в Анкаре, в Ближневосточном Техническом Университете. И несмотря на то, что культура карачаевского народа достаточно близка с турецкой я открыла для себя много нового и необычного в этой поездке.
                                                     <br><br>
                                                     Меня очень впечатлил кампус, на территории которого расположены здания всех факультетов, общежития, столовая, магазины, кафе и огромный лес с озером, куда мы ходили, если хотелось провести время на природе. Кампус очень большой, но для удобства студентов и преподавателей по территории каждые полчаса ходят бесплатные автобусы, что очень выручает...»
@@ -622,17 +646,17 @@
                                     <div class="row g-4">
                                         <div class="col-md-5">
                                             <div class="mb-3">
-                                                <img src="https://via.placeholder.com/275x270" alt="Травин Кирилл" class="img-fluid rounded">
+                                                <img src="imageMeg/pers3.png" alt="Травин Кирилл" class="img-fluid rounded">
                                             </div>
                                             <div class="text-center">
-                                                <h4 class="fs-5 fw-bold text-uppercase mb-2">Травин Кирилл</h4>
-                                                <p class="text-black small mb-0">4 курс, Архитектура<br>Осень 2024</p>
+                                                <h4 class="fs-5 fw-bold text-uppercase mb-2 text-black">Травин Кирилл</h4>
+                                                <p class="text-black small mb-0 text-black">4 курс, Архитектура<br>Осень 2024</p>
                                             </div>
                                         </div>
                                         <div class="col-md-7">
                                             <div class="mb-3">
-                                                <p class="mb-1"><strong>METU, Турция</strong></p>
-                                                <p class="mb-3">
+                                                <p class="mb-1 text-black"><strong>METU, Турция</strong></p>
+                                                <p class="mb-3 text-black">
                                                     «Весной 2023 года по программе обмена я проходила обучение в Анкаре, в Ближневосточном Техническом Университете. И несмотря на то, что культура карачаевского народа достаточно близка с турецкой я открыла для себя много нового и необычного в этой поездке.
                                                     <br><br>
                                                     Меня очень впечатлил кампус, на территории которого расположены здания всех факультетов, общежития, столовая, магазины, кафе и огромный лес с озером, куда мы ходили, если хотелось провести время на природе. Кампус очень большой, но для удобства студентов и преподавателей по территории каждые полчаса ходят бесплатные автобусы, что очень выручает...»
@@ -650,17 +674,17 @@
                                     <div class="row g-4">
                                         <div class="col-md-5">
                                             <div class="mb-3">
-                                                <img src="https://via.placeholder.com/275x270" alt="Головашова Дарья" class="img-fluid rounded">
+                                                <img src="imageMeg/pers4.png" alt="Головашова Дарья" class="img-fluid rounded">
                                             </div>
                                             <div class="text-center">
-                                                <h4 class="fs-5 fw-bold text-uppercase mb-2">Головашова Дарья</h4>
-                                                <p class="text-black small mb-0">4 курс, Архитектура<br>Осень 2023</p>
+                                                <h4 class="fs-5 fw-bold text-uppercase mb-2 text-black">Головашова Дарья</h4>
+                                                <p class="text-black small mb-0 text-black">4 курс, Архитектура<br>Осень 2023</p>
                                             </div>
                                         </div>
                                         <div class="col-md-7">
                                             <div class="mb-3">
-                                                <p class="mb-1"><strong>METU, Турция</strong></p>
-                                                <p class="mb-3">
+                                                <p class="mb-1 text-black"><strong>METU, Турция</strong></p>
+                                                <p class="mb-3 text-black">
                                                     «Весной 2023 года по программе обмена я проходила обучение в Анкаре, в Ближневосточном Техническом Университете. И несмотря на то, что культура карачаевского народа достаточно близка с турецкой я открыла для себя много нового и необычного в этой поездке.
                                                     <br><br>
                                                     Меня очень впечатлил кампус, на территории которого расположены здания всех факультетов, общежития, столовая, магазины, кафе и огромный лес с озером, куда мы ходили, если хотелось провести время на природе. Кампус очень большой, но для удобства студентов и преподавателей по территории каждые полчаса ходят бесплатные автобусы, что очень выручает...»
@@ -678,17 +702,17 @@
                                     <div class="row g-4">
                                         <div class="col-md-5">
                                             <div class="mb-3">
-                                                <img src="https://via.placeholder.com/275x270" alt="Хасанова Танзиля" class="img-fluid rounded">
+                                                <img src="imageMeg/pers5.png" alt="Хасанова Танзиля" class="img-fluid rounded">
                                             </div>
                                             <div class="text-center">
-                                                <h4 class="fs-5 fw-bold text-uppercase mb-2">Хасанова Танзиля</h4>
+                                                <h4 class="fs-5 fw-bold text-uppercase mb-2 text-black">Хасанова Танзиля</h4>
                                                 <p class="text-black small mb-0">3 курс, Архитектура<br>Весна 2023</p>
                                             </div>
                                         </div>
                                         <div class="col-md-7">
                                             <div class="mb-3">
-                                                <p class="mb-1"><strong>METU, Турция</strong></p>
-                                                <p class="mb-3">
+                                                <p class="mb-1 text-black"><strong>METU, Турция</strong></p>
+                                                <p class="mb-3 text-black">
                                                     «Весной 2023 года по программе обмена я проходила обучение в Анкаре, в Ближневосточном Техническом Университете. И несмотря на то, что культура карачаевского народа достаточно близка с турецкой я открыла для себя много нового и необычного в этой поездке.
                                                     <br><br>
                                                     Меня очень впечатлил кампус, на территории которого расположены здания всех факультетов, общежития, столовая, магазины, кафе и огромный лес с озером, куда мы ходили, если хотелось провести время на природе. Кампус очень большой, но для удобства студентов и преподавателей по территории каждые полчаса ходят бесплатные автобусы, что очень выручает...»
@@ -704,6 +728,7 @@
                 </div>
             </div>
         </section>
+        </div>
 
         <!-- ===== СЕКЦИЯ 5: КООРДИНАТОР ===== -->
         <section class="coordinator-section">
@@ -715,7 +740,6 @@
                         <div class="row g-5">
                             <div class="col-lg-5">
                                 <div class="coordinator-photo mb-4">
-                                    <!-- Фото будет как фон -->
                                 </div>
                                 <div class="contact-info">
                                     <p class="fs-5 fw-medium mb-2">
@@ -750,14 +774,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Плавающая кнопка -->
-        <div class="floating-button">
-            <div class="floating-circle"></div>
-            <div class="floating-circle"></div>
-            <div class="floating-arrow"></div>
-            <div class="floating-arrow"></div>
-        </div>
     </main>
 
     <footer id="end">
@@ -792,7 +808,7 @@
                 loop: true,
                 margin: 20,
                 nav: true,
-                dots: true,
+                dots: false,
                 responsive: {
                     0: {
                         items: 1
@@ -807,22 +823,6 @@
                 navText: ['<i class="bi bi-chevron-left"></i>', '<i class="bi bi-chevron-right"></i>']
             });
             
-            // Плавная прокрутка для плавающей кнопки
-            $('.floating-button').on('click', function(e) {
-                e.preventDefault();
-                $('html, body').animate({
-                    scrollTop: 0
-                }, 800);
-            });
-            
-            // Показ/скрытие плавающей кнопки
-            $(window).scroll(function() {
-                if ($(this).scrollTop() > 300) {
-                    $('.floating-button').fadeIn();
-                } else {
-                    $('.floating-button').fadeOut();
-                }
-            });
         });
     </script>
 </body>

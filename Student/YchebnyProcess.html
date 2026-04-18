@@ -24,9 +24,7 @@
     <!-- Owl Carousel CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    
-    <!-- Custom CSS -->
-    <style>
+<style>
         /* ===== БАЗОВЫЕ СТИЛИ И ПЕРЕМЕННЫЕ ===== */
         :root {
             --primary-blue: #080D6B;
@@ -90,6 +88,11 @@
             padding: 80px 0;
         }
 
+        .hero-section {
+            padding-top: 40px;
+            padding-bottom: 80px;
+        }
+
         /* ===== КАРТОЧКИ ===== */
         .card-custom {
             background: var(--white);
@@ -100,6 +103,24 @@
 
         .card-custom:hover {
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- ДОБАВЛЕНО: Универсальные стили карточек из первого файла --- */
+        .info-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .programs-blok {
+            border-radius: 15px;
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
 
         .scholarship-card {
@@ -134,6 +155,11 @@
             transition: all 0.3s ease;
         }
 
+        .btn-lg {
+            padding: 15px 30px;
+            font-size: 16px;
+        }
+
         .btn-primary-custom {
             background-color: var(--grey-dark);
             color: var(--white);
@@ -154,6 +180,26 @@
         .btn-outline-custom:hover {
             background-color: var(--grey-1132);
             color: var(--white);
+        }
+
+        /* --- ДОБАВЛЕНО: Стили кнопок из первого файла --- */
+        .btn-primary {
+            background: var(--gradient-primary);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(8, 13, 107, 0.3);
+        }
+
+        .btn-outline-light {
+            border-width: 2px;
+        }
+
+        .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
         }
 
         /* ===== НАВИГАЦИОННЫЕ ВКЛАДКИ ===== */
@@ -186,6 +232,46 @@
             width: 100%;
             height: 1px;
             background-color: var(--primary-blue);
+        }
+
+        /* ===== НАВИГАЦИЯ (page-nav) ===== */
+        .page-nav {
+            height: 53px;
+        }
+
+        .nav-item {
+            justify-content: center;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            align-items: center;
+            text-decoration: none;
+            color: var(--medium-grey);
+            transition: all 0.3s ease;
+        }
+
+        .nav-item.active {
+            color: var(--primary-blue) !important;
+            font-weight: 500;
+            text-decoration: underline !important;
+            text-underline-offset: 15px;
+            text-decoration-thickness: 4px;
+        }
+
+        .nav-item:hover {
+            color: var(--primary-blue);
+        }
+
+        .nav-divider {
+            width: 100%;
+            height: 1px;
+            background: #e0e0e0;
+            margin-top: 14px;
+        }
+
+        .nav-divider.active {
+            width: 256px;
+            background: var(--primary-blue);
         }
 
         /* ===== АККОРДЕОН ===== */
@@ -261,7 +347,6 @@
         /* ===== СЕКЦИЯ СОТРУДНИКОВ ===== */
         .staff-section {
             padding: 90px 0;
-            background-color: var(--light-grey);
         }
 
         .staff-card {
@@ -280,6 +365,86 @@
             justify-content: center;
             color: var(--white);
             font-size: 48px;
+        }
+
+        /* ---Контактная карточка и фото координатора --- */
+        .contact-card {
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .contact-photo {
+            background-size: cover;
+            background-position: center;
+        }
+
+        .coordinator-photo {
+            width: 290px;
+            height: 327px;
+            border-radius: 15px;
+            box-shadow: inset 0px 0px 100px 2px rgba(0, 0, 0, 0.1);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .contact-info span {
+            font-size: 18px;
+        }
+
+        .contact-info a {
+            color: var(--primary-blue);
+            text-decoration: underline;
+        }
+
+        .contact-info a:hover {
+            color: var(--secondary-pink);
+        }
+
+        .responsibilities .bi-check-square-fill {
+            color: var(--primary-blue);
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        /* ===== ГРАФИЧЕСКИЕ ЭЛЕМЕНТЫ ===== */
+        .hero-graphic {
+            position: relative;
+            height: 456px;
+        }
+
+        .graphic-container {
+            height: 100%;
+        }
+
+        .support-graphic {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .document-icon {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .graphic-element {
+            width: 83px;
+            height: 83px;
+            background: var(--gradient-primary);
+            border-radius: 10px;
+            transform: rotate(30deg);
+        }
+
+        .geometric-shape {
+            width: 83px;
+            height: 83px;
+            background: var(--gradient-primary);
+            border-radius: 10px;
+            transform: rotate(30deg);
+            position: absolute;
         }
 
         /* ===== КНОПКА НАВЕРХ ===== */
@@ -312,16 +477,204 @@
             box-shadow: 0 10px 20px rgba(8, 13, 107, 0.3);
         }
 
-        /* ===== ГРАФИЧЕСКИЕ ЭЛЕМЕНТЫ ===== */
-        .graphic-element {
-            width: 83px;
-            height: 83px;
+        /* Совместимость со старым классом .scroll-top */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
             background: var(--gradient-primary);
-            border-radius: 10px;
-            transform: rotate(30deg);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(8, 13, 107, 0.3);
+        }
+
+        /* ===== OWL CAROUSEL ===== */
+        .owl-carousel .owl-stage {
+            display: flex;
+        }
+        
+        .owl-carousel .owl-item {
+            display: flex;
+            flex: 1 0 auto;
+        }
+        
+        .owl-carousel .card {
+            height: 100%;
+        }
+        
+        .owl-carousel .owl-nav button.owl-prev,
+        .owl-carousel .owl-nav button.owl-next {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-blue) !important;
+            color: white !important;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .owl-carousel .owl-nav button.owl-prev {
+            left: -50px;
+        }
+
+        .owl-carousel .owl-nav button.owl-next {
+            right: -50px;
+        }
+        
+        .owl-carousel .owl-nav button:hover {
+            background: var(--secondary-pink) !important;
+        }
+        
+        .owl-carousel .owl-dots {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .owl-carousel .owl-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--grey-1132) !important;
+            border-radius: 50%;
+            margin: 0 5px;
+        }
+        
+        .owl-carousel .owl-dot.active {
+            width: 40px;
+            background: var(--grey-dark) !important;
+            border-radius: 20px;
+        }
+
+        /* ===== МОДАЛЬНЫЕ ОКНА ===== */
+        .modal-content {
+            border-radius: 15px;
+            border: none;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-header {
+            border-radius: 15px 15px 0 0;
+            padding: 20px 30px;
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
+        /* ===== УТИЛИТЫ И ПРОЧЕЕ ===== */
+        .text-primary-blue {
+            color: var(--primary-blue) !important;
+        }
+
+        .text-pink {
+            color: var(--secondary-pink) !important;
+        }
+
+        .bg-light-custom {
+            background-color: var(--light-grey) !important;
+        }
+
+        .bg-light-grey {
+            background: var(--light-grey) !important;
+        }
+
+        .bg-blue-custom {
+            background-color: var(--primary-blue) !important;
+        }
+
+        .bg-primary {
+            background: var(--primary-blue) !important;
+        }
+
+        .bg-light-info {
+            background-color: rgba(8, 13, 107, 0.05) !important;
+        }
+
+        .border-grey {
+            border-color: var(--grey-1132) !important;
+        }
+
+        .paid-bakalavr {
+            background: var(--gradient-dark);
+        }
+
+        .hover-lift {
+            transition: transform 0.2s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-4px);
+        }
+
+        .icon {
+            font-size: 48px;
+            line-height: 1;
+        }
+
+        .bi-check-circle-fill,
+        .bi-check-square-fill {
+            color: var(--primary-blue);
+            font-size: 20px;
+        }
+
+        /* ===== АНИМАЦИИ ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease forwards;
         }
 
         /* ===== АДАПТИВНОСТЬ ===== */
+        @media (max-width: 1400px) {
+            .hero-title {
+                font-size: 70px;
+            }
+            
+            .section-title {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 60px;
+            }
+            
+            .hero-graphic {
+                height: 400px;
+                width: 250px;
+            }
+        }
+
         @media (max-width: 992px) {
             .hero-title {
                 font-size: 60px;
@@ -333,6 +686,28 @@
             
             .department-list {
                 grid-template-columns: 1fr;
+            }
+            
+            .hero-graphic {
+                margin: 0 auto;
+            }
+            
+            .page-nav {
+                width: 100%;
+            }
+
+            .scholarship-amount .amount,
+            .benefit-amount .amount {
+                font-size: 36px;
+            }
+            
+            .scholarship-amount .period,
+            .benefit-amount .period {
+                font-size: 20px;
+            }
+            
+            section {
+                padding: 60px 0;
             }
         }
 
@@ -354,6 +729,33 @@
             .nav-tabs-custom {
                 justify-content: center;
             }
+
+            .scholarship-amount .amount,
+            .benefit-amount .amount {
+                font-size: 32px;
+            }
+            
+            .scholarship-amount .period,
+            .benefit-amount .period {
+                font-size: 18px;
+            }
+            
+            .btn-lg {
+                padding: 12px 24px;
+                font-size: 15px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .reviews-carousel .owl-prev {
+                left: -15px;
+            }
+            
+            .reviews-carousel .owl-next {
+                right: -15px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -361,8 +763,16 @@
                 font-size: 36px;
             }
             
+            .hero-subtitle {
+                font-size: 14px;
+            }
+            
             .section-title {
                 font-size: 28px;
+            }
+            
+            .section-subtitle {
+                font-size: 18px;
             }
             
             .accordion-custom .accordion-button {
@@ -370,71 +780,191 @@
                 padding: 20px;
             }
             
+            .scholarship-amount .amount,
+            .benefit-amount .amount {
+                font-size: 28px;
+            }
+            
+            .scholarship-amount .period,
+            .benefit-amount .period {
+                font-size: 16px;
+            }
+            
             section {
-                padding: 60px 0;
+                padding: 40px 0;
+            }
+            
+            .card-body {
+                padding: 20px !important;
+            }
+            
+            .hero-graphic {
+                height: 300px;
+                width: 200px;
             }
         }
 
-        /* Утилиты */
-        .text-primary-blue {
-            color: var(--primary-blue) !important;
+        /* Очень маленькие мобильные (≤375px) */
+        @media (max-width: 375px) {
+            .hero-title {
+                font-size: 32px;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+            
+            .btn-lg {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
         }
 
-        .text-pink {
-            color: var(--secondary-pink) !important;
-        }
+        /* ========================================
+   ACCORDION STYLES
+   Скопируйте этот блок на целевую страницу
+   ======================================== */
 
-        .bg-light-custom {
-            background-color: var(--light-grey) !important;
-        }
+/* Общие стили карточки аккордеона */
+.accordion-card {
+    border: 1px solid var(--color-grey);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background-color: var(--color-white);
+}
 
-        .bg-blue-custom {
-            background-color: var(--primary-blue) !important;
-        }
+.accordion-card:hover {
+    border-color: var(--color-blue);
+}
 
-        .border-grey {
-            border-color: var(--grey-1132) !important;
-        }
+/* Заголовок аккордеона (кликабельная область) */
+.accordion-header {
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+}
 
-        /* Owl Carousel кастомизация */
-        .owl-carousel .owl-nav button.owl-prev,
-        .owl-carousel .owl-nav button.owl-next {
-            width: 40px;
-            height: 40px;
-            background: var(--primary-blue) !important;
-            color: white !important;
-            border-radius: 50%;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-        }
+/* Левая часть заголовка (иконка/номер + текст) */
+.accordion-header-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
 
-        .owl-carousel .owl-nav button.owl-prev {
-            left: -50px;
-        }
+.accordion-number {
+    color: var(--color-blue);
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
 
-        .owl-carousel .owl-nav button.owl-next {
-            right: -50px;
-        }
+.accordion-title {
+    font-weight: 600;
+    color: var(--color-black);
+    margin: 0;
+    font-size: 1rem;
+}
 
-        .owl-carousel .owl-dots {
-            text-align: center;
-            margin-top: 20px;
-        }
+/* Иконка стрелки (чистый CSS, без Font Awesome) */
+.accordion-icon {
+    color: var(--color-blue);
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
 
-        .owl-carousel .owl-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--grey-1132) !important;
-            border-radius: 50%;
-            margin: 0 5px;
-        }
+/* Стрелка вниз (состояние "свернуто") */
+.accordion-icon::before {
+    content: "▼";
+    font-size: 14px;
+    line-height: 1;
+}
 
-        .owl-carousel .owl-dot.active {
-            width: 40px;
-            background: var(--grey-dark) !important;
-            border-radius: 20px;
-        }
+/* Состояние "развернуто" */
+.accordion-header.active .accordion-icon {
+    transform: rotate(180deg);
+}
+
+/* Контентная область аккордеона */
+.accordion-content {
+    display: none;
+    padding: 0 20px 20px 20px;
+}
+
+.accordion-content.show {
+    display: block;
+}
+
+/* Внутренний блок с фоном */
+.accordion-content-inner {
+    background-color: var(--color-grey-light);
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 8px;
+    color: var(--color-black);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Стили для текста внутри контента */
+.accordion-content-inner p {
+    margin-bottom: 12px;
+}
+
+.accordion-content-inner p:last-child {
+    margin-bottom: 0;
+}
+
+.accordion-content-inner ul,
+.accordion-content-inner ol {
+    margin-bottom: 12px;
+    padding-left: 20px;
+}
+
+.accordion-content-inner li {
+    margin-bottom: 4px;
+}
+
+/* Кнопка внутри аккордеона (например "Зарегистрироваться") */
+.accordion-content-inner .btn {
+    display: inline-block;
+    margin-top: 8px;
+}
+
+.accordion-content-inner .btn a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Вариант с иконкой без стрелки (для стилизации как в оригинале) */
+.accordion-header.with-fa-icon .accordion-icon::before {
+    display: none;
+}
+
+/* Адаптивность */
+@media (max-width: 767.98px) {
+    .accordion-header {
+        padding: 16px;
+    }
+    
+    .accordion-content {
+        padding: 0 16px 16px 16px;
+    }
+    
+    .accordion-number {
+        font-size: 1.3rem;
+    }
+}
     </style>
 </head>
 <body>
@@ -445,154 +975,528 @@
 
     <main class="main-content">
         <!-- ===== СЕКЦИЯ 1: ГЕРОЙ ===== -->
-        <section class="hero-section py-5">
-            <div class="container">
+       <section class="hero-section">
+            <div class="container offset-1">
                 <div class="row align-items-center">
-                    <div class="col-lg-7 mb-5 mb-lg-0">
-                        <h1 class="hero-title mb-4">студенту</h1>
-                        <p class="hero-subtitle">
-                            В данном разделе представлена актуальная информация <br>
-                            для студентов Академии: расписание занятий, сессии и пересдач. <br>
-                            Программы государственной итоговой аттестации, темы выпускных <br>
-                            квалификационных работ и информация о государственных стипендиях. <br>
-                            А также образцы заявлений.
-                        </p>
-                    </div>
-                    <div class="col-lg-5">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== СЕКЦИЯ 2: РАСПИСАНИЕ ===== -->
-        <section class="schedule-section py-5" id="Grafik">
-            <div class="container">
-                <!-- Верхняя навигация -->
-                <div class="row mb-5">
-                    <div class="col-12">
-                        <ul class="nav nav-tabs-custom mb-4">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#">
-                                    <span class="text-primary-blue fw-medium">Учебный процесс</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <span class="text-black">Социальные вопросы</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <span class="text-black">Международная деятельность</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Заголовок и семестр -->
-                <div class="row mb-5">
-                    <div class="col-lg-6">
-                        <h2 class="section-title">расписание</h2>
+                    <div class="col-8 mb-5 mb-lg-0">
                         
-                        <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center gap-3 mb-4">
-                            <div class="d-flex align-items-center">
-                                <span class="text-primary-blue fw-medium me-3">Весенний семестр 2024-2025</span>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <span class="text-black">Осенний семестр 2024-2025</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                        
+                        <h1 class="hero-title mb-4">студенту</h1>
 
-                <!-- Кнопки расписания -->
-                <div class="row mb-5">
-                    <div class="col-12">
-                        <div class="d-flex flex-wrap gap-3">
-                            <button class="btn btn-primary-custom px-4 py-3">
-                                расписание занятий
-                            </button>
-                            <button class="btn btn-outline-custom px-4 py-3">
-                                расписание сессии
-                            </button>
-                            <button class="btn btn-outline-custom px-4 py-3">
-                                расписание пересдач
-                            </button>
+                        <!-- Навигация по странице -->
+                        <div class="page-nav mb-5 row">
+                            <div class="d-flex position-relative col-12">
+                                <a href="YchebnyProcess.html" class="nav-item active me-3 col-3">
+                                    <span><h1 style="font-size:16px;">Учебный процесс</h1></span>
+                                </a>
+                                <a href="SocialnyeVoprosy.html" class="nav-item col-4">
+                                    <span><h1 style="font-size:16px;">Социальные вопросы</h1></span>
+                                </a>
+                                <a href="MegdunarodnayMobilnost.html" class="nav-item col-5">
+                                    <span><h1 style="font-size:16px;">Международная деятельность</h1></span>
+                                </a>
+                            </div>
+                            <div class="nav-divider"></div>
                         </div>
-                    </div>
-                </div>
 
-                <!-- Аккордеон уровней образования -->
-                <div class="row">
-                    <div class="col-12">
-                        <div class="accordion accordion-custom" id="educationLevelsAccordion">
-                            <!-- Бакалавриат / специалитет -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                                        Бакалавриат / специалитет
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#educationLevelsAccordion">
-                                    <div class="accordion-body">
-                                        <!-- Контент для бакалавриата/специалитета -->
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Магистратура -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                                        магистратура
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#educationLevelsAccordion">
-                                    <div class="accordion-body">
-                                        <!-- Контент для магистратуры -->
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Аспирантура -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-                                        аспирантура
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#educationLevelsAccordion">
-                                    <div class="accordion-body">
-                                        <!-- Контент для аспирантуры -->
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Ассистентура-стажировка -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
-                                        ассистентура-стажировка
-                                    </button>
-                                </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#educationLevelsAccordion">
-                                    <div class="accordion-body">
-                                        <!-- Контент для ассистентуры-стажировки -->
-                                    </div>
-                                </div>
-                            </div>
+                        <p class="lead fs-5">
+                            В данном разделе представлена актуальная информация для студентов Академии: расписание занятий, сессии и пересдач. Программы государственной итоговой аттестации, темы выпускных квалификационных работ и информация о государственных стипендиях. А также образцы заявляений.
+                        </p>
+                        <div class="row col-12">
+                            <button class="text-center text-lg-start mb-4 mb-lg-0 col-6"><a href="/About/history.html" class="btn btn-primary btn-lg text-white align-items-center justify-content-center">Заказ справок об обучении</a></button>
+                            <div class="col-5 offset-1"><button class="btngprsl"><a href="/404.html">См. состояние готовности справок</a><span class="arrow">→</span></button></div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-lg-4">
+                        <!-- Геометрическая графика -->
+                        <div class="hero-graphic justify-content-center align-content-center d-flex">
+                           <img src="imageSoc/студенту.png" alt=""> 
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+<section>
+        <div>
+            <img src="imageUchPro/main.png" alt="" style="height: 304px; width: 100%; object-fit: cover; filter: grayscale(100%);">
+        </div>
+</section>
+
+
+    <section class="py-5 bg-white" id="Schedule">
+    <div class="container">
+        <h2 class="section-title text-black mb-4 offset-1">расписание</h2>
+        
+        <!-- ===== ФИЛЬТР ПЕРВОГО УРОВНЯ: СЕМЕСТРЫ ===== -->
+        <div class="mb-5 offset-1">
+            <div class="d-flex flex-wrap gap-3 mb-3 position-relative" id="semesterTabWrapper">
+                <button class="tab-item active" data-semester="spring">Весенний семестр 2025-2026</button>
+                <button class="tab-item inactive" data-semester="autumn">Осенний семестр 2025-2026</button>
+            </div>
+            <div class="border-bottom position-relative">
+                <div class="tab-indicator bg-blue" id="semesterIndicator"></div>
+            </div>
+        </div>
+
+        <!-- ===== ФИЛЬТР ВТОРОГО УРОВНЯ: ТИП РАСПИСАНИЯ ===== -->
+        <div class="mb-5 offset-1">
+            <div class="d-flex flex-wrap gap-3 mb-3 position-relative" id="typeTabWrapper">
+                <button class="tab-item active" data-type="classes">расписание занятий</button>
+                <button class="tab-item inactive" data-type="session">расписание сессии</button>
+                <button class="tab-item inactive" data-type="retakes">расписание пересдач</button>
+            </div>
+            <div class="border-bottom position-relative">
+                <div class="tab-indicator bg-blue" id="typeIndicator"></div>
+            </div>
+        </div>
+
+        <!-- ===== КОНТЕЙНЕР ДЛЯ ДИНАМИЧЕСКОГО КОНТЕНТА ===== -->
+        <div class="offset-1" id="scheduleContentContainer"></div>
+    </div>
+</section>
+
+<script>
+    // Функция для инициализации аккордеонов (выпадающих списков)
+    function initScheduleAccordions() {
+        document.querySelectorAll('.accordion-schedule-card').forEach(card => {
+            const header = card.querySelector('.accordion-schedule-header');
+            const content = card.querySelector('.accordion-schedule-content');
+            const chevron = header.querySelector('.fa-chevron-down, .fa-chevron-up');
+            
+            if (!content) return;
+
+            // Убираем старые обработчики, клонируя элемент
+            const newHeader = header.cloneNode(true);
+            header.parentNode.replaceChild(newHeader, header);
+            
+            newHeader.addEventListener('click', function(e) {
+                e.preventDefault();
+                const currentContent = card.querySelector('.accordion-schedule-content');
+                const currentChevron = this.querySelector('.fa-chevron-down, .fa-chevron-up');
+                
+                if (currentContent.style.display === 'none') {
+                    currentContent.style.display = 'block';
+                    if (currentChevron) {
+                        currentChevron.classList.remove('fa-chevron-down');
+                        currentChevron.classList.add('fa-chevron-up');
+                    }
+                } else {
+                    currentContent.style.display = 'none';
+                    if (currentChevron) {
+                        currentChevron.classList.remove('fa-chevron-up');
+                        currentChevron.classList.add('fa-chevron-down');
+                    }
+                }
+            });
+            
+            newHeader.style.cursor = 'pointer';
+        });
+    }
+
+    // Функция для создания элемента списка с иконкой (col-10)
+    function createLinkItem(iconPath, text, href = '#') {
+        return `
+            <div class="col-10 offset-1 mb-3">
+                <a href="${href}" class="d-flex align-items-center text-decoration-none">
+                    <img src="${iconPath}" alt="icon" style="width: 24px; height: 24px; margin-right: 12px;">
+                    <span class="text-black">${text}</span>
+                </a>
+            </div>
+        `;
+    }
+
+    // Генерация контента для расписания занятий
+    function generateClassesContent() {
+        return `
+            <!-- Бакалавриат / специалитет -->
+            <div class="accordion-schedule-card mb-3">
+                <div class="accordion-schedule-header d-flex justify-content-between align-items-center p-3 bg-white border rounded-3">
+                    <h5 class="text-blue font-weight-600 mb-0">Бакалавриат / специалитет</h5>
+                    <i class="fas fa-chevron-down text-blue"></i>
+                </div>
+                <div class="accordion-schedule-content" style="display: none;">
+                    <div class="p-3 bg-light mt-2 rounded">
+                        <div class="row">
+                            ${createLinkItem('imageUchPro/ПДФ.png', '1 курс АРХИТЕКТУРА', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', '2 курс АРХИТЕКТУРА', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', '3 курс АРХИТЕКТУРА', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', '4 курс АРХИТЕКТУРА', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', '5 курс АРХИТЕКТУРА', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', '1 курс ИСКУССТВО', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', '2 курс ИСКУССТВО', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', '3 курс ИСКУССТВО', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', '4 курс ИСКУССТВО', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', '5 курс ИСКУССТВО', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', '6 курс ИСКУССТВО', '#')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Магистратура -->
+            <div class="accordion-schedule-card mb-3">
+                <div class="accordion-schedule-header d-flex justify-content-between align-items-center p-3 bg-white border rounded-3">
+                    <h5 class="text-blue font-weight-600 mb-0">магистратура</h5>
+                    <i class="fas fa-chevron-down text-blue"></i>
+                </div>
+                <div class="accordion-schedule-content" style="display: none;">
+                    <div class="p-3 bg-light mt-2 rounded">
+                        <div class="row">
+                            ${createLinkItem('imageUchPro/ПДФ.png', '1 курс магистратура ', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', '2 курс магистратура ', '#')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Аспирантура -->
+            <div class="accordion-schedule-card mb-3">
+                <div class="accordion-schedule-header d-flex justify-content-between align-items-center p-3 bg-white border rounded-3">
+                    <h5 class="text-blue font-weight-600 mb-0">аспирантура</h5>
+                    <i class="fas fa-chevron-down text-blue"></i>
+                </div>
+                <div class="accordion-schedule-content" style="display: none;">
+                    <div class="p-3 bg-light mt-2 rounded">
+                        <div class="row">
+                            ${createLinkItem('imageUchPro/ПДФ.png', '', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', '', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', '', '#')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ассистентура-стажировка -->
+            <div class="accordion-schedule-card mb-3">
+                <div class="accordion-schedule-header d-flex justify-content-between align-items-center p-3 bg-white border rounded-3">
+                    <h5 class="text-blue font-weight-600 mb-0">ассистентура-стажировка</h5>
+                    <i class="fas fa-chevron-down text-blue"></i>
+                </div>
+                <div class="accordion-schedule-content" style="display: none;">
+                    <div class="p-3 bg-light mt-2 rounded">
+                        <div class="row">
+                            ${createLinkItem('imageUchPro/ПДФ.png', '', '#')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    // Генерация контента для расписания сессии
+    function generateSessionContent() {
+        return `
+            <!-- Бакалавриат / специалитет -->
+            <div class="accordion-schedule-card mb-3">
+                <div class="accordion-schedule-header d-flex justify-content-between align-items-center p-3 bg-white border rounded-3">
+                    <h5 class="text-blue font-weight-600 mb-0">Бакалавриат / специалитет</h5>
+                    <i class="fas fa-chevron-down text-blue"></i>
+                </div>
+                <div class="accordion-schedule-content" style="display: none;">
+                    <div class="p-3 bg-light mt-2 rounded">
+                        <div class="row">
+                            ${createLinkItem('imageUchPro/ПДФ.png', '1 курс АРХИТЕКТУРА', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', '2 курс АРХИТЕКТУРА', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', '3 курс АРХИТЕКТУРА', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', '4 курс АРХИТЕКТУРА', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', '5 курс АРХИТЕКТУРА', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', '1 курс ИСКУССТВО', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', '2 курс ИСКУССТВО', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', '3 курс ИСКУССТВО', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', '4 курс ИСКУССТВО', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', '5 курс ИСКУССТВО', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', '6 курс ИСКУССТВО', '#')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Магистратура -->
+            <div class="accordion-schedule-card mb-3">
+                <div class="accordion-schedule-header d-flex justify-content-between align-items-center p-3 bg-white border rounded-3">
+                    <h5 class="text-blue font-weight-600 mb-0">магистратура</h5>
+                    <i class="fas fa-chevron-down text-blue"></i>
+                </div>
+                <div class="accordion-schedule-content" style="display: none;">
+                    <div class="p-3 bg-light mt-2 rounded">
+                        <div class="row">
+                            ${createLinkItem('imageUchPro/ПДФ.png', '1 курс магистратура ', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', '2 курс магистратура ', '#')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Аспирантура -->
+            <div class="accordion-schedule-card mb-3">
+                <div class="accordion-schedule-header d-flex justify-content-between align-items-center p-3 bg-white border rounded-3">
+                    <h5 class="text-blue font-weight-600 mb-0">аспирантура</h5>
+                    <i class="fas fa-chevron-down text-blue"></i>
+                </div>
+                <div class="accordion-schedule-content" style="display: none;">
+                    <div class="p-3 bg-light mt-2 rounded">
+                        <div class="row">
+                            ${createLinkItem('imageUchPro/ПДФ.png', '', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', '', '#')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ассистентура-стажировка -->
+            <div class="accordion-schedule-card mb-3">
+                <div class="accordion-schedule-header d-flex justify-content-between align-items-center p-3 bg-white border rounded-3">
+                    <h5 class="text-blue font-weight-600 mb-0">ассистентура-стажировка</h5>
+                    <i class="fas fa-chevron-down text-blue"></i>
+                </div>
+                <div class="accordion-schedule-content" style="display: none;">
+                    <div class="p-3 bg-light mt-2 rounded">
+                        <div class="row">
+                            ${createLinkItem('imageUchPro/ПДФ.png', '', '#')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    // Генерация контента для расписания пересдач (только 2 выпадающих списка)
+    function generateRetakesContent() {
+        return `
+            <!-- Первая пересдача -->
+            <div class="accordion-schedule-card mb-3">
+                <div class="accordion-schedule-header d-flex justify-content-between align-items-center p-3 bg-white border rounded-3">
+                    <h5 class="text-blue font-weight-600 mb-0">Первая пересдача</h5>
+                    <i class="fas fa-chevron-down text-blue"></i>
+                </div>
+                <div class="accordion-schedule-content" style="display: none;">
+                    <div class="p-3 bg-light mt-2 rounded">
+                        <div class="row">
+                            ${createLinkItem('imageUchPro/ПДФ.png', 'Бакалавриат/специалитет (архитектура)', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', 'Бакалавриат/специалитет (искусство)', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', 'Магистратура', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', 'Аспирантура', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', 'Ассистентура-стажировка', '#')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Вторая пересдача -->
+            <div class="accordion-schedule-card mb-3">
+                <div class="accordion-schedule-header d-flex justify-content-between align-items-center p-3 bg-white border rounded-3">
+                    <h5 class="text-blue font-weight-600 mb-0">Вторая пересдача</h5>
+                    <i class="fas fa-chevron-down text-blue"></i>
+                </div>
+                <div class="accordion-schedule-content" style="display: none;">
+                    <div class="p-3 bg-light mt-2 rounded">
+                        <div class="row">
+                           ${createLinkItem('imageUchPro/ПДФ.png', 'Бакалавриат/специалитет (архитектура)', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', 'Бакалавриат/специалитет (искусство)', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', 'Магистратура', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', 'Аспирантура', '#')}
+                            ${createLinkItem('imageUchPro/ПДФ.png', 'Ассистентура-стажировка', '#')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    // Переменные состояния
+    let currentSemester = 'spring';
+    let currentType = 'classes';
+
+    function renderScheduleContent() {
+        const container = document.getElementById('scheduleContentContainer');
+        
+        // Выбираем контент в зависимости от типа расписания
+        switch(currentType) {
+            case 'classes':
+                container.innerHTML = generateClassesContent();
+                break;
+            case 'session':
+                container.innerHTML = generateSessionContent();
+                break;
+            case 'retakes':
+                container.innerHTML = generateRetakesContent();
+                break;
+            default:
+                container.innerHTML = generateClassesContent();
+        }
+        
+        initScheduleAccordions();
+    }
+
+    // ===== ФУНКЦИИ ДЛЯ АНИМИРОВАННОГО ИНДИКАТОРА =====
+    
+    function moveIndicator(activeButton, indicatorElement) {
+        if (!activeButton || !indicatorElement) return;
+        
+        const buttonRect = activeButton.getBoundingClientRect();
+        const wrapper = activeButton.closest('.position-relative');
+        const wrapperRect = wrapper.getBoundingClientRect();
+        
+        // Вычисляем позицию относительно wrapper'а
+        const left = buttonRect.left - wrapperRect.left;
+        const width = buttonRect.width;
+        
+        // Применяем трансформацию с анимацией
+        indicatorElement.style.transition = 'left 0.3s ease, width 0.3s ease';
+        indicatorElement.style.left = left + 'px';
+        indicatorElement.style.width = width + 'px';
+    }
+
+    function updateSemesterIndicator(activeButton) {
+        const indicator = document.getElementById('semesterIndicator');
+        moveIndicator(activeButton, indicator);
+    }
+
+    function updateTypeIndicator(activeButton) {
+        const indicator = document.getElementById('typeIndicator');
+        moveIndicator(activeButton, indicator);
+    }
+
+    // Настройка переключения семестров
+    function setupSemesterTabs() {
+        const tabs = document.querySelectorAll('[data-semester]');
+        const indicator = document.getElementById('semesterIndicator');
+        
+        // Устанавливаем начальную позицию индикатора
+        const activeTab = document.querySelector('[data-semester].active');
+        if (activeTab && indicator) {
+            setTimeout(() => updateSemesterIndicator(activeTab), 50);
+        }
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                tabs.forEach(t => {
+                    t.classList.remove('active');
+                    t.classList.add('inactive');
+                });
+                this.classList.add('active');
+                this.classList.remove('inactive');
+                
+                // Анимируем индикатор
+                updateSemesterIndicator(this);
+                
+                currentSemester = this.getAttribute('data-semester');
+                renderScheduleContent();
+            });
+        });
+        
+        // Обновление позиции при изменении размера окна
+        window.addEventListener('resize', () => {
+            const currentActive = document.querySelector('[data-semester].active');
+            if (currentActive) updateSemesterIndicator(currentActive);
+        });
+    }
+
+    // Настройка переключения типов расписания
+    function setupTypeTabs() {
+        const tabs = document.querySelectorAll('[data-type]');
+        const indicator = document.getElementById('typeIndicator');
+        
+        // Устанавливаем начальную позицию индикатора
+        const activeTab = document.querySelector('[data-type].active');
+        if (activeTab && indicator) {
+            setTimeout(() => updateTypeIndicator(activeTab), 50);
+        }
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                tabs.forEach(t => {
+                    t.classList.remove('active');
+                    t.classList.add('inactive');
+                });
+                this.classList.add('active');
+                this.classList.remove('inactive');
+                
+                // Анимируем индикатор
+                updateTypeIndicator(this);
+                
+                currentType = this.getAttribute('data-type');
+                renderScheduleContent();
+            });
+        });
+        
+        // Обновление позиции при изменении размера окна
+        window.addEventListener('resize', () => {
+            const currentActive = document.querySelector('[data-type].active');
+            if (currentActive) updateTypeIndicator(currentActive);
+        });
+    }
+
+    // Инициализация при загрузке
+    document.addEventListener('DOMContentLoaded', function() {
+        setupSemesterTabs();
+        setupTypeTabs();
+        renderScheduleContent();
+    });
+</script>
+
+<style>
+    /* Стили для вкладок в стиле референса */
+    .tab-item {
+        background: none;
+        border: none;
+        padding: 0.5rem 0;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #6c757d;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        position: relative;
+    }
+    .tab-item.active {
+        color: var(--primary-blue); /* text-blue */
+    }
+    .tab-item.inactive {
+        color: #6c757d;
+    }
+    
+    /* Стили для анимированного индикатора */
+    .tab-indicator {
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        height: 4px;
+        background-color: var(--primary-blue);
+        transition: left 0.3s ease, width 0.3s ease;
+        pointer-events: none;
+    }
+    
+    .bg-blue {
+        background-color: var(--primary-blue) !important;
+    }
+    .text-blue {
+        color: var(--primary-blue) !important;
+    }
+    
+    /* Стили для аккордеонов */
+    .accordion-schedule-card {
+        border: none;
+        background: transparent;
+    }
+    .accordion-schedule-header {
+        transition: background-color 0.2s ease;
+    }
+    .accordion-schedule-header:hover {
+        background-color: #f8f9fa !important;
+    }
+    
+    /* Для корректного позиционирования индикатора */
+    .position-relative {
+        position: relative;
+    }
+</style>
 
         <!-- ===== СЕКЦИЯ 3: ГРАФИК КОНСУЛЬТАЦИЙ ===== -->
         <section class="consultations-section py-5 bg-light-custom">
             <div class="container">
                 <div class="row mb-5">
-                    <div class="col-12">
+                    <div class="col-10 offset-1">
                         <h3 class="section-subtitle text-primary-blue mb-4">
                             график консультации <br>
                             и добора баллов
@@ -601,7 +1505,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-10">
+                    <div class="col-lg-10 offset-1">
                         <div class="department-list">
                             <!-- Колонка 1 -->
                             <div>
@@ -663,8 +1567,8 @@
         <section class="gia-section py-5" id="GIA">
             <div class="container">
                 <div class="row mb-5">
-                    <div class="col-12">
-                        <h2 class="section-title text-center">
+                    <div class="col-10 offset-1">
+                        <h2 class="section-title">
                             ГОСУДАРСТВЕННАЯ <br>
                             ИТОГОВАЯ АТТЕСТАЦИЯ
                         </h2>
@@ -673,62 +1577,85 @@
 
                 <!-- Программы ГИА -->
                 <div class="row mb-5">
-                    <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="col-lg-4 mb-4 mb-lg-0 offset-1">
                         <h3 class="section-subtitle text-primary-blue">
                             программы гиа <br>
                             по направлениям
                         </h3>
                     </div>
-                    <div class="col-lg-8">
-                        <div class="accordion accordion-custom" id="giaProgramsAccordion">
-                            <!-- Бакалавриат -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#giaCollapseOne">
-                                        Бакалавриат
-                                    </button>
-                                </h2>
-                                <div id="giaCollapseOne" class="accordion-collapse collapse show" data-bs-parent="#giaProgramsAccordion">
-                                    <div class="accordion-body">
-                                        <!-- Контент для бакалавриата -->
-                                    </div>
+
+
+
+                <div class="col-lg-7">
+                    <div class="accordion accordion-custom accordion-group-1">
+                        
+                        <!-- Бакалавриат (открыт по умолчанию) -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button border rounded-3" type="button" data-target="#giaCollapseOne" aria-expanded="false">
+                                    Бакалавриат
+                                </button>
+                            </h2>
+                            <div id="giaCollapseOne" class="accordion-collapse">
+                                <div class="accordion-body">
+                                    <ul class="program-list">
+                                        <li>07.03.01 Архитектура</li>
+                                        <li>44.03.05 Педагогическое образование (с двумя профилями подготовки)</li>
+                                        <li>54.03.02 Декоративно-прикладное искусство и народные промыслы</li>
+                                        <li>07.03.04 Градостроительство</li>
+                                        <li>54.03.01 Дизайн</li>
+                                    </ul>
                                 </div>
                             </div>
-                            
-                            <!-- Специалитет -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#giaCollapseTwo">
-                                        Специалитет
-                                    </button>
-                                </h2>
-                                <div id="giaCollapseTwo" class="accordion-collapse collapse" data-bs-parent="#giaProgramsAccordion">
-                                    <div class="accordion-body">
-                                        <!-- Контент для специалитета -->
-                                    </div>
+                        </div>
+                        
+                        <!-- Специалитет (закрыт) -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button border rounded-3 collapsed" type="button" data-target="#giaCollapseTwo" aria-expanded="false">
+                                    Специалитет
+                                </button>
+                            </h2>
+                            <div id="giaCollapseTwo" class="accordion-collapse">
+                                <div class="accordion-body">
+                                    <ul class="program-list">
+                                        <li>07.05.02 Монументально-декоративное искусство</li>
+                                        <li>54.05.01 Живопись</li>
+                                        <li>54.05.02 Графика</li>
+                                    </ul>
                                 </div>
                             </div>
-                            
-                            <!-- Магистратура -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#giaCollapseThree">
-                                        Магистратура
-                                    </button>
-                                </h2>
-                                <div id="giaCollapseThree" class="accordion-collapse collapse" data-bs-parent="#giaProgramsAccordion">
-                                    <div class="accordion-body">
-                                        <!-- Контент для магистратуры -->
-                                    </div>
+                        </div>
+                        
+                        <!-- Магистратура (закрыт) -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button border rounded-3 collapsed" type="button" data-target="#giaCollapseThree" aria-expanded="false">
+                                    Магистратура
+                                </button>
+                            </h2>
+                            <div id="giaCollapseThree" class="accordion-collapse">
+                                <div class="accordion-body">
+                                    <ul class="program-list">
+                                        <li>07.04.01 Архитектура</li>
+                                        <li>07.04.01 Архитектура (ESG-проектирование)</li>
+                                        <li>07.04.02 Реконструкция и реставрация архитектурного наследия</li>
+                                        <li>07.04.03 Дизайн архитектурной среды</li>
+                                        <li>44.04.01 Педагогическое образование</li>
+                                        <li>54.04.01 Дизайн</li>
+                                        <li>54.04.02 Декоративно-прикладное искусство и народные промыслы</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+
 
                 <!-- Расписание ГИА -->
                 <div class="row mb-5">
-                    <div class="col-12">
+                    <div class="col-10 offset-1">
                         <div class="card bg-blue-custom text-white p-4 p-lg-5 rounded-4">
                             <div class="row">
                                 <div class="col-lg-8">
@@ -746,69 +1673,263 @@
                     </div>
                 </div>
 
+
+            
                 <!-- Темы ВКР -->
                 <div class="row">
-                    <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="col-lg-4 mb-4 mb-lg-0 offset-1">
                         <h3 class="section-subtitle text-primary-blue">
                             ТЕМЫ ВЫПУСКНЫХ <br>
                             КВАЛИФИКАЦИОННЫХ РАБОТ
                         </h3>
                     </div>
-                    <div class="col-lg-8">
-                        <div class="accordion accordion-custom" id="vkrThemesAccordion">
-                            <!-- Бакалавриат -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#vkrCollapseOne">
-                                        Бакалавриат
-                                    </button>
-                                </h2>
-                                <div id="vkrCollapseOne" class="accordion-collapse collapse show" data-bs-parent="#vkrThemesAccordion">
-                                    <div class="accordion-body">
-                                        <!-- Контент для тем ВКР бакалавриата -->
-                                    </div>
+
+
+
+                <div class="col-lg-7">
+                    <div class="accordion accordion-custom accordion-group-2">
+                        
+                        <!-- Бакалавриат (открыт по умолчанию) -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button border rounded-3" type="button" data-target="#secondCollapseOne" aria-expanded="false">
+                                    Бакалавриат
+                                </button>
+                            </h2>
+                            <div id="secondCollapseOne" class="accordion-collapse">
+                                <div class="accordion-body">
+                                    <ul class="program-list">
+                                        <li>07.03.01 Архитектура</li>
+                                        <li>44.03.05 Педагогическое образование (с двумя профилями подготовки)</li>
+                                        <li>54.03.02 Декоративно-прикладное искусство и народные промыслы</li>
+                                        <li>07.03.04 Градостроительство</li>
+                                        <li>54.03.01 Дизайн</li>
+                                    </ul>
                                 </div>
                             </div>
-                            
-                            <!-- Специалитет -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#vkrCollapseTwo">
-                                        Специалитет
-                                    </button>
-                                </h2>
-                                <div id="vkrCollapseTwo" class="accordion-collapse collapse" data-bs-parent="#vkrThemesAccordion">
-                                    <div class="accordion-body">
-                                        <!-- Контент для тем ВКР специалитета -->
-                                    </div>
+                        </div>
+                        
+                        <!-- Специалитет (закрыт) -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button border rounded-3 collapsed" type="button" data-target="#secondCollapseTwo" aria-expanded="false">
+                                    Специалитет
+                                </button>
+                            </h2>
+                            <div id="secondCollapseTwo" class="accordion-collapse">
+                                <div class="accordion-body">
+                                    <ul class="program-list">
+                                        <li>07.05.02 Монументально-декоративное искусство</li>
+                                        <li>54.05.01 Живопись</li>
+                                        <li>54.05.02 Графика</li>
+                                    </ul>
                                 </div>
                             </div>
-                            
-                            <!-- Магистратура -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#vkrCollapseThree">
-                                        Магистратура
-                                    </button>
-                                </h2>
-                                <div id="vkrCollapseThree" class="accordion-collapse collapse" data-bs-parent="#vkrThemesAccordion">
-                                    <div class="accordion-body">
-                                        <!-- Контент для тем ВКР магистратуры -->
-                                    </div>
+                        </div>
+                        
+                        <!-- Магистратура (закрыт) -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button border rounded-3 collapsed" type="button" data-target="#secondCollapseThree" aria-expanded="false">
+                                    Магистратура
+                                </button>
+                            </h2>
+                            <div id="secondCollapseThree" class="accordion-collapse">
+                                <div class="accordion-body">
+                                    <ul class="program-list">
+                                        <li>07.04.01 Архитектура</li>
+                                        <li>07.04.01 Архитектура (ESG-проектирование)</li>
+                                        <li>07.04.02 Реконструкция и реставрация архитектурного наследия</li>
+                                        <li>07.04.03 Дизайн архитектурной среды</li>
+                                        <li>44.04.01 Педагогическое образование</li>
+                                        <li>54.04.01 Дизайн</li>
+                                        <li>54.04.02 Декоративно-прикладное искусство и народные промыслы</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
+                
+
                 </div>
             </div>
         </section>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // Функция для инициализации аккордеона
+    function initAccordionGroup(groupClass) {
+        const accordionButtons = document.querySelectorAll(`.${groupClass} .accordion-button`);
+        
+        accordionButtons.forEach(button => {
+            const targetId = button.getAttribute('data-target');
+            const collapseElement = document.querySelector(targetId);
+            
+            // Убираем Bootstrap-класс collapse, но НЕ трогаем display пока
+            collapseElement.classList.remove('collapse');
+            
+            // Устанавливаем начальное состояние
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            if (isExpanded) {
+                collapseElement.style.display = 'block';
+                button.classList.remove('collapsed');
+            } else {
+                collapseElement.style.display = 'none';
+                button.classList.add('collapsed');
+            }
+            
+            // Вешаем обработчик клика
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const isExpandedNow = this.getAttribute('aria-expanded') === 'true';
+                
+                if (isExpandedNow) {
+                    // Закрываем
+                    collapseElement.style.display = 'none';
+                    this.setAttribute('aria-expanded', 'false');
+                    this.classList.add('collapsed');
+                } else {
+                    // Открываем
+                    collapseElement.style.display = 'block';
+                    this.setAttribute('aria-expanded', 'true');
+                    this.classList.remove('collapsed');
+                }
+            });
+        });
+    }
+    
+    // Инициализируем оба блока
+    initAccordionGroup('accordion-group-1');
+    initAccordionGroup('accordion-group-2');
+    initAccordionGroup('accordion-group-3');
+    initAccordionGroup('accordion-group-4');
+});
+</script>
+
+        <style>
+            /* Контейнер аккордеона */
+.accordion-custom {
+    border: none;
+}
+
+/* Элемент аккордеона (карточка) */
+.accordion-custom .accordion-item {
+    border: 1px solid var(--color-grey);
+    border-radius: 10px !important;
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background-color: var(--color-white);
+}
+
+.accordion-custom .accordion-item:hover {
+    border-color: var(--color-blue);
+}
+
+/* Заголовок аккордеона */
+.accordion-custom .accordion-header {
+    margin: 0;
+}
+
+/* Кнопка аккордеона */
+.accordion-custom .accordion-button {
+    padding: 20px;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: var(--color-black);
+    background-color: var(--color-white);
+    border: none;
+    box-shadow: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Убираем стандартную стрелку Bootstrap и заменяем на свою */
+.accordion-custom .accordion-button::after {
+    content: "▼";
+    font-size: 14px;
+    color: var(--color-blue);
+    background-image: none !important;
+    width: auto;
+    height: auto;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+/* Развернутое состояние */
+.accordion-custom .accordion-button:not(.collapsed) {
+    color: var(--color-black);
+    background-color: var(--color-white);
+    box-shadow: none;
+}
+
+.accordion-custom .accordion-button:not(.collapsed)::after {
+    transform: rotate(180deg);
+}
+
+/* Убираем обводку при фокусе */
+.accordion-custom .accordion-button:focus {
+    box-shadow: none;
+    border-color: transparent;
+}
+
+/* Тело аккордеона (контент) */
+.accordion-custom .accordion-body {
+    padding: 0 20px 20px 20px;
+    background-color: var(--color-white);
+}
+
+/* Список программ */
+.program-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: var(--color-grey-light);
+    border-radius: 8px;
+}
+
+.program-list li {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    font-size: 15px;
+    color: var(--color-black);
+    transition: background-color 0.2s ease;
+}
+
+.program-list li:last-child {
+    border-bottom: none;
+}
+
+.program-list li:hover {
+    background-color: rgba(8, 13, 107, 0.05);
+}
+
+/* Адаптивность для аккордеонов второго типа */
+@media (max-width: 767.98px) {
+    .accordion-custom .accordion-button {
+        padding: 16px;
+        font-size: 14px;
+    }
+    
+    .accordion-custom .accordion-body {
+        padding: 0 16px 16px 16px;
+    }
+    
+    .program-list li {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+}
+        </style>
 
         <!-- ===== СЕКЦИЯ 5: ГОСУДАРСТВЕННАЯ АКАДЕМИЧЕСКАЯ СТИПЕНДИЯ (С КАРУСЕЛЬЮ) ===== -->
         <section class="scholarships-section py-5" id="Stipendiy">
             <div class="container">
                 <div class="row mb-5">
-                    <div class="col-12">
-                        <h2 class="section-title text-white text-center">
+                    <div class="col-10 offset-1">
+                        <h2 class="section-title text-white">
                             ГОСУДАРСТВЕННАЯ <br>
                             АКАДЕМИЧЕСКАЯ СТИПЕНДИЯ
                         </h2>
@@ -816,311 +1937,558 @@
                 </div>
 
                 <!-- Owl Carousel для стипендий -->
-                <div class="row">
-                    <div class="col-12">
-                        <div class="owl-carousel owl-theme" id="scholarshipCarousel">
-                            <!-- Слайд 1 -->
-                            <div class="scholarship-carousel-item">
-                                <div class="card scholarship-card h-100">
-                                    <div class="card-body p-4">
-                                        <div class="scholarship-amount mb-3">
-                                            <span class="amount">2 500</span>
-                                            <span class="period d-block">в месяц</span>
-                                        </div>
-                                        <div class="d-flex">
-                                            <div class="me-4" style="width: 82px; height: 65px;"></div>
-                                            <div>
-                                                <p class="mb-2">
-                                                    <span class="fw-normal">Студенты</span>
-                                                    <span class="fw-bold"> 1 курса (1 семестр) </span>
-                                                    <span class="fw-normal">(в том числе иностранные граждане и лица без гражданства)</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+<div class="row">
+    <div class="col-12 offset-1">
+        <div class="owl-carousel owl-theme" id="scholarshipCarousel">
+            
+            <!-- Слайд 1 (2 карточки) -->
+            <div class="scholarship-slide-grid">
+                <!-- Карточка 1 -->
+                <div class="card scholarship-card">
+                    <div class="card-body">
+                        <div class="scholarship-amount mb-3">
+                            <span class="amount">2 500</span>
+                            <span class="period d-block">в месяц</span>
+                        </div>
+                        <div class="d-flex">
+                            <div class="me-4" style="width: 82px; height: 65px;"></div>
+                            <div>
+                                <p class="mb-2">
+                                    <span class="fw-normal">Студенты</span>
+                                    <span class="fw-bold"> 1 курса (1 семестр) </span>
+                                    <span class="fw-normal">(в том числе иностранные граждане и лица без гражданства)</span>
+                                </p>
                             </div>
-                            
-                            <!-- Слайд 2 -->
-                            <div class="scholarship-carousel-item">
-                                <div class="card scholarship-card h-100">
-                                    <div class="card-body p-4">
-                                        <div class="scholarship-amount mb-3">
-                                            <span class="amount">4 106</span>
-                                            <span class="period d-block">в месяц</span>
-                                        </div>
-                                        <div class="d-flex">
-                                            <div class="me-4" style="width: 82px; height: 65px;"></div>
-                                            <div>
-                                                <p class="mb-2">
-                                                    <span class="fw-normal">Студенты, успевающие на </span>
-                                                    <span class="fw-bold">«отлично» </span>
-                                                    <span class="fw-normal"><br>(в том числе иностранные граждане <br>и лица без гражданства)</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Слайд 3 -->
-                            <div class="scholarship-carousel-item">
-                                <div class="card scholarship-card h-100">
-                                    <div class="card-body p-4">
-                                        <div class="scholarship-amount mb-3">
-                                            <span class="amount">3 506</span>
-                                            <span class="period d-block">в месяц</span>
-                                        </div>
-                                        <div class="d-flex">
-                                            <div class="me-4" style="width: 82px; height: 65px;"></div>
-                                            <div>
-                                                <p class="mb-0">
-                                                    Студенты, успевающие на «отлично <br>
-                                                    и хорошо» (при наличии оценок "отлично" 50% и более), <br>
-                                                    (в том числе иностранные граждане и лица без гражданства)
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Слайд 4 -->
-                            <div class="scholarship-carousel-item">
-                                <div class="card scholarship-card h-100">
-                                    <div class="card-body p-4">
-                                        <div class="scholarship-amount mb-3">
-                                            <span class="amount">3 107</span>
-                                            <span class="period d-block">в месяц</span>
-                                        </div>
-                                        <div class="d-flex">
-                                            <div class="me-4" style="width: 82px; height: 65px;"></div>
-                                            <div>
-                                                <p class="mb-2">
-                                                    <span class="fw-normal">Студенты, успевающие на </span>
-                                                    <span class="fw-bold">"отлично <br>и хорошо" (при наличии оценок "отлично" 50%) и на "хорошо"</span>
-                                                    <span class="fw-normal"> (в том числе иностранные граждане и лица без гражданства)</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Слайд 5 -->
-                            <div class="scholarship-carousel-item">
-                                <div class="card scholarship-card h-100">
-                                    <div class="card-body p-4">
-                                        <div class="scholarship-amount mb-3">
-                                            <span class="amount">2 500</span>
-                                            <span class="period d-block">в месяц</span>
-                                        </div>
-                                        <div class="d-flex">
-                                            <div class="me-4" style="width: 82px; height: 65px;"></div>
-                                            <div>
-                                                <p class="mb-2">
-                                                    <span class="fw-normal">Студенты-иностранные граждане и лица без гражданства <br>
-                                                    (обучение в рамках квоты), имеющие по итогам промежуточной <br>
-                                                    аттестации </span>
-                                                    <span class="fw-bold">"удовлетворительно", задолженность</span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Слайд 6 -->
-                            <div class="scholarship-carousel-item">
-                                <div class="card scholarship-card h-100">
-                                    <div class="card-body p-4">
-                                        <div class="scholarship-amount mb-3">
-                                            <span class="amount">11 840</span>
-                                            <span class="period d-block">в месяц</span>
-                                        </div>
-                                        <div class="d-flex">
-                                            <div class="me-4" style="width: 82px; height: 65px;"></div>
-                                            <div>
-                                                <p class="mb-0">
-                                                    Аспиранты, обучающиеся по программам подготовки <br>
-                                                    научно-педагогических кадров по техническим и естественным <br>
-                                                    направлениям подготовки согласно перечню, который <br>
-                                                    устанавливается Министерством образования и науки РФ
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Карточка 2 -->
+                <div class="card scholarship-card">
+                    <div class="card-body">
+                        <div class="scholarship-amount mb-3">
+                            <span class="amount">4 106</span>
+                            <span class="period d-block">в месяц</span>
+                        </div>
+                        <div class="d-flex">
+                            <div class="me-4" style="width: 82px; height: 65px;"></div>
+                            <div>
+                                <p class="mb-2">
+                                    <span class="fw-normal">Студенты, успевающие на </span>
+                                    <span class="fw-bold">«отлично» </span>
+                                    <span class="fw-normal"><br>(в том числе иностранные граждане <br>и лица без гражданства)</span>
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- ===== СЕКЦИЯ 6: ОБРАЗЦЫ ЗАЯВЛЕНИЙ ===== -->
-        <section class="applications-section py-5" id="Doc">
-            <div class="container">
-                <div class="row mb-5">
-                    <div class="col-12">
-                        <h2 class="section-title">образцы заявлений</h2>
+            
+            <!-- Слайд 2 (2 карточки) -->
+            <div class="scholarship-slide-grid">
+                <!-- Карточка 3 -->
+                <div class="card scholarship-card">
+                    <div class="card-body">
+                        <div class="scholarship-amount mb-3">
+                            <span class="amount">3 506</span>
+                            <span class="period d-block">в месяц</span>
+                        </div>
+                        <div class="d-flex">
+                            <div class="me-4" style="width: 82px; height: 65px;"></div>
+                            <div>
+                                <p class="mb-0">
+                                    Студенты, успевающие на «отлично <br>
+                                    и хорошо» (при наличии оценок "отлично" 50% и более), <br>
+                                    (в том числе иностранные граждане и лица без гражданства)
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <!-- Карточка 4 -->
+                <div class="card scholarship-card">
+                    <div class="card-body">
+                        <div class="scholarship-amount mb-3">
+                            <span class="amount">3 107</span>
+                            <span class="period d-block">в месяц</span>
+                        </div>
+                        <div class="d-flex">
+                            <div class="me-4" style="width: 82px; height: 65px;"></div>
+                            <div>
+                                <p class="mb-2">
+                                    <span class="fw-normal">Студенты, успевающие на </span>
+                                    <span class="fw-bold">"отлично <br>и хорошо" (при наличии оценок "отлично" 50%) и на "хорошо"</span>
+                                    <span class="fw-normal"> (в том числе иностранные граждане и лица без гражданства)</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Слайд 3 (2 карточки) -->
+            <div class="scholarship-slide-grid">
+                <!-- Карточка 5 -->
+                <div class="card scholarship-card">
+                    <div class="card-body">
+                        <div class="scholarship-amount mb-3">
+                            <span class="amount">2 500</span>
+                            <span class="period d-block">в месяц</span>
+                        </div>
+                        <div class="d-flex">
+                            <div class="me-4" style="width: 82px; height: 65px;"></div>
+                            <div>
+                                <p class="mb-2">
+                                    <span class="fw-normal">Студенты-иностранные граждане и лица без гражданства <br>
+                                    (обучение в рамках квоты), имеющие по итогам промежуточной <br>
+                                    аттестации </span>
+                                    <span class="fw-bold">"удовлетворительно", задолженность</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Карточка 6 -->
+                <div class="card scholarship-card">
+                    <div class="card-body">
+                        <div class="scholarship-amount mb-3">
+                            <span class="amount">11 840</span>
+                            <span class="period d-block">в месяц</span>
+                        </div>
+                        <div class="d-flex">
+                            <div class="me-4" style="width: 82px; height: 65px;"></div>
+                            <div>
+                                <p class="mb-0">
+                                    Аспиранты, обучающиеся по программам подготовки <br>
+                                    научно-педагогических кадров по техническим и естественным <br>
+                                    направлениям подготовки согласно перечню, который <br>
+                                    устанавливается Министерством образования и науки РФ
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+            </div>
+        </section>
 
-                <div class="row">
-                    <div class="col-lg-6 mb-4">
-                        <div class="accordion accordion-custom" id="applicationsAccordion1">
-                            <!-- Академический отпуск -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#appCollapseOne">
-                                        Академический отпуск
-                                    </button>
-                                </h2>
-                                <div id="appCollapseOne" class="accordion-collapse collapse show" data-bs-parent="#applicationsAccordion1">
-                                    <div class="accordion-body">
-                                        <!-- Контент для академического отпуска -->
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Восстановление -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#appCollapseTwo">
-                                        Восстановление
-                                    </button>
-                                </h2>
-                                <div id="appCollapseTwo" class="accordion-collapse collapse" data-bs-parent="#applicationsAccordion1">
-                                    <div class="accordion-body">
-                                        <!-- Контент для восстановления -->
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Выпуск. Преддипломный отпуск -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#appCollapseThree">
-                                        Выпуск. Преддипломный отпуск
-                                    </button>
-                                </h2>
-                                <div id="appCollapseThree" class="accordion-collapse collapse" data-bs-parent="#applicationsAccordion1">
-                                    <div class="accordion-body">
-                                        <!-- Контент для преддипломного отпуска -->
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Дубликат -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#appCollapseFour">
-                                        Дубликат
-                                    </button>
-                                </h2>
-                                <div id="appCollapseFour" class="accordion-collapse collapse" data-bs-parent="#applicationsAccordion1">
-                                    <div class="accordion-body">
-                                        <!-- Контент для дубликата -->
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Отчисление -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#appCollapseFive">
-                                        Отчисление
-                                    </button>
-                                </h2>
-                                <div id="appCollapseFive" class="accordion-collapse collapse" data-bs-parent="#applicationsAccordion1">
-                                    <div class="accordion-body">
-                                        <!-- Контент для отчисления -->
-                                    </div>
-                                </div>
+        <style>
+            /* Стили для сетки карточек 2 в ряд с фиксированным размером */
+
+            
+#scholarshipCarousel .owl-stage {
+    display: flex;
+}
+
+#scholarshipCarousel .owl-item {
+    display: flex;
+    flex: 1 0 auto;
+    /* Ширина каждого слайда = ширина карточки + отступ (если margin не задан, то 497px) */
+    width: 497px !important; 
+}
+
+.scholarship-carousel-item {
+    display: flex;
+    width: 100%;
+}
+
+/* Фиксация размеров карточки */
+.scholarship-card {
+    width: 497px !important;
+    height: 237px !important;
+    max-width: 497px;
+    max-height: 237px;
+    margin: 10px;
+    border-radius: 16px;
+}
+
+/* Адаптация внутренних отступов под новую высоту */
+.scholarship-card .card-body {
+    padding: 1rem 1.25rem !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+/* Корректировка размера шрифта суммы, чтобы не выпирало за пределы */
+.scholarship-amount .amount {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.scholarship-amount .period {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+/* Стили для текста, чтобы он точно влезал в 497x237 */
+.scholarship-card p {
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 0.25rem;
+}
+
+/* Опционально: настройка стрелок и точек навигации, если они сместились из-за фиксированной ширины */
+#scholarshipCarousel .owl-nav {
+    margin-top: 10px;
+}
+        </style>
+        <!-- ===== СЕКЦИЯ 6: ОБРАЗЦЫ ЗАЯВЛЕНИЙ ===== -->
+        <!-- Блок с 10 аккордеонами в две колонки -->
+<section class="py-5" id="DocumentsAccordion">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-10 offset-1">
+                <h2 class="section-title">образцы заявлений</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Левая колонка (5 аккордеонов) -->
+            <div class="col-lg-5 offset-1">
+                <div class="accordion accordion-custom accordion-group-3">
+                    
+                    <!-- Аккордеон 1 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button border rounded-3" type="button" data-target="#docCollapse1" aria-expanded="false">
+                                Академический отпуск
+                            </button>
+                        </h2>
+                        <div id="docCollapse1" class="accordion-collapse">
+                            <div class="accordion-body">
+                                <ul class="program-list program-list-icons">
+                                    <li>
+                                        <img src="imageUchPro/ПДФ.png" alt="PDF" class="list-icon">
+                                        <a href="#" class="list-link">по болезни</a>
+                                    </li>
+                                    <li>
+                                        <img src="imageUchPro/ПДФ.png" alt="PDF" class="list-icon">
+                                        <a href="#" class="list-link">по семейным обстоятельствам</a>
+                                    </li>
+                                    <li>
+                                        <img src="imageUchPro/ПДФ.png" alt="PDF" class="list-icon">
+                                        <a href="#" class="list-link">по уходу за ребенком до 1,5 лет</a>
+                                    </li>
+                                    <li>
+                                        <img src="imageUchPro/ПДФ.png" alt="PDF" class="list-icon">
+                                        <a href="#" class="list-link">по уходу за ребенком до 3 лет</a>
+                                    </li>
+                                    <li>
+                                        <img src="imageUchPro/ПДФ.png" alt="PDF" class="list-icon">
+                                        <a href="#" class="list-link">служба в армии</a>
+                                    </li>
+                                    <li>
+                                        <img src="imageUchPro/ПДФ.png" alt="PDF" class="list-icon">
+                                        <a href="#" class="list-link">выход — демобилизация</a>
+                                    </li>
+                                    <li>
+                                        <img src="imageUchPro/ПДФ.png" alt="PDF" class="list-icon">
+                                        <a href="#" class="list-link">выход — досрочно</a>
+                                    </li>
+                                    <li>
+                                        <img src="imageUchPro/ПДФ.png" alt="PDF" class="list-icon">
+                                        <a href="#" class="list-link">выход — по окончанию</a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="col-lg-6 mb-4">
-                        <div class="accordion accordion-custom" id="applicationsAccordion2">
-                            <!-- Перевод -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#appCollapseSix">
-                                        Перевод
-                                    </button>
-                                </h2>
-                                <div id="appCollapseSix" class="accordion-collapse collapse show" data-bs-parent="#applicationsAccordion2">
-                                    <div class="accordion-body">
-                                        <!-- Контент для перевода -->
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Перенос -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#appCollapseSeven">
-                                        Перенос
-                                    </button>
-                                </h2>
-                                <div id="appCollapseSeven" class="accordion-collapse collapse" data-bs-parent="#applicationsAccordion2">
-                                    <div class="accordion-body">
-                                        <!-- Контент для переноса -->
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Продление -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#appCollapseEight">
-                                        Продление
-                                    </button>
-                                </h2>
-                                <div id="appCollapseEight" class="accordion-collapse collapse" data-bs-parent="#applicationsAccordion2">
-                                    <div class="accordion-body">
-                                        <!-- Контент для продления -->
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Смена ФИО -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#appCollapseNine">
-                                        Смена ФИО
-                                    </button>
-                                </h2>
-                                <div id="appCollapseNine" class="accordion-collapse collapse" data-bs-parent="#applicationsAccordion2">
-                                    <div class="accordion-body">
-                                        <!-- Контент для смены ФИО -->
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Справка -->
-                            <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#appCollapseTen">
-                                        Справка
-                                    </button>
-                                </h2>
-                                <div id="appCollapseTen" class="accordion-collapse collapse" data-bs-parent="#applicationsAccordion2">
-                                    <div class="accordion-body">
-                                        <!-- Контент для справки -->
-                                    </div>
-                                </div>
+                    <!-- Аккордеон 2 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button border rounded-3 collapsed" type="button" data-target="#docCollapse2" aria-expanded="false">
+                                Восстановление
+                            </button>
+                        </h2>
+                        <div id="docCollapse2" class="accordion-collapse">
+                            <div class="accordion-body">
+                                <ul class="program-list program-list-icons">
+                                    <li>
+                                        <img src="imageUchPro/ПДФ.png" alt="PDF" class="list-icon">
+                                        <a href="#" class="list-link">без профиля — бакалавриат, бюджет </a>
+                                    </li>
+                                    <li>
+                                        <img src="imageUchPro/ПДФ.png" alt="PDF" class="list-icon">
+                                        <a href="#" class="list-link">без профиля — бакалавриат, пвз</a>
+                                    </li>
+                                    <li>
+                                        <img src="imageUchPro/ПДФ.png" alt="PDF" class="list-icon">
+                                        <a href="#" class="list-link">для прохождения гиа</a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Аккордеон 3 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button border rounded-3 collapsed" type="button" data-target="#docCollapse3" aria-expanded="false">
+                                Выпуск. Последипломный отпуск
+                            </button>
+                        </h2>
+                        <div id="docCollapse3" class="accordion-collapse">
+                            <div class="accordion-body">
+                                <ul class="program-list program-list-icons">
+                                    <li>
+                                        <img src="imageUchPro/ПДФ.png" alt="PDF" class="list-icon">
+                                        <a href="#" class="list-link">выпуск. последипломный отпуск</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Аккордеон 4 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button border rounded-3 collapsed" type="button" data-target="#docCollapse4" aria-expanded="false">
+                                Дубликат
+                            </button>
+                        </h2>
+                        <div id="docCollapse4" class="accordion-collapse">
+                            <div class="accordion-body">
+                                <ul class="program-list program-list-icons">
+                                    <li>
+                                        <img src="imageUchPro/ПДФ.png" alt="PDF" class="list-icon">
+                                        <a href="#" class="list-link">студенческий билет — порча / утеря</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Аккордеон 5 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button border rounded-3 collapsed" type="button" data-target="#docCollapse5" aria-expanded="false">
+                                Отчисление
+                            </button>
+                        </h2>
+                        <div id="docCollapse5" class="accordion-collapse">
+                            <div class="accordion-body">
+                                <ul class="program-list program-list-icons">
+                                    <li>
+                                        <img src="imageUchPro/ПДФ.png" alt="PDF" class="list-icon">
+                                        <a href="#" class="list-link">перевод в другой вуз</a>
+                                    </li>
+                                    <li>
+                                        <img src="imageUchPro/ПДФ.png" alt="PDF" class="list-icon">
+                                        <a href="#" class="list-link">по собственному желанию</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
-        </section>
 
+            <!-- Правая колонка (5 аккордеонов) -->
+            <div class="col-lg-5">
+                <div class="accordion accordion-custom accordion-group-4">
+                    
+                    <!-- Аккордеон 6 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button border rounded-3 collapsed" type="button" data-target="#docCollapse6" aria-expanded="false">
+                                Перенос
+                            </button>
+                        </h2>
+                        <div id="docCollapse6" class="accordion-collapse">
+                            <div class="accordion-body">
+                                <ul class="program-list program-list-icons">
+                                    <li>
+                                        <img src="imageUchPro/ПДФ.png" alt="PDF" class="list-icon">
+                                        <a href="#" class="list-link">перенос защиты вкр</a>
+                                    </li>
+                                    <li>
+                                        <img src="imageUchPro/ПДФ.png" alt="PDF" class="list-icon">
+                                        <a href="#" class="list-link">перенос занятий для военнообязанных</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Аккордеон 7 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button border rounded-3 collapsed" type="button" data-target="#docCollapse7" aria-expanded="false">
+                                Продление
+                            </button>
+                        </h2>
+                        <div id="docCollapse7" class="accordion-collapse">
+                            <div class="accordion-body">
+                                <ul class="program-list program-list-icons">
+                                    <li>
+                                        <img src="imageUchPro/ПДФ.png" alt="PDF" class="list-icon">
+                                        <a href="#" class="list-link">продление пересдач</a>
+                                    </li>
+                                    <li>
+                                        <img src="imageUchPro/ПДФ.png" alt="PDF" class="list-icon">
+                                        <a href="#" class="list-link">продление сессии</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Аккордеон 8 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button border rounded-3 collapsed" type="button" data-target="#docCollapse8" aria-expanded="false">
+                                Смена ФИО
+                            </button>
+                        </h2>
+                        <div id="docCollapse8" class="accordion-collapse">
+                            <div class="accordion-body">
+                                <ul class="program-list program-list-icons">
+                                    <li>
+                                        <img src="imageUchPro/ПДФ.png" alt="PDF" class="list-icon">
+                                        <a href="#" class="list-link">смена фио</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Аккордеон 9 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button border rounded-3 collapsed" type="button" data-target="#docCollapse9" aria-expanded="false">
+                                Справки о периоде обучения 
+                            </button>
+                        </h2>
+                        <div id="docCollapse9" class="accordion-collapse">
+                            <div class="accordion-body">
+                                <ul class="program-list program-list-icons">
+                                    <li>
+                                        <img src="imageUchPro/ПДФ.png" alt="PDF" class="list-icon">
+                                        <a href="#" class="list-link">выписка за период. студент</a>
+                                    </li>
+                                    <li>
+                                        <img src="imageUchPro/ПДФ.png" alt="PDF" class="list-icon">
+                                        <a href="#" class="list-link">выписка. отчисленный</a>
+                                    </li>
+                                    <li>
+                                        <img src="imageUchPro/ПДФ.png" alt="PDF" class="list-icon">
+                                        <a href="#" class="list-link">выписка. студент</a>
+                                    </li>
+                                    <li>
+                                        <img src="imageUchPro/ПДФ.png" alt="PDF" class="list-icon">
+                                        <a href="#" class="list-link">о периоде обучения. отчисленный</a>
+                                    </li>
+                                    <li>
+                                        <img src="imageUchPro/ПДФ.png" alt="PDF" class="list-icon">
+                                        <a href="#" class="list-link">о периоде обучения. студент</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Аккордеон 10 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button border rounded-3 collapsed" type="button" data-target="#docCollapse10" aria-expanded="false">
+                                Перевод
+                            </button>
+                        </h2>
+                        <div id="docCollapse10" class="accordion-collapse">
+                            <div class="accordion-body">
+                                <ul class="program-list program-list-icons">
+                                    <li>
+                                        <img src="imageUchPro/ПДФ.png" alt="PDF" class="list-icon">
+                                        <a href="#" class="list-link">в другую группу</a>
+                                    </li>
+                                    <li>
+                                        <img src="imageUchPro/ПДФ.png" alt="PDF" class="list-icon">
+                                        <a href="#" class="list-link">Смена направления </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Стили для списка с иконками */
+.program-list-icons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: var(--color-grey-light);
+    border-radius: 8px;
+}
+
+.program-list-icons li {
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: background-color 0.2s ease;
+}
+
+.program-list-icons li:last-child {
+    border-bottom: none;
+}
+
+.program-list-icons li:hover {
+    background-color: rgba(8, 13, 107, 0.05);
+}
+
+.list-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.list-link {
+    color: var(--color-black);
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.2s ease;
+}
+
+.list-link:hover {
+    color: var(--color-blue);
+    text-decoration: underline;
+}
+
+/* Адаптивность */
+@media (max-width: 767.98px) {
+    .program-list-icons li {
+        padding: 10px 14px;
+    }
+    
+    .list-link {
+        font-size: 14px;
+    }
+    
+    .list-icon {
+        width: 18px;
+        height: 18px;
+    }
+}
+</style>
+<div class="bg-light-custom">
         <!-- ===== СЕКЦИЯ 7: О ЦЕНТРЕ ===== -->
-        <section class="about-center-section py-5 bg-light-custom" id="Centr">
+        <section class="about-center-section py-5" id="Centr">
             <div class="container">
                 <div class="row mb-5">
                     <div class="col-12">
@@ -1130,19 +2498,20 @@
 
                 <div class="row">
                     <div class="col-lg-4 mb-5 mb-lg-0">
-                        <div class="staff-photo mb-4">
-                            <i class="bi bi-person-circle"></i>
+                        <div class="coordinator-photo mb-4" style="background-image: url('imageUchPro/Eroh.png');">
+                            <div class="h-100 d-flex align-items-center justify-content-center text-white">
+                            </div>
                         </div>
                         <div>
                             <h4 class="mb-3">
-                                <span class="fw-medium">Руководитель центра организации <br>
+                                <span class="fw-medium fs-6">Руководитель центра организации <br>
                                 учебной работы студентов</span><br>
-                                <span class="fw-bold">Ерохина Наталья Вячеславовна</span>
+                                <br><span class="fw-bold">Ерохина Наталья Вячеславовна</span>
                             </h4>
                             <div class="contact-info">
                                 <div class="mb-2">
                                     <span class="fw-normal">тел.: </span>
-                                    <span class="fw-medium text-primary-blue">8 (863) 218-40-00 доб. 20025</span>
+                                    <span class="fw-medium text-primary-blue fs-6">8 (863) 218-40-00 доб. 20025</span>
                                 </div>
                                 <div class="mb-2">
                                     <span class="fw-normal">e-mail: </span>
@@ -1151,7 +2520,7 @@
                                     </a>
                                 </div>
                                 <div>
-                                    <span class="fw-normal">Адрес: пр. Будённовский 39, <br>
+                                    <span class="fw-normal fs-6">Адрес: пр. Будённовский 39, <br>
                                     1 этаж, кабинет № 14</span>
                                 </div>
                             </div>
@@ -1193,7 +2562,7 @@
                 </div>
             </div>
         </section>
-
+</div>
         <!-- ===== СЕКЦИЯ 8: СОТРУДНИКИ (С КАРУСЕЛЬЮ) ===== -->
         <section class="staff-section py-5">
             <div class="container">
@@ -1218,22 +2587,22 @@
                                         </div>
                                         <div class="col-md-7">
                                             <h4 class="mb-3">
-                                                <span class="fw-medium">Специалист по УМР</span><br>
+                                                <span class="fw-medium fs-6">Специалист по УМР</span><br>
                                                 <span class="fw-bold">Федорова Оксана Олеговна</span>
                                             </h4>
                                             <div class="contact-info">
                                                 <div class="mb-2">
-                                                    <span class="fw-normal">тел.: </span>
-                                                    <span class="fw-medium text-primary-blue">8 (863) 218-40-00 доб. 200-34</span>
+                                                    <span class="fw-normal fs-6">тел.: </span>
+                                                    <span class="fw-medium text-primary-blue fs-6">8 (863) 218-40-00 <br>доб. 200-34</span>
                                                 </div>
                                                 <div class="mb-2">
-                                                    <span class="fw-normal">e-mail: </span>
-                                                    <a href="mailto:okfedorova@sfedu.ru" class="text-primary-blue text-decoration-underline">
+                                                    <span class="fw-normal fs-6">e-mail: </span>
+                                                    <a href="mailto:okfedorova@sfedu.ru" class="text-primary-blue text-decoration-underline fs-6">
                                                         okfedorova@sfedu.ru
                                                     </a>
                                                 </div>
                                                 <div>
-                                                    <span class="fw-normal">Адрес: пр. Будённовский 39, <br>
+                                                    <span class="fw-normal fs-6">Адрес: пр. Будённовский 39, <br>
                                                     1 этаж, кабинет № 13</span>
                                                 </div>
                                             </div>
@@ -1253,22 +2622,22 @@
                                         </div>
                                         <div class="col-md-7">
                                             <h4 class="mb-3">
-                                                <span class="fw-medium">Специалист по УМР</span><br>
+                                                <span class="fw-medium fs-6">Специалист по УМР</span><br>
                                                 <span class="fw-bold">Краюшкина Татьяна Александровна</span>
                                             </h4>
                                             <div class="contact-info">
                                                 <div class="mb-2">
-                                                    <span class="fw-normal">тел.: </span>
-                                                    <span class="fw-medium text-primary-blue">8 (863) 218-40-00 доб. 200-27</span>
+                                                    <span class="fw-normal fs-6">тел.: </span>
+                                                    <span class="fw-medium text-primary-blue fs-6">8 (863) 218-40-00 доб. 200-27</span>
                                                 </div>
                                                 <div class="mb-2">
-                                                    <span class="fw-normal">e-mail: </span>
-                                                    <a href="mailto:tkrayushkina@sfedu.ru" class="text-primary-blue text-decoration-underline">
+                                                    <span class="fw-normal fs-6">e-mail: </span>
+                                                    <a href="mailto:tkrayushkina@sfedu.ru" class="text-primary-blue text-decoration-underline fs-6">
                                                         tkrayushkina@sfedu.ru
                                                     </a>
                                                 </div>
                                                 <div>
-                                                    <span class="fw-normal">Адрес: пр. Будённовский 39, <br>
+                                                    <span class="fw-normal fs-6">Адрес: пр. Будённовский 39, <br>
                                                     1 этаж, кабинет № 13</span>
                                                 </div>
                                             </div>
@@ -1288,22 +2657,22 @@
                                         </div>
                                         <div class="col-md-7">
                                             <h4 class="mb-3">
-                                                <span class="fw-medium">Специалист по учебно-методической работе</span><br>
+                                                <span class="fw-medium fs-6">Специалист по учебно-методической работе</span><br>
                                                 <span class="fw-bold">Иванова Ангелина Юрьевна</span>
                                             </h4>
                                             <div class="contact-info">
                                                 <div class="mb-2">
-                                                    <span class="fw-normal">тел.: </span>
-                                                    <span class="fw-medium text-primary-blue">8 (863) 218-40-00 доб. 20028</span>
+                                                    <span class="fw-normal fs-6">тел.: </span>
+                                                    <span class="fw-medium text-primary-blue fs-6">8 (863) 218-40-00 доб. 20028</span>
                                                 </div>
                                                 <div class="mb-2">
-                                                    <span class="fw-normal">e-mail: </span>
-                                                    <span class="text-primary-blue text-decoration-underline">
+                                                    <span class="fw-normal fs-6">e-mail: </span>
+                                                    <span class="text-primary-blue text-decoration-underline fs-6">
                                                         ani@sfedu.ru
                                                     </span>
                                                 </div>
                                                 <div>
-                                                    <span class="fw-normal">Адрес: пр. Будённовский 39, <br>
+                                                    <span class="fw-normal fs-6">Адрес: пр. Будённовский 39, <br>
                                                     1 этаж, кабинет № 13</span>
                                                 </div>
                                             </div>
@@ -1323,22 +2692,22 @@
                                         </div>
                                         <div class="col-md-7">
                                             <h4 class="mb-3">
-                                                <span class="fw-medium">Специалист по учебно-методической работе</span><br>
+                                                <span class="fw-medium fs-6">Специалист по учебно-методической работе</span><br>
                                                 <span class="fw-bold">Савельева Виктория Романовна</span>
                                             </h4>
                                             <div class="contact-info">
                                                 <div class="mb-2">
-                                                    <span class="fw-normal">тел.:</span>
-                                                    <span class="fw-medium text-primary-blue"> 8 (863) 218-40-00 доб. 20067</span>
+                                                    <span class="fw-normal fs-6">тел.:</span>
+                                                    <span class="fw-medium text-primary-blue fs-6"> 8 (863) 218-40-00 доб. 20067</span>
                                                 </div>
                                                 <div class="mb-2">
-                                                    <span class="fw-normal">e-mail: </span>
-                                                    <span class="text-primary-blue text-decoration-underline">
+                                                    <span class="fw-normal fs-6">e-mail: </span>
+                                                    <span class="text-primary-blue text-decoration-underline fs-6">
                                                         visave@sfedu.ru
                                                     </span>
                                                 </div>
                                                 <div>
-                                                    <span class="fw-normal">Адрес: пр. Будённовский 39, <br>
+                                                    <span class="fw-normal fs-6">Адрес: пр. Будённовский 39, <br>
                                                     1 этаж, кабинет № 13</span>
                                                 </div>
                                             </div>
@@ -1363,7 +2732,8 @@
         </section>
 
         <!-- ===== СЕКЦИЯ 9: ГРАФИК РАБОТЫ ЦЕНТРА ===== -->
-        <section class="schedule-center-section py-5 bg-light-custom">
+         <div class="bg-light-custom">
+        <section class="schedule-center-section py-5">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8">
@@ -1384,6 +2754,7 @@
                 </div>
             </div>
         </section>
+        </div>
     </main>
 
    <footer id="end">
@@ -1408,8 +2779,6 @@
     <script src="/js/tabs.js"></script>
     <script src="/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -1421,24 +2790,28 @@
     <script>
         $(document).ready(function(){
             // Инициализация Owl Carousel для стипендий
-            $("#scholarshipCarousel").owlCarousel({
-                loop: true,
-                margin: 20,
-                nav: true,
-                dots: false,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    768: {
-                        items: 2
-                    },
-                    992: {
-                        items: 3
-                    }
-                }
-            });
-            
+             $('#scholarshipCarousel').owlCarousel({
+    loop: true,
+    margin: 10,
+    nav: true,
+    dots: false,
+    items: 2,
+    autoWidth: false,
+    responsive: {
+        0: {
+            items: 1,
+            nav: false
+        },
+        768: {
+            items: 1.4,
+            nav: true
+        },
+        1200: {
+            items: 2.55,
+            nav: true
+        }
+    }
+});
             // Инициализация Owl Carousel для сотрудников
             $("#staffCarousel").owlCarousel({
                 loop: true,
