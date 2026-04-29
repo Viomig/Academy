@@ -77,7 +77,6 @@
 
 /* Контент таба должен быть под меню */
 .tab-content {
-    top: 100% !important;
     left: 0 !important;
     right: 0 !important;
     z-index: 1031 !important;
@@ -1205,3 +1204,580 @@ table {
             color: var(--color-blue);
             font-size: 24px;
         }
+
+ @media (max-width: 991.98px) {
+    /* ===== ОВЕРЛЕЙ ЧЕРЕЗ ПСЕВДОЭЛЕМЕНТ НА NAVBAR-COLLAPSE ===== */
+    /* Больше не создаем отдельный div */
+    
+    /* Основной контейнер меню */
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 320px;
+        max-width: 85vw;
+        background: #1a1a1f;
+        z-index: 1050;
+        padding: 20px 0 0;
+        transform: translateX(100%);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Затемнение слева от меню через before */
+    .navbar-collapse::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: -1;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        pointer-events: none;
+        transform: translateX(-100%); /* Изначально за экраном */
+    }
+
+    .navbar-collapse.show::before {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateX(0);
+    }
+
+    .navbar-collapse.show {
+        transform: translateX(0);
+    }
+
+    /* Область меню */
+    .navbar-menu {
+        flex: 1;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+    }
+
+    /* Основной список табов */
+    #academy-tab {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        padding: 10px 0;
+        gap: 0;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    #academy-tab.slide-left {
+        transform: translateX(-100%);
+    }
+
+    /* Пункты главного меню */
+    #academy-tab .nav-link {
+        width: 100% !important;
+        text-align: left !important;
+        padding: 16px 20px !important;
+        margin: 0 !important;
+        border: none !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+        font-size: 14px !important;
+        font-family: 'Montserrat-Medium', sans-serif !important;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+        transition: all 0.2s ease;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #academy-tab .nav-link::after {
+        content: '›';
+        font-size: 22px;
+        color: rgba(255, 255, 255, 0.4);
+        transition: color 0.2s ease;
+        margin-left: auto;
+    }
+
+    #academy-tab .nav-link:hover,
+    #academy-tab .nav-link:active {
+        background: rgba(237, 17, 96, 0.1) !important;
+        color: var(--secondary-pink) !important;
+    }
+
+    #academy-tab .nav-link:hover::after,
+    #academy-tab .nav-link:active::after {
+        color: var(--secondary-pink);
+    }
+
+    #academy-tab .nav-link.active {
+        background: rgba(237, 17, 96, 0.15) !important;
+        color: var(--secondary-pink) !important;
+        border-bottom: 1px solid rgba(237, 17, 96, 0.2) !important;
+        border-left: 3px solid var(--secondary-pink) !important;
+    }
+
+    /* Контент табов - подменю */
+    .tab-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #1a1a1f;
+        z-index: 10;
+        transform: translateX(100%);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 0;
+    }
+
+    .tab-content.active-pane {
+        transform: translateX(0);
+    }
+
+    .tab-pane {
+        position: relative;
+        opacity: 1 !important;
+        transform: none !important;
+        pointer-events: all;
+        display: none;
+        width: 100%;
+        background: transparent;
+    }
+
+    .tab-pane.active,
+    .tab-pane.show {
+        display: block;
+    }
+
+    .tab-content-inner {
+        padding: 0 0 0 15px !important;
+    }
+
+    /* Кнопка Назад */
+    .tab-back-button {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 20px;
+        background: rgba(237, 17, 96, 0.12);
+        border-bottom: 1px solid rgba(237, 17, 96, 0.2);
+        cursor: pointer;
+        color: var(--secondary-pink);
+        font-family: 'Montserrat-Semi', sans-serif;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: background 0.2s ease;
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        backdrop-filter: blur(10px);
+    }
+
+    .tab-back-button:hover,
+    .tab-back-button:active {
+        background: rgba(237, 17, 96, 0.25);
+    }
+
+    .tab-back-button .back-arrow {
+        font-size: 24px;
+        line-height: 1;
+        font-weight: 300;
+    }
+
+    /* Заголовок подменю */
+    .tab-content-inner h2 {
+        padding: 20px 20px 10px;
+        font-size: 18px !important;
+        color: var(--white) !important;
+        font-family: 'Montserrat-Medium', sans-serif;
+    }
+
+    .tab-content-inner > .col-3:first-child h4,
+    .tab-content-inner h4 {
+        padding: 0 20px;
+        font-size: 13px !important;
+        color: rgba(255, 255, 255, 0.7) !important;
+        margin-bottom: 20px;
+        font-family: 'Montserrat-Regular', sans-serif;
+        line-height: 1.5;
+    }
+
+    /* Ссылки в подменю */
+    .tab-column {
+        padding: 0;
+        margin-bottom: 0;
+        width: 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
+    .tab-column ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .tab-column li {
+        padding: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        transition: background 0.2s ease;
+    }
+
+    .tab-column li a {
+        display: block;
+        padding: 14px 20px 14px 28px;
+        color: rgba(255, 255, 255, 0.8) !important;
+        text-decoration: none;
+        font-family: 'Montserrat-Regular', sans-serif;
+        font-size: 13px;
+        transition: all 0.2s ease;
+        border-left: 3px solid transparent;
+    }
+
+    .tab-column li a:hover,
+    .tab-column li a:active {
+        background: rgba(237, 17, 96, 0.08);
+        color: var(--secondary-pink) !important;
+        border-left-color: var(--secondary-pink);
+        padding-left: 32px;
+    }
+
+    /* Подзаголовки секций */
+    .tab-column h4 {
+        margin: 0;
+        padding: 0;
+    }
+
+    .tab-column h4 li {
+        list-style: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .tab-column h4 li a {
+        padding: 14px 20px 14px 24px;
+        background: rgba(255, 255, 255, 0.03);
+        color: rgba(255, 255, 255, 0.9) !important;
+        font-family: 'Montserrat-Medium', sans-serif !important;
+        font-size: 13px !important;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-left: 3px solid var(--secondary-pink);
+    }
+
+    /* Кнопка подробнее */
+    .tab-content-inner .col-3:first-child button {
+        margin: 10px 20px 20px;
+        width: calc(100% - 40px);
+    }
+
+    .tab-content-inner .col-3:first-child button .btn {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--gradient-primary);
+        color: white;
+        font-family: 'Montserrat-Semi', sans-serif;
+        font-size: 13px;
+        padding: 14px 24px;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border: none;
+    }
+
+    .tab-content-inner .col-3:first-child button .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(237, 17, 96, 0.4);
+    }
+
+    /* Сброс bootstrap-сетки внутри подменю */
+    .tab-content-inner .row {
+        display: flex;
+        flex-direction: column;
+        margin: 0 !important;
+    }
+
+    .tab-content-inner .col-2,
+    .tab-content-inner .col-3,
+    .tab-content-inner .col-4,
+    .tab-content-inner [class*="col-"] {
+        width: 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .tab-content-inner .offset-1,
+    .tab-content-inner .offset-2,
+    .tab-content-inner .offset-md-1,
+    .tab-content-inner [class*="offset-"] {
+        margin-left: 0 !important;
+    }
+
+    /* Скроллбар */
+    .navbar-collapse::-webkit-scrollbar,
+    .tab-content::-webkit-scrollbar,
+    #academy-tab::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    .navbar-collapse::-webkit-scrollbar-track,
+    .tab-content::-webkit-scrollbar-track,
+    #academy-tab::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .navbar-collapse::-webkit-scrollbar-thumb,
+    .tab-content::-webkit-scrollbar-thumb,
+    #academy-tab::-webkit-scrollbar-thumb {
+        background: var(--gradient-primary);
+        border-radius: 3px;
+    }
+
+    /* Шапка мобильного меню */
+    .mobile-menu-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        margin-bottom: 10px;
+        flex-shrink: 0;
+    }
+
+    .mobile-menu-logo img {
+        width: 90px;
+        height: auto;
+    }
+
+    .mobile-menu-close {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        color: white;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .mobile-menu-close:hover,
+    .mobile-menu-close:active {
+        background: var(--secondary-pink);
+        transform: rotate(90deg);
+    }
+
+    /* Логотип в хедере (мобильный) */
+    .d-lg-none > button {
+        background: none;
+        border: none;
+        padding: 0;
+    }
+
+    .d-lg-none > button img {
+        width: 80px;
+        height: auto;
+    }
+
+    /* Бургер */
+    .navbar-toggler {
+        border: none !important;
+        padding: 8px !important;
+        border-radius: 8px !important;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+        order: 1;
+        margin-left: auto;
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: 0 0 0 2px var(--secondary-pink) !important;
+        outline: none !important;
+    }
+
+    .navbar-toggler-icon {
+        background-image: none !important;
+        position: relative;
+        width: 22px;
+        height: 18px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: white;
+        border-radius: 2px;
+        transition: all 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    }
+
+    .navbar-toggler-icon {
+        background-image: none !important;
+        position: relative;
+        width: 22px;
+        height: 18px;
+    }
+
+    /* Средняя линия */
+    .navbar-toggler-icon::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: white;
+        transform: translateY(-50%);
+    }
+
+    /* Нижняя линия */
+    .navbar-toggler-icon::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: white;
+    }
+
+    /* Верхняя линия - через дополнительный span */
+    .navbar-toggler-icon {
+        background: linear-gradient(to bottom, 
+            white 0%, white 2px, 
+            transparent 2px, transparent calc(50% - 1px),
+            white calc(50% - 1px), white calc(50% + 1px),
+            transparent calc(50% + 1px), transparent calc(100% - 2px),
+            white calc(100% - 2px), white 100%
+        ) !important;
+    }
+
+    /* Анимация в крестик */
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+        background: transparent !important;
+    }
+
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+        transform: translateY(-50%) rotate(45deg);
+        background: var(--secondary-pink);
+    }
+
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+        bottom: 50%;
+        transform: translateY(50%) rotate(-45deg);
+        background: var(--secondary-pink);
+    }
+}
+
+/* Десктоп - без изменений */
+@media (min-width: 992px) {
+    .tab-back-button,
+    .mobile-menu-header {
+        display: none !important;
+    }
+
+    .navbar-collapse {
+        transform: none !important;
+        position: relative !important;
+        width: auto !important;
+        background: transparent !important;
+        overflow: visible !important;
+    }
+
+    .navbar-collapse::before {
+        display: none !important;
+    }
+
+    .tab-content {
+        left: 0;
+        right: 0;
+        width: 100%;
+        transform: none !important;
+    }
+}
+
+@media (max-width: 991.98px) {
+    /* Принудительное отображение контента подменю */
+    .tab-content.active-pane .tab-pane.active,
+    .tab-content.active-pane .tab-pane.show {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        height: auto !important;
+        overflow-y: auto !important;
+    }
+    
+    .tab-content.active-pane .tab-content-inner {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        min-height: 100%;
+    }
+    
+    .tab-content.active-pane .tab-column,
+    .tab-content.active-pane [class*="col-"] {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+    }
+    
+    .tab-content.active-pane .row {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    /* Убираем конфликтующие стили Bootstrap/CoreUI */
+    .tab-pane.fade:not(.show) {
+        opacity: 0 !important;
+    }
+    
+    .tab-pane.fade.show,
+    .tab-pane.fade.active {
+        opacity: 1 !important;
+    }
+    
+    .tab-content > .tab-pane {
+        display: none;
+    }
+    
+    .tab-content > .tab-pane.active,
+    .tab-content > .tab-pane.show {
+        display: block !important;
+    }
+    
+    /* Подменю скроллится */
+    .tab-content.active-pane {
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
+    }
+}
