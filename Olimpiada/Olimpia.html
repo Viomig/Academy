@@ -3031,7 +3031,7 @@ document.querySelectorAll('.copy-email').forEach(function(element) {
     </section>
 </div>
 
-    <!-- Best Works Section -->
+<!-- Best Works Section -->
 <section class="py-5 bg-white" id="Works">
     <div class="container">
         <h2 class="section-title text-black">лучшие работы</h2>
@@ -3060,8 +3060,17 @@ document.querySelectorAll('.copy-email').forEach(function(element) {
         </div>
         
         <!-- Gallery Container -->
-        <div id="bestWorksGallery" class="gallery-grid">
-            <!-- Галерея будет заполняться динамически -->
+        <div id="bestWorksGallery" class="gallery-grid"></div>
+
+        <!-- Лоадер -->
+        <div id="bestWorksLoader" class="text-center py-5" style="display: none;">
+            <div style="width: 40px; height: 40px; border: 3px solid #f0f0f0; border-top: 3px solid #080D6B; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto;"></div>
+            <p class="mt-3" style="color: #777;">Загрузка...</p>
+        </div>
+
+        <!-- Сообщение, если работ нет -->
+        <div id="bestWorksNoResults" class="text-center py-5" style="display: none;">
+            <p style="font-size: 18px; color: #777;">Нет работ для отображения</p>
         </div>
     </div>
 </section>
@@ -3078,7 +3087,7 @@ document.querySelectorAll('.copy-email').forEach(function(element) {
     .gallery-item {
         flex: 1 1 auto;
         min-width: 250px;
-        max-width: calc(25% - 15px); /* По умолчанию 4 в ряд */
+        max-width: calc(25% - 15px);
         margin-bottom: 20px;
         transition: transform 0.3s ease;
     }
@@ -3100,26 +3109,24 @@ document.querySelectorAll('.copy-email').forEach(function(element) {
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     }
     
-    /* Адаптация под разные размеры экрана */
     @media (max-width: 1200px) {
         .gallery-item {
-            max-width: calc(33.333% - 14px); /* 3 в ряд */
+            max-width: calc(33.333% - 14px);
         }
     }
     
     @media (max-width: 900px) {
         .gallery-item {
-            max-width: calc(50% - 10px); /* 2 в ряд */
+            max-width: calc(50% - 10px);
         }
     }
     
     @media (max-width: 600px) {
         .gallery-item {
-            max-width: 100%; /* 1 в ряд */
+            max-width: 100%;
         }
     }
     
-    /* Для случаев, когда изображения разного размера */
     .gallery-item.wide {
         flex-grow: 2;
     }
@@ -3128,240 +3135,147 @@ document.querySelectorAll('.copy-email').forEach(function(element) {
         flex-grow: 1;
     }
     
-    /* Заглушка для загрузки */
-    .gallery-loading {
-        text-align: center;
-        padding: 40px;
-        color: #666;
+    @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
     }
 </style>
 
 <script>
-    // Данные для галереи
-    const bestWorksData = {
-        risunok: {
-            "6": [
-                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&h=400&fit=crop",
-                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=500&h=600&fit=crop",
-                "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=700&h=500&fit=crop",
-                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=550&h=450&fit=crop",
-                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=480&h=480&fit=crop",
-                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=650&h=550&fit=crop",
-                "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=600&h=700&fit=crop",
-                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=580&h=420&fit=crop"
-            ],
-            "7": [
-                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=620&h=450&fit=crop",
-                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=530&h=630&fit=crop",
-                "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=720&h=520&fit=crop",
-                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=560&h=460&fit=crop",
-                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=490&h=490&fit=crop"
-            ],
-            "8": [
-                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&h=500&fit=crop",
-                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=550&h=650&fit=crop",
-                "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=680&h=540&fit=crop",
-                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=590&h=480&fit=crop",
-                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=510&h=510&fit=crop",
-                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=630&h=570&fit=crop"
-            ],
-            "9": [
-                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=640&h=480&fit=crop",
-                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=580&h=680&fit=crop",
-                "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=700&h=560&fit=crop",
-                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&h=500&fit=crop"
-            ],
-            "10": [
-                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=660&h=520&fit=crop",
-                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=600&h=700&fit=crop",
-                "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=720&h=580&fit=crop",
-                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=620&h=520&fit=crop",
-                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=540&h=540&fit=crop",
-                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=650&h=590&fit=crop",
-                "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=690&h=610&fit=crop"
-            ]
-        },
-        zhivopis: {
-            "6": [
-                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=580&h=420&fit=crop",
-                "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=620&h=520&fit=crop",
-                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=540&h=640&fit=crop",
-                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=660&h=480&fit=crop"
-            ],
-            "7": [
-                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&h=440&fit=crop",
-                "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=640&h=540&fit=crop",
-                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=560&h=660&fit=crop",
-                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=680&h=500&fit=crop",
-                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=590&h=450&fit=crop"
-            ],
-            "8": [
-                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=620&h=460&fit=crop",
-                "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=660&h=560&fit=crop",
-                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=580&h=680&fit=crop",
-                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=700&h=520&fit=crop"
-            ],
-            "9": [
-                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=640&h=480&fit=crop",
-                "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=680&h=580&fit=crop",
-                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=600&h=700&fit=crop",
-                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=720&h=540&fit=crop",
-                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=610&h=470&fit=crop",
-                "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=650&h=590&fit=crop"
-            ],
-            "10": [
-                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=660&h=500&fit=crop",
-                "https://images.unsplash.com/photo-1536924940846-227afb31e2a5?w=700&h=600&fit=crop",
-                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=620&h=720&fit=crop",
-                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=740&h=560&fit=crop"
-            ]
-        },
-        kompoziciya: {
-            "6": [
-                "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=600&h=500&fit=crop",
-                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=580&h=620&fit=crop",
-                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=640&h=480&fit=crop",
-                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=560&h=560&fit=crop"
-            ],
-            "7": [
-                "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=620&h=520&fit=crop",
-                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&h=640&fit=crop",
-                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=660&h=500&fit=crop",
-                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=580&h=580&fit=crop",
-                "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=630&h=530&fit=crop"
-            ],
-            "8": [
-                "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=640&h=540&fit=crop",
-                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=620&h=660&fit=crop",
-                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=680&h=520&fit=crop",
-                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&h=600&fit=crop"
-            ],
-            "9": [
-                "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=660&h=560&fit=crop",
-                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=640&h=680&fit=crop",
-                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=700&h=540&fit=crop",
-                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=620&h=620&fit=crop",
-                "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=650&h=570&fit=crop"
-            ],
-            "10": [
-                "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=680&h=580&fit=crop",
-                "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=660&h=700&fit=crop",
-                "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=720&h=560&fit=crop",
-                "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=640&h=640&fit=crop"
-            ]
-        }
-    };
+(function() {
 
-    // Текущие фильтры
+    // ========== КОНФИГУРАЦИЯ ==========
+    const BASE_PATH = 'image/works';
+
+    // ========== DOM ==========
+    const gallery = document.getElementById('bestWorksGallery');
+    const loader = document.getElementById('bestWorksLoader');
+    const noResults = document.getElementById('bestWorksNoResults');
+
+    // ========== СОСТОЯНИЕ ==========
     let bestFilters = {
         subject: 'risunok',
         class: '6'
     };
 
-    // Функция для загрузки и отображения галереи
-    function renderBestWorksGallery() {
-        const gallery = document.getElementById('bestWorksGallery');
-        const images = bestWorksData[bestFilters.subject]?.[bestFilters.class] || [];
-        
+    // Кеш для уже загруженных фото
+    const photoCache = {};
+
+    // ========== ЗАГРУЗКА СПИСКА ФАЙЛОВ ЧЕРЕЗ PHP ==========
+    async function loadPhotosFromFolder(subject, className) {
+        const cacheKey = `${subject}_${className}`;
+        if (photoCache[cacheKey]) {
+            return photoCache[cacheKey];
+        }
+
+        loader.style.display = 'block';
+        gallery.style.display = 'none';
+        noResults.style.display = 'none';
+
+        let photos = [];
+        const listUrl = `${BASE_PATH}/${subject}/${className}/list.php`;
+
+        try {
+            const response = await fetch(listUrl);
+            if (response.ok) {
+                const fileList = await response.json();
+                photos = fileList.map(filename => `${BASE_PATH}/${subject}/${className}/${filename}`);
+            }
+        } catch (e) {
+            console.warn('Не удалось загрузить список файлов из ' + listUrl);
+        }
+
+        photoCache[cacheKey] = photos;
+
+        loader.style.display = 'none';
+        gallery.style.display = photos.length > 0 ? 'flex' : 'none';
+        noResults.style.display = photos.length === 0 ? 'block' : 'none';
+
+        return photos;
+    }
+
+    // ========== РЕНДЕР ГАЛЕРЕИ ==========
+    async function renderBestWorksGallery() {
+        const images = await loadPhotosFromFolder(bestFilters.subject, bestFilters.class);
+
         if (images.length === 0) {
-            gallery.innerHTML = '<div class="gallery-loading">Нет работ для отображения</div>';
+            gallery.innerHTML = '';
             return;
         }
-        
-        // Очищаем галерею
+
+        noResults.style.display = 'none';
+        gallery.style.display = 'flex';
         gallery.innerHTML = '';
-        
-        // Создаем элементы для каждого изображения
+
         images.forEach((imgSrc, index) => {
             const item = document.createElement('div');
             item.className = 'gallery-item';
-            
-            // Добавляем случайные классы для разнообразия размеров (опционально)
+
             if (index % 3 === 0) item.classList.add('wide');
             if (index % 4 === 0) item.classList.add('tall');
-            
+
             const img = document.createElement('img');
             img.src = imgSrc;
-            img.alt = `${getSubjectName(bestFilters.subject)} ${bestFilters.class} класс, работа ${index + 1}`;
-            img.loading = 'lazy'; // Ленивая загрузка для производительности
-            
+            img.alt = '';
+            img.loading = 'lazy';
+
+            // Скрываем битые изображения
+            img.onerror = function() {
+                item.style.display = 'none';
+            };
+
             item.appendChild(img);
             gallery.appendChild(item);
-        });
-        
-        // Анимация появления
-        const items = gallery.querySelectorAll('.gallery-item');
-        items.forEach((item, index) => {
+
+            // Анимация появления
             item.style.opacity = '0';
             item.style.transform = 'translateY(20px)';
             setTimeout(() => {
                 item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
                 item.style.opacity = '1';
                 item.style.transform = 'translateY(0)';
-            }, index * 50); // Каскадная анимация
+            }, index * 50);
         });
     }
 
-    // Вспомогательная функция для получения названия предмета
-    function getSubjectName(subject) {
-        const names = {
-            risunok: 'Рисунок',
-            zhivopis: 'Живопись',
-            kompoziciya: 'Композиция'
-        };
-        return names[subject] || subject;
-    }
-
-    // Настройка фильтров для лучших работ
+    // ========== НАСТРОЙКА ФИЛЬТРОВ ==========
     function setupBestWorksFilters() {
-        // Фильтр по предмету
         document.querySelectorAll('[data-best-subject]').forEach(btn => {
             btn.addEventListener('click', function() {
-                const subject = this.getAttribute('data-best-subject');
-                
-                // Обновляем активный класс у кнопок предмета
                 document.querySelectorAll('[data-best-subject]').forEach(b => {
                     b.classList.remove('active');
                     b.classList.add('inactive');
                 });
                 this.classList.add('active');
                 this.classList.remove('inactive');
-                
-                bestFilters.subject = subject;
+
+                bestFilters.subject = this.getAttribute('data-best-subject');
                 renderBestWorksGallery();
             });
         });
-        
-        // Фильтр по классу
+
         document.querySelectorAll('[data-best-class]').forEach(btn => {
             btn.addEventListener('click', function() {
-                const className = this.getAttribute('data-best-class');
-                
-                // Обновляем активный класс у кнопок класса
                 document.querySelectorAll('[data-best-class]').forEach(b => {
                     b.classList.remove('active');
                     b.classList.add('inactive');
                 });
                 this.classList.add('active');
                 this.classList.remove('inactive');
-                
-                bestFilters.class = className;
+
+                bestFilters.class = this.getAttribute('data-best-class');
                 renderBestWorksGallery();
             });
         });
     }
 
-    // Инициализация при загрузке страницы
+    // ========== ИНИЦИАЛИЗАЦИЯ ==========
     document.addEventListener('DOMContentLoaded', function() {
         setupBestWorksFilters();
         renderBestWorksGallery();
-        
-        // Добавляем ресайз-обработчик для перерисовки при изменении размера окна
-        window.addEventListener('resize', function() {
-            // Просто обновляем галерею без изменения данных
-            renderBestWorksGallery();
-        });
     });
+
+})();
 </script>
 
 <!-- Partners Section -->

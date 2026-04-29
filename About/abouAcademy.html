@@ -39,7 +39,6 @@
         /* Типографика */
         h1, h2, h3, h4, h5, h6 {
             font-weight: 500;
-            margin-bottom: 1rem;
         }
 
         .hero-title {
@@ -555,6 +554,23 @@
        #aboutTop img{
          padding: 50px;
         }
+
+     #about2slider .item1 {
+    border-radius: 15px;
+    overflow: hidden;
+    height: 100%; /* Чтобы все карточки были одной высоты */
+}
+
+#about2slider .owl-stage {
+    display: flex;
+    align-items: stretch;
+}
+
+#about2slider .owl-item {
+    padding: 0; /* Убираем лишние паддинги */
+}
+
+
 </style>
 <body>
     <header class="header" id="header-placeholder">
@@ -564,7 +580,7 @@
     <section id="start">
         <div class="row">
             <div class="col-7 offset-1">
-                <div><h1>ОБ АКАДЕМИИ</h1></div>
+                <h1>ОБ АКАДЕМИИ</h1>
                 <div>Академия архитектуры и искусств ЮФУ объединяет традиции образовательного процесса с современными подходами, готовя специалистов в области архитектуры, дизайна и искусства. </div>
                 <div class="row">
                     <div class="col-6"><button class="btngprsl"><a href="/About/directsia.html">Дирекция</a><span class="arrow">→</span></button></div>
@@ -575,7 +591,7 @@
                 
             </div>
             <div class="col-4">
-                <img src="images/about/1.png" alt="Image2">
+                <img src="about/1.png" alt="Image2">
             </div>
 
         </div>
@@ -612,7 +628,7 @@
 
         <div class="d-flex align-items-center mb-5 offset-2">
                         <div class="me-3">
-                            <i class="fas fa-file-alt fa-2x text-primary"></i>
+                            <img src="/Abiturient/imageMag/ПДФ.png" alt="">
                         </div>
                         <div>
                             <a href="#" class="link-arrow">
@@ -800,85 +816,363 @@
     </section>
 
     <section class="about2-section">
-      <div class="row">
-        <div class="col-md-8 offset-md-1"><h5 class="line-title">Диапазон направлений
-архитектурно-художественного 
-образования ААИ ЮФУ</h5>
-        </div>
-        </div>
-  <div class="row offset-1">
-    <div class="col-md-12 owl-carousel owl-theme row" id="about2slider">
-      <div class="item1 justify-content-center mx-5" style="background-color: var(--primary-blue);">
-        <h3>Глобальный территориальный, городской районный, квартальный, дворовой уровень преобразования пространства</h3>
-        <div class="item2" style="background-color: rgb(255, 255, 255);">
-          <div class="item-desc">
-        
-        <p><li>Градостроительство Урбанистика</li></p>
-        <p><li>Дизайн архитектурной среды и ландшафтная архитектура</li></p>
-        <p><li>Объектная архитектура</li></p>
-      </div>
+    <div class="row">
+        <div class="col-md-8 offset-md-1">
+            <h5 class="line-title">Диапазон направлений архитектурно-художественного образования ААИ ЮФУ</h5>
         </div>
     </div>
-    <div class="item1 mx-5" style="background-color: var(--primary-blue);">
-        <h3>Городской, районный, квартальный, дворовой уровень преобразования пространства</h3>
-        <div class="item2" style="background-color: rgb(255, 255, 255);">
-          <div class="item-desc">
-        
-        <p><li>Реконструкция и реставрация объектов архитектурного наследия</li></p>
-        <p><li>Монументальное искусство</li></p>
-      </div>
+    <div class="row">
+        <div class="col-md-12 owl-carousel owl-theme row" id="about2slider">
+            
+            <div class="item1" style="background-color: var(--primary-blue);">
+                <h3>Глобальный территориальный, городской районный, квартальный, дворовой уровень преобразования пространства</h3>
+                <div class="item2" style="background-color: rgb(255, 255, 255);">
+                    <div class="item-desc">
+                        <p><li>Градостроительство Урбанистика</li></p>
+                        <p><li>Дизайн архитектурной среды и ландшафтная архитектура</li></p>
+                        <p><li>Объектная архитектура</li></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="item1" style="background-color: var(--primary-blue);">
+                <h3>Городской, районный, квартальный, дворовой уровень преобразования пространства</h3>
+                <div class="item2" style="background-color: rgb(255, 255, 255);">
+                    <div class="item-desc">
+                        <p><li>Реконструкция и реставрация объектов архитектурного наследия</li></p>
+                        <p><li>Монументальное искусство</li></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="item1" style="background-color: var(--primary-blue);">
+                <h3>Эстетического и предметного наполнения обитаемого пространства</h3>
+                <div class="item2" style="background-color: rgb(255, 255, 255);">
+                    <div class="item-desc">
+                        <p><li>Дизайн интерьера, костюма, графический, предметный</li></p>
+                        <p><li>Декоративно-прикладное искусство, Графика, Скульптура, Живопись</li></p>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </div>
-    <div class="item1 mx-5" style="background-color: var(--primary-blue);">
-        <h3>Эстетического и предметного наполнения обитаемого пространства</h3>
-        <div class="item2" style="background-color: rgb(255, 255, 255);">
-          <div class="item-desc">
-        
-        <p><li>Дизайн интерьера, костюма, графический, предметный/li></p>
-        <p><li>Декоративно-прикладное искусство, Графика, Скульптура, Живопись</li></p>
-      </div>
-        </div>
-    </div></div>
-  </div>
-    </section>
+</section>
 
     <section class="about3-section">
   <div class="row">
-        <div class="col-md-8 offset-md-1"><h5 class="line-title">Подразделения ааи юфу</h5>
+        <div class="col-md-8 offset-md-1"><h5 class="line-title">Образовательная 
+деятельность ааи юфу</h5>
         </div>
         </div>
-  <div class="owl-carousel owl-theme " id="about3slider">
+  <div class="owl-carousel owl-theme" id="about3slider">
       <div class="item3" style="background-color: #f3f3f3;">
       <div class="item-descmain">
-        <h3>13</h3>
-        <p>направлений бакалавриата 
-и специалитета (16 программ)</p>
+        <h3 style="color: #080D6B;font-size:40px">13</h3>
+        <p style="text-transform: uppercase;">направлений бакалавриата 
+и специалитета <br>(16 программ)</p>
       </div>
     </div>
     <div class="item3" style="background-color: #f3f3f3;">
       <div class="item-descmain">
-        <h3>3</h3>
-        <p>направлений бакалавриата 
-и специалитета (16 программ)</p>
+        <h3 style="color: #080D6B;font-size:40px">4</h3>
+        <p style="text-transform: uppercase;">направления ассистентуры-стажировки <br>(4 программы)</p>
       </div>
     </div>
     <div class="item3" style="background-color: #f3f3f3;">
       <div class="item-descmain">
-        <h3>7</h3>
-        <p>направлений 
-магистратуры (8 программ)</p>
+        <h3 style="color: #080D6B;font-size:40px">7</h3>
+        <p style="text-transform: uppercase;">направлений 
+магистратуры <br>(8 программ)</p>
       </div>
     </div>
     <div class="item3" style="background-color: #f3f3f3;">
       <div class="item-descmain">
-        <h3>1</h3>
-        <p>направление аспирантуры 
-(2 научные специальности)</p>
+        <h3 style="color: #080D6B;font-size:40px">1</h3>
+        <p style="text-transform: uppercase;">направление аспирантуры 
+<br>(2 научные специальности)</p>
+      </div>
+    </div>
+    <div class="item3" style="background-color: #f3f3f3;">
+      <div class="item-descmain row align-content-start">
+        <div class="col-12 justify-content-start"><h3 style="color: #080D6B;font-size:40px">35</h3></div>
+        <div class="col-12"><p style="text-transform: uppercase;">программ ДПО</p></div>
       </div>
     </div>
   </div>
 </div>
     </section>
+
+    <section>
+        <div class="row offset-2">
+            <div class="col-4" style="border: #080D6B; border-radius: 15px; border-width: 1px; border-style: solid; height: 40px; text-transform: uppercase;display: flex; align-items: center;">бакалавры</div><div class="col-1 offset-1" style="border: #080D6B; border-radius: 15px; border-width: 1px; border-style: solid; height: 40px; display: flex; align-items: center; justify-content: center;">1279</div>
+            <p></p><div class="col-4" style="border: #080D6B; border-radius: 15px; border: 1px; border-style: solid; height: 40px; text-transform: uppercase;display: flex; align-items: center;">специалисты</div><div class="col-1 offset-1" style="border: #080D6B; border-radius: 15px; border-width: 1px; border-style: solid; height: 40px; display: flex; align-items: center; justify-content: center;">189</div>
+            <p></p><div class="col-4" style="border: #080D6B; border-radius: 15px; border: 1px; border-style: solid; height: 40px; text-transform: uppercase;display: flex; align-items: center;">магистры</div><div class="col-1 offset-1" style="border: #080D6B; border-radius: 15px; border-width: 1px; border-style: solid; height: 40px; display: flex; align-items: center; justify-content: center;">265</div>
+            <p></p><div class="col-4" style="border: #080D6B; border-radius: 15px; border: 1px; border-style: solid; height: 40px; text-transform: uppercase;display: flex; align-items: center;">аспиранты / ассистенты</div><div class="col-1 offset-1" style="border: #080D6B; border-radius: 15px; border-width: 1px; border-style: solid; height: 40px; display: flex; align-items: center; justify-content: center;">41</div>
+            <p></p><div class="col-4" style="border: #080D6B; border-radius: 15px; border: 1px; border-style: solid; height: 40px; text-transform: uppercase;display: flex; align-items: center;">всего обучающихся</div><div class="col-1 offset-1" style="border: #080D6B; border-radius: 15px; border-width: 1px; border-style: solid; height: 40px; display: flex; align-items: center; justify-content: center;">1783</div>
+            <p></p><div class="col-4" style="border: #080D6B; border-radius: 15px; border: 1px; border-style: solid; height: 40px; text-transform: uppercase;display: flex; align-items: center;">дпо</div><div class="col-1 offset-1" style="border: #080D6B; border-radius: 15px; border-width: 1px; border-style: solid; height: 40px; display: flex; align-items: center; justify-content: center;">4465</div>
+        </div>
+    </section>
+
+    <div class="bg-gradient-dark">
+    <section>
+        <div class="row">
+                <div class=" col-md-7 offset-md-2" style="text-transform: uppercase; font-size: 28px;">юфу — 1 из 18 вузов-победителей программы «приоритет 2030» по треку «исследовательское лидерство»</div><br>
+                <p><div class=" col-md-3 offset-md-3">ЮФУ— пространство смыслов и возможностей</div></p>
+                <div class="offset-3" style="height: 80px; width: 80px;">
+                    <img src="about/Vector.png" alt="" style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+        </div>
+
+    </section>
+ </div>
+
+ <section class="about3-section">
+  <div class="row">
+        <div class="col-md-8 offset-md-1">
+            <h5 class="line-title">Кадровый потенциал ААИ ЮФУ</h5>
+        </div>
+        </div>
+  <div class="owl-carousel owl-theme" id="about4slider">
+      <div class="item3" style="background-color: #f3f3f3;">
+      <div class="item-descmain">
+        <h3 style="color: #080D6B; font-size:80px">1</h3>
+        <p style="text-transform: uppercase;">действующий член академии РАХ (академика)</p>
+      </div>
+    </div>
+    <div class="item3" style="background-color: #f3f3f3;">
+      <div class="item-descmain">
+        <h3 style="color: #080D6B; font-size:80px">8</h3>
+        <p style="text-transform: uppercase;">заслуженных художников РФ</p>
+      </div>
+    </div>
+    <div class="item3" style="background-color: #f3f3f3;">
+      <div class="item-descmain">
+        <h3 style="color: #080D6B; font-size:80px">3</h3>
+        <p style="text-transform: uppercase;">почетных члена РАХ</p>
+      </div>
+    </div>
+    <div class="item3" style="background-color: #f3f3f3;">
+      <div class="item-descmain">
+        <h3 style="color: #080D6B; font-size:80px">8</h3>
+        <p style="text-transform: uppercase;">докторов</p>
+      </div>
+    </div>
+    <div class="item3" style="background-color: #f3f3f3;">
+      <div class="item-descmain">
+        <h3 style="color: #080D6B; font-size:80px">129</h3>
+        <p style="text-transform: uppercase;">штатных сотрудника</p>
+      </div>
+    </div>
+    <div class="item3" style="background-color: #f3f3f3;">
+      <div class="item-descmain">
+        <h3 style="color: #080D6B; font-size:80px">51</h3>
+        <p style="text-transform: uppercase;">средний возраст НПР</p>
+      </div>
+    </div>
+    <div class="item3" style="background-color: #f3f3f3;">
+      <div class="item-descmain">
+        <h3 style="color: #080D6B; font-size:80px">48</h3>
+        <p style="text-transform: uppercase;">кандидатов наук</p>
+      </div>
+    </div>
+    <div class="item3 pros" style="background-color: #f3f3f3; margin-right: 90px !important;" >
+      <div class="item-descmain">
+        <h3 style="color: #080D6B; font-size:70px;">>85%</h3>
+        <p style="text-transform: uppercase; font-size: 14px;">членов профильных творческих союзов</p>
+      </div>
+    </div>
+    <div class="item3" style="background-color: #f3f3f3;">
+      <div class="item-descmain">
+        <h3 style="color: #080D6B; font-size:80px">17</h3>
+        <p style="text-transform: uppercase;">профильных экспертов</p>
+      </div>
+    </div>
+  </div>
+</div>
+    </section>
+
+    <style>
+    /* Секция */
+    .map-carousel-section {
+        padding: 60px 0;
+    }
+    
+    /* Карточка */
+    .map-card {
+        background: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        margin: 10px; /* Отступ для карточек */
+    }
+    
+    /* Контейнер для картинки */
+    .map-card-image {
+        padding: 20px 20px 0 20px;
+    }
+    
+    /* Сама картинка */
+    .map-card-image img {
+        width: 100%;
+        height: 209px;
+        object-fit: cover;
+        border-radius: 10px;
+        display: block;
+        background: #e0e0e0;
+    }
+    
+    /* Контент под картинкой */
+    .map-card-content {
+        padding: 20px;
+    }
+    
+    /* Основной текст */
+    .map-card-text {
+        font-size: 16px;
+        line-height: 1.4;
+        margin-bottom: 20px;
+        color: #000;
+    }
+    
+    /* Ссылка */
+    .map-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #080D6B;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    
+    .map-link:hover {
+        gap: 15px;
+        color: #ED1160;
+    }
+    
+    /* Стрелочка */
+    .map-link-arrow {
+        width: 26px;
+        height: 8px;
+        background-image: url("data:image/svg+xml,%3Csvg width='26' height='8' viewBox='0 0 26 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25.3536 4.35355C25.5488 4.15829 25.5488 3.84171 25.3536 3.64645L22.1716 0.464466C21.9763 0.269204 21.6597 0.269204 21.4645 0.464466C21.2692 0.659728 21.2692 0.976311 21.4645 1.17157L24.2929 4L21.4645 6.82843C21.2692 7.02369 21.2692 7.34027 21.4645 7.53553C21.6597 7.7308 21.9763 7.7308 22.1716 7.53553L25.3536 4.35355ZM0 4.5H25V3.5H0V4.5Z' fill='%23080D6B'/%3E%3C/svg%3E");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    /* Важно для Owl Carousel */
+    #mapCarousel {
+        display: block !important;
+    }
+    
+    #mapCarousel .owl-stage {
+        display: flex;
+        align-items: stretch;
+    }
+    
+    #mapCarousel .owl-item {
+        display: flex;
+        flex: 1 0 auto;
+    }
+    
+    #mapCarousel .map-card {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 393px;
+        margin: 0 auto;
+    }
+    
+    /* Навигация */
+    #mapCarousel .owl-nav {
+        position: absolute;
+        right: 0;
+        display: flex !important;
+        gap: 10px;
+    }
+    
+    #mapCarousel .owl-nav button {
+        width: 40px;
+        height: 40px;
+        background: #fff !important;
+        border-radius: 50% !important;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        font-size: 24px !important;
+        color: #080D6B !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #mapCarousel .owl-nav button:hover {
+        background: #080D6B !important;
+        color: #fff !important;
+    }
+    
+    /* Позиционирование контейнера */
+    #mapCarousel {
+        position: relative;
+    }
+</style>
+
+<div class="bg-gradient-dark">
+<section class="map-carousel-section">
+    <div class="container">
+        <h2 class="section-title mb-4 text-white">учебные корпуса академии</h2>
+        
+        <div id="mapCarousel" class="owl-carousel owl-theme">
+            <!-- Карточка 1 -->
+            <div class="map-card">
+                <div class="map-card-image">
+                    <img src="about/image.png" alt="Корпус 1">
+                </div>
+                <div class="map-card-content">
+                    <div class="map-card-text">
+                        г. Ростов-на-Дону, пр. Буденновский, д. 39
+                    </div>
+                    <a href="#" class="map-link text-black">
+                        Посмотреть на карте
+                        <span class="map-link-arrow"></span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Карточка 2 -->
+            <div class="map-card">
+                <div class="map-card-image">
+                    <img src="about/image-1.png" alt="Корпус 2">
+                </div>
+                <div class="map-card-content">
+                    <div class="map-card-text">
+                        г. Ростов-на-Дону, ул. Максима Горького, д. 75/78
+                    </div>
+                    <a href="#" class="map-link text-black">
+                        Посмотреть на карте
+                        <span class="map-link-arrow"></span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Карточка 3 -->
+            <div class="map-card">
+                <div class="map-card-image">
+                    <img src="about/image-2.png" alt="Корпус 3">
+                </div>
+                <div class="map-card-content">
+                    <div class="map-card-text">
+                        г. Ростов-на-Дону, ул. Филимоновская, д. 137
+                    </div>
+                    <a href="#" class="map-link text-black">
+                        Посмотреть на карте
+                        <span class="map-link-arrow"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
 
    <footer id="end">
  <div id="footer-placeholder"></div>
@@ -898,67 +1192,85 @@
     <script src="/js/tabs.js"></script>
     <script src="/js/script.js"></script>
     <script>
-      $(document).ready(function(){
-    const slider = $("#aboutslider").owlCarousel({
-        loop:true,
-        margin:10,
-        nav:true,
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:3
-            },
-            1000:{
-                items:4
-            }
+$(document).ready(function(){
+    console.log('Document ready, initializing all carousels...');
+    
+    // aboutslider
+    $("#aboutslider").owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        responsive: {
+            0: { items: 1 },
+            600: { items: 3 },
+            1000: { items: 4 }
         }
     });
+    
+    // about2slider
+    $("#about2slider").owlCarousel({
+        loop: true,
+        margin: 40,
+        nav: true,
+        items: 3,
+        responsive: {
+            0: { items: 1, margin: 10 },
+            600: { items: 2, margin: 20 },
+            1000: { items: 3, margin: 40 }
+        }
+    });
+    
+    // about3slider
+    $("#about3slider").owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        responsive: {
+            0: { items: 1 },
+            600: { items: 2 },
+            1000: { items: 5 }
+        }
+    });
+    
+    // about4slider
+    $("#about4slider").owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        responsive: {
+            0: { items: 1 },
+            600: { items: 2 },
+            1000: { items: 5 }
+        },
+        onInitialized: function() {
+            $('.item3.pros').css('padding-right', '90px');
+        }
+    });
+    
+    // mapCarousel
+    setTimeout(function() {
+        if ($("#mapCarousel").length && !$("#mapCarousel").hasClass('owl-loaded')) {
+            console.log('Initializing mapCarousel...');
+            $("#mapCarousel").owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: true,
+                dots: false,
+                navText: ['‹', '›'],
+                items: 3,
+                responsive: {
+                    0: { items: 1 },
+                    768: { items: 2 },
+                    1000: { items: 3 }
+                },
+                onInitialized: function(event) {
+                    console.log("Map carousel initialized with", event.item.count, "items");
+                }
+            });
+        }
+    }, 300);
 });
-    </script>
+</script>
 
-    <script>
-      $(document).ready(function(){
-    const slider = $("#about2slider").owlCarousel({
-        loop:true,
-        margin:10,
-        nav:true,
-        startPosition: 0,
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:2
-            },
-            1000:{
-                items:3
-            }
-        }
-    });
-});
-    </script>
-
-    <script>
-      $(document).ready(function(){
-    const slider = $("#about3slider").owlCarousel({
-        loop:true,
-        margin:10,
-        nav:true,
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:2
-            },
-            1000:{
-                items:5
-            }
-        }
-    });
-});
-    </script>
 </body>
 </html>
